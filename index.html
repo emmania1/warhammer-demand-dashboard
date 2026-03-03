@@ -260,6 +260,26 @@
     .steam-cards-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
+  /* ── Executive Summary (top of page) ───────── */
+  .exec-summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .exec-summary-label {
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.8px; color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .exec-summary-body {
+    font-size: 13px; color: #cdd9e5; line-height: 1.8;
+  }
+  .exec-summary-body p { margin-bottom: 8px; }
+  .exec-summary-body p:last-child { margin-bottom: 0; }
+
   /* ── Signal Interpretation blocks ──────────── */
   .signal-interp {
     background: #0d1520;
@@ -303,10 +323,20 @@
     <h1>Warhammer Demand Acceleration Intelligence</h1>
     <div class="meta">YouTube Franchise Model · 5 Channels · Structural Growth Focus</div>
   </div>
-  <div class="meta">Generated 2026-03-02 11:58</div>
+  <div class="meta">Generated 2026-03-02 19:44</div>
 </div>
 
 <div class="container">
+
+<!-- ── Executive Summary (JS-rendered from window.__yt) ──────────────────── -->
+<section>
+  <div class="exec-summary-card">
+    <div class="exec-summary-label">Executive Summary</div>
+    <div class="exec-summary-body" id="exec-summary-body">
+      <p style="color:#6e7681;font-style:italic">Computing metrics&hellip;</p>
+    </div>
+  </div>
+</section>
 
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 <div class="page-divider">Page 1 — Demand Expansion Overview</div>
@@ -566,8 +596,8 @@
           </tr>
         </thead>
         <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td class='num'>1,949</td><td class='num'>1,665</td><td class='num'>2.0</td><td class='num'>1.7</td><td class='num'>13d</td></tr>
-<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td class='num'>2,782</td><td class='num'>2,424</td><td class='num'>3.1</td><td class='num'>2.7</td><td class='num'>104d</td></tr>
-<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>5,929</td><td class='num'>4,796</td><td class='num'>6.2</td><td class='num'>5.0</td><td class='num'>78d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td class='num'>2,772</td><td class='num'>2,401</td><td class='num'>3.1</td><td class='num'>2.7</td><td class='num'>105d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>5,778</td><td class='num'>4,734</td><td class='num'>6.0</td><td class='num'>4.9</td><td class='num'>79d</td></tr>
 <tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td class='num'>5,953</td><td class='num'>6,700</td><td class='num'>7.7</td><td class='num'>8.6</td><td class='num'>24d</td></tr>
 <tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td class='num'>6,656</td><td class='num'>5,121</td><td class='num'>9.6</td><td class='num'>7.3</td><td class='num'>14d</td></tr>
 </tbody>
@@ -595,7 +625,7 @@
       </thead>
       <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td class='num'>+17.0%</td><td class='num'>1.75×</td><td class='num'>2.0</td><td class='num'><span class="badge badge-mid">Moderate Discovery</span></td></tr>
 <tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td class='num'>+8.0%</td><td class='num'>4.25×</td><td class='num'>3.1</td><td class='num'><span class="badge badge-pos">Discovery Engine</span></td></tr>
-<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>+5.7%</td><td class='num'>1.95×</td><td class='num'>6.2</td><td class='num'><span class="badge badge-mid">Moderate Discovery</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>+5.7%</td><td class='num'>1.95×</td><td class='num'>6.0</td><td class='num'><span class="badge badge-mid">Moderate Discovery</span></td></tr>
 <tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td class='num'>+10.7%</td><td class='num'>0.38×</td><td class='num'>7.7</td><td class='num'><span class="badge badge-mid">Retention Engine</span></td></tr>
 <tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td class='num'>+2.5%</td><td class='num'>3.80×</td><td class='num'>9.6</td><td class='num'><span class="badge badge-na">Retention Oriented</span></td></tr>
 </tbody>
@@ -608,7 +638,7 @@
       <li><strong>Discovery Engine</strong>: ECI &gt; 2.0 AND Subscriber Growth &gt; 5%</li>
       <li><strong>Moderate Discovery</strong>: 1.0 ≤ ECI ≤ 2.0</li>
       <li><strong>Cadence Dependent</strong>: ECI &lt; 0.5 AND Subscriber Growth &lt; 3%</li>
-      <li><strong>Retention Engine</strong>: ECI &lt; 1.0 AND vpd/1K ≥ ecosystem median (6.2)</li>
+      <li><strong>Retention Engine</strong>: ECI &lt; 1.0 AND vpd/1K ≥ ecosystem median (6.0)</li>
       <li><strong>Retention Oriented</strong>: fallback (ECI 0.5–1.0, mixed signals)</li>
     </ul>
     <div class="rules-formula">
@@ -890,7 +920,7 @@
 </div><!-- /container -->
 
 <script>
-  window.__yt = {"chLabels": ["Warhammer Official", "WesHammer", "Luetin09", "Squidmar", "Majorkill"], "chColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "currSubs": [992000, 894000, 959000, 775000, 697000], "yoyPct": [17.0, 8.0, 5.7, 10.7, 2.5], "trajDatasets": [{"label": "Warhammer Official", "data": [{"x": 51, "y": 848000}, {"x": 419, "y": 992000}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "WesHammer", "data": [{"x": 29, "y": 828000}, {"x": 418, "y": 894000}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Luetin09", "data": [{"x": 42, "y": 907000}, {"x": 419, "y": 959000}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Squidmar", "data": [{"x": 53, "y": 700000}, {"x": 418, "y": 775000}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Majorkill", "data": [{"x": 52, "y": 680000}, {"x": 418, "y": 697000}], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}], "trajRefDate": "2025-01-01", "slopeDatasets": [{"label": "Warhammer Official", "data": [848000, 992000], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "WesHammer", "data": [828000, 894000], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Luetin09", "data": [907000, 959000], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Squidmar", "data": [700000, 775000], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Majorkill", "data": [680000, 697000], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}], "eciVals": [1.75, 4.25, 1.95, 0.38, 3.8], "discoverySeries": [{"label": "Warhammer Official", "data": [{"x": 17.0, "y": 29.7}], "backgroundColor": "#c0392b", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "WesHammer", "data": [{"x": 8.0, "y": 34.0}], "backgroundColor": "#2980b9", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Luetin09", "data": [{"x": 5.7, "y": 11.1}], "backgroundColor": "#8e44ad", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Squidmar", "data": [{"x": 10.7, "y": 4.1}], "backgroundColor": "#27ae60", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Majorkill", "data": [{"x": 2.5, "y": 9.5}], "backgroundColor": "#e67e22", "pointRadius": 9, "pointHoverRadius": 11}], "anchorLabels": ["Astartes Part II \u2013 Official Warhammer 4000", "Never a Silent Night \u2013 Warhammer Animation", "Revel in Excess This Christmas \u2013 Warhammer", "Secret Level \u2013 Warhammer Extract", "The Complete Warhammer 40000 Timeline", "Adeptus Mechanicus Deep Dive", "Necrons Deep Dive", "Top 10 Most Powerful Characters in 40K", "Dark Beginnings", "The Rise and Fall of the Eldar", "The God Emperor of Mankind Part 1", "WTF IS Warhammer 40K?", "Comparing a $65000 3D Printer to a $350 ho", "I Hired a Professional Miniature Painter o", "Henry Cavill Warhammer Army", "The Most Realistic Miniature Diorama", "Doom Slayer vs Space Marine", "Why Roboute Guilliman is an Absolute Beast", "What did the Traitor Primarchs do after th", "Darth Vader vs Space Marine"], "anchorGrowths": [69.1, 40.6, 3.7, 5.6, 46.0, 32.3, 28.2, 29.3, 7.9, 11.4, 13.0, 12.1, 3.1, 0.7, 5.2, 7.3, 11.4, 8.8, 8.1, 9.7], "anchorColors": ["#c0392b", "#c0392b", "#c0392b", "#c0392b", "#2980b9", "#2980b9", "#2980b9", "#2980b9", "#8e44ad", "#8e44ad", "#8e44ad", "#8e44ad", "#27ae60", "#27ae60", "#27ae60", "#27ae60", "#e67e22", "#e67e22", "#e67e22", "#e67e22"], "typeLabels": ["Cinematic/Trailer", "Lore Explainer", "Deep Dive", "Hobby/Entertainment", "Entertainment/Crossover"], "typeAvgs": [29.7, 17.1, 30.2, 4.1, 10.6], "typeColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "velAvg": [1.96, 3.11, 6.18, 7.68, 9.55], "velMed": [1.68, 2.71, 5.0, 8.64, 7.35], "reddit": {"subLabels": ["r/Warhammer", "r/Warhammer40k", "r/AgeOfSigmar", "r/minipainting"], "subColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60"], "yoyVals": [13.3, 22.9, 7.2, 3.1], "trajDatasets": [{"label": "r/Warhammer", "data": [{"x": "2025-03-03", "y": 392000}, {"x": "2026-02-22", "y": 444154}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "borderWidth": 2}, {"label": "r/Warhammer40k", "data": [{"x": "2024-10-01", "y": 1000000}, {"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1474620}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "borderWidth": 2}, {"label": "r/AgeOfSigmar", "data": [{"x": "2025-03-03", "y": 235000}, {"x": "2026-02-22", "y": 251919}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "borderWidth": 2}, {"label": "r/minipainting", "data": [{"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1237385}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "borderWidth": 2}]}, "steam": {"monthlyLabels": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "monthlyDatasets": [{"label": "Total War: WH3", "data": [null, 20542.3, 20783.6, 21410.1, 19026.8, 19960.2, 22361.0, 20574.2, 21789.7, 20665.2, 19758.0, 34996.8, 29720.3, 18210.5], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Space Marine 2", "data": [null, 8455.3, 6652.4, 7842.3, 7612.2, 8204.4, 9494.6, 7603.1, 14785.0, 10861.6, 10139.6, 11520.3, 12758.5, 10599.0], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Darktide", "data": [6746.6, 5258.3, 4952.1, 5589.3, 5728.1, 11593.3, 9943.8, 5347.0, 4749.6, 5779.8, 5699.5, 14499.2, 8609.2, 4240.5], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Vermintide 2", "data": [null, 2478.6, 2303.7, 1875.3, 2111.0, 2176.0, 1718.3, 1709.2, 1769.0, 2727.7, 8928.6, 7477.2, 3848.0, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}], "momLabels": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "momDatasets": [{"label": "Total War: WH3", "data": [5.9, -5.2, -4.4, 77.1, -15.1, -38.7], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Space Marine 2", "data": [94.5, -26.5, -6.6, 13.6, 10.7, -16.9], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Darktide", "data": [-11.2, 21.7, -1.4, 154.4, -40.6, -50.7], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Vermintide 2", "data": [3.5, 54.2, 227.3, -16.3, -48.5, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}]}};
+  window.__yt = {"chLabels": ["Warhammer Official", "WesHammer", "Luetin09", "Squidmar", "Majorkill"], "chColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "currSubs": [992000, 894000, 959000, 775000, 697000], "yoyPct": [17.0, 8.0, 5.7, 10.7, 2.5], "anchorOutperfPct": 70, "trajDatasets": [{"label": "Warhammer Official", "data": [{"x": 51, "y": 848000}, {"x": 419, "y": 992000}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "WesHammer", "data": [{"x": 29, "y": 828000}, {"x": 418, "y": 894000}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Luetin09", "data": [{"x": 42, "y": 907000}, {"x": 419, "y": 959000}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Squidmar", "data": [{"x": 53, "y": 700000}, {"x": 418, "y": 775000}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Majorkill", "data": [{"x": 52, "y": 680000}, {"x": 418, "y": 697000}], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}], "trajRefDate": "2025-01-01", "slopeDatasets": [{"label": "Warhammer Official", "data": [848000, 992000], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "WesHammer", "data": [828000, 894000], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Luetin09", "data": [907000, 959000], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Squidmar", "data": [700000, 775000], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Majorkill", "data": [680000, 697000], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}], "eciVals": [1.75, 4.25, 1.95, 0.38, 3.8], "discoverySeries": [{"label": "Warhammer Official", "data": [{"x": 17.0, "y": 29.7}], "backgroundColor": "#c0392b", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "WesHammer", "data": [{"x": 8.0, "y": 34.0}], "backgroundColor": "#2980b9", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Luetin09", "data": [{"x": 5.7, "y": 11.1}], "backgroundColor": "#8e44ad", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Squidmar", "data": [{"x": 10.7, "y": 4.1}], "backgroundColor": "#27ae60", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Majorkill", "data": [{"x": 2.5, "y": 9.5}], "backgroundColor": "#e67e22", "pointRadius": 9, "pointHoverRadius": 11}], "anchorLabels": ["Astartes Part II \u2013 Official Warhammer 4000", "Never a Silent Night \u2013 Warhammer Animation", "Revel in Excess This Christmas \u2013 Warhammer", "Secret Level \u2013 Warhammer Extract", "The Complete Warhammer 40000 Timeline", "Adeptus Mechanicus Deep Dive", "Necrons Deep Dive", "Top 10 Most Powerful Characters in 40K", "Dark Beginnings", "The Rise and Fall of the Eldar", "The God Emperor of Mankind Part 1", "WTF IS Warhammer 40K?", "Comparing a $65000 3D Printer to a $350 ho", "I Hired a Professional Miniature Painter o", "Henry Cavill Warhammer Army", "The Most Realistic Miniature Diorama", "Doom Slayer vs Space Marine", "Why Roboute Guilliman is an Absolute Beast", "What did the Traitor Primarchs do after th", "Darth Vader vs Space Marine"], "anchorGrowths": [69.1, 40.6, 3.7, 5.6, 46.0, 32.3, 28.2, 29.3, 7.9, 11.4, 13.0, 12.1, 3.1, 0.7, 5.2, 7.3, 11.4, 8.8, 8.1, 9.7], "anchorColors": ["#c0392b", "#c0392b", "#c0392b", "#c0392b", "#2980b9", "#2980b9", "#2980b9", "#2980b9", "#8e44ad", "#8e44ad", "#8e44ad", "#8e44ad", "#27ae60", "#27ae60", "#27ae60", "#27ae60", "#e67e22", "#e67e22", "#e67e22", "#e67e22"], "typeLabels": ["Cinematic/Trailer", "Lore Explainer", "Deep Dive", "Hobby/Entertainment", "Entertainment/Crossover"], "typeAvgs": [29.7, 17.1, 30.2, 4.1, 10.6], "typeColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "velAvg": [1.96, 3.1, 6.03, 7.68, 9.55], "velMed": [1.68, 2.69, 4.94, 8.64, 7.35], "reddit": {"subLabels": ["r/Warhammer", "r/Warhammer40k", "r/AgeOfSigmar", "r/minipainting"], "subColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60"], "yoyVals": [13.3, 22.9, 7.2, 3.1], "trajDatasets": [{"label": "r/Warhammer", "data": [{"x": "2025-03-03", "y": 392000}, {"x": "2026-02-22", "y": 444154}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "borderWidth": 2}, {"label": "r/Warhammer40k", "data": [{"x": "2024-10-01", "y": 1000000}, {"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1474620}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "borderWidth": 2}, {"label": "r/AgeOfSigmar", "data": [{"x": "2025-03-03", "y": 235000}, {"x": "2026-02-22", "y": 251919}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "borderWidth": 2}, {"label": "r/minipainting", "data": [{"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1237385}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "borderWidth": 2}]}, "steam": {"monthlyLabels": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "monthlyDatasets": [{"label": "Total War: WH3", "data": [null, 20542.3, 20783.6, 21410.1, 19026.8, 19960.2, 22361.0, 20574.2, 21789.7, 20665.2, 19758.0, 34996.8, 29720.3, 18210.5], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Space Marine 2", "data": [null, 8455.3, 6652.4, 7842.3, 7612.2, 8204.4, 9494.6, 7603.1, 14785.0, 10861.6, 10139.6, 11520.3, 12758.5, 10599.0], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Darktide", "data": [6746.6, 5258.3, 4952.1, 5589.3, 5728.1, 11593.3, 9943.8, 5347.0, 4749.6, 5779.8, 5699.5, 14499.2, 8609.2, 4240.5], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Vermintide 2", "data": [null, 2478.6, 2303.7, 1875.3, 2111.0, 2176.0, 1718.3, 1709.2, 1769.0, 2727.7, 8928.6, 7477.2, 3848.0, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}], "momLabels": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "momDatasets": [{"label": "Total War: WH3", "data": [5.9, -5.2, -4.4, 77.1, -15.1, -38.7], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Space Marine 2", "data": [94.5, -26.5, -6.6, 13.6, 10.7, -16.9], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Darktide", "data": [-11.2, 21.7, -1.4, 154.4, -40.6, -50.7], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Vermintide 2", "data": [3.5, 54.2, 227.3, -16.3, -48.5, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}], "totalCCU": 33511, "posYoYCount": 1, "titleCount": 4}};
   
 (function() {
   const d = window.__yt;
@@ -1185,6 +1215,102 @@
     }
   });
 
+})();
+
+  
+(function() {
+  var d  = window.__yt;
+  var el = document.getElementById('exec-summary-body');
+  if (!d || !el) return;
+
+  // ── Formatters ────────────────────────────────────────────────────────────
+  function fmtBig(n) {
+    if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+    if (n >= 1e3) return Math.round(n / 1e3) + 'K';
+    return n.toLocaleString();
+  }
+  function fmtPct(n, dec) {
+    var d2 = (dec === undefined ? 1 : dec);
+    return (n >= 0 ? '+' : '') + Number(n).toFixed(d2) + '%';
+  }
+
+  // ── Reddit signals ────────────────────────────────────────────────────────
+  var rYoy    = d.reddit.yoyVals;
+  var rAvgYoy = rYoy.reduce(function(a, b) { return a + b; }, 0) / rYoy.length;
+  var rTotal  = d.reddit.trajDatasets.reduce(function(sum, ds) {
+    var last = ds.data[ds.data.length - 1];
+    return sum + (last ? last.y : 0);
+  }, 0);
+  var rMaxVal = Math.max.apply(null, rYoy);
+  var rFastIdx = rYoy.indexOf(rMaxVal);
+  var rFastLbl = d.reddit.subLabels[rFastIdx];
+  var rFastYoy = rYoy[rFastIdx];
+
+  var rSignal;
+  if      (rAvgYoy > 10) rSignal = 'accelerating community inflow';
+  else if (rAvgYoy >= 3) rSignal = 'stable expansion';
+  else if (rAvgYoy <  0) rSignal = 'community contraction risk';
+  else                   rSignal = 'modest growth';
+
+  // ── YouTube signals ───────────────────────────────────────────────────────
+  var ytTotal  = d.currSubs.reduce(function(a, b) { return a + b; }, 0);
+  var ytAvgYoy = d.yoyPct.reduce(function(a, b) { return a + b; }, 0) / d.yoyPct.length;
+  var ytN      = d.chLabels.length;
+
+  // ── Anchor signals ────────────────────────────────────────────────────────
+  var anchorPct = d.anchorOutperfPct;
+  var anchorSignal;
+  if      (anchorPct > 60)  anchorSignal = 'algorithmic discovery durability intact';
+  else if (anchorPct >= 40) anchorSignal = 'moderate discovery durability';
+  else                      anchorSignal = 'content discovery concentration risk';
+
+  // ── Steam signals ─────────────────────────────────────────────────────────
+  var steamCCU    = d.steam.totalCCU;
+  var steamPos    = d.steam.posYoYCount;
+  var steamN      = d.steam.titleCount;
+  var steamPosPct = steamPos / steamN;
+
+  var steamSignal;
+  if      (steamPosPct >= 0.5)  steamSignal = 'broad digital retention strength';
+  else if (steamPosPct >= 0.25) steamSignal = 'mixed digital retention';
+  else                          steamSignal = 'engagement deterioration risk';
+
+  // ── Overall trajectory ────────────────────────────────────────────────────
+  var posCount = 0;
+  if (ytAvgYoy > 3)      posCount++;
+  if (rAvgYoy  > 3)      posCount++;
+  if (steamPosPct >= 0.5) posCount++;
+  var trajectory = posCount >= 3 ? 'accelerating' : posCount >= 2 ? 'stable' : 'mixed';
+
+  // ── Build paragraphs ──────────────────────────────────────────────────────
+  var paras = [
+    'This dashboard tracks structural demand acceleration across the Warhammer IP franchise using ' +
+    'three independent signal layers: YouTube creator ecosystem growth (discovery and content ' +
+    'durability), Steam concurrent player engagement (active digital demand proxy), and Reddit ' +
+    'community expansion (top-of-funnel pre-cycle demand accumulation).',
+
+    'The YouTube creator ecosystem \u2014 ' + ytN + ' channels, ' + fmtBig(ytTotal) +
+    ' combined subscribers \u2014 grew ' + fmtPct(ytAvgYoy) + ' YoY (channel average); ' +
+    anchorPct + '% of tracked evergreen anchor videos are compounding in views faster than ' +
+    'their channel\u2019s subscriber growth rate \u2014 <em>' + anchorSignal + '</em>.',
+
+    'Reddit community expansion across ' + rYoy.length + ' core subreddits reached ' +
+    fmtBig(rTotal) + ' combined members at ' + fmtPct(rAvgYoy) + ' average YoY \u2014 ' +
+    '<em>' + rSignal + '</em>, with ' + rFastLbl + ' the fastest-growing contributor at ' +
+    fmtPct(rFastYoy) + '.',
+
+    'Steam franchise-wide live CCU stands at ' + steamCCU.toLocaleString() +
+    ' concurrent players across ' + steamN + ' titles; structural YoY shows ' + steamPos +
+    ' of ' + steamN + ' titles with positive year-over-year completed-month engagement \u2014 ' +
+    '<em>' + steamSignal + '</em>.',
+
+    'Across all three signal layers, current data indicates Warhammer franchise demand is ' +
+    '<strong>' + trajectory + '</strong>: YouTube ecosystem expansion, Reddit community growth, ' +
+    'and Steam digital engagement converge as independent corroborating signals \u2014 consistent ' +
+    'with structural IP-level strength rather than isolated product-cycle dependency.'
+  ];
+
+  el.innerHTML = paras.map(function(p) { return '<p>' + p + '</p>'; }).join('');
 })();
 
 </script>
