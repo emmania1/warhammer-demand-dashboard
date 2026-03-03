@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warhammer Demand Acceleration — YouTube Intelligence</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:      #0d1117;
+    --surface: #161b22;
+    --border:  #21262d;
+    --text:    #e6edf3;
+    --muted:   #8b949e;
+    --accent:  #c0392b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text);
+         font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+         font-size: 14px; line-height: 1.6; }
+
+  /* ── Layout ─────────────────────────────────── */
+  .topbar { background: var(--surface); border-bottom: 1px solid var(--border);
+             padding: 14px 32px; display: flex; align-items: center;
+             justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .topbar h1 { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .topbar .meta { color: var(--muted); font-size: 11px; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 24px 32px; }
+
+  /* ── Page dividers ─────────────────────────── */
+  .page-divider {
+    margin: 48px 0 28px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.8px;
+    color: var(--muted);
+  }
+  .page-divider:first-of-type { margin-top: 0; }
+
+  /* ── Sections ──────────────────────────────── */
+  section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--text);
+    margin-bottom: 6px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-sub {
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 18px; line-height: 1.55;
+    max-width: 780px;
+  }
+  .section-sub strong { color: #cdd9e5; }
+
+  /* ── Stat card ─────────────────────────────── */
+  .stat-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px 22px; min-width: 180px;
+  }
+  .stat-val { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .stat-lbl { font-size: 10px; color: var(--muted); text-transform: uppercase;
+               letter-spacing: 0.8px; margin-top: 4px; }
+
+  /* ── Charts ────────────────────────────────── */
+  .chart-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .chart-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 18px 20px;
+  }
+  .chart-card h3 {
+    font-size: 11px; color: var(--muted); font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px;
+  }
+  .chart-wrap     { position: relative; height: 220px; }
+  .chart-wrap-md  { position: relative; height: 260px; }
+  .chart-wrap-lg  { position: relative; height: 380px; }
+  .data-note {
+    color: var(--muted); font-size: 11px; margin-top: 10px;
+    line-height: 1.5; font-style: italic;
+  }
+
+  /* ── Tables ────────────────────────────────── */
+  .table-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px;
+    color: var(--muted); font-weight: 600; padding: 9px 14px;
+    border-bottom: 1px solid var(--border); text-align: left;
+    background: #0d1117;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #1a1f27; font-size: 13px; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.025); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  th.num { text-align: right; }
+  .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    margin-right: 8px; flex-shrink: 0;
+  }
+
+  /* ── Badges ────────────────────────────────── */
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap;
+  }
+  .badge-pos { background: #1a3a2a; color: #2ecc71; }
+  .badge-mid { background: #3a2d1a; color: #e67e22; }
+  .badge-neg { background: #3a1a1a; color: #e74c3c; }
+  .badge-na  { background: #1e2530; color: #8b949e; }
+
+  /* ── Rules block ───────────────────────────── */
+  .rules-block {
+    background: #0d1117; border: 1px solid var(--border);
+    border-radius: 6px; padding: 14px 18px; margin-top: 16px;
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+  }
+  .rules-block ul { margin: 8px 0 8px 18px; }
+  .rules-block li { margin-bottom: 2px; }
+  .rules-block strong { color: #cdd9e5; }
+  .rules-block .rules-formula {
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid var(--border);
+    color: #8b949e; font-size: 11px;
+  }
+
+  /* ── Steam 3-layer presentation ───────────── */
+
+  /* Primary section header (YoY row) */
+  .steam-layer-hdr {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.4px; color: #cdd9e5;
+    margin: 22px 0 12px; padding: 7px 0;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .steam-layer-hdr .layer-tag {
+    color: #8b949e; font-size: 9px; font-weight: 400;
+    text-transform: none; letter-spacing: 0;
+  }
+  /* Subordinate section header (context table, visually secondary) */
+  .steam-layer-hdr-sub {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.2px; color: #8b949e;
+    margin: 18px 0 10px; padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .steam-layer-hdr-sub .layer-tag {
+    color: #6e7681; font-size: 9px; font-weight: 400;
+    text-transform: none; letter-spacing: 0;
+  }
+
+  /* Title cards grid */
+  .steam-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .steam-title-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+  }
+  .stc-header {
+    font-size: 12px; font-weight: 600; color: var(--text);
+    margin-bottom: 14px;
+    display: flex; align-items: center;
+  }
+
+  /* YoY — PRIMARY signal (most visually dominant) */
+  .stc-yoy-block { margin-bottom: 10px; }
+  .stc-yoy-badge {
+    font-size: 22px !important; font-weight: 800 !important;
+    padding: 6px 14px !important; letter-spacing: -0.3px !important;
+    display: inline-block;
+  }
+  .stc-yoy-lbl {
+    font-size: 11px; color: #cdd9e5;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-top: 6px; font-weight: 500;
+  }
+
+  /* Thin divider between YoY (primary) and supporting metrics */
+  .stc-divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 12px 0 10px;
+  }
+
+  /* Supporting metrics below divider (avg + MoM) */
+  .stc-avg-val {
+    font-size: 20px; font-weight: 700;
+    letter-spacing: -0.4px; color: #cdd9e5;
+    margin-bottom: 2px;
+  }
+  .stc-avg-lbl {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 10px;
+  }
+  .stc-metric-lbl {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+  .stc-mom-block { display: flex; flex-direction: column; }
+  .steam-pulse-section {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 18px 12px;
+    margin-top: 4px;
+  }
+  .steam-pulse-hdr {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.4px; color: #aaa;
+    margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .steam-pulse-hdr .layer-tag {
+    color: #e67e22; font-size: 9px; font-weight: 400;
+    text-transform: none; letter-spacing: 0;
+  }
+  .steam-pulse-note {
+    font-size: 11px; color: var(--muted); font-style: italic;
+    margin-bottom: 12px; line-height: 1.5;
+  }
+  /* MTD section (in-progress month, amber accent) */
+  .steam-mtd-section {
+    background: #12100a;
+    border: 1px solid #3a2d1a;
+    border-left: 3px solid #e67e22;
+    border-radius: 8px;
+    padding: 14px 18px 12px;
+    margin-bottom: 18px;
+  }
+  .steam-mtd-hdr {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.4px; color: #e67e22;
+    margin-bottom: 6px; display: flex; align-items: baseline; gap: 10px;
+  }
+  .steam-mtd-hdr .layer-tag {
+    color: #8b5e22; font-size: 9px; font-weight: 400;
+    text-transform: none; letter-spacing: 0;
+  }
+  .steam-mtd-note {
+    font-size: 11px; color: #a07040; margin-bottom: 12px; line-height: 1.5;
+  }
+  @media (max-width: 1100px) {
+    .steam-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── Executive Summary (top of page) ───────── */
+  .exec-summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .exec-summary-label {
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.8px; color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .exec-summary-body {
+    font-size: 13px; color: #cdd9e5; line-height: 1.8;
+  }
+  .exec-summary-body p { margin-bottom: 8px; }
+  .exec-summary-body p:last-child { margin-bottom: 0; }
+
+  /* ── Signal Interpretation blocks ──────────── */
+  .signal-interp {
+    background: #0d1520;
+    border: 1px solid #1e3a5f;
+    border-left: 3px solid #58a6ff;
+    border-radius: 6px;
+    padding: 12px 16px 10px;
+    margin-bottom: 18px;
+  }
+  .signal-interp-hdr {
+    font-size: 9px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.3px; color: #58a6ff; margin-bottom: 6px;
+  }
+  .signal-interp p {
+    font-size: 12px; color: #8b949e; line-height: 1.65; margin: 0;
+  }
+
+  /* ── Executive summary ─────────────────────── */
+  .exec-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px 28px;
+  }
+  .exec-list { margin: 0; padding: 0; list-style: none; }
+  .exec-list li {
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px; color: #cdd9e5; line-height: 1.65;
+  }
+  .exec-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .exec-list strong { color: var(--text); }
+
+  @media (max-width: 900px) {
+    .chart-grid-2 { grid-template-columns: 1fr; }
+    .container { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <h1>Warhammer Demand Acceleration Intelligence</h1>
+    <div class="meta">YouTube Franchise Model · 5 Channels · Structural Growth Focus</div>
+  </div>
+  <div class="meta">Generated 2026-03-02 19:44</div>
+</div>
+
+<div class="container">
+
+<!-- ── Executive Summary (JS-rendered from window.__yt) ──────────────────── -->
+<section>
+  <div class="exec-summary-card">
+    <div class="exec-summary-label">Executive Summary</div>
+    <div class="exec-summary-body" id="exec-summary-body">
+      <p style="color:#6e7681;font-style:italic">Computing metrics&hellip;</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider">Page 1 — Demand Expansion Overview</div>
+
+<!-- ── Section 1: Franchise-Level Subscriber Expansion ───────────────────── -->
+<section>
+  <div class="section-title">1 · Franchise-Level Subscriber Expansion</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Total subscribership and year-over-year growth rate across
+    the 5 tracked creator channels. <strong>Why it matters:</strong> Subscriber growth is the
+    primary top-of-funnel signal for macro demand acceleration — a rising ecosystem subscriber base
+    indicates new audiences are discovering and committing to Warhammer content.
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-val" style="color:#2ecc71">+8.9%</div>
+      <div class="stat-lbl">Ecosystem Sub Growth YoY</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#8b949e">4.32M</div>
+      <div class="stat-lbl">Combined Subscribers (Feb 2026)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#8b949e">3.96M</div>
+      <div class="stat-lbl">Combined Subscribers (Baseline Jan 2025)</div>
+    </div>
+  </div>
+
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="chart-card">
+      <h3>Current Subscribers</h3>
+      <div class="chart-wrap"><canvas id="chartSubs"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Subscriber Growth — Year-over-Year (%)</h3>
+      <div class="chart-wrap"><canvas id="chartYoY"></canvas></div>
+      <p class="data-note">Method: (latest subs − baseline subs) ÷ baseline subs. Baseline = snapshot closest to latest_date − 365d within ±45d window.</p>
+    </div>
+  </div>
+
+  <div class="chart-grid-2">
+    <div class="chart-card">
+      <h3>Timeline — Real Snapshots Only (no interpolation)</h3>
+      <div class="chart-wrap-md"><canvas id="chartTrajectory"></canvas></div>
+      <p class="data-note">Scatter + showLine. x = days since 2025-01-01. Lines connect consecutive real snapshots only. spanGaps: false.</p>
+    </div>
+    <div class="chart-card">
+      <h3>Baseline vs Latest — Aligned Comparison</h3>
+      <div class="chart-wrap-md"><canvas id="chartSlope"></canvas></div>
+      <p class="data-note">2-point dumbbell. All channels anchored to identical x-positions for clean rank comparison. Eliminates staggered-date visual distortion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 2: Discovery vs Subscriber-Driven Growth ─────────────────── -->
+<section>
+  <div class="section-title">2 · Discovery vs Subscriber-Driven Growth</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Whether view growth on evergreen anchor videos
+    outpaces subscriber growth (algorithmic/discovery-driven) or tracks below it
+    (subscriber-driven). <strong>ECI = Avg Anchor View Growth % ÷ Subscriber Growth YoY %.</strong>
+    ECI &gt; 1 → discovery is expanding beyond the subscriber base.
+    ECI &lt; 1 → growth is primarily subscriber-driven.
+    No red/green styling on ECI — thresholds are rule-based (see Section 6).
+  </div>
+
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="chart-card">
+      <h3>Evergreen Compounding Index (ECI) by Channel</h3>
+      <div class="chart-wrap"><canvas id="chartECI"></canvas></div>
+      <p class="data-note">ECI = avg anchor view growth % ÷ sub growth %. Bar color: blue &gt; 2×, amber 1–2×, red &lt; 1×.</p>
+    </div>
+    <div class="chart-card">
+      <h3>Discovery Scatter — Anchor View Growth vs Subscriber Growth</h3>
+      <div class="chart-wrap"><canvas id="chartDiscovery"></canvas></div>
+      <p class="data-note">Each point = one channel. Channels above the 45° line (y &gt; x) have view growth outpacing subscriber growth — algorithmic discovery signal.</p>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Channel</th><th>Video</th>
+          <th class="num">Content Type</th><th class="num">View Growth (YoY)</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Astartes Part II – Official Warhammer 40000 Film</td><td class='num'>Cinematic/Trailer</td><td class='num'><span class="badge badge-pos">+69.1%</span></td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Never a Silent Night – Warhammer Animation</td><td class='num'>Cinematic/Trailer</td><td class='num'><span class="badge badge-pos">+40.6%</span></td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Revel in Excess This Christmas – Warhammer 40000</td><td class='num'>Cinematic/Trailer</td><td class='num'><span class="badge badge-mid">+3.7%</span></td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Secret Level – Warhammer Extract</td><td class='num'>Cinematic/Trailer</td><td class='num'><span class="badge badge-mid">+5.6%</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>The Complete Warhammer 40000 Timeline</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-pos">+46.0%</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Adeptus Mechanicus Deep Dive</td><td class='num'>Deep Dive</td><td class='num'><span class="badge badge-pos">+32.3%</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Necrons Deep Dive</td><td class='num'>Deep Dive</td><td class='num'><span class="badge badge-pos">+28.2%</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Top 10 Most Powerful Characters in 40K</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-pos">+29.3%</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>Dark Beginnings</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+7.9%</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>The Rise and Fall of the Eldar</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+11.4%</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>The God Emperor of Mankind Part 1</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+13.0%</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>WTF IS Warhammer 40K?</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+12.1%</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>Comparing a $65000 3D Printer to a $350 home 3D printer</td><td class='num'>Hobby/Entertainment</td><td class='num'><span class="badge badge-mid">+3.1%</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>I Hired a Professional Miniature Painter on Fiverr</td><td class='num'>Hobby/Entertainment</td><td class='num'><span class="badge badge-mid">+0.7%</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>Henry Cavill Warhammer Army</td><td class='num'>Hobby/Entertainment</td><td class='num'><span class="badge badge-mid">+5.2%</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>The Most Realistic Miniature Diorama</td><td class='num'>Hobby/Entertainment</td><td class='num'><span class="badge badge-mid">+7.3%</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Doom Slayer vs Space Marine</td><td class='num'>Entertainment/Crossover</td><td class='num'><span class="badge badge-mid">+11.4%</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Why Roboute Guilliman is an Absolute Beast</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+8.8%</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>What did the Traitor Primarchs do after the Horus Heres</td><td class='num'>Lore Explainer</td><td class='num'><span class="badge badge-mid">+8.1%</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Darth Vader vs Space Marine</td><td class='num'>Entertainment/Crossover</td><td class='num'><span class="badge badge-mid">+9.7%</span></td></tr>
+</tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider">Page 2 — Structural Content Dynamics</div>
+
+<!-- ── Section 3: Evergreen Anchor Deep Dive ─────────────────────────────── -->
+<section>
+  <div class="section-title">3 · Evergreen Anchor Deep Dive</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Long-term compounding on fixed anchor videos matched
+    across snapshot pairs. <strong>Why it matters:</strong> Structural discovery signal —
+    anchor growth above the channel's sub growth rate indicates sustained algorithmic reach
+    independent of new uploads. Data only; no commentary.
+  </div>
+  <div class="signal-interp">
+    <div class="signal-interp-hdr">Signal Interpretation</div>
+    <p>70% of tracked anchor videos are compounding faster than their channel's
+    subscriber growth rate — confirming algorithmic distribution independent of upload cadence.
+    This compounding on fixed assets is structurally durable: discovery reach that widens with age
+    reduces dependence on release-event marketing to sustain audience inflow.
+    Top 3 creators account for <strong style="color:#cdd9e5">73.5%</strong> of total
+    tracked anchor views (Luetin09, WesHammer, Warhammer Official).</p>
+  </div>
+
+  <div class="stat-row" style="margin-bottom:14px;">
+    <div class="stat-card">
+      <div class="stat-val" style="color:#58a6ff">70%</div>
+      <div class="stat-lbl">Anchor Videos Outperforming Channel Sub Growth</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#58a6ff">73.5%</div>
+      <div class="stat-lbl">Top 3 Creators Share of Tracked Views</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#8b949e">20</div>
+      <div class="stat-lbl">Total Matched Anchor Videos Tracked</div>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-bottom:18px;">
+    <h3>View Growth % — All Matched Anchor Videos</h3>
+    <div class="chart-wrap-lg"><canvas id="chartAnchorGrowth"></canvas></div>
+  </div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Channel</th><th>Video</th>
+          <th class="num">Views (Now)</th><th class="num">Views (Prior)</th>
+          <th class="num">Growth</th><th class="num">vpd Gain</th><th class="num">Window</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Astartes Part II – Official Warhammer 40000 Film</td><td class='num'>7.4M</td><td class='num'>4.4M</td><td class='num'><span class="badge badge-pos">+69.1%</span></td><td class='num'>+8243.6</td><td class='num'>369d</td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Never a Silent Night – Warhammer Animation</td><td class='num'>897K</td><td class='num'>638K</td><td class='num'><span class="badge badge-pos">+40.6%</span></td><td class='num'>+701.4</td><td class='num'>369d</td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Revel in Excess This Christmas – Warhammer 40000</td><td class='num'>413K</td><td class='num'>398K</td><td class='num'><span class="badge badge-mid">+3.7%</span></td><td class='num'>+40.1</td><td class='num'>369d</td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td>Secret Level – Warhammer Extract</td><td class='num'>124K</td><td class='num'>117K</td><td class='num'><span class="badge badge-mid">+5.6%</span></td><td class='num'>+17.7</td><td class='num'>369d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>The Complete Warhammer 40000 Timeline</td><td class='num'>6.6M</td><td class='num'>4.5M</td><td class='num'><span class="badge badge-pos">+46.0%</span></td><td class='num'>+5290.9</td><td class='num'>391d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Adeptus Mechanicus Deep Dive</td><td class='num'>2.2M</td><td class='num'>1.7M</td><td class='num'><span class="badge badge-pos">+32.3%</span></td><td class='num'>+1403.3</td><td class='num'>391d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Necrons Deep Dive</td><td class='num'>2.2M</td><td class='num'>1.7M</td><td class='num'><span class="badge badge-pos">+28.2%</span></td><td class='num'>+1224.1</td><td class='num'>391d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td>Top 10 Most Powerful Characters in 40K</td><td class='num'>2.2M</td><td class='num'>1.7M</td><td class='num'><span class="badge badge-pos">+29.3%</span></td><td class='num'>+1274.5</td><td class='num'>391d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>Dark Beginnings</td><td class='num'>2.9M</td><td class='num'>2.7M</td><td class='num'><span class="badge badge-mid">+7.9%</span></td><td class='num'>+563.1</td><td class='num'>378d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>The Rise and Fall of the Eldar</td><td class='num'>2.4M</td><td class='num'>2.2M</td><td class='num'><span class="badge badge-mid">+11.4%</span></td><td class='num'>+661.1</td><td class='num'>378d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>The God Emperor of Mankind Part 1</td><td class='num'>11.3M</td><td class='num'>10.0M</td><td class='num'><span class="badge badge-mid">+13.0%</span></td><td class='num'>+3444.4</td><td class='num'>378d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td>WTF IS Warhammer 40K?</td><td class='num'>3.8M</td><td class='num'>3.4M</td><td class='num'><span class="badge badge-mid">+12.1%</span></td><td class='num'>+1075.1</td><td class='num'>378d</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>Comparing a $65000 3D Printer to a $350 home 3D printer</td><td class='num'>1.8M</td><td class='num'>1.7M</td><td class='num'><span class="badge badge-mid">+3.1%</span></td><td class='num'>+142.7</td><td class='num'>367d</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>I Hired a Professional Miniature Painter on Fiverr</td><td class='num'>2.4M</td><td class='num'>2.4M</td><td class='num'><span class="badge badge-mid">+0.7%</span></td><td class='num'>+43.7</td><td class='num'>367d</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>Henry Cavill Warhammer Army</td><td class='num'>2.4M</td><td class='num'>2.3M</td><td class='num'><span class="badge badge-mid">+5.2%</span></td><td class='num'>+324.2</td><td class='num'>367d</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td>The Most Realistic Miniature Diorama</td><td class='num'>1.6M</td><td class='num'>1.5M</td><td class='num'><span class="badge badge-mid">+7.3%</span></td><td class='num'>+298.3</td><td class='num'>367d</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Doom Slayer vs Space Marine</td><td class='num'>2.7M</td><td class='num'>2.4M</td><td class='num'><span class="badge badge-mid">+11.4%</span></td><td class='num'>+746.6</td><td class='num'>368d</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Why Roboute Guilliman is an Absolute Beast</td><td class='num'>1.5M</td><td class='num'>1.4M</td><td class='num'><span class="badge badge-mid">+8.8%</span></td><td class='num'>+335.8</td><td class='num'>368d</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>What did the Traitor Primarchs do after the Horus Heres</td><td class='num'>1.4M</td><td class='num'>1.3M</td><td class='num'><span class="badge badge-mid">+8.1%</span></td><td class='num'>+286.5</td><td class='num'>368d</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td>Darth Vader vs Space Marine</td><td class='num'>1.5M</td><td class='num'>1.4M</td><td class='num'><span class="badge badge-mid">+9.7%</span></td><td class='num'>+368.0</td><td class='num'>368d</td></tr>
+</tbody>
+    </table>
+  </div>
+  <p class="data-note">Anchor compounding measures structural discovery over time. High growth indicates sustained algorithmic exposure beyond subscriber intake.</p>
+</section>
+
+<!-- ── Section 4: Content-Type Demand Signals ────────────────────────────── -->
+<section>
+  <div class="section-title">4 · Content-Type Demand Signals</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Average evergreen view growth grouped by content format.
+    <strong>Why it matters:</strong> Identifies which content formats structurally expand franchise
+    demand — not engagement on individual videos, but compounding across the matched anchor pool.
+  </div>
+
+  <div class="chart-card">
+    <h3>Avg Anchor View Growth by Content Type</h3>
+    <div class="chart-grid-2" style="gap:20px;align-items:start;">
+      <div>
+        <div class="chart-wrap"><canvas id="chartContentType"></canvas></div>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Content Type</th>
+              <th class="num">Avg Growth</th>
+              <th class="num">Median Growth</th>
+              <th class="num">N</th>
+            </tr>
+          </thead>
+          <tbody><tr><td>Cinematic/Trailer</td><td class='num'>+29.7%</td><td class='num'>+23.1%</td><td class='num'>4</td></tr>
+<tr><td>Lore Explainer</td><td class='num'>+17.1%</td><td class='num'>+11.8%</td><td class='num'>8</td></tr>
+<tr><td>Deep Dive</td><td class='num'>+30.2%</td><td class='num'>+30.2%</td><td class='num'>2</td></tr>
+<tr><td>Hobby/Entertainment</td><td class='num'>+4.1%</td><td class='num'>+4.2%</td><td class='num'>4</td></tr>
+<tr><td>Entertainment/Crossover</td><td class='num'>+10.6%</td><td class='num'>+10.6%</td><td class='num'>2</td></tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+    <p class="data-note">Based on matched flagship anchor videos tracked across snapshot pairs.</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider">Page 3 — Engagement Intensity (Not Demand Expansion)</div>
+
+<!-- ── Section 5: Recent Upload Velocity ─────────────────────────────────── -->
+<section>
+  <div class="section-title">5 · Recent Upload Velocity</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Views per day on the 5 most recent uploads per channel,
+    normalized by subscribers. <strong>Critical distinction:</strong> Velocity measures
+    <em>engagement intensity</em>, not structural demand expansion. A high vpd/1K score means
+    existing subscribers engage rapidly with new content — it does not indicate new audience entry.
+    Rule: videos &lt; 1 day old excluded from averages (insufficient data window).
+  </div>
+
+  <div class="chart-grid-2">
+    <div class="chart-card">
+      <h3>Views/Day per 1K Subs — Avg &amp; Median (Top 5 Recent Uploads)</h3>
+      <div class="chart-wrap-md"><canvas id="chartVelocity"></canvas></div>
+      <p class="data-note">Grouped bars: solid = avg vpd/1K, faded = median vpd/1K. Median suppresses outliers from viral or age-biased videos.</p>
+    </div>
+    <div class="table-card" style="align-self:start;">
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th class="num">Avg vpd</th><th class="num">Med vpd</th>
+            <th class="num">Avg vpd/1K</th><th class="num">Med vpd/1K</th>
+            <th class="num">Avg Age</th>
+          </tr>
+        </thead>
+        <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td class='num'>1,949</td><td class='num'>1,665</td><td class='num'>2.0</td><td class='num'>1.7</td><td class='num'>13d</td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td class='num'>2,772</td><td class='num'>2,401</td><td class='num'>3.1</td><td class='num'>2.7</td><td class='num'>105d</td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>5,778</td><td class='num'>4,734</td><td class='num'>6.0</td><td class='num'>4.9</td><td class='num'>79d</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td class='num'>5,953</td><td class='num'>6,700</td><td class='num'>7.7</td><td class='num'>8.6</td><td class='num'>24d</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td class='num'>6,656</td><td class='num'>5,121</td><td class='num'>9.6</td><td class='num'>7.3</td><td class='num'>14d</td></tr>
+</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── Section 6: Structural Classification Summary ──────────────────────── -->
+<section>
+  <div class="section-title">6 · Structural Classification Summary</div>
+  <div class="section-sub">
+    <strong>Rule-based classification</strong> using three inputs: ECI, subscriber growth,
+    and vpd/1K relative to ecosystem median. No subjective assessment.
+  </div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th class="num">Sub YoY</th><th class="num">ECI</th>
+          <th class="num">Avg vpd/1K</th><th class="num">Classification</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#c0392b'></span>Warhammer Official</td><td class='num'>+17.0%</td><td class='num'>1.75×</td><td class='num'>2.0</td><td class='num'><span class="badge badge-mid">Moderate Discovery</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>WesHammer</td><td class='num'>+8.0%</td><td class='num'>4.25×</td><td class='num'>3.1</td><td class='num'><span class="badge badge-pos">Discovery Engine</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>Luetin09</td><td class='num'>+5.7%</td><td class='num'>1.95×</td><td class='num'>6.0</td><td class='num'><span class="badge badge-mid">Moderate Discovery</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Squidmar</td><td class='num'>+10.7%</td><td class='num'>0.38×</td><td class='num'>7.7</td><td class='num'><span class="badge badge-mid">Retention Engine</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Majorkill</td><td class='num'>+2.5%</td><td class='num'>3.80×</td><td class='num'>9.6</td><td class='num'><span class="badge badge-na">Retention Oriented</span></td></tr>
+</tbody>
+    </table>
+  </div>
+
+  <div class="rules-block">
+    <strong>Classification rules</strong> — priority order, first match wins:
+    <ul>
+      <li><strong>Discovery Engine</strong>: ECI &gt; 2.0 AND Subscriber Growth &gt; 5%</li>
+      <li><strong>Moderate Discovery</strong>: 1.0 ≤ ECI ≤ 2.0</li>
+      <li><strong>Cadence Dependent</strong>: ECI &lt; 0.5 AND Subscriber Growth &lt; 3%</li>
+      <li><strong>Retention Engine</strong>: ECI &lt; 1.0 AND vpd/1K ≥ ecosystem median (6.0)</li>
+      <li><strong>Retention Oriented</strong>: fallback (ECI 0.5–1.0, mixed signals)</li>
+    </ul>
+    <div class="rules-formula">
+      ECI = Avg Anchor View Growth % ÷ Subscriber Growth YoY % ·
+      ECI &gt; 1 → discovery compounding exceeds subscriber intake ·
+      ECI &lt; 1 → growth is primarily subscriber-driven
+    </div>
+  </div>
+</section>
+
+<!-- ── Executive Summary ──────────────────────────────────────────────────── -->
+<section>
+  <div class="section-title">Executive Summary</div>
+  <div class="section-sub">
+    Data-grounded conclusions only. No speculative forward commentary.
+  </div>
+  <div class="exec-card">
+    <ul class='exec-list'><li><strong>Ecosystem subscriber base:</strong> 4.32M combined across 5 channels — grew +8.9% YoY. Macro demand is expanding.</li><li><strong>Warhammer Official:</strong> +17.0% YoY subscriber growth — strongest in the set. Primary top-of-funnel demand signal.</li><li><strong>Discovery Engines — WesHammer:</strong> back-catalog view compounding exceeds subscriber intake (ECI > 2×). Algorithmic reach is expanding franchise exposure beyond the existing subscriber base.</li><li><strong>Structural risk:</strong> Squidmar (Retention Engine, ECI 0.38×, sub +10.7%). High per-upload velocity but limited compounding. Engagement is upload-frequency dependent, not structurally self-sustaining.</li><li><strong>Content-type split:</strong> Cinematic/Trailer and Lore Explainer formats show the highest evergreen view compounding. Hobby/Entertainment anchors trend flat or negative relative to subscriber growth.</li></ul>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider">Reddit Community Demand Signals — Proxy for Pre-Cycle Demand</div>
+
+<!-- ── Section 7: Subreddit Subscriber Growth ─────────────────────────────── -->
+<section>
+  <div class="section-title">7 · Subreddit Subscriber Growth</div>
+  <div class="section-sub">
+    <strong>What this measures:</strong> Year-over-year and annualized subscriber growth
+    across 4 core Warhammer subreddits. <strong>Why it matters:</strong> Reddit subscriber
+    growth is a community base expansion proxy — a leading indicator of pre-cycle demand buildup.
+    Growing subreddits signal broader top-of-funnel interest accumulating before commercial cycles.
+    This is demand acceleration measurement, not social media analytics.
+  </div>
+  <div class="signal-interp">
+    <div class="signal-interp-hdr">Signal Interpretation</div>
+    <p>Ecosystem community growth is +12.6% YoY — broad-based across all four subreddits.
+    Fastest-growing contributor: r/Warhammer40k at +22.9% YoY.
+    Broad-based expansion across all four subreddits confirms demand accumulation at the IP platform
+    level, not a single-title or release-event effect — a leading indicator of pre-cycle inflow
+    building across the franchise.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-val" style="color:#2ecc71">+12.6%</div>
+      <div class="stat-lbl">Aggregate Community Growth YoY</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#8b949e">3.41M</div>
+      <div class="stat-lbl">Combined Members (Feb 2026)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#8b949e">3.03M</div>
+      <div class="stat-lbl">Combined Members (Baseline Mar 2025)</div>
+    </div>
+  </div>
+
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="chart-card">
+      <h3>Subscriber Growth Over Time</h3>
+      <div class="chart-wrap-md"><canvas id="chartRedditTraj"></canvas></div>
+      <p class="data-note">Lines expand as weekly snapshots accumulate. Baseline = nearest snapshot within ±45d of latest_date − 365d.</p>
+    </div>
+    <div class="chart-card">
+      <h3>YoY Subscriber Growth (%)</h3>
+      <div class="chart-wrap-md"><canvas id="chartRedditYoY"></canvas></div>
+      <p class="data-note">Method: (latest − baseline) ÷ baseline. Baseline = nearest snapshot within ±45d of latest_date − 365d.</p>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Subreddit</th>
+          <th class="num">Members</th>
+          <th class="num">YoY Growth</th>
+          <th class="num">Annualized</th>
+          <th class="num">Net Adds (YoY)</th>
+          <th class="num">% of Total Reddit Base</th>
+          <th class="num">Classification</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#c0392b'></span>r/Warhammer</td><td class='num'>444K</td><td class='num'>+13.3%</td><td class='num'>+13.6%</td><td class='num'>+52,154</td><td class='num'>13.0%</td><td class='num'><span class='badge badge-mid'>Stable Expansion</span></td></tr>
+<tr><td><span class='dot' style='background:#2980b9'></span>r/Warhammer40k</td><td class='num'>1.47M</td><td class='num'>+22.9%</td><td class='num'>+23.5%</td><td class='num'>+274,620</td><td class='num'>43.3%</td><td class='num'><span class='badge badge-pos'>Accelerating Community</span></td></tr>
+<tr><td><span class='dot' style='background:#8e44ad'></span>r/AgeOfSigmar</td><td class='num'>252K</td><td class='num'>+7.2%</td><td class='num'>+7.4%</td><td class='num'>+16,919</td><td class='num'>7.4%</td><td class='num'><span class='badge badge-mid'>Stable Expansion</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>r/minipainting</td><td class='num'>1.24M</td><td class='num'>+3.1%</td><td class='num'>+3.2%</td><td class='num'>+37,385</td><td class='num'>36.3%</td><td class='num'><span class='badge badge-na'>Passive Growth</span></td></tr>
+</tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ── Section 8: Engagement Intensity — Pending ─────────────────────────── -->
+<section>
+  <div class="section-title">8 · Community Engagement Intensity</div>
+  <div class="section-sub">
+    <strong>Planned metrics:</strong> Posts per day, comments per day (30-day trailing),
+    engagement per 1,000 members, comment-to-post ratio, engagement YoY delta.
+    <strong>Growth quality signal:</strong> Engagement per member rising faster than
+    subscriber growth = community activation, not passive accumulation.
+  </div>
+  <div class="rules-block">
+    <strong>⏳ Pending full historical API implementation</strong>
+    <ul>
+      <li>Reddit public API caps pagination at ~1,000 posts per request — insufficient for reliable 30-day trailing averages on high-volume subreddits.</li>
+      <li>Subscriber counts are accurate and unaffected.</li>
+      <li>Engagement metrics (posts/day, comments/day, engagement/1K) will be enabled once a proper OAuth-authenticated data pipeline or third-party historical source (Pushshift, Pullpush) is integrated.</li>
+      <li>Historical rows are preserved in <code>data/reddit_snapshots.csv</code> and will backfill automatically once the pipeline is upgraded.</li>
+    </ul>
+    <div class="rules-formula">
+      Planned: Engagement / 1K = (posts_per_day + comments_per_day) ÷ (members / 1000) ·
+      Classification will revert to engagement-vs-subscriber-growth logic when data is reliable
+    </div>
+  </div>
+</section>
+
+<!-- ── Reddit Executive Summary ───────────────────────────────────────────── -->
+<section>
+  <div class="section-title">Reddit Intelligence Summary</div>
+  <div class="section-sub">Is Reddit accelerating? Is community inflow building pre-cycle? Is engagement per member rising?</div>
+  <div class="exec-card">
+    <ul class='exec-list'><li><strong>Community base:</strong> 3,408,078 combined members across 4 subreddits — avg +11.6% YoY. Warhammer Reddit community is expanding.</li><li><strong>Growing communities:</strong> r/Warhammer (+13.3% YoY, annualized +13.6%); r/Warhammer40k (+22.9% YoY, annualized +23.5%); r/AgeOfSigmar (+7.2% YoY, annualized +7.4%).</li><li><strong>Low-growth communities:</strong> r/minipainting — subscriber growth ≤5% YoY. Community base stable but not expanding.</li><li><strong>Engagement metrics (posts/day, comments/day, engagement/1K):</strong> pending full historical API implementation. Current Reddit public API caps pagination at ~1,000 posts — insufficient for reliable 30-day trailing averages. Subscriber counts are accurate and unaffected.</li></ul>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider">Page 5 — Digital Player Activity — Steam</div>
+
+<!-- ── Section 9: Steam Digital Engagement Signal ───────────────────────── -->
+<section>
+  <div class="section-title">9 · Steam — Digital Engagement Signal</div>
+  <div class="section-sub">
+    <strong>Structural YoY</strong> compares the last <em>completed</em> calendar month vs the exact same
+    month one year prior. This controls for seasonality and is the primary demand signal.
+    Rolling 30-Day and Live CCU are shown separately and are never used in structural calculations.
+    MTD estimates (current in-progress month) are labeled explicitly and kept separate from completed data.
+  </div>
+  <div class="signal-interp">
+    <div class="signal-interp-hdr">Signal Interpretation</div>
+    <p>Active player base is concentrated: Total War: WH3 + Space Marine 2 account for
+    <strong style="color:#cdd9e5">87.5%</strong> of total live franchise CCU,
+    indicating digital engagement is not evenly distributed across titles.
+    Calendar-month structural YoY — the seasonality-controlled primary signal — reveals whether
+    per-title demand is stable or release-driven; sustained positive YoY across completed months
+    indicates retained player bases rather than post-launch decay.
+    Rolling divergence from structural baselines reflects event volatility, not trend revision.</p>
+  </div>
+
+  <!-- ── Layer 1: Structural YoY — Last Completed Month ── -->
+  <div class="steam-layer-hdr">
+    Structural YoY — Feb 2026 vs Feb 2025 &nbsp;
+    <span style="font-size:9px;color:#8b949e;font-weight:400;text-transform:none;letter-spacing:0">(Last Completed Month)</span>
+    <span class="layer-tag">pre-final (live snapshots) · rolling 30D excluded · same calendar month comparison</span>
+  </div>
+  <div class="steam-cards-grid">
+    <div class='steam-title-card'><div class='stc-header'><span class='dot' style='background:#2980b9'></span>Total War: WH3</div><div class='stc-yoy-block'><span class='badge badge-neg stc-yoy-badge'>-11.4%</span><div class='stc-yoy-lbl'>YoY vs Feb 2025</div></div><hr class='stc-divider'><div class='stc-avg-val'>18,210</div><div class='stc-avg-lbl'>Feb 2026 Avg (pre-final)</div><div class='stc-mom-block'><span class='badge badge-neg'>-38.7%</span><div class='stc-metric-lbl'>MoM vs Jan 2026</div></div></div>
+<div class='steam-title-card'><div class='stc-header'><span class='dot' style='background:#27ae60'></span>Space Marine 2</div><div class='stc-yoy-block'><span class='badge badge-pos stc-yoy-badge'>+25.4%</span><div class='stc-yoy-lbl'>YoY vs Feb 2025</div></div><hr class='stc-divider'><div class='stc-avg-val'>10,599</div><div class='stc-avg-lbl'>Feb 2026 Avg (pre-final)</div><div class='stc-mom-block'><span class='badge badge-neg'>-16.9%</span><div class='stc-metric-lbl'>MoM vs Jan 2026</div></div></div>
+<div class='steam-title-card'><div class='stc-header'><span class='dot' style='background:#c0392b'></span>Darktide</div><div class='stc-yoy-block'><span class='badge badge-neg stc-yoy-badge'>-19.4%</span><div class='stc-yoy-lbl'>YoY vs Feb 2025</div></div><hr class='stc-divider'><div class='stc-avg-val'>4,240</div><div class='stc-avg-lbl'>Feb 2026 Avg (pre-final)</div><div class='stc-mom-block'><span class='badge badge-neg'>-50.7%</span><div class='stc-metric-lbl'>MoM vs Jan 2026</div></div></div>
+<div class='steam-title-card'><div class='stc-header'><span class='dot' style='background:#e67e22'></span>Vermintide 2</div><div class='stc-yoy-block'><span class='badge badge-na stc-yoy-badge'>—</span><div class='stc-yoy-lbl'>YoY vs Jan 2025</div></div><hr class='stc-divider'><div class='stc-avg-val'>3,848</div><div class='stc-avg-lbl'>Jan 2026 Avg</div><div style='font-size:9px;color:#6e7681;margin-top:3px'>Latest available: Jan 2026</div><div class='stc-mom-block'><span class='badge badge-neg'>-48.5%</span><div class='stc-metric-lbl'>MoM vs Dec 2025</div></div></div>
+
+  </div>
+  <p class="data-note" style="margin-bottom:16px;">
+    Structural avg = last completed calendar month (Feb 2026).
+    Source priority: (1) finalized history, (2) live CCU snapshot avg for past month (pre-final, pipeline pending).
+    * pre-final — live snapshot avg, not yet written to history. † data gap — most recent available month shown.
+    MoM = structural avg vs prior completed month. YoY = structural avg vs exact same YYYY-MM one year prior.
+  </p>
+
+  <!-- ── MTD Estimate: current in-progress month ── -->
+  <div class='steam-mtd-section'>
+  <div class='steam-mtd-hdr'>
+    Mar 2026 — MTD Estimate (In-Progress Month)
+    <span class='layer-tag'>Not a completed calendar month · will finalize when month ends</span>
+  </div>
+  <p class='steam-mtd-note'>
+    MTD estimate — not a completed calendar month. Values shown are either live CCU snapshot avgs
+    or rolling 30-Day sliding window values (labeled per row). These will be finalized into structural
+    history when Mar 2026 ends. YoY (partial) compares MTD avg vs the same calendar month
+    one year prior — treat as directional only.
+  </p>
+  <div class='table-card'>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th class='num'>Mar 2026 MTD Avg</th>
+          <th class='num'>Source</th>
+          <th class='num'>YoY vs Mar 2025 (partial)</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#2980b9'></span>Total War: WH3</td><td class='num'>22,811</td><td class='num' style='color:#6e7681;font-size:11px'>Rolling 30D</td><td class='num'><span class='badge badge-mid'>+9.8%</span><span style='font-size:9px;color:#6e7681;margin-left:4px'>vs Mar 2025</span></td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Space Marine 2</td><td class='num'>10,625</td><td class='num' style='color:#6e7681;font-size:11px'>Rolling 30D</td><td class='num'><span class='badge badge-pos'>+59.7%</span><span style='font-size:9px;color:#6e7681;margin-left:4px'>vs Mar 2025</span></td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Darktide</td><td class='num'>5,641</td><td class='num' style='color:#6e7681;font-size:11px'>Rolling 30D</td><td class='num'><span class='badge badge-pos'>+13.9%</span><span style='font-size:9px;color:#6e7681;margin-left:4px'>vs Mar 2025</span></td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Vermintide 2</td><td class='num'>2,462</td><td class='num' style='color:#6e7681;font-size:11px'>Rolling 30D</td><td class='num'><span class='badge badge-mid'>+6.9%</span><span style='font-size:9px;color:#6e7681;margin-left:4px'>vs Mar 2025</span></td></tr>
+</tbody>
+    </table>
+  </div>
+</div>
+
+  <!-- ── Layer 2: Structural Trend Context ── -->
+  <div class="steam-layer-hdr-sub">
+    Structural Trend Context
+    <span class="layer-tag">Completed calendar months only · no rolling or MTD metrics</span>
+  </div>
+  <div class="table-card" style="margin-bottom:20px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th class="num">6M Trend %</th>
+          <th class="num">Nov 2025</th>
+          <th class="num">Dec 2025</th>
+          <th class="num">Jan 2026</th>
+          <th class="num">Feb 2026</th>
+        </tr>
+      </thead>
+      <tbody><tr><td><span class='dot' style='background:#2980b9'></span>Total War: WH3</td><td class='num'><span class='badge badge-neg'>-11.5%</span></td><td class='num'>19,758</td><td class='num'>34,997</td><td class='num'>29,720</td><td class='num' style='color:#cdd9e5;font-weight:600'>18,210 *</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Space Marine 2</td><td class='num'><span class='badge badge-pos'>+39.4%</span></td><td class='num'>10,140</td><td class='num'>11,520</td><td class='num'>12,758</td><td class='num' style='color:#cdd9e5;font-weight:600'>10,599 *</td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Darktide</td><td class='num'><span class='badge badge-neg'>-20.7%</span></td><td class='num'>5,700</td><td class='num'>14,499</td><td class='num'>8,609</td><td class='num' style='color:#cdd9e5;font-weight:600'>4,240 *</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Vermintide 2</td><td class='num'><span class='badge badge-pos'>+123.9%</span></td><td class='num'>8,929</td><td class='num'>7,477</td><td class='num'>3,848</td><td class='num' style='color:#cdd9e5;font-weight:600'>3,848 †</td></tr>
+</tbody>
+    </table>
+    <p class="data-note" style="margin-top:8px;">
+      6M Trend = structural avg vs 6 completed calendar months prior.
+      * Feb 2026 value is pre-final (live snapshot avg — pipeline finalization pending).
+      † Most recent available month shown (data gap for Feb 2026).
+      History from Jan 2025 → Feb 2026 (pre-final).
+    </p>
+  </div>
+
+  <!-- ── Supporting Charts: Monthly Trend & MoM Momentum ── -->
+  <div class="chart-grid-2" style="margin-bottom:20px;">
+    <div class="chart-card">
+      <h3>Monthly Avg Players — Structural Engagement (Completed Months)</h3>
+      <div class="chart-wrap-md"><canvas id="chartSteamMonthlyAvg"></canvas></div>
+      <p class="data-note">Completed calendar months only. Source: SteamCharts history + live snapshot avg where finalization is pending. MTD rolling data excluded.</p>
+    </div>
+    <div class="chart-card">
+      <h3>Month-over-Month Change % — Structural Momentum</h3>
+      <div class="chart-wrap-md"><canvas id="chartSteamMoM"></canvas></div>
+      <p class="data-note">Completed calendar months only. Formula: (month avg − prior month avg) ÷ prior month avg. Rolling 30D excluded. Last 6 structural months shown.</p>
+    </div>
+  </div>
+
+  <!-- ── Franchise Concentration Stat Box ── -->
+  <div class='signal-interp' style='border-left-color:#8b949e;background:#0d1117;margin-bottom:10px'><div class='signal-interp-hdr' style='color:#8b949e'>Franchise Concentration — Live CCU</div><p>Top 2 titles (Total War: WH3 + Space Marine 2) account for <strong style='color:#cdd9e5'>87.5%</strong> of total active franchise players. Based on live concurrent player counts at last pipeline run — directional only.</p></div>
+
+  <!-- ── Layer 3: Short-Term Pulse (Non-Calendar) ── -->
+  <div class="steam-pulse-section">
+    <div class="steam-pulse-hdr">
+      Short-Term Activity — Non-Calendar Rolling Metrics
+      <span class="layer-tag">Never used in structural YoY, MoM, or trend calculations</span>
+    </div>
+    <p class="steam-pulse-note">
+      Rolling 30-Day avg is a non-calendar sliding window from SteamCharts — it crosses month
+      boundaries and cannot be used for calendar-month comparisons. Live CCU is the Steam API
+      concurrent player count at last pipeline run. Both are shown for real-time pulse monitoring only.
+    </p>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th class="num">Rolling 30-Day Avg (non-calendar)</th>
+            <th class="num">Live Concurrent Players</th>
+          </tr>
+        </thead>
+        <tbody><tr><td><span class='dot' style='background:#2980b9'></span>Total War: WH3</td><td class='num'>22,810.7</td><td class='num'>17,778</td></tr>
+<tr><td><span class='dot' style='background:#27ae60'></span>Space Marine 2</td><td class='num'>10,625.3</td><td class='num'>11,555</td></tr>
+<tr><td><span class='dot' style='background:#c0392b'></span>Darktide</td><td class='num'>5,641.1</td><td class='num'>4,178</td></tr>
+<tr><td><span class='dot' style='background:#e67e22'></span>Vermintide 2</td><td class='num'>2,461.9</td><td class='num'>—</td></tr>
+</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<script>
+  window.__yt = {"chLabels": ["Warhammer Official", "WesHammer", "Luetin09", "Squidmar", "Majorkill"], "chColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "currSubs": [992000, 894000, 959000, 775000, 697000], "yoyPct": [17.0, 8.0, 5.7, 10.7, 2.5], "anchorOutperfPct": 70, "trajDatasets": [{"label": "Warhammer Official", "data": [{"x": 51, "y": 848000}, {"x": 419, "y": 992000}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "WesHammer", "data": [{"x": 29, "y": 828000}, {"x": 418, "y": 894000}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Luetin09", "data": [{"x": 42, "y": 907000}, {"x": 419, "y": 959000}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Squidmar", "data": [{"x": 53, "y": 700000}, {"x": 418, "y": 775000}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}, {"label": "Majorkill", "data": [{"x": 52, "y": 680000}, {"x": 418, "y": 697000}], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 5, "pointHoverRadius": 7, "borderWidth": 2}], "trajRefDate": "2025-01-01", "slopeDatasets": [{"label": "Warhammer Official", "data": [848000, 992000], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "WesHammer", "data": [828000, 894000], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Luetin09", "data": [907000, 959000], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Squidmar", "data": [700000, 775000], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}, {"label": "Majorkill", "data": [680000, 697000], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 7, "pointHoverRadius": 9, "borderWidth": 2}], "eciVals": [1.75, 4.25, 1.95, 0.38, 3.8], "discoverySeries": [{"label": "Warhammer Official", "data": [{"x": 17.0, "y": 29.7}], "backgroundColor": "#c0392b", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "WesHammer", "data": [{"x": 8.0, "y": 34.0}], "backgroundColor": "#2980b9", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Luetin09", "data": [{"x": 5.7, "y": 11.1}], "backgroundColor": "#8e44ad", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Squidmar", "data": [{"x": 10.7, "y": 4.1}], "backgroundColor": "#27ae60", "pointRadius": 9, "pointHoverRadius": 11}, {"label": "Majorkill", "data": [{"x": 2.5, "y": 9.5}], "backgroundColor": "#e67e22", "pointRadius": 9, "pointHoverRadius": 11}], "anchorLabels": ["Astartes Part II \u2013 Official Warhammer 4000", "Never a Silent Night \u2013 Warhammer Animation", "Revel in Excess This Christmas \u2013 Warhammer", "Secret Level \u2013 Warhammer Extract", "The Complete Warhammer 40000 Timeline", "Adeptus Mechanicus Deep Dive", "Necrons Deep Dive", "Top 10 Most Powerful Characters in 40K", "Dark Beginnings", "The Rise and Fall of the Eldar", "The God Emperor of Mankind Part 1", "WTF IS Warhammer 40K?", "Comparing a $65000 3D Printer to a $350 ho", "I Hired a Professional Miniature Painter o", "Henry Cavill Warhammer Army", "The Most Realistic Miniature Diorama", "Doom Slayer vs Space Marine", "Why Roboute Guilliman is an Absolute Beast", "What did the Traitor Primarchs do after th", "Darth Vader vs Space Marine"], "anchorGrowths": [69.1, 40.6, 3.7, 5.6, 46.0, 32.3, 28.2, 29.3, 7.9, 11.4, 13.0, 12.1, 3.1, 0.7, 5.2, 7.3, 11.4, 8.8, 8.1, 9.7], "anchorColors": ["#c0392b", "#c0392b", "#c0392b", "#c0392b", "#2980b9", "#2980b9", "#2980b9", "#2980b9", "#8e44ad", "#8e44ad", "#8e44ad", "#8e44ad", "#27ae60", "#27ae60", "#27ae60", "#27ae60", "#e67e22", "#e67e22", "#e67e22", "#e67e22"], "typeLabels": ["Cinematic/Trailer", "Lore Explainer", "Deep Dive", "Hobby/Entertainment", "Entertainment/Crossover"], "typeAvgs": [29.7, 17.1, 30.2, 4.1, 10.6], "typeColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60", "#e67e22"], "velAvg": [1.96, 3.1, 6.03, 7.68, 9.55], "velMed": [1.68, 2.69, 4.94, 8.64, 7.35], "reddit": {"subLabels": ["r/Warhammer", "r/Warhammer40k", "r/AgeOfSigmar", "r/minipainting"], "subColors": ["#c0392b", "#2980b9", "#8e44ad", "#27ae60"], "yoyVals": [13.3, 22.9, 7.2, 3.1], "trajDatasets": [{"label": "r/Warhammer", "data": [{"x": "2025-03-03", "y": 392000}, {"x": "2026-02-22", "y": 444154}], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 5, "borderWidth": 2}, {"label": "r/Warhammer40k", "data": [{"x": "2024-10-01", "y": 1000000}, {"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1474620}], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 5, "borderWidth": 2}, {"label": "r/AgeOfSigmar", "data": [{"x": "2025-03-03", "y": 235000}, {"x": "2026-02-22", "y": 251919}], "borderColor": "#8e44ad", "backgroundColor": "#8e44ad", "pointRadius": 5, "borderWidth": 2}, {"label": "r/minipainting", "data": [{"x": "2025-03-03", "y": 1200000}, {"x": "2026-02-22", "y": 1237385}], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 5, "borderWidth": 2}]}, "steam": {"monthlyLabels": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "monthlyDatasets": [{"label": "Total War: WH3", "data": [null, 20542.3, 20783.6, 21410.1, 19026.8, 19960.2, 22361.0, 20574.2, 21789.7, 20665.2, 19758.0, 34996.8, 29720.3, 18210.5], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Space Marine 2", "data": [null, 8455.3, 6652.4, 7842.3, 7612.2, 8204.4, 9494.6, 7603.1, 14785.0, 10861.6, 10139.6, 11520.3, 12758.5, 10599.0], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Darktide", "data": [6746.6, 5258.3, 4952.1, 5589.3, 5728.1, 11593.3, 9943.8, 5347.0, 4749.6, 5779.8, 5699.5, 14499.2, 8609.2, 4240.5], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}, {"label": "Vermintide 2", "data": [null, 2478.6, 2303.7, 1875.3, 2111.0, 2176.0, 1718.3, 1709.2, 1769.0, 2727.7, 8928.6, 7477.2, 3848.0, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.1, "spanGaps": true}], "momLabels": ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02"], "momDatasets": [{"label": "Total War: WH3", "data": [5.9, -5.2, -4.4, 77.1, -15.1, -38.7], "borderColor": "#2980b9", "backgroundColor": "#2980b9", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Space Marine 2", "data": [94.5, -26.5, -6.6, 13.6, 10.7, -16.9], "borderColor": "#27ae60", "backgroundColor": "#27ae60", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Darktide", "data": [-11.2, 21.7, -1.4, 154.4, -40.6, -50.7], "borderColor": "#c0392b", "backgroundColor": "#c0392b", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}, {"label": "Vermintide 2", "data": [3.5, 54.2, 227.3, -16.3, -48.5, null], "borderColor": "#e67e22", "backgroundColor": "#e67e22", "pointRadius": 4, "borderWidth": 2, "tension": 0.2, "spanGaps": false}], "totalCCU": 33511, "posYoYCount": 1, "titleCount": 4}};
+  
+(function() {
+  const d = window.__yt;
+
+  // ── Shared axis/plugin defaults ────────────────────────────
+  const grid  = { color: '#1e2530' };
+  const xTick = { color: '#999', font: { size: 11 } };
+  const yTick = { color: '#999', font: { size: 11 } };
+  const leg   = { display: true, position: 'bottom',
+                  labels: { color: '#aaa', boxWidth: 12, font: { size: 11 } } };
+
+  const barOpts = (yLabel) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false },
+               tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y?.toLocaleString()}` } } },
+    scales: { x: { ticks: xTick, grid },
+              y: { ticks: yTick, grid,
+                   title: { display: !!yLabel, text: yLabel, color: '#888', font: { size: 11 } } } }
+  });
+
+  // ── Chart 1: Current Subscribers ─────────────────────────
+  new Chart(document.getElementById('chartSubs'), {
+    type: 'bar',
+    data: { labels: d.chLabels, datasets: [{ data: d.currSubs, backgroundColor: d.chColors }] },
+    options: { ...barOpts('Subscribers'),
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${(ctx.parsed.y/1000).toFixed(0)}K subs` } } } }
+  });
+
+  // ── Chart 2: YoY Subscriber Growth % ────────────────────
+  new Chart(document.getElementById('chartYoY'), {
+    type: 'bar',
+    data: { labels: d.chLabels, datasets: [{
+      data: d.yoyPct,
+      backgroundColor: d.yoyPct.map(v => v >= 10 ? '#27ae6099' : v >= 0 ? '#e67e2299' : '#c0392b99')
+    }] },
+    options: { ...barOpts('YoY %'),
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx =>
+          ` ${ctx.parsed.y >= 0 ? '+' : ''}${ctx.parsed.y?.toFixed(1)}%` } } } }
+  });
+
+  // ── Chart 3a: Trajectory scatter+showLine ────────────────
+  const refMs = new Date(d.trajRefDate).getTime();
+  const dayLabel = days => {
+    const dt = new Date(refMs + days * 86400000);
+    return dt.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+  };
+  new Chart(document.getElementById('chartTrajectory'), {
+    type: 'scatter',
+    data: { datasets: d.trajDatasets.map(ds => ({
+      type: 'scatter', label: ds.label, data: ds.data, showLine: true, spanGaps: false,
+      borderColor: ds.borderColor, backgroundColor: ds.backgroundColor,
+      pointRadius: ds.pointRadius, pointHoverRadius: ds.pointHoverRadius,
+      borderWidth: ds.borderWidth, tension: 0,
+    })) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.dataset.label}: ${(ctx.parsed.y/1000).toFixed(0)}K`
+      } } },
+      scales: {
+        x: { type: 'linear', ticks: { ...xTick, maxTicksLimit: 8,
+               callback: v => dayLabel(v) }, grid },
+        y: { ticks: { ...yTick, callback: v => (v/1000).toFixed(0)+'K' }, grid }
+      }
+    }
+  });
+
+  // ── Chart 3b: Slopegraph dumbbell ───────────────────────
+  new Chart(document.getElementById('chartSlope'), {
+    type: 'line',
+    data: { labels: ['{slope_base_lbl}', '{slope_latest_lbl}'],
+      datasets: d.slopeDatasets.map(ds => ({
+        label: ds.label, data: ds.data, tension: 0, fill: false,
+        borderColor: ds.borderColor, backgroundColor: ds.backgroundColor,
+        pointRadius: ds.pointRadius, pointHoverRadius: ds.pointHoverRadius,
+        borderWidth: ds.borderWidth,
+      })) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.dataset.label}: ${(ctx.parsed.y/1000).toFixed(0)}K`
+      } } },
+      scales: {
+        x: { ticks: { color: '#ccc', font: { size: 12, weight: '500' } }, grid },
+        y: { ticks: { ...yTick, callback: v => (v/1000).toFixed(0)+'K' }, grid }
+      }
+    }
+  });
+
+  // ── Chart 4: ECI bar ─────────────────────────────────────
+  new Chart(document.getElementById('chartECI'), {
+    type: 'bar',
+    data: { labels: d.chLabels, datasets: [{
+      data: d.eciVals,
+      backgroundColor: d.eciVals.map(v => v > 2.0 ? '#2980b999' : v >= 1.0 ? '#e67e2299' : '#c0392b99')
+    }] },
+    options: { ...barOpts('ECI (ratio)'),
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ECI ${ctx.parsed.y?.toFixed(2)}×` } } } }
+  });
+
+  // ── Chart 5: Discovery scatter (view growth vs sub growth) ─
+  // One dataset per channel — single point each, for per-channel legend color.
+  new Chart(document.getElementById('chartDiscovery'), {
+    type: 'scatter',
+    data: { datasets: d.discoverySeries.map(ds => ({
+      label: ds.label,
+      data: ds.data,
+      backgroundColor: ds.backgroundColor,
+      pointRadius: ds.pointRadius,
+      pointHoverRadius: ds.pointHoverRadius,
+    })) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.dataset.label}: view +${ctx.parsed.y.toFixed(1)}% / sub +${ctx.parsed.x.toFixed(1)}%`
+      } } },
+      scales: {
+        x: { ticks: xTick, grid, title: { display: true, text: 'Subscriber Growth YoY (%)', color: '#888', font: { size: 11 } } },
+        y: { ticks: yTick, grid, title: { display: true, text: 'Avg Anchor View Growth (%)', color: '#888', font: { size: 11 } } }
+      }
+    }
+  });
+
+  // ── Chart 6: Anchor view growth horizontal bar ───────────
+  new Chart(document.getElementById('chartAnchorGrowth'), {
+    type: 'bar',
+    data: { labels: d.anchorLabels,
+      datasets: [{ data: d.anchorGrowths, backgroundColor: d.anchorColors }] },
+    options: {
+      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` +${ctx.parsed.x?.toFixed(1)}% views` } } },
+      scales: { x: { ticks: xTick, grid }, y: { ticks: { color: '#ccc', font: { size: 10 } }, grid } }
+    }
+  });
+
+  // ── Chart 7: Content type avg growth ─────────────────────
+  new Chart(document.getElementById('chartContentType'), {
+    type: 'bar',
+    data: { labels: d.typeLabels,
+      datasets: [{ data: d.typeAvgs, backgroundColor: d.typeColors }] },
+    options: { ...barOpts('Avg View Growth %'),
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` +${ctx.parsed.y?.toFixed(1)}% avg growth` } } } }
+  });
+
+  // ── Chart 8: VPD/1K grouped (avg + median) ───────────────
+  new Chart(document.getElementById('chartVelocity'), {
+    type: 'bar',
+    data: { labels: d.chLabels, datasets: [
+      { label: 'Avg vpd/1K', data: d.velAvg, backgroundColor: d.chColors },
+      { label: 'Median vpd/1K', data: d.velMed,
+        backgroundColor: d.chColors.map(c => c + '55'), borderColor: d.chColors,
+        borderWidth: 1 }
+    ] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: true, position: 'bottom',
+        labels: { color: '#aaa', boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: ctx =>
+          ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(1)} vpd/1K` } } },
+      scales: {
+        x: { ticks: xTick, grid },
+        y: { ticks: yTick, grid,
+             title: { display: true, text: 'Views/Day per 1K Subs', color: '#888', font: { size: 11 } } }
+      }
+    }
+  });
+
+})();
+
+  
+(function() {
+  const d = window.__yt;
+  const r = d.reddit;
+  if (!r) return;
+
+  const grid  = { color: '#1e2530' };
+  const xTick = { color: '#ccc', font: { size: 11 } };
+  const yTick = { color: '#999', font: { size: 11 } };
+  const leg   = { display: true, position: 'bottom',
+                  labels: { color: '#aaa', boxWidth: 12, font: { size: 11 } } };
+
+  const lineDs = (ds) => ({
+    label: ds.label, data: ds.data,
+    borderColor: ds.borderColor, backgroundColor: ds.backgroundColor,
+    pointRadius: ds.pointRadius, borderWidth: ds.borderWidth,
+    tension: 0, parsing: { xAxisKey: 'x', yAxisKey: 'y' },
+  });
+
+  // ── Chart R1: Subscriber trajectory ─────────────────────────────────────
+  new Chart(document.getElementById('chartRedditTraj'), {
+    type: 'line',
+    data: { datasets: r.trajDatasets.map(lineDs) },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.dataset.label}: ${(ctx.parsed.y/1000).toFixed(0)}K`
+      }}},
+      scales: {
+        x: { type: 'category', ticks: xTick, grid },
+        y: { ticks: { ...yTick, callback: v => (v/1000).toFixed(0)+'K' }, grid }
+      }
+    }
+  });
+
+  // ── Chart R2: YoY bar ────────────────────────────────────────────────────
+  new Chart(document.getElementById('chartRedditYoY'), {
+    type: 'bar',
+    data: { labels: r.subLabels, datasets: [{
+      data: r.yoyVals,
+      backgroundColor: r.yoyVals.map(v => v >= 10 ? '#27ae6099' : v >= 0 ? '#e67e2299' : '#c0392b99')
+    }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.parsed.y >= 0 ? '+' : ''}${ctx.parsed.y?.toFixed(1)}%`
+      }}},
+      scales: {
+        x: { ticks: xTick, grid },
+        y: { ticks: { ...yTick, callback: v => v+'%' }, grid,
+             title: { display: true, text: 'YoY %', color: '#888', font: { size: 11 } } }
+      }
+    }
+  });
+
+})();
+
+  
+(function() {
+  const d = window.__yt;
+  const s = d.steam;
+  if (!s) return;
+
+  const grid  = { color: '#1e2530' };
+  const xTick = { color: '#ccc', font: { size: 11 } };
+  const yTick = { color: '#999', font: { size: 11 } };
+  const leg   = { display: true, position: 'bottom',
+                  labels: { color: '#aaa', boxWidth: 12, font: { size: 11 } } };
+
+  // ── Chart S1: Monthly Avg Players — Structural Engagement ────────────────
+  new Chart(document.getElementById('chartSteamMonthlyAvg'), {
+    type: 'line',
+    data: {
+      labels: s.monthlyLabels,
+      datasets: s.monthlyDatasets.map(ds => ({
+        label: ds.label, data: ds.data,
+        borderColor: ds.borderColor, backgroundColor: ds.backgroundColor,
+        pointRadius: ds.pointRadius, borderWidth: ds.borderWidth,
+        tension: ds.tension, spanGaps: ds.spanGaps, fill: false,
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.dataset.label}: ${(ctx.parsed.y||0).toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0})}`
+      }}},
+      scales: {
+        x: { ticks: xTick, grid },
+        y: { ticks: { ...yTick, callback: v => v.toLocaleString() }, grid,
+             title: { display: true, text: 'Avg Players / Month', color: '#888', font: { size: 11 } } }
+      }
+    }
+  });
+
+  // ── Chart S2: MoM % Change — Momentum Signal ─────────────────────────────
+  new Chart(document.getElementById('chartSteamMoM'), {
+    type: 'line',
+    data: {
+      labels: s.momLabels,
+      datasets: s.momDatasets.map(ds => ({
+        label: ds.label, data: ds.data,
+        borderColor: ds.borderColor, backgroundColor: ds.backgroundColor,
+        pointRadius: ds.pointRadius, borderWidth: ds.borderWidth,
+        tension: ds.tension, spanGaps: ds.spanGaps, fill: false,
+      }))
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: leg, tooltip: { callbacks: {
+        label: ctx => ctx.parsed.y == null ? ' n/a'
+          : ` ${ctx.dataset.label}: ${ctx.parsed.y >= 0 ? '+' : ''}${ctx.parsed.y.toFixed(1)}%`
+      }}},
+      scales: {
+        x: { ticks: xTick, grid },
+        y: { ticks: { ...yTick, callback: v => v+'%' }, grid,
+             title: { display: true, text: 'MoM Change %', color: '#888', font: { size: 11 } } }
+      }
+    }
+  });
+
+})();
+
+  
+(function() {
+  var d  = window.__yt;
+  var el = document.getElementById('exec-summary-body');
+  if (!d || !el) return;
+
+  // ── Formatters ────────────────────────────────────────────────────────────
+  function fmtBig(n) {
+    if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+    if (n >= 1e3) return Math.round(n / 1e3) + 'K';
+    return n.toLocaleString();
+  }
+  function fmtPct(n, dec) {
+    var d2 = (dec === undefined ? 1 : dec);
+    return (n >= 0 ? '+' : '') + Number(n).toFixed(d2) + '%';
+  }
+
+  // ── Reddit signals ────────────────────────────────────────────────────────
+  var rYoy    = d.reddit.yoyVals;
+  var rAvgYoy = rYoy.reduce(function(a, b) { return a + b; }, 0) / rYoy.length;
+  var rTotal  = d.reddit.trajDatasets.reduce(function(sum, ds) {
+    var last = ds.data[ds.data.length - 1];
+    return sum + (last ? last.y : 0);
+  }, 0);
+  var rMaxVal = Math.max.apply(null, rYoy);
+  var rFastIdx = rYoy.indexOf(rMaxVal);
+  var rFastLbl = d.reddit.subLabels[rFastIdx];
+  var rFastYoy = rYoy[rFastIdx];
+
+  var rSignal;
+  if      (rAvgYoy > 10) rSignal = 'accelerating community inflow';
+  else if (rAvgYoy >= 3) rSignal = 'stable expansion';
+  else if (rAvgYoy <  0) rSignal = 'community contraction risk';
+  else                   rSignal = 'modest growth';
+
+  // ── YouTube signals ───────────────────────────────────────────────────────
+  var ytTotal  = d.currSubs.reduce(function(a, b) { return a + b; }, 0);
+  var ytAvgYoy = d.yoyPct.reduce(function(a, b) { return a + b; }, 0) / d.yoyPct.length;
+  var ytN      = d.chLabels.length;
+
+  // ── Anchor signals ────────────────────────────────────────────────────────
+  var anchorPct = d.anchorOutperfPct;
+  var anchorSignal;
+  if      (anchorPct > 60)  anchorSignal = 'algorithmic discovery durability intact';
+  else if (anchorPct >= 40) anchorSignal = 'moderate discovery durability';
+  else                      anchorSignal = 'content discovery concentration risk';
+
+  // ── Steam signals ─────────────────────────────────────────────────────────
+  var steamCCU    = d.steam.totalCCU;
+  var steamPos    = d.steam.posYoYCount;
+  var steamN      = d.steam.titleCount;
+  var steamPosPct = steamPos / steamN;
+
+  var steamSignal;
+  if      (steamPosPct >= 0.5)  steamSignal = 'broad digital retention strength';
+  else if (steamPosPct >= 0.25) steamSignal = 'mixed digital retention';
+  else                          steamSignal = 'engagement deterioration risk';
+
+  // ── Overall trajectory ────────────────────────────────────────────────────
+  var posCount = 0;
+  if (ytAvgYoy > 3)      posCount++;
+  if (rAvgYoy  > 3)      posCount++;
+  if (steamPosPct >= 0.5) posCount++;
+  var trajectory = posCount >= 3 ? 'accelerating' : posCount >= 2 ? 'stable' : 'mixed';
+
+  // ── Build paragraphs ──────────────────────────────────────────────────────
+  var paras = [
+    'This dashboard tracks structural demand acceleration across the Warhammer IP franchise using ' +
+    'three independent signal layers: YouTube creator ecosystem growth (discovery and content ' +
+    'durability), Steam concurrent player engagement (active digital demand proxy), and Reddit ' +
+    'community expansion (top-of-funnel pre-cycle demand accumulation).',
+
+    'The YouTube creator ecosystem \u2014 ' + ytN + ' channels, ' + fmtBig(ytTotal) +
+    ' combined subscribers \u2014 grew ' + fmtPct(ytAvgYoy) + ' YoY (channel average); ' +
+    anchorPct + '% of tracked evergreen anchor videos are compounding in views faster than ' +
+    'their channel\u2019s subscriber growth rate \u2014 <em>' + anchorSignal + '</em>.',
+
+    'Reddit community expansion across ' + rYoy.length + ' core subreddits reached ' +
+    fmtBig(rTotal) + ' combined members at ' + fmtPct(rAvgYoy) + ' average YoY \u2014 ' +
+    '<em>' + rSignal + '</em>, with ' + rFastLbl + ' the fastest-growing contributor at ' +
+    fmtPct(rFastYoy) + '.',
+
+    'Steam franchise-wide live CCU stands at ' + steamCCU.toLocaleString() +
+    ' concurrent players across ' + steamN + ' titles; structural YoY shows ' + steamPos +
+    ' of ' + steamN + ' titles with positive year-over-year completed-month engagement \u2014 ' +
+    '<em>' + steamSignal + '</em>.',
+
+    'Across all three signal layers, current data indicates Warhammer franchise demand is ' +
+    '<strong>' + trajectory + '</strong>: YouTube ecosystem expansion, Reddit community growth, ' +
+    'and Steam digital engagement converge as independent corroborating signals \u2014 consistent ' +
+    'with structural IP-level strength rather than isolated product-cycle dependency.'
+  ];
+
+  el.innerHTML = paras.map(function(p) { return '<p>' + p + '</p>'; }).join('');
+})();
+
+</script>
+</body>
+</html>
