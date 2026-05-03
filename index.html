@@ -376,7 +376,7 @@
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
     <a class="nav-btn" href="#pg-8">P8 Stock</a>
   </nav>
-  <div class="meta">Generated 2026-05-02 22:10</div>
+  <div class="meta">Generated 2026-05-02 22:52</div>
 </div>
 
 <div class="container">
@@ -387,7 +387,7 @@
 <!-- ── Executive Summary — JS-rendered from window.__yt ─────────────────── -->
 <section>
   <div class="exec-summary-card">
-    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-05-02 22:10</div>
+    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-05-02 22:52</div>
     <div class="exec-summary-body" id="exec-summary-body">
       <p style="color:#6e7681;font-style:italic">Computing structural metrics&hellip;</p>
     </div>
@@ -1500,130 +1500,181 @@
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 <div class="page-divider" id="pg-8">Page 8 — GW Website Product Availability</div>
 
-<!-- ── Page 8: GW Stock Availability ──────────────────────────────────── -->
 <section>
   <div class="section-title">GW Direct — Online Store Availability Tracker</div>
   <div class="section-sub">
-    Daily scrape of warhammer.com for all Starter Sets and Combat Patrol boxes.
-    Out-of-Stock events are demand signals — GW products go OOS when sell-through
-    outpaces production. Starter Kit OOS in particular signals new player influx.
-    Source: warhammer.com direct (automated daily, <code>fetch_gw_stock.py</code>).
-    Last checked: <strong>2026-05-02</strong> &nbsp;|&nbsp; 1 day of history.
+    Automated daily snapshot of the full warhammer.com product catalog via their public Algolia search API
+    (3,700+ SKUs indexed). Out-of-Stock on GW's own site means sell-through outpaced production —
+    the cleanest demand signal available without channel intermediation.
+    <strong>New releases going OOS within weeks of launch</strong> is the highest-conviction indicator tracked here.
+    Last checked: <strong>2026-05-02</strong> &nbsp;|&nbsp;
+    1 day of history.
   </div>
 
-  <!-- Stat cards -->
+  <!-- ── Stat Cards ─────────────────────────────────────────────────────── -->
   <div class="stats-row" style="margin-bottom:18px;">
     <div class="stat-card">
-      <div class="stat-val">33</div>
-      <div class="stat-lbl">SKUs Tracked</div>
+      <div class="stat-val" style="color:#c0392b">511</div>
+      <div class="stat-lbl">Products OOS Sitewide</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#27ae60">28</div>
-      <div class="stat-lbl">In Stock</div>
+      <div class="stat-val" style="color:#e74c3c">9</div>
+      <div class="stat-lbl">New Releases OOS</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#c0392b">0</div>
-      <div class="stat-lbl">Out of Stock</div>
+      <div class="stat-val">44</div>
+      <div class="stat-lbl">Total New Releases</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#27ae60">0.0%</div>
-      <div class="stat-lbl">OOS Rate</div>
+      <div class="stat-val" style="color:var(--muted)">0</div>
+      <div class="stat-lbl">Last Chance Items</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val">5</div>
-      <div class="stat-lbl">Not Listed / Unknown</div>
+      <div class="stat-val" style="color:var(--muted)">0</div>
+      <div class="stat-lbl">Selling Fast</div>
     </div>
   </div>
 
   
-  <div class="table-card" style="padding:18px;text-align:center;color:var(--muted);font-size:12px;">
-    OOS rate trend chart will appear here once daily data accumulates (currently day 1 of 1).
-    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to build the trend.
+  <div class="table-card" style="padding:16px;text-align:center;color:var(--muted);font-size:12px;">
+    OOS trend chart will appear once daily data accumulates. Run
+    <code>python3 scripts/fetch_gw_stock.py</code> each day to build the series.
   </div>
 
-  <!-- Starter Sets — High Priority -->
+  <!-- ── A: New Releases Already OOS ──────────────────────────────────── -->
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-                color:var(--muted);margin-bottom:12px;">
-      Starter Sets — New Player Entry Points <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS here = new player demand overflow)</span>
+               color:var(--muted);margin-bottom:12px;">
+      🚨 New Releases Already Out of Stock
+      <span style="font-weight:400;font-size:10px"> — strongest demand signal: launched recently, already sold out</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th>
-          <th class="num">Status</th>
+          <th>Product</th><th class="num">Price</th><th>Game System</th><th class="num">Status</th>
         </tr>
       </thead>
-      <tbody>
-        <tr><td>40k Introductory Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>40k Starter Set</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
-<tr><td>40k Ultimate Starter Set</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
-<tr><td>AoS Starter Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>AoS Ultimate Starter Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Necrons</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Space Marines</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
-<tr><td>Combat Patrol: Tyranids</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
-
-      </tbody>
+      <tbody><tr><td><strong>Spearhead: City of Ash</strong></td><td class='num'>$220</td><td style='font-size:11px;color:var(--muted)'>AoS</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Knight Destrier</strong></td><td class='num'>$170</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Defiler</strong></td><td class='num'>$145</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Venatari Sodality</strong></td><td class='num'>$82</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Custodian Dreadnought</strong></td><td class='num'>$77</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Zardu Layak: The Crimson Apostle (Special Edition)</strong></td><td class='num'>$75</td><td style='font-size:11px;color:var(--muted)'>Other</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Kravek Morne</strong></td><td class='num'>$47</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Iron Warriors Upgrades</strong></td><td class='num'>$35</td><td style='font-size:11px;color:var(--muted)'>40k</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td><strong>Daughters of Khaine Dice</strong></td><td class='num'>$34</td><td style='font-size:11px;color:var(--muted)'>AoS</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+</tbody>
     </table>
     <p class="data-note">
-      ⚠ = Last Chance to Buy (GW flagging product end-of-life).
-      "Transitional" = status code P — still purchasable but phasing to new edition version.
-      Source: warhammer.com, checked 2026-05-02.
+      Products flagged <code>isNewRelease:true</code> on warhammer.com that are simultaneously out of stock.
+      High-price OOS new releases ($100+) indicate genuine broad consumer demand, not just niche hobbyist spikes.
+      Source: warhammer.com Algolia index, 2026-05-02.
     </p>
   </div>
 
-  <!-- Combat Patrols -->
-  <div class="table-card">
+  <!-- ── B: Starter Set Watchlist ─────────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-                color:var(--muted);margin-bottom:12px;">
-      Combat Patrol Boxes — All Factions
-      <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS on specific faction = that army is in demand)</span>
+               color:var(--muted);margin-bottom:12px;">
+      Starter Set Watchlist — New Player Entry Points
+      <span style="font-weight:400;font-size:10px"> — OOS here = new player demand overflow</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th>
-          <th class="num">Status</th>
+          <th>Product</th><th class="num">Price</th><th>Category</th><th class="num">Status</th>
         </tr>
       </thead>
-      <tbody>
-        <tr><td>Combat Patrol: Adepta Sororitas</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Adeptus Custodes</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Adeptus Mechanicus</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Aeldari</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Aeldari Corsairs</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
-<tr><td>Combat Patrol: Astra Militarum</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Black Templars</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Blood Angels</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Chaos Daemons</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
-<tr><td>Combat Patrol: Chaos Space Marines</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Dark Angels</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Death Guard</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Drukhari</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Emperor's Children</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Genestealer Cults</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Grey Knights</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Imperial Agents</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Imperial Fists</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
-<tr><td>Combat Patrol: Iron Warriors</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
-<tr><td>Combat Patrol: Leagues of Votann</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Raven Guard</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
-<tr><td>Combat Patrol: Tau Empire</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Thousand Sons</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: Tyranid Assault Brood</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-<tr><td>Combat Patrol: World Eaters</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
-
-      </tbody>
+      <tbody><tr><td>Warhammer Age of Sigmar: Spearhead Starter Set</td><td class='num'>$220</td><td style='font-size:11px;color:var(--muted)'>AoS Starter</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Warhammer 40,000 Combat Patrol Starter Set <span style='font-size:10px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition version coming</span></td><td class='num'>$220</td><td style='font-size:11px;color:var(--muted)'>40k Starter</td><td class='num'><span class='badge badge-mid'>Transitional ⚡</span></td></tr>
+<tr><td>Kill Team: Starter Set</td><td class='num'>$114</td><td style='font-size:11px;color:var(--muted)'>Kill Team Starter</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Warhammer Age of Sigmar: Starter Set</td><td class='num'>$114</td><td style='font-size:11px;color:var(--muted)'>AoS Starter</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Warhammer 40,000 Starter Set <span style='font-size:10px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition version coming</span></td><td class='num'>$114</td><td style='font-size:11px;color:var(--muted)'>40k Starter</td><td class='num'><span class='badge badge-mid'>Transitional ⚡</span></td></tr>
+<tr><td>Warhammer 40,000 Introductory Set</td><td class='num'>$69</td><td style='font-size:11px;color:var(--muted)'>40k Starter</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Warcry: Crypt of Blood Starter Set <span style='font-size:10px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition version coming</span></td><td class='num'>$114</td><td style='font-size:11px;color:var(--muted)'>Warcry Starter</td><td class='num'><span class='badge badge-mid'>Transitional ⚡</span></td></tr>
+<tr><td>Getting Started with Warhammer 40,000 <span style='font-size:10px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition version coming</span></td><td class='num'>$20</td><td style='font-size:11px;color:var(--muted)'>40k Starter</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td></tr>
+<tr><td>40k Paints + Tools Set</td><td class='num'>$0</td><td style='font-size:11px;color:var(--muted)'>40k Starter</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+</tbody>
     </table>
     <p class="data-note">
-      "Not Listed" = product URL not found on site (retired box replaced by newer edition, or upcoming release not yet live).
-      Source: warhammer.com, checked 2026-05-02.
+      ⚡ <em>Transitional</em> = GW status code P — product still purchasable but actively transitioning to a new
+      edition version. Multiple 40k starters showing Transitional may signal an imminent new edition launch.
+      ⚠ = Last Chance to Buy (GW flagging end-of-line). Source: warhammer.com, 2026-05-02.
+    </p>
+  </div>
+
+  <!-- ── C: OOS by Game System ─────────────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:var(--muted);margin-bottom:12px;">
+      OOS Products by Game System — 2026-05-02
+    </h3>
+    <table style="max-width:460px">
+      <tbody><tr><td style='width:150px;font-size:12px;padding-right:12px'>40k</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>140</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>AoS</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:84%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>118</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>Horus Heresy</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:35%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>49</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>The Old World</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:15%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>21</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>Specialty Games</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:54%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>75</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>Middle-Earth</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:52%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>73</td></tr>
+<tr><td style='width:150px;font-size:12px;padding-right:12px'>Other</td><td style='width:220px'><div style='background:#c0392b;height:11px;width:25%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:40px'>35</td></tr>
+</tbody>
+    </table>
+    <p class="data-note">
+      511 products currently OOS sitewide. High OOS count across a game system signals
+      broad sustained demand — GW's production is undershooting sell-through across that range.
+    </p>
+  </div>
+
+  <!-- ── D: Top OOS Products by Price ──────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:var(--muted);margin-bottom:12px;">
+      Highest-Price OOS Products
+      <span style="font-weight:400;font-size:10px"> — premium items sold out = high-spend consumer demand</span>
+    </h3>
+    <table>
+      <thead>
+        <tr><th>Product</th><th class="num">Price</th><th>System</th></tr>
+      </thead>
+      <tbody><tr><td>Manta</td><td class='num'>$2080</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Sokar Stormbird</td><td class='num'>$1580</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td></tr>
+<tr><td>Acastus Knight Porphyrion</td><td class='num'>$710</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Chaos Warhound Scout Titan</td><td class='num'>$695</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Acastus Knight Asterius</td><td class='num'>$660</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Mastodon Super-Heavy Assault Transport</td><td class='num'>$650</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td></tr>
+<tr><td>Legio Custodes Orion Assault Dropship</td><td class='num'>$575</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td></tr>
+<tr><td>Legio Custodes Ares Gunship</td><td class='num'>$575</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td></tr>
+<tr><td>Tyranid Harridan</td><td class='num'>$535</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Ork Gargantuan Squiggoth</td><td class='num'>$530</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Astraeus Super-heavy Tank</td><td class='num'>$435</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Seraptek Heavy Construct with Synaptic Obliterators</td><td class='num'>$400</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Cerastus Knight Atrapos</td><td class='num'>$370</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>T’au Tiger Shark AX-1-0</td><td class='num'>$330</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Rohan™ Stronghold</td><td class='num'>$322</td><td style='font-size:11px;color:var(--muted)'>Middle-Earth</td></tr>
+<tr><td>Armageddon Battalion: Astra Militarum</td><td class='num'>$255</td><td style='font-size:11px;color:var(--muted)'>40k</td></tr>
+<tr><td>Storm Eagle Assault Gunship</td><td class='num'>$240</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td></tr>
+<tr><td>Spearhead: City of Ash <span style='font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);padding:1px 4px;border-radius:3px'>NEW</span></td><td class='num'>$220</td><td style='font-size:11px;color:var(--muted)'>AoS</td></tr>
+<tr><td>Gatebreaker Mega-Gargant</td><td class='num'>$215</td><td style='font-size:11px;color:var(--muted)'>AoS</td></tr>
+<tr><td>Kraken-eater Mega-Gargant</td><td class='num'>$215</td><td style='font-size:11px;color:var(--muted)'>AoS</td></tr>
+</tbody>
+    </table>
+    <p class="data-note">
+      Top 20 OOS products (&gt;$30) sorted by price.
+      <span style="font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);
+            padding:1px 4px;border-radius:3px">NEW</span> = flagged as new release.
+      Source: warhammer.com Algolia index, 2026-05-02.
     </p>
   </div>
 
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
-    When GW products go Out of Stock on their own website it means sell-through exceeded production capacity — the definition of excess demand. Starter Sets are the most investment-relevant signal: OOS there means new players (not existing hobbyists) are driving demand at the top of the funnel. Combat Patrol OOS by faction signals which armies are hot, which feeds into future kit releases and codex cadence. Tracking this daily builds a proprietary dataset no analyst report captures.
+    GW operates a pull-based manufacturing model — low buffer stock, produced against forecasted demand.
+    When products go Out of Stock on warhammer.com, sell-through genuinely exceeded supply planning.
+    The highest-conviction signal is <strong>new releases going OOS within weeks of launch</strong>:
+    this reflects unambiguous consumer demand pull, not channel stuffing or promotional pricing effects.
+    Currently <strong>511 products are OOS sitewide</strong>, with <strong>9 being new releases</strong>
+    (sorted by price above). Tracking this daily builds a proprietary dataset: as OOS counts climb over time,
+    they are direct leading indicators of revenue upside — GW can raise prices, accelerate SKU cadence,
+    and expand retail distribution once sustained excess demand is confirmed across multiple data points.
   </div>
 </section>
 

@@ -1,313 +1,286 @@
 """
 fetch_gw_stock.py
 ─────────────────
-Scrape GW website stock status for all products in config/gw_starter_products.csv.
-Appends a daily snapshot to data/gw_stock_daily.csv.
-Deduplicates on (date, slug) so re-running the same day is safe.
+Pulls targeted GW product data from their Algolia search index and logs daily
+stock snapshots. No Playwright, no WAF, no per-product scraping loops.
 
-Method (hybrid approach):
-  1. Launch a headless Chromium browser (Playwright) once to solve the AWS WAF
-     JavaScript challenge and extract the aws-waf-token cookie + Next.js buildId.
-  2. Use that cookie in regular requests against the fast JSON endpoint:
-       /_next/data/{buildId}/en-US/shop/{slug}.json
-     No browser needed per product — typically < 1s per request.
+Algolia credentials are public/search-only (embedded in GW's frontend JS).
 
-Stock status codes:
-  A = Available (in stock, normal)
-  P = Phased   (transitional — still purchasable if calculatedIsAvailableFlag=true)
-  O = Obsolete / discontinued
-  G = Made-to-Order
+Strategy: instead of fetching all 3,700+ products (the search-only key is
+capped at 1,000 per query), we run focused queries for what matters:
+  1. ALL out-of-stock products sitewide  — the core signal
+  2. All new releases                   — time-sensitive sell-out signal
+  3. Selling fast / last chance items   — directional indicators
+  4. Specific starter set slugs         — investment priority watchlist
+  5. Kill Team + specialty game boxes   — hobby breadth signal
+
+Output files:
+  data/gw_stock_daily.csv    — one row per (date, slug): OOS products + starters + new releases
+  data/gw_stock_summary.csv  — one row per date: aggregate counts by game system
 """
 
-import os, re, csv, time
+import json, time, requests
 from pathlib import Path
 from datetime import date
 
-import requests
 import pandas as pd
 
-try:
-    from playwright.sync_api import sync_playwright
-    HAS_PLAYWRIGHT = True
-except ImportError:
-    HAS_PLAYWRIGHT = False
+# ── Algolia (public search-only key from GW's own frontend JS) ────────────────
+ALGOLIA_APP_ID  = "M5ZIQZNQ2H"
+ALGOLIA_API_KEY = "92c6a8254f9d34362df8e6d96475e5d8"
+ALGOLIA_INDEX   = "prod-lazarus-product-en-us"
+ALGOLIA_URL     = f"https://{ALGOLIA_APP_ID.lower()}-dsn.algolia.net/1/indexes/{ALGOLIA_INDEX}/query"
+ALGOLIA_HEADERS = {
+    "x-algolia-application-id": ALGOLIA_APP_ID,
+    "x-algolia-api-key":        ALGOLIA_API_KEY,
+    "Content-Type":             "application/json",
+}
+ATTRS = [
+    "name", "slug", "price", "sku",
+    "isInStock", "isAvailable", "statusCode",
+    "isLastChanceToBuy", "isSellingFast", "isMadeToOrder",
+    "isNewRelease", "isPreOrder", "isAvailableWhileStocksLast",
+    "isWebstoreExclusive", "productType", "GameSystemsRoot",
+]
+
+# ── High-priority watchlist (always check these regardless of OOS status) ─────
+STARTER_WATCHLIST = {
+    "warhammer-40000-introductory-set-2023-eng": ("40k Introductory Set",        "40k Starter",      "high"),
+    "warhammer-40000-starter-set-2023-eng":      ("40k Starter Set",             "40k Starter",      "high"),
+    "warhammer-40000-ultimate-starter-set-2023-eng": ("40k Combat Patrol Starter Set","40k Starter",  "high"),
+    "age-of-sigmar-starter-set-2024-eng":        ("AoS Starter Set",             "AoS Starter",      "high"),
+    "age-of-sigmar-ultimate-starter-set-2024-eng":("AoS Spearhead Starter Set",  "AoS Starter",      "high"),
+    "kill-team-starter-set-2024-eng":            ("Kill Team Starter Set",        "Kill Team Starter","high"),
+    "warcry-crypt-of-blood-2023-eng":            ("Warcry: Crypt of Blood",       "Warcry Starter",   "medium"),
+    "warhammer-40000-paints-tools-set-2023":     ("40k Paints + Tools Set",       "40k Starter",      "medium"),
+    "getting-started-with-warhammer-40k-2023-eng":("Getting Started with 40k",   "40k Starter",      "medium"),
+}
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-
-ROOT = Path(__file__).parent.parent
-CFG  = ROOT / "config" / "gw_starter_products.csv"
-OUT  = ROOT / "data" / "gw_stock_daily.csv"
-OUT.parent.mkdir(exist_ok=True)
-
-BASE_URL   = "https://www.warhammer.com"
-LOCALE     = "en-US"
-BROWSER_UA = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-)
-DELAY_SECS  = 0.8   # polite delay between JSON requests
-WAF_WAIT_MS = 8000  # ms to wait for WAF JS challenge to resolve
-TIMEOUT     = 25
+ROOT        = Path(__file__).parent.parent
+OUT_DAILY   = ROOT / "data" / "gw_stock_daily.csv"
+OUT_SUMMARY = ROOT / "data" / "gw_stock_summary.csv"
+OUT_DAILY.parent.mkdir(exist_ok=True)
 
 today = str(date.today())
 
-# ── Step 1: Playwright — solve WAF + get buildId ──────────────────────────────
+# ── Algolia query helper ──────────────────────────────────────────────────────
 
-def get_waf_cookie_and_build_id() -> tuple[dict | None, str | None]:
-    """
-    Launch a headless browser, load the shop homepage, wait for the AWS WAF
-    JS challenge to complete, then return (waf_cookie_dict, buildId).
-    """
-    if not HAS_PLAYWRIGHT:
-        raise SystemExit(
-            "Playwright is not installed. Run: pip install playwright && playwright install chromium"
-        )
-
-    print("Launching browser to solve WAF challenge (one-time, ~10s)...")
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
-        context = browser.new_context(
-            user_agent=BROWSER_UA,
-            viewport={"width": 1280, "height": 800},
-            locale="en-US",
-        )
-        page = context.new_page()
-        # Remove the navigator.webdriver fingerprint
-        page.add_init_script(
-            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
-        )
-        page.goto(f"{BASE_URL}/{LOCALE}/shop", timeout=45000)
-        page.wait_for_timeout(WAF_WAIT_MS)
-
-        content = page.content()
-        build_id_match = re.search(r'"buildId"\s*:\s*"([^"]+)"', content)
-        build_id = build_id_match.group(1) if build_id_match else None
-
-        all_cookies = context.cookies()
-        waf_cookie  = next(
-            (c for c in all_cookies if "waf" in c["name"].lower() or "aws" in c["name"].lower()),
-            None,
-        )
-        browser.close()
-
-    return waf_cookie, build_id
-
-
-# ── Step 2: Parse stock from _next/data JSON ──────────────────────────────────
-
-def _attr_value(attrs_raw: list, key: str) -> str:
-    """Extract the English value for a product attribute key."""
-    for attr in attrs_raw:
-        if attr.get("name") == key:
-            v = attr.get("value")
-            if isinstance(v, dict):
-                return v.get("en-US") or v.get("en-GB") or next(iter(v.values()), "")
-            if isinstance(v, list):
-                for item in v:
-                    if isinstance(item, dict):
-                        return item.get("en-US") or next(iter(item.values()), "")
-            return str(v) if v is not None else ""
-    return ""
-
-
-def parse_stock(data: dict) -> dict:
-    """Walk Next.js pageProps to find stock attributes."""
-    result = {
-        "is_in_stock": None, "stock_status": None,
-        "is_available": None, "last_chance": None,
-        "selling_fast": None, "parse_ok": False,
+def algolia_query(query_str: str = "", filters: str = "", n: int = 1000) -> list[dict]:
+    body = {
+        "query":                query_str,
+        "filters":              filters,
+        "hitsPerPage":          n,
+        "attributesToRetrieve": ATTRS,
     }
-    try:
-        attrs_raw = (
-            data.get("pageProps", {})
-            .get("context", {})
-            .get("productInformation", {})
-            .get("inStore", {})
-            .get("product", {})
-            .get("masterData", {})
-            .get("current", {})
-            .get("masterVariant", {})
-            .get("attributesRaw", [])
-        )
-        if not attrs_raw:
-            # Alternate path: first variant
-            attrs_raw = (
-                data.get("pageProps", {})
-                .get("context", {})
-                .get("productInformation", {})
-                .get("inStore", {})
-                .get("product", {})
-                .get("masterData", {})
-                .get("current", {})
-                .get("variants", [{}])[0]
-                .get("attributesRaw", [])
-            )
-        if attrs_raw:
-            result["is_in_stock"]  = _attr_value(attrs_raw, "calculatedIsOnStockFlag")
-            result["stock_status"] = _attr_value(attrs_raw, "calculatedStockStatus")
-            result["is_available"] = _attr_value(attrs_raw, "calculatedIsAvailableFlag")
-            result["last_chance"]  = _attr_value(attrs_raw, "lastChanceToBuy")
-            result["selling_fast"] = _attr_value(attrs_raw, "calculatedIsSellingFastFlag")
-            result["parse_ok"]     = True
-    except Exception as e:
-        result["parse_error"] = str(e)
-    return result
+    r = requests.post(ALGOLIA_URL, headers=ALGOLIA_HEADERS, json=body, timeout=20)
+    r.raise_for_status()
+    data = r.json()
+    return data.get("hits", []), data.get("nbHits", 0)
 
 
-def fetch_product(slug: str, session: requests.Session, build_id: str) -> dict:
-    """Fetch stock status for one product via the JSON endpoint."""
-    url = f"{BASE_URL}/_next/data/{build_id}/{LOCALE}/shop/{slug}.json"
-    out = {
-        "slug": slug, "http_status": None,
-        "is_in_stock": None, "stock_status": None,
-        "is_available": None, "last_chance": None,
-        "selling_fast": None, "parse_ok": False,
+def get_system(h: dict) -> str:
+    """Return the primary game system label for an Algolia hit."""
+    gs = h.get("GameSystemsRoot", "")
+    if isinstance(gs, dict):
+        return str(gs.get("lvl0", "Other"))
+    if isinstance(gs, str):
+        return gs or "Other"
+    if isinstance(gs, list):
+        # Algolia stores this as a flat list of strings like
+        # ["Warhammer 40,000"] or ["Age of Sigmar", "Other Games"]
+        for g in gs:
+            if isinstance(g, str) and g:
+                return g         # first non-empty string wins
+            if isinstance(g, dict) and "lvl0" in g:
+                return str(g["lvl0"])
+        return "Other"
+    return "Other"
+
+
+def hit_to_row(h: dict, category: str = "", priority: str = "") -> dict:
+    system = get_system(h)
+    # Normalise game system name
+    SYSTEM_MAP = {
+        "Warhammer 40,000":  "40k",
+        "Age of Sigmar":     "AoS",
+        "The Horus Heresy":  "Horus Heresy",
+        "The Old World":     "The Old World",
+        "Other Games":       "Specialty Games",
+        "Middle-Earth":      "Middle-Earth",
     }
-    try:
-        r = session.get(url, timeout=TIMEOUT)
-        out["http_status"] = r.status_code
-        if r.status_code == 200 and len(r.content) > 500:
-            data = r.json()
-            if data.get("notFound"):
-                out["stock_status"] = "NOT_FOUND"
-            else:
-                out.update(parse_stock(data))
-        elif r.status_code == 404:
-            out["stock_status"] = "NOT_FOUND"
-    except Exception as e:
-        out["parse_error"] = str(e)
-    return out
+    system_short = SYSTEM_MAP.get(system, system)
+    return {
+        "date":            today,
+        "slug":            h.get("slug", ""),
+        "name":            h.get("name", ""),
+        "game_system":     system_short,
+        "category":        category or system_short,
+        "priority":        priority,
+        "price_usd":       h.get("price", 0) or 0,
+        "in_stock":        str(h.get("isInStock",   False)).lower(),
+        "is_available":    str(h.get("isAvailable", False)).lower(),
+        "status_code":     h.get("statusCode", ""),
+        "is_last_chance":  str(h.get("isLastChanceToBuy", False)).lower(),
+        "is_selling_fast": str(h.get("isSellingFast",     False)).lower(),
+        "is_new_release":  str(h.get("isNewRelease",      False)).lower(),
+        "is_preorder":     str(h.get("isPreOrder",        False)).lower(),
+        "is_mto":          str(h.get("isMadeToOrder",     False)).lower(),
+        "product_type":    h.get("productType", ""),
+        "source":          "algolia",
+    }
 
 
-# ── Interpret raw flags into a human-readable label ───────────────────────────
+# ── Fetch all signal categories ───────────────────────────────────────────────
 
-STATUS_MAP = {
-    "A": "In Stock",
-    "P": "Transitional",
-    "O": "Discontinued",
-    "G": "Made-to-Order",
-}
+print(f"GW Stock Fetcher (Algolia) — {today}")
+all_rows: dict[str, dict] = {}   # slug → row (dedupe within this run)
 
-def interpret(result: dict) -> tuple[str, str]:
-    """Return (in_stock_bool_str, display_label)."""
-    raw_status = result.get("stock_status") or ""
-    raw_flag   = (result.get("is_in_stock")  or "").lower()
-    raw_avail  = (result.get("is_available")  or "").lower()
+# 1 ── All out-of-stock products (any price, any system)
+print("  [1/4] Out-of-stock products sitewide...")
+oos_hits, oos_total = algolia_query(filters="isInStock:false AND price > 15")
+print(f"        {oos_total} OOS products found (fetched {len(oos_hits)})")
+for h in oos_hits:
+    row = hit_to_row(h, category="OOS Product")
+    all_rows[row["slug"]] = row
 
-    if raw_status == "NOT_FOUND":
-        return "unknown", "NOT FOUND"
-    if not result.get("parse_ok"):
-        return "error", f"ERROR (HTTP {result.get('http_status')})"
+time.sleep(0.3)
 
-    # In stock = available flag true AND status is purchasable (A or P)
-    is_in = raw_avail == "true" and raw_status in ("A", "P")
-    bool_str = "true" if is_in else "false"
-    label = STATUS_MAP.get(raw_status, raw_status or "Unknown")
-    if not is_in and raw_status not in ("O", "G", "NOT_FOUND"):
-        label = "Out of Stock"
-    if result.get("last_chance", "").lower() == "true":
-        label += " (Last Chance)"
-    if result.get("selling_fast", "").lower() == "true" and is_in:
-        label += " (Selling Fast)"
-    return bool_str, label
+# 2 ── New releases (whether in stock or not — we want to track sell-out speed)
+print("  [2/4] New releases...")
+nr_hits, nr_total = algolia_query(filters="isNewRelease:true AND price > 15")
+print(f"        {nr_total} new releases")
+nr_oos = 0
+for h in nr_hits:
+    slug = h.get("slug", "")
+    row = hit_to_row(h, category="New Release")
+    if not h.get("isInStock"): nr_oos += 1
+    # Don't overwrite OOS rows; new release info is additive
+    if slug not in all_rows:
+        all_rows[slug] = row
+    else:
+        all_rows[slug]["is_new_release"] = "true"
+        all_rows[slug]["category"] = "New Release (OOS)"
+print(f"        {nr_oos} new releases already OOS")
 
+time.sleep(0.3)
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# 3 ── Selling fast flag
+print("  [3/4] Selling fast + last chance...")
+sf_hits, sf_total = algolia_query(filters="isSellingFast:true")
+for h in sf_hits:
+    slug = h.get("slug", "")
+    if slug in all_rows:
+        all_rows[slug]["is_selling_fast"] = "true"
+lc_hits, lc_total = algolia_query(filters="isLastChanceToBuy:true")
+for h in lc_hits:
+    slug = h.get("slug", "")
+    if slug in all_rows:
+        all_rows[slug]["is_last_chance"] = "true"
+print(f"        {sf_total} selling fast | {lc_total} last chance")
 
-products = []
-with open(CFG, newline="") as f:
-    for row in csv.DictReader(f):
-        products.append({k: v.strip() for k, v in row.items()})
+time.sleep(0.3)
 
-print(f"GW Stock Fetcher — {today}")
-print(f"Products to check: {len(products)}\n")
+# 4 ── Starter watchlist (always fetch, in stock or not)
+print("  [4/4] Starter set watchlist...")
+for slug, (name, category, priority) in STARTER_WATCHLIST.items():
+    hits, _ = algolia_query(query_str=name, n=5)
+    matched = next((h for h in hits if h.get("slug") == slug), None)
+    if matched is None:
+        # Search by slug fragment
+        hits2, _ = algolia_query(query_str=slug.replace("-", " "), n=5)
+        matched = next((h for h in hits2 if h.get("slug") == slug), None)
+    if matched:
+        row = hit_to_row(matched, category=category, priority=priority)
+        all_rows[slug] = row  # always overwrite to ensure latest status
+        status = "✅" if matched.get("isInStock") else "🔴"
+        trans  = " [TRANSITIONAL]" if matched.get("statusCode") == "P" else ""
+        print(f"        {status} ${matched.get('price',0):<6.0f} {name}{trans}")
+    else:
+        # Not found in Algolia — product retired or slug changed
+        all_rows[slug] = {
+            "date": today, "slug": slug, "name": name,
+            "game_system": category.split()[0], "category": category,
+            "priority": priority, "price_usd": 0,
+            "in_stock": "unknown", "is_available": "unknown",
+            "status_code": "NOT_FOUND", "is_last_chance": "false",
+            "is_selling_fast": "false", "is_new_release": "false",
+            "is_preorder": "false", "is_mto": "false",
+            "product_type": "", "source": "algolia",
+        }
+        print(f"        ⚪ NOT FOUND  {name}")
+    time.sleep(0.2)
 
-# Get WAF cookie and buildId (one browser launch)
-waf_cookie, build_id = get_waf_cookie_and_build_id()
+# ── Save daily detail ─────────────────────────────────────────────────────────
+rows_list = list(all_rows.values())
+new_df = pd.DataFrame(rows_list)
 
-if not build_id:
-    raise SystemExit("Could not retrieve Next.js buildId — site may have changed.")
-if not waf_cookie:
-    raise SystemExit("Could not retrieve AWS WAF token — browser challenge failed.")
-
-print(f"  ✓ buildId:   {build_id}")
-print(f"  ✓ WAF token: {waf_cookie['name']}=...{waf_cookie['value'][-8:]}\n")
-
-# Build a requests session with WAF cookie
-sess = requests.Session()
-sess.headers.update({
-    "User-Agent": BROWSER_UA,
-    "Accept": "application/json, */*",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": f"{BASE_URL}/{LOCALE}/shop",
-})
-sess.cookies.set(
-    waf_cookie["name"],
-    waf_cookie["value"],
-    domain=waf_cookie.get("domain", ".warhammer.com"),
-)
-
-# Fetch each product
-rows = []
-print(f"  {'Product':<52}  Status")
-print(f"  {'─'*52}  {'─'*22}")
-
-for i, prod in enumerate(products):
-    slug = prod["slug"]
-    print(f"  [{i+1:02d}/{len(products)}] {prod['name'][:46]:<48}", end="", flush=True)
-
-    result = fetch_product(slug, sess, build_id)
-    in_stock_bool, display = interpret(result)
-    print(display)
-
-    rows.append({
-        "date":         today,
-        "slug":         slug,
-        "name":         prod["name"],
-        "category":     prod["category"],
-        "priority":     prod["priority"],
-        "in_stock":     in_stock_bool,
-        "stock_status": result.get("stock_status") or "",
-        "is_available": (result.get("is_available") or "").lower(),
-        "last_chance":  (result.get("last_chance")  or "").lower(),
-        "selling_fast": (result.get("selling_fast")  or "").lower(),
-        "http_status":  result.get("http_status"),
-        "build_id":     build_id,
-        "source":       "live",
-    })
-    time.sleep(DELAY_SECS)
-
-# Save with dedup
-new_df = pd.DataFrame(rows)
-if OUT.exists():
-    existing = pd.read_csv(OUT, dtype=str)
+if OUT_DAILY.exists():
+    existing = pd.read_csv(OUT_DAILY, dtype=str)
+    # Drop today's rows then re-add fresh
+    existing = existing[existing["date"] != today]
     combined = pd.concat([existing, new_df], ignore_index=True)
-    combined = combined.drop_duplicates(subset=["date", "slug"], keep="last")
 else:
     combined = new_df
 
-combined.to_csv(OUT, index=False)
-print(f"\n✓ Saved {len(rows)} rows → {OUT.relative_to(ROOT)}")
+combined.to_csv(OUT_DAILY, index=False)
 
-# Summary
-valid = new_df[new_df["in_stock"].isin(["true", "false"])]
-n_total = len(valid)
-n_in    = (valid["in_stock"] == "true").sum()
-n_out   = (valid["in_stock"] == "false").sum()
-oos_pct = round(100 * n_out / n_total, 1) if n_total else 0
+# ── Summary row ───────────────────────────────────────────────────────────────
+SYSTEMS = ["40k", "AoS", "Horus Heresy", "The Old World", "Specialty Games", "Middle-Earth"]
 
-print(f"\n── Snapshot Summary ───────────────────────────────────")
-print(f"  In Stock:     {n_in:3d} / {n_total}")
-print(f"  Out of Stock: {n_out:3d} / {n_total}")
-print(f"  OOS Rate:     {oos_pct}%")
+summary = {
+    "date":                 today,
+    "total_oos":            int((new_df["in_stock"] == "false").sum()),
+    "new_releases_total":   int((new_df["is_new_release"] == "true").sum()),
+    "new_releases_oos":     int(((new_df["is_new_release"] == "true") & (new_df["in_stock"] == "false")).sum()),
+    "last_chance_total":    int((new_df["is_last_chance"] == "true").sum()),
+    "selling_fast_total":   int((new_df["is_selling_fast"] == "true").sum()),
+    "starter_40k_in_stock": int(((new_df["category"].str.contains("40k Starter", na=False)) & (new_df["in_stock"] == "true")).sum()),
+    "starter_40k_oos":      int(((new_df["category"].str.contains("40k Starter", na=False)) & (new_df["in_stock"] == "false")).sum()),
+    "starter_aos_in_stock": int(((new_df["category"].str.contains("AoS Starter", na=False)) & (new_df["in_stock"] == "true")).sum()),
+    "starter_aos_oos":      int(((new_df["category"].str.contains("AoS Starter", na=False)) & (new_df["in_stock"] == "false")).sum()),
+}
+for gs in SYSTEMS:
+    sub = new_df[new_df["game_system"] == gs]
+    summary[f"oos_{gs.lower().replace(' ','_').replace('-','_')}"] = int((sub["in_stock"] == "false").sum())
 
-high_oos = new_df[(new_df["in_stock"] == "false") & (new_df["priority"] == "high")]
-if not high_oos.empty:
-    print(f"\n  ⚠  HIGH-PRIORITY OOS:")
-    for _, r in high_oos.iterrows():
-        print(f"     • {r['name']}")
+sum_df = pd.DataFrame([summary])
+if OUT_SUMMARY.exists():
+    existing_sum = pd.read_csv(OUT_SUMMARY, dtype=str)
+    existing_sum = existing_sum[existing_sum["date"] != today]
+    combined_sum = pd.concat([existing_sum, sum_df], ignore_index=True)
 else:
-    print("\n  ✓ All high-priority starter sets are in stock.")
+    combined_sum = sum_df
+combined_sum.to_csv(OUT_SUMMARY, index=False)
+
+# ── Print summary ─────────────────────────────────────────────────────────────
+print(f"\n── Snapshot Summary ({today}) ────────────────────────────────────────")
+print(f"  Total OOS products logged:   {summary['total_oos']}")
+print(f"  New releases:               {summary['new_releases_total']} total, {summary['new_releases_oos']} already OOS")
+print(f"  Last chance to buy:         {summary['last_chance_total']}")
+print(f"  Selling fast:               {summary['selling_fast_total']}")
+
+print(f"\n── OOS by Game System ────────────────────────────────────────────────")
+for gs in SYSTEMS:
+    col = f"oos_{gs.lower().replace(' ','_').replace('-','_')}"
+    n   = summary.get(col, 0)
+    bar = "█" * min(int(n / 3), 30)
+    print(f"  {gs:<20} {n:>4} OOS  {bar}")
+
+print(f"\n── Starter Set Status (Investment Priority) ──────────────────────────")
+starters = new_df[new_df["priority"].isin(["high","medium"])].sort_values(["priority","name"])
+for _, r in starters.iterrows():
+    icon = "✅" if r["in_stock"] == "true" else ("🔴" if r["in_stock"] == "false" else "⚪")
+    trans = " [TRANSITIONAL]" if r.get("status_code","") == "P" else ""
+    print(f"  {icon} ${float(r['price_usd'] or 0):<6.0f}  {r['name']}{trans}")
+
+print(f"\n── New Releases Already OOS ──────────────────────────────────────────")
+nr_oos_df = new_df[(new_df["is_new_release"] == "true") & (new_df["in_stock"] == "false")].sort_values("price_usd", ascending=False)
+if nr_oos_df.empty:
+    print("  (none)")
+else:
+    for _, r in nr_oos_df.head(15).iterrows():
+        print(f"  ${float(r['price_usd']):<6.0f}  {r['name'][:60]}  [{r['game_system']}]")
+
+print(f"\n✓ {len(rows_list)} rows → {OUT_DAILY.relative_to(ROOT)}")
+print(f"✓ Summary → {OUT_SUMMARY.relative_to(ROOT)}")

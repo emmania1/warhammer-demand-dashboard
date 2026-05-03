@@ -1586,7 +1586,7 @@ def build_executive_summary(yoy, eci_map, velocity, struct_class, ecosystem,
 # ════════════════════════════════════════════════════════════════════════════
 
 def build_gw_stock_page(gw_stock_df) -> str:
-    """Build Page 8 HTML: GW Website Product Availability tracker."""
+    """Build Page 8 HTML: GW Website Stock Availability (Algolia sitewide data)."""
 
     if gw_stock_df is None or gw_stock_df.empty:
         return ""
@@ -1596,80 +1596,165 @@ def build_gw_stock_page(gw_stock_df) -> str:
     n_days      = gw_stock_df["date"].nunique()
     latest      = gw_stock_df[gw_stock_df["date"] == latest_date].copy()
 
-    valid     = latest[latest["in_stock"].isin(["true", "false"])]
-    n_tracked = len(latest)
-    n_in      = int((valid["in_stock"] == "true").sum())
-    n_out     = int((valid["in_stock"] == "false").sum())
-    n_unknown = n_tracked - len(valid)
-    oos_pct   = round(100 * n_out / len(valid), 1) if len(valid) else 0
+    # ── Parse game_system from CSV string repr e.g. "['Warhammer 40,000']" ─
+    ALGOLIA_SYSTEM_MAP = {
+        "Warhammer 40,000":  "40k",
+        "Age of Sigmar":     "AoS",
+        "The Horus Heresy":  "Horus Heresy",
+        "The Old World":     "The Old World",
+        "Other Games":       "Specialty Games",
+        "Middle-Earth":      "Middle-Earth",
+    }
+
+    def parse_game_system(raw):
+        s = str(raw or "").strip()
+        if not s or s in ("", "nan", "Other"):
+            return "Other"
+        if s.startswith("["):
+            # e.g. "['Warhammer 40,000', 'The Horus Heresy']"
+            # Extract first quoted item (avoids splitting on comma inside name)
+            inner = s.strip("[]")
+            if "'" in inner:
+                start = inner.index("'") + 1
+                end   = inner.index("'", start)
+                first = inner[start:end]
+            else:
+                first = inner.strip().strip('"')
+            return ALGOLIA_SYSTEM_MAP.get(first, first)
+        return ALGOLIA_SYSTEM_MAP.get(s, s)
+
+    latest["game_system_clean"] = latest["game_system"].apply(parse_game_system)
+
+    # ── Counts ────────────────────────────────────────────────────────────
+    oos_all  = latest[latest["in_stock"] == "false"]
+    n_oos    = len(oos_all)
+    n_new_rel = int((latest["is_new_release"].str.lower() == "true").sum())
+    n_nr_oos  = int(
+        ((latest["is_new_release"].str.lower() == "true") & (latest["in_stock"] == "false")).sum()
+    )
+    n_lc = int((latest["is_last_chance"].str.lower() == "true").sum())
+    n_sf = int((latest["is_selling_fast"].str.lower() == "true").sum())
 
     # ── Badge helper ──────────────────────────────────────────────────────
     def stock_badge(row):
-        status   = str(row.get("stock_status", "") or "")
-        in_stock = str(row.get("in_stock", "")     or "")
-        avail    = str(row.get("is_available", "") or "")
-        if status == "NOT_FOUND":
+        sc       = str(row.get("status_code", "") or "")
+        in_stock = str(row.get("in_stock",    "") or "")
+        if sc == "NOT_FOUND":
             return "<span class='badge badge-dim'>Not Listed</span>"
-        if in_stock == "true" and status == "A":
+        if in_stock == "true"  and sc == "A":
             return "<span class='badge badge-up'>In Stock</span>"
-        if in_stock == "true" and status == "P":
-            return "<span class='badge badge-mid'>Transitional</span>"
-        if in_stock == "false" and status in ("A", "P", ""):
+        if in_stock == "true"  and sc == "P":
+            return "<span class='badge badge-mid'>Transitional ⚡</span>"
+        if in_stock == "false":
             return "<span class='badge badge-dn'>Out of Stock</span>"
-        if status == "O":
+        if sc == "O":
             return "<span class='badge badge-dim'>Discontinued</span>"
-        if status == "G":
+        if sc == "G":
             return "<span class='badge badge-mid'>Made-to-Order</span>"
-        if in_stock == "error":
-            return "<span class='badge badge-dim'>Error</span>"
+        if in_stock == "true":
+            return "<span class='badge badge-up'>In Stock</span>"
         return "<span class='badge badge-dim'>Unknown</span>"
 
-    def flags(row):
-        out = ""
-        if str(row.get("last_chance",  "") or "").lower() == "true":
-            out += " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>"
-        if str(row.get("selling_fast", "") or "").lower() == "true":
-            out += " <span title='Selling Fast' style='color:#e74c3c'>🔥</span>"
-        return out
+    # ── Section A: New Releases Already OOS ──────────────────────────────
+    nr_oos_df = latest[
+        (latest["is_new_release"].str.lower() == "true") & (latest["in_stock"] == "false")
+    ].copy()
+    nr_oos_df["price_usd"] = pd.to_numeric(nr_oos_df["price_usd"], errors="coerce").fillna(0)
+    nr_oos_df = nr_oos_df.sort_values("price_usd", ascending=False)
 
-    # ── Build table rows by group ─────────────────────────────────────────
-    starters = latest[latest["priority"] == "high"].sort_values("name")
-    patrols  = latest[latest["priority"] != "high"].sort_values("name")
+    nr_oos_rows = ""
+    for _, r in nr_oos_df.iterrows():
+        gs = r.get("game_system_clean", "?")
+        nr_oos_rows += (
+            f"<tr>"
+            f"<td><strong>{r['name']}</strong></td>"
+            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
+            f"<td class='num'>{stock_badge(r)}</td>"
+            f"</tr>\n"
+        )
+    if not nr_oos_rows:
+        nr_oos_rows = "<tr><td colspan='4' style='text-align:center;color:var(--muted)'>No new releases currently OOS</td></tr>"
 
-    def make_rows(df_group):
-        rows = ""
-        for _, r in df_group.iterrows():
-            rows += (
-                f"<tr>"
-                f"<td>{r['name']}{flags(r)}</td>"
-                f"<td class='num'>{stock_badge(r)}</td>"
-                f"</tr>\n"
-            )
-        return rows
+    # ── Section B: Starter Watchlist ──────────────────────────────────────
+    watchlist = latest[latest["priority"].isin(["high", "medium"])].copy()
+    watchlist["price_usd"] = pd.to_numeric(watchlist["price_usd"], errors="coerce").fillna(0)
+    watchlist = watchlist.sort_values(["priority", "price_usd"], ascending=[True, False])
 
-    starter_rows = make_rows(starters)
-    patrol_rows  = make_rows(patrols)
+    starter_rows = ""
+    for _, r in watchlist.iterrows():
+        note = ""
+        if str(r.get("status_code", "")) == "P":
+            note = (" <span style='font-size:10px;color:#e67e22;"
+                    "background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>"
+                    "new edition version coming</span>")
+        lc_flag = " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>" \
+                  if str(r.get("is_last_chance", "")).lower() == "true" else ""
+        starter_rows += (
+            f"<tr>"
+            f"<td>{r['name']}{note}{lc_flag}</td>"
+            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{r.get('category', '')}</td>"
+            f"<td class='num'>{stock_badge(r)}</td>"
+            f"</tr>\n"
+        )
 
-    # ── OOS rate trend (if >1 day of data) ───────────────────────────────
-    trend_html = ""
+    # ── Section C: OOS by Game System (bar table) ─────────────────────────
+    SYSTEM_ORDER = ["40k", "AoS", "Horus Heresy", "The Old World", "Specialty Games", "Middle-Earth", "Other"]
+    oos_all_clean = oos_all.copy()
+    oos_all_clean["game_system_clean"] = oos_all_clean["game_system"].apply(parse_game_system)
+    sys_counts = oos_all_clean["game_system_clean"].value_counts()
+    max_sys    = int(sys_counts.max()) if len(sys_counts) else 1
+
+    sys_bars = ""
+    for gs in SYSTEM_ORDER:
+        cnt = int(sys_counts.get(gs, 0))
+        bar_w = f"{round(100 * cnt / max_sys)}%" if max_sys else "0%"
+        sys_bars += (
+            f"<tr>"
+            f"<td style='width:150px;font-size:12px;padding-right:12px'>{gs}</td>"
+            f"<td style='width:220px'>"
+            f"<div style='background:#c0392b;height:11px;width:{bar_w};border-radius:2px;min-width:2px'></div>"
+            f"</td>"
+            f"<td class='num' style='font-size:12px;width:40px'>{cnt}</td>"
+            f"</tr>\n"
+        )
+
+    # ── Section D: Top OOS Products by Price ─────────────────────────────
+    top_oos = oos_all_clean.copy()
+    top_oos["price_usd"] = pd.to_numeric(top_oos["price_usd"], errors="coerce").fillna(0)
+    top_oos = top_oos[top_oos["price_usd"] > 30].sort_values("price_usd", ascending=False).head(20)
+
+    top_oos_rows = ""
+    for _, r in top_oos.iterrows():
+        gs     = r.get("game_system_clean", "?")
+        is_nr  = str(r.get("is_new_release", "")).lower() == "true"
+        nr_tag = (" <span style='font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);"
+                  "padding:1px 4px;border-radius:3px'>NEW</span>") if is_nr else ""
+        top_oos_rows += (
+            f"<tr>"
+            f"<td>{r['name'][:60]}{nr_tag}</td>"
+            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
+            f"</tr>\n"
+        )
+
+    # ── OOS trend chart (deferred until >1 day of data) ───────────────────
     if n_days > 1:
-        dates_all = sorted(gw_stock_df["date"].unique())
-        oos_rates = []
+        dates_all  = sorted(gw_stock_df["date"].unique())
+        oos_counts = []
         for d in dates_all:
             day_df = gw_stock_df[gw_stock_df["date"] == d]
-            v = day_df[day_df["in_stock"].isin(["true", "false"])]
-            rate = round(100 * (v["in_stock"] == "false").sum() / len(v), 1) if len(v) else 0
-            oos_rates.append(rate)
-
-        trend_labels = str([d[5:] for d in dates_all])   # MM-DD labels
-        trend_data   = str(oos_rates)
+            oos_counts.append(int((day_df["in_stock"] == "false").sum()))
+        trend_labels = str([d[5:] for d in dates_all])
+        trend_data   = str(oos_counts)
 
         trend_html = f"""
   <div class="chart-card" style="margin-bottom:18px;">
-    <h3>Overall OOS Rate — % of Tracked SKUs Out of Stock</h3>
+    <h3>OOS Products Sitewide — Daily Count</h3>
     <div class="chart-wrap-md"><canvas id="chartGwOos"></canvas></div>
-    <p class="data-note">Percentage of {n_tracked} tracked products that are out of stock on each date.
-    All Combat Patrol boxes + all Starter Set tiers. Data from warhammer.com direct.</p>
+    <p class="data-note">Total products OOS on warhammer.com per day (3,700+ SKU catalog via Algolia).
+    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to extend this series.</p>
   </div>
 <script>
 (function(){{
@@ -1680,12 +1765,12 @@ def build_gw_stock_page(gw_stock_df) -> str:
     data: {{
       labels: {trend_labels},
       datasets: [{{
-        label: 'OOS Rate %',
+        label: 'OOS Products',
         data: {trend_data},
         borderColor: '#c0392b',
         backgroundColor: 'rgba(192,57,43,0.08)',
         borderWidth: 2,
-        pointRadius: 3,
+        pointRadius: 4,
         fill: true,
         tension: 0.3,
       }}]
@@ -1694,114 +1779,154 @@ def build_gw_stock_page(gw_stock_df) -> str:
       responsive: true,
       plugins: {{ legend: {{ display: false }} }},
       scales: {{
-        y: {{ min: 0, max: 100, ticks: {{ callback: v => v+'%' }} }},
-        x: {{ ticks: {{ maxTicksLimit: 12 }} }}
+        y: {{ min: 0, ticks: {{ stepSize: 50 }} }},
+        x: {{ ticks: {{ maxTicksLimit: 14 }} }}
       }}
     }}
   }});
 }})();
 </script>"""
     else:
-        trend_html = f"""
-  <div class="table-card" style="padding:18px;text-align:center;color:var(--muted);font-size:12px;">
-    OOS rate trend chart will appear here once daily data accumulates (currently day 1 of {n_days}).
-    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to build the trend.
+        trend_html = """
+  <div class="table-card" style="padding:16px;text-align:center;color:var(--muted);font-size:12px;">
+    OOS trend chart will appear once daily data accumulates. Run
+    <code>python3 scripts/fetch_gw_stock.py</code> each day to build the series.
   </div>"""
 
-    # ── Assemble page ─────────────────────────────────────────────────────
-    oos_color = "#c0392b" if oos_pct > 20 else "#e67e22" if oos_pct > 5 else "#27ae60"
+    # ── Assemble ──────────────────────────────────────────────────────────
+    lc_color = "#e67e22" if n_lc > 0 else "var(--muted)"
+    sf_color = "#e74c3c" if n_sf > 0 else "var(--muted)"
 
     return f"""
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 <div class="page-divider" id="pg-8">Page 8 — GW Website Product Availability</div>
 
-<!-- ── Page 8: GW Stock Availability ──────────────────────────────────── -->
 <section>
   <div class="section-title">GW Direct — Online Store Availability Tracker</div>
   <div class="section-sub">
-    Daily scrape of warhammer.com for all Starter Sets and Combat Patrol boxes.
-    Out-of-Stock events are demand signals — GW products go OOS when sell-through
-    outpaces production. Starter Kit OOS in particular signals new player influx.
-    Source: warhammer.com direct (automated daily, <code>fetch_gw_stock.py</code>).
-    Last checked: <strong>{latest_date}</strong> &nbsp;|&nbsp; {n_days} day{'' if n_days==1 else 's'} of history.
+    Automated daily snapshot of the full warhammer.com product catalog via their public Algolia search API
+    (3,700+ SKUs indexed). Out-of-Stock on GW's own site means sell-through outpaced production —
+    the cleanest demand signal available without channel intermediation.
+    <strong>New releases going OOS within weeks of launch</strong> is the highest-conviction indicator tracked here.
+    Last checked: <strong>{latest_date}</strong> &nbsp;|&nbsp;
+    {n_days} day{'' if n_days == 1 else 's'} of history.
   </div>
 
-  <!-- Stat cards -->
+  <!-- ── Stat Cards ─────────────────────────────────────────────────────── -->
   <div class="stats-row" style="margin-bottom:18px;">
     <div class="stat-card">
-      <div class="stat-val">{n_tracked}</div>
-      <div class="stat-lbl">SKUs Tracked</div>
+      <div class="stat-val" style="color:#c0392b">{n_oos}</div>
+      <div class="stat-lbl">Products OOS Sitewide</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#27ae60">{n_in}</div>
-      <div class="stat-lbl">In Stock</div>
+      <div class="stat-val" style="color:#e74c3c">{n_nr_oos}</div>
+      <div class="stat-lbl">New Releases OOS</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#c0392b">{n_out}</div>
-      <div class="stat-lbl">Out of Stock</div>
+      <div class="stat-val">{n_new_rel}</div>
+      <div class="stat-lbl">Total New Releases</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:{oos_color}">{oos_pct}%</div>
-      <div class="stat-lbl">OOS Rate</div>
+      <div class="stat-val" style="color:{lc_color}">{n_lc}</div>
+      <div class="stat-lbl">Last Chance Items</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val">{n_unknown}</div>
-      <div class="stat-lbl">Not Listed / Unknown</div>
+      <div class="stat-val" style="color:{sf_color}">{n_sf}</div>
+      <div class="stat-lbl">Selling Fast</div>
     </div>
   </div>
 
   {trend_html}
 
-  <!-- Starter Sets — High Priority -->
+  <!-- ── A: New Releases Already OOS ──────────────────────────────────── -->
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-                color:var(--muted);margin-bottom:12px;">
-      Starter Sets — New Player Entry Points <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS here = new player demand overflow)</span>
+               color:var(--muted);margin-bottom:12px;">
+      🚨 New Releases Already Out of Stock
+      <span style="font-weight:400;font-size:10px"> — strongest demand signal: launched recently, already sold out</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th>
-          <th class="num">Status</th>
+          <th>Product</th><th class="num">Price</th><th>Game System</th><th class="num">Status</th>
         </tr>
       </thead>
-      <tbody>
-        {starter_rows}
-      </tbody>
+      <tbody>{nr_oos_rows}</tbody>
     </table>
     <p class="data-note">
-      ⚠ = Last Chance to Buy (GW flagging product end-of-life).
-      "Transitional" = status code P — still purchasable but phasing to new edition version.
-      Source: warhammer.com, checked {latest_date}.
+      Products flagged <code>isNewRelease:true</code> on warhammer.com that are simultaneously out of stock.
+      High-price OOS new releases ($100+) indicate genuine broad consumer demand, not just niche hobbyist spikes.
+      Source: warhammer.com Algolia index, {latest_date}.
     </p>
   </div>
 
-  <!-- Combat Patrols -->
-  <div class="table-card">
+  <!-- ── B: Starter Set Watchlist ─────────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-                color:var(--muted);margin-bottom:12px;">
-      Combat Patrol Boxes — All Factions
-      <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS on specific faction = that army is in demand)</span>
+               color:var(--muted);margin-bottom:12px;">
+      Starter Set Watchlist — New Player Entry Points
+      <span style="font-weight:400;font-size:10px"> — OOS here = new player demand overflow</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th>
-          <th class="num">Status</th>
+          <th>Product</th><th class="num">Price</th><th>Category</th><th class="num">Status</th>
         </tr>
       </thead>
-      <tbody>
-        {patrol_rows}
-      </tbody>
+      <tbody>{starter_rows}</tbody>
     </table>
     <p class="data-note">
-      "Not Listed" = product URL not found on site (retired box replaced by newer edition, or upcoming release not yet live).
-      Source: warhammer.com, checked {latest_date}.
+      ⚡ <em>Transitional</em> = GW status code P — product still purchasable but actively transitioning to a new
+      edition version. Multiple 40k starters showing Transitional may signal an imminent new edition launch.
+      ⚠ = Last Chance to Buy (GW flagging end-of-line). Source: warhammer.com, {latest_date}.
+    </p>
+  </div>
+
+  <!-- ── C: OOS by Game System ─────────────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:var(--muted);margin-bottom:12px;">
+      OOS Products by Game System — {latest_date}
+    </h3>
+    <table style="max-width:460px">
+      <tbody>{sys_bars}</tbody>
+    </table>
+    <p class="data-note">
+      {n_oos} products currently OOS sitewide. High OOS count across a game system signals
+      broad sustained demand — GW's production is undershooting sell-through across that range.
+    </p>
+  </div>
+
+  <!-- ── D: Top OOS Products by Price ──────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:var(--muted);margin-bottom:12px;">
+      Highest-Price OOS Products
+      <span style="font-weight:400;font-size:10px"> — premium items sold out = high-spend consumer demand</span>
+    </h3>
+    <table>
+      <thead>
+        <tr><th>Product</th><th class="num">Price</th><th>System</th></tr>
+      </thead>
+      <tbody>{top_oos_rows}</tbody>
+    </table>
+    <p class="data-note">
+      Top 20 OOS products (&gt;$30) sorted by price.
+      <span style="font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);
+            padding:1px 4px;border-radius:3px">NEW</span> = flagged as new release.
+      Source: warhammer.com Algolia index, {latest_date}.
     </p>
   </div>
 
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
-    When GW products go Out of Stock on their own website it means sell-through exceeded production capacity — the definition of excess demand. Starter Sets are the most investment-relevant signal: OOS there means new players (not existing hobbyists) are driving demand at the top of the funnel. Combat Patrol OOS by faction signals which armies are hot, which feeds into future kit releases and codex cadence. Tracking this daily builds a proprietary dataset no analyst report captures.
+    GW operates a pull-based manufacturing model — low buffer stock, produced against forecasted demand.
+    When products go Out of Stock on warhammer.com, sell-through genuinely exceeded supply planning.
+    The highest-conviction signal is <strong>new releases going OOS within weeks of launch</strong>:
+    this reflects unambiguous consumer demand pull, not channel stuffing or promotional pricing effects.
+    Currently <strong>{n_oos} products are OOS sitewide</strong>, with <strong>{n_nr_oos} being new releases</strong>
+    (sorted by price above). Tracking this daily builds a proprietary dataset: as OOS counts climb over time,
+    they are direct leading indicators of revenue upside — GW can raise prices, accelerate SKU cadence,
+    and expand retail distribution once sustained excess demand is confirmed across multiple data points.
   </div>
 </section>
 """
