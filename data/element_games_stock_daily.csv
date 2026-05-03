@@ -1,16 +1,11 @@
-date,gw_slug,search_query,name_found,category,priority,in_stock,status_label,price_gbp,source
-2026-05-02,warhammer-40000-introductory-set-2023-eng,Warhammer 40000 Introductory Set,Warhammer 40000 Introductory Set,40k Starter,high,error,Error,0,element_games
-2026-05-02,warhammer-40000-starter-set-2023-eng,Warhammer 40000 Starter Set,Warhammer 40000 Starter Set,40k Starter,high,error,Error,0,element_games
-2026-05-02,warhammer-40000-ultimate-starter-set-2023-eng,Warhammer 40000 Combat Patrol Starter,Warhammer 40000 Combat Patrol Starter,40k Starter,high,error,Error,0,element_games
-2026-05-02,age-of-sigmar-starter-set-2024-eng,Age of Sigmar Starter Set,Age of Sigmar Starter Set,AoS Starter,high,error,Error,0,element_games
-2026-05-02,age-of-sigmar-ultimate-starter-set-2024-eng,Age of Sigmar Spearhead Starter,Age of Sigmar Spearhead Starter,AoS Starter,high,error,Error,0,element_games
-2026-05-02,kill-team-starter-set-2024-eng,Kill Team Starter Set,Kill Team Starter Set,Kill Team,high,error,Error,0,element_games
-2026-05-02,spearhead-city-of-ash-2026-eng,Spearhead City of Ash,Spearhead City of Ash,AoS New Release,medium,error,Error,0,element_games
-2026-05-02,imperial-knights-knight-destrier-2026,Knight Destrier,Knight Destrier,40k New Release,medium,error,Error,0,element_games
-2026-05-02,chaos-space-marines-defiler-2026,Defiler,Defiler,40k New Release,medium,error,Error,0,element_games
-2026-05-02,kill-team-blades-of-khaine-2024,Kill Team Blades of Khaine,Kill Team Blades of Khaine,Kill Team,medium,error,Error,0,element_games
-2026-05-02,kill-team-mandrakes-2024,Kill Team Mandrakes,Kill Team Mandrakes,Kill Team,medium,error,Error,0,element_games
-2026-05-02,kill-team-raveners-2025,Kill Team Raveners,Kill Team Raveners,Kill Team,medium,error,Error,0,element_games
-2026-05-02,kill-team-deathwatch-2025,Kill Team Deathwatch,Kill Team Deathwatch,Kill Team,medium,error,Error,0,element_games
-2026-05-02,blood-bowl-third-season-edition-2025-eng,Blood Bowl Third Season,Blood Bowl Third Season,Blood Bowl,medium,error,Error,0,element_games
-2026-05-02,necromunda-hive-secundus-2024,Necromunda Hive Secundus,Necromunda Hive Secundus,Necromunda,medium,error,Error,0,element_games
+date,gw_slug,search_query,name_found,category,priority,in_stock,status_label,price_gbp,source,name,eg_url,status,label,price_rrp
+2026-05-02,warhammer-40000-introductory-set-2023-eng,,Warhammer 40000: Introductory Set - Warhammer 40k,40k Starter,high,,,36.13,element_games_direct,40k Introductory Set,https://elementgames.co.uk/games-workshop/warhammer-40k/warhammer-40000-introductory-set-english-,in_stock,10+ In Stock,42.5
+2026-05-02,warhammer-40000-starter-set-2023-eng,,Warhammer 40000: Starter Set,40k Starter,high,,,59.08,element_games_direct,40k Starter Set,https://elementgames.co.uk/warhammer-40000-starter-set-english-,in_stock,10+ In Stock,69.5
+2026-05-02,warhammer-40000-ultimate-starter-set-2023-eng,,"Warhammer 40,000 Combat Patrol Starter Set - New Releases",40k Starter,high,,,113.9,element_games_direct,40k Combat Patrol Starter,https://elementgames.co.uk/new-releases/warhammer-40000-ultimate-starter-set-english-,in_stock,10+ In Stock,134.0
+2026-05-02,age-of-sigmar-starter-set-2024-eng,,Age of Sigmar: Introductory Set,AoS Starter,high,,,36.12,element_games_direct,AoS Starter Set,https://elementgames.co.uk/age-of-sigmar-introductory-set,in_stock,2 In Stock,42.5
+2026-05-02,age-of-sigmar-ultimate-starter-set-2024-eng,,Warhammer Age of Sigmar: Spearhead Starter Set - Games Workshop,AoS Starter,high,,,113.9,element_games_direct,AoS Spearhead Starter,https://elementgames.co.uk/games-workshop/age-of-sigmar-ultimate-starter-set-,in_stock,10+ In Stock,134.0
+2026-05-02,kill-team-starter-set-2024-eng,,Kill Team: Starter Set - Warhammer 40000 Kill Team,Kill Team,high,,,59.08,element_games_direct,Kill Team Starter Set,https://elementgames.co.uk/games-workshop/warhammer-40k/warhammer-40000-kill-team/kill-team-starter-set-english-,in_stock,10+ In Stock,69.5
+2026-05-02,spearhead-city-of-ash-2026-eng,,Spearhead: City Of Ash - Warhammer Age of Sigmar,AoS New Release,medium,,,113.9,element_games_direct,Spearhead: City of Ash,https://elementgames.co.uk/games-workshop/new-warhammer-age-of-sigmar/spearhead-city-of-ash-english-,oos,Out of Stock,134.0
+2026-05-02,imperial-knights-knight-destrier-2026,,Imperial Knights: Knight Destrier - The Maelstrom,40k New Release,medium,,,89.25,element_games_direct,Knight Destrier,https://elementgames.co.uk/games-workshop/warhammer-40k/the-maelstrom/imperial-knights-knight-destrier,in_stock,10+ In Stock,105.0
+2026-05-02,chaos-space-marines-defiler-2026,,Chaos Space Marines: Defiler (DELAYED DISPATCH),40k New Release,medium,,,74.8,element_games_direct,Defiler,https://elementgames.co.uk/games-workshop/chaos-space-marines-defiler,oos,Out of Stock,88.0
+2026-05-02,venatari-sodality-2026,,Legio Custodes: Venatari Sodality - Horus Heresy Legio Custodes,40k New Release,medium,,,42.08,element_games_direct,Venatari Sodality,https://elementgames.co.uk/games-workshop/horus-heresy-miniatures/horus-heresy-legio-custodes/legio-custodes-venatari-sodality,in_stock,10+ In Stock,49.5

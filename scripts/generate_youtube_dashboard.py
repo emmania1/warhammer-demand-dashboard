@@ -392,6 +392,7 @@ MY_WARHAMMER_APP_DATA = {
 
 
 GW_STOCK_CSV = os.path.join(DATA_DIR, "gw_stock_daily.csv")
+EG_STOCK_CSV = os.path.join(DATA_DIR, "element_games_stock_daily.csv")
 
 # ════════════════════════════════════════════════════════════════════════════
 # Data loading
@@ -401,6 +402,14 @@ def load_gw_stock() -> "pd.DataFrame":
     if not os.path.exists(GW_STOCK_CSV):
         return pd.DataFrame()
     df = pd.read_csv(GW_STOCK_CSV, dtype=str)
+    df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
+    return df.sort_values("date").reset_index(drop=True)
+
+
+def load_eg_stock() -> "pd.DataFrame":
+    if not os.path.exists(EG_STOCK_CSV):
+        return pd.DataFrame()
+    df = pd.read_csv(EG_STOCK_CSV, dtype=str)
     df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
     return df.sort_values("date").reset_index(drop=True)
 
@@ -1585,8 +1594,8 @@ def build_executive_summary(yoy, eci_map, velocity, struct_class, ecosystem,
 # Page 8 — GW Website Stock Availability
 # ════════════════════════════════════════════════════════════════════════════
 
-def build_gw_stock_page(gw_stock_df) -> str:
-    """Build Page 8 HTML: GW Website Stock Availability (Algolia sitewide data)."""
+def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
+    """Build Page 8 HTML: GW Website Stock Availability (Algolia + Element Games data)."""
 
     if gw_stock_df is None or gw_stock_df.empty:
         return ""
@@ -1717,6 +1726,40 @@ def build_gw_stock_page(gw_stock_df) -> str:
 
     signal_items = "".join(f"<li style='margin-bottom:6px'>{s}</li>" for s in signals)
 
+    # ── Element Games cross-reference ─────────────────────────────────────
+    # Build lookup: gw_slug → {status, label, price_gbp} from latest EG snapshot
+    eg_latest = {}
+    if eg_stock_df is not None and not eg_stock_df.empty:
+        eg_date = eg_stock_df["date"].max()
+        for _, r in eg_stock_df[eg_stock_df["date"] == eg_date].iterrows():
+            eg_latest[str(r.get("gw_slug", ""))] = {
+                "status":    str(r.get("status", "")),
+                "label":     str(r.get("label", "")),
+                "price_gbp": float(r.get("price_gbp") or 0),
+                "price_rrp": float(r.get("price_rrp") or 0),
+            }
+
+    def eg_badge(gw_slug: str) -> str:
+        """Return an EG stock badge for this GW slug, or a dim dash if not tracked."""
+        eg = eg_latest.get(gw_slug)
+        if not eg:
+            return "<span style='color:var(--muted);font-size:11px'>—</span>"
+        s = eg["status"]
+        if s == "in_stock":
+            lbl = eg["label"] or "In Stock"
+            return f"<span class='badge badge-up'>{lbl}</span>"
+        if s == "oos":
+            return "<span class='badge badge-dn'>OOS at EG</span>"
+        if s == "preorder":
+            return "<span class='badge badge-mid'>Pre-Order</span>"
+        if s == "backorder":
+            return "<span class='badge badge-mid'>Backorder</span>"
+        if s == "low_stock":
+            return "<span class='badge badge-mid'>Low Stock</span>"
+        if s == "not_found":
+            return "<span style='color:var(--muted);font-size:11px'>not listed</span>"
+        return f"<span style='color:var(--muted);font-size:11px'>{eg['label'][:16]}</span>"
+
     # ── Section A: All New Releases — OOS first, then in-stock by price ──
     nr_all = latest[latest["is_new_release"].str.lower() == "true"].copy()
     nr_all = nr_all.sort_values(
@@ -1724,15 +1767,19 @@ def build_gw_stock_page(gw_stock_df) -> str:
         ascending=[True, False]   # "false" < "true" alphabetically → OOS sorts first
     )
 
+    show_eg_col = bool(eg_latest)   # only add EG column if we have EG data
+
     nr_all_rows = ""
     for _, r in nr_all.iterrows():
-        gs       = r.get("game_system_clean", "?")
-        pt       = str(r.get("product_type", "") or "")
-        pt_label = {"miniatureKit": "Kit", "book": "Book", "boxedSet": "Box Set",
-                    "rulebookCards": "Cards/Rules", "gamingAccessory": "Accessory"}.get(pt, pt[:10] if pt else "")
-        price    = float(r.get("price_usd_num", 0))
-        is_oos   = str(r.get("in_stock", "")) == "false"
+        gs        = r.get("game_system_clean", "?")
+        pt        = str(r.get("product_type", "") or "")
+        pt_label  = {"miniatureKit": "Kit", "book": "Book", "boxedSet": "Box Set",
+                     "rulebookCards": "Cards/Rules", "gamingAccessory": "Accessory"}.get(pt, pt[:10] if pt else "")
+        price     = float(r.get("price_usd_num", 0))
+        is_oos    = str(r.get("in_stock", "")) == "false"
+        slug      = str(r.get("slug", ""))
         row_style = " style='background:rgba(192,57,43,0.04)'" if is_oos else ""
+        eg_cell   = f"<td class='num'>{eg_badge(slug)}</td>" if show_eg_col else ""
         nr_all_rows += (
             f"<tr{row_style}>"
             f"<td>{'<strong>' if is_oos else ''}{r['name']}{'</strong>' if is_oos else ''}</td>"
@@ -1740,10 +1787,12 @@ def build_gw_stock_page(gw_stock_df) -> str:
             f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
             f"<td style='font-size:11px;color:var(--muted)'>{pt_label}</td>"
             f"<td class='num'>{stock_badge(r)}</td>"
+            f"{eg_cell}"
             f"</tr>\n"
         )
     if not nr_all_rows:
-        nr_all_rows = "<tr><td colspan='5' style='text-align:center;color:var(--muted)'>No new releases found</td></tr>"
+        nr_all_rows = "<tr><td colspan='6' style='text-align:center;color:var(--muted)'>No new releases found</td></tr>"
+    eg_th = "<th class='num'>EG (UK)</th>" if show_eg_col else ""
 
     # ── Section B: Starter Watchlist ──────────────────────────────────────
     watchlist = latest[latest["priority"].isin(["high", "medium"])].copy()
@@ -1756,18 +1805,33 @@ def build_gw_stock_page(gw_stock_df) -> str:
             note = (" <span style='font-size:10px;color:#e67e22;"
                     "background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>"
                     "new edition coming</span>")
-        lc_flag = " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>" \
-                  if str(r.get("is_last_chance", "")).lower() == "true" else ""
-        is_oos   = str(r.get("in_stock", "")) == "false"
+        lc_flag   = " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>" \
+                    if str(r.get("is_last_chance", "")).lower() == "true" else ""
+        is_oos    = str(r.get("in_stock", "")) == "false"
         row_style = " style='background:rgba(192,57,43,0.06)'" if is_oos else ""
+        slug      = str(r.get("slug", ""))
+        # EG price column — show EG discounted price if available
+        eg_info   = eg_latest.get(slug)
+        if eg_info and eg_info["price_gbp"] > 0:
+            eg_price_cell = (f"<td class='num' style='font-size:11px'>"
+                             f"£{eg_info['price_gbp']:.2f}"
+                             f"<span style='color:var(--muted);font-size:9px'> EG</span></td>")
+        elif show_eg_col:
+            eg_price_cell = "<td class='num' style='color:var(--muted);font-size:11px'>—</td>"
+        else:
+            eg_price_cell = ""
         starter_rows += (
             f"<tr{row_style}>"
             f"<td>{'<strong>' if is_oos else ''}{r['name']}{note}{lc_flag}{'</strong>' if is_oos else ''}</td>"
             f"<td class='num'>${float(r.get('price_usd_num', 0)):.0f}</td>"
+            f"{eg_price_cell}"
             f"<td style='font-size:11px;color:var(--muted)'>{r.get('category', '')}</td>"
             f"<td class='num'>{stock_badge(r)}</td>"
+            f"<td class='num'>{eg_badge(slug)}</td>"
             f"</tr>\n"
         )
+    starter_eg_th = ("<th class='num' style='font-size:10px'>EG Price</th>"
+                     "<th class='num' style='font-size:10px'>EG Status</th>") if show_eg_col else ""
 
     # ── Section C: OOS by Game System (bar table) ─────────────────────────
     SYSTEM_ORDER = ["40k", "AoS", "Horus Heresy", "The Old World", "Specialty Games", "Middle-Earth", "Other"]
@@ -1967,10 +2031,11 @@ def build_gw_stock_page(gw_stock_df) -> str:
       <thead>
         <tr>
           <th>Product</th>
-          <th class="num">Price</th>
+          <th class="num">GW Price</th>
           <th>System</th>
           <th>Type</th>
-          <th class="num">Status</th>
+          <th class="num">GW.com</th>
+          {eg_th}
         </tr>
       </thead>
       <tbody>{nr_all_rows}</tbody>
@@ -1994,9 +2059,10 @@ def build_gw_stock_page(gw_stock_df) -> str:
       <thead>
         <tr>
           <th>Product</th>
-          <th class="num">Price</th>
+          <th class="num">GW Price</th>
+          {starter_eg_th}
           <th>Category</th>
-          <th class="num">Status</th>
+          <th class="num">GW.com</th>
         </tr>
       </thead>
       <tbody>{starter_rows}</tbody>
@@ -2101,7 +2167,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
                store_threads_raw_df=None,
                reddit_intel_posts_df=None,
                reddit_intel_comments_df=None,
-               gw_stock_df=None) -> str:
+               gw_stock_df=None,
+               eg_stock_df=None) -> str:
 
     # ── Restore slopegraph for rank comparison chart ──────────────────────────
     slopegraph  = compute_slopegraph(channels_df)
@@ -5492,7 +5559,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 })();
 """
 
-    _pg8_html = build_gw_stock_page(gw_stock_df)
+    _pg8_html = build_gw_stock_page(gw_stock_df, eg_stock_df=eg_stock_df)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -6725,6 +6792,7 @@ def main():
     store_threads_raw_df     = load_reddit_store_raw()
     reddit_intel_posts_df, reddit_intel_comments_df = load_reddit_intel()
     gw_stock_df              = load_gw_stock()
+    eg_stock_df              = load_eg_stock()
 
     if channels_df.empty:
         print("[ERROR] No channel data. Run fetch_youtube_channels_daily.py first.")
@@ -6774,6 +6842,7 @@ def main():
         reddit_intel_posts_df=reddit_intel_posts_df,
         reddit_intel_comments_df=reddit_intel_comments_df,
         gw_stock_df=gw_stock_df,
+        eg_stock_df=eg_stock_df,
     )
 
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
