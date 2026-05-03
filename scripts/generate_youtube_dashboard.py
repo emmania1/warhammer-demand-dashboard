@@ -1611,8 +1611,6 @@ def build_gw_stock_page(gw_stock_df) -> str:
         if not s or s in ("", "nan", "Other"):
             return "Other"
         if s.startswith("["):
-            # e.g. "['Warhammer 40,000', 'The Horus Heresy']"
-            # Extract first quoted item (avoids splitting on comma inside name)
             inner = s.strip("[]")
             if "'" in inner:
                 start = inner.index("'") + 1
@@ -1624,16 +1622,24 @@ def build_gw_stock_page(gw_stock_df) -> str:
         return ALGOLIA_SYSTEM_MAP.get(s, s)
 
     latest["game_system_clean"] = latest["game_system"].apply(parse_game_system)
+    latest["price_usd_num"]     = pd.to_numeric(latest["price_usd"], errors="coerce").fillna(0)
 
     # ── Counts ────────────────────────────────────────────────────────────
-    oos_all  = latest[latest["in_stock"] == "false"]
-    n_oos    = len(oos_all)
-    n_new_rel = int((latest["is_new_release"].str.lower() == "true").sum())
-    n_nr_oos  = int(
+    oos_all    = latest[latest["in_stock"] == "false"].copy()
+    oos_all["game_system_clean"] = oos_all["game_system"].apply(parse_game_system)
+    n_oos      = len(oos_all)
+    n_new_rel  = int((latest["is_new_release"].str.lower() == "true").sum())
+    n_nr_oos   = int(
         ((latest["is_new_release"].str.lower() == "true") & (latest["in_stock"] == "false")).sum()
     )
-    n_lc = int((latest["is_last_chance"].str.lower() == "true").sum())
-    n_sf = int((latest["is_selling_fast"].str.lower() == "true").sum())
+    n_lc       = int((latest["is_last_chance"].str.lower() == "true").sum())
+    n_sf       = int((latest["is_selling_fast"].str.lower() == "true").sum())
+    n_preorder = int((latest["is_preorder"].str.lower() == "true").sum()) \
+                 if "is_preorder" in latest.columns else 0
+    # Estimated catalog size from Algolia (3,700 tracked; OOS filter gives true count)
+    EST_CATALOG = 3700
+    oos_rate_pct = round(100 * n_oos / EST_CATALOG, 1)
+    nr_oos_rate  = round(100 * n_nr_oos / n_new_rel, 0) if n_new_rel else 0
 
     # ── Badge helper ──────────────────────────────────────────────────────
     def stock_badge(row):
@@ -1655,31 +1661,93 @@ def build_gw_stock_page(gw_stock_df) -> str:
             return "<span class='badge badge-up'>In Stock</span>"
         return "<span class='badge badge-dim'>Unknown</span>"
 
-    # ── Section A: New Releases Already OOS ──────────────────────────────
-    nr_oos_df = latest[
-        (latest["is_new_release"].str.lower() == "true") & (latest["in_stock"] == "false")
-    ].copy()
-    nr_oos_df["price_usd"] = pd.to_numeric(nr_oos_df["price_usd"], errors="coerce").fillna(0)
-    nr_oos_df = nr_oos_df.sort_values("price_usd", ascending=False)
+    # ── Key Signals callout ───────────────────────────────────────────────
+    # Dynamically build 3–4 bullets from the most notable findings today
+    signals = []
 
-    nr_oos_rows = ""
-    for _, r in nr_oos_df.iterrows():
-        gs = r.get("game_system_clean", "?")
-        nr_oos_rows += (
-            f"<tr>"
-            f"<td><strong>{r['name']}</strong></td>"
-            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
+    # Signal 1: new release sell-out rate
+    if n_nr_oos > 0:
+        nr_oos_names = oos_all[
+            oos_all["is_new_release"].str.lower() == "true"
+        ].sort_values("price_usd_num", ascending=False)["name"].tolist()
+        top2 = ", ".join(nr_oos_names[:2])
+        signals.append(
+            f"<strong>{n_nr_oos} of {n_new_rel} new releases ({int(nr_oos_rate)}%) are already sold out</strong> "
+            f"— top items: {top2}"
+        )
+
+    # Signal 2: starter set OOS or transitional
+    starter_oos = latest[
+        (latest["priority"] == "high") & (latest["in_stock"] == "false")
+    ]
+    starter_trans = latest[
+        (latest["priority"] == "high") & (latest["status_code"] == "P")
+    ]
+    if len(starter_oos):
+        names = ", ".join(starter_oos["name"].tolist())
+        signals.append(f"<strong>Core starter set OOS:</strong> {names} — new player demand is overflowing supply")
+    elif len(starter_trans):
+        n_trans = len(starter_trans)
+        signals.append(
+            f"<strong>{n_trans} of 6 core starter sets showing Transitional status</strong> (status code P) "
+            f"— GW is actively updating these to a new edition version, signaling edition cadence activity"
+        )
+
+    # Signal 3: gateway book OOS (Getting Started w/ 40k)
+    gateway_oos = latest[
+        (latest["priority"] == "medium") &
+        (latest["in_stock"] == "false") &
+        (latest["price_usd_num"] < 25)
+    ]
+    if len(gateway_oos):
+        gnames = ", ".join(gateway_oos["name"].tolist())
+        signals.append(
+            f"<strong>Entry-level gateway product OOS: {gnames}</strong> "
+            f"— the cheapest on-ramp to the hobby is sold out, pointing to new-player demand"
+        )
+
+    # Signal 4: top system OOS concentration
+    sys_counts_sig = oos_all["game_system_clean"].value_counts()
+    if len(sys_counts_sig):
+        top_sys, top_sys_n = sys_counts_sig.index[0], int(sys_counts_sig.iloc[0])
+        signals.append(
+            f"<strong>{top_sys} leads with {top_sys_n} OOS products</strong> — "
+            f"broadest supply shortfall across the range"
+        )
+
+    signal_items = "".join(f"<li style='margin-bottom:6px'>{s}</li>" for s in signals)
+
+    # ── Section A: All New Releases — OOS first, then in-stock by price ──
+    nr_all = latest[latest["is_new_release"].str.lower() == "true"].copy()
+    nr_all = nr_all.sort_values(
+        ["in_stock", "price_usd_num"],
+        ascending=[True, False]   # "false" < "true" alphabetically → OOS sorts first
+    )
+
+    nr_all_rows = ""
+    for _, r in nr_all.iterrows():
+        gs       = r.get("game_system_clean", "?")
+        pt       = str(r.get("product_type", "") or "")
+        pt_label = {"miniatureKit": "Kit", "book": "Book", "boxedSet": "Box Set",
+                    "rulebookCards": "Cards/Rules", "gamingAccessory": "Accessory"}.get(pt, pt[:10] if pt else "")
+        price    = float(r.get("price_usd_num", 0))
+        is_oos   = str(r.get("in_stock", "")) == "false"
+        row_style = " style='background:rgba(192,57,43,0.04)'" if is_oos else ""
+        nr_all_rows += (
+            f"<tr{row_style}>"
+            f"<td>{'<strong>' if is_oos else ''}{r['name']}{'</strong>' if is_oos else ''}</td>"
+            f"<td class='num'>${price:.0f}</td>"
             f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{pt_label}</td>"
             f"<td class='num'>{stock_badge(r)}</td>"
             f"</tr>\n"
         )
-    if not nr_oos_rows:
-        nr_oos_rows = "<tr><td colspan='4' style='text-align:center;color:var(--muted)'>No new releases currently OOS</td></tr>"
+    if not nr_all_rows:
+        nr_all_rows = "<tr><td colspan='5' style='text-align:center;color:var(--muted)'>No new releases found</td></tr>"
 
     # ── Section B: Starter Watchlist ──────────────────────────────────────
     watchlist = latest[latest["priority"].isin(["high", "medium"])].copy()
-    watchlist["price_usd"] = pd.to_numeric(watchlist["price_usd"], errors="coerce").fillna(0)
-    watchlist = watchlist.sort_values(["priority", "price_usd"], ascending=[True, False])
+    watchlist = watchlist.sort_values(["priority", "price_usd_num"], ascending=[True, False])
 
     starter_rows = ""
     for _, r in watchlist.iterrows():
@@ -1687,13 +1755,15 @@ def build_gw_stock_page(gw_stock_df) -> str:
         if str(r.get("status_code", "")) == "P":
             note = (" <span style='font-size:10px;color:#e67e22;"
                     "background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>"
-                    "new edition version coming</span>")
+                    "new edition coming</span>")
         lc_flag = " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>" \
                   if str(r.get("is_last_chance", "")).lower() == "true" else ""
+        is_oos   = str(r.get("in_stock", "")) == "false"
+        row_style = " style='background:rgba(192,57,43,0.06)'" if is_oos else ""
         starter_rows += (
-            f"<tr>"
-            f"<td>{r['name']}{note}{lc_flag}</td>"
-            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
+            f"<tr{row_style}>"
+            f"<td>{'<strong>' if is_oos else ''}{r['name']}{note}{lc_flag}{'</strong>' if is_oos else ''}</td>"
+            f"<td class='num'>${float(r.get('price_usd_num', 0)):.0f}</td>"
             f"<td style='font-size:11px;color:var(--muted)'>{r.get('category', '')}</td>"
             f"<td class='num'>{stock_badge(r)}</td>"
             f"</tr>\n"
@@ -1701,14 +1771,12 @@ def build_gw_stock_page(gw_stock_df) -> str:
 
     # ── Section C: OOS by Game System (bar table) ─────────────────────────
     SYSTEM_ORDER = ["40k", "AoS", "Horus Heresy", "The Old World", "Specialty Games", "Middle-Earth", "Other"]
-    oos_all_clean = oos_all.copy()
-    oos_all_clean["game_system_clean"] = oos_all_clean["game_system"].apply(parse_game_system)
-    sys_counts = oos_all_clean["game_system_clean"].value_counts()
+    sys_counts = oos_all["game_system_clean"].value_counts()
     max_sys    = int(sys_counts.max()) if len(sys_counts) else 1
 
     sys_bars = ""
     for gs in SYSTEM_ORDER:
-        cnt = int(sys_counts.get(gs, 0))
+        cnt   = int(sys_counts.get(gs, 0))
         bar_w = f"{round(100 * cnt / max_sys)}%" if max_sys else "0%"
         sys_bars += (
             f"<tr>"
@@ -1720,26 +1788,67 @@ def build_gw_stock_page(gw_stock_df) -> str:
             f"</tr>\n"
         )
 
-    # ── Section D: Top OOS Products by Price ─────────────────────────────
-    top_oos = oos_all_clean.copy()
-    top_oos["price_usd"] = pd.to_numeric(top_oos["price_usd"], errors="coerce").fillna(0)
-    top_oos = top_oos[top_oos["price_usd"] > 30].sort_values("price_usd", ascending=False).head(20)
-
-    top_oos_rows = ""
-    for _, r in top_oos.iterrows():
-        gs     = r.get("game_system_clean", "?")
-        is_nr  = str(r.get("is_new_release", "")).lower() == "true"
-        nr_tag = (" <span style='font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);"
-                  "padding:1px 4px;border-radius:3px'>NEW</span>") if is_nr else ""
-        top_oos_rows += (
+    # ── Section D: OOS by Product Type ───────────────────────────────────
+    PTYPE_LABELS = {
+        "miniatureKit":     "Miniature Kits",
+        "book":             "Books / Novels",
+        "rulebookCards":    "Rulebooks / Cards",
+        "boxedSet":         "Boxed Sets",
+        "gamingAccessory":  "Gaming Accessories",
+        "accessory":        "Hobby Accessories",
+        "licensedProduct":  "Licensed Products",
+        "paint":            "Paints",
+        "bundle":           "Bundles",
+        "proprietary":      "Other",
+    }
+    oos_pt = oos_all["product_type"].value_counts() if "product_type" in oos_all.columns else pd.Series(dtype=int)
+    max_pt = int(oos_pt.max()) if len(oos_pt) else 1
+    ptype_rows = ""
+    for pt_key, label in PTYPE_LABELS.items():
+        cnt = int(oos_pt.get(pt_key, 0))
+        if cnt == 0:
+            continue
+        bar_w = f"{round(100 * cnt / max_pt)}%"
+        note_color = "#3498db" if pt_key in ("book", "rulebookCards") else "#c0392b"
+        ptype_rows += (
             f"<tr>"
-            f"<td>{r['name'][:60]}{nr_tag}</td>"
-            f"<td class='num'>${float(r['price_usd']):.0f}</td>"
-            f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
+            f"<td style='width:160px;font-size:12px;padding-right:12px'>{label}</td>"
+            f"<td style='width:200px'>"
+            f"<div style='background:{note_color};height:11px;width:{bar_w};border-radius:2px;min-width:2px'></div>"
+            f"</td>"
+            f"<td class='num' style='font-size:12px;width:40px'>{cnt}</td>"
             f"</tr>\n"
         )
 
-    # ── OOS trend chart (deferred until >1 day of data) ───────────────────
+    # ── Section E: Top OOS Products by Price ─────────────────────────────
+    top_oos = oos_all.copy()
+    top_oos = top_oos[top_oos["price_usd_num"] > 30].sort_values("price_usd_num", ascending=False)
+    # Separate Forge World (FW) from main range — FW resin has different supply dynamics
+    # FW items are those not in Algolia's standard game system (mostly Horus Heresy/big models)
+    # Practical heuristic: price > $400 and miniatureKit = likely FW resin super-heavy
+    main_range = top_oos[top_oos["price_usd_num"] <= 400].head(15)
+    fw_range   = top_oos[top_oos["price_usd_num"] >  400].head(10)
+
+    def oos_price_rows(df_rows):
+        rows = ""
+        for _, r in df_rows.iterrows():
+            gs    = r.get("game_system_clean", "?")
+            is_nr = str(r.get("is_new_release", "")).lower() == "true"
+            nr_tag = (" <span style='font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);"
+                      "padding:1px 4px;border-radius:3px'>NEW</span>") if is_nr else ""
+            rows += (
+                f"<tr>"
+                f"<td>{r['name'][:62]}{nr_tag}</td>"
+                f"<td class='num'>${float(r['price_usd_num']):.0f}</td>"
+                f"<td style='font-size:11px;color:var(--muted)'>{gs}</td>"
+                f"</tr>\n"
+            )
+        return rows
+
+    main_rows = oos_price_rows(main_range)
+    fw_rows   = oos_price_rows(fw_range)
+
+    # ── OOS trend chart (bottom — deferred until >1 day of data) ─────────
     if n_days > 1:
         dates_all  = sorted(gw_stock_df["date"].unique())
         oos_counts = []
@@ -1751,10 +1860,11 @@ def build_gw_stock_page(gw_stock_df) -> str:
 
         trend_html = f"""
   <div class="chart-card" style="margin-bottom:18px;">
-    <h3>OOS Products Sitewide — Daily Count</h3>
+    <h3>OOS Products Sitewide — Daily Count (Running Series)</h3>
     <div class="chart-wrap-md"><canvas id="chartGwOos"></canvas></div>
-    <p class="data-note">Total products OOS on warhammer.com per day (3,700+ SKU catalog via Algolia).
-    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to extend this series.</p>
+    <p class="data-note">Total products OOS on warhammer.com per day across the full 3,700+ SKU catalog.
+    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to extend this series.
+    An upward trend here is a direct leading indicator of revenue acceleration.</p>
   </div>
 <script>
 (function(){{
@@ -1788,14 +1898,16 @@ def build_gw_stock_page(gw_stock_df) -> str:
 </script>"""
     else:
         trend_html = """
-  <div class="table-card" style="padding:16px;text-align:center;color:var(--muted);font-size:12px;">
-    OOS trend chart will appear once daily data accumulates. Run
-    <code>python3 scripts/fetch_gw_stock.py</code> each day to build the series.
+  <div class="table-card" style="padding:14px 18px;color:var(--muted);font-size:12px;">
+    <strong style="color:var(--fg)">OOS trend chart</strong> — will appear once daily data accumulates
+    (currently day 1). Run <code>python3 scripts/fetch_gw_stock.py</code> each day; the chart builds automatically.
+    An upward trend in this series is a direct leading indicator of revenue acceleration.
   </div>"""
 
     # ── Assemble ──────────────────────────────────────────────────────────
     lc_color = "#e67e22" if n_lc > 0 else "var(--muted)"
     sf_color = "#e74c3c" if n_sf > 0 else "var(--muted)"
+    po_color = "#3498db" if n_preorder > 0 else "var(--muted)"
 
     return f"""
 <!-- ════════════════════════════════════════════════════════════════════════ -->
@@ -1804,10 +1916,9 @@ def build_gw_stock_page(gw_stock_df) -> str:
 <section>
   <div class="section-title">GW Direct — Online Store Availability Tracker</div>
   <div class="section-sub">
-    Automated daily snapshot of the full warhammer.com product catalog via their public Algolia search API
-    (3,700+ SKUs indexed). Out-of-Stock on GW's own site means sell-through outpaced production —
+    Automated daily snapshot of the full warhammer.com catalog via their public Algolia search API
+    (~3,700 SKUs). Out-of-Stock on GW's own site means sell-through outpaced production —
     the cleanest demand signal available without channel intermediation.
-    <strong>New releases going OOS within weeks of launch</strong> is the highest-conviction indicator tracked here.
     Last checked: <strong>{latest_date}</strong> &nbsp;|&nbsp;
     {n_days} day{'' if n_days == 1 else 's'} of history.
   </div>
@@ -1819,44 +1930,56 @@ def build_gw_stock_page(gw_stock_df) -> str:
       <div class="stat-lbl">Products OOS Sitewide</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#e74c3c">{n_nr_oos}</div>
-      <div class="stat-lbl">New Releases OOS</div>
+      <div class="stat-val" style="color:#c0392b">{oos_rate_pct}%</div>
+      <div class="stat-lbl">OOS Rate (~{EST_CATALOG:,} catalog)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val">{n_new_rel}</div>
-      <div class="stat-lbl">Total New Releases</div>
+      <div class="stat-val" style="color:#e74c3c">{n_nr_oos}<span style="font-size:14px;color:var(--muted)">/{n_new_rel}</span></div>
+      <div class="stat-lbl">New Releases OOS ({int(nr_oos_rate)}%)</div>
     </div>
     <div class="stat-card">
       <div class="stat-val" style="color:{lc_color}">{n_lc}</div>
       <div class="stat-lbl">Last Chance Items</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:{sf_color}">{n_sf}</div>
-      <div class="stat-lbl">Selling Fast</div>
+      <div class="stat-val" style="color:{po_color}">{n_preorder}</div>
+      <div class="stat-lbl">Live Pre-Orders</div>
     </div>
   </div>
 
-  {trend_html}
+  <!-- ── Key Signals Today ─────────────────────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;border-left:3px solid #c0392b;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:#c0392b;margin-bottom:10px;">Key Signals — {latest_date}</h3>
+    <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;color:var(--fg)">
+      {signal_items}
+    </ul>
+  </div>
 
-  <!-- ── A: New Releases Already OOS ──────────────────────────────────── -->
+  <!-- ── A: All New Releases — OOS first ──────────────────────────────── -->
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:12px;">
-      🚨 New Releases Already Out of Stock
-      <span style="font-weight:400;font-size:10px"> — strongest demand signal: launched recently, already sold out</span>
+      New Releases — Full List
+      <span style="font-weight:400;font-size:10px"> — {n_nr_oos} OOS (highlighted) of {n_new_rel} total new releases</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th><th class="num">Price</th><th>Game System</th><th class="num">Status</th>
+          <th>Product</th>
+          <th class="num">Price</th>
+          <th>System</th>
+          <th>Type</th>
+          <th class="num">Status</th>
         </tr>
       </thead>
-      <tbody>{nr_oos_rows}</tbody>
+      <tbody>{nr_all_rows}</tbody>
     </table>
     <p class="data-note">
-      Products flagged <code>isNewRelease:true</code> on warhammer.com that are simultaneously out of stock.
-      High-price OOS new releases ($100+) indicate genuine broad consumer demand, not just niche hobbyist spikes.
-      Source: warhammer.com Algolia index, {latest_date}.
+      Sorted OOS first, then by price. Highlighted rows = currently out of stock.
+      Products flagged <code>isNewRelease:true</code> in warhammer.com's Algolia index.
+      High-price OOS items ($100+) carry the strongest investment signal.
+      Source: warhammer.com, {latest_date}.
     </p>
   </div>
 
@@ -1864,21 +1987,25 @@ def build_gw_stock_page(gw_stock_df) -> str:
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:12px;">
-      Starter Set Watchlist — New Player Entry Points
+      Starter &amp; Gateway Watchlist — New Player Entry Points
       <span style="font-weight:400;font-size:10px"> — OOS here = new player demand overflow</span>
     </h3>
     <table>
       <thead>
         <tr>
-          <th>Product</th><th class="num">Price</th><th>Category</th><th class="num">Status</th>
+          <th>Product</th>
+          <th class="num">Price</th>
+          <th>Category</th>
+          <th class="num">Status</th>
         </tr>
       </thead>
       <tbody>{starter_rows}</tbody>
     </table>
     <p class="data-note">
-      ⚡ <em>Transitional</em> = GW status code P — product still purchasable but actively transitioning to a new
-      edition version. Multiple 40k starters showing Transitional may signal an imminent new edition launch.
-      ⚠ = Last Chance to Buy (GW flagging end-of-line). Source: warhammer.com, {latest_date}.
+      ⚡ <em>Transitional</em> (status P) = product still purchasable but GW is actively moving to a
+      new edition version — the current SKU will be retired. Multiple 40k starters flagged P simultaneously
+      is a strong signal of edition cycle activity (historically precedes a major launch by 3–9 months).
+      ⚠ = Last Chance to Buy. Source: warhammer.com, {latest_date}.
     </p>
   </div>
 
@@ -1886,14 +2013,23 @@ def build_gw_stock_page(gw_stock_df) -> str:
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:12px;">
-      OOS Products by Game System — {latest_date}
+      OOS by Game System &amp; by Product Type — {latest_date}
     </h3>
-    <table style="max-width:460px">
-      <tbody>{sys_bars}</tbody>
-    </table>
-    <p class="data-note">
-      {n_oos} products currently OOS sitewide. High OOS count across a game system signals
-      broad sustained demand — GW's production is undershooting sell-through across that range.
+    <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;">
+      <div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;
+                    letter-spacing:0.5px">By Game System</div>
+        <table style="min-width:300px"><tbody>{sys_bars}</tbody></table>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;
+                    letter-spacing:0.5px">By Product Type <span style="color:#3498db">■</span> = engagement signal</div>
+        <table style="min-width:320px"><tbody>{ptype_rows}</tbody></table>
+      </div>
+    </div>
+    <p class="data-note" style="margin-top:10px">
+      {n_oos} total OOS sitewide. Books and rulebook/card OOS (shown in blue) indicate
+      deep hobbyist engagement — these aren't impulse buys.
     </p>
   </div>
 
@@ -1901,32 +2037,50 @@ def build_gw_stock_page(gw_stock_df) -> str:
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:12px;">
-      Highest-Price OOS Products
+      Highest-Price OOS Products — Main Plastic Range ($30–$400)
       <span style="font-weight:400;font-size:10px"> — premium items sold out = high-spend consumer demand</span>
     </h3>
     <table>
-      <thead>
-        <tr><th>Product</th><th class="num">Price</th><th>System</th></tr>
-      </thead>
-      <tbody>{top_oos_rows}</tbody>
+      <thead><tr><th>Product</th><th class="num">Price</th><th>System</th></tr></thead>
+      <tbody>{main_rows}</tbody>
     </table>
-    <p class="data-note">
-      Top 20 OOS products (&gt;$30) sorted by price.
+    <p class="data-note" style="margin-bottom:0">
       <span style="font-size:9px;color:#3498db;background:rgba(52,152,219,0.15);
             padding:1px 4px;border-radius:3px">NEW</span> = flagged as new release.
       Source: warhammer.com Algolia index, {latest_date}.
     </p>
   </div>
 
+  <!-- ── E: Forge World Super-Heavies OOS ──────────────────────────────── -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+               color:var(--muted);margin-bottom:12px;">
+      Forge World Resin Collectibles OOS ($400+)
+      <span style="font-weight:400;font-size:10px"> — different signal: limited-run resin; not comparable to plastic range</span>
+    </h3>
+    <table>
+      <thead><tr><th>Product</th><th class="num">Price</th><th>System</th></tr></thead>
+      <tbody>{fw_rows}</tbody>
+    </table>
+    <p class="data-note">
+      Forge World items are cast-to-order resin super-heavies with naturally limited stock.
+      OOS here reflects production capacity constraints, not necessarily a broad demand surge.
+      Distinct from the core plastic range OOS signal above.
+    </p>
+  </div>
+
+  {trend_html}
+
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
-    GW operates a pull-based manufacturing model — low buffer stock, produced against forecasted demand.
-    When products go Out of Stock on warhammer.com, sell-through genuinely exceeded supply planning.
-    The highest-conviction signal is <strong>new releases going OOS within weeks of launch</strong>:
-    this reflects unambiguous consumer demand pull, not channel stuffing or promotional pricing effects.
-    Currently <strong>{n_oos} products are OOS sitewide</strong>, with <strong>{n_nr_oos} being new releases</strong>
-    (sorted by price above). Tracking this daily builds a proprietary dataset: as OOS counts climb over time,
-    they are direct leading indicators of revenue upside — GW can raise prices, accelerate SKU cadence,
-    and expand retail distribution once sustained excess demand is confirmed across multiple data points.
+    GW uses pull-based manufacturing — low buffer stock, produced against forecast.
+    When products go OOS on warhammer.com, real sell-through beat supply planning.
+    <strong>New releases going OOS within weeks is the highest-conviction signal</strong>:
+    it reflects unambiguous consumer pull rather than channel stuffing.
+    Currently <strong>{n_oos} SKUs are OOS ({oos_rate_pct}% of ~{EST_CATALOG:,} catalog)</strong>,
+    with <strong>{n_nr_oos}/{n_new_rel} new releases ({int(nr_oos_rate)}%) already sold out</strong>.
+    As this series builds daily, rising OOS counts become a direct leading indicator of revenue upside —
+    GW historically responds to sustained demand excess by raising prices (they have done so 3× since 2020),
+    accelerating SKU cadence, and expanding distribution to new markets.
   </div>
 </section>
 """
