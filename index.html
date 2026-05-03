@@ -374,8 +374,9 @@
     <a class="nav-btn" href="#pg-5">P5 Steam</a>
     <a class="nav-btn" href="#pg-6">P6 Tournaments</a>
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
+    <a class="nav-btn" href="#pg-8">P8 Stock</a>
   </nav>
-  <div class="meta">Generated 2026-04-30 17:08</div>
+  <div class="meta">Generated 2026-05-02 22:10</div>
 </div>
 
 <div class="container">
@@ -386,7 +387,7 @@
 <!-- ── Executive Summary — JS-rendered from window.__yt ─────────────────── -->
 <section>
   <div class="exec-summary-card">
-    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-04-30 17:08</div>
+    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-05-02 22:10</div>
     <div class="exec-summary-body" id="exec-summary-body">
       <p style="color:#6e7681;font-style:italic">Computing structural metrics&hellip;</p>
     </div>
@@ -1493,6 +1494,138 @@
   </div>
 </section>
 
+
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider" id="pg-8">Page 8 — GW Website Product Availability</div>
+
+<!-- ── Page 8: GW Stock Availability ──────────────────────────────────── -->
+<section>
+  <div class="section-title">GW Direct — Online Store Availability Tracker</div>
+  <div class="section-sub">
+    Daily scrape of warhammer.com for all Starter Sets and Combat Patrol boxes.
+    Out-of-Stock events are demand signals — GW products go OOS when sell-through
+    outpaces production. Starter Kit OOS in particular signals new player influx.
+    Source: warhammer.com direct (automated daily, <code>fetch_gw_stock.py</code>).
+    Last checked: <strong>2026-05-02</strong> &nbsp;|&nbsp; 1 day of history.
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card">
+      <div class="stat-val">33</div>
+      <div class="stat-lbl">SKUs Tracked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#27ae60">28</div>
+      <div class="stat-lbl">In Stock</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#c0392b">0</div>
+      <div class="stat-lbl">Out of Stock</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#27ae60">0.0%</div>
+      <div class="stat-lbl">OOS Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">5</div>
+      <div class="stat-lbl">Not Listed / Unknown</div>
+    </div>
+  </div>
+
+  
+  <div class="table-card" style="padding:18px;text-align:center;color:var(--muted);font-size:12px;">
+    OOS rate trend chart will appear here once daily data accumulates (currently day 1 of 1).
+    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to build the trend.
+  </div>
+
+  <!-- Starter Sets — High Priority -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+                color:var(--muted);margin-bottom:12px;">
+      Starter Sets — New Player Entry Points <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS here = new player demand overflow)</span>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="num">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>40k Introductory Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>40k Starter Set</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
+<tr><td>40k Ultimate Starter Set</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
+<tr><td>AoS Starter Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>AoS Ultimate Starter Set</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Necrons</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Space Marines</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
+<tr><td>Combat Patrol: Tyranids</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+
+      </tbody>
+    </table>
+    <p class="data-note">
+      ⚠ = Last Chance to Buy (GW flagging product end-of-life).
+      "Transitional" = status code P — still purchasable but phasing to new edition version.
+      Source: warhammer.com, checked 2026-05-02.
+    </p>
+  </div>
+
+  <!-- Combat Patrols -->
+  <div class="table-card">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+                color:var(--muted);margin-bottom:12px;">
+      Combat Patrol Boxes — All Factions
+      <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS on specific faction = that army is in demand)</span>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="num">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Combat Patrol: Adepta Sororitas</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Adeptus Custodes</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Adeptus Mechanicus</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Aeldari</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Aeldari Corsairs</td><td class='num'><span class='badge badge-mid'>Transitional</span></td></tr>
+<tr><td>Combat Patrol: Astra Militarum</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Black Templars</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Blood Angels</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Chaos Daemons</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+<tr><td>Combat Patrol: Chaos Space Marines</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Dark Angels</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Death Guard</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Drukhari</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Emperor's Children</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Genestealer Cults</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Grey Knights</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Imperial Agents</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Imperial Fists</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+<tr><td>Combat Patrol: Iron Warriors</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+<tr><td>Combat Patrol: Leagues of Votann</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Raven Guard</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td></tr>
+<tr><td>Combat Patrol: Tau Empire</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Thousand Sons</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: Tyranid Assault Brood</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+<tr><td>Combat Patrol: World Eaters</td><td class='num'><span class='badge badge-up'>In Stock</span></td></tr>
+
+      </tbody>
+    </table>
+    <p class="data-note">
+      "Not Listed" = product URL not found on site (retired box replaced by newer edition, or upcoming release not yet live).
+      Source: warhammer.com, checked 2026-05-02.
+    </p>
+  </div>
+
+  <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
+    When GW products go Out of Stock on their own website it means sell-through exceeded production capacity — the definition of excess demand. Starter Sets are the most investment-relevant signal: OOS there means new players (not existing hobbyists) are driving demand at the top of the funnel. Combat Patrol OOS by faction signals which armies are hot, which feeds into future kit releases and codex cadence. Tracking this daily builds a proprietary dataset no analyst report captures.
+  </div>
+</section>
 
 
 </div><!-- /container -->

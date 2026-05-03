@@ -391,9 +391,19 @@ MY_WARHAMMER_APP_DATA = {
 }
 
 
+GW_STOCK_CSV = os.path.join(DATA_DIR, "gw_stock_daily.csv")
+
 # ════════════════════════════════════════════════════════════════════════════
 # Data loading
 # ════════════════════════════════════════════════════════════════════════════
+
+def load_gw_stock() -> "pd.DataFrame":
+    if not os.path.exists(GW_STOCK_CSV):
+        return pd.DataFrame()
+    df = pd.read_csv(GW_STOCK_CSV, dtype=str)
+    df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
+    return df.sort_values("date").reset_index(drop=True)
+
 
 def load_channels_combined() -> pd.DataFrame:
     frames = []
@@ -1572,6 +1582,232 @@ def build_executive_summary(yoy, eci_map, velocity, struct_class, ecosystem,
 
 
 # ════════════════════════════════════════════════════════════════════════════
+# Page 8 — GW Website Stock Availability
+# ════════════════════════════════════════════════════════════════════════════
+
+def build_gw_stock_page(gw_stock_df) -> str:
+    """Build Page 8 HTML: GW Website Product Availability tracker."""
+
+    if gw_stock_df is None or gw_stock_df.empty:
+        return ""
+
+    # ── Latest snapshot ───────────────────────────────────────────────────
+    latest_date = gw_stock_df["date"].max()
+    n_days      = gw_stock_df["date"].nunique()
+    latest      = gw_stock_df[gw_stock_df["date"] == latest_date].copy()
+
+    valid     = latest[latest["in_stock"].isin(["true", "false"])]
+    n_tracked = len(latest)
+    n_in      = int((valid["in_stock"] == "true").sum())
+    n_out     = int((valid["in_stock"] == "false").sum())
+    n_unknown = n_tracked - len(valid)
+    oos_pct   = round(100 * n_out / len(valid), 1) if len(valid) else 0
+
+    # ── Badge helper ──────────────────────────────────────────────────────
+    def stock_badge(row):
+        status   = str(row.get("stock_status", "") or "")
+        in_stock = str(row.get("in_stock", "")     or "")
+        avail    = str(row.get("is_available", "") or "")
+        if status == "NOT_FOUND":
+            return "<span class='badge badge-dim'>Not Listed</span>"
+        if in_stock == "true" and status == "A":
+            return "<span class='badge badge-up'>In Stock</span>"
+        if in_stock == "true" and status == "P":
+            return "<span class='badge badge-mid'>Transitional</span>"
+        if in_stock == "false" and status in ("A", "P", ""):
+            return "<span class='badge badge-dn'>Out of Stock</span>"
+        if status == "O":
+            return "<span class='badge badge-dim'>Discontinued</span>"
+        if status == "G":
+            return "<span class='badge badge-mid'>Made-to-Order</span>"
+        if in_stock == "error":
+            return "<span class='badge badge-dim'>Error</span>"
+        return "<span class='badge badge-dim'>Unknown</span>"
+
+    def flags(row):
+        out = ""
+        if str(row.get("last_chance",  "") or "").lower() == "true":
+            out += " <span title='Last Chance to Buy' style='color:#e67e22'>⚠</span>"
+        if str(row.get("selling_fast", "") or "").lower() == "true":
+            out += " <span title='Selling Fast' style='color:#e74c3c'>🔥</span>"
+        return out
+
+    # ── Build table rows by group ─────────────────────────────────────────
+    starters = latest[latest["priority"] == "high"].sort_values("name")
+    patrols  = latest[latest["priority"] != "high"].sort_values("name")
+
+    def make_rows(df_group):
+        rows = ""
+        for _, r in df_group.iterrows():
+            rows += (
+                f"<tr>"
+                f"<td>{r['name']}{flags(r)}</td>"
+                f"<td class='num'>{stock_badge(r)}</td>"
+                f"</tr>\n"
+            )
+        return rows
+
+    starter_rows = make_rows(starters)
+    patrol_rows  = make_rows(patrols)
+
+    # ── OOS rate trend (if >1 day of data) ───────────────────────────────
+    trend_html = ""
+    if n_days > 1:
+        dates_all = sorted(gw_stock_df["date"].unique())
+        oos_rates = []
+        for d in dates_all:
+            day_df = gw_stock_df[gw_stock_df["date"] == d]
+            v = day_df[day_df["in_stock"].isin(["true", "false"])]
+            rate = round(100 * (v["in_stock"] == "false").sum() / len(v), 1) if len(v) else 0
+            oos_rates.append(rate)
+
+        trend_labels = str([d[5:] for d in dates_all])   # MM-DD labels
+        trend_data   = str(oos_rates)
+
+        trend_html = f"""
+  <div class="chart-card" style="margin-bottom:18px;">
+    <h3>Overall OOS Rate — % of Tracked SKUs Out of Stock</h3>
+    <div class="chart-wrap-md"><canvas id="chartGwOos"></canvas></div>
+    <p class="data-note">Percentage of {n_tracked} tracked products that are out of stock on each date.
+    All Combat Patrol boxes + all Starter Set tiers. Data from warhammer.com direct.</p>
+  </div>
+<script>
+(function(){{
+  var ctx = document.getElementById('chartGwOos');
+  if(!ctx) return;
+  new Chart(ctx, {{
+    type: 'line',
+    data: {{
+      labels: {trend_labels},
+      datasets: [{{
+        label: 'OOS Rate %',
+        data: {trend_data},
+        borderColor: '#c0392b',
+        backgroundColor: 'rgba(192,57,43,0.08)',
+        borderWidth: 2,
+        pointRadius: 3,
+        fill: true,
+        tension: 0.3,
+      }}]
+    }},
+    options: {{
+      responsive: true,
+      plugins: {{ legend: {{ display: false }} }},
+      scales: {{
+        y: {{ min: 0, max: 100, ticks: {{ callback: v => v+'%' }} }},
+        x: {{ ticks: {{ maxTicksLimit: 12 }} }}
+      }}
+    }}
+  }});
+}})();
+</script>"""
+    else:
+        trend_html = f"""
+  <div class="table-card" style="padding:18px;text-align:center;color:var(--muted);font-size:12px;">
+    OOS rate trend chart will appear here once daily data accumulates (currently day 1 of {n_days}).
+    Run <code>python3 scripts/fetch_gw_stock.py</code> daily to build the trend.
+  </div>"""
+
+    # ── Assemble page ─────────────────────────────────────────────────────
+    oos_color = "#c0392b" if oos_pct > 20 else "#e67e22" if oos_pct > 5 else "#27ae60"
+
+    return f"""
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider" id="pg-8">Page 8 — GW Website Product Availability</div>
+
+<!-- ── Page 8: GW Stock Availability ──────────────────────────────────── -->
+<section>
+  <div class="section-title">GW Direct — Online Store Availability Tracker</div>
+  <div class="section-sub">
+    Daily scrape of warhammer.com for all Starter Sets and Combat Patrol boxes.
+    Out-of-Stock events are demand signals — GW products go OOS when sell-through
+    outpaces production. Starter Kit OOS in particular signals new player influx.
+    Source: warhammer.com direct (automated daily, <code>fetch_gw_stock.py</code>).
+    Last checked: <strong>{latest_date}</strong> &nbsp;|&nbsp; {n_days} day{'' if n_days==1 else 's'} of history.
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card">
+      <div class="stat-val">{n_tracked}</div>
+      <div class="stat-lbl">SKUs Tracked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#27ae60">{n_in}</div>
+      <div class="stat-lbl">In Stock</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:#c0392b">{n_out}</div>
+      <div class="stat-lbl">Out of Stock</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" style="color:{oos_color}">{oos_pct}%</div>
+      <div class="stat-lbl">OOS Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">{n_unknown}</div>
+      <div class="stat-lbl">Not Listed / Unknown</div>
+    </div>
+  </div>
+
+  {trend_html}
+
+  <!-- Starter Sets — High Priority -->
+  <div class="table-card" style="margin-bottom:18px;">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+                color:var(--muted);margin-bottom:12px;">
+      Starter Sets — New Player Entry Points <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS here = new player demand overflow)</span>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="num">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {starter_rows}
+      </tbody>
+    </table>
+    <p class="data-note">
+      ⚠ = Last Chance to Buy (GW flagging product end-of-life).
+      "Transitional" = status code P — still purchasable but phasing to new edition version.
+      Source: warhammer.com, checked {latest_date}.
+    </p>
+  </div>
+
+  <!-- Combat Patrols -->
+  <div class="table-card">
+    <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+                color:var(--muted);margin-bottom:12px;">
+      Combat Patrol Boxes — All Factions
+      <span style="font-weight:400;font-size:10px;color:var(--muted)">(OOS on specific faction = that army is in demand)</span>
+    </h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="num">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {patrol_rows}
+      </tbody>
+    </table>
+    <p class="data-note">
+      "Not Listed" = product URL not found on site (retired box replaced by newer edition, or upcoming release not yet live).
+      Source: warhammer.com, checked {latest_date}.
+    </p>
+  </div>
+
+  <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
+    When GW products go Out of Stock on their own website it means sell-through exceeded production capacity — the definition of excess demand. Starter Sets are the most investment-relevant signal: OOS there means new players (not existing hobbyists) are driving demand at the top of the funnel. Combat Patrol OOS by faction signals which armies are hot, which feeds into future kit releases and codex cadence. Tracking this daily builds a proprietary dataset no analyst report captures.
+  </div>
+</section>
+"""
+
+
+# ════════════════════════════════════════════════════════════════════════════
 # HTML build
 # ════════════════════════════════════════════════════════════════════════════
 
@@ -1585,7 +1821,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
                store_threads_recent_df=None,
                store_threads_raw_df=None,
                reddit_intel_posts_df=None,
-               reddit_intel_comments_df=None) -> str:
+               reddit_intel_comments_df=None,
+               gw_stock_df=None) -> str:
 
     # ── Restore slopegraph for rank comparison chart ──────────────────────────
     slopegraph  = compute_slopegraph(channels_df)
@@ -4976,6 +5213,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 })();
 """
 
+    _pg8_html = build_gw_stock_page(gw_stock_df)
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5352,6 +5591,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     <a class="nav-btn" href="#pg-5">P5 Steam</a>
     <a class="nav-btn" href="#pg-6">P6 Tournaments</a>
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
+    <a class="nav-btn" href="#pg-8">P8 Stock</a>
   </nav>
   <div class="meta">Generated {generated_at}</div>
 </div>
@@ -6164,6 +6404,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
 
 
+{_pg8_html}
+
 </div><!-- /container -->
 
 <script>
@@ -6203,6 +6445,7 @@ def main():
     store_threads_recent_df  = load_reddit_store_recent()
     store_threads_raw_df     = load_reddit_store_raw()
     reddit_intel_posts_df, reddit_intel_comments_df = load_reddit_intel()
+    gw_stock_df              = load_gw_stock()
 
     if channels_df.empty:
         print("[ERROR] No channel data. Run fetch_youtube_channels_daily.py first.")
@@ -6251,6 +6494,7 @@ def main():
         store_threads_raw_df=store_threads_raw_df,
         reddit_intel_posts_df=reddit_intel_posts_df,
         reddit_intel_comments_df=reddit_intel_comments_df,
+        gw_stock_df=gw_stock_df,
     )
 
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
