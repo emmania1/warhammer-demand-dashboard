@@ -95,7 +95,7 @@ CHANNEL_COLORS = {
 }
 
 YOY_WINDOW_DAYS      = 45
-MULTIYEAR_WINDOW     = 90     # wider tolerance for historical snapshots
+MULTIYEAR_WINDOW     = 180    # wide tolerance — Jun seed dates are ~135 days from Feb target
 MULTIYEAR_YEARS      = [2023, 2024, 2025, 2026]
 MULTIYEAR_TARGET_MD  = "02-15"  # mid-Feb reference for each year
 TRAJ_REF_DATE        = "2025-01-01"
@@ -415,17 +415,32 @@ def load_eg_stock() -> "pd.DataFrame":
 
 
 def load_channels_combined() -> pd.DataFrame:
+    """Load daily CSV + seed CSV.
+    Daily CSV uses 'label'; seed uses 'channel_label' — normalise before dedup
+    so all rows get a proper channel_label and none are collapsed by the dedup."""
     frames = []
     for fpath in [CHANNELS_DAILY, CHANNELS_SEED]:
         if os.path.exists(fpath):
             df = pd.read_csv(fpath)
             df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
+            if "label" in df.columns and "channel_label" not in df.columns:
+                df = df.rename(columns={"label": "channel_label"})
             frames.append(df)
     if not frames:
         return pd.DataFrame()
     combined = pd.concat(frames, ignore_index=True)
     combined = combined.drop_duplicates(subset=["date", "channel_label"], keep="last")
     return combined.sort_values(["channel_label", "date"]).reset_index(drop=True)
+
+
+def load_channels_seed() -> pd.DataFrame:
+    """Load the seed CSV only. Used for YoY so May-dated daily data doesn't shift
+    the reference window away from the deliberate Feb anchor snapshots."""
+    if not os.path.exists(CHANNELS_SEED):
+        return pd.DataFrame()
+    df = pd.read_csv(CHANNELS_SEED)
+    df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
+    return df.sort_values(["channel_label", "date"]).reset_index(drop=True)
 
 
 def load_channel_history() -> pd.DataFrame:
@@ -814,6 +829,7 @@ def compute_multiyear_growth(channels_full_df: pd.DataFrame) -> dict:
     for ch in CHANNEL_ORDER:
         ch_df = channels_full_df[channels_full_df["channel_label"] == ch].sort_values("date")
         ch_df = ch_df.dropna(subset=["subscribers"])
+        ch_df = ch_df[ch_df["subscribers"] > 0]   # drop placeholder/error rows (0 = fetcher had no data yet)
         if ch_df.empty:
             results[ch] = {"subs_by_year": {}}
             continue
@@ -2218,7 +2234,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     # ── Chart data ────────────────────────────────────────────────────────
 
     # S1: subs + YoY
-    curr_subs_vals = [yoy.get(ch, {}).get("curr_subs") or 0 for ch in CHANNEL_ORDER]
+    curr_subs_vals = [int(yoy.get(ch, {}).get("curr_subs") or 0) for ch in CHANNEL_ORDER]
     yoy_pct_vals   = [yoy.get(ch, {}).get("yoy_pct")   or 0 for ch in CHANNEL_ORDER]
 
     # S1: trajectory scatter [{x,y}]
@@ -6781,6 +6797,7 @@ def main():
     print("── Warhammer Demand Acceleration Dashboard ──────────────────────")
 
     channels_df         = load_channels_combined()
+    channels_seed_df    = load_channels_seed()
     channels_history_df = load_channel_history()
     anchor_history_df   = load_anchor_history()
     anchors_df  = load_anchors()
@@ -6813,7 +6830,7 @@ def main():
 
     print("  Computing metrics...")
 
-    # Multi-year first — needed as ECI divisor (CAGR preferred over YoY)
+    # Multi-year: use all data (daily + seed + history); rename already done in load_channels_combined
     channels_full_df = pd.concat(
         [channels_df, channels_history_df], ignore_index=True
     ).drop_duplicates(subset=["date", "channel_label"], keep="last").sort_values(
@@ -6821,7 +6838,8 @@ def main():
     ).reset_index(drop=True)
     multiyear = compute_multiyear_growth(channels_full_df)
 
-    yoy        = compute_yoy_sub_metrics(channels_df)
+    # YoY: use seed-only data so May-dated daily snapshots don't shift the Feb reference window
+    yoy        = compute_yoy_sub_metrics(channels_seed_df)
     evergreen  = compute_evergreen_metrics(anchors_df, anchor_history_df)
     eci_map    = compute_eci(evergreen, yoy, multiyear)   # uses CAGR as divisor
     reddit_yoy = compute_reddit_yoy(reddit_df)
