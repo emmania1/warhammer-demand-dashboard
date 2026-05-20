@@ -376,7 +376,7 @@
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
     <a class="nav-btn" href="#pg-8">P8 Stock</a>
   </nav>
-  <div class="meta">Generated 2026-05-08 17:39</div>
+  <div class="meta">Generated 2026-05-20 00:02</div>
 </div>
 
 <div class="container">
@@ -387,7 +387,7 @@
 <!-- ── Executive Summary — JS-rendered from window.__yt ─────────────────── -->
 <section>
   <div class="exec-summary-card">
-    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-05-08 17:39</div>
+    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-05-20 00:02</div>
     <div class="exec-summary-body" id="exec-summary-body">
       <p style="color:#6e7681;font-style:italic">Computing structural metrics&hellip;</p>
     </div>
@@ -1506,22 +1506,22 @@
     Daily snapshot of all out-of-stock products on warhammer.com via their public Algolia search index.
     We pull every OOS product sitewide plus a priority watchlist of beginner/starter sets.
     GW's full catalog is ~3,700 SKUs — we do not track in-stock products individually.
-    Last updated: <strong>2026-05-04</strong> &nbsp;|&nbsp; 3 days of history.
+    Last updated: <strong>2026-05-20</strong> &nbsp;|&nbsp; 5 days of history.
   </div>
 
   <!-- ── Top-line stat cards ───────────────────────────────────────────── -->
   <div class="stats-row" style="margin-bottom:18px;">
     <div class="stat-card">
-      <div class="stat-val" style="color:#c0392b">524</div>
+      <div class="stat-val" style="color:#c0392b">558</div>
       <div class="stat-lbl">Products OOS Today</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#c0392b">14.2%</div>
+      <div class="stat-val" style="color:#c0392b">15.1%</div>
       <div class="stat-lbl">OOS Rate (~3,700 catalog)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-val" style="color:#e74c3c">9<span style="font-size:14px;color:var(--muted)">/44</span></div>
-      <div class="stat-lbl">New Releases Sold Out (20%)</div>
+      <div class="stat-val" style="color:#e74c3c">14<span style="font-size:14px;color:var(--muted)">/55</span></div>
+      <div class="stat-lbl">New Releases Sold Out (25%)</div>
     </div>
     <div class="stat-card">
       <div class="stat-val" style="color:#27ae60">All In Stock ✓</div>
@@ -1546,7 +1546,9 @@
       </thead>
       <tbody><tr><td style='font-size:12px'>2026-05-02</td><td class='num' style='font-size:13px;font-weight:600'>511</td><td class='num' style='font-size:12px'></td><td class='num' style='font-size:12px'>9/44</td></tr>
 <tr><td style='font-size:12px'>2026-05-03</td><td class='num' style='font-size:13px;font-weight:600'>511</td><td class='num' style='font-size:12px'><span style='color:var(--muted);font-size:11px'>—</span></td><td class='num' style='font-size:12px'>9/44</td></tr>
-<tr style='background:rgba(52,152,219,0.06)'><td style='font-size:12px'>2026-05-04  <span style="font-size:9px;color:#3498db">← latest</span></td><td class='num' style='font-size:13px;font-weight:600'>524</td><td class='num' style='font-size:12px'><span style='color:#c0392b;font-size:11px'>▲13</span></td><td class='num' style='font-size:12px'>9/44</td></tr>
+<tr><td style='font-size:12px'>2026-05-04</td><td class='num' style='font-size:13px;font-weight:600'>524</td><td class='num' style='font-size:12px'><span style='color:#c0392b;font-size:11px'>▲13</span></td><td class='num' style='font-size:12px'>9/44</td></tr>
+<tr><td style='font-size:12px'>2026-05-19</td><td class='num' style='font-size:13px;font-weight:600'>541</td><td class='num' style='font-size:12px'><span style='color:#c0392b;font-size:11px'>▲17</span></td><td class='num' style='font-size:12px'>14/55</td></tr>
+<tr style='background:rgba(52,152,219,0.06)'><td style='font-size:12px'>2026-05-20  <span style="font-size:9px;color:#3498db">← latest</span></td><td class='num' style='font-size:13px;font-weight:600'>558</td><td class='num' style='font-size:12px'><span style='color:#c0392b;font-size:11px'>▲17</span></td><td class='num' style='font-size:12px'>14/55</td></tr>
 </tbody>
     </table>
     <p class="data-note">
@@ -1557,13 +1559,13 @@
   <div class="chart-card" style="margin-top:18px;">
     <h3>OOS Count — Daily Trend</h3>
     <div class="chart-wrap-sm"><canvas id="chartGwOos"></canvas></div>
-    <p class="data-note">Total OOS products per day. 3 days tracked so far — trend becomes meaningful at ~30 days.</p>
+    <p class="data-note">Total OOS products per day. 5 days tracked so far — trend becomes meaningful at ~30 days.</p>
   </div>
 <script>
 (function(){
   var ctx=document.getElementById('chartGwOos'); if(!ctx) return;
-  new Chart(ctx,{type:'line',data:{labels:['05-02', '05-03', '05-04'],datasets:[{
-    label:'OOS Products',data:[511, 511, 524],
+  new Chart(ctx,{type:'line',data:{labels:['05-02', '05-03', '05-04', '05-19', '05-20'],datasets:[{
+    label:'OOS Products',data:[511, 511, 524, 541, 558],
     borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,0.08)',
     borderWidth:2,pointRadius:5,fill:true,tension:0.2}]},
     options:{responsive:true,plugins:{legend:{display:false}},
@@ -1583,7 +1585,7 @@
     </h3>
     <p style="font-size:12px;color:var(--muted);margin:0 0 12px 0">
       The 6 primary products GW sells to first-time buyers.
-      These must stay in stock — OOS here directly caps new player acquisition. (EG snapshot: 2026-05-04)
+      These must stay in stock — OOS here directly caps new player acquisition. (EG snapshot: 2026-05-20)
     </p>
     <table>
       <thead>
@@ -1596,7 +1598,7 @@
       </thead>
       <tbody><tr><td>Warhammer 40,000 Introductory Set</td><td class='num'>$69</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
 <tr><td>Warhammer 40,000 Starter Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition pending</span></td><td class='num'>$114</td><td class='num'><span class='badge badge-mid'>In Stock ⚡</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
-<tr><td>Warhammer Age of Sigmar: Starter Set</td><td class='num'>$114</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span class='badge badge-up'>2 In Stock</span></td></tr>
+<tr><td>Warhammer Age of Sigmar: Starter Set</td><td class='num'>$114</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span class='badge badge-up'>1 In Stock</span></td></tr>
 <tr><td>Kill Team: Starter Set</td><td class='num'>$114</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
 <tr><td>Warhammer 40,000 Combat Patrol Starter Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>new edition pending</span></td><td class='num'>$220</td><td class='num'><span class='badge badge-mid'>In Stock ⚡</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
 <tr><td>Warhammer Age of Sigmar: Spearhead Starter Set</td><td class='num'>$220</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
@@ -1617,7 +1619,7 @@
     <p style="font-size:12px;color:var(--muted);margin:0 0 12px 0">
       Products a new player buys <em>after</em> the starter set: getting started guides,
       Combat Patrols (the next step up), and paint sets.
-      <strong>9 of 9 currently OOS</strong> —
+      <strong>3 of 4 currently OOS</strong> —
       new player momentum is outrunning supply beyond the flagship starters.
     </p>
     <table>
@@ -1632,16 +1634,12 @@
       <tbody><tr><td colspan='4' style='padding-top:10px;padding-bottom:2px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)'>Combat Patrols</td></tr>
 <tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Combat Patrol: Black Templars</td><td class='num'>$170</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Combat Patrol: Death Guard</td><td class='num'>$170</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Combat Patrol: Space Marines <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$170</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Combat Patrol: Orks <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$170</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr><td colspan='4' style='padding-top:10px;padding-bottom:2px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)'>Getting Started Guides</td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Getting Started With Warhammer Age of Sigmar</td><td class='num'>$20</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Getting Started with Warhammer 40,000 <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$20</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr><td style='padding-left:12px'>Getting Started with 40k</td><td class='num'>$0</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr><td colspan='4' style='padding-top:10px;padding-bottom:2px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)'>Introductory Sets</td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Warhammer Age of Sigmar: Introductory Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$69</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr><td style='padding-left:12px'>Warhammer Age of Sigmar: Introductory Set</td><td class='num'>$69</td><td class='num'><span class='badge badge-up'>In Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr><td colspan='4' style='padding-top:10px;padding-bottom:2px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)'>Paint Sets</td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Skaven Paint Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$35</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Stormcast Eternals Paints Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$35</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td style='padding-left:12px'>Warhammer Age of Sigmar: Paints + Tools Set <span style='font-size:9px;color:#e67e22;background:rgba(230,126,34,0.12);padding:1px 5px;border-radius:3px'>edition update</span></td><td class='num'>$45</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr><td style='padding-left:12px'>40k Paints + Tools Set</td><td class='num'>$0</td><td class='num'><span class='badge badge-dim'>Not Listed</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 </tbody>
     </table>
@@ -1659,7 +1657,7 @@
   <div class="table-card" style="margin-bottom:18px;">
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:4px;">
-      What's Inside the 524 OOS Products?
+      What's Inside the 558 OOS Products?
     </h3>
     <p style="font-size:12px;color:var(--muted);margin:0 0 16px 0">
       Breakdown by what kind of product and which game system — shows whether shortfalls are
@@ -1670,14 +1668,14 @@
       <div>
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
                     color:var(--muted);margin-bottom:8px">By Product Type</div>
-        <table style="min-width:340px"><tbody><tr><td style='width:160px;font-size:12px;padding-right:10px'>Miniature Kits</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>449</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>86%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Rulebooks / Cards</td><td style='width:180px'><div style='background:#3498db;height:10px;width:5%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>23</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>4%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Books</td><td style='width:180px'><div style='background:#3498db;height:10px;width:5%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>21</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>4%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Boxed Sets</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:2%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>7</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Gaming Accessories</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:2%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>7</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
+        <table style="min-width:340px"><tbody><tr><td style='width:160px;font-size:12px;padding-right:10px'>Miniature Kits</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>472</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>85%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Rulebooks / Cards</td><td style='width:180px'><div style='background:#3498db;height:10px;width:6%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>28</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>5%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Books</td><td style='width:180px'><div style='background:#3498db;height:10px;width:5%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>22</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>4%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Boxed Sets</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:1%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>3</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Gaming Accessories</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:1%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>3</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
 <tr><td style='width:160px;font-size:12px;padding-right:10px'>Hobby Accessories</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:1%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>4</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Licensed Products</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:2%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>7</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
-<tr><td style='width:160px;font-size:12px;padding-right:10px'>Paints</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:0%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>2</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>0%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Licensed Products</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:2%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>8</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>1%</td></tr>
+<tr><td style='width:160px;font-size:12px;padding-right:10px'>Paints</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:3%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>14</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>3%</td></tr>
 <tr><td style='width:160px;font-size:12px;padding-right:10px'>Bundles</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:0%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>1</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>0%</td></tr>
 </tbody></table>
         <p style="font-size:10px;color:var(--muted);margin-top:6px">
@@ -1688,24 +1686,24 @@
       <div>
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
                     color:var(--muted);margin-bottom:8px">By Game System</div>
-        <table style="min-width:300px"><tbody><tr><td style='width:140px;font-size:12px;padding-right:10px'>40k</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>139</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>27%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>AoS</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:91%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>126</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>24%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>Horus Heresy</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:37%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>52</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>10%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>The Old World</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:16%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>22</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>4%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>Specialty Games</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:55%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>76</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>15%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>Middle-Earth</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:53%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>74</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>14%</td></tr>
-<tr><td style='width:140px;font-size:12px;padding-right:10px'>Other</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:25%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>35</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>7%</td></tr>
+        <table style="min-width:300px"><tbody><tr><td style='width:140px;font-size:12px;padding-right:10px'>40k</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>160</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>29%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>AoS</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:76%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>121</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>22%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>Horus Heresy</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:29%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>47</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>8%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>The Old World</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:16%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>26</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>5%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>Specialty Games</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:50%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>80</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>14%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>Middle-Earth</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:46%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>74</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>13%</td></tr>
+<tr><td style='width:140px;font-size:12px;padding-right:10px'>Other</td><td style='width:180px'><div style='background:#c0392b;height:10px;width:31%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>50</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>9%</td></tr>
 </tbody></table>
       </div>
 
       <div>
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;
                     color:var(--muted);margin-bottom:8px">By Price Tier</div>
-        <table style="min-width:360px"><tbody><tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>Under $30  (paints, tools, books)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:22%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>48</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>9%</td></tr>
-<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$30–$60    (single boxes, kits)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:98%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>212</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>40%</td></tr>
-<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$60–$150   (core boxes, battleboxes)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>216</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>41%</td></tr>
-<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$150–$400  (army sets, big boxes)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:16%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>35</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>7%</td></tr>
-<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$400+      (Forge World resin)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:6%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>13</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>2%</td></tr>
+        <table style="min-width:360px"><tbody><tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>Under $30  (paints, tools, books)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:25%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>59</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>11%</td></tr>
+<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$30–$60    (single boxes, kits)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:92%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>216</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>39%</td></tr>
+<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$60–$150   (core boxes, battleboxes)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:100%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>236</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>42%</td></tr>
+<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$150–$400  (army sets, big boxes)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:16%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>37</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>7%</td></tr>
+<tr><td style='width:230px;font-size:11px;padding-right:10px;font-family:monospace'>$400+      (Forge World resin)</td><td style='width:180px'><div style='background:#8e44ad;height:10px;width:4%;border-radius:2px;min-width:2px'></div></td><td class='num' style='font-size:12px;width:36px'>10</td><td class='num' style='font-size:11px;color:var(--muted);width:36px'>2%</td></tr>
 </tbody></table>
         <p style="font-size:10px;color:var(--muted);margin-top:6px">
           Most OOS is mid-range ($30–$150) — the core purchase range, not just cheap impulse items.
@@ -1722,7 +1720,7 @@
     <h3 style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
                color:var(--muted);margin-bottom:4px;">
       New Releases Already Sold Out
-      <span style="font-weight:400;font-size:10px"> — 9 of 44 new releases OOS (20%)</span>
+      <span style="font-weight:400;font-size:10px"> — 14 of 55 new releases OOS (25%)</span>
     </h3>
     <p style="font-size:12px;color:var(--muted);margin:0 0 12px 0">
       Products launched recently and already OOS on GW.com.
@@ -1741,14 +1739,19 @@
         </tr>
       </thead>
       <tbody><tr style='background:rgba(192,57,43,0.04)'><td><strong>Spearhead: City of Ash</strong></td><td class='num'>$220</td><td style='font-size:11px;color:var(--muted)'>AoS</td><td style='font-size:11px;color:var(--muted)'>Box Set</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span class='badge badge-dn'>OOS</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Knight Destrier</strong></td><td class='num'>$170</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span class='badge badge-up'>10+ In Stock</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Defiler</strong></td><td class='num'>$145</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span class='badge badge-dn'>OOS</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Venatari Sodality</strong></td><td class='num'>$82</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Armageddon: The Return of Yarrick – War Without End (Collector's Edition)</strong></td><td class='num'>$125</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Cards</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Wazdakka Gutsmek</strong></td><td class='num'>$85</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Venatari Sodality</strong></td><td class='num'>$82</td><td style='font-size:11px;color:var(--muted)'>Horus Heresy</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr style='background:rgba(192,57,43,0.04)'><td><strong>Custodian Dreadnought</strong></td><td class='num'>$77</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 <tr style='background:rgba(192,57,43,0.04)'><td><strong>Zardu Layak: The Crimson Apostle (Special Edition)</strong></td><td class='num'>$75</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Kravek Morne</strong></td><td class='num'>$47</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Iron Warriors Upgrades</strong></td><td class='num'>$35</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
-<tr style='background:rgba(192,57,43,0.04)'><td><strong>Daughters of Khaine Dice</strong></td><td class='num'>$34</td><td style='font-size:11px;color:var(--muted)'>AoS</td><td style='font-size:11px;color:var(--muted)'>Accessory</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Da Freebooterz Code (Special Edition)</strong></td><td class='num'>$75</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>HIVE (Hardback)</strong></td><td class='num'>$65</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Inquisitor Kroyle</strong></td><td class='num'>$60</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Commissar Yarrick</strong></td><td class='num'>$48</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Kit</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Death World (Anniversary Edition)</strong></td><td class='num'>$35</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Commissar Yarrick Dice</strong></td><td class='num'>$34</td><td style='font-size:11px;color:var(--muted)'>40k</td><td style='font-size:11px;color:var(--muted)'>Accessory</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>World Ablaze (Hardback)</strong></td><td class='num'>$30</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
+<tr style='background:rgba(192,57,43,0.04)'><td><strong>Da Freebooterz Code (Hardback)</strong></td><td class='num'>$30</td><td style='font-size:11px;color:var(--muted)'>Other</td><td style='font-size:11px;color:var(--muted)'>Book</td><td class='num'><span class='badge badge-dn'>Out of Stock</span></td><td class='num'><span style='color:var(--muted);font-size:11px'>—</span></td></tr>
 </tbody>
     </table>
     <p class="data-note">
@@ -1762,9 +1765,9 @@
     GW uses pull-based manufacturing — low buffer stock, produced against forecast.
     OOS on warhammer.com means real sell-through beat production planning.
     <strong>Core starters staying in stock</strong> means the new-player pipeline is open.
-    <strong>Beginner-adjacent OOS</strong> (9 products) means players who <em>just bought</em>
+    <strong>Beginner-adjacent OOS</strong> (3 products) means players who <em>just bought</em>
     a starter set can't easily get the next recommended product — a retention friction signal.
-    <strong>New release sell-out rate (20% in 3 days of tracking)</strong> reflects
+    <strong>New release sell-out rate (25% in 5 days of tracking)</strong> reflects
     GW's intentional scarcity strategy on launches — the higher-price items ($100+) selling out fastest
     is the highest-conviction demand signal. GW has raised prices 3× since 2020 with no observed demand destruction.
   </div>
