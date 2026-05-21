@@ -1,0 +1,21 @@
+[2026-03-13 23:03:10] ============================================================
+[2026-03-13 23:03:10] update_data.py started  reddit=True steam=True store=True
+[2026-03-13 23:03:10] Fetching Reddit subscriber counts...
+[2026-03-13 23:03:11]   Reddit r/Warhammer: 447,167
+[2026-03-13 23:03:12]   Reddit r/Warhammer40k: 1,482,925
+[2026-03-13 23:03:13]   Reddit r/AgeOfSigmar: 252,985
+[2026-03-13 23:03:14]   Reddit r/minipainting: 1,240,283
+[2026-03-13 23:03:15] Reddit subs patched: r/Warhammer=447,167, r/Warhammer40k=1,482,925, r/AgeOfSigmar=252,985, r/minipainting=1,240,283
+[2026-03-13 23:03:15] Scraping SteamCharts...
+[2026-03-13 23:03:15]   Total War: WH3: 49 months scraped
+[2026-03-13 23:03:17]   Space Marine 2: 18 months scraped
+[2026-03-13 23:03:19]   Darktide: 40 months scraped
+[2026-03-13 23:03:20]   Vermintide 2: 102 months scraped
+[2026-03-13 23:03:22] Steam patched: Total War: WH3: 2 cell(s) updated; Space Marine 2: 2 cell(s) updated; Darktide: 2 cell(s) updated; Vermintide 2: 2 cell(s) updated
+[2026-03-13 23:03:22] Fetching Reddit store threads...
+[2026-03-13 23:03:23]   Store threads r/Warhammer (2026-03): 1
+[2026-03-13 23:03:26]   Store threads r/Warhammer40k (2026-03): 3
+[2026-03-13 23:03:27] Store threads patched: 2026-03: 9→9
+[2026-03-13 23:03:27] index.html written (139KB)
+[2026-03-13 23:03:27] Summary: Reddit subs: r/Warhammer=447,167, r/Warhammer40k=1,482,925, r/AgeOfSigmar=252,985, r/minipainting=1,240,283 | Steam: Total War: WH3: 2 cell(s) updated; Space Marine 2: 2 cell(s) updated; Darktide: 2 cell(s) updated; Vermintide 2: 2 cell(s) updated | Store threads: 2026-03: 9→9
+[2026-03-13 23:03:27] ============================================================

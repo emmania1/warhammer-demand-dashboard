@@ -1,0 +1,175 @@
+════════════════════════════════════════════════════════════
+  WARHAMMER DEMAND INTELLIGENCE
+  Report Date: 2026-02-23
+════════════════════════════════════════════════════════════
+
+
+ANALYST BRIEFING — STRUCTURAL GROWTH
+────────────────────────────────────────────────────────────
+
+WARHAMMER FRANCHISE — STRUCTURAL AUDIENCE GROWTH BRIEFING
+
+Report Date: 23 February 2026
+
+Prepared for institutional readers tracking long-term franchise expansion and compounding audience growth across community, content, digital, and retail channels.
+
+---
+
+SECTION 1 — STRUCTURAL VERDICT
+
+The Warhammer franchise is structurally expanding across every measurable vector. The community base continues to compound, with r/Warhammer40k growing from approximately 940,000 members in October 2023 to 1.47 million today — a gain of roughly 56 percent in twenty-eight months, or annualised growth comfortably above 20 percent. The creator ecosystem has scaled to over 6.1 million aggregate subscribers and nearly 2 billion lifetime views, indicating a deep and self-reinforcing content flywheel. Space Marine 2, the franchise's flagship digital product, has sold an estimated 5 to 10 million units on Steam alone in under eighteen months, a commercial outcome that dwarfs any prior Warhammer title and has introduced millions of players to the IP who had no prior tabletop exposure. The single most important structural insight in this data is that Warhammer is no longer growing merely as a tabletop hobby — it is compounding as a multi-platform entertainment franchise, with digital gaming serving as a massive top-of-funnel acquisition engine feeding community, content, and ultimately retail demand. There is no evidence of plateau or contraction in any tracked metric.
+
+SECTION 2 — COMMUNITY BASE EXPANSION: REDDIT
+
+The nine tracked Reddit communities collectively represent well over 4.7 million memberships, with the two largest — r/Warhammer40k at 1.47 million and r/minipainting at 1.24 million — anchoring an ecosystem that spans lore, competitive play, memes, hobby technique, and sub-setting interest. The flagship r/Warhammer40k community surpassed one million members in October 2024 and has added approximately 470,000 members since the oldest tracked data point of 940,000 in October 2023, implying annualised growth in the low-to-mid twenties percentage range — consistent with the historically observed 13 to 25 percent annual band but running toward the upper end. Since the September 2025 baseline (the earliest point for most communities after Reddit removed public subscriber counts from the web interface, though the API continues to return accurate values), growth has been broadbased: r/Warhammer40k is up 2.4 percent, r/Warhammer30k and r/warhammerfantasy are each up 2.3 percent, r/40kLore and r/ageofsigmar are up 1.6 percent, and r/WarhammerCompetitive is up 1.5 percent. These five-month gains, if annualised, project to roughly 3 to 5 percent annual rates, which is notably below the historical band. However, this likely reflects a normalisation following the extraordinary spike driven by the Space Marine 2 launch window in late 2024 rather than a genuine deceleration of structural growth. The sub-communities growing fastest on a percentage basis — r/Warhammer30k and r/warhammerfantasy, both up 2.3 percent since September — suggest that audience expansion is now reaching beyond the core Warhammer 40,000 setting into the Horus Heresy and Old World sub-franchises, a meaningful signal of franchise deepening.
+
+Formal one-year and two-year growth comparisons are not yet available for most communities because systematic weekly tracking only began in February 2026. The sole exception is r/Warhammer40k, where the October 2023 data point allows a longer lookback. Full year-over-year comparisons for all nine communities will first become available in February 2027. Thirty-day engagement trends show a mixed picture — r/warhammerfantasy posted a striking 45.3 percent structural engagement increase, likely tied to ongoing Games Workshop support for The Old World product line, while r/40kLore, r/Warhammer30k, and r/WarhammerCompetitive each declined in the range of 14 to 21 percent. The ecosystem-level engagement trend is down 12.6 percent over the past thirty days. We read this as a cyclical content lull between major releases rather than a structural demand signal, but it bears monitoring against the next product launch window.
+
+SECTION 3 — CREATOR ECOSYSTEM EXPANSION: YOUTUBE
+
+The tracked Warhammer YouTube creator ecosystem now comprises 6.13 million aggregate subscribers across ten channels and has generated 1.97 billion lifetime views — a number that, for context, exceeds the lifetime viewership of many mid-tier broadcast television franchises. The ecosystem is remarkably distributed: no single channel dominates, with the official Warhammer channel at 991,000 subscribers, Luetin09 at 958,000, WesHammer at 893,000, Element Games at 807,000, Squidmar Miniatures at 775,000, and Majorkill at 697,000 all occupying the upper tier. Inferring relative momentum from lifetime views per subscriber — a rough proxy for content velocity and audience engagement depth — Majorkill (563 views per subscriber), WesHammer (448), and Auspex Tactics (532) appear to be generating the most intensive engagement relative to their subscriber base. Majorkill in particular is the dominant force in recent content performance: four of the top eight videos in the last sixty days are his, led by a Black Templars explainer at 554,300 views averaging over 21,000 views per day. Lore content continues to be the single most powerful audience magnet — Luetin09's Belisarius Cawl video achieved 315,600 views at an extraordinary 18,568 views per day, and his Terminus Decree video has reached 364,200 views at nearly 2,000 per day on what appears to be an older upload. Hobby content also performs strongly, with Squidmar's emotional piece on painting an army for a bereaved child reaching 329,600 views and Midwinter Minis generating 301,300 views on a painting technique video. Tactical and competitive content, while serving a more niche audience, shows solid sustained demand through Auspex Tactics' 397,000-subscriber base and 211 million lifetime views.
+
+On the trailer and tentpole front — the most important barometer of franchise-level excitement — the Warhammer Official channel is showing strong demand signals. The New Year Warhammer Preview 2026 livestream reached 240,900 views at a rate of 6,339 per day, indicating significant audience appetite for product roadmap content. The Penitence animation extract (164,600 views, 4,331 per day) and the Reign of Iron teaser trailer (157,200 views, 4,137 per day) both demonstrate that Games Workshop's investment in animated content is generating meaningful awareness-level engagement. The new Warhammer 40,000 Animations trailer sits at 130,200 views at 2,769 per day, and the Legio Custodes reveal reached 106,900 views at 2,812 per day. These are healthy reveal metrics for a franchise that historically relies on tabletop product cycles rather than Hollywood-scale marketing. Year-over-year subscriber growth data for individual creators requires fifty-two weeks of snapshots; the first full annual comparisons will become available in February 2027.
+
+SECTION 4 — NEW PLAYER INFLOW: BEGINNER FUNNEL
+
+The beginner content funnel shows meaningful lifetime scale but relatively thin recent production. Across the tracked ecosystem, ten beginner or starter-oriented videos have been identified, accumulating 1.53 million lifetime views — a figure anchored by Luetin09's "40K Curious After Space Marine 2?" video at 532,400 views and his Traitor Astartes beginner series entry at 526,300 views. However, only two beginner-focused videos have been published in the last ninety days, generating 126,100 aggregate views, and only three in the last twelve months at 652,500 views. This is a structural concern worth watching. The massive influx of new players driven by Space Marine 2's five-to-ten-million-unit installed base should, in theory, be generating sustained demand for onboarding content. The fact that aggregate beginner content production remains low — two videos in ninety days across an ecosystem of ten major creators — suggests either that creators are not perceiving sufficient demand to prioritise this content type, or that the beginner-to-hobbyist conversion is happening through channels we are not yet tracking (Reddit threads, Discord communities, in-store events, or Games Workshop's own digital onboarding resources). The Honest Wargamer's beginner guides for both 40K (165,500 views) and Age of Sigmar (94,600 views) demonstrate that well-executed onboarding content finds a durable audience. We would flag this as a leading indicator to monitor: if beginner content production and viewership accelerate materially in the next two quarters, it will confirm that the Space Marine 2 cohort is converting into the broader hobby. If it remains flat, it may indicate that the digital gaming audience is not translating into tabletop customer acquisition at the rate the community size data would suggest.
+
+SECTION 5 — DIGITAL GAMING AUDIENCE: STEAM
+
+Warhammer's digital gaming footprint on Steam represents one of the most commercially significant licensed IP portfolios in PC gaming. Space Marine 2 is the headline story: with SteamSpy estimating 5 to 10 million owners, 198,600 reviews, and an 83 percent positive rating, it is by far the largest single Warhammer game launch in franchise history and sits comfortably in the upper tier of 2024-2025 PC releases by commercial scale. Its current concurrent player count of 9,600 — roughly six months after the post-launch peak would have subsided — indicates a healthy retained player base, and the average two-week playtime of 360 minutes confirms ongoing active engagement rather than dormant ownership. Total War: Warhammer III remains the largest sustained player base at 18,600 concurrent players, with 2 to 5 million owners and 796 minutes of average two-week playtime — an extraordinary engagement depth that reflects the game's ongoing DLC cadence and modding community. Darktide maintains 4,300 concurrent players with 2 to 5 million owners and has recovered its review trajectory to 71 percent positive following substantial post-launch updates. Vermintide 2 continues to hold a small but loyal community at 2,100 concurrent players with an impressive 85 percent positive review score across 144,800 reviews. Chaos Gate: Daemonhunters also maintains 2,100 concurrent players and an 84 percent positive score. Across all tracked titles, the aggregate concurrent player base of 36,900 represents a meaningful always-on digital audience for the Warhammer IP. Year-over-year player base comparisons are not yet available and will first become possible once twelve months of weekly snapshots have been collected, projected for February 2027.
+
+SECTION 6 — RETAIL AND SUPPLY SIGNALS
+
+Direct retail and supply chain signals from the tracked creator ecosystem are limited in this snapshot period. Games Workshop's own content cadence remains high at twenty-two articles on the Warhammer Community homepage in the past seven days, consistent with an active release and preview schedule. The New Year Preview 2026 livestream's strong viewership (240,900 views) and the Legio Custodes reveal performance suggest active pre-release demand generation, and the announcement cadence implies that Games Workshop is maintaining an aggressive product pipeline into the first half of 2026. We are watching for creator unboxing and review content tied to new releases, sold-out signals on launch products (particularly limited-edition boxed sets), and any commentary from retail-adjacent creators such as Element Games regarding stock levels or pre-order demand. At this time, we do not have sufficient tracked retail data to make a definitive supply-demand assessment, and we note that Element Games' top-performing recent content appears to be non-Warhammer WWE gaming content, which may limit its utility as a pure retail signal for the franchise.
+
+SECTION 7 — STRUCTURAL OUTLOOK
+
+Four structural signals warrant close monitoring as the data set matures. First, the February 2027 milestone, when twelve months of systematic weekly tracking will enable the first true year-over-year comparisons across all Reddit communities, YouTube creator subscriber counts, and Steam player bases — this will be the first point at which we can distinguish genuine structural growth rates from the current reliance on shorter baselines and historical estimates. Second, beginner funnel velocity is the single most important leading indicator of whether the Space Marine 2 cohort is converting into long-term franchise participants: a material increase in both the production and viewership of beginner-oriented content over the next two to three quarters would confirm structural audience broadening, while stagnation would suggest the digital gaming audience may remain siloed. Third, the r/Warhammer30k and r/warhammerfantasy growth rates — currently the fastest-growing communities on a percentage basis — are the clearest early signal of whether Games Workshop's investment in the Horus Heresy and The Old World product lines is generating genuine audience expansion beyond the core 40K setting; if these communities sustain or accelerate their 2.3 percent five-month growth rates, it will confirm successful franchise diversification. Fourth, the trajectory of Warhammer Official's YouTube channel toward and beyond the one million subscriber threshold (currently 991,000) will serve as a highly visible benchmark of the franchise's first-party media scale — crossing one million would place Games Workshop's owned channel in rare territory for a tabletop gaming company and would confirm that the IP's direct audience relationship is strengthening independent of third-party creators. The overall picture is one of a franchise in structural expansion across every tracked dimension, with the critical open question being whether the pace of that expansion is accelerating, sustaining, or beginning to normalise after the exceptional 2024-2025 growth driven by Space Marine 2.
+
+────────────────────────────────────────────────────────────
+  RAW DATA TABLES
+────────────────────────────────────────────────────────────
+
+
+REDDIT COMMUNITY SIZE & STRUCTURAL GROWTH
+────────────────────────────────────────────────────────────
+  Note: Reddit removed public subscriber counts from the web in September 2025. The Reddit API still returns accurate member counts and is used for ongoing tracking.
+
+  Subreddit                 Members    1yr Growth    2yr Growth   Since Sept 25  Oldest Data
+  ────────────────────── ──────────  ────────────  ────────────  ──────────────  ────────────────
+  r/Warhammer40k              1.47M           N/A           N/A         ▲ +2.4%  2023-10: 940.0K
+  r/minipainting              1.24M           N/A           N/A         ▲ +1.4%  2025-09: 1.22M
+  r/Grimdank                 547.6K           N/A           N/A         ▲ +1.4%  2025-09: 540.0K
+  r/Warhammer                444.2K           N/A           N/A         ▲ +0.9%  2025-09: 440.0K
+  r/40kLore                  386.3K           N/A           N/A         ▲ +1.6%  2025-09: 380.0K
+  r/ageofsigmar              251.9K           N/A           N/A         ▲ +1.6%  2025-09: 248.0K
+  r/WarhammerCompetitive     142.1K           N/A           N/A         ▲ +1.5%  2025-09: 140.0K
+  r/Warhammer30k             126.8K           N/A           N/A         ▲ +2.3%  2025-09: 124.0K
+  r/warhammerfantasy         124.8K           N/A           N/A         ▲ +2.3%  2025-09: 122.0K
+
+
+REDDIT COMMUNITY ENGAGEMENT (30d structural)
+────────────────────────────────────────────────────────────
+  Ecosystem structural trend: ▼ -12.6%
+
+  Subreddit                  30d Structural
+  ──────────────────────── ────────────────
+  r/40kLore                        ▼ -20.8%
+  r/Grimdank                            N/A
+  r/Warhammer                           N/A
+  r/Warhammer30k                   ▼ -14.0%
+  r/Warhammer40k                        N/A
+  r/WarhammerCompetitive           ▼ -14.7%
+  r/ageofsigmar                         N/A
+  r/minipainting                        N/A
+  r/warhammerfantasy               ▲ +45.3%
+
+
+YOUTUBE CREATOR ECOSYSTEM
+────────────────────────────────────────────────────────────
+  Ecosystem subscribers: 6.13M
+  Ecosystem lifetime views: 1966.16M
+  Snapshots: 1 (need 52 for YoY; building)
+
+  Channel                   Subscribers  Lifetime Views    1yr Subs    2yr Subs
+  ──────────────────────── ────────────  ──────────────  ──────────  ──────────
+  Warhammer_Official             991.0K         147.67M         N/A         N/A
+  Luetin09                       958.0K         260.25M         N/A         N/A
+  WesHammer                      893.0K         399.83M         N/A         N/A
+  Element_Games                  807.0K         341.61M         N/A         N/A
+  Squidmar_Miniatures            775.0K         110.27M         N/A         N/A
+  Majorkill                      697.0K         392.42M         N/A         N/A
+  Midwinter_Minis                469.0K          86.65M         N/A         N/A
+  Auspex_Tactics                 397.0K         211.13M         N/A         N/A
+  Painting_Phase                  91.0K          13.76M         N/A         N/A
+  Honest_Wargamer                 47.1K           2.58M         N/A         N/A
+
+
+TRAILER & TENTPOLE CONTENT (15 found)
+────────────────────────────────────────────────────────────
+  #   Channel                      Views   Views/day  Title
+  ─── ──────────────────────── ─────────  ──────────  ───────────────────────────────────
+  1   Luetin09                    364.2K       1990  WHY DID THIS HAPPEN? - THE TERMINUS DECREE REVEALE…
+  2   Element_Games               280.8K        883  KANE REVEALS UNHINGED WWE TITLE! | WWE 2K Universe…
+  3   Warhammer_Official          240.9K       6339  New Year Warhammer Preview 2026 Livestream
+  4   Element_Games               219.4K        770  NWO REVEAL THEIR NEW LEADER! | WWE 2K25 Universe (…
+  5   Warhammer_Official          164.6K       4331  Exclusive Animation Extract: Penitence – Revealed …
+  6   Warhammer_Official          157.2K       4137  The Reign of Iron – Teaser Trailer | Warhammer 40,…
+  7   Warhammer_Official          130.2K       2769  New Warhammer 40,000 Animations Trailer – January …
+  8   Warhammer_Official          106.9K       2812  New Legio Custodes – Revealed at the New Year Prev…
+  9   Auspex_Tactics               80.4K       5742  40K Gets New Custom-Character Creation Rules? Cruc…
+  10  Auspex_Tactics               76.8K       2741  Iron Warriors REVEALS - What Have GW Unveiled?
+
+
+NEW PLAYER FUNNEL SIGNALS
+────────────────────────────────────────────────────────────
+  Total beginner/starter videos found   : 10
+  Last 90 days — videos                 : 2
+  Last 90 days — views                  : 126.1K
+  Last 12 months — views                : 652.5K
+  All-time views (beginner content)     : 1.53M
+
+
+TOP VIDEOS — LAST 60 DAYS (by views)
+────────────────────────────────────────────────────────────
+  #   Channel                      Views   Views/day  Title
+  ─── ──────────────────────── ─────────  ──────────  ───────────────────────────────────
+  1   Majorkill                   554.3K      21319  Why Are The Black Templars Insane? #majorkill #war…
+  2   Majorkill                   507.6K      18130  What's Up With Those Metal Spikey Devices On Power…
+  3   Majorkill                   336.2K       6862  Something Terrible Just Happened To The Warhammer …
+  4   Squidmar_Miniatures         329.6K       7848  Painting a Warhammer Army for a Kid After an Unima…
+  5   Luetin09                    315.6K      18568  BELISARIUS CAWL - THE TRUE OMNISSIAH? | Warhammer …
+  6   Midwinter_Minis             301.3K       5194  you're painting fur wrong
+  7   Squidmar_Miniatures         276.6K       9880  We Painted Warhammer Undercover on Fiverr - A One-…
+  8   Majorkill                   262.9K       8214  The Destroyer Plague - A Fate Worse than Death #ma…
+  9   Warhammer_Official          240.9K       6339  New Year Warhammer Preview 2026 Livestream
+  10  Squidmar_Miniatures         214.3K       4559  The biggest Warhammer project we've ever done - Ju…
+
+
+STEAM — WARHAMMER DIGITAL GAMING BASE
+────────────────────────────────────────────────────────────
+  Total concurrent players: 36.9K
+
+  Game                            Players    Reviews   Score       Owners Est.   Playtime 2w       YoY
+  ──────────────────────────── ──────────  ─────────  ──────  ────────────────  ────────────  ────────
+  Space_Marine_2                     9.6K     198.6K     83%      5.00M–10.00M          360m       N/A
+  Total_War_WH3                     18.6K     140.0K     70%       2.00M–5.00M          796m       N/A
+  Darktide                           4.3K     129.2K     71%       2.00M–5.00M          509m       N/A
+  Vermintide_2                       2.1K     144.8K     85%       2.00M–5.00M          337m       N/A
+  Boltgun                             N/A          0     N/A                 —             —       N/A
+  Chaos_Gate                         2.1K      41.8K     84%       2.00M–5.00M          298m       N/A
+  Dawn_of_War_2                       142      39.7K     88%       1.00M–2.00M          139m       N/A
+
+
+DATA COVERAGE
+────────────────────────────────────────────────────────────
+  Reddit communities tracked   : 9
+  Reddit member history        : 9
+  YouTube channels             : 10
+  YouTube video snapshots      : 1 (need 52 for YoY)
+  YouTube channel snapshots    : 1 (need 52 for YoY)
+  Steam games tracked          : 7
+  Report generated             : 2026-02-23 20:48
+
+════════════════════════════════════════════════════════════

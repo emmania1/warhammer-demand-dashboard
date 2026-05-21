@@ -1,0 +1,174 @@
+/bin/bash: /Users/emmania/Desktop/warhammer_demand/run_daily_stock.sh: Operation not permitted
+/bin/bash: /Users/emmania/Desktop/warhammer_demand/run_daily_stock.sh: Operation not permitted
+/bin/bash: /Users/emmania/Desktop/warhammer_demand/run_daily_stock.sh: Operation not permitted
+/bin/bash: /Users/emmania/Desktop/warhammer_demand/run_daily_stock.sh: Operation not permitted
+── GW.com stock snapshot (Algolia) ──────────────
+GW Stock Fetcher (Algolia) — 2026-05-19
+  [1/4] Out-of-stock products sitewide...
+        541 OOS products found (fetched 541)
+  [2/4] New releases...
+        55 new releases
+        14 new releases already OOS
+  [3/4] Selling fast + last chance...
+        0 selling fast | 0 last chance
+  [4/4] Starter set watchlist...
+        ✅ $69     40k Introductory Set
+        ✅ $114    40k Starter Set [TRANSITIONAL]
+        ✅ $220    40k Combat Patrol Starter Set [TRANSITIONAL]
+        ✅ $114    AoS Starter Set
+        ✅ $220    AoS Spearhead Starter Set
+        ✅ $114    Kill Team Starter Set
+        ⚪ NOT FOUND  Warcry: Crypt of Blood
+        ⚪ NOT FOUND  40k Paints + Tools Set
+        ⚪ NOT FOUND  Getting Started with 40k
+
+── Snapshot Summary (2026-05-19) ────────────────────────────────────────
+  Total OOS products logged:   541
+  New releases:               55 total, 14 already OOS
+  Last chance to buy:         0
+  Selling fast:               0
+
+── OOS by Game System ────────────────────────────────────────────────
+  40k                     0 OOS  
+  AoS                     0 OOS  
+  Horus Heresy            0 OOS  
+  The Old World           0 OOS  
+  Specialty Games         0 OOS  
+  Middle-Earth            0 OOS  
+
+── Starter Set Status (Investment Priority) ──────────────────────────
+  ✅ $114     Kill Team: Starter Set
+  ✅ $220     Warhammer 40,000 Combat Patrol Starter Set [TRANSITIONAL]
+  ✅ $69      Warhammer 40,000 Introductory Set
+  ✅ $114     Warhammer 40,000 Starter Set [TRANSITIONAL]
+  ✅ $220     Warhammer Age of Sigmar: Spearhead Starter Set
+  ✅ $114     Warhammer Age of Sigmar: Starter Set
+  ⚪ $0       40k Paints + Tools Set
+  ⚪ $0       Getting Started with 40k
+  ⚪ $0       Warcry: Crypt of Blood
+
+── New Releases Already OOS ──────────────────────────────────────────
+  $220     Spearhead: City of Ash  [['Age of Sigmar']]
+  $125     Armageddon: The Return of Yarrick – War Without End (Collect  [['Warhammer 40,000']]
+  $85      Wazdakka Gutsmek  [['Warhammer 40,000']]
+  $82      Venatari Sodality  [['The Horus Heresy', 'Warhammer 40,000']]
+  $77      Custodian Dreadnought  [['Warhammer 40,000', 'The Horus Heresy']]
+  $75      Da Freebooterz Code (Special Edition)  [Other]
+  $75      Zardu Layak: The Crimson Apostle (Special Edition)  [Other]
+  $65      HIVE (Hardback)  [Other]
+  $60      Inquisitor Kroyle  [['Warhammer 40,000']]
+  $48      Commissar Yarrick  [['Warhammer 40,000']]
+  $35      Death World (Anniversary Edition)  [Other]
+  $34      Commissar Yarrick Dice  [['Warhammer 40,000']]
+  $30      World Ablaze (Hardback)  [Other]
+  $30      Da Freebooterz Code (Hardback)  [Other]
+
+✓ 591 rows → data/gw_stock_daily.csv
+✓ Summary → data/gw_stock_summary.csv
+
+── Element Games stock snapshot (UK indie) ──────
+Element Games Stock Fetcher — 2026-05-19
+Checking 10 products (direct product page URLs)
+
+  Product                                           Status  EG Price      RRP
+  ──────────────────────────────────────  ────────────────  ────────  ───────
+  ✅ 40k Introductory Set                        10+ In Stock  £ 36.13   £42.50
+  ✅ 40k Starter Set                             10+ In Stock  £ 59.08   £69.50
+  ✅ 40k Combat Patrol Starter                   10+ In Stock  £113.90  £134.00
+  ✅ AoS Starter Set                               1 In Stock  £ 36.12   £42.50
+  ✅ AoS Spearhead Starter                       10+ In Stock  £113.90  £134.00
+  ✅ Kill Team Starter Set                       10+ In Stock  £ 59.08   £69.50
+  🔴 Spearhead: City of Ash                      Out of Stock  £113.90  £134.00
+  ✅ Knight Destrier                             10+ In Stock  £ 89.25  £105.00
+  🔴 Defiler                                     Out of Stock  £ 74.80   £88.00
+  ✅ Venatari Sodality                           10+ In Stock  £ 42.08   £49.50
+
+  Summary: 8 in stock | 2 OOS | 0 other (backorder/not found/error)
+✓ Saved 10 rows → data/element_games_stock_daily.csv
+
+✓ Daily stock snapshots complete.
+── GW.com stock snapshot (Algolia) ──────────────
+GW Stock Fetcher (Algolia) — 2026-05-20
+  [1/4] Out-of-stock products sitewide...
+        555 OOS products found (fetched 555)
+  [2/4] New releases...
+        55 new releases
+        14 new releases already OOS
+  [3/4] Selling fast + last chance...
+        0 selling fast | 0 last chance
+  [4/4] Starter set watchlist...
+        ✅ $69     40k Introductory Set
+        ✅ $114    40k Starter Set [TRANSITIONAL]
+        ✅ $220    40k Combat Patrol Starter Set [TRANSITIONAL]
+        ✅ $114    AoS Starter Set
+        ✅ $220    AoS Spearhead Starter Set
+        ✅ $114    Kill Team Starter Set
+        ⚪ NOT FOUND  Warcry: Crypt of Blood
+        ⚪ NOT FOUND  40k Paints + Tools Set
+        ⚪ NOT FOUND  Getting Started with 40k
+
+── Snapshot Summary (2026-05-20) ────────────────────────────────────────
+  Total OOS products logged:   555
+  New releases:               55 total, 14 already OOS
+  Last chance to buy:         0
+  Selling fast:               0
+
+── OOS by Game System ────────────────────────────────────────────────
+  40k                     0 OOS  
+  AoS                     0 OOS  
+  Horus Heresy            0 OOS  
+  The Old World           0 OOS  
+  Specialty Games         0 OOS  
+  Middle-Earth            0 OOS  
+
+── Starter Set Status (Investment Priority) ──────────────────────────
+  ✅ $114     Kill Team: Starter Set
+  ✅ $220     Warhammer 40,000 Combat Patrol Starter Set [TRANSITIONAL]
+  ✅ $69      Warhammer 40,000 Introductory Set
+  ✅ $114     Warhammer 40,000 Starter Set [TRANSITIONAL]
+  ✅ $220     Warhammer Age of Sigmar: Spearhead Starter Set
+  ✅ $114     Warhammer Age of Sigmar: Starter Set
+  ⚪ $0       40k Paints + Tools Set
+  ⚪ $0       Getting Started with 40k
+  ⚪ $0       Warcry: Crypt of Blood
+
+── New Releases Already OOS ──────────────────────────────────────────
+  $220     Spearhead: City of Ash  [['Age of Sigmar']]
+  $125     Armageddon: The Return of Yarrick – War Without End (Collect  [['Warhammer 40,000']]
+  $85      Wazdakka Gutsmek  [['Warhammer 40,000']]
+  $82      Venatari Sodality  [['The Horus Heresy', 'Warhammer 40,000']]
+  $77      Custodian Dreadnought  [['The Horus Heresy', 'Warhammer 40,000']]
+  $75      Da Freebooterz Code (Special Edition)  [Other]
+  $75      Zardu Layak: The Crimson Apostle (Special Edition)  [Other]
+  $65      HIVE (Hardback)  [Other]
+  $60      Inquisitor Kroyle  [['Warhammer 40,000']]
+  $48      Commissar Yarrick  [['Warhammer 40,000']]
+  $35      Death World (Anniversary Edition)  [Other]
+  $34      Commissar Yarrick Dice  [['Warhammer 40,000']]
+  $30      World Ablaze (Hardback)  [Other]
+  $30      Da Freebooterz Code (Hardback)  [Other]
+
+✓ 605 rows → data/gw_stock_daily.csv
+✓ Summary → data/gw_stock_summary.csv
+
+── Element Games stock snapshot (UK indie) ──────
+Element Games Stock Fetcher — 2026-05-20
+Checking 10 products (direct product page URLs)
+
+  Product                                           Status  EG Price      RRP
+  ──────────────────────────────────────  ────────────────  ────────  ───────
+  ✅ 40k Introductory Set                        10+ In Stock  £ 36.13   £42.50
+  ✅ 40k Starter Set                             10+ In Stock  £ 59.08   £69.50
+  ✅ 40k Combat Patrol Starter                   10+ In Stock  £113.90  £134.00
+  ✅ AoS Starter Set                               1 In Stock  £ 36.12   £42.50
+  ✅ AoS Spearhead Starter                       10+ In Stock  £113.90  £134.00
+  ✅ Kill Team Starter Set                         8 In Stock  £ 59.08   £69.50
+  🔴 Spearhead: City of Ash                      Out of Stock  £113.90  £134.00
+  ✅ Knight Destrier                             10+ In Stock  £ 89.25  £105.00
+  🔴 Defiler                                     Out of Stock  £ 74.80   £88.00
+  ✅ Venatari Sodality                           10+ In Stock  £ 42.08   £49.50
+
+  Summary: 8 in stock | 2 OOS | 0 other (backorder/not found/error)
+✓ Saved 10 rows → data/element_games_stock_daily.csv
+
+✓ Daily stock snapshots complete.

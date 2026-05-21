@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warhammer Demand Intelligence — 2026-02-23</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e;
+    --accent: #c0392b; --accent2: #e74c3c;
+    --green: #3fb950; --red: #f85149; --gold: #d4a017;
+    --orange: #e5852a; --blue: #58a6ff; --purple: #bc8cff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #1a0000 0%, #2d0808 50%, #1a0000 100%); border-bottom: 2px solid var(--accent); padding: 28px 40px; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+  .header .sub { color: var(--muted); margin-top: 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+  .container { max-width: 1150px; margin: 0 auto; padding: 24px 20px; }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 18px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent2); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  /* Context callout */
+  .ctx { font-size: 13px; color: #cdd9e5; background: var(--bg); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 14px; line-height: 1.7; }
+  /* Callout boxes */
+  .callout { font-size: 12px; padding: 9px 13px; border-radius: 0 5px 5px 0; margin-bottom: 12px; line-height: 1.6; }
+  .callout { background: rgba(88,166,255,0.06); border-left: 3px solid var(--blue); color: #aac; }
+  .callout-warn { background: rgba(212,160,23,0.08); border-left: 3px solid var(--gold); color: var(--gold); }
+  /* Narrative */
+  .narrative .section-heading { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin: 18px 0 6px; }
+  .narrative p { color: #cdd9e5; line-height: 1.85; margin-bottom: 10px; }
+  /* Stats row */
+  .stats-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .stat-card { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; min-width: 110px; flex: 1; }
+  .stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .stat-value { font-size: 20px; font-weight: 700; color: var(--text); }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  /* Chart containers */
+  .chart-wrap { position: relative; height: 240px; margin-bottom: 14px; }
+  .chart-wrap-sm { position: relative; height: 180px; margin-bottom: 14px; }
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 7px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 7px 10px; border-bottom: 1px solid #21262d; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  /* Takeaways list */
+  .takeaways { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; margin-bottom: 16px; }
+  .takeaways .tk-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 9px; }
+  .takeaways ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #cdd9e5; }
+  /* Badges */
+  .badge { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 3px; margin: 1px; white-space: nowrap; }
+  .badge-sales    { background: #1a3a1a; color: var(--green);  border: 1px solid var(--green); }
+  .badge-sold     { background: #3a1a1a; color: var(--red);    border: 1px solid var(--red); }
+  .badge-new      { background: #1a2a3a; color: var(--blue);   border: 1px solid var(--blue); }
+  .badge-industry { background: #2a1a3a; color: var(--purple); border: 1px solid var(--purple); }
+  .badge-discount { background: #3a2a1a; color: var(--orange); border: 1px solid var(--orange); }
+  .badge-demand   { background: #3a3a1a; color: var(--gold);   border: 1px solid var(--gold); }
+  .badge-tag      { background: #1a2a1a; color: var(--accent2); border: 1px solid var(--accent); font-size: 9px; padding: 1px 5px; }
+  /* Data health */
+  .health-ok   td { color: #cdd9e5; }
+  .health-warn td { color: var(--gold); }
+  .health-miss td { color: var(--red); }
+  /* Footer */
+  .footer { text-align: center; color: var(--muted); font-size: 11px; padding: 20px; border-top: 1px solid var(--border); margin-top: 4px; }
+  /* Inline colour overrides */
+  span[style*="color:green"] { color: var(--green) !important; }
+  span[style*="color:red"]   { color: var(--red)   !important; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚔ Warhammer Demand Intelligence</h1>
+  <div class="sub">Week of 2026-02-23 &nbsp;|&nbsp; Generated 2026-02-23 09:52 &nbsp;|&nbsp; Reddit · YouTube · Google Trends · Steam · WarCom</div>
+</div>
+
+<div class="container">
+
+<!-- ═══ ANALYST BRIEFING ═════════════════════════════════════════════════════ -->
+<div class="section narrative">
+  <div class="section-title">Analyst Briefing</div>
+  <p>ANALYST BRIEFING — WARHAMMER DEMAND TRACKER
+Report Date: 2026-02-23</p>
+<h3 class="section-heading">SECTION 1 — OVERALL VERDICT</h3>
+<p>Warhammer consumer interest is in a mild contraction phase following a period of elevated engagement, but remains structurally well above its long-run baseline. The current Google Trends score of 16.0 sits 31 percent above the five-year average of 12.2, yet it is down sharply from the 52-week high of 26.8 and sits at less than half the all-time peak of 39.4 registered in September 2024, which almost certainly corresponded with the Space Marine 2 launch window. The 30-day structural decline of 42.5 percent in Google search interest, combined with a broadly negative week across Reddit engagement metrics, tells a clear story: the franchise is cooling from a post-peak high rather than collapsing from weakness. The single most important takeaway this week is that while short-term engagement is softening across nearly every tracked community and search signal, the underlying audience base continues to grow steadily, meaning this looks like a cyclical dip between major releases rather than a structural erosion of demand.</p>
+<h3 class="section-heading">SECTION 2 — COMMUNITY HEALTH: REDDIT</h3>
+<p>The Reddit engagement picture this week is uniformly soft. The ecosystem-wide 30-day structural trend is down 12.6 percent, and almost every subreddit with available data shows negative 7-day momentum. The sharpest weekly declines are in r/warhammerfantasy at negative 42.0 percent, r/Warhammer30k at negative 31.1 percent, r/40kLore at negative 30.3 percent, and r/Grimdank at negative 28.6 percent. The competitive community r/WarhammerCompetitive is softer but comparatively more stable at negative 10.5 percent on the week. The one genuinely interesting signal is r/warhammerfantasy: it posted the worst 7-day momentum of any tracked sub at negative 42.0 percent, yet its 30-day structural trend is strongly positive at 45.3 percent. This divergence suggests the sub experienced a significant burst of activity earlier in the month — likely tied to a news drop or community event around The Old World or Warhammer Fantasy content — that has now subsided. The main hub r/Warhammer is the most stable community this week at just negative 1.6 percent on the 7-day measure, suggesting the generalist community continues ticking along at a steady baseline even as more niche subs fluctuate. Several key subreddits, including r/Warhammer40k, r/minipainting, r/Grimdank, and r/ageofsigmar, show N/A for either 7-day or 30-day data, which limits our ability to draw ecosystem-wide conclusions with full confidence. We should note that the absence of data for the single largest sub, r/Warhammer40k, on the 7-day momentum measure is a material gap.</p>
+<p>Turning to community size, the subscriber base across all tracked subreddits continues to grow, and these numbers remain reliable despite Reddit's removal of public subscriber counts from the web interface in September 2025, since the API still returns accurate live member counts. The flagship r/Warhammer40k stands at 1.47 million members, up 2.4 percent since September 2025 and a far cry from the 940,000 members recorded when tracking began in October 2023. That sub crossed the one-million-member milestone in October 2024, and its continued growth — even if the pace has moderated — confirms it as one of the largest dedicated gaming franchise communities on Reddit. The hobby-adjacent r/minipainting is close behind at 1.24 million members with 1.4 percent growth since September. Mid-tier subs like r/Grimdank at 547,600, r/Warhammer at 444,200, and r/40kLore at 386,300 are all growing in the 0.9 to 1.6 percent range over roughly the same five-month window. Notably, r/Warhammer30k and r/warhammerfantasy, both at roughly 125,000 to 127,000 members, are posting the strongest relative growth since September at 2.3 percent each, suggesting these smaller specialist communities are attracting new members at an above-average clip, possibly reflecting renewed interest in the Horus Heresy game system and The Old World. One-year growth rates are unavailable for all subreddits because tracking history does not yet extend back a full twelve months for most of them, so we cannot directly compare current growth to the historical 13 to 25 percent annual range. We will be able to make that comparison once data matures past the one-year mark later in 2025 and into 2026.</p>
+<h3 class="section-heading">SECTION 3 — CONTENT AND CREATOR LANDSCAPE: YOUTUBE</h3>
+<p>The YouTube channel landscape shows a healthy and diversified creator ecosystem around Warhammer content. Warhammer Official leads in subscriber count at 991,000, approaching the one-million milestone, though its total view count of 147.67 million is modest relative to its reach, which is typical for a brand channel that serves an announcement and showcase function rather than entertainment. The true viewership heavyweights are WesHammer at 893,000 subscribers and 399.83 million total views and Majorkill at 697,000 subscribers and 392.42 million views, both of whom generate massive engagement through lore-focused content. Luetin09, with 958,000 subscribers and 260.25 million views, remains a dominant force in deep-dive lore content. Element Games at 807,000 subscribers and Squidmar Miniatures at 775,000 represent the retail and hobby painting niches respectively, confirming that content about the physical hobby side of Warhammer commands large audiences alongside lore and gaming content.</p>
+<p>The top-performing recent videos over the past 60 days are dominated by lore content and hobby storytelling. Majorkill holds four of the eight top slots, with his Black Templars explainer leading at 554,300 views and a remarkable daily velocity of 21,319 views per day, followed closely by his power pack video at 507,600 views. Luetin09's Belisarius Cawl deep dive is posting the highest per-day velocity of any recent video at 19,728 views per day despite being newer, which signals strong initial audience demand for substantive 40K lore content. On the hobby side, Squidmar's emotionally resonant video about painting an army for a child after a loss has pulled 329,600 views, and his Fiverr undercover experiment reached 276,600 views, confirming that narrative-driven hobby content competes effectively with pure lore. Midwinter Minis' practical painting tutorial on fur generated 301,300 views, showing steady appetite for instructional content. The all-time top performers lean heavily toward accessible, big-question lore videos — WesHammer's faction opinion and faction victory scenario videos top out at 2.75 million and 2.07 million views respectively. We currently have only one data snapshot for YouTube channels, so we cannot yet calculate subscriber or view velocity trends. Once we accumulate four or more snapshots, we will be able to report growth rates and identify which channels are accelerating or plateauing.</p>
+<h3 class="section-heading">SECTION 4 — DIGITAL GAMING DEMAND: STEAM</h3>
+<p>Total active players across all tracked Warhammer titles sit at 36,900, with the audience heavily concentrated in two titles. Total War: Warhammer III leads the pack at 18,600 concurrent players, which is notable given its 70 percent positive review score — the second-lowest among major titles — and reflects the enduring appeal of the Total War strategy formula combined with the Warhammer Fantasy setting and ongoing DLC support. Space Marine 2 holds 9,600 players with an 83 percent positive rating, a solid retention figure for an action title that is now several months past its September 2024 launch peak. Darktide maintains 4,300 players with a 71 percent positive score, suggesting a dedicated but somewhat dissatisfied core audience that continues to engage despite mixed sentiment. Vermintide 2 is remarkably resilient at 2,100 players and an 85 percent positive rating years after release. Chaos Gate: Daemonhunters matches that player count at 2,100 with an 84 percent positive score. Dawn of War 2, an older title, still registers 142 players — a testament to long-tail franchise loyalty. Boltgun shows no current player data or reviews, which may indicate a data collection issue or very low concurrent counts. The overall picture is that Warhammer's digital gaming footprint is sustained by two anchor titles, with healthy long-tail engagement across the back catalog, but there is no fresh release currently driving a surge in active player counts.</p>
+<h3 class="section-heading">SECTION 5 — GW MARKETING ACTIVITY</h3>
+<p>Games Workshop published 22 articles on the Warhammer Community homepage over the past seven days, which translates to roughly three articles per day. This is a solid cadence indicative of an active communication period, likely covering a mix of rules previews, model reveals, painting guides, and community spotlights. However, the broad decline in Reddit engagement and the 42.5 percent 30-day drop in Google search interest suggest that whatever GW is currently promoting has not yet generated the kind of breakout excitement that drives organic community spikes. The marketing machine is running, but it appears to be in a sustaining mode between major tentpole announcements rather than building toward an imminent blockbuster reveal.</p>
+<h3 class="section-heading">SECTION 6 — WHAT TO WATCH</h3>
+<p>Four items warrant close attention in the coming weeks. First, monitor whether the Google Trends 30-day structural decline of 42.5 percent stabilizes or deepens — the 7-day momentum is essentially flat at positive 0.8 percent, which could signal that the floor is forming, but another week of data is needed to confirm. Second, track the r/warhammerfantasy divergence closely: the extreme gap between its negative 42.0 percent weekly momentum and positive 45.3 percent 30-day structural trend suggests a news catalyst recently passed, and it will be important to see whether the sub settles back to baseline or whether renewed Old World interest keeps it elevated. Third, the YouTube data is in its infancy with only one snapshot collected — the next three weeks of data collection will unlock velocity metrics and allow us to identify which creators are gaining or losing momentum, which is critical for understanding where new audience growth is actually happening. Fourth, watch Space Marine 2's player count trajectory: at 9,600 concurrent users it remains healthy, but any significant content update or seasonal event could reignite interest, while continued slow decline without new content would signal that the game's demand contribution to the franchise is entering its long tail. The biggest data gap across the board is the absence of one-year growth rates for Reddit communities — these will become available as tracking data matures, and they will be essential for benchmarking whether the current pace of audience growth matches or lags the historical 13 to 25 percent annual range.</p>
+<p>────────────────────────────────────────────────────────────</p>
+</div>
+
+<!-- ═══ GOOGLE TRENDS — 5-YEAR HISTORY ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Google Search Interest — 5-Year History</div>
+  <div class="ctx">Current score of <strong>16</strong> sits <strong>59% below</strong> the all-time peak of <strong>39</strong> (achieved 2024-09), and <strong>31% above</strong> the 5-year average of <strong>12.2</strong>.</div>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Current Score</div>
+      <div class="stat-value">16.0</div>
+      <div class="stat-sub">out of 100</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">5-Year Average</div>
+      <div class="stat-value">12.2</div>
+      <div class="stat-sub"><span style="color:var(--green)">▲ +31.1%</span> vs avg</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">All-Time Peak</div>
+      <div class="stat-value">39.4</div>
+      <div class="stat-sub">2024-09</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">52-Week Range</div>
+      <div class="stat-value" style="font-size:16px">6.0 – 26.8</div>
+      <div class="stat-sub">low – high</div>
+    </div>
+    <div class="stat-card"><div class="stat-label">1yr ago (same period)</div><div class="stat-value">17.6</div></div><div class="stat-card"><div class="stat-label">2yr ago (same period)</div><div class="stat-value">16.3</div></div><div class="stat-card"><div class="stat-label">3yr ago (same period)</div><div class="stat-value">9.3</div></div>
+    <div class="stat-card">
+      <div class="stat-label">7d Momentum</div>
+      <div class="stat-value" style="font-size:17px"><span style="color:var(--green)">▲ +0.8%</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">30d Structural</div>
+      <div class="stat-value" style="font-size:17px"><span style="color:var(--red)">▼ -42.5%</span></div>
+    </div>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="chartTrends"></canvas>
+  </div>
+</div>
+
+<!-- ═══ REDDIT ENGAGEMENT ════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Reddit Community Engagement</div>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Ecosystem 30d Structural Trend</div>
+      <div class="stat-value" style="font-size:18px"><span style="color:var(--red)">▼ -12.6%</span></div>
+      <div class="stat-sub">combined comment volume</div>
+    </div>
+  </div>
+  <table>
+    <thead><tr><th>Subreddit</th><th>7d Momentum</th><th>30d Structural</th></tr></thead>
+    <tbody><tr><td>r/40kLore</td><td><span style="color:var(--red)">▼ -30.3%</span></td><td><span style="color:var(--red)">▼ -20.8%</span></td></tr>
+<tr><td>r/Grimdank</td><td><span style="color:var(--red)">▼ -28.6%</span></td><td>—</td></tr>
+<tr><td>r/Warhammer</td><td><span style="color:var(--red)">▼ -1.6%</span></td><td>—</td></tr>
+<tr><td>r/Warhammer30k</td><td><span style="color:var(--red)">▼ -31.1%</span></td><td><span style="color:var(--red)">▼ -14.0%</span></td></tr>
+<tr><td>r/Warhammer40k</td><td>—</td><td>—</td></tr>
+<tr><td>r/WarhammerCompetitive</td><td><span style="color:var(--red)">▼ -10.5%</span></td><td><span style="color:var(--red)">▼ -14.7%</span></td></tr>
+<tr><td>r/ageofsigmar</td><td><span style="color:var(--red)">▼ -14.8%</span></td><td>—</td></tr>
+<tr><td>r/minipainting</td><td>—</td><td>—</td></tr>
+<tr><td>r/warhammerfantasy</td><td><span style="color:var(--red)">▼ -42.0%</span></td><td><span style="color:var(--green)">▲ +45.3%</span></td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ REDDIT COMMUNITY SIZE & HISTORICAL GROWTH ════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Reddit Community Size &amp; Historical Growth</div>
+  <div class="ctx">The 9 tracked Warhammer communities collectively hold <strong>4.74M members</strong>. r/Warhammer40k leads at <strong>1.47M members</strong>, having crossed 1M in October 2024.</div>
+  <div class="callout callout-warn">⚠ Reddit removed public subscriber counts from the web in September 2025. The Reddit API still returns accurate member counts and is used for ongoing tracking.</div>
+  
+
+  <div class="takeaways">
+    <div class="tk-label">Key Takeaways</div>
+    <ul><li>✅ <strong>r/Warhammer40k</strong> is the dominant community at <strong>1.47M</strong>, crossing 1M in October 2024.</li><li>⚠️ Reddit removed public subscriber counts from the web in <strong>September 2025</strong>. The API still returns live accurate values and is used here for tracking.</li><li>ℹ️ Historical annual growth has ranged <strong>13–25%</strong> across major Warhammer subs. Tracking began February 2026.</li></ul>
+  </div>
+
+  <!-- Member comparison bar chart -->
+  <div class="chart-wrap" style="height:260px">
+    <canvas id="chartReddit"></canvas>
+  </div>
+
+  <!-- r/Warhammer40k growth line -->
+  <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">r/Warhammer40k — Member Growth Trajectory</div>
+  <div class="chart-wrap-sm">
+    <canvas id="chartW40k"></canvas>
+  </div>
+
+  <!-- Members table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Subreddit</th>
+        <th>Members (live)</th>
+        <th>7d Δ</th>
+        <th>7d %</th>
+        <th>Since Sept '25</th>
+        <th>1-Year Growth</th>
+        <th>Oldest Data Point</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>r/Warhammer40k</td><td><strong>1.47M</strong></td><td><span style="color:var(--green)">▲ +34.6K</span></td><td><span style="color:var(--green)">▲ +2.4%</span></td><td><span style="color:var(--green)">▲ +2.4%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2023-10: 940.0K</td></tr>
+<tr><td>r/minipainting</td><td><strong>1.24M</strong></td><td><span style="color:var(--green)">▲ +17.4K</span></td><td><span style="color:var(--green)">▲ +1.4%</span></td><td><span style="color:var(--green)">▲ +1.4%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 1.22M</td></tr>
+<tr><td>r/Grimdank</td><td><strong>547.6K</strong></td><td><span style="color:var(--green)">▲ +7.6K</span></td><td><span style="color:var(--green)">▲ +1.4%</span></td><td><span style="color:var(--green)">▲ +1.4%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 540.0K</td></tr>
+<tr><td>r/Warhammer</td><td><strong>444.2K</strong></td><td><span style="color:var(--green)">▲ +4.2K</span></td><td><span style="color:var(--green)">▲ +0.9%</span></td><td><span style="color:var(--green)">▲ +0.9%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 440.0K</td></tr>
+<tr><td>r/40kLore</td><td><strong>386.3K</strong></td><td><span style="color:var(--green)">▲ +6.3K</span></td><td><span style="color:var(--green)">▲ +1.6%</span></td><td><span style="color:var(--green)">▲ +1.6%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 380.0K</td></tr>
+<tr><td>r/ageofsigmar</td><td><strong>251.9K</strong></td><td><span style="color:var(--green)">▲ +3.9K</span></td><td><span style="color:var(--green)">▲ +1.6%</span></td><td><span style="color:var(--green)">▲ +1.6%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 248.0K</td></tr>
+<tr><td>r/WarhammerCompetitive</td><td><strong>142.1K</strong></td><td><span style="color:var(--green)">▲ +2.1K</span></td><td><span style="color:var(--green)">▲ +1.5%</span></td><td><span style="color:var(--green)">▲ +1.5%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 140.0K</td></tr>
+<tr><td>r/Warhammer30k</td><td><strong>126.8K</strong></td><td><span style="color:var(--green)">▲ +2.8K</span></td><td><span style="color:var(--green)">▲ +2.3%</span></td><td><span style="color:var(--green)">▲ +2.3%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 124.0K</td></tr>
+<tr><td>r/warhammerfantasy</td><td><strong>124.8K</strong></td><td><span style="color:var(--green)">▲ +2.8K</span></td><td><span style="color:var(--green)">▲ +2.3%</span></td><td><span style="color:var(--green)">▲ +2.3%</span></td><td>—</td><td style='color:var(--muted);font-size:12px'>2025-09: 122.0K</td></tr>
+</tbody>
+  </table>
+  <p style="font-size:11px;color:var(--muted);margin-top:10px">
+    Since Sept '25 = growth from Sept 2025 estimate → current live count (post-Reddit-hide period).
+    1-Year Growth requires a data point ~365 days prior. Historical annual growth ranges: <strong>13–25%</strong> across major subs.
+  </p>
+</div>
+
+<!-- ═══ YOUTUBE CHANNELS ═════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">YouTube Channels — Snapshot 2026-02-22
+    &nbsp;<small style="color:var(--muted);font-weight:400">(1 snapshot(s))</small>
+  </div>
+  <div class="ctx"><strong>10 active channels</strong> tracked, commanding <strong>6.13M combined subscribers</strong> and <strong>1966.16M total views</strong>.</div>
+  <div class='callout callout-warn'>⚠ Only 1 snapshot — subscriber/view deltas will appear after the second weekly run.</div>
+  <div class="chart-wrap" style="height:260px">
+    <canvas id="chartYT"></canvas>
+  </div>
+  <table>
+    <thead><tr><th>Channel</th><th>Subscribers</th><th>Total Views</th><th>7d Δ Subs</th><th>7d Δ Views</th><th>Views/Day (7d)</th></tr></thead>
+    <tbody><tr><td>Warhammer Official</td><td>991.0K</td><td>147.67M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Luetin09</td><td>958.0K</td><td>260.25M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>WesHammer</td><td>893.0K</td><td>399.83M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Element Games</td><td>807.0K</td><td>341.61M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Squidmar Miniatures</td><td>775.0K</td><td>110.27M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Majorkill</td><td>697.0K</td><td>392.42M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Midwinter Minis</td><td>469.0K</td><td>86.65M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Auspex Tactics</td><td>397.0K</td><td>211.13M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Painting Phase</td><td>91.0K</td><td>13.76M</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Honest Wargamer</td><td>47.1K</td><td>2.58M</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ TOP VIDEOS — LAST 60 DAYS ═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Top Videos — Last 60 Days (by total views)</div>
+  <table>
+    <thead><tr><th>#</th><th>Channel</th><th>Title</th><th>Views</th><th>Velocity</th></tr></thead>
+    <tbody><tr><td>1</td><td>Majorkill</td><td>Why Are The Black Templars Insane? #majorkill #warhammer40k</td><td>554.3K</td><td>21319/d</td></tr>
+<tr><td>2</td><td>Majorkill</td><td>What's Up With Those Metal Spikey Devices On Power Packs? #majork…</td><td>507.6K</td><td>18130/d</td></tr>
+<tr><td>3</td><td>Majorkill</td><td>Something Terrible Just Happened To The Warhammer 40k Lore Commun…</td><td>336.2K</td><td>6862/d</td></tr>
+<tr><td>4</td><td>Squidmar Miniatures</td><td>Painting a Warhammer Army for a Kid After an Unimaginable Loss</td><td>329.6K</td><td>7848/d</td></tr>
+<tr><td>5</td><td>Luetin09</td><td>BELISARIUS CAWL - THE TRUE OMNISSIAH? | Warhammer 40,000 Lore/His…</td><td>315.6K</td><td>19728/d</td></tr>
+<tr><td>6</td><td>Midwinter Minis</td><td>you're painting fur wrong</td><td>301.3K</td><td>5286/d</td></tr>
+<tr><td>7</td><td>Squidmar Miniatures</td><td>We Painted Warhammer Undercover on Fiverr - A One-Year Experiment</td><td>276.6K</td><td>9880/d</td></tr>
+<tr><td>8</td><td>Majorkill</td><td>The Destroyer Plague - A Fate Worse than Death #majorkill #warham…</td><td>262.9K</td><td>8214/d</td></tr>
+<tr><td>9</td><td>Warhammer Official</td><td>New Year Warhammer Preview 2026 Livestream</td><td>240.9K</td><td>6510/d</td></tr>
+<tr><td>10</td><td>Squidmar Miniatures</td><td>The biggest Warhammer project we've ever done - Just started!</td><td>214.3K</td><td>4559/d</td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ FASTEST RISING VIDEOS ════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Fastest Rising — Daily Velocity Proxy (single snapshot)</div>
+  <div class="callout callout-warn">⚠ Only 1 snapshot available. Showing views/day for videos published in the last 30 days as a velocity proxy. Actual 7d deltas will appear after the second weekly run.</div>
+  <table>
+    <thead><tr><th>#</th><th>Channel</th><th>Title</th><th>Views</th><th>Velocity</th></tr></thead>
+    <tbody><tr><td>1</td><td>Auspex Tactics</td><td>The 11th Edition Launch Box - are the Rough Contents Known A…</td><td>83.6K</td><td>83579/d <small>(~585.1K/wk)</small></td></tr>
+<tr><td>2</td><td>Auspex Tactics</td><td>Alpha Legion Model Release Confirmed, World Eaters Daemons, …</td><td>48.0K</td><td>47984/d <small>(~335.9K/wk)</small></td></tr>
+<tr><td>3</td><td>Majorkill</td><td>Tyberos The Red Wake Is Finally Becoming a Primaris Marine!</td><td>145.6K</td><td>29115/d <small>(~203.8K/wk)</small></td></tr>
+<tr><td>4</td><td>Squidmar Miniatures</td><td>Fixing the Worst eBay Warhammer Scams in 1 hour!</td><td>67.0K</td><td>22332/d <small>(~156.3K/wk)</small></td></tr>
+<tr><td>5</td><td>Majorkill</td><td>Why Are The Black Templars Insane? #majorkill #warhammer40k</td><td>554.3K</td><td>21319/d <small>(~149.2K/wk)</small></td></tr>
+<tr><td>6</td><td>Auspex Tactics</td><td>Best Horus Heresy Kits for Use in 40K? Which Look Good or Sa…</td><td>39.6K</td><td>19791/d <small>(~138.5K/wk)</small></td></tr>
+<tr><td>7</td><td>Auspex Tactics</td><td>Rating Every Army's Power in Warhammer 40K - Tier List of Ev…</td><td>59.2K</td><td>19735/d <small>(~138.1K/wk)</small></td></tr>
+<tr><td>8</td><td>Luetin09</td><td>BELISARIUS CAWL - THE TRUE OMNISSIAH? | Warhammer 40,000 Lor…</td><td>315.6K</td><td>19728/d <small>(~138.1K/wk)</small></td></tr>
+<tr><td>9</td><td>Majorkill</td><td>What's Up With Those Metal Spikey Devices On Power Packs? #m…</td><td>507.6K</td><td>18130/d <small>(~126.9K/wk)</small></td></tr>
+<tr><td>10</td><td>Auspex Tactics</td><td>Ten Weird and Wild Character Builds from the Crucible of Cha…</td><td>76.8K</td><td>15363/d <small>(~107.5K/wk)</small></td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ ALL-TIME TOP VIDEOS ══════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">All-Time Top Videos (last 50 per channel)</div>
+  <table>
+    <thead><tr><th>#</th><th>Channel</th><th>Title</th><th>Views</th><th>Published</th></tr></thead>
+    <tbody><tr><td>1</td><td>WesHammer</td><td>What Do The Orks Think Of Every Other Faction? | Warhammer 40K Lo…</td><td>2.75M</td><td>2024-08-04</td></tr>
+<tr><td>2</td><td>WesHammer</td><td>What Would Happen If Each Faction Won? | Warhammer 40K Lore</td><td>2.07M</td><td>2024-12-18</td></tr>
+<tr><td>3</td><td>Luetin09</td><td>SPACE MARINE 2 - TITUS LORE - DEEP DIVE | Warhammer 40,000 Lore/H…</td><td>1.50M</td><td>2024-08-30</td></tr>
+<tr><td>4</td><td>WesHammer</td><td>Top 10 WORST Apocalypses In Warhammer 40K's Lore.</td><td>1.46M</td><td>2024-08-31</td></tr>
+<tr><td>5</td><td>Luetin09</td><td>THE ADEPTUS CUSTODES - WRATH OF THE EMPEROR | Warhammer 40,000 Lo…</td><td>1.45M</td><td>2024-04-27</td></tr>
+<tr><td>6</td><td>Luetin09</td><td>40K MASTERS OF WAR - THE HORROR OF DREADNOUGHTS | WARHAMMER 40,00…</td><td>1.34M</td><td>2024-05-27</td></tr>
+<tr><td>7</td><td>WesHammer</td><td>The Lore Of Space Marine 2 EXPLAINED. What You Need To Know | War…</td><td>1.31M</td><td>2024-09-30</td></tr>
+<tr><td>8</td><td>WesHammer</td><td>Ultramarines Faction Deep Dive! The Best Space Marines? | Warhamm…</td><td>1.30M</td><td>2024-09-19</td></tr>
+<tr><td>9</td><td>Luetin09</td><td>40K EXPLAINED - THE EMPEROR'S GOLDEN THRONE | Warhammer 40,000 Lo…</td><td>1.15M</td><td>2024-01-27</td></tr>
+<tr><td>10</td><td>WesHammer</td><td>The Unique Horror Of Each Chaos Space Marine Legion | Warhammer 4…</td><td>982.3K</td><td>2024-10-31</td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ STEAM ════════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Steam — Warhammer Games
+    &nbsp;<small style="color:var(--muted);font-weight:400">Total active: 36.9K</small>
+  </div>
+  <div class="ctx"><strong>36.9K concurrent players</strong> across all titles. Space Marine 2: <strong>5.00M–10.00M copies sold</strong> (SteamSpy est.), 83% positive — one of GW's strongest digital launches.</div>
+  <div class='callout callout-warn'>⚠ 7d player deltas will appear after 7+ days of daily collection.</div>
+  <div class="chart-wrap-sm">
+    <canvas id="chartSteam"></canvas>
+  </div>
+  <table>
+    <thead><tr><th>Game</th><th>Players Now</th><th>7d Δ Players</th><th>Reviews</th><th>Score</th><th>Owners Est. (SteamSpy)</th><th>Avg Playtime 2w</th></tr></thead>
+    <tbody><tr><td>Space Marine 2</td><td>9.6K</td><td>—</td><td>198.6K</td><td>83%</td><td>5.00M–10.00M</td><td>360m</td></tr>
+<tr><td>Total War WH3</td><td>18.6K</td><td>—</td><td>140.0K</td><td>70%</td><td>2.00M–5.00M</td><td>796m</td></tr>
+<tr><td>Darktide</td><td>4.3K</td><td>—</td><td>129.2K</td><td>71%</td><td>2.00M–5.00M</td><td>509m</td></tr>
+<tr><td>Vermintide 2</td><td>2.1K</td><td>—</td><td>144.8K</td><td>85%</td><td>2.00M–5.00M</td><td>337m</td></tr>
+<tr><td>Chaos Gate</td><td>2.1K</td><td>—</td><td>41.8K</td><td>84%</td><td>2.00M–5.00M</td><td>298m</td></tr>
+<tr><td>Dawn of War 2</td><td>142</td><td>—</td><td>39.7K</td><td>88%</td><td>1.00M–2.00M</td><td>139m</td></tr>
+</tbody>
+  </table>
+</div>
+
+<!-- ═══ WARHAMMER COMMUNITY — GW NEWS CADENCE ════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Warhammer Community — GW News Cadence</div>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Articles last 7 days</div>
+      <div class="stat-value">22</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Articles last 30 days</div>
+      <div class="stat-value">22</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Week-on-week Δ</div>
+      <div class="stat-value" style="font-size:18px">—</div>
+    </div>
+  </div>
+  <div class='callout callout-warn'>⚠ Using homepage link proxy — not date-filtered. 7d ≈ 30d count is expected. Week-on-week Δ available after 2nd run.</div>
+</div>
+
+<!-- ═══ COMPETITIVE EVENTS ════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Tournament &amp; Competitive Attendance <span class="badge badge-tag">TRACKING</span></div>
+  <div class="callout callout-warn">⚠ No tournament data yet. BCP/Longshanks not accessible on last fetch. Data populates once accessible or via manual CSV entry.</div>
+  
+</div>
+
+<!-- ═══ RETAIL SIGNALS ════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Retail &amp; Sales Signals <span class="badge badge-tag">TRACKING</span></div>
+  
+  <table><thead><tr><th>Channel</th><th>Published</th><th>Title</th><th>Views</th><th>Signals</th></tr></thead><tbody><tr><td>Element Games</td><td>2025-10-11</td><td>WWF Attitude Era Video Game : Would you instantly pre-order this </td><td>5.8K</td><td><span class="badge badge-new">new_release</span></td></tr>
+<tr><td>Element Games</td><td>2025-08-10</td><td>What if nWo Hired Paul Heyman in WCW?</td><td>28.1K</td><td><span class="badge badge-industry">industry_commentary</span></td></tr>
+<tr><td>Honest Wargamer</td><td>2023-02-24</td><td>Uncovering the Secret Strategies of Age of Sigmar: Revealing Army</td><td>30.8K</td><td><span class="badge badge-discount">discount_deal</span></td></tr>
+<tr><td>Honest Wargamer</td><td>2022-12-09</td><td>Army Books: Are They Really Worth The Money?</td><td>4.2K</td><td><span class="badge badge-discount">discount_deal</span></td></tr>
+<tr><td>Honest Wargamer</td><td>2022-11-25</td><td>Games Workshop Announces New Gloomspite Gitz and Beasts of Chaos </td><td>4.9K</td><td><span class="badge badge-demand">demand_signal</span></td></tr>
+</tbody></table>
+</div>
+
+<!-- ═══ DATA HEALTH ════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-title">Data Health &amp; Collection Status</div>
+  <table>
+    <thead><tr><th></th><th>Metric</th><th>Status / Notes</th></tr></thead>
+    <tbody><tr class="health-ok"><td>✅</td><td>Google Trends — current score</td><td>ok</td></tr>
+<tr class="health-ok"><td>✅</td><td>Google Trends — 5yr avg</td><td>5-year history loaded</td></tr>
+<tr class="health-ok"><td>✅</td><td>Google Trends — 7d momentum</td><td>ok</td></tr>
+<tr class="health-ok"><td>✅</td><td>Google Trends — weekly series</td><td>52 weeks</td></tr>
+<tr class="health-ok"><td>✅</td><td>Reddit — 7d engagement momentum</td><td>7/9 subs</td></tr>
+<tr class="health-ok"><td>✅</td><td>Reddit — 30d structural trend</td><td>4/9 subs</td></tr>
+<tr class="health-ok"><td>✅</td><td>Reddit — member counts (live API)</td><td>9 subs tracked</td></tr>
+<tr class="health-ok"><td>✅</td><td>Reddit — member history (charts)</td><td>9 subs have time series</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>YouTube — channel snapshots</td><td>Only 1 snapshot — need 2+ for deltas</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>YouTube — subscriber deltas</td><td>Need 2nd weekly snapshot</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>YouTube — video snapshots</td><td>Only 1 snapshot — gainers N/A</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>YouTube — view gainers 7d</td><td>Velocity proxy (10 vids) — need 2+ snapshots</td></tr>
+<tr class="health-ok"><td>✅</td><td>Steam — player counts</td><td>6/7 games</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>Steam — 7d player deltas</td><td>Need 7+ days collection</td></tr>
+<tr class="health-ok"><td>✅</td><td>Steam — owner estimates (SteamSpy)</td><td>7 games</td></tr>
+<tr class="health-ok"><td>✅</td><td>WarCom — 7d article count</td><td>ok</td></tr>
+<tr class="health-ok"><td>✅</td><td>WarCom — 30d article count</td><td>ok</td></tr>
+<tr class="health-warn"><td>⚠️</td><td>WarCom — data quality</td><td>Homepage link proxy — not date-filtered. 7d ≈ 30d count.</td></tr>
+<tr class="health-miss"><td>❌</td><td>Competitive events</td><td>BCP/Longshanks not accessible — manual entry possible</td></tr>
+<tr class="health-ok"><td>✅</td><td>Retail signals</td><td>5 signals</td></tr>
+</tbody>
+  </table>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  Warhammer Demand Intelligence &nbsp;|&nbsp; Generated 2026-02-23 09:52
+</div>
+
+<!-- Chart data injected by Python -->
+<script>
+window.__chartData = {
+  td: ["2025-02-16", "2025-02-23", "2025-03-02", "2025-03-09", "2025-03-16", "2025-03-23", "2025-03-30", "2025-04-06", "2025-04-13", "2025-04-20", "2025-04-27", "2025-05-04", "2025-05-11", "2025-05-18", "2025-05-25", "2025-06-01", "2025-06-08", "2025-06-15", "2025-06-22", "2025-06-29", "2025-07-06", "2025-07-13", "2025-07-20", "2025-07-27", "2025-08-03", "2025-08-10", "2025-08-17", "2025-08-24", "2025-08-31", "2025-09-07", "2025-09-14", "2025-09-21", "2025-09-28", "2025-10-05", "2025-10-12", "2025-10-19", "2025-10-26", "2025-11-02", "2025-11-09", "2025-11-16", "2025-11-23", "2025-11-30", "2025-12-07", "2025-12-14", "2025-12-21", "2025-12-28", "2026-01-04", "2026-01-11", "2026-01-18", "2026-01-25", "2026-02-01", "2026-02-22"], ts: [17.4, 18.1, 17.5, 16.3, 17.9, 15.7, 15.6, 14.9, 14.9, 16.6, 15.2, 14.8, 14.7, 14.6, 20.1, 18.8, 17.9, 19.9, 16.0, 18.4, 19.6, 17.9, 17.7, 18.3, 14.2, 8.1, 8.7, 8.6, 8.2, 8.5, 8.1, 7.5, 7.5, 7.6, 7.5, 7.5, 7.7, 7.0, 7.1, 7.6, 7.0, 8.5, 8.7, 11.4, 10.3, 10.8, 11.0, 10.2, 10.3, 9.4, 8.7, 16.0], ta: [12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2, 12.2],
+  rl: ["r/Warhammer40k", "r/minipainting", "r/Grimdank", "r/Warhammer", "r/40kLore", "r/ageofsigmar", "r/WarhammerCompetitive", "r/Warhammer30k", "r/warhammerfantasy"], rnow: [1474620, 1237385, 547557, 444154, 386261, 251919, 142101, 126823, 124793], rs25: [1440000, 1220000, 540000, 440000, 380000, 248000, 140000, 124000, 122000],
+  w40k_d: ["2023-10-01", "2024-10-01", "2025-09-01", "2026-02-22"], w40k_m: [940000, 1000000, 1440000, 1474620],
+  ytl: ["Warhammer Official", "Luetin09", "WesHammer", "Element Games", "Squidmar Miniatures", "Majorkill", "Midwinter Minis", "Auspex Tactics", "Painting Phase", "Honest Wargamer"], yts: [991000, 958000, 893000, 807000, 775000, 697000, 469000, 397000, 91000, 47100], ytv: [147.7, 260.3, 399.8, 341.6, 110.3, 392.4, 86.6, 211.1, 13.8, 2.6],
+  stl: ["Total War WH3", "Space Marine 2", "Darktide", "Chaos Gate", "Vermintide 2", "Dawn of War 2"], stp: [18643, 9643, 4303, 2110, 2084, 142]
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+<script>
+Chart.defaults.color = '#8b949e';
+Chart.defaults.font.family = "'Segoe UI', system-ui, sans-serif";
+
+const CD = window.__chartData;
+const gridColor = '#21262d';
+function fmtK(v) {
+    if (v >= 1e6) return (v/1e6).toFixed(1)+'M';
+    if (v >= 1e3) return (v/1e3).toFixed(0)+'K';
+    return String(v);
+}
+
+// ── Google Trends line chart ──
+(function(){
+    const el = document.getElementById('chartTrends');
+    if (!el || !CD.td.length) return;
+    new Chart(el, {
+        type: 'line',
+        data: {
+            labels: CD.td,
+            datasets: [{
+                label: 'Search Interest',
+                data: CD.ts,
+                borderColor: '#c0392b',
+                backgroundColor: 'rgba(192,57,43,0.12)',
+                fill: true, tension: 0.35, pointRadius: 0, borderWidth: 2,
+            },{
+                label: '5-Year Average',
+                data: CD.ta,
+                borderColor: '#8b949e',
+                borderDash: [5,4],
+                pointRadius: 0, borderWidth: 1.5, fill: false,
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#8b949e', boxWidth: 12, padding: 16 } } },
+            scales: {
+                x: { grid: { color: gridColor }, ticks: { color: '#8b949e', maxTicksLimit: 10 } },
+                y: { min: 0, max: 100, grid: { color: gridColor }, ticks: { color: '#8b949e' } }
+            }
+        }
+    });
+})();
+
+// ── r/Warhammer40k member growth line chart ──
+(function(){
+    const el = document.getElementById('chartW40k');
+    if (!el || !CD.w40k_d.length) return;
+    new Chart(el, {
+        type: 'line',
+        data: {
+            labels: CD.w40k_d,
+            datasets: [{
+                label: 'r/Warhammer40k Members',
+                data: CD.w40k_m,
+                borderColor: '#d4a017',
+                backgroundColor: 'rgba(212,160,23,0.08)',
+                fill: true, tension: 0.3,
+                pointRadius: 5, pointBackgroundColor: '#d4a017',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: gridColor }, ticks: { color: '#8b949e' } },
+                y: {
+                    grid: { color: gridColor },
+                    ticks: { color: '#8b949e', callback: fmtK }
+                }
+            }
+        }
+    });
+})();
+
+// ── Reddit community size horizontal bar chart ──
+(function(){
+    const el = document.getElementById('chartReddit');
+    if (!el || !CD.rl.length) return;
+    new Chart(el, {
+        type: 'bar',
+        data: {
+            labels: CD.rl,
+            datasets: [{
+                label: 'Members — Feb 2026 (live API)',
+                data: CD.rnow,
+                backgroundColor: '#c0392b',
+            },{
+                label: 'Members — Sept 2025 (pre-hide estimate)',
+                data: CD.rs25,
+                backgroundColor: '#4a1515',
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#8b949e', boxWidth: 12 } } },
+            scales: {
+                x: { grid: { color: gridColor }, ticks: { color: '#8b949e', callback: fmtK } },
+                y: { grid: { color: gridColor }, ticks: { color: '#8b949e' } }
+            }
+        }
+    });
+})();
+
+// ── YouTube subscribers horizontal bar chart ──
+(function(){
+    const el = document.getElementById('chartYT');
+    if (!el || !CD.ytl.length) return;
+    new Chart(el, {
+        type: 'bar',
+        data: {
+            labels: CD.ytl,
+            datasets: [{
+                label: 'Subscribers',
+                data: CD.yts,
+                backgroundColor: 'rgba(231,76,60,0.75)',
+                borderColor: '#e74c3c',
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: gridColor }, ticks: { color: '#8b949e', callback: fmtK } },
+                y: { grid: { color: gridColor }, ticks: { color: '#8b949e' } }
+            }
+        }
+    });
+})();
+
+// ── Steam concurrent players bar chart ──
+(function(){
+    const el = document.getElementById('chartSteam');
+    if (!el || !CD.stl.length) return;
+    const PALETTE = ['#c0392b','#e74c3c','#e5852a','#d4a017','#3fb950','#58a6ff'];
+    new Chart(el, {
+        type: 'bar',
+        data: {
+            labels: CD.stl,
+            datasets: [{
+                label: 'Concurrent Players (now)',
+                data: CD.stp,
+                backgroundColor: CD.stl.map((_,i) => PALETTE[i % PALETTE.length]),
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: gridColor }, ticks: { color: '#8b949e' } },
+                y: { grid: { color: gridColor }, ticks: { color: '#8b949e' } }
+            }
+        }
+    });
+})();
+</script>
