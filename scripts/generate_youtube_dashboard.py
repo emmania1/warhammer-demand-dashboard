@@ -546,6 +546,10 @@ def compute_evergreen_metrics(anchors_df: pd.DataFrame,
     """
     results = {}
 
+    # Guard: if anchors_df has no columns (missing file), return empty results
+    if anchors_df.empty or "channel_label" not in anchors_df.columns:
+        return {ch: {"anchors": [], "avg_view_growth_pct": None} for ch in CHANNEL_ORDER}
+
     # Combine current anchors with historical snapshots for per-year lookups
     if anchor_history_df is not None and not anchor_history_df.empty:
         _keep = ["date", "channel_label", "video_slug", "title", "views"]
@@ -909,6 +913,8 @@ def _reddit_nearest(df: pd.DataFrame, sub: str, target_date: str) -> pd.Series |
 
 def compute_reddit_yoy(reddit_df: pd.DataFrame) -> dict:
     """YoY member growth per subreddit. Same nearest-snapshot logic as YouTube."""
+    if reddit_df.empty or "subreddit" not in reddit_df.columns:
+        return {sub: {} for sub in REDDIT_ORDER}
     results = {}
     for sub in REDDIT_ORDER:
         sub_df = reddit_df[reddit_df["subreddit"] == sub].sort_values("date")
@@ -942,6 +948,8 @@ def compute_reddit_yoy(reddit_df: pd.DataFrame) -> dict:
 
 def compute_reddit_engagement(reddit_df: pd.DataFrame) -> dict:
     """Latest engagement metrics + YoY engagement-per-1K delta."""
+    if reddit_df.empty or "subreddit" not in reddit_df.columns:
+        return {sub: {} for sub in REDDIT_ORDER}
     results = {}
     for sub in REDDIT_ORDER:
         sub_df = reddit_df[reddit_df["subreddit"] == sub].sort_values("date")
@@ -1336,6 +1344,8 @@ def compute_steam_monthly_metrics(monthly_df: pd.DataFrame,
             "current_avgs": {slug: float},  # live snapshot avgs for struct_mon (chart)
         }
     """
+    if monthly_df.empty or "game_slug" not in monthly_df.columns:
+        return {"by_slug": {}, "current_mon": "", "struct_mon": "", "current_avgs": {}}
     current_mon        = pd.Timestamp.now().strftime("%Y-%m")
     last_completed_mon = (pd.to_datetime(current_mon + "-01")
                           - pd.DateOffset(months=1)).strftime("%Y-%m")
@@ -2425,16 +2435,24 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     )
 
     # ── Reddit chart data ─────────────────────────────────────────────────
+    _reddit_has_data = not reddit_df.empty and "subreddit" in reddit_df.columns
+
     def _r_traj(sub):
+        if not _reddit_has_data:
+            return []
         sub_df = reddit_df[reddit_df["subreddit"] == sub].sort_values("date")
         return [{"x": str(r["date"]), "y": int(r["members"])} for _, r in sub_df.iterrows()]
 
     def _r_ppd_traj(sub):
+        if not _reddit_has_data:
+            return []
         sub_df = reddit_df[reddit_df["subreddit"] == sub].sort_values("date")
         return [{"x": str(r["date"]), "y": round(float(r.get("posts_per_day") or 0), 1)}
                 for _, r in sub_df.iterrows()]
 
     def _r_cpd_traj(sub):
+        if not _reddit_has_data:
+            return []
         sub_df = reddit_df[reddit_df["subreddit"] == sub].sort_values("date")
         return [{"x": str(r["date"]), "y": round(float(r.get("comments_per_day") or 0), 1)}
                 for _, r in sub_df.iterrows()]
@@ -2578,8 +2596,10 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     # ── Steam chart data ──────────────────────────────────────────────────
     # Unpack composite return value from compute_steam_monthly_metrics
     steam_met_dict     = steam_monthly_metrics["by_slug"]
-    steam_calendar_mon = steam_monthly_metrics["current_mon"]   # today's YYYY-MM (MTD)
-    steam_struct_mon   = steam_monthly_metrics["struct_mon"]    # last completed month
+    _now_mon = pd.Timestamp.now().strftime("%Y-%m")
+    _prev_mon = (pd.to_datetime(_now_mon + "-01") - pd.DateOffset(months=1)).strftime("%Y-%m")
+    steam_calendar_mon = steam_monthly_metrics["current_mon"] or _now_mon
+    steam_struct_mon   = steam_monthly_metrics["struct_mon"]  or _prev_mon
     steam_current_avgs = steam_monthly_metrics["current_avgs"]  # live snapshot avgs for struct_mon
 
     # steam_latest_lbl: reflects the structural chart's final point
@@ -2682,9 +2702,13 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
     # Pre-index historical data per slug for efficient lookups
     _steam_hist_idx: dict = {}
+    _steam_monthly_ok = not steam_monthly_df.empty and "game_slug" in steam_monthly_df.columns
     for _s in STEAM_ORDER:
-        _g = steam_monthly_df[steam_monthly_df["game_slug"] == _s].set_index("month")
-        _steam_hist_idx[_s] = _g["avg_players"] if not _g.empty else pd.Series(dtype=float)
+        if _steam_monthly_ok:
+            _g = steam_monthly_df[steam_monthly_df["game_slug"] == _s].set_index("month")
+            _steam_hist_idx[_s] = _g["avg_players"] if not _g.empty else pd.Series(dtype=float)
+        else:
+            _steam_hist_idx[_s] = pd.Series(dtype=float)
 
     def _hist_avg(slug: str, ym: str):
         """Return historical avg_players for a slug/month, or None."""
@@ -4268,6 +4292,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             "Posts about FLGS closing, struggling financially, or being unreliable (e.g. 'Richmond VA GW store is never open').",
     }
     _cat_top_post = {c: ("", 0) for c in _cat_labels}  # (title, score)
+    _cat_change_chart = []  # populated below if store thread data exists
 
     if store_threads_raw_df is not None and not store_threads_raw_df.empty:
         _raw = store_threads_raw_df[store_threads_raw_df["year"].isin(_cat_years)].copy()

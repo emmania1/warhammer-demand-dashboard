@@ -1,29 +1,36 @@
-date,label,channel_id,title,subscribers,views,videos
-2026-02-22,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,397000,211128122,4429
-2026-05-08,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,409000,221328934,4569
-2026-05-20,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,410000,222668065,4588
-2026-02-22,Duncan_Rhodes,UCLJKHhRTyn5-HN-8B3aofog,Duncan Rhodes,0,0,0
-2026-02-22,Element_Games,UCbNDGnwIkoNl2rBzUKNaVVg,ElementGames,807000,341612444,1981
-2026-02-22,Goobertown_Hobbies,UCV47zsd0iL8q8U6oAxeKn0Q,GOOBERTOWN,0,0,0
-2026-02-22,Honest_Wargamer,UC0HeZRfHuwNDPVBhpQq0-1Q,The Honest Wargamer,47100,2578927,644
-2026-02-22,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,958000,260254073,1947
-2026-05-08,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,963000,264982725,1949
-2026-05-20,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,965000,265860664,1950
-2026-02-22,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,697000,392415840,1118
-2026-05-08,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,699000,400408435,1142
-2026-05-20,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,699000,401032129,1145
-2026-02-22,Midwinter_Minis,UC9XTzwex6rGLVUGS9cLKFLw,Midwinter Minis,469000,86649813,388
-2026-02-22,Painting_Phase,UCjw4ZC1GqBHOKWOYpRD-spg,The Painting Phase,91000,13762153,260
-2026-02-22,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,775000,110265140,349
-2026-05-08,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,786000,113368874,358
-2026-05-20,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,786000,113793009,360
-2026-02-22,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0,0
-2026-05-08,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0,0
-2026-05-20,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0,0
-2026-02-22,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,991000,147669460,1315
-2026-05-08,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,1030000,160251513,1386
-2026-05-20,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,1030000,161244791,1391
-2026-02-22,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,893000,399828669,449
-2026-05-08,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,897000,404118157,451
-2026-05-20,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,898000,404728781,451
-2026-02-22,Winters_SEO,UCcxbr6tMcJpUPcr5YRSqIHA,Winter,0,0,0
+date,label,channel_id,title,subscribers,views,videos,total_views,video_count
+2026-02-22,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,397000,211128122.0,4429.0,,
+2026-05-08,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,409000,221328934.0,4569.0,,
+2026-05-20,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,Auspex Tactics,410000,222668065.0,4588.0,,
+2026-09-04,Auspex_Tactics,UC6Gco9PWxmJmJ5CqfbChuiQ,,424000,,,237800227.0,4774.0
+2026-02-22,Duncan_Rhodes,UCLJKHhRTyn5-HN-8B3aofog,Duncan Rhodes,0,0.0,0.0,,
+2026-02-22,Element_Games,UCbNDGnwIkoNl2rBzUKNaVVg,ElementGames,807000,341612444.0,1981.0,,
+2026-02-22,Goobertown_Hobbies,UCV47zsd0iL8q8U6oAxeKn0Q,GOOBERTOWN,0,0.0,0.0,,
+2026-02-22,Honest_Wargamer,UC0HeZRfHuwNDPVBhpQq0-1Q,The Honest Wargamer,47100,2578927.0,644.0,,
+2026-02-22,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,958000,260254073.0,1947.0,,
+2026-05-08,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,963000,264982725.0,1949.0,,
+2026-05-20,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,Luetin09,965000,265860664.0,1950.0,,
+2026-09-04,Luetin09,UC8RfCCzWsMgNspTI-GTFenQ,,978000,,,274041694.0,1954.0
+2026-02-22,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,697000,392415840.0,1118.0,,
+2026-05-08,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,699000,400408435.0,1142.0,,
+2026-05-20,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,Majorkill,699000,401032129.0,1145.0,,
+2026-09-04,Majorkill,UC_wb8IVtmXwil8bN3IdVtZw,,701000,,,410979372.0,1179.0
+2026-02-22,Midwinter_Minis,UC9XTzwex6rGLVUGS9cLKFLw,Midwinter Minis,469000,86649813.0,388.0,,
+2026-02-22,Painting_Phase,UCjw4ZC1GqBHOKWOYpRD-spg,The Painting Phase,91000,13762153.0,260.0,,
+2026-02-22,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,775000,110265140.0,349.0,,
+2026-05-08,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,786000,113368874.0,358.0,,
+2026-05-20,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,Squidmar Miniatures,786000,113793009.0,360.0,,
+2026-09-04,Squidmar_Miniatures,UCDvZTWvHZPTxJ4K1yTD2a1g,,818000,,,120091118.0,403.0
+2026-02-22,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0.0,0.0,,
+2026-05-08,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0.0,0.0,,
+2026-05-20,Valrak,UCHjujlje3er-iZb27nbdDcg,valrak,0,0.0,0.0,,
+2026-09-04,Valrak,UCrCHY6wVw5D7hMsM-LPBr1w,,291000,,,183839811.0,3342.0
+2026-02-22,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,991000,147669460.0,1315.0,,
+2026-05-08,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,1030000,160251513.0,1386.0,,
+2026-05-20,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,Warhammer,1030000,161244791.0,1391.0,,
+2026-09-04,Warhammer_Official,UCwdh3MTrFq3sXlB4ct8B-Fg,,1080000,,,177516433.0,1489.0
+2026-02-22,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,893000,399828669.0,449.0,,
+2026-05-08,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,897000,404118157.0,451.0,,
+2026-05-20,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,WesHammer,898000,404728781.0,451.0,,
+2026-09-04,WesHammer,UCSDj6ttwzj2sr464jDdg_pA,,906000,,,410848616.0,452.0
+2026-02-22,Winters_SEO,UCcxbr6tMcJpUPcr5YRSqIHA,Winter,0,0.0,0.0,,
