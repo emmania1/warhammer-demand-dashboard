@@ -1371,7 +1371,9 @@ def compute_steam_monthly_metrics(monthly_df: pd.DataFrame,
     results: dict = {}
     for slug in STEAM_ORDER:
         hist_g = monthly_df[monthly_df["game_slug"] == slug].sort_values("month")
-        r_row  = rolling_df[rolling_df["game_slug"] == slug]
+        r_row  = rolling_df[rolling_df["game_slug"] == slug] \
+                      if not rolling_df.empty and "game_slug" in rolling_df.columns \
+                      else pd.DataFrame()
         rolling_30d = round(float(r_row.iloc[0]["avg_players"]), 1) \
                       if not r_row.empty else None
 
