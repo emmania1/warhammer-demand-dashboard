@@ -144,7 +144,7 @@ REDDIT_COLORS = {
     "ageofsigmar":  "#8e44ad",
     "minipainting": "#27ae60",
 }
-REDDIT_YOY_WINDOW = 45
+REDDIT_YOY_WINDOW = 200
 
 # Wayback-seeded 2023 & 2024 member snapshots for multi-year community growth
 REDDIT_HISTORY_2324 = {
@@ -182,24 +182,25 @@ STEAM_LIVE_SLUG_MAP = {
 # Update "snapshots" dict when new annual February data is available.
 # Space Marine 2 has no 2023 entry — it was released September 2024.
 STEAM_HISTORICAL_DATA = {
+    # 2023/2024 = Feb snapshots (manual seed); 2025/2026 = Aug (SteamCharts, Sep 4 2026)
     "tw_wh3": {
-        "snapshots": {2023: 20460.3, 2024: 17756.9, 2025: 20783.6, 2026: 22789.7},
-        "last_30d":  22229.0,
+        "snapshots": {2023: 20460.3, 2024: 17756.9, 2025: 20574.2, 2026: 27221.1},
+        "last_30d":  28285.0,
         "peak":      166519,
     },
     "space_marine_2": {
-        "snapshots": {2025: 6652.4, 2026: 11756.2},   # released Sep 2024, no Feb 2024 snapshot
-        "last_30d":  14692.1,
+        "snapshots": {2025: 7603.1, 2026: 12880.2},   # released Sep 2024, no 2023/2024
+        "last_30d":  12880.2,
         "peak":      186199,
     },
     "darktide": {
-        "snapshots": {2023: 4952.8, 2024: 2947.9, 2025: 4952.1, 2026: 5228.7},
-        "last_30d":  4739.1,
+        "snapshots": {2023: 4952.8, 2024: 2947.9, 2025: 5347.0, 2026: 7224.0},
+        "last_30d":  7224.0,
         "peak":      107450,
     },
     "vermintide_2": {
-        "snapshots": {2023: 4240.1, 2024: 2612.2, 2025: 2303.7, 2026: 2338.0},
-        "last_30d":  2230.8,
+        "snapshots": {2023: 4240.1, 2024: 2612.2, 2025: 1709.2, 2026: 1861.7},
+        "last_30d":  1861.7,
         "peak":      104134,
     },
 }
@@ -3215,7 +3216,10 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             if v is None: return "<span style='color:#6e7681'>—</span>"
             css = "badge-pos" if v >= hi else ("badge-mid" if v >= 0 else "badge-neg")
             return f"<span class='badge {css}'>{'+' if v>=0 else ''}{v:.1f}%</span>"
-        yoy_r_pct    = ry.get("yoy_pct")
+        # Use annualized rate unless the gap is a clean year (320-410 days)
+        _gap = ry.get("gap_days", 0)
+        _use_ann = _gap > 0 and not (320 <= _gap <= 410)
+        yoy_r_pct = ry.get("annualized_pct") if _use_ann else ry.get("yoy_pct")
         two_yr_pct_r = rmy.get("yoy_2426_pct")  # 2024→2026 (~2yr)
         cagr_r_pct   = rmy.get("cagr_3yr_pct")
         share_v      = rmy.get("share_pct")
