@@ -376,7 +376,7 @@
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
     <a class="nav-btn" href="#pg-8">P8 Stock</a>
   </nav>
-  <div class="meta">Generated 2026-09-06 10:56</div>
+  <div class="meta">Generated 2026-09-06 11:11</div>
 </div>
 
 <div class="container">
@@ -388,7 +388,7 @@
 <section>
   
   <div class="exec-summary-card">
-    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-09-06 10:56</div>
+    <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · 2026-09-06 11:11</div>
     <div class="exec-summary-body" id="exec-summary-body">
       <p style="color:#6e7681;font-style:italic">Computing structural metrics&hellip;</p>
     </div>
@@ -578,18 +578,7 @@
     ECI &lt; 1× = view growth tracking at or below structural subscriber intake.
   </div>
 
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="chart-card">
-      <h3>Evergreen Compounding Index (ECI) by Channel</h3>
-      <div class="chart-wrap"><canvas id="chartECI"></canvas></div>
-      <p class="data-note">Blue &gt; 2×, amber 1–2×, red &lt; 1×.</p>
-    </div>
-    <div class="chart-card">
-      <h3>Discovery Scatter — Anchor View Growth vs Sub CAGR</h3>
-      <div class="chart-wrap"><canvas id="chartDiscovery"></canvas></div>
-      <p class="data-note">X = 3-year sub CAGR. Y = avg anchor view growth %. Above the diagonal = view growth outpacing subscriber intake (algorithmic discovery).</p>
-    </div>
-  </div>
+  <div style="background:#1c2128;border:1px solid #30363d;border-left:3px solid #e3b341;border-radius:6px;padding:16px 18px;margin-bottom:18px;color:#e3b341;font-size:12px;"><strong>ECI charts pending anchor data</strong><br><span style="color:#8b949e;font-size:11px;">Populate <code>data/youtube_evergreen_anchors.csv</code> with tracked video view snapshots to enable ECI charts. Until then, Sub 3-Yr CAGR is shown in the table below.</span></div>
 
   <div class="table-card">
     <table>
@@ -610,7 +599,7 @@
 <tr><td><span class='dot' style='background:#117a65'></span>Chapter Master Valrak</td><td class='num'><span style='color:#6e7681'>—</span></td><td class='num'><span class='badge badge-pos'>+12.7%</span></td><td class='num'><span style='color:#6e7681'>—</span></td></tr>
 </tbody>
     </table>
-    <p class="data-note">ECI = avg anchor view growth % ÷ sub 3yr CAGR (YoY fallback where CAGR unavailable). "—" = insufficient snapshot history.</p>
+    <p class="data-note">ECI = avg anchor view growth % ÷ sub 3yr CAGR (YoY fallback where CAGR unavailable). "—" = anchor snapshot data not yet available.</p>
   </div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
     ECI above 1× means YouTube is recommending old Warhammer videos to people who never searched for the franchise before — the algorithm is doing active fan recruitment at no cost. This is the clearest signal that Warhammer is in expansion mode: new audiences are being pulled in automatically, not just existing fans re-watching old content.
@@ -631,10 +620,7 @@
 
   
 
-  <div class="chart-card" style="margin-bottom:18px;">
-    <h3>View Growth % — All Matched Anchor Videos (YoY 2025→2026)</h3>
-    <div class="chart-wrap-lg"><canvas id="chartAnchorGrowth"></canvas></div>
-  </div>
+  <div style="background:#1c2128;border:1px solid #30363d;border-left:3px solid #e3b341;border-radius:6px;padding:16px 18px;margin-bottom:18px;color:#e3b341;font-size:12px;"><strong>Anchor video chart pending</strong><br><span style="color:#8b949e;font-size:11px;">Add flagship video view snapshots to <code>data/youtube_evergreen_anchors.csv</code> to populate the view compounding chart and table.</span></div>
 
   <div class='signal-interp' style='border-left-color:#8e44ad;background:#0e0a1a;margin-bottom:14px'><div class='signal-interp-hdr' style='color:#8e44ad'>Ecosystem Concentration — Top 3 Creators by Anchor View Share</div><p>Top 3 creators (Warhammer Official, WesHammer, Luetin09) account for <strong style='color:#cdd9e5'>—</strong> of total tracked anchor video views. <strong style='color:#cdd9e5'>—</strong> of tracked anchors outperform their channel's subscriber growth rate — confirming broad-based algorithmic distribution independent of channel size.</p></div>
 
@@ -677,26 +663,7 @@
     beyond existing fans, unlike hobby tutorials which index more toward established audiences.
   </div>
 
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="chart-card">
-      <h3>Avg View Growth % by Content Type</h3>
-      <div class="chart-wrap"><canvas id="chartContentType"></canvas></div>
-      <p class="data-note">Based on matched flagship anchor videos tracked across annual snapshot pairs.</p>
-    </div>
-    <div class="table-card" style="align-self:start;">
-      <table>
-        <thead>
-          <tr>
-            <th>Content Type</th>
-            <th class="num">Avg Growth</th>
-            <th class="num">Median Growth</th>
-            <th class="num">N</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </div>
+  <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:12px 16px;color:#8b949e;font-size:11px;margin-bottom:18px;">Content-type breakdown pending anchor video data.</div>
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>No content-type breakdown available for this snapshot window.</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
     Lore and narrative content outperforming tutorials signals that people who don't own the game yet are discovering the franchise through its storytelling — pure IP curiosity before any purchase. Tutorial and painting videos index more toward existing hobbyists. Seeing lore outperform is the new-customer acquisition signal: the franchise's universe is pulling in future buyers before they ever enter a store.
@@ -813,12 +780,12 @@
 
 <!-- ── Page 5: Steam Structural YoY ────────────────────────────────────── -->
 <section>
-  <div class="section-title">Structural Player Activity — Feb 2023 · Feb 2024 · Feb 2025 · Feb 2026</div>
+  <div class="section-title">Structural Player Activity — Feb 2023 · Feb 2024 · Aug 2025 · Feb 2026 · Aug 2026</div>
   <div class="section-sub">
-    February snapshot comparisons across four years control for seasonality and isolate structural
-    demand trends. Structural YoY = Feb 2025 → Feb 2026. 2-Year Change = Feb 2024 → Feb 2026.
-    3-Year Change = Feb 2023 → Feb 2026. Engagement Stability =
-    current 30-day avg ÷ all-time peak players — measures how far engagement sits below the launch spike.
+    Annual snapshot comparisons isolate structural demand trends, controlling for seasonality.
+    Structural YoY = Aug 2025 → Aug 2026. 2-Year Change = Feb 2024 → Aug 2026.
+    3-Year Change = Feb 2023 → Aug 2026. Feb 2026 vs Aug 2026 shows within-year movement.
+    Engagement Stability = current 30-day avg ÷ all-time peak players.
     Source: SteamCharts historical data.
   </div>
 

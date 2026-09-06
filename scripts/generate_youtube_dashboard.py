@@ -2383,6 +2383,9 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
     # S2: ECI bar
     eci_vals = [eci_map.get(ch, {}).get("eci") or 0 for ch in CHANNEL_ORDER]
+    _has_anchor_data = any(
+        eci_map.get(ch, {}).get("avg_view_growth") is not None for ch in CHANNEL_ORDER
+    )
 
     # Per-channel CAGR and 2yr arrays for multi-metric chart and scatter
     cagr_pct_vals  = [multiyear.get(ch, {}).get("cagr_pct")    for ch in CHANNEL_ORDER]
@@ -6320,18 +6323,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     ECI &lt; 1× = view growth tracking at or below structural subscriber intake.
   </div>
 
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="chart-card">
-      <h3>Evergreen Compounding Index (ECI) by Channel</h3>
-      <div class="chart-wrap"><canvas id="chartECI"></canvas></div>
-      <p class="data-note">Blue &gt; 2×, amber 1–2×, red &lt; 1×.</p>
-    </div>
-    <div class="chart-card">
-      <h3>Discovery Scatter — Anchor View Growth vs Sub CAGR</h3>
-      <div class="chart-wrap"><canvas id="chartDiscovery"></canvas></div>
-      <p class="data-note">X = 3-year sub CAGR. Y = avg anchor view growth %. Above the diagonal = view growth outpacing subscriber intake (algorithmic discovery).</p>
-    </div>
-  </div>
+  {'<div class="chart-grid-2" style="margin-bottom:18px;"><div class="chart-card"><h3>Evergreen Compounding Index (ECI) by Channel</h3><div class="chart-wrap"><canvas id="chartECI"></canvas></div><p class="data-note">Blue &gt; 2×, amber 1–2×, red &lt; 1×.</p></div><div class="chart-card"><h3>Discovery Scatter — Anchor View Growth vs Sub CAGR</h3><div class="chart-wrap"><canvas id="chartDiscovery"></canvas></div><p class="data-note">X = 3-year sub CAGR. Y = avg anchor view growth %. Above the diagonal = view growth outpacing subscriber intake (algorithmic discovery).</p></div></div>' if _has_anchor_data else '<div style="background:#1c2128;border:1px solid #30363d;border-left:3px solid #e3b341;border-radius:6px;padding:16px 18px;margin-bottom:18px;color:#e3b341;font-size:12px;"><strong>ECI charts pending anchor data</strong><br><span style="color:#8b949e;font-size:11px;">Populate <code>data/youtube_evergreen_anchors.csv</code> with tracked video view snapshots to enable ECI charts. Until then, Sub 3-Yr CAGR is shown in the table below.</span></div>'}
 
   <div class="table-card">
     <table>
@@ -6345,7 +6337,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       </thead>
       <tbody>{eci_table_rows}</tbody>
     </table>
-    <p class="data-note">ECI = avg anchor view growth % ÷ sub 3yr CAGR (YoY fallback where CAGR unavailable). "—" = insufficient snapshot history.</p>
+    <p class="data-note">ECI = avg anchor view growth % ÷ sub 3yr CAGR (YoY fallback where CAGR unavailable). "—" = anchor snapshot data not yet available.</p>
   </div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
     ECI above 1× means YouTube is recommending old Warhammer videos to people who never searched for the franchise before — the algorithm is doing active fan recruitment at no cost. This is the clearest signal that Warhammer is in expansion mode: new audiences are being pulled in automatically, not just existing fans re-watching old content.
@@ -6366,10 +6358,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
   {_fastest_anchor_box_html}
 
-  <div class="chart-card" style="margin-bottom:18px;">
-    <h3>View Growth % — All Matched Anchor Videos (YoY 2025→2026)</h3>
-    <div class="chart-wrap-lg"><canvas id="chartAnchorGrowth"></canvas></div>
-  </div>
+  {'<div class="chart-card" style="margin-bottom:18px;"><h3>View Growth % — All Matched Anchor Videos (YoY 2025→2026)</h3><div class="chart-wrap-lg"><canvas id="chartAnchorGrowth"></canvas></div></div>' if _has_anchor_data else '<div style="background:#1c2128;border:1px solid #30363d;border-left:3px solid #e3b341;border-radius:6px;padding:16px 18px;margin-bottom:18px;color:#e3b341;font-size:12px;"><strong>Anchor video chart pending</strong><br><span style="color:#8b949e;font-size:11px;">Add flagship video view snapshots to <code>data/youtube_evergreen_anchors.csv</code> to populate the view compounding chart and table.</span></div>'}
 
   {_creator_share_box_html}
 
@@ -6412,26 +6401,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     beyond existing fans, unlike hobby tutorials which index more toward established audiences.
   </div>
 
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="chart-card">
-      <h3>Avg View Growth % by Content Type</h3>
-      <div class="chart-wrap"><canvas id="chartContentType"></canvas></div>
-      <p class="data-note">Based on matched flagship anchor videos tracked across annual snapshot pairs.</p>
-    </div>
-    <div class="table-card" style="align-self:start;">
-      <table>
-        <thead>
-          <tr>
-            <th>Content Type</th>
-            <th class="num">Avg Growth</th>
-            <th class="num">Median Growth</th>
-            <th class="num">N</th>
-          </tr>
-        </thead>
-        <tbody>{content_type_rows_html}</tbody>
-      </table>
-    </div>
-  </div>
+  {'\'<div class="chart-grid-2" style="margin-bottom:18px;"><div class="chart-card"><h3>Avg View Growth % by Content Type</h3><div class="chart-wrap"><canvas id="chartContentType"></canvas></div><p class="data-note">Based on matched flagship anchor videos tracked across annual snapshot pairs.</p></div><div class="table-card" style="align-self:start;"><table><thead><tr><th>Content Type</th><th class="num">Avg Growth</th><th class="num">Median Growth</th><th class="num">N</th></tr></thead><tbody>\' + content_type_rows_html + \'</tbody></table></div></div>\'' if _has_anchor_data else '<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:12px 16px;color:#8b949e;font-size:11px;margin-bottom:18px;">Content-type breakdown pending anchor video data.</div>'}
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>{_ct_insight}</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
     Lore and narrative content outperforming tutorials signals that people who don't own the game yet are discovering the franchise through its storytelling — pure IP curiosity before any purchase. Tutorial and painting videos index more toward existing hobbyists. Seeing lore outperform is the new-customer acquisition signal: the franchise's universe is pulling in future buyers before they ever enter a store.
@@ -6543,12 +6513,12 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
 <!-- ── Page 5: Steam Structural YoY ────────────────────────────────────── -->
 <section>
-  <div class="section-title">Structural Player Activity — Feb {_sh_base_yr} · Feb {_sh_mid_yr} · Feb {_sh_prev_yr} · Feb {_sh_curr_yr}</div>
+  <div class="section-title">Structural Player Activity — Feb {_sh_base_yr} · Feb {_sh_mid_yr} · Aug {_sh_prev_yr} · Feb {_sh_curr_yr} · Aug {_sh_curr_yr}</div>
   <div class="section-sub">
-    February snapshot comparisons across four years control for seasonality and isolate structural
-    demand trends. Structural YoY = Feb {_sh_prev_yr} → Feb {_sh_curr_yr}. 2-Year Change = Feb {_sh_mid_yr} → Feb {_sh_curr_yr}.
-    3-Year Change = Feb {_sh_base_yr} → Feb {_sh_curr_yr}. Engagement Stability =
-    current 30-day avg ÷ all-time peak players — measures how far engagement sits below the launch spike.
+    Annual snapshot comparisons isolate structural demand trends, controlling for seasonality.
+    Structural YoY = Aug {_sh_prev_yr} → Aug {_sh_curr_yr}. 2-Year Change = Feb {_sh_mid_yr} → Aug {_sh_curr_yr}.
+    3-Year Change = Feb {_sh_base_yr} → Aug {_sh_curr_yr}. Feb {_sh_curr_yr} vs Aug {_sh_curr_yr} shows within-year movement.
+    Engagement Stability = current 30-day avg ÷ all-time peak players.
     Source: SteamCharts historical data.
   </div>
 
