@@ -2314,6 +2314,49 @@ def build_html(channels_df, yoy, eci_map, evergreen,
                 f"{_chips}"
                 f"</div>"
             )
+    # ── "New Data" banner — Feb → Sep/Aug changes across all platforms ────────
+    def _pct_chip(val, label, strong_thr=5.0):
+        if val is None: return ""
+        sign = "+" if val >= 0 else ""
+        css  = "#3fb950" if val >= strong_thr else ("#e3b341" if val >= 0 else "#f85149")
+        return (f"<span style='display:inline-flex;align-items:center;gap:5px;"
+                f"background:#21262d;border:1px solid #30363d;border-radius:5px;"
+                f"padding:4px 10px;margin:3px 4px;font-size:0.82em;white-space:nowrap'>"
+                f"<span style='color:#8b949e'>{label}</span>"
+                f"<span style='color:{css};font-weight:600'>{sign}{val:.1f}%</span>"
+                f"</span>")
+
+    # YouTube chips — Feb '26 seed vs Sep '26 daily
+    _nd_yt_chips = ""
+    for _ch in CHANNEL_ORDER:
+        _sep = _curr_daily.get(_ch)
+        _feb = multiyear.get(_ch, {}).get("subs_by_year", {}).get(2026)
+        if _sep and _feb and _feb > 0:
+            _nd_yt_chips += _pct_chip((_sep - _feb) / _feb * 100, CHANNEL_DISPLAY[_ch])
+
+    # Reddit chips — Feb '26 vs Sep '26
+    _nd_rd_chips = ""
+    for _s in REDDIT_ORDER:
+        _sep_r = reddit_yoy.get(_s, {}).get("curr_members")
+        _feb_r = _rd_feb26.get(_s)
+        if _sep_r and _feb_r and _feb_r > 0:
+            _nd_rd_chips += _pct_chip((_sep_r - _feb_r) / _feb_r * 100, REDDIT_LABELS[_s])
+
+    # Steam chips deferred — _steam_hist_metrics not built yet; filled below
+    _nd_st_chips = "__STEAM_CHIPS__"
+
+    def _section_block(title, chips, note=""):
+        if not chips: return ""
+        return (f"<div style='margin-bottom:8px'>"
+                f"<span style='color:#8b949e;font-size:0.78em;text-transform:uppercase;"
+                f"letter-spacing:.05em;margin-right:6px'>{title}</span>"
+                f"{chips}"
+                f"{'<span style=\"color:#6e7681;font-size:0.75em;margin-left:4px\">' + note + '</span>' if note else ''}"
+                f"</div>")
+
+    # Banner assembled later (after _steam_hist_metrics built)
+    _new_data_banner = "__NEW_DATA_BANNER__"
+
     struct_class = {}
     ecosystem   = {}
     reddit_eng  = {}
@@ -3204,10 +3247,14 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             v_2023  = fmt_views(vby.get(2023))  if vby.get(2023) else "—"
             v_2024  = fmt_views(vby.get(2024))  if vby.get(2024) else "—"
             v_2025  = fmt_views(vby.get(2025))  if vby.get(2025) else fmt_views(a.get("views_prev"))
-            v_2026  = fmt_views(vby.get(2026))  if vby.get(2026) else fmt_views(a.get("views_curr"))
+            v_curr  = vby.get(2026) or a.get("views_curr")
+            v_2026  = fmt_views(v_curr) if v_curr else "—"
             yoy_v   = pct_badge(a.get("yoy_view_pct"),    10.0)
             two_v   = _pct_str(a.get("two_yr_view_pct"))
             cagr_v  = _pct_str(a.get("view_cagr_pct"))
+            # Δ badge: earliest available snapshot → Sep 2026
+            _anc_earliest = next((vby[yr] for yr in [2023, 2024, 2025] if vby.get(yr)), None)
+            _anc_delta = _delta_badge(v_curr, _anc_earliest) if (v_curr and _anc_earliest) else ""
             s3_anchor_rows += (
                 f"<tr>"
                 f"<td><span class='dot' style='background:{color}'></span>{CHANNEL_DISPLAY[ch]}</td>"
@@ -3216,7 +3263,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
                 f"<td class='num'>{v_2023}</td>"
                 f"<td class='num'>{v_2024}</td>"
                 f"<td class='num'>{v_2025}</td>"
-                f"<td class='num'>{v_2026}</td>"
+                f"<td class='num'>{v_2026}{_anc_delta}</td>"
                 f"<td class='num'>{yoy_v}</td>"
                 f"<td class='num'>{two_v}</td>"
                 f"<td class='num'>{cagr_v}</td>"
@@ -3518,6 +3565,31 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     _st_3yr_col     = "#27ae60" if (_st_3yr_cagr or 0) >= 0 else "#c0392b"
     _st_n_2yr       = len(_st_2yr_titles)
     _st_n_3yr       = len(_st_3yr_titles)
+
+    # ── Finalize New Data banner now that _steam_hist_metrics is ready ────────
+    _nd_st_chips_built = ""
+    for _slug in STEAM_ORDER:
+        _aug_v = (_steam_hist_metrics.get(_slug) or {}).get("curr")
+        _feb_v = _st_feb26.get(_slug)
+        if _aug_v is not None and _feb_v and _feb_v > 0:
+            _nd_st_chips_built += _pct_chip((_aug_v - _feb_v) / _feb_v * 100, STEAM_LABELS[_slug])
+
+    _nd_body = (
+        _section_block("YouTube Subscribers", _nd_yt_chips, "Feb → Sep 2026") +
+        _section_block("Reddit Members", _nd_rd_chips, "Feb → Sep 2026") +
+        _section_block("Steam Avg Players", _nd_st_chips_built, "Feb → Aug 2026")
+    )
+    _new_data_banner = (
+        f"<section style='padding:0 32px 0'>"
+        f"<div style='background:#161b22;border:1px solid #30363d;border-left:3px solid #58a6ff;"
+        f"border-radius:6px;padding:14px 18px;margin-bottom:0'>"
+        f"<div style='font-size:0.8em;font-weight:700;color:#58a6ff;"
+        f"text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px'>"
+        f"New Data &mdash; Sep 4 2026 refresh vs Feb 2026 baseline</div>"
+        f"{_nd_body}"
+        f"</div>"
+        f"</section>"
+    ) if _nd_body.strip() else ""
 
     # Page 1 cross-platform table rows
     # YouTube row: use structural CAGR and ecosystem 2yr
@@ -4637,6 +4709,22 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     )
 
     # Inject into chart_data for exec summary
+    # Feb→Sep/Aug totals for exec summary JS
+    _yt_feb_total = sum(multiyear.get(ch, {}).get("subs_by_year", {}).get(2026) or 0 for ch in CHANNEL_ORDER)
+    _yt_sep_total = sum(_curr_daily.get(ch) or 0 for ch in CHANNEL_ORDER)
+    _rd_feb_total = sum(_rd_feb26.get(s) or 0 for s in REDDIT_ORDER)
+    _rd_sep_total = sum(reddit_yoy.get(s, {}).get("curr_members") or 0 for s in REDDIT_ORDER)
+    _st_feb_total = sum(_st_feb26.get(sl) or 0 for sl in STEAM_ORDER)
+    _st_aug_total = sum((_steam_hist_metrics.get(sl) or {}).get("curr") or 0 for sl in STEAM_ORDER)
+    chart_data["febSeps"] = {
+        "ytFebTotal": _yt_feb_total or None,
+        "ytSepTotal": _yt_sep_total or None,
+        "rdFebTotal": _rd_feb_total or None,
+        "rdSepTotal": _rd_sep_total or None,
+        "stFebTotal": _st_feb_total or None,
+        "stAugTotal": _st_aug_total or None,
+    }
+
     chart_data["retail"] = {
         "ownStores2025":       _total_stores_2025,
         "ownStores2017":       _total_stores_2017,
@@ -5647,16 +5735,34 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
   // ── Build paragraphs ──────────────────────────────────────────────────────
 
-  // P1: Ecosystem structural growth 2023–2026
+  // ── Feb→Sep within-year deltas ──────────────────────────────────────────
+  var febSubs  = d.febSeps ? d.febSeps.ytFebTotal  : null;
+  var sepSubs  = d.febSeps ? d.febSeps.ytSepTotal  : null;
+  var febRd    = d.febSeps ? d.febSeps.rdFebTotal  : null;
+  var sepRd    = d.febSeps ? d.febSeps.rdSepTotal  : null;
+  var febSt    = d.febSeps ? d.febSeps.stFebTotal  : null;
+  var augSt    = d.febSeps ? d.febSeps.stAugTotal  : null;
+  var ytFebSepPct = (febSubs && sepSubs && febSubs > 0)
+    ? ((sepSubs - febSubs) / febSubs * 100).toFixed(1) : null;
+  var rdFebSepPct = (febRd && sepRd && febRd > 0)
+    ? ((sepRd - febRd) / febRd * 100).toFixed(1) : null;
+  var stFebAugPct = (febSt && augSt && febSt > 0)
+    ? ((augSt - febSt) / febSt * 100).toFixed(1) : null;
+
+  // P1: Ecosystem structural growth 2023–2026 + Feb→Sep update
+  var p1FebSep = ytFebSepPct !== null
+    ? ' Since February 2026, the tracked ecosystem added ' +
+      fmtBig(sepSubs - febSubs) + ' subscribers (' + fmtPct(parseFloat(ytFebSepPct)) + ' in ~7 months).'
+    : '';
   var p1 = eco2023 && eco2026
     ? 'Creator ecosystem subscribers grew from ' + fmtBig(eco2023) + ' (2023) to ' +
       fmtBig(eco2026) + ' (2026), representing ' + eco3yrGrowth + '% total growth and a ' +
       eco3yrCagr + '% 3-year CAGR. Channel-level 3-year CAGR averaged ' +
       (ytAvgCagr != null ? fmtPct(ytAvgCagr) : 'n/a') + ' across the tracked creator set. ' +
       'Growth remains positive despite the absence of major franchise release events in the ' +
-      'measurement window.'
+      'measurement window.' + p1FebSep
     : ytN + ' tracked channels, ' + fmtBig(ytTotal) + ' combined subscribers — ' +
-      fmtPct(ytAvgYoy) + ' YoY growth on the latest completed-year comparison.';
+      fmtPct(ytAvgYoy) + ' YoY growth on the latest completed-year comparison.' + p1FebSep;
 
   // P2: Anchor discovery signal
   var p2 = anchorPct + '% of tracked anchor videos are compounding in views faster than their ' +
@@ -5668,14 +5774,18 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         'accumulation by that multiple.'
       : '');
 
-  // P3: Reddit community — uses 2024→2026 two-year growth for accurate current-window framing
+  // P3: Reddit community — uses 2024→2026 two-year growth + Feb→Sep update
   var rSubCount = d.reddit.subLabels ? d.reddit.subLabels.length : rTwoYr.length;
+  var p3FebSep = rdFebSepPct !== null
+    ? ' Sep 4 refresh vs Feb 2026 baseline: combined members ' +
+      fmtPct(parseFloat(rdFebSepPct)) + ' (' + fmtBig(Math.round(sepRd - febRd)) + ' net new members in ~7 months).'
+    : '';
   var p3 = 'Reddit community expansion across ' + rSubCount + ' core subreddits: ' +
     fmtBig(rTotal) + ' combined members, ' + fmtPct(rAvgYoy, 1) + ' average 2-year growth (2024\u21922026). ' +
     (rFastIdx >= 0
       ? rFastLbl + ' is the fastest-growing contributor at ' + fmtPct(rFastYoy, 1) + ' over the 2-year window. '
       : '') +
-    'Broad-based community expansion confirms top-of-funnel demand accumulation at the IP level.';
+    'Broad-based community expansion confirms top-of-funnel demand accumulation at the IP level.' + p3FebSep;
 
   // P4: Steam — uses STEAM_HISTORICAL_DATA metrics (structural Feb-over-Feb, 3-yr, stability)
   var p4;
@@ -5702,7 +5812,10 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         'established titles anchor durable baseline activity. ' +
         'Live CCU across the ' + steamN + '-title portfolio: ' + steamCCU.toLocaleString() + '.'
       : 'Live CCU: ' + steamCCU.toLocaleString() + ' across ' + steamN + ' titles.';
-    p4 = strongPart + stablePart + normPart + stabPart;
+    var p4FebAug = stFebAugPct !== null
+      ? ' Feb→Aug 2026 avg player change across the portfolio: ' + fmtPct(parseFloat(stFebAugPct)) + '.'
+      : '';
+    p4 = strongPart + stablePart + normPart + stabPart + p4FebAug;
   } else {
     p4 = 'Steam franchise-wide live CCU: ' + steamCCU.toLocaleString() +
       ' concurrent players across ' + steamN + ' titles. ' + shPosCount + ' of ' + steamN +
@@ -6147,6 +6260,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     </div>
   </div>
 </section>
+
+{_new_data_banner}
 
 <!-- ════════════════════════════════════════════════════════════════════════ -->
 <div class="page-divider" id="pg-1">Page 1 — Franchise Demand Overview</div>
