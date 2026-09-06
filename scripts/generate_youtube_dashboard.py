@@ -2262,6 +2262,24 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             ds = f"{d:+.1f}"
         return f"<small style='color:{color};font-size:0.72em;margin-left:4px'>{ds}</small>"
 
+    # ── Feb 2026 lookups for within-year comparison columns ───────────────────
+    # Reddit: Feb 22 2026 row from weekly CSV
+    _rd_feb26: dict = {}
+    if reddit_df is not None and not reddit_df.empty:
+        _feb26_rd_df = reddit_df[reddit_df["date"].astype(str).str.startswith("2026-02")]
+        for _s26 in REDDIT_ORDER:
+            _row26 = _feb26_rd_df[_feb26_rd_df["subreddit"] == _s26]
+            _rd_feb26[_s26] = int(_row26.iloc[0]["members"]) if not _row26.empty else None
+
+    # Steam: Feb 2026 avg from monthly CSV
+    _st_feb26: dict = {}
+    if steam_monthly_df is not None and not steam_monthly_df.empty:
+        _feb26_st_df = steam_monthly_df[steam_monthly_df["month"] == "2026-02"]
+        for _sl26 in STEAM_ORDER:
+            _row26 = _feb26_st_df[_feb26_st_df["game_slug"] == _sl26]
+            _st_feb26[_sl26] = round(float(_row26.iloc[0]["avg_players"]), 1) \
+                                if not _row26.empty else None
+
     # ── "Changes Since Last Refresh" banner HTML ──────────────────────────────
     _refresh_banner = ""
     if _prev_date:
@@ -3061,14 +3079,18 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             css = "badge-up" if val >= 0 else "badge-dn"
             return f"<span class='badge {css}'>{'+' if val>=0 else ''}{val:.1f}%</span>"
         yoy_v = yoy.get(ch, {}).get("yoy_pct")
-        _yt_delta = _delta_badge(_curr_daily.get(ch), _prev_yt.get(ch))
+        _yt_sep26 = _curr_daily.get(ch)
+        _yt_sep26_s = (f"{_yt_sep26/1e6:.2f}M" if _yt_sep26 and _yt_sep26 >= 1_000_000
+                       else (f"{_yt_sep26/1000:.0f}K" if _yt_sep26 else "—"))
+        _yt_delta = _delta_badge(_yt_sep26, _prev_yt.get(ch))
         sub_table_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{col}'></span>{lbl}</td>"
             f"<td class='num'>{_sk(2023)}</td>"
             f"<td class='num'>{_sk(2024)}</td>"
             f"<td class='num'>{_sk(2025)}</td>"
-            f"<td class='num'>{_sk(2026)}{_yt_delta}</td>"
+            f"<td class='num'>{_sk(2026)}</td>"
+            f"<td class='num'>{_yt_sep26_s}{_yt_delta}</td>"
             f"<td class='num'>{_pg(yoy_v)}</td>"
             f"<td class='num'>{_pg(ch_my.get('two_yr_pct'))}</td>"
             f"<td class='num'>{_pg(ch_my.get('cagr_pct'))}</td>"
@@ -3080,6 +3102,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         v = _eco_my_subs.get(yr)
         return f"{v/1e6:.2f}M" if v else "—"
     _eco_yoy = yoy.get(list(CHANNEL_ORDER)[0], {})  # not a simple sum — use headline stat
+    _eco_sep26 = sum(_curr_daily.get(ch) or 0 for ch in CHANNEL_ORDER)
+    _eco_sep26_s = f"{_eco_sep26/1e6:.2f}M" if _eco_sep26 else "—"
     sub_table_rows += (
         f"<tr style='border-top:1px solid #30363d;font-weight:600;color:#cdd9e5'>"
         f"<td>Ecosystem Total</td>"
@@ -3087,6 +3111,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         f"<td class='num'>{_esk(2024)}</td>"
         f"<td class='num'>{_esk(2025)}</td>"
         f"<td class='num'>{_esk(2026)}</td>"
+        f"<td class='num'>{_eco_sep26_s}</td>"
         f"<td class='num'>{eco_2yr_str if False else '—'}</td>"
         f"<td class='num' style='color:#27ae60' >{eco_2yr_str}</td>"
         f"<td class='num' style='color:{eco_cagr_color}'>{eco_cagr_str}</td>"
@@ -3316,11 +3341,13 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         share_v      = rmy.get("share_pct")
         share_s      = f"{share_v:.1f}%" if share_v is not None else "—"
         _rd_delta = _delta_badge(rmy.get("m_2026"), _prev_rd.get(s))
+        _rd_feb26_v = _rd_feb26.get(s)
         reddit_unified_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{col}'></span>{REDDIT_LABELS[s]}</td>"
             f"<td class='num'>{_fmm(rmy.get('m_2023'))}</td>"
             f"<td class='num'>{_fmm(rmy.get('m_2024'))}</td>"
+            f"<td class='num'>{_fmm(_rd_feb26_v)}</td>"
             f"<td class='num'>{_fmm(rmy.get('m_2026'))}{_rd_delta}</td>"
             f"<td class='num'>{_rpct(yoy_r_pct)}</td>"
             f"<td class='num'>{_rpct(two_yr_pct_r, 5.0)}</td>"
@@ -3335,11 +3362,13 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     def _reco_pct_s(v):
         if v is None: return "—"
         return (f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%")
+    _rd_feb26_eco = sum(_rd_feb26.get(s) or 0 for s in REDDIT_ORDER)
     reddit_unified_rows += (
         f"<tr style='border-top:1px solid #30363d;font-weight:600;color:#cdd9e5'>"
         f"<td>Ecosystem Total</td>"
         f"<td class='num'>{_fmm(_reco.get('m_2023'))}</td>"
         f"<td class='num'>{_fmm(_reco.get('m_2024'))}</td>"
+        f"<td class='num'>{_fmm(_rd_feb26_eco) if _rd_feb26_eco else '—'}</td>"
         f"<td class='num'>{_fmm(_reco.get('m_2026'))}</td>"
         f"<td class='num'>{_reco_pct_s(_rmy_2324pct)}</td>"
         f"<td class='num'>{_reco_pct_s(_rmy_2426pct)}</td>"
@@ -3417,12 +3446,15 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         _pk_s   = f"{_m['peak']:,}"   if _m['peak']    is not None else "—"
         _stab_s = f"{_m['stability']:.1f}%" if _m['stability'] is not None else "—"
         _st_delta = _delta_badge(_m["curr"], _prev_st.get(_sh_slug), fmt="K")
+        _feb26_v = _st_feb26.get(_sh_slug)
+        _feb26_s = f"{_feb26_v:,.0f}" if _feb26_v is not None else "—"
         steam_structural_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{_col}'></span>{_lbl}</td>"
             f"<td class='num'>{_base_s}</td>"
             f"<td class='num'>{_mid_s}</td>"
             f"<td class='num'>{_prev_s}</td>"
+            f"<td class='num'>{_feb26_s}</td>"
             f"<td class='num'>{_curr_s}{_st_delta}</td>"
             f"<td class='num'>{_sh_badge(_m['yoy_pct'])}</td>"
             f"<td class='num'>{_sh_badge(_m['two_yr'],   strong_thr=10, stable_lo=-10)}</td>"
@@ -6262,7 +6294,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">2023</th>
           <th class="num">2024</th>
           <th class="num">2025</th>
-          <th class="num">Feb 2026</th>
+          <th class="num">Feb '26</th>
+          <th class="num">Sep '26</th>
           <th class="num">YoY %</th>
           <th class="num">2-Year %</th>
           <th class="num">3-Yr CAGR</th>
@@ -6270,7 +6303,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       </thead>
       <tbody>{sub_table_rows}</tbody>
     </table>
-    <p class="data-note">YoY = 2025→2026. 2-Year = 2024→2026. 3-Yr CAGR = (subs_2026 ÷ subs_2023)<sup>⅓</sup> − 1. "—" = no snapshot available for that year.</p>
+    <p class="data-note">Feb '26 = nearest seed to mid-Feb 2026. Sep '26 = Sep 4 live fetch. YoY = 2025→2026. 2-Year = 2024→2026. 3-Yr CAGR = (subs_2026 ÷ subs_2023)<sup>⅓</sup> − 1.</p>
   </div>
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>{_sub_insight}</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
@@ -6430,7 +6463,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th>Subreddit</th>
           <th class="num">Members 2023</th>
           <th class="num">Members 2024</th>
-          <th class="num">Members 2026</th>
+          <th class="num">Feb '26</th>
+          <th class="num">Sep '26</th>
           <th class="num">Earliest Annual Window (2023→2024)</th>
           <th class="num">2-Year % (2024→2026)</th>
           <th class="num">3-Yr CAGR</th>
@@ -6439,7 +6473,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       </thead>
       <tbody>{reddit_unified_rows}</tbody>
     </table>
-    <p class="data-note">Earliest Annual Window = 2023→2024 growth (no 2025 snapshot available). 2-Year = 2024→2026 (~2yr). 3-Yr CAGR = (members_2026 ÷ members_2023)<sup>⅓</sup> − 1.</p>
+    <p class="data-note">Feb '26 = Feb 22 snapshot. Sep '26 = Sep 4 live fetch. Earliest Annual Window = 2023→2024 growth (no 2025 snapshot available). 2-Year = 2024→2026 (~2yr). 3-Yr CAGR = (members_2026 ÷ members_2023)<sup>⅓</sup> − 1.</p>
   </div>
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>{_rmy_insight}</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
@@ -6531,8 +6565,9 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th>Title</th>
           <th class="num">Feb {_sh_base_yr} Avg</th>
           <th class="num">Feb {_sh_mid_yr} Avg</th>
-          <th class="num">Feb {_sh_prev_yr} Avg</th>
+          <th class="num">Aug {_sh_prev_yr} Avg</th>
           <th class="num">Feb {_sh_curr_yr} Avg</th>
+          <th class="num">Aug {_sh_curr_yr} Avg</th>
           <th class="num">Structural YoY</th>
           <th class="num">2-Year Change</th>
           <th class="num">3-Year Change</th>
@@ -6544,9 +6579,10 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       <tbody>{steam_structural_rows}</tbody>
     </table>
     <p class="data-note">
-      Structural YoY = Feb {_sh_prev_yr} → Feb {_sh_curr_yr} avg players.
-      2-Year Change = Feb {_sh_mid_yr} → Feb {_sh_curr_yr} (n/a for Space Marine 2 — released Sep 2024).
-      3-Year Change = Feb {_sh_base_yr} → Feb {_sh_curr_yr} (n/a for titles not yet released in {_sh_base_yr}).
+      Feb '26 = Feb 2026 monthly avg from SteamCharts. Aug '26 = Aug 2026 monthly avg (latest completed month).
+      Structural YoY = Aug {_sh_prev_yr} → Aug {_sh_curr_yr} avg players.
+      2-Year Change = Feb {_sh_mid_yr} → Aug {_sh_curr_yr} (n/a for Space Marine 2 — released Sep 2024).
+      3-Year Change = Feb {_sh_base_yr} → Aug {_sh_curr_yr} (n/a for titles not yet released in {_sh_base_yr}).
       Current Avg Players = last 30 days rolling (includes partial months). Engagement Stability = last-30d avg ÷ all-time peak.
       Source: SteamCharts historical data.
     </p>
