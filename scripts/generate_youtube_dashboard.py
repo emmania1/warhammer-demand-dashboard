@@ -899,6 +899,7 @@ def load_reddit_members_weekly() -> pd.DataFrame:
         return pd.DataFrame()
     df = pd.read_csv(REDDIT_MEMBERS_DATA)
     df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date.astype(str)
+    df["members"] = pd.to_numeric(df["members"], errors="coerce").fillna(0).astype(int)
     return df.sort_values(["subreddit", "date"]).reset_index(drop=True)
 
 
@@ -4727,7 +4728,19 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         chart_data["bcp"] = _bcp_chart_data
 
     # JSON injection
-    chart_data_js = json.dumps(chart_data)
+    import numpy as np
+
+    class _NpEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, (np.integer,)):
+                return int(obj)
+            if isinstance(obj, (np.floating,)):
+                return float(obj)
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return super().default(obj)
+
+    chart_data_js = json.dumps(chart_data, cls=_NpEncoder)
 
     CHART_INIT_JS = r"""
 (function() {

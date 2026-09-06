@@ -1,50 +1,234 @@
 month,game_slug,game_name,avg_players,peak_players,source,as_of_date
-2025-01,darktide,Darktide,6746.6,,recovered_from_html,2026-05-20
-2025-02,darktide,Darktide,5258.3,,recovered_from_html,2026-05-20
-2025-03,darktide,Darktide,4952.1,,recovered_from_html,2026-05-20
-2025-04,darktide,Darktide,5589.3,,recovered_from_html,2026-05-20
-2025-05,darktide,Darktide,5728.1,,recovered_from_html,2026-05-20
-2025-06,darktide,Darktide,11593.3,,recovered_from_html,2026-05-20
-2025-07,darktide,Darktide,9943.8,,recovered_from_html,2026-05-20
-2025-08,darktide,Darktide,5347.0,,recovered_from_html,2026-05-20
-2025-09,darktide,Darktide,4749.6,,recovered_from_html,2026-05-20
-2025-10,darktide,Darktide,5779.8,,recovered_from_html,2026-05-20
-2025-11,darktide,Darktide,5699.5,,recovered_from_html,2026-05-20
-2025-12,darktide,Darktide,14499.2,,recovered_from_html,2026-05-20
-2026-01,darktide,Darktide,8609.2,,recovered_from_html,2026-05-20
-2025-02,space_marine_2,Space Marine 2,8455.3,,recovered_from_html,2026-05-20
-2025-03,space_marine_2,Space Marine 2,6652.4,,recovered_from_html,2026-05-20
-2025-04,space_marine_2,Space Marine 2,7842.3,,recovered_from_html,2026-05-20
-2025-05,space_marine_2,Space Marine 2,7612.2,,recovered_from_html,2026-05-20
-2025-06,space_marine_2,Space Marine 2,8204.4,,recovered_from_html,2026-05-20
-2025-07,space_marine_2,Space Marine 2,9494.6,,recovered_from_html,2026-05-20
-2025-08,space_marine_2,Space Marine 2,7603.1,,recovered_from_html,2026-05-20
-2025-09,space_marine_2,Space Marine 2,14785.0,,recovered_from_html,2026-05-20
-2025-10,space_marine_2,Space Marine 2,10861.6,,recovered_from_html,2026-05-20
-2025-11,space_marine_2,Space Marine 2,10139.6,,recovered_from_html,2026-05-20
-2025-12,space_marine_2,Space Marine 2,11520.3,,recovered_from_html,2026-05-20
-2026-01,space_marine_2,Space Marine 2,12758.5,,recovered_from_html,2026-05-20
-2025-02,tw_wh3,Total War: Warhammer III,20542.3,,recovered_from_html,2026-05-20
-2025-03,tw_wh3,Total War: Warhammer III,20783.6,,recovered_from_html,2026-05-20
-2025-04,tw_wh3,Total War: Warhammer III,21410.1,,recovered_from_html,2026-05-20
-2025-05,tw_wh3,Total War: Warhammer III,19026.8,,recovered_from_html,2026-05-20
-2025-06,tw_wh3,Total War: Warhammer III,19960.2,,recovered_from_html,2026-05-20
-2025-07,tw_wh3,Total War: Warhammer III,22361.0,,recovered_from_html,2026-05-20
-2025-08,tw_wh3,Total War: Warhammer III,20574.2,,recovered_from_html,2026-05-20
-2025-09,tw_wh3,Total War: Warhammer III,21789.7,,recovered_from_html,2026-05-20
-2025-10,tw_wh3,Total War: Warhammer III,20665.2,,recovered_from_html,2026-05-20
-2025-11,tw_wh3,Total War: Warhammer III,19758.0,,recovered_from_html,2026-05-20
-2025-12,tw_wh3,Total War: Warhammer III,34996.8,,recovered_from_html,2026-05-20
-2026-01,tw_wh3,Total War: Warhammer III,29720.3,,recovered_from_html,2026-05-20
-2025-02,vermintide_2,Vermintide 2,2478.6,,recovered_from_html,2026-05-20
-2025-03,vermintide_2,Vermintide 2,2303.7,,recovered_from_html,2026-05-20
-2025-04,vermintide_2,Vermintide 2,1875.3,,recovered_from_html,2026-05-20
-2025-05,vermintide_2,Vermintide 2,2111.0,,recovered_from_html,2026-05-20
-2025-06,vermintide_2,Vermintide 2,2176.0,,recovered_from_html,2026-05-20
-2025-07,vermintide_2,Vermintide 2,1718.3,,recovered_from_html,2026-05-20
-2025-08,vermintide_2,Vermintide 2,1709.2,,recovered_from_html,2026-05-20
-2025-09,vermintide_2,Vermintide 2,1769.0,,recovered_from_html,2026-05-20
-2025-10,vermintide_2,Vermintide 2,2727.7,,recovered_from_html,2026-05-20
-2025-11,vermintide_2,Vermintide 2,8928.6,,recovered_from_html,2026-05-20
-2025-12,vermintide_2,Vermintide 2,7477.2,,recovered_from_html,2026-05-20
-2026-01,vermintide_2,Vermintide 2,3848.0,,recovered_from_html,2026-05-20
+2022-11,darktide,Darktide,42604.6,107450.0,steamcharts,2026-09-04
+2022-12,darktide,Darktide,31077.6,85956.0,steamcharts,2026-09-04
+2023-01,darktide,Darktide,9267.7,24177.0,steamcharts,2026-09-04
+2023-02,darktide,Darktide,4325.3,8529.0,steamcharts,2026-09-04
+2023-03,darktide,Darktide,4952.8,9117.0,steamcharts,2026-09-04
+2023-04,darktide,Darktide,4361.0,8134.0,steamcharts,2026-09-04
+2023-05,darktide,Darktide,3918.0,10253.0,steamcharts,2026-09-04
+2023-06,darktide,Darktide,3447.1,7865.0,steamcharts,2026-09-04
+2023-07,darktide,Darktide,2751.1,4803.0,steamcharts,2026-09-04
+2023-08,darktide,Darktide,2337.0,4110.0,steamcharts,2026-09-04
+2023-09,darktide,Darktide,2457.0,4210.0,steamcharts,2026-09-04
+2023-10,darktide,Darktide,16846.7,33673.0,steamcharts,2026-09-04
+2023-11,darktide,Darktide,13576.6,21388.0,steamcharts,2026-09-04
+2023-12,darktide,Darktide,11871.6,20521.0,steamcharts,2026-09-04
+2024-01,darktide,Darktide,8297.4,14600.0,steamcharts,2026-09-04
+2024-02,darktide,Darktide,4607.8,9563.0,steamcharts,2026-09-04
+2024-03,darktide,Darktide,2947.9,4671.0,steamcharts,2026-09-04
+2024-04,darktide,Darktide,4098.3,9398.0,steamcharts,2026-09-04
+2024-05,darktide,Darktide,4070.9,6976.0,steamcharts,2026-09-04
+2024-06,darktide,Darktide,4512.9,10356.0,steamcharts,2026-09-04
+2024-07,darktide,Darktide,4651.0,7861.0,steamcharts,2026-09-04
+2024-08,darktide,Darktide,3950.8,6878.0,steamcharts,2026-09-04
+2024-09,darktide,Darktide,5000.5,15830.0,steamcharts,2026-09-04
+2024-10,darktide,Darktide,8576.1,16190.0,steamcharts,2026-09-04
+2024-11,darktide,Darktide,7448.3,12423.0,steamcharts,2026-09-04
+2024-12,darktide,Darktide,9938.9,22520.0,steamcharts,2026-09-04
+2025-01,darktide,Darktide,6746.6,10496.0,steamcharts,2026-09-04
+2025-02,darktide,Darktide,5258.3,9940.0,steamcharts,2026-09-04
+2025-03,darktide,Darktide,4952.1,11529.0,steamcharts,2026-09-04
+2025-04,darktide,Darktide,5589.3,10233.0,steamcharts,2026-09-04
+2025-05,darktide,Darktide,5728.1,15561.0,steamcharts,2026-09-04
+2025-06,darktide,Darktide,11593.3,42994.0,steamcharts,2026-09-04
+2025-07,darktide,Darktide,9943.8,18029.0,steamcharts,2026-09-04
+2025-08,darktide,Darktide,5347.0,9982.0,steamcharts,2026-09-04
+2025-09,darktide,Darktide,4749.6,12043.0,steamcharts,2026-09-04
+2025-10,darktide,Darktide,5779.8,9889.0,steamcharts,2026-09-04
+2025-11,darktide,Darktide,5699.5,13024.0,steamcharts,2026-09-04
+2025-12,darktide,Darktide,14499.2,34319.0,steamcharts,2026-09-04
+2026-01,darktide,Darktide,8609.2,14229.0,steamcharts,2026-09-04
+2026-02,darktide,Darktide,5228.7,10667.0,steamcharts,2026-09-04
+2026-03,darktide,Darktide,6084.6,15077.0,steamcharts,2026-09-04
+2026-04,darktide,Darktide,4762.8,8049.0,steamcharts,2026-09-04
+2026-05,darktide,Darktide,5253.4,12338.0,steamcharts,2026-09-04
+2026-06,darktide,Darktide,12942.4,56866.0,steamcharts,2026-09-04
+2026-07,darktide,Darktide,14030.8,29071.0,steamcharts,2026-09-04
+2026-08,darktide,Darktide,7224.0,13575.0,steamcharts,2026-09-04
+2024-09,space_marine_2,Space Marine 2,77349.7,186199.0,steamcharts,2026-09-04
+2024-10,space_marine_2,Space Marine 2,25447.3,56205.0,steamcharts,2026-09-04
+2024-11,space_marine_2,Space Marine 2,10724.0,24297.0,steamcharts,2026-09-04
+2024-12,space_marine_2,Space Marine 2,9950.6,18716.0,steamcharts,2026-09-04
+2025-01,space_marine_2,Space Marine 2,8462.6,19670.0,steamcharts,2026-09-04
+2025-02,space_marine_2,Space Marine 2,8455.3,17335.0,steamcharts,2026-09-04
+2025-03,space_marine_2,Space Marine 2,6652.4,13591.0,steamcharts,2026-09-04
+2025-04,space_marine_2,Space Marine 2,7842.3,19141.0,steamcharts,2026-09-04
+2025-05,space_marine_2,Space Marine 2,7612.2,14962.0,steamcharts,2026-09-04
+2025-06,space_marine_2,Space Marine 2,8204.4,23802.0,steamcharts,2026-09-04
+2025-07,space_marine_2,Space Marine 2,9494.6,19883.0,steamcharts,2026-09-04
+2025-08,space_marine_2,Space Marine 2,7603.1,17382.0,steamcharts,2026-09-04
+2025-09,space_marine_2,Space Marine 2,14785.0,34074.0,steamcharts,2026-09-04
+2025-10,space_marine_2,Space Marine 2,10861.6,20909.0,steamcharts,2026-09-04
+2025-11,space_marine_2,Space Marine 2,10139.6,24122.0,steamcharts,2026-09-04
+2025-12,space_marine_2,Space Marine 2,11520.3,19205.0,steamcharts,2026-09-04
+2026-01,space_marine_2,Space Marine 2,12758.5,20041.0,steamcharts,2026-09-04
+2026-02,space_marine_2,Space Marine 2,11756.2,35402.0,steamcharts,2026-09-04
+2026-03,space_marine_2,Space Marine 2,15163.9,35420.0,steamcharts,2026-09-04
+2026-04,space_marine_2,Space Marine 2,10258.8,18493.0,steamcharts,2026-09-04
+2026-05,space_marine_2,Space Marine 2,12420.1,32294.0,steamcharts,2026-09-04
+2026-06,space_marine_2,Space Marine 2,14536.1,26446.0,steamcharts,2026-09-04
+2026-07,space_marine_2,Space Marine 2,13803.4,24918.0,steamcharts,2026-09-04
+2026-08,space_marine_2,Space Marine 2,12880.2,25166.0,steamcharts,2026-09-04
+2022-02,tw_wh3,Total War: Warhammer III,77527.7,166519.0,steamcharts,2026-09-04
+2022-03,tw_wh3,Total War: Warhammer III,18355.4,45299.0,steamcharts,2026-09-04
+2022-04,tw_wh3,Total War: Warhammer III,9967.9,21346.0,steamcharts,2026-09-04
+2022-05,tw_wh3,Total War: Warhammer III,5838.1,11836.0,steamcharts,2026-09-04
+2022-06,tw_wh3,Total War: Warhammer III,4786.0,8364.0,steamcharts,2026-09-04
+2022-07,tw_wh3,Total War: Warhammer III,6711.3,11576.0,steamcharts,2026-09-04
+2022-08,tw_wh3,Total War: Warhammer III,25432.1,119036.0,steamcharts,2026-09-04
+2022-09,tw_wh3,Total War: Warhammer III,42289.7,84537.0,steamcharts,2026-09-04
+2022-10,tw_wh3,Total War: Warhammer III,25963.3,48692.0,steamcharts,2026-09-04
+2022-11,tw_wh3,Total War: Warhammer III,19016.0,33947.0,steamcharts,2026-09-04
+2022-12,tw_wh3,Total War: Warhammer III,17902.3,27942.0,steamcharts,2026-09-04
+2023-01,tw_wh3,Total War: Warhammer III,19607.6,30138.0,steamcharts,2026-09-04
+2023-02,tw_wh3,Total War: Warhammer III,20460.3,37527.0,steamcharts,2026-09-04
+2023-03,tw_wh3,Total War: Warhammer III,25238.0,45218.0,steamcharts,2026-09-04
+2023-04,tw_wh3,Total War: Warhammer III,31263.0,73613.0,steamcharts,2026-09-04
+2023-05,tw_wh3,Total War: Warhammer III,21753.7,38032.0,steamcharts,2026-09-04
+2023-06,tw_wh3,Total War: Warhammer III,17996.9,33771.0,steamcharts,2026-09-04
+2023-07,tw_wh3,Total War: Warhammer III,19061.8,30855.0,steamcharts,2026-09-04
+2023-08,tw_wh3,Total War: Warhammer III,15459.5,27520.0,steamcharts,2026-09-04
+2023-09,tw_wh3,Total War: Warhammer III,17329.8,33925.0,steamcharts,2026-09-04
+2023-10,tw_wh3,Total War: Warhammer III,15349.0,27718.0,steamcharts,2026-09-04
+2023-11,tw_wh3,Total War: Warhammer III,14526.1,25993.0,steamcharts,2026-09-04
+2023-12,tw_wh3,Total War: Warhammer III,16651.2,27137.0,steamcharts,2026-09-04
+2024-01,tw_wh3,Total War: Warhammer III,18532.0,29599.0,steamcharts,2026-09-04
+2024-02,tw_wh3,Total War: Warhammer III,17756.9,33167.0,steamcharts,2026-09-04
+2024-03,tw_wh3,Total War: Warhammer III,19996.8,33936.0,steamcharts,2026-09-04
+2024-04,tw_wh3,Total War: Warhammer III,20488.1,66608.0,steamcharts,2026-09-04
+2024-05,tw_wh3,Total War: Warhammer III,35240.0,73974.0,steamcharts,2026-09-04
+2024-06,tw_wh3,Total War: Warhammer III,26307.6,49758.0,steamcharts,2026-09-04
+2024-07,tw_wh3,Total War: Warhammer III,22061.5,38253.0,steamcharts,2026-09-04
+2024-08,tw_wh3,Total War: Warhammer III,19614.9,33052.0,steamcharts,2026-09-04
+2024-09,tw_wh3,Total War: Warhammer III,19365.6,35132.0,steamcharts,2026-09-04
+2024-10,tw_wh3,Total War: Warhammer III,18673.8,32311.0,steamcharts,2026-09-04
+2024-11,tw_wh3,Total War: Warhammer III,19932.4,33372.0,steamcharts,2026-09-04
+2024-12,tw_wh3,Total War: Warhammer III,27189.8,48514.0,steamcharts,2026-09-04
+2025-01,tw_wh3,Total War: Warhammer III,24552.5,41190.0,steamcharts,2026-09-04
+2025-02,tw_wh3,Total War: Warhammer III,20542.3,34549.0,steamcharts,2026-09-04
+2025-03,tw_wh3,Total War: Warhammer III,20783.6,39480.0,steamcharts,2026-09-04
+2025-04,tw_wh3,Total War: Warhammer III,21410.1,37952.0,steamcharts,2026-09-04
+2025-05,tw_wh3,Total War: Warhammer III,19026.8,33548.0,steamcharts,2026-09-04
+2025-06,tw_wh3,Total War: Warhammer III,19960.2,33213.0,steamcharts,2026-09-04
+2025-07,tw_wh3,Total War: Warhammer III,22361.0,36333.0,steamcharts,2026-09-04
+2025-08,tw_wh3,Total War: Warhammer III,20574.2,36805.0,steamcharts,2026-09-04
+2025-09,tw_wh3,Total War: Warhammer III,21789.7,38847.0,steamcharts,2026-09-04
+2025-10,tw_wh3,Total War: Warhammer III,20665.2,36832.0,steamcharts,2026-09-04
+2025-11,tw_wh3,Total War: Warhammer III,19758.0,32393.0,steamcharts,2026-09-04
+2025-12,tw_wh3,Total War: Warhammer III,34996.8,64158.0,steamcharts,2026-09-04
+2026-01,tw_wh3,Total War: Warhammer III,29720.3,51188.0,steamcharts,2026-09-04
+2026-02,tw_wh3,Total War: Warhammer III,22789.7,37431.0,steamcharts,2026-09-04
+2026-03,tw_wh3,Total War: Warhammer III,19440.3,34642.0,steamcharts,2026-09-04
+2026-04,tw_wh3,Total War: Warhammer III,19278.7,33106.0,steamcharts,2026-09-04
+2026-05,tw_wh3,Total War: Warhammer III,23238.6,46409.0,steamcharts,2026-09-04
+2026-06,tw_wh3,Total War: Warhammer III,23038.3,40629.0,steamcharts,2026-09-04
+2026-07,tw_wh3,Total War: Warhammer III,23565.8,38836.0,steamcharts,2026-09-04
+2026-08,tw_wh3,Total War: Warhammer III,27221.1,51034.0,steamcharts,2026-09-04
+2017-09,vermintide_2,Vermintide 2,1.1,21.0,steamcharts,2026-09-04
+2017-10,vermintide_2,Vermintide 2,1.1,18.0,steamcharts,2026-09-04
+2017-11,vermintide_2,Vermintide 2,1.0,13.0,steamcharts,2026-09-04
+2017-12,vermintide_2,Vermintide 2,0.5,4.0,steamcharts,2026-09-04
+2018-01,vermintide_2,Vermintide 2,1.1,16.0,steamcharts,2026-09-04
+2018-02,vermintide_2,Vermintide 2,79.7,12900.0,steamcharts,2026-09-04
+2018-03,vermintide_2,Vermintide 2,30622.8,73203.0,steamcharts,2026-09-04
+2018-04,vermintide_2,Vermintide 2,12611.9,28558.0,steamcharts,2026-09-04
+2018-05,vermintide_2,Vermintide 2,5000.1,11195.0,steamcharts,2026-09-04
+2018-06,vermintide_2,Vermintide 2,6061.9,13459.0,steamcharts,2026-09-04
+2018-07,vermintide_2,Vermintide 2,4669.1,11511.0,steamcharts,2026-09-04
+2018-08,vermintide_2,Vermintide 2,2673.7,13490.0,steamcharts,2026-09-04
+2018-09,vermintide_2,Vermintide 2,4326.3,17012.0,steamcharts,2026-09-04
+2018-10,vermintide_2,Vermintide 2,2700.2,5835.0,steamcharts,2026-09-04
+2018-11,vermintide_2,Vermintide 2,3383.6,7067.0,steamcharts,2026-09-04
+2018-12,vermintide_2,Vermintide 2,3865.1,8668.0,steamcharts,2026-09-04
+2019-01,vermintide_2,Vermintide 2,3892.4,8358.0,steamcharts,2026-09-04
+2019-02,vermintide_2,Vermintide 2,4098.9,8952.0,steamcharts,2026-09-04
+2019-03,vermintide_2,Vermintide 2,4541.3,14117.0,steamcharts,2026-09-04
+2019-04,vermintide_2,Vermintide 2,2396.9,4622.0,steamcharts,2026-09-04
+2019-05,vermintide_2,Vermintide 2,2557.4,6423.0,steamcharts,2026-09-04
+2019-06,vermintide_2,Vermintide 2,3112.2,5236.0,steamcharts,2026-09-04
+2019-07,vermintide_2,Vermintide 2,2389.2,4574.0,steamcharts,2026-09-04
+2019-08,vermintide_2,Vermintide 2,6196.2,14754.0,steamcharts,2026-09-04
+2019-09,vermintide_2,Vermintide 2,2723.8,6132.0,steamcharts,2026-09-04
+2019-10,vermintide_2,Vermintide 2,1952.1,4546.0,steamcharts,2026-09-04
+2019-11,vermintide_2,Vermintide 2,2682.9,9198.0,steamcharts,2026-09-04
+2019-12,vermintide_2,Vermintide 2,2705.6,5900.0,steamcharts,2026-09-04
+2020-01,vermintide_2,Vermintide 2,2999.1,7101.0,steamcharts,2026-09-04
+2020-02,vermintide_2,Vermintide 2,3062.8,5664.0,steamcharts,2026-09-04
+2020-03,vermintide_2,Vermintide 2,3325.6,8490.0,steamcharts,2026-09-04
+2020-04,vermintide_2,Vermintide 2,4047.4,8146.0,steamcharts,2026-09-04
+2020-05,vermintide_2,Vermintide 2,3341.5,7950.0,steamcharts,2026-09-04
+2020-06,vermintide_2,Vermintide 2,3448.3,7819.0,steamcharts,2026-09-04
+2020-07,vermintide_2,Vermintide 2,4313.7,7348.0,steamcharts,2026-09-04
+2020-08,vermintide_2,Vermintide 2,3234.8,5965.0,steamcharts,2026-09-04
+2020-09,vermintide_2,Vermintide 2,3294.3,6463.0,steamcharts,2026-09-04
+2020-10,vermintide_2,Vermintide 2,2875.2,10316.0,steamcharts,2026-09-04
+2020-11,vermintide_2,Vermintide 2,4687.9,10854.0,steamcharts,2026-09-04
+2020-12,vermintide_2,Vermintide 2,3693.8,7708.0,steamcharts,2026-09-04
+2021-01,vermintide_2,Vermintide 2,5105.2,9314.0,steamcharts,2026-09-04
+2021-02,vermintide_2,Vermintide 2,3862.8,6964.0,steamcharts,2026-09-04
+2021-03,vermintide_2,Vermintide 2,4517.3,9570.0,steamcharts,2026-09-04
+2021-04,vermintide_2,Vermintide 2,7572.5,29867.0,steamcharts,2026-09-04
+2021-05,vermintide_2,Vermintide 2,8334.1,21820.0,steamcharts,2026-09-04
+2021-06,vermintide_2,Vermintide 2,7155.0,16581.0,steamcharts,2026-09-04
+2021-07,vermintide_2,Vermintide 2,4874.1,8659.0,steamcharts,2026-09-04
+2021-08,vermintide_2,Vermintide 2,3387.8,6334.0,steamcharts,2026-09-04
+2021-09,vermintide_2,Vermintide 2,2929.2,5509.0,steamcharts,2026-09-04
+2021-10,vermintide_2,Vermintide 2,3010.3,9487.0,steamcharts,2026-09-04
+2021-11,vermintide_2,Vermintide 2,3621.9,8032.0,steamcharts,2026-09-04
+2021-12,vermintide_2,Vermintide 2,5188.4,10814.0,steamcharts,2026-09-04
+2022-01,vermintide_2,Vermintide 2,4824.8,9192.0,steamcharts,2026-09-04
+2022-02,vermintide_2,Vermintide 2,3341.5,6380.0,steamcharts,2026-09-04
+2022-03,vermintide_2,Vermintide 2,3633.8,8279.0,steamcharts,2026-09-04
+2022-04,vermintide_2,Vermintide 2,3100.8,5719.0,steamcharts,2026-09-04
+2022-05,vermintide_2,Vermintide 2,2696.2,5214.0,steamcharts,2026-09-04
+2022-06,vermintide_2,Vermintide 2,4064.1,8196.0,steamcharts,2026-09-04
+2022-07,vermintide_2,Vermintide 2,3442.2,5834.0,steamcharts,2026-09-04
+2022-08,vermintide_2,Vermintide 2,2650.8,4690.0,steamcharts,2026-09-04
+2022-09,vermintide_2,Vermintide 2,2492.8,4432.0,steamcharts,2026-09-04
+2022-10,vermintide_2,Vermintide 2,3593.3,6460.0,steamcharts,2026-09-04
+2022-11,vermintide_2,Vermintide 2,26930.7,104134.0,steamcharts,2026-09-04
+2022-12,vermintide_2,Vermintide 2,8143.3,18656.0,steamcharts,2026-09-04
+2023-01,vermintide_2,Vermintide 2,5787.7,10280.0,steamcharts,2026-09-04
+2023-02,vermintide_2,Vermintide 2,3967.5,7933.0,steamcharts,2026-09-04
+2023-03,vermintide_2,Vermintide 2,4240.1,8533.0,steamcharts,2026-09-04
+2023-04,vermintide_2,Vermintide 2,3710.4,7525.0,steamcharts,2026-09-04
+2023-05,vermintide_2,Vermintide 2,3266.6,7219.0,steamcharts,2026-09-04
+2023-06,vermintide_2,Vermintide 2,3665.3,7013.0,steamcharts,2026-09-04
+2023-07,vermintide_2,Vermintide 2,2937.6,4988.0,steamcharts,2026-09-04
+2023-08,vermintide_2,Vermintide 2,2129.0,3882.0,steamcharts,2026-09-04
+2023-09,vermintide_2,Vermintide 2,2321.2,4365.0,steamcharts,2026-09-04
+2023-10,vermintide_2,Vermintide 2,3959.1,10546.0,steamcharts,2026-09-04
+2023-11,vermintide_2,Vermintide 2,3709.0,8336.0,steamcharts,2026-09-04
+2023-12,vermintide_2,Vermintide 2,3138.7,5763.0,steamcharts,2026-09-04
+2024-01,vermintide_2,Vermintide 2,2870.6,5321.0,steamcharts,2026-09-04
+2024-02,vermintide_2,Vermintide 2,2182.0,3985.0,steamcharts,2026-09-04
+2024-03,vermintide_2,Vermintide 2,2612.2,5666.0,steamcharts,2026-09-04
+2024-04,vermintide_2,Vermintide 2,2487.6,5309.0,steamcharts,2026-09-04
+2024-05,vermintide_2,Vermintide 2,2501.7,5979.0,steamcharts,2026-09-04
+2024-06,vermintide_2,Vermintide 2,2695.8,6222.0,steamcharts,2026-09-04
+2024-07,vermintide_2,Vermintide 2,1892.4,3597.0,steamcharts,2026-09-04
+2024-08,vermintide_2,Vermintide 2,1893.0,3765.0,steamcharts,2026-09-04
+2024-09,vermintide_2,Vermintide 2,1952.1,3719.0,steamcharts,2026-09-04
+2024-10,vermintide_2,Vermintide 2,2193.1,4967.0,steamcharts,2026-09-04
+2024-11,vermintide_2,Vermintide 2,7112.3,24489.0,steamcharts,2026-09-04
+2024-12,vermintide_2,Vermintide 2,5047.6,15295.0,steamcharts,2026-09-04
+2025-01,vermintide_2,Vermintide 2,3580.1,7967.0,steamcharts,2026-09-04
+2025-02,vermintide_2,Vermintide 2,2478.6,4953.0,steamcharts,2026-09-04
+2025-03,vermintide_2,Vermintide 2,2303.7,4646.0,steamcharts,2026-09-04
+2025-04,vermintide_2,Vermintide 2,1875.3,3749.0,steamcharts,2026-09-04
+2025-05,vermintide_2,Vermintide 2,2111.0,5697.0,steamcharts,2026-09-04
+2025-06,vermintide_2,Vermintide 2,2176.0,5635.0,steamcharts,2026-09-04
+2025-07,vermintide_2,Vermintide 2,1718.3,3143.0,steamcharts,2026-09-04
+2025-08,vermintide_2,Vermintide 2,1709.2,3946.0,steamcharts,2026-09-04
+2025-09,vermintide_2,Vermintide 2,1769.0,3783.0,steamcharts,2026-09-04
+2025-10,vermintide_2,Vermintide 2,2727.7,7390.0,steamcharts,2026-09-04
+2025-11,vermintide_2,Vermintide 2,8928.6,38144.0,steamcharts,2026-09-04
+2025-12,vermintide_2,Vermintide 2,7477.2,19974.0,steamcharts,2026-09-04
+2026-01,vermintide_2,Vermintide 2,3848.0,8498.0,steamcharts,2026-09-04
+2026-02,vermintide_2,Vermintide 2,2338.0,5101.0,steamcharts,2026-09-04
+2026-03,vermintide_2,Vermintide 2,2133.6,4105.0,steamcharts,2026-09-04
+2026-04,vermintide_2,Vermintide 2,1784.8,3398.0,steamcharts,2026-09-04
+2026-05,vermintide_2,Vermintide 2,2117.6,5421.0,steamcharts,2026-09-04
+2026-06,vermintide_2,Vermintide 2,2306.2,5251.0,steamcharts,2026-09-04
+2026-07,vermintide_2,Vermintide 2,2020.5,3971.0,steamcharts,2026-09-04
+2026-08,vermintide_2,Vermintide 2,1861.7,4101.0,steamcharts,2026-09-04
