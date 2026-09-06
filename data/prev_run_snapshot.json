@@ -1,0 +1,25 @@
+{
+  "run_date": "2026-09-06",
+  "youtube": {
+    "Warhammer_Official": 1080000,
+    "WesHammer": 906000,
+    "Luetin09": 978000,
+    "Squidmar_Miniatures": 818000,
+    "Majorkill": 701000,
+    "Auspex_Tactics": 424000,
+    "Valrak": 291000
+  },
+  "reddit": {
+    "Warhammer": 474705,
+    "Warhammer40k": 1589401,
+    "ageofsigmar": 263219,
+    "minipainting": 1270686
+  },
+  "steam_month": "2026-08",
+  "steam": {
+    "tw_wh3": 27221.1,
+    "space_marine_2": 12880.2,
+    "darktide": 7224.0,
+    "vermintide_2": 1861.7
+  }
+}

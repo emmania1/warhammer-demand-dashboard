@@ -61,6 +61,7 @@ REDDIT_STORE_RECENT   = os.path.join(DATA_DIR,   "reddit_store_threads_recent.cs
 REDDIT_STORE_RAW      = os.path.join(DATA_DIR,   "reddit_store_threads_raw.csv")
 REDDIT_INTEL_POSTS    = os.path.join(DATA_DIR,   "reddit_intel_posts.csv")
 REDDIT_INTEL_COMMENTS = os.path.join(DATA_DIR,   "reddit_intel_comments.csv")
+PREV_SNAPSHOT         = os.path.join(DATA_DIR,   "prev_run_snapshot.json")
 CHANNEL_HISTORY = os.path.join(DATA_DIR,   "youtube_channel_history.csv")
 ANCHOR_HISTORY  = os.path.join(DATA_DIR,   "youtube_anchor_history.csv")
 OUTPUT_HTML     = "index.html"
@@ -2185,6 +2186,27 @@ def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
 
 
 # ════════════════════════════════════════════════════════════════════════════
+# Run-to-run snapshot (delta display)
+# ════════════════════════════════════════════════════════════════════════════
+
+def load_prev_snapshot() -> dict:
+    """Load metrics from the previous generator run for delta display."""
+    if not os.path.exists(PREV_SNAPSHOT):
+        return {}
+    try:
+        with open(PREV_SNAPSHOT) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_snapshot(snap: dict) -> None:
+    """Persist current run metrics so next run can show deltas."""
+    with open(PREV_SNAPSHOT, "w") as f:
+        json.dump(snap, f, indent=2)
+
+
+# ════════════════════════════════════════════════════════════════════════════
 # HTML build
 # ════════════════════════════════════════════════════════════════════════════
 
@@ -2200,13 +2222,81 @@ def build_html(channels_df, yoy, eci_map, evergreen,
                reddit_intel_posts_df=None,
                reddit_intel_comments_df=None,
                gw_stock_df=None,
-               eg_stock_df=None) -> str:
+               eg_stock_df=None,
+               prev_snap: dict | None = None) -> str:
 
     # ── Restore slopegraph for rank comparison chart ──────────────────────────
     slopegraph  = compute_slopegraph(channels_df)
     # ── Stubs for remaining removed parameters ────────────────────────────────
     velocity    = {}
     trajectory  = {}
+
+    # ── Delta helpers (run-to-run change display) ─────────────────────────────
+    prev_snap  = prev_snap or {}
+    _prev_yt   = prev_snap.get("youtube") or {}
+    _prev_rd   = prev_snap.get("reddit")  or {}
+    _prev_st   = prev_snap.get("steam")   or {}
+    _prev_date = prev_snap.get("run_date", "")
+
+    # Actual current subscriber counts from the daily CSV (latest date per channel)
+    _curr_daily: dict = {}
+    for _ch in CHANNEL_ORDER:
+        _ch_df = channels_df[channels_df["channel_label"] == _ch].sort_values("date")
+        if not _ch_df.empty:
+            _s = _ch_df.iloc[-1].get("subscribers")
+            _curr_daily[_ch] = int(_s) if (_s and not pd.isna(_s) and _s > 0) else None
+
+    def _delta_badge(curr, prev, fmt="K"):
+        """Inline colored delta since last run. Returns empty string if no data."""
+        try:
+            curr = float(curr); prev = float(prev)
+        except (TypeError, ValueError):
+            return ""
+        d = curr - prev
+        if abs(d) < 0.5:
+            return ""
+        color = "#3fb950" if d > 0 else "#f85149"
+        if fmt == "K":
+            ds = f"{d/1000:+.0f}K" if abs(d) >= 500 else f"{d:+.0f}"
+        else:
+            ds = f"{d:+.1f}"
+        return f"<small style='color:{color};font-size:0.72em;margin-left:4px'>{ds}</small>"
+
+    # ── "Changes Since Last Refresh" banner HTML ──────────────────────────────
+    _refresh_banner = ""
+    if _prev_date:
+        _yt_eco_delta = sum(
+            (_curr_daily.get(ch) or 0) - (_prev_yt.get(ch) or 0)
+            for ch in CHANNEL_ORDER if _curr_daily.get(ch) and _prev_yt.get(ch)
+        )
+        _rd_eco_delta = sum(
+            (reddit_yoy.get(s, {}).get("curr_members") or 0) - (_prev_rd.get(s) or 0)
+            for s in REDDIT_ORDER if reddit_yoy.get(s, {}).get("curr_members") and _prev_rd.get(s)
+        )
+        def _dchip(val, label, fmt="K"):
+            if val == 0: return ""
+            c = "#3fb950" if val > 0 else "#f85149"
+            if fmt == "K":
+                vs = f"{val/1000:+.0f}K" if abs(val) >= 500 else f"{val:+.0f}"
+            else:
+                vs = f"{val:+.1f}"
+            return (f"<span style='background:#21262d;border:1px solid #30363d;border-radius:4px;"
+                    f"padding:2px 7px;margin:0 4px;font-size:0.8em;white-space:nowrap'>"
+                    f"<span style='color:{c}'>{vs}</span>"
+                    f"<span style='color:#8b949e;margin-left:3px'>{label}</span></span>")
+        _chips = "".join(filter(None, [
+            _dchip(_yt_eco_delta, "YT subs"),
+            _dchip(_rd_eco_delta, "Reddit members"),
+        ]))
+        if _chips:
+            _refresh_banner = (
+                f"<div style='background:#161b22;border:1px solid #30363d;border-radius:6px;"
+                f"padding:7px 14px;margin-bottom:16px;display:flex;align-items:center;gap:8px;"
+                f"font-size:0.82em;flex-wrap:wrap'>"
+                f"<span style='color:#8b949e'>Since&nbsp;<strong style='color:#cdd9e5'>{_prev_date}</strong>:</span>"
+                f"{_chips}"
+                f"</div>"
+            )
     struct_class = {}
     ecosystem   = {}
     reddit_eng  = {}
@@ -2971,13 +3061,14 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             css = "badge-up" if val >= 0 else "badge-dn"
             return f"<span class='badge {css}'>{'+' if val>=0 else ''}{val:.1f}%</span>"
         yoy_v = yoy.get(ch, {}).get("yoy_pct")
+        _yt_delta = _delta_badge(_curr_daily.get(ch), _prev_yt.get(ch))
         sub_table_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{col}'></span>{lbl}</td>"
             f"<td class='num'>{_sk(2023)}</td>"
             f"<td class='num'>{_sk(2024)}</td>"
             f"<td class='num'>{_sk(2025)}</td>"
-            f"<td class='num'>{_sk(2026)}</td>"
+            f"<td class='num'>{_sk(2026)}{_yt_delta}</td>"
             f"<td class='num'>{_pg(yoy_v)}</td>"
             f"<td class='num'>{_pg(ch_my.get('two_yr_pct'))}</td>"
             f"<td class='num'>{_pg(ch_my.get('cagr_pct'))}</td>"
@@ -3224,12 +3315,13 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         cagr_r_pct   = rmy.get("cagr_3yr_pct")
         share_v      = rmy.get("share_pct")
         share_s      = f"{share_v:.1f}%" if share_v is not None else "—"
+        _rd_delta = _delta_badge(rmy.get("m_2026"), _prev_rd.get(s))
         reddit_unified_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{col}'></span>{REDDIT_LABELS[s]}</td>"
             f"<td class='num'>{_fmm(rmy.get('m_2023'))}</td>"
             f"<td class='num'>{_fmm(rmy.get('m_2024'))}</td>"
-            f"<td class='num'>{_fmm(rmy.get('m_2026'))}</td>"
+            f"<td class='num'>{_fmm(rmy.get('m_2026'))}{_rd_delta}</td>"
             f"<td class='num'>{_rpct(yoy_r_pct)}</td>"
             f"<td class='num'>{_rpct(two_yr_pct_r, 5.0)}</td>"
             f"<td class='num'>{_rpct(cagr_r_pct, 5.0)}</td>"
@@ -3324,13 +3416,14 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         _l30_s  = f"{_m['last_30d']:,.0f}" if _m['last_30d'] is not None else "—"
         _pk_s   = f"{_m['peak']:,}"   if _m['peak']    is not None else "—"
         _stab_s = f"{_m['stability']:.1f}%" if _m['stability'] is not None else "—"
+        _st_delta = _delta_badge(_m["curr"], _prev_st.get(_sh_slug), fmt="K")
         steam_structural_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{_col}'></span>{_lbl}</td>"
             f"<td class='num'>{_base_s}</td>"
             f"<td class='num'>{_mid_s}</td>"
             f"<td class='num'>{_prev_s}</td>"
-            f"<td class='num'>{_curr_s}</td>"
+            f"<td class='num'>{_curr_s}{_st_delta}</td>"
             f"<td class='num'>{_sh_badge(_m['yoy_pct'])}</td>"
             f"<td class='num'>{_sh_badge(_m['two_yr'],   strong_thr=10, stable_lo=-10)}</td>"
             f"<td class='num'>{_sh_badge(_m['three_yr'], strong_thr=10, stable_lo=-10)}</td>"
@@ -6011,6 +6104,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
 <!-- ── Executive Summary — JS-rendered from window.__yt ─────────────────── -->
 <section>
+  {_refresh_banner}
   <div class="exec-summary-card">
     <div class="exec-summary-label">Executive Summary — Warhammer Franchise Demand Intelligence · {generated_at}</div>
     <div class="exec-summary-body" id="exec-summary-body">
@@ -6857,6 +6951,8 @@ def main():
     gw_stock_df              = load_gw_stock()
     eg_stock_df              = load_eg_stock()
 
+    prev_snap = load_prev_snapshot()
+
     if channels_df.empty:
         print("[ERROR] No channel data. Run fetch_youtube_channels_daily.py first.")
         sys.exit(1)
@@ -6907,10 +7003,30 @@ def main():
         reddit_intel_comments_df=reddit_intel_comments_df,
         gw_stock_df=gw_stock_df,
         eg_stock_df=eg_stock_df,
+        prev_snap=prev_snap,
     )
 
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
+
+    # Persist snapshot for next run's delta display
+    # YouTube: use actual latest daily subs (not seed-anchor values)
+    _snap_yt: dict = {}
+    for ch in CHANNEL_ORDER:
+        _ch_d = channels_df[channels_df["channel_label"] == ch].sort_values("date")
+        if not _ch_d.empty:
+            _s = _ch_d.iloc[-1].get("subscribers")
+            _snap_yt[ch] = int(_s) if (_s and not pd.isna(_s) and _s > 0) else None
+        else:
+            _snap_yt[ch] = None
+    save_snapshot({
+        "run_date": datetime.now().strftime("%Y-%m-%d"),
+        "youtube": _snap_yt,
+        "reddit":  {sub: reddit_yoy.get(sub, {}).get("curr_members") for sub in REDDIT_ORDER},
+        "steam_month": steam_met.get("struct_mon", ""),
+        "steam": {slug: (steam_met.get("by_slug", {}).get(slug) or {}).get("struct_avg")
+                  for slug in STEAM_ORDER},
+    })
 
     size_kb = os.path.getsize(OUTPUT_HTML) // 1024
     print(f"  ✓ Dashboard → {OUTPUT_HTML} ({size_kb}KB)\n")
