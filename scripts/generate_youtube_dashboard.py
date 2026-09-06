@@ -2246,21 +2246,20 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             _s = _ch_df.iloc[-1].get("subscribers")
             _curr_daily[_ch] = int(_s) if (_s and not pd.isna(_s) and _s > 0) else None
 
-    def _delta_badge(curr, prev, fmt="K"):
-        """Inline colored delta since last run. Returns empty string if no data."""
+    def _delta_badge(curr, prev, strong_thr=5.0):
+        """Feb→Now % change as a colored badge. Returns empty string if no data."""
         try:
             curr = float(curr); prev = float(prev)
+            if prev == 0:
+                return ""
         except (TypeError, ValueError):
             return ""
-        d = curr - prev
-        if abs(d) < 0.5:
+        pct = (curr - prev) / prev * 100
+        if abs(pct) < 0.1:
             return ""
-        color = "#3fb950" if d > 0 else "#f85149"
-        if fmt == "K":
-            ds = f"{d/1000:+.0f}K" if abs(d) >= 500 else f"{d:+.0f}"
-        else:
-            ds = f"{d:+.1f}"
-        return f"<small style='color:{color};font-size:0.72em;margin-left:4px'>{ds}</small>"
+        sign = "+" if pct >= 0 else ""
+        css = "badge-pos" if pct >= strong_thr else ("badge-mid" if pct >= 0 else "badge-neg")
+        return f"<span class='badge {css}' style='margin-left:5px'>{sign}{pct:.1f}%</span>"
 
     # ── Feb 2026 lookups for within-year comparison columns ───────────────────
     # Reddit: Feb 22 2026 row from weekly CSV
@@ -3449,7 +3448,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         _l30_s  = f"{_m['last_30d']:,.0f}" if _m['last_30d'] is not None else "—"
         _pk_s   = f"{_m['peak']:,}"   if _m['peak']    is not None else "—"
         _stab_s = f"{_m['stability']:.1f}%" if _m['stability'] is not None else "—"
-        _st_delta = _delta_badge(_m["curr"], _st_feb26.get(_sh_slug), fmt="K")
+        _st_delta = _delta_badge(_m["curr"], _st_feb26.get(_sh_slug))
         _feb26_v = _st_feb26.get(_sh_slug)
         _feb26_s = f"{_feb26_v:,.0f}" if _feb26_v is not None else "—"
         steam_structural_rows += (
@@ -6299,7 +6298,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">2024</th>
           <th class="num">2025</th>
           <th class="num">Feb '26</th>
-          <th class="num">Sep '26</th>
+          <th class="num">Sep '26 <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
           <th class="num">YoY %</th>
           <th class="num">2-Year %</th>
           <th class="num">3-Yr CAGR</th>
@@ -6435,7 +6434,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">Members 2023</th>
           <th class="num">Members 2024</th>
           <th class="num">Feb '26</th>
-          <th class="num">Sep '26</th>
+          <th class="num">Sep '26 <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
           <th class="num">Earliest Annual Window (2023→2024)</th>
           <th class="num">2-Year % (2024→2026)</th>
           <th class="num">3-Yr CAGR</th>
@@ -6538,7 +6537,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">Feb {_sh_mid_yr} Avg</th>
           <th class="num">Aug {_sh_prev_yr} Avg</th>
           <th class="num">Feb {_sh_curr_yr} Avg</th>
-          <th class="num">Aug {_sh_curr_yr} Avg</th>
+          <th class="num">Aug {_sh_curr_yr} Avg <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
           <th class="num">Structural YoY</th>
           <th class="num">2-Year Change</th>
           <th class="num">3-Year Change</th>
