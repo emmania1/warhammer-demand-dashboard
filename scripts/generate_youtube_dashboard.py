@@ -3085,7 +3085,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         _yt_sep26 = _curr_daily.get(ch)
         _yt_sep26_s = (f"{_yt_sep26/1e6:.2f}M" if _yt_sep26 and _yt_sep26 >= 1_000_000
                        else (f"{_yt_sep26/1000:.0f}K" if _yt_sep26 else "—"))
-        _yt_delta = _delta_badge(_yt_sep26, _prev_yt.get(ch))
+        _yt_feb26 = multiyear.get(ch, {}).get("subs_by_year", {}).get(2026)
+        _yt_delta = _delta_badge(_yt_sep26, _yt_feb26)
         sub_table_rows += (
             f"<tr>"
             f"<td><span class='dot' style='background:{col}'></span>{lbl}</td>"
@@ -3343,7 +3344,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         cagr_r_pct   = rmy.get("cagr_3yr_pct")
         share_v      = rmy.get("share_pct")
         share_s      = f"{share_v:.1f}%" if share_v is not None else "—"
-        _rd_delta = _delta_badge(rmy.get("m_2026"), _prev_rd.get(s))
+        _rd_delta = _delta_badge(rmy.get("m_2026"), _rd_feb26.get(s))
         _rd_feb26_v = _rd_feb26.get(s)
         reddit_unified_rows += (
             f"<tr>"
@@ -3448,7 +3449,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         _l30_s  = f"{_m['last_30d']:,.0f}" if _m['last_30d'] is not None else "—"
         _pk_s   = f"{_m['peak']:,}"   if _m['peak']    is not None else "—"
         _stab_s = f"{_m['stability']:.1f}%" if _m['stability'] is not None else "—"
-        _st_delta = _delta_badge(_m["curr"], _prev_st.get(_sh_slug), fmt="K")
+        _st_delta = _delta_badge(_m["curr"], _st_feb26.get(_sh_slug), fmt="K")
         _feb26_v = _st_feb26.get(_sh_slug)
         _feb26_s = f"{_feb26_v:,.0f}" if _feb26_v is not None else "—"
         steam_structural_rows += (
