@@ -2186,6 +2186,239 @@ def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
 
 
 # ════════════════════════════════════════════════════════════════════════════
+# Page 9 — Tone Pro launch + store network
+# ════════════════════════════════════════════════════════════════════════════
+
+PAINT_SUMMARY_CSV   = os.path.join(DATA_DIR, "gw_paint_stock_summary.csv")
+PAINT_EPISODES_CSV  = os.path.join(DATA_DIR, "gw_paint_oos_episodes.csv")
+SF_SUMMARY_CSV      = os.path.join(DATA_DIR, "gw_storefinder_summary.csv")
+SF_COUNTRY_CSV      = os.path.join(DATA_DIR, "gw_storefinder_country.csv")
+SF_CHANGES_CSV      = os.path.join(DATA_DIR, "gw_storefinder_changes.csv")
+YT_TOPIC_VIDEOS_CSV = os.path.join(DATA_DIR, "youtube_topic_videos.csv")
+YT_TOPIC_SUMMARY_CSV = os.path.join(DATA_DIR, "youtube_topic_summary.csv")
+TONE_PRO_LAUNCH     = "2026-10-24"
+
+
+def _read_csv_or_empty(path: str) -> pd.DataFrame:
+    return pd.read_csv(path, keep_default_na=False) if os.path.exists(path) else pd.DataFrame()
+
+
+def build_launch_page() -> str:
+    """Page 9: Warhammer Pro (Tone Pro) paint availability, store-finder network
+    and Tone Pro YouTube attention. Reads the CSVs written by
+    fetch_gw_paint_stock.py, fetch_gw_storefinder.py, fetch_youtube_topic_videos.py."""
+    from html import escape
+
+    paint = _read_csv_or_empty(PAINT_SUMMARY_CSV)
+    eps   = _read_csv_or_empty(PAINT_EPISODES_CSV)
+    sf    = _read_csv_or_empty(SF_SUMMARY_CSV)
+    sfc   = _read_csv_or_empty(SF_COUNTRY_CSV)
+    sfch  = _read_csv_or_empty(SF_CHANGES_CSV)
+    ytv   = _read_csv_or_empty(YT_TOPIC_VIDEOS_CSV)
+    yts   = _read_csv_or_empty(YT_TOPIC_SUMMARY_CSV)
+    if paint.empty and sf.empty and ytv.empty:
+        return ""
+
+    h3 = ("<h3 style='font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;"
+          "color:var(--muted);margin-bottom:12px;'>{}</h3>")
+    pro_lines = ["Tone Pro", "Tech Pro"]
+    _rev = GW_STORE_DATA["revenue_h1_gbp_m"]
+    _rev_key = sorted(_rev)[-1]
+    online_share = _rev[_rev_key]["online"] / sum(_rev[_rev_key].values()) * 100
+    online_lbl = f"~{online_share:.0f}% of {_rev_key.replace('_', ' ')} revenue"
+    days_to_launch = (pd.to_datetime(TONE_PRO_LAUNCH) - pd.Timestamp.now().normalize()).days
+
+    # ── A: Pro paint availability ─────────────────────────────────────────
+    paint_html = ""
+    if not paint.empty:
+        p_latest_date = paint["date"].max()
+        p_latest = paint[paint["date"] == p_latest_date]
+        pro = p_latest[p_latest["line"].isin(pro_lines)]
+        pro_skus = int(pro["skus"].sum()); pro_oos = int(pro["oos"].sum())
+        pro_fast = int(pro["selling_fast"].sum()); pro_pre = int(pro["preorder"].sum())
+        n_days = paint["date"].nunique()
+        launch_lbl = (f"{days_to_launch} days to launch" if days_to_launch > 0
+                      else "launch day" if days_to_launch == 0 else f"day {-days_to_launch} post-launch")
+
+        line_rows = ""
+        for _, r in p_latest.iterrows():
+            hl = " style='background:rgba(241,196,15,0.07)'" if r["line"] in pro_lines else ""
+            line_rows += (f"<tr{hl}><td>{escape(str(r['line']))}</td><td class='num'>{r['skus']}</td>"
+                          f"<td class='num'>{r['oos']}</td><td class='num'>{r['oos_pct']}%</td>"
+                          f"<td class='num'>{r['selling_fast']}</td><td class='num'>{r['last_chance']}</td>"
+                          f"<td class='num'>{r['status_a']}/{r['status_p']}/{r['status_o']}</td></tr>")
+
+        hist = (paint[paint["line"].isin(pro_lines)].groupby("date")
+                .agg(skus=("skus", "sum"), oos=("oos", "sum"), fast=("selling_fast", "sum"),
+                     pre=("preorder", "sum")).reset_index().sort_values("date", ascending=False).head(21))
+        hist_rows = "".join(
+            f"<tr><td>{r['date']}</td><td class='num'>{r['oos']}/{r['skus']}</td>"
+            f"<td class='num'>{r['fast']}</td><td class='num'>{r['pre']}</td></tr>" for _, r in hist.iterrows())
+
+        ep_html = "<p class='data-note'>No Pro-line stock-outs recorded yet.</p>"
+        if not eps.empty:
+            pe = eps[eps["line"].isin(pro_lines)].copy()
+            if not pe.empty:
+                pe = pe.sort_values(["ongoing", "days_oos_min"], ascending=[False, False]).head(20)
+                ep_rows = "".join(
+                    f"<tr><td>{escape(str(r['name']))}</td><td>{r['oos_first_seen']}</td>"
+                    f"<td>{r['back_in_stock'] or '<span style=\"color:#c0392b\">still OOS</span>'}</td>"
+                    f"<td class='num'>{r['days_oos_min']}</td></tr>" for _, r in pe.iterrows())
+                ep_html = (f"<table><thead><tr><th>SKU</th><th>First seen OOS</th><th>Back in stock</th>"
+                           f"<th class='num'>Days OOS (min)</th></tr></thead><tbody>{ep_rows}</tbody></table>")
+            n_pro_eps = int(eps["line"].isin(pro_lines).sum())
+        else:
+            n_pro_eps = 0
+
+        paint_html = f"""
+  <div class="section-title">A · Warhammer Pro Paint Availability on GW.com</div>
+  <div class="section-sub">
+    Daily snapshot of every paint SKU on warhammer.com (US) via GW's public product index. Tone Pro launches
+    <strong>{TONE_PRO_LAUNCH}</strong> ({launch_lbl}). Last updated <strong>{p_latest_date}</strong> · {n_days} day{'' if n_days == 1 else 's'} of history.
+  </div>
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="stat-val">{pro_skus}</div><div class="stat-lbl">Pro SKUs tracked</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:{'#c0392b' if pro_oos else '#27ae60'}">{pro_oos}</div><div class="stat-lbl">Pro SKUs out of stock</div></div>
+    <div class="stat-card"><div class="stat-val">{pro_fast}</div><div class="stat-lbl">Flagged "selling fast"</div></div>
+    <div class="stat-card"><div class="stat-val">{n_pro_eps}</div><div class="stat-lbl">Pro stock-out episodes</div></div>
+  </div>
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("By paint line — " + p_latest_date)}
+      <table><thead><tr><th>Line</th><th class="num">SKUs</th><th class="num">OOS</th><th class="num">OOS %</th>
+      <th class="num">Fast</th><th class="num">Last chance</th><th class="num">Status A/P/O</th></tr></thead>
+      <tbody>{line_rows}</tbody></table>
+      <p class="data-note">Status P = being phased out, O = discontinued. Contrast, Shade and Technical are mostly P/O, so their
+      stock-outs reflect run-down, not demand — Base/Layer are the cleaner comparison for Pro.</p>
+    </div>
+    <div class="table-card">{h3.format("Pro line history (Tone Pro + Tech Pro)")}
+      <table><thead><tr><th>Date</th><th class="num">OOS / SKUs</th><th class="num">Selling fast</th>
+      <th class="num">Pre-order</th></tr></thead><tbody>{hist_rows}</tbody></table>
+    </div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;">{h3.format("Pro stock-out episodes — how often, how long")}
+    {ep_html}
+    <p class="data-note">Days OOS is a minimum: snapshots are daily, so a stock-out that starts and ends between runs is invisible
+    and durations are rounded to whole run days.</p>
+  </div>"""
+
+    # ── B: Store network ──────────────────────────────────────────────────
+    store_html = ""
+    if not sf.empty:
+        sf = sf.sort_values("date")
+        s_last = sf.iloc[-1]
+        sf_rows = "".join(
+            f"<tr><td>{r['date']}{' <span style=\"font-size:9px;color:var(--muted)\">archive</span>' if r['source'] == 'wayback' else ''}</td>"
+            f"<td class='num'>{r['gw_open']}</td><td class='num'>{r['gw_coming_soon']}</td>"
+            f"<td class='num'>{int(r['indie_listed']):,}</td>"
+            f"<td class='num'>{(f"{int(r['indie_pro_range']):,}" if int(r['indie_with_stock_range']) else '—')}</td></tr>"
+            for _, r in sf.sort_values("date", ascending=False).iterrows())
+
+        ch_html = ""
+        if not sfch.empty:
+            ch = sfch.sort_values("date", ascending=False).head(30)
+            ch_rows = "".join(
+                f"<tr><td>{r['date']}</td><td style='color:{'#27ae60' if r['change'] == 'added' else '#c0392b'}'>{r['change']}</td>"
+                f"<td>{escape(str(r['name']))}</td><td>{escape(str(r['city']))}, {r['country']}</td></tr>"
+                for _, r in ch.iterrows())
+            ch_html = (f"<table><thead><tr><th>Snapshot</th><th>Change</th><th>Store</th><th>Location</th></tr></thead>"
+                       f"<tbody>{ch_rows}</tbody></table>")
+
+        ctry_html = ""
+        if not sfc.empty:
+            c = sfc[sfc["date"] == sfc["date"].max()].copy()
+            c = c.sort_values("indie_pro_range", ascending=False).head(12)
+            ctry_rows = "".join(
+                f"<tr><td>{r['country']}</td><td class='num'>{r['gw_stores']}</td><td class='num'>{int(r['indie_listed']):,}</td>"
+                f"<td class='num'>{int(r['indie_pro_range']):,}</td>"
+                f"<td class='num'>{(int(r['indie_pro_range']) / int(r['indie_listed']) * 100 if int(r['indie_listed']) else 0):.0f}%</td></tr>"
+                for _, r in c.iterrows())
+            ctry_html = (f"<table><thead><tr><th>Country</th><th class='num'>GW stores</th><th class='num'>Indies listed</th>"
+                         f"<th class='num'>Pro-range indies</th><th class='num'>Share</th></tr></thead><tbody>{ctry_rows}</tbody></table>")
+
+        store_html = f"""
+  <div class="section-title">B · Store Network — GW Store Finder</div>
+  <div class="section-sub">
+    Weekly snapshot of warhammer.com's public store finder (every GW store + the independents GW lists), backfilled
+    from monthly Wayback Machine captures since Jun 2025. Latest: <strong>{s_last['date']}</strong>.
+  </div>
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="stat-val">{s_last['gw_open']}</div><div class="stat-lbl">GW stores open</div></div>
+    <div class="stat-card"><div class="stat-val">{s_last['gw_coming_soon']}</div><div class="stat-lbl">GW stores "coming soon"</div></div>
+    <div class="stat-card"><div class="stat-val">{int(s_last['indie_listed']):,}</div><div class="stat-lbl">Independents listed</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:#f1c40f">{int(s_last['indie_pro_range']):,}</div><div class="stat-lbl">Indies ranging Warhammer Pro</div></div>
+  </div>
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("Network over time")}
+      <table><thead><tr><th>Snapshot</th><th class="num">GW open</th><th class="num">Coming soon</th>
+      <th class="num">Indies listed</th><th class="num">Pro-range indies</th></tr></thead><tbody>{sf_rows}</tbody></table>
+      <p class="data-note">— = the store finder did not yet publish paint-range data on that date.</p>
+      <p class="data-note">GW store count validates against reported figures (Jun 2025: 571 listed vs 570 in FY25 annual report).
+      Independents = GW's marketing directory, not its trade-account base (Jun 2025: 6.2K listed vs ~8.1K reported), so
+      changes can reflect listing policy as well as new accounts. "Pro-range" = store committed to the 150-pot Warhammer Pro
+      range (finder field added between Apr and Oct 2026) — distribution, not stock on hand or sales.</p>
+    </div>
+    <div class="table-card">{h3.format("Pro-range independents by country")}{ctry_html}</div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;">{h3.format("GW store openings & closures (between snapshots)")}
+    {ch_html or "<p class='data-note'>No changes recorded yet.</p>"}
+    <p class="data-note">An add + remove pair in the same city is usually a relocation or re-listing, not a net change.</p>
+  </div>"""
+
+    # ── C: YouTube attention ──────────────────────────────────────────────
+    yt_html = ""
+    if not ytv.empty:
+        tp = ytv[(ytv["topic"] == "Tone Pro")]
+        if not tp.empty:
+            last = tp[tp["date"] == tp["date"].max()].copy()
+            last["views"] = last["views"].astype(int)
+            top = last.sort_values("views", ascending=False).head(12)
+            vid_rows = "".join(
+                f"<tr><td><a href='https://www.youtube.com/watch?v={r['video_id']}' target='_blank' style='color:var(--text)'>"
+                f"{escape(str(r['title']))[:80]}</a></td><td>{escape(str(r['channel_title']))}</td>"
+                f"<td>{r['published_at']}</td><td class='num'>{fmt_views(int(r['views']))}</td></tr>"
+                for _, r in top.iterrows())
+            ys = yts[yts["topic"] == "Tone Pro"].sort_values("date") if not yts.empty else pd.DataFrame()
+            gained = ys.iloc[-1]["views_gained_since_prev"] if not ys.empty else ""
+            gained_lbl = fmt_views(int(gained)) if str(gained).strip() not in ("", "nan") else "—"
+            yt_html = f"""
+  <div class="section-title">C · Tone Pro on YouTube</div>
+  <div class="section-sub">Videos found by keyword search (weekly) and kept only if the title/description mentions Tone Pro;
+    view counts refreshed every run. Latest: <strong>{last['date'].iloc[0]}</strong>.</div>
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="stat-val">{len(last)}</div><div class="stat-lbl">Videos tracked</div></div>
+    <div class="stat-card"><div class="stat-val">{last['channel_id'].nunique()}</div><div class="stat-lbl">Channels</div></div>
+    <div class="stat-card"><div class="stat-val">{fmt_views(int(last['views'].sum()))}</div><div class="stat-lbl">Total views</div></div>
+    <div class="stat-card"><div class="stat-val">{gained_lbl}</div><div class="stat-lbl">Views gained since last run</div></div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;">{h3.format("Most-viewed Tone Pro videos")}
+    <table><thead><tr><th>Video</th><th>Channel</th><th>Published</th><th class="num">Views</th></tr></thead>
+    <tbody>{vid_rows}</tbody></table>
+    <p class="data-note">Measures creator attention and viewer interest, not purchases. Search recall is partial —
+    YouTube returns a sample, so totals are a floor.</p>
+  </div>"""
+
+    return f"""
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<div class="page-divider" id="pg-9">Page 9 — Warhammer Pro Launch &amp; Store Network</div>
+
+<section>
+  <div class="table-card" style="margin-bottom:18px;border-left:3px solid #f1c40f;">
+    <div style="font-size:13px;line-height:1.6">
+      <strong>What this page measures.</strong> GW does not publish sales, and nothing here is sales or sell-through.
+      Paint signals are GW.com web-store availability flags (in stock yes/no, "selling fast") — a stock-out can mean strong
+      demand <em>or</em> a small allocation, and GW.com is one channel ({online_lbl}).
+      Store-finder signals show GW's store footprint and which independents committed to stock the Pro range — distribution,
+      not volume. No public source shows per-store inventory or deliveries.
+    </div>
+  </div>
+{paint_html}
+{store_html}
+{yt_html}
+</section>
+"""
+
+
+# ════════════════════════════════════════════════════════════════════════════
 # Run-to-run snapshot (delta display)
 # ════════════════════════════════════════════════════════════════════════════
 
@@ -5879,6 +6112,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 """
 
     _pg8_html = build_gw_stock_page(gw_stock_df, eg_stock_df=eg_stock_df)
+    _pg9_html = build_launch_page()
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -6257,6 +6491,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
     <a class="nav-btn" href="#pg-6">P6 Tournaments</a>
     <a class="nav-btn" href="#pg-7">P7 Retail</a>
     <a class="nav-btn" href="#pg-8">P8 Stock</a>
+    <a class="nav-btn" href="#pg-9">P9 Tone Pro</a>
   </nav>
   <div class="meta">Generated {generated_at}</div>
 </div>
@@ -7044,6 +7279,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
 
 
 {_pg8_html}
+{_pg9_html}
 
 </div><!-- /container -->
 

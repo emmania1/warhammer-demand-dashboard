@@ -19,6 +19,10 @@ echo "── GW.com stock snapshot (Algolia) ───────────�
 python scripts/fetch_gw_stock.py
 
 echo ""
+echo "── Paint SKU stock snapshot ─────────────────────"
+python scripts/fetch_gw_paint_stock.py
+
+echo ""
 echo "── Element Games stock snapshot (UK indie) ──────"
 python scripts/fetch_element_games_stock.py
 

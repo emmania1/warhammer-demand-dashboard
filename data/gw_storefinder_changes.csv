@@ -1,0 +1,80 @@
+date,change,store_id,name,city,country,coming_soon
+2025-07-07,added,K1,Warhammer - Morrison Hill,Wan Chai,CN,false
+2025-07-07,added,X12,Warhammer - Amoy Plaza,Kowloon Bay,HK,false
+2025-07-07,added,469,Warhammer Casper,Casper,US,false
+2025-07-07,added,430,Warhammer - Riverside,Riverside,US,false
+2025-08-07,removed,,Warhammer - Siegen - Kommt Bald,Siegen,DE,true
+2025-08-07,removed,J3211,Warhammer - Yokohama,Yokohama-shi,JP,false
+2025-08-07,added,ZG2,Warhammer - Gdansk - Już wkrótce,Gdansk,PL,false
+2025-08-07,added,464,Warhammer - Amarillo,Amarillo,US,false
+2025-08-07,removed,,Warhammer - Bakersfield - Coming Soon,Bakersfield,US,true
+2025-09-13,removed,43,Warhammer - Bondi Junction,Bondi Junction,AU,false
+2025-09-13,removed,63,Warhammer - Blacktown,Blacktown,AU,false
+2025-09-13,added,045,Warhammer - Creekside Crossing - Coming Soon,Mississauga,CA,true
+2025-09-13,added,DS6,Warhammer - Siegen - Kommt Bald,Siegen,DE,true
+2025-09-13,added,,Warhammer - Aarhus - Coming Soon,Aarhus C,DK,true
+2025-09-13,added,J32X23,ウォーハンマー 仙台,Sendai City,JP,false
+2025-09-13,added,J3211,Warhammer - Yokohama,Yokohama-shi,JP,false
+2025-09-13,added,484,Warhammer - Bakersfield,Bakersfield,US,false
+2025-10-04,added,X24,Warhammer - Shizuoka,Shizuoka City,JP,false
+2025-11-02,removed,034,Warhammer - Heartland Town Centre,Mississauga,CA,false
+2025-11-02,added,X4,Games Workshop - Pudong,Pudong,CN,false
+2025-11-02,added,,Warhammer - Besançon - À venir,Besançon,FR,false
+2025-11-02,added,,Warhammer - Yakima - Coming Soon,Yakima,US,true
+2025-11-02,added,,Warhammer - Redlands - Coming Soon,Redlands,US,true
+2025-11-02,removed,268,Warhammer - Turkey Creek,Knoxville,US,false
+2025-12-01,removed,X4,Games Workshop - Pudong,Pudong,CN,false
+2025-12-01,removed,ZX8,Warhammer - Parkside Plaza,Putuo District,CN,false
+2025-12-01,removed,X12,Warhammer - Amoy Plaza,Kowloon Bay,HK,false
+2025-12-01,added,x22,ウォーハンマー川崎 - COMING SOON,Kawasaki-shi,JP,true
+2025-12-01,added,X25,Warhammer - Hiroshima - COMING SOON,Hiroshima City,JP,true
+2025-12-01,added,268,Warhammer - Turkey Creek,Knoxville,US,false
+2025-12-01,removed,246,Games Workshop Hilltop East Shopping Ctr,Virginia Beach,US,false
+2025-12-01,removed,418,Warhammer - Naples,Naples,US,false
+2025-12-01,removed,228,Warhammer - Hyde Park Plaza,Cincinnati,US,false
+2026-01-10,added,X26,Warhammer - Hachioji - Coming Soon,Hachiolji,JP,true
+2026-01-10,removed,ZV,Warhammer - Tilburg,Tilburg,NL,false
+2026-01-10,added,GW493,Warhammer - Potomac Festival - Coming Soon,Woodbridge,US,true
+2026-01-10,added,,Warhammer - Silver Lake Village - Coming Soon,Saint Anthony,US,true
+2026-01-10,added,,Warhammer - Dallas - Casa Linda Plaza - COMING SOON,Dallas,US,true
+2026-01-10,added,246,Games Workshop Hilltop East Shopping Ctr,Virginia Beach,US,false
+2026-01-10,added,418,Warhammer - Naples,Naples,US,false
+2026-01-10,added,228,Warhammer - Hyde Park Plaza,Cincinnati,US,false
+2026-01-10,removed,1280,US Open Event - Dallas,Arlington,US,false
+2026-04-05,added,X29,Warhammer Utsunomiya,Utsunomiya-chi,JP,false
+2026-04-05,added,X28,Warhammer - Kyoto - Kawaramachi,Kyoto,JP,false
+2026-04-05,added,X27,Warhammer - Yokosuka,Yokosuka City,JP,false
+2026-04-05,added,,Warhammer - Szczecin - Coming Soon,Szczecin,PL,true
+2026-10-13,removed,34,Warhammer - Liverpool (NSW),Liverpool,AU,false
+2026-10-13,removed,61,Warhammer - Cheltenham (AU),Cheltenham,AU,false
+2026-10-13,added,045,Warhammer - Mississauga,Mississauga,CA,false
+2026-10-13,removed,045,Warhammer - Creekside Crossing,Mississauga,CA,false
+2026-10-13,added,ZX9,Warhammer - Book City,Shanghai,CN,false
+2026-10-13,added,CP1,Warhammer - Prague - Grand Opening - 16/05/26,Praha,CZ,true
+2026-10-13,added,DS7,Warhammer Schwerin - Kommt bald.,Schwerin,DE,true
+2026-10-13,added,DF4,Warhammer Flensburg,Flensburg,DE,false
+2026-10-13,added,DF5,Warhammer - Frankfurt,Frankfurt,DE,false
+2026-10-13,removed,GWB9,Warhammer - Spandau,Berlin,DE,false
+2026-10-13,removed,GWF1,Warhammer Hobbyzentrum Frankfurt,Frankfurt,DE,false
+2026-10-13,added,FG03,Warhammer - Grenoble,Grenoble,FR,false
+2026-10-13,added,,Warhammer - Sapporo - Coming Soon,Sapporo,JP,true
+2026-10-13,added,X30,Warhammer - Soka,Soka-shi,JP,false
+2026-10-13,added,X31,Warhammer Tamaplaza,Yokohama-shi,JP,false
+2026-10-13,added,x33,Warhammer - Nippori,Arakawa,JP,false
+2026-10-13,added,x34,Warhammer - Sasebo,Sasebo,JP,false
+2026-10-13,added,X32,Warhammer Okinawa - Toyosaki,Tomigusuku,JP,false
+2026-10-13,added,,Warhammer - Gangnam,Seoul,KR,false
+2026-10-13,added,Z6,Warhammer - Maastricht - Coming Soon,Maastricht,NL,true
+2026-10-13,added,ZP1,Warhammer - Poznań,Poznań,PL,false
+2026-10-13,added,1506,Warhammer - Duluth - Burning Tree Plaza,Duluth,US,false
+2026-10-13,added,497,Warhammer - South Bend,South Bend,US,false
+2026-10-13,added,GW1499,Warhammer - Provo - The Festival,Orem,US,false
+2026-10-13,added,503,Warhammer - Lake Havasu,Lake Havasu City,US,false
+2026-10-13,added,GW1504,Warhammer Johnson CIty,Johnson City,US,false
+2026-10-13,added,500,Warhammer - Arlington TX,Arlington,US,false
+2026-10-13,added,501,Warhammer Missoula,Missoula,US,false
+2026-10-13,added,GW502,Warhammer - Chattanooga,Chattanooga,US,false
+2026-10-13,added,498,Warhammer - Rancho Cucamonga,Rancho Cucamonga,US,false
+2026-10-13,added,505,Warhammer - Saginaw TX,Saginaw,US,false
+2026-10-13,removed,475,Warhammer - Kennewick,Kennewick,US,false
+2026-10-13,removed,409,Warhammer - Bellingham,Bellingham,US,false
