@@ -2030,8 +2030,9 @@ def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
       <tbody>{trend_rows_html}</tbody>
     </table>
     <p class="data-note">
-      Tracking started 2026-05-02. Run daily via cron — trend becomes meaningful at ~30 days.
-      Rising count = more products selling through than being restocked.
+      Tracking started 2026-05-02; runs daily on GitHub Actions since 2026-10-13 (earlier gaps = days the old laptop cron missed).
+      A rising count means more products are unavailable on GW.com — which can come from demand outpacing restocks,
+      smaller allocations, or products being phased out. The count alone can't tell these apart.
     </p>
     {trend_chart}
   </div>
@@ -2147,9 +2148,9 @@ def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
       <span style="font-weight:400;font-size:10px"> — {n_nr_oos} of {n_new_rel} new releases OOS ({nr_oos_pct}%)</span>
     </h3>
     <p style="font-size:12px;color:var(--muted);margin:0 0 12px 0">
-      Products launched recently and already OOS on GW.com.
-      GW's CEO has confirmed intentionally low inventory on new releases to be "fair to trade partners" —
-      so fast sell-through on high-price items is the key signal here, not the sheer count.
+      Products launched recently and already OOS on GW.com. GW.com holds a limited allocation of each launch,
+      so a sell-out shows that allocation was used up — not how large demand was. Compare across releases
+      and over time rather than reading any single sell-out as strong demand.
     </p>
     <table>
       <thead>
@@ -2165,21 +2166,22 @@ def build_gw_stock_page(gw_stock_df, eg_stock_df=None) -> str:
       <tbody>{nr_oos_rows}</tbody>
     </table>
     <p class="data-note">
-      Items OOS at both GW.com (US) and Element Games UK = confirmed broad demand, not regional allocation.
-      Items OOS on GW.com but in stock at EG = US-skewed demand or different regional release timing.
+      Items OOS at both GW.com (US) and Element Games (UK) suggest availability is tight in both markets.
+      Items OOS only on GW.com may reflect US allocation or release timing rather than US-specific demand.
     </p>
   </div>
 
   <div class="section-why">
     <span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
-    GW uses pull-based manufacturing — low buffer stock, produced against forecast.
-    OOS on warhammer.com means real sell-through beat production planning.
-    <strong>Core starters staying in stock</strong> means the new-player pipeline is open.
-    <strong>Beginner-adjacent OOS</strong> ({n_adj_oos} products) means players who <em>just bought</em>
-    a starter set can't easily get the next recommended product — a retention friction signal.
-    <strong>New release sell-out rate ({nr_oos_pct}% in {n_days} days of tracking)</strong> reflects
-    GW's intentional scarcity strategy on launches — the higher-price items ($100+) selling out fastest
-    is the highest-conviction demand signal. GW has raised prices 3× since 2020 with no observed demand destruction.
+    These are availability flags on GW's own web store — not sales, and not stock at GW stores or independents
+    (GW.com is roughly one-seventh of revenue). An out-of-stock product can mean demand ran ahead of supply,
+    a deliberately small allocation, or a product being phased out; the flag alone doesn't say which.
+    <strong>Core starters staying in stock</strong> means new players can buy the entry products online.
+    <strong>Beginner-adjacent OOS</strong> ({n_adj_oos} products) means some of the next recommended purchases
+    after a starter set are unavailable online.
+    <strong>New release sell-out rate ({nr_oos_pct}% across {n_days} tracked days)</strong> is most useful as a
+    comparison between releases and over time — a rising rate, or expensive kits selling out faster than usual,
+    points to demand running ahead of GW's allocations. On its own it is a proxy, not a measure of sales.
   </div>
 </section>
 """
