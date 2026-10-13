@@ -1,13 +1,13 @@
 {
-  "run_date": "2026-09-06",
+  "run_date": "2026-10-13",
   "youtube": {
-    "Warhammer_Official": 1080000,
-    "WesHammer": 906000,
-    "Luetin09": 978000,
-    "Squidmar_Miniatures": 818000,
+    "Warhammer_Official": 1090000,
+    "WesHammer": 907000,
+    "Luetin09": 981000,
+    "Squidmar_Miniatures": 822000,
     "Majorkill": 701000,
-    "Auspex_Tactics": 424000,
-    "Valrak": 291000
+    "Auspex_Tactics": 428000,
+    "Valrak": 293000
   },
   "reddit": {
     "Warhammer": 474705,
@@ -15,7 +15,7 @@
     "ageofsigmar": 263219,
     "minipainting": 1270686
   },
-  "steam_month": "2026-08",
+  "steam_month": "2026-09",
   "steam": {
     "tw_wh3": 27221.1,
     "space_marine_2": 12880.2,
