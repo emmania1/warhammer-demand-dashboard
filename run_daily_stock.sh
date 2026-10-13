@@ -4,7 +4,7 @@
 # Lightweight: no YouTube/Reddit API calls, no HTML regeneration.
 #
 # Installed by setup_cron.sh → runs automatically at 8:00 AM daily.
-# Also called from run_weekly_pipeline.py on full Sunday runs.
+# Sunday 9:00 AM run_pipeline.sh then regenerates + publishes index.html.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"

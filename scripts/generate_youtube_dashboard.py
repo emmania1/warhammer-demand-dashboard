@@ -2246,6 +2246,18 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             _s = _ch_df.iloc[-1].get("subscribers")
             _curr_daily[_ch] = int(_s) if (_s and not pd.isna(_s) and _s > 0) else None
 
+    # As-of labels for the latest refresh (drive "Feb → <latest>" wording)
+    def _asof(dates):
+        dates = [d for d in dates if d]
+        if not dates:
+            return None, "latest", "latest", 0
+        dt = pd.to_datetime(max(dates))
+        months = max(1, round((dt - pd.Timestamp(f"{dt.year}-02-15")).days / 30.4))
+        return dt, f"{dt:%b} {dt.day}", f"{dt:%b} '{dt:%y}", months
+    _yt_asof_dt, _yt_asof, _yt_col, _yt_months = _asof(channels_df["date"].tolist())
+    _rd_asof_dt, _rd_asof, _rd_col, _rd_months = _asof(
+        [reddit_yoy.get(s, {}).get("curr_date") for s in REDDIT_ORDER])
+
     def _delta_badge(curr, prev, strong_thr=5.0):
         """Feb→Now % change as a colored badge. Returns empty string if no data."""
         try:
@@ -3575,8 +3587,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
             _nd_st_chips_built += _pct_chip((_aug_v - _feb_v) / _feb_v * 100, STEAM_LABELS[_slug])
 
     _nd_body = (
-        _section_block("YouTube Subscribers", _nd_yt_chips, "Feb → Sep 2026") +
-        _section_block("Reddit Members", _nd_rd_chips, "Feb → Sep 2026") +
+        _section_block("YouTube Subscribers", _nd_yt_chips, f"Feb → {_yt_asof} 2026") +
+        _section_block("Reddit Members", _nd_rd_chips, f"Feb → {_rd_asof} 2026") +
         _section_block("Steam Avg Players", _nd_st_chips_built, "Feb → Aug 2026")
     )
     _new_data_banner = (
@@ -3585,7 +3597,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         f"border-radius:6px;padding:14px 18px;margin-bottom:0'>"
         f"<div style='font-size:0.8em;font-weight:700;color:#58a6ff;"
         f"text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px'>"
-        f"New Data &mdash; Sep 4 2026 refresh vs Feb 2026 baseline</div>"
+        f"New Data &mdash; latest refresh vs Feb 2026 baseline</div>"
         f"{_nd_body}"
         f"</div>"
         f"</section>"
@@ -4723,6 +4735,10 @@ def build_html(channels_df, yoy, eci_map, evergreen,
         "rdSepTotal": _rd_sep_total or None,
         "stFebTotal": _st_feb_total or None,
         "stAugTotal": _st_aug_total or None,
+        "ytAsOf":     _yt_asof,
+        "ytMonths":   _yt_months,
+        "rdAsOf":     _rd_asof,
+        "rdMonths":   _rd_months,
     }
 
     chart_data["retail"] = {
@@ -5752,7 +5768,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
   // P1: Ecosystem structural growth 2023–2026 + Feb→Sep update
   var p1FebSep = ytFebSepPct !== null
     ? ' Since February 2026, the tracked ecosystem added ' +
-      fmtBig(sepSubs - febSubs) + ' subscribers (' + fmtPct(parseFloat(ytFebSepPct)) + ' in ~7 months).'
+      fmtBig(sepSubs - febSubs) + ' subscribers (' + fmtPct(parseFloat(ytFebSepPct)) + ' in ~' + d.febSeps.ytMonths + ' months, through ' + d.febSeps.ytAsOf + ').'
     : '';
   var p1 = eco2023 && eco2026
     ? 'Creator ecosystem subscribers grew from ' + fmtBig(eco2023) + ' (2023) to ' +
@@ -5777,8 +5793,8 @@ def build_html(channels_df, yoy, eci_map, evergreen,
   // P3: Reddit community — uses 2024→2026 two-year growth + Feb→Sep update
   var rSubCount = d.reddit.subLabels ? d.reddit.subLabels.length : rTwoYr.length;
   var p3FebSep = rdFebSepPct !== null
-    ? ' Sep 4 refresh vs Feb 2026 baseline: combined members ' +
-      fmtPct(parseFloat(rdFebSepPct)) + ' (' + fmtBig(Math.round(sepRd - febRd)) + ' net new members in ~7 months).'
+    ? ' ' + d.febSeps.rdAsOf + ' refresh vs Feb 2026 baseline: combined members ' +
+      fmtPct(parseFloat(rdFebSepPct)) + ' (' + fmtBig(Math.round(sepRd - febRd)) + ' net new members in ~' + d.febSeps.rdMonths + ' months).'
     : '';
   var p3 = 'Reddit community expansion across ' + rSubCount + ' core subreddits: ' +
     fmtBig(rTotal) + ' combined members, ' + fmtPct(rAvgYoy, 1) + ' average 2-year growth (2024\u21922026). ' +
@@ -6413,7 +6429,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">2024</th>
           <th class="num">2025</th>
           <th class="num">Feb '26</th>
-          <th class="num">Sep '26 <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
+          <th class="num">{_yt_col} <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
           <th class="num">YoY %</th>
           <th class="num">2-Year %</th>
           <th class="num">3-Yr CAGR</th>
@@ -6421,7 +6437,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       </thead>
       <tbody>{sub_table_rows}</tbody>
     </table>
-    <p class="data-note">Feb '26 = nearest seed to mid-Feb 2026. Sep '26 = Sep 4 live fetch. YoY = 2025→2026. 2-Year = 2024→2026. 3-Yr CAGR = (subs_2026 ÷ subs_2023)<sup>⅓</sup> − 1.</p>
+    <p class="data-note">Feb '26 = nearest seed to mid-Feb 2026. {_yt_col} = {_yt_asof} live fetch. YoY = 2025→2026. 2-Year = 2024→2026. 3-Yr CAGR = (subs_2026 ÷ subs_2023)<sup>⅓</sup> − 1.</p>
   </div>
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>{_sub_insight}</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
@@ -6549,7 +6565,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
           <th class="num">Members 2023</th>
           <th class="num">Members 2024</th>
           <th class="num">Feb '26</th>
-          <th class="num">Sep '26 <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
+          <th class="num">{_rd_col} <span style="font-weight:400;font-size:0.8em;opacity:0.7">(Δ Feb)</span></th>
           <th class="num">Earliest Annual Window (2023→2024)</th>
           <th class="num">2-Year % (2024→2026)</th>
           <th class="num">3-Yr CAGR</th>
@@ -6558,7 +6574,7 @@ def build_html(channels_df, yoy, eci_map, evergreen,
       </thead>
       <tbody>{reddit_unified_rows}</tbody>
     </table>
-    <p class="data-note">Feb '26 = Feb 22 snapshot. Sep '26 = Sep 4 live fetch. Earliest Annual Window = 2023→2024 growth (no 2025 snapshot available). 2-Year = 2024→2026 (~2yr). 3-Yr CAGR = (members_2026 ÷ members_2023)<sup>⅓</sup> − 1.</p>
+    <p class="data-note">Feb '26 = Feb 22 snapshot. {_rd_col} = {_rd_asof} live fetch. Earliest Annual Window = 2023→2024 growth (no 2025 snapshot available). 2-Year = 2024→2026 (~2yr). 3-Yr CAGR = (members_2026 ÷ members_2023)<sup>⅓</sup> − 1.</p>
   </div>
   <div class="key-insight"><span class="key-insight-lbl">Key Insight</span>{_rmy_insight}</div>
   <div class="section-why"><span class="section-why-lbl">What This Shows &amp; Why It Matters</span>
@@ -7161,9 +7177,10 @@ def main():
               f"YoY: {yoy.get(ch,{}).get('yoy_pct') or 0:+.1f}%  "
               f"ECI: {ec.get('eci') or 0:.2f}×")
 
-    abs_path = os.path.abspath(OUTPUT_HTML)
-    webbrowser.open(f"file://{abs_path}")
-    print(f"\n  ✓ Opened in browser.")
+    if not os.environ.get("NO_BROWSER"):
+        abs_path = os.path.abspath(OUTPUT_HTML)
+        webbrowser.open(f"file://{abs_path}")
+        print(f"\n  ✓ Opened in browser.")
 
 
 if __name__ == "__main__":

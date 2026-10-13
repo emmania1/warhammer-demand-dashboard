@@ -5,3 +5,4 @@ venv/
 __pycache__/
 *.pyc
 Terminal Saved Output*.txt
+*.log

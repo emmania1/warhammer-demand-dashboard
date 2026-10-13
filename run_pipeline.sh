@@ -1,0 +1,41 @@
+#!/bin/bash
+# Warhammer Demand Tracker — Weekly refresh + publish
+# Installed by setup_cron.sh → runs Sundays 9:00 AM (after the 8:00 AM daily stock run).
+#
+#   1. Fetch YouTube channel stats (only live API fetcher in this repo)
+#   2. Regenerate index.html from all CSVs (picks up the week's stock data)
+#   3. Commit + push → GitHub Pages redeploys the live site
+#
+# Reddit members, Steam history and the Page 6/7 constants are still manual.
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:$PATH"
+
+echo "════ Weekly pipeline — $(date '+%Y-%m-%d %H:%M') ════"
+
+source "$SCRIPT_DIR/venv/bin/activate"
+set -a
+source "$SCRIPT_DIR/.env" 2>/dev/null
+set +a
+
+echo "── YouTube channel stats ────────────────────────"
+python scripts/fetch_youtube_channels_daily.py || echo "⚠ YouTube fetch failed — continuing with existing data"
+
+echo ""
+echo "── Regenerating dashboard ───────────────────────"
+NO_BROWSER=1 python scripts/generate_youtube_dashboard.py || { echo "✗ Generator failed — not publishing"; exit 1; }
+
+echo ""
+echo "── Publishing ───────────────────────────────────"
+git -C "$SCRIPT_DIR" add index.html data/
+if git -C "$SCRIPT_DIR" diff --cached --quiet; then
+    echo "No changes to publish."
+else
+    git -C "$SCRIPT_DIR" commit -q -m "Weekly refresh $(date +%Y-%m-%d): YouTube stats + stock data" \
+        -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    git -C "$SCRIPT_DIR" push -q origin main && echo "✓ Pushed — GitHub Pages will redeploy." \
+        || echo "✗ Push failed — commit is local; run 'git push' manually."
+fi
+
+echo "✓ Weekly pipeline complete."
