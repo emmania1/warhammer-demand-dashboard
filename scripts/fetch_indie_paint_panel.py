@@ -49,8 +49,8 @@ OUT_UNMATCH = ROOT / "data" / "indie_paint_panel_unmatched.csv"
 OUT_QTY     = ROOT / "data" / "indie_paint_panel_qty_series.csv"
 OUT_QTY_SUM = ROOT / "data" / "indie_paint_panel_qty_summary.csv"
 
-# Contact label — replace CONTACT_PLACEHOLDER once the address is confirmed.
-USER_AGENT = "WarhammerDemandResearch/1.0 (+contact: CONTACT_PLACEHOLDER)"
+# Contact label (confirmed 2026-10-14).
+USER_AGENT = "WarhammerDemandResearch/1.0 (+contact: en@pillsburycap.com)"
 HEADERS    = {"User-Agent": USER_AGENT, "Accept": "text/html,application/json;q=0.9,*/*;q=0.8"}
 DELAY_S    = 2.0
 MAX_PAGES  = 12
