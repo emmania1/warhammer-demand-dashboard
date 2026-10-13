@@ -21,14 +21,10 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-13,ashdown_gaming,GB,Layer,86,81,0,0,5,0,0,0
 2026-10-13,ashdown_gaming,GB,Tech Pro,2,2,0,0,0,0,0,0
 2026-10-13,ashdown_gaming,GB,Tone Pro,150,150,0,0,0,0,0,0
-2026-10-13,battle_city_games,GB,Base,56,39,0,0,17,0,0,0
-2026-10-13,battle_city_games,GB,Layer,93,60,0,0,33,0,0,0
 2026-10-13,bd_cosmos,CA,Base,56,55,0,0,1,0,0,0
 2026-10-13,bd_cosmos,CA,Layer,92,89,0,0,3,0,0,0
 2026-10-13,bd_cosmos,CA,Tech Pro,2,0,0,2,0,0,0,0
 2026-10-13,bd_cosmos,CA,Tone Pro,150,0,0,150,0,0,0,0
-2026-10-13,beanie_games,GB,Base,54,51,0,0,3,0,0,0
-2026-10-13,beanie_games,GB,Layer,93,85,0,0,8,0,0,0
 2026-10-13,black_knight_games,CA,Base,55,36,0,0,19,0,0,0
 2026-10-13,black_knight_games,CA,Layer,91,69,0,0,22,0,0,0
 2026-10-13,boutique_awesome,CA,Base,44,44,0,0,0,0,0,0
@@ -96,10 +92,6 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-13,leapingpandahobbies,US,Layer,91,91,0,0,0,0,0,0
 2026-10-13,leodis_games,GB,Base,54,51,0,0,3,0,0,0
 2026-10-13,leodis_games,GB,Layer,93,81,0,0,12,0,0,0
-2026-10-13,loaded_dice,GB,Base,56,53,0,0,3,0,0,0
-2026-10-13,loaded_dice,GB,Layer,93,84,0,0,9,0,0,0
-2026-10-13,loaded_dice,GB,Tech Pro,2,0,0,2,0,0,0,0
-2026-10-13,loaded_dice,GB,Tone Pro,150,0,0,150,0,0,0,0
 2026-10-13,maple_airbrush_supplies,CA,Base,56,47,0,0,9,0,0,0
 2026-10-13,maple_airbrush_supplies,CA,Layer,89,85,0,0,4,0,0,0
 2026-10-13,merlins_miniatures,GB,Base,56,42,0,0,14,0,0,0
@@ -155,3 +147,11 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-13,wandering_adventures,CA,Layer,87,87,0,0,0,0,0,0
 2026-10-13,war_games_usa,US,Base,55,50,0,0,5,0,0,0
 2026-10-13,war_games_usa,US,Layer,92,78,0,0,14,0,0,0
+2026-10-13,battle_city_games,GB,Base,56,39,39,0,17,39,167,0
+2026-10-13,battle_city_games,GB,Layer,93,60,60,0,33,60,236,0
+2026-10-13,beanie_games,GB,Base,54,51,51,0,3,51,233,0
+2026-10-13,beanie_games,GB,Layer,93,85,85,0,8,85,411,0
+2026-10-13,loaded_dice,GB,Base,56,53,50,0,3,50,769,0
+2026-10-13,loaded_dice,GB,Layer,93,84,82,0,9,82,1005,0
+2026-10-13,loaded_dice,GB,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-13,loaded_dice,GB,Tone Pro,150,0,0,150,0,0,0,0

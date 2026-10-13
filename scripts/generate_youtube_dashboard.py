@@ -2202,6 +2202,7 @@ TONE_PRO_LAUNCH     = "2026-10-24"
 PANEL_SUMMARY_CSV   = os.path.join(DATA_DIR, "indie_paint_panel_summary.csv")
 PANEL_RUNS_CSV      = os.path.join(DATA_DIR, "indie_paint_panel_runs.csv")
 PANEL_CONFIG_CSV    = os.path.join(CONFIG_DIR, "indie_paint_panel.csv")
+PANEL_QTY_SUMMARY_CSV = os.path.join(DATA_DIR, "indie_paint_panel_qty_summary.csv")
 
 
 def _read_csv_or_empty(path: str) -> pd.DataFrame:
@@ -2414,15 +2415,28 @@ def build_launch_page() -> str:
                          f"<td class='num'>{gt[gt['listed'] > 0]['store_id'].nunique()}</td>"
                          f"<td class='num'>{pct(gt['available'].sum(), gt['listed'].sum())}</td></tr>") + hist_rows
 
-        # Quantity-reporting stores
-        q = cur[cur["qty_reported"] > 0]
-        q_rows = ""
-        for sid, g in q.groupby("store_id"):
-            gt = g[g["line"] == "Tone Pro"]; gc = g[g["line"].isin(["Base", "Layer"])]
-            q_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{escape(qty_kind.get(sid, ''))}</td>"
-                       f"<td class='num'>{int(gc['qty_sum'].sum()):,}</td>"
-                       f"<td class='num'>{int(gt['qty_sum'].sum()):,}</td>"
-                       f"<td class='num'>{(f'{int(gt.on_order_sum.sum()):,}' if gt.on_order_sum.sum() else '—')}</td></tr>")
+        # Quantity series (stores that publish numbers)
+        qs = _read_csv_or_empty(PANEL_QTY_SUMMARY_CSV)
+        q_rows, qd_rows = "", ""
+        if not qs.empty:
+            for c in ("shelf_units", "on_order_units", "received_est", "outflow_est", "paints"):
+                qs[c] = pd.to_numeric(qs[c], errors="coerce").fillna(0).astype(int)
+            last7 = sorted(qs["date"].unique())[-7:]
+            for sid, g in qs.groupby("store_id"):
+                gl = g[g["date"] == g["date"].max()]
+                gc = gl[gl["line"].isin(["Base", "Layer"])]; gt = gl[gl["line"] == "Tone Pro"]
+                w = g[(g["line"] == "Tone Pro") & g["date"].isin(last7)]
+                floor = "+" if (gc["shelf_is_floor"].astype(str).str.lower() == "true").any() else ""
+                q_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{escape(qty_kind.get(sid, ''))}</td>"
+                           f"<td class='num'>{int(gc['shelf_units'].sum()):,}{floor}</td>"
+                           f"<td class='num'>{int(gt['shelf_units'].sum()):,}</td>"
+                           f"<td class='num'>{(f'{int(gt.on_order_units.sum()):,}' if gt.on_order_units.sum() else '—')}</td>"
+                           f"<td class='num'>{int(w['received_est'].sum()):,}</td><td class='num'>{int(w['outflow_est'].sum()):,}</td>"
+                           f"<td class='num'>{g['date'].nunique()}</td></tr>")
+            tpd = qs[qs["line"] == "Tone Pro"].groupby("date")[["shelf_units", "on_order_units", "received_est", "outflow_est"]].sum()
+            for d, r in tpd.sort_index(ascending=False).head(21).iterrows():
+                qd_rows += (f"<tr><td>{d}</td><td class='num'>{int(r.shelf_units):,}</td><td class='num'>{int(r.on_order_units):,}</td>"
+                            f"<td class='num'>{int(r.received_est):,}</td><td class='num'>{int(r.outflow_est):,}</td></tr>")
 
         # Store list
         st_rows = ""
@@ -2468,12 +2482,24 @@ def build_launch_page() -> str:
       <th class="num">Listing Tone Pro</th><th class="num">Tone Pro available</th></tr></thead><tbody>{hist_rows}</tbody></table>
     </div>
   </div>
-  {f'''<div class="table-card" style="margin-bottom:18px;">{h3.format("Stores that publish quantities")}
-    <table><thead><tr><th>Store</th><th>What it shows</th><th class="num">Base/Layer units</th><th class="num">Tone Pro units</th>
-    <th class="num">Tone Pro on order</th></tr></thead><tbody>{q_rows}</tbody></table>
-    <p class="data-note">Units = sum of the store's displayed stock across paints (counts shown as "10+" are summed as 10, so these are floors).
-    "On order" is The Outpost's own "On The Way" figure — units it expects to receive, not GW shipments to the trade overall.</p>
-  </div>''' if q_rows else ""}
+  {f'''<div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("Stores that publish quantities")}
+      <table><thead><tr><th>Store</th><th>What it shows</th><th class="num">Base/Layer on shelf</th><th class="num">Tone Pro on shelf</th>
+      <th class="num">Tone Pro on order</th><th class="num">Tone Pro in (7d)</th><th class="num">Tone Pro out (7d)</th><th class="num">Days</th></tr></thead>
+      <tbody>{q_rows}</tbody></table>
+    </div>
+    <div class="table-card">{h3.format("Tone Pro units at these stores, by day")}
+      <table><thead><tr><th>Date</th><th class="num">On shelf</th><th class="num">On order</th><th class="num">Received (est.)</th>
+      <th class="num">Out (est.)</th></tr></thead><tbody>{qd_rows or "<tr><td colspan=5>No Tone Pro counts yet — stores show pre-order until stock lands.</td></tr>"}</tbody></table>
+    </div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
+    Shelf units = sum of each store's displayed stock (a "+" means some counts are capped, e.g. Element Games' "10+", so the total is a floor;
+    Battle City only shows a count when stock is low). "On order" is The Outpost's own "On The Way" figure — units that one store expects,
+    not GW shipments to the trade overall. <strong>Received</strong> = fall in on-order or rise in shelf stock, whichever is larger.
+    <strong>Out</strong> = received minus the change in shelf stock (or, where on-order isn't published, the fall in shelf stock — a floor,
+    since a restock on the same day hides outflow). "Out" includes sales, pre-order fulfilment and stock corrections; it is an estimate of
+    units leaving the shelf, not a sales figure.</p></div>''' if q_rows else ""}
   <div class="table-card" style="margin-bottom:18px;">{h3.format("Panel stores")}
     <table><thead><tr><th>Store</th><th>Country</th><th class="num">Base/Layer listed</th><th class="num">Available</th>
     <th class="num">Tone Pro listed</th><th class="num">Available</th></tr></thead><tbody>{st_rows}</tbody></table>

@@ -1,0 +1,15 @@
+date,store_id,country,line,paints,shelf_units,shelf_is_floor,on_order_units,received_est,outflow_est,paints_in_stock
+2026-10-13,battle_city_games,GB,Base,39,167,false,0,0,0,39
+2026-10-13,battle_city_games,GB,Layer,60,236,false,0,0,0,60
+2026-10-13,beanie_games,GB,Base,51,233,false,0,0,0,51
+2026-10-13,beanie_games,GB,Layer,85,411,true,0,0,0,85
+2026-10-13,element_games,GB,Base,48,459,true,0,0,0,48
+2026-10-13,element_games,GB,Layer,78,779,true,0,0,0,78
+2026-10-13,firestorm_games,GB,Base,55,648,false,0,0,0,53
+2026-10-13,firestorm_games,GB,Layer,92,941,false,0,0,0,84
+2026-10-13,firestorm_games,GB,Tone Pro,1,0,false,0,0,0,0
+2026-10-13,loaded_dice,GB,Base,50,769,false,0,0,0,50
+2026-10-13,loaded_dice,GB,Layer,82,1005,false,0,0,0,82
+2026-10-13,the_outpost,GB,Base,55,166,false,0,0,0,41
+2026-10-13,the_outpost,GB,Layer,90,223,false,0,0,0,58
+2026-10-13,the_outpost,GB,Tone Pro,146,0,false,754,0,0,0

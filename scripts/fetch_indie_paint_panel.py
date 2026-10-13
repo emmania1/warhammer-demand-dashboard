@@ -46,6 +46,8 @@ OUT_DAILY   = ROOT / "data" / "indie_paint_panel_daily.csv"
 OUT_SUMMARY = ROOT / "data" / "indie_paint_panel_summary.csv"
 OUT_RUNS    = ROOT / "data" / "indie_paint_panel_runs.csv"
 OUT_UNMATCH = ROOT / "data" / "indie_paint_panel_unmatched.csv"
+OUT_QTY     = ROOT / "data" / "indie_paint_panel_qty_series.csv"
+OUT_QTY_SUM = ROOT / "data" / "indie_paint_panel_qty_summary.csv"
 
 # Contact label — replace CONTACT_PLACEHOLDER once the address is confirmed.
 USER_AGENT = "WarhammerDemandResearch/1.0 (+contact: CONTACT_PLACEHOLDER)"
@@ -245,10 +247,48 @@ def adapt_shopify(f: Fetcher, cfg) -> list[dict]:
                         "listed_at": (p.get("published_at") or p.get("created_at") or "")[:10],
                         "sku": v.get("sku") or "",
                         "url": f"{f.base}/products/{p['handle']}",
+                        "handle": p["handle"],
                     })
             if len(prods) < 250:
                 break
+    if cfg.get("qty_html", "") and items:
+        _shopify_html_qty(f, cfg, items)
     return items
+
+
+QTY_TEXT = re.compile(r"\b(\d{1,4})\+?\s*(?:in stock|left in stock|units? left)\b|only\s+(\d{1,3})\s+left", re.I)
+
+
+def _shopify_html_qty(f: Fetcher, cfg, items: list[dict]) -> None:
+    """Some Shopify themes print 'N in stock' / 'Only N left' on collection pages
+    (products.json never includes quantities). Read the collection HTML pages and
+    attach the number to the matching product handle. qty_html = 'all' when the theme
+    shows counts for every product, 'low' when only below a low-stock threshold."""
+    counts = {}
+    for it in items:
+        counts[it["handle"]] = counts.get(it["handle"], 0) + 1
+    by_handle = {it["handle"]: it for it in items if counts[it["handle"]] == 1}   # skip multi-variant products
+    for handle in cfg["targets"].split("|"):
+        seen_page = set()
+        for page in range(1, MAX_PAGES + 1):
+            r = f.get(f"{f.base}/collections/{handle}?page={page}")
+            if r is None or r.status_code != 200:
+                break
+            hs = set(re.findall(r'/products/([a-z0-9\-]+)', r.text))
+            if not hs or hs <= seen_page:
+                break
+            seen_page |= hs
+            for seg in re.split(r'(?=href="[^"]*/products/[a-z0-9\-]+)', r.text):
+                hm = re.search(r'/products/([a-z0-9\-]+)', seg)
+                it = by_handle.get(hm.group(1)) if hm else None
+                if it is None or it["qty"] != "":
+                    continue
+                m = QTY_TEXT.search(_text(seg)[:3000])
+                if m:
+                    it["qty"] = m.group(1) or m.group(2)
+                    it["qty_floor"] = "true" if "+" in m.group(0) else "false"
+                    if it["status"] in ("available", "preorder") and int(it["qty"]) > 0:
+                        it["status"] = "in_stock"
 
 
 def _text(html: str) -> str:
@@ -357,6 +397,58 @@ ADAPTERS = {"shopify": adapt_shopify, "outpost": adapt_outpost, "elementgames": 
             "firestorm": adapt_firestorm, "lightspeed": adapt_lightspeed}
 
 
+# ── Quantity series (stores that publish numbers) ─────────────────────────────
+
+def build_qty_series(daily: pd.DataFrame) -> None:
+    """Per (store, paint): shelf quantity and on-order units over time, with
+    day-over-day estimates. Only exact counts are used for changes ('10+' floors
+    are kept in the series but never differenced).
+
+      received_est = larger of: fall in on-order units (The Outpost's 'On The Way'),
+                     rise in shelf qty                (stores with on-order data)
+      outflow_est  = received_est - change in shelf qty   (stores with on-order data)
+                   = fall in shelf qty                     (stores without; a floor —
+                                                            any restock hides outflow)
+    Outflow covers sales, pre-order fulfilment and stock corrections alike; it is
+    an estimate of units leaving the shelf, not a sales figure."""
+    q = daily[(daily["qty"] != "") | (daily["on_order"] != "")].copy()
+    if q.empty:
+        return
+    q = q.sort_values(["store_id", "paint", "date"])
+    q["qty_n"] = pd.to_numeric(q["qty"], errors="coerce")
+    q["oo_n"] = pd.to_numeric(q["on_order"], errors="coerce")
+    exact = q["qty_is_floor"] != "true"
+    g = q.groupby(["store_id", "paint"])
+    q["prev_date"] = g["date"].shift()
+    q["d_qty"] = q["qty_n"] - g["qty_n"].shift()
+    q.loc[~exact | (g["qty_is_floor"].shift() == "true"), "d_qty"] = float("nan")
+    q["d_on_order"] = q["oo_n"] - g["oo_n"].shift()
+    has_oo = q["oo_n"].notna() & q["d_on_order"].notna()
+    # Arrivals show up as on-order falling and/or shelf rising (whichever is larger)
+    q["received_est"] = pd.concat([-q["d_on_order"], q["d_qty"].fillna(0)], axis=1).max(axis=1).clip(lower=0).where(has_oo)
+    q["outflow_est"] = (q["received_est"] - q["d_qty"]).where(has_oo & q["d_qty"].notna())
+    q.loc[~has_oo, "outflow_est"] = (-q["d_qty"]).clip(lower=0)
+    q["outflow_est"] = q["outflow_est"].clip(lower=0)
+    cols = ["date", "prev_date", "store_id", "country", "line", "paint", "status", "qty", "qty_is_floor",
+            "on_order", "d_qty", "d_on_order", "received_est", "outflow_est"]
+    out = q[cols].copy()
+    for c in ("d_qty", "d_on_order", "received_est", "outflow_est"):
+        out[c] = out[c].map(lambda v: "" if pd.isna(v) else str(int(v)))
+    out.to_csv(OUT_QTY, index=False)
+
+    num = q.assign(shelf=q["qty_n"].fillna(0), oo=q["oo_n"].fillna(0),
+                   rec=q["received_est"].fillna(0), outf=q["outflow_est"].fillna(0))
+    summ = (num.groupby(["date", "store_id", "country", "line"])
+            .agg(paints=("paint", "size"),
+                 shelf_units=("shelf", "sum"), shelf_is_floor=("qty_is_floor", lambda x: str((x == "true").any()).lower()),
+                 on_order_units=("oo", "sum"), received_est=("rec", "sum"), outflow_est=("outf", "sum"),
+                 paints_in_stock=("qty_n", lambda x: int((x > 0).sum())))
+            .reset_index())
+    for c in ("shelf_units", "on_order_units", "received_est", "outflow_est"):
+        summ[c] = summ[c].astype(int)
+    summ.to_csv(OUT_QTY_SUM, index=False)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def upsert(path: Path, new: pd.DataFrame, keys: list[str]) -> None:
@@ -433,6 +525,7 @@ def main():
                      on_order_sum=("on_order", lambda x: int(pd.to_numeric(x, errors="coerce").fillna(0).sum())))
                 .reset_index())
         upsert(OUT_SUMMARY, summ, ["date", "store_id", "line"])
+        build_qty_series(pd.read_csv(OUT_DAILY, dtype=str, keep_default_na=False))
     upsert(OUT_RUNS, pd.DataFrame(runs), ["date", "store_id"])
     pd.DataFrame(unmatched, columns=["date", "store_id", "title"]).to_csv(OUT_UNMATCH, index=False)
 
