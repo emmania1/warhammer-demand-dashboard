@@ -2199,6 +2199,9 @@ SF_CHANGES_CSV      = os.path.join(DATA_DIR, "gw_storefinder_changes.csv")
 YT_TOPIC_VIDEOS_CSV = os.path.join(DATA_DIR, "youtube_topic_videos.csv")
 YT_TOPIC_SUMMARY_CSV = os.path.join(DATA_DIR, "youtube_topic_summary.csv")
 TONE_PRO_LAUNCH     = "2026-10-24"
+PANEL_SUMMARY_CSV   = os.path.join(DATA_DIR, "indie_paint_panel_summary.csv")
+PANEL_RUNS_CSV      = os.path.join(DATA_DIR, "indie_paint_panel_runs.csv")
+PANEL_CONFIG_CSV    = os.path.join(CONFIG_DIR, "indie_paint_panel.csv")
 
 
 def _read_csv_or_empty(path: str) -> pd.DataFrame:
@@ -2366,6 +2369,116 @@ def build_launch_page() -> str:
     <p class="data-note">An add + remove pair in the same city is usually a relocation or re-listing, not a net change.</p>
   </div>"""
 
+    # ── B2: Independent online availability panel ─────────────────────────
+    panel_html = ""
+    pnl  = _read_csv_or_empty(PANEL_SUMMARY_CSV)
+    pruns = _read_csv_or_empty(PANEL_RUNS_CSV)
+    pcfg = _read_csv_or_empty(PANEL_CONFIG_CSV)
+    if not pnl.empty and not pruns.empty:
+        for c in ("listed", "available", "in_stock_shelf", "preorder", "oos", "qty_reported", "qty_sum", "on_order_sum"):
+            pnl[c] = pd.to_numeric(pnl[c], errors="coerce").fillna(0).astype(int)
+        p_date = pnl["date"].max()
+        ok_ids = set(pruns[(pruns["date"] == p_date) & (pruns["status"] == "ok")]["store_id"])
+        cur = pnl[(pnl["date"] == p_date) & pnl["store_id"].isin(ok_ids)]
+        n_panel = len(ok_ids)
+        n_active = int((pcfg["active"].astype(str).str.lower() == "true").sum()) if not pcfg.empty else n_panel
+        names = dict(zip(pcfg["store_id"], pcfg["store_name"])) if not pcfg.empty else {}
+        qty_kind = dict(zip(pcfg["store_id"], pcfg["qty_shown"])) if not pcfg.empty else {}
+
+        core = cur[cur["line"].isin(["Base", "Layer"])]
+        tp   = cur[cur["line"] == "Tone Pro"]
+        tp_stores = set(tp[tp["listed"] > 0]["store_id"])
+        def pct(a, b): return f"{a / b * 100:.0f}%" if b else "—"
+        core_pct = pct(core["available"].sum(), core["listed"].sum())
+        tp_pct   = pct(tp["available"].sum(), tp["listed"].sum())
+
+        # By country
+        ctry_rows = ""
+        for cc in sorted(cur["country"].unique()):
+            c = cur[cur["country"] == cc]; cc_core = c[c["line"].isin(["Base", "Layer"])]; cc_tp = c[c["line"] == "Tone Pro"]
+            n_st = c["store_id"].nunique(); n_tp = cc_tp[cc_tp["listed"] > 0]["store_id"].nunique()
+            ctry_rows += (f"<tr><td>{cc}</td><td class='num'>{n_st}</td>"
+                          f"<td class='num'>{pct(cc_core['available'].sum(), cc_core['listed'].sum())}</td>"
+                          f"<td class='num'>{n_tp}/{n_st}</td>"
+                          f"<td class='num'>{pct(cc_tp['available'].sum(), cc_tp['listed'].sum())}</td>"
+                          f"<td class='num'>{pct(cc_tp['preorder'].sum(), cc_tp['listed'].sum())}</td></tr>")
+
+        # History
+        hist_rows = ""
+        for d, g in pnl.groupby("date"):
+            ok_d = set(pruns[(pruns["date"] == d) & (pruns["status"] == "ok")]["store_id"])
+            g = g[g["store_id"].isin(ok_d)]
+            gc = g[g["line"].isin(["Base", "Layer"])]; gt = g[g["line"] == "Tone Pro"]
+            hist_rows = (f"<tr><td>{d}</td><td class='num'>{len(ok_d)}</td>"
+                         f"<td class='num'>{pct(gc['available'].sum(), gc['listed'].sum())}</td>"
+                         f"<td class='num'>{gt[gt['listed'] > 0]['store_id'].nunique()}</td>"
+                         f"<td class='num'>{pct(gt['available'].sum(), gt['listed'].sum())}</td></tr>") + hist_rows
+
+        # Quantity-reporting stores
+        q = cur[cur["qty_reported"] > 0]
+        q_rows = ""
+        for sid, g in q.groupby("store_id"):
+            gt = g[g["line"] == "Tone Pro"]; gc = g[g["line"].isin(["Base", "Layer"])]
+            q_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{escape(qty_kind.get(sid, ''))}</td>"
+                       f"<td class='num'>{int(gc['qty_sum'].sum()):,}</td>"
+                       f"<td class='num'>{int(gt['qty_sum'].sum()):,}</td>"
+                       f"<td class='num'>{(f'{int(gt.on_order_sum.sum()):,}' if gt.on_order_sum.sum() else '—')}</td></tr>")
+
+        # Store list
+        st_rows = ""
+        for sid, g in sorted(cur.groupby("store_id"), key=lambda x: (x[1]["country"].iloc[0], names.get(x[0], x[0]))):
+            gc = g[g["line"].isin(["Base", "Layer"])]; gt = g[g["line"] == "Tone Pro"]
+            st_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{g['country'].iloc[0]}</td>"
+                        f"<td class='num'>{int(gc['listed'].sum())}</td><td class='num'>{pct(gc['available'].sum(), gc['listed'].sum())}</td>"
+                        f"<td class='num'>{int(gt['listed'].sum()) or '—'}</td>"
+                        f"<td class='num'>{pct(gt['available'].sum(), gt['listed'].sum()) if gt['listed'].sum() else '—'}</td></tr>")
+        failed = n_active - n_panel
+
+        panel_html = f"""
+  <div class="section-title">B2 · Independent online availability (panel of {n_panel} stores)</div>
+  <div class="section-sub">
+    Daily snapshot of Base, Layer and Tone Pro paints at a fixed panel of independent hobby retailers' own online stores
+    (US / UK / Canada), read from each store's public product listings. Latest: <strong>{p_date}</strong>{f" · {failed} panel store(s) unreachable this run" if failed > 0 else ""}.
+  </div>
+  <div class="table-card" style="margin-bottom:18px;border-left:3px solid #8e44ad;">
+    <div style="font-size:12.5px;line-height:1.6">
+      <strong>What this represents:</strong> whether these {n_panel} stores list each paint and let you buy it on their websites,
+      the date Tone Pro first appears in their catalogues, and — at the few stores that publish it — a shelf quantity.
+      <strong>What it doesn't:</strong> sales or sell-through; deliveries or allocations to individual stores; stock in physical
+      shops; or the ~3,000 independents ranging Warhammer Pro as a whole. Panel stores are ones that sell online and expose
+      product data publicly, so they skew towards larger, online-active retailers. An out-of-stock flag can mean strong demand
+      or a small order; quantities are shelf stock, not units sold.
+    </div>
+  </div>
+  <div class="stats-row" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="stat-val">{n_panel}</div><div class="stat-lbl">Panel stores reporting</div></div>
+    <div class="stat-card"><div class="stat-val">{core_pct}</div><div class="stat-lbl">Base/Layer available online (baseline)</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:#f1c40f">{len(tp_stores)}/{n_panel}</div><div class="stat-lbl">Stores listing Tone Pro</div></div>
+    <div class="stat-card"><div class="stat-val">{tp_pct}</div><div class="stat-lbl">Tone Pro listings available to order</div></div>
+  </div>
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("By country — " + p_date)}
+      <table><thead><tr><th>Country</th><th class="num">Stores</th><th class="num">Base/Layer available</th>
+      <th class="num">Listing Tone Pro</th><th class="num">Tone Pro available</th><th class="num">Tagged pre-order</th></tr></thead>
+      <tbody>{ctry_rows}</tbody></table>
+      <p class="data-note">"Available" = the store lets you buy it online. Most panel stores' data doesn't say whether that's from shelf stock or a pre-order, so before the 24 Oct launch every "available" Tone Pro listing is in practice a pre-order. Only the stores in the quantity table below show true shelf stock.</p>
+    </div>
+    <div class="table-card">{h3.format("Panel history")}
+      <table><thead><tr><th>Date</th><th class="num">Stores</th><th class="num">Base/Layer available</th>
+      <th class="num">Listing Tone Pro</th><th class="num">Tone Pro available</th></tr></thead><tbody>{hist_rows}</tbody></table>
+    </div>
+  </div>
+  {f'''<div class="table-card" style="margin-bottom:18px;">{h3.format("Stores that publish quantities")}
+    <table><thead><tr><th>Store</th><th>What it shows</th><th class="num">Base/Layer units</th><th class="num">Tone Pro units</th>
+    <th class="num">Tone Pro on order</th></tr></thead><tbody>{q_rows}</tbody></table>
+    <p class="data-note">Units = sum of the store's displayed stock across paints (counts shown as "10+" are summed as 10, so these are floors).
+    "On order" is The Outpost's own "On The Way" figure — units it expects to receive, not GW shipments to the trade overall.</p>
+  </div>''' if q_rows else ""}
+  <div class="table-card" style="margin-bottom:18px;">{h3.format("Panel stores")}
+    <table><thead><tr><th>Store</th><th>Country</th><th class="num">Base/Layer listed</th><th class="num">Available</th>
+    <th class="num">Tone Pro listed</th><th class="num">Available</th></tr></thead><tbody>{st_rows}</tbody></table>
+  </div>"""
+
     # ── C: YouTube attention ──────────────────────────────────────────────
     yt_html = ""
     if not ytv.empty:
@@ -2415,6 +2528,7 @@ def build_launch_page() -> str:
   </div>
 {paint_html}
 {store_html}
+{panel_html}
 {yt_html}
 </section>
 """

@@ -25,7 +25,8 @@ echo "── Syncing stock data from GitHub ────────────
 git -C "$SCRIPT_DIR" checkout -- data/gw_stock_daily.csv data/gw_stock_summary.csv data/element_games_stock_daily.csv \
     data/gw_paint_stock_daily.csv data/gw_paint_stock_summary.csv data/gw_paint_oos_episodes.csv \
     data/gw_storefinder_summary.csv data/gw_storefinder_country.csv data/gw_storefinder_roster.csv \
-    data/gw_storefinder_changes.csv 2>/dev/null
+    data/gw_storefinder_changes.csv data/indie_paint_panel_daily.csv data/indie_paint_panel_summary.csv \
+    data/indie_paint_panel_runs.csv data/indie_paint_panel_unmatched.csv 2>/dev/null
 git -C "$SCRIPT_DIR" pull -q --rebase origin main || { echo "✗ git pull failed — not publishing"; exit 1; }
 
 echo ""
