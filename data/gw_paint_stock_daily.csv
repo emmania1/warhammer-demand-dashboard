@@ -152,7 +152,6 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-13,Paint-100301-56189956136,Tech Pro: Shading Medium,Tech Pro,Tech-Pro-Shading-Medium-US,8.1,A,true,true,true,false,false,false,1,memphis,algolia
 2026-10-13,Paint-100300-56189956135,Tech Pro: Blending Medium,Tech Pro,Tech-Pro-Blending-Medium-US,8.1,A,true,true,true,false,false,false,1,memphis,algolia
 2026-10-13,prod4960276-99189960051,Contrast: Celestium Blue,Contrast,contrast-celestium-blue-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
-2026-10-13,prod4960270-99189960045,Contrast: Imperial Fist,Contrast,contrast-imperial-fist-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960262-99189960037,Contrast: Ratling Grime,Contrast,contrast-ratling-grime-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960260-99189960035,Contrast: Garaghak's Sewer,Contrast,contrast-garaghaks-sewer-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960258-99189953058,Shade: Coelia Greenshade,Shade,shade-coelia-greenshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
@@ -170,7 +169,6 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-13,prod4190283-99189960102,Contrast: Magos Purple,Contrast,Magos-Purple-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190282-99189960101,Contrast: Shyish Purple,Contrast,Shyish-Purple-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190195-99189956078,Technical: Valhallan Blizzard,Technical,Technical-Valhallan-Blizzard-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
-2026-10-13,prod4190184-99189956067,Technical: Mordant Earth,Technical,Mordant-Earth-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190179-99189951292,Layer: Castellax Bronze,Layer,Castellax-Bronze-2019,4.75,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960236-13209999103,White Scar,Spray,white-scar-spray-paint-2022-nas,25.0,A,true,true,false,false,false,false,2,memphis,algolia
 2026-10-13,prod4540247-13209999110,Zandri Dust,Spray,Zandri-Dust-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
@@ -482,9 +480,11 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-13,P-247143-56189950303,Base: Gal Vorbak Red,Base,b-gal-vorbak-red-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
 2026-10-13,P-246900-56189956123,Technical: Nurgle's Rot,Technical,te-nurgles-rot-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
 2026-10-13,P-246695-56189960240,Contrast: Aeldari Emerald,Contrast,c-aeldari-emerald-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-13,prod4960270-99189960045,Contrast: Imperial Fist,Contrast,contrast-imperial-fist-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960267-99189960042,Contrast: Striking Scorpion Green,Contrast,contrast-striking-scorpion-green-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4960256-99189953056,Shade: Casandora Yellow,Shade,shade-casandora-yellow-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190291-99189960110,Contrast: Militarum Green,Contrast,Militarum-Green-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190279-99189960098,Contrast: Blood Angels Red,Contrast,Blood-Angels-Red-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-13,prod4190184-99189956067,Technical: Mordant Earth,Technical,Mordant-Earth-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190158-99189950127,Base: Lupercal Green,Base,Base-Lupercal-Green-2019,4.55,O,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-13,prod4190262-99189958194,Air: Corvus Black,Air,Air-Corvus-Black-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
