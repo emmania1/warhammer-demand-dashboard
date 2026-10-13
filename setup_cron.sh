@@ -1,9 +1,12 @@
 #!/bin/bash
 # Sets up cron jobs for the Warhammer demand pipeline.
 #
-# Installs two jobs:
-#   1. Daily 8:00 AM  — stock-only snapshots (GW.com + Element Games OOS)
-#   2. Weekly Sunday 9:00 AM — full pipeline (YouTube, Reddit, Steam, reports)
+# Installs one job:
+#   Weekly Sunday 9:00 AM — run_pipeline.sh (YouTube fetch, regenerate, publish)
+#
+# The daily stock snapshot runs on GitHub Actions (.github/workflows/daily_stock.yml),
+# not cron — cron skipped every day the Mac was asleep at 8am.
+# run_daily_stock.sh remains for manual local runs.
 #
 # Run once:  bash setup_cron.sh
 # Remove:    bash setup_cron.sh --remove
@@ -45,15 +48,12 @@ fi
 chmod +x "$DAILY_STOCK"
 chmod +x "$WEEKLY_PIPELINE"
 
-# ── Install daily stock job ────────────────────────────────────────────────────
+# ── Remove legacy daily stock job (now on GitHub Actions) ─────────────────────
 CURRENT=$(crontab -l 2>/dev/null)
-
 if echo "$CURRENT" | grep -q "$CRON_TAG_DAILY"; then
-    echo "Daily stock cron already installed — skipping."
-else
-    (echo "$CURRENT"; echo "$CRON_DAILY") | crontab -
+    echo "$CURRENT" | grep -v "$CRON_TAG_DAILY" | crontab -
     CURRENT=$(crontab -l 2>/dev/null)
-    echo "✓ Daily stock cron installed (8:00 AM every day)."
+    echo "✓ Removed legacy daily stock cron (runs on GitHub Actions now)."
 fi
 
 # ── Install weekly pipeline job ────────────────────────────────────────────────
@@ -65,7 +65,7 @@ else
 fi
 
 echo ""
-echo "  Daily stock   : every day at 08:00  →  $LOG_DAILY"
+echo "  Daily stock   : GitHub Actions, 07:15 UTC (see Actions tab)"
 echo "  Weekly full   : every Sunday 09:00  →  $LOG_WEEKLY"
 echo ""
 echo "  To check : bash setup_cron.sh --status"

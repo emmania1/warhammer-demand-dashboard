@@ -3,7 +3,7 @@
 # Runs every morning to capture GW.com + Element Games OOS state.
 # Lightweight: no YouTube/Reddit API calls, no HTML regeneration.
 #
-# Installed by setup_cron.sh → runs automatically at 8:00 AM daily.
+# Manual/local use only — the scheduled daily run is .github/workflows/daily_stock.yml.
 # Sunday 9:00 AM run_pipeline.sh then regenerates + publishes index.html.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

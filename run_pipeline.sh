@@ -19,6 +19,13 @@ set -a
 source "$SCRIPT_DIR/.env" 2>/dev/null
 set +a
 
+echo "── Syncing stock data from GitHub ───────────────"
+# Daily stock CSVs are written by the GitHub Action (.github/workflows/daily_stock.yml);
+# the remote copy is authoritative, so drop any local edits to them before pulling.
+git -C "$SCRIPT_DIR" checkout -- data/gw_stock_daily.csv data/gw_stock_summary.csv data/element_games_stock_daily.csv
+git -C "$SCRIPT_DIR" pull -q --rebase origin main || { echo "✗ git pull failed — not publishing"; exit 1; }
+
+echo ""
 echo "── YouTube channel stats ────────────────────────"
 python scripts/fetch_youtube_channels_daily.py || echo "⚠ YouTube fetch failed — continuing with existing data"
 
