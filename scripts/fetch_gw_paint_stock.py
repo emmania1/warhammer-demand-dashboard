@@ -228,3 +228,76 @@ n_open = int((episodes["ongoing"] == "true").sum()) if not episodes.empty else 0
 print(f"\n✓ {len(new_df)} rows → {OUT_DAILY.relative_to(ROOT)}")
 print(f"✓ Summary → {OUT_SUMMARY.relative_to(ROOT)}")
 print(f"✓ {len(episodes)} OOS episodes ({n_open} ongoing) → {OUT_EPISODES.relative_to(ROOT)}")
+
+
+# ── Other GW warehouses: Lenton (UK/EU — en-gb index), Ingleburn (AU/NZ — en-au) ──
+# Each regional webstore reports availability from its own warehouse. Same flags as
+# above; no quantities. Memphis rows are copied in from the US run for comparison.
+REGIONS = [("lenton", "en-gb"), ("ingleburn", "en-au")]
+OUT_REG_DAILY    = ROOT / "data" / "gw_paint_stock_regions_daily.csv"
+OUT_REG_SUMMARY  = ROOT / "data" / "gw_paint_stock_regions_summary.csv"
+OUT_REG_EPISODES = ROOT / "data" / "gw_paint_oos_episodes_regions.csv"
+REG_COLS = ["date", "warehouse", "sku", "name", "line", "price", "status_code", "in_stock",
+            "is_preorder", "is_selling_fast", "is_last_chance", "qty_limit"]
+
+reg_rows = [{"date": today, "warehouse": "memphis", "sku": r["sku"], "name": r["name"], "line": r["line"],
+             "price": r["price_usd"], "status_code": r["status_code"], "in_stock": r["in_stock"],
+             "is_preorder": r["is_preorder"], "is_selling_fast": r["is_selling_fast"],
+             "is_last_chance": r["is_last_chance"], "qty_limit": r["qty_limit"]} for _, r in new_df.iterrows()]
+for wh, loc in REGIONS:
+    ALGOLIA_URL = f"https://{ALGOLIA_APP_ID.lower()}-dsn.algolia.net/1/indexes/prod-lazarus-product-{loc}/query"
+    try:
+        hs = fetch_all_paints()
+    except requests.RequestException as e:
+        print(f"  ⚠ {wh} ({loc}) failed: {e}")
+        continue
+    for h in hs:
+        price = h.get("price", 0) or 0
+        qlim = h.get("quantityLimits")
+        reg_rows.append({"date": today, "warehouse": wh, "sku": h.get("sku", "") or h.get("objectID", ""),
+                         "name": h.get("name", ""), "line": paint_line(h.get("name", ""), price), "price": price,
+                         "status_code": h.get("statusCode", "") or "",
+                         "in_stock": str(bool(h.get("isInStock"))).lower(),
+                         "is_preorder": str(bool(h.get("isPreOrder"))).lower(),
+                         "is_selling_fast": str(bool(h.get("isSellingFast"))).lower(),
+                         "is_last_chance": str(bool(h.get("isLastChanceToBuy"))).lower(),
+                         "qty_limit": "" if qlim is None else qlim})
+    print(f"  {wh:9} ({loc}): {len(hs)} paint SKUs")
+
+reg = pd.DataFrame(reg_rows, columns=REG_COLS).drop_duplicates(["warehouse", "name"]).astype(str)
+if OUT_REG_DAILY.exists():
+    ex = pd.read_csv(OUT_REG_DAILY, dtype=str, keep_default_na=False)
+    reg_all = pd.concat([ex[ex["date"] != today], reg], ignore_index=True)
+else:
+    reg_all = reg
+reg_all.to_csv(OUT_REG_DAILY, index=False)
+
+rs = (reg.groupby(["date", "warehouse", "line"])
+      .agg(skus=("name", "size"),
+           in_stock=("in_stock", lambda x: int((x == "true").sum())),
+           oos=("in_stock", lambda x: int((x == "false").sum())),
+           preorder=("is_preorder", lambda x: int((x == "true").sum())),
+           selling_fast=("is_selling_fast", lambda x: int((x == "true").sum())),
+           last_chance=("is_last_chance", lambda x: int((x == "true").sum())))
+      .reset_index())
+rs["oos_pct"] = (rs["oos"] / rs["skus"] * 100).round(1)
+if OUT_REG_SUMMARY.exists():
+    ex = pd.read_csv(OUT_REG_SUMMARY, dtype=str)
+    rs = pd.concat([ex[ex["date"] != today], rs.astype(str)], ignore_index=True)
+rs.to_csv(OUT_REG_SUMMARY, index=False)
+
+eps = []
+for wh, g in reg_all.groupby("warehouse"):
+    e = build_episodes(g.assign(sku=g["warehouse"] + "|" + g["name"]))
+    if not e.empty:
+        e.insert(0, "warehouse", wh)
+        e["sku"] = e["sku"].str.split("|", n=1).str[1]
+        eps.append(e)
+(pd.concat(eps, ignore_index=True) if eps else pd.DataFrame()).to_csv(OUT_REG_EPISODES, index=False)
+
+cur = rs[rs["date"].astype(str) == today]
+pro = cur[cur["line"].isin(PRO_LINES)].groupby("warehouse")[["skus", "oos", "preorder"]].sum()
+print("\n  Pro line by warehouse (SKUs / OOS / pre-order):")
+for wh, r in pro.iterrows():
+    print(f"    {wh:9} {r['skus']}/{r['oos']}/{r['preorder']}")
+print(f"✓ {len(reg)} rows → {OUT_REG_DAILY.relative_to(ROOT)}; summary + episodes by warehouse")

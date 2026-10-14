@@ -2203,7 +2203,8 @@ PANEL_SUMMARY_CSV   = os.path.join(DATA_DIR, "indie_paint_panel_summary.csv")
 PANEL_RUNS_CSV      = os.path.join(DATA_DIR, "indie_paint_panel_runs.csv")
 PANEL_CONFIG_CSV    = os.path.join(CONFIG_DIR, "indie_paint_panel.csv")
 PANEL_QTY_SUMMARY_CSV = os.path.join(DATA_DIR, "indie_paint_panel_qty_summary.csv")
-US_TP_QTY_CSV       = os.path.join(DATA_DIR, "us_tone_pro_qty_weekly.csv")
+PAGE_QTY_CSV        = os.path.join(DATA_DIR, "page_qty_weekly.csv")
+REGIONS_SUMMARY_CSV = os.path.join(DATA_DIR, "gw_paint_stock_regions_summary.csv")
 
 
 def _read_csv_or_empty(path: str) -> pd.DataFrame:
@@ -2262,6 +2263,25 @@ def build_launch_page() -> str:
             f"<tr><td>{r['date']}</td><td class='num'>{r['oos']}/{r['skus']}</td>"
             f"<td class='num'>{r['fast']}</td><td class='num'>{r['pre']}</td></tr>" for _, r in hist.iterrows())
 
+        wh_html = ""
+        rgs = _read_csv_or_empty(REGIONS_SUMMARY_CSV)
+        if not rgs.empty:
+            rgs = rgs[rgs["date"] == rgs["date"].max()]
+            for c in ("skus", "oos", "preorder", "selling_fast"):
+                rgs[c] = pd.to_numeric(rgs[c], errors="coerce").fillna(0).astype(int)
+            whs = [w for w in ("memphis", "lenton", "ingleburn") if w in set(rgs["warehouse"])]
+            wlab = {"memphis": "Memphis (US/CA)", "lenton": "Lenton (UK/EU)", "ingleburn": "Ingleburn (AU/NZ)"}
+            wrows = ""
+            for line in ("Tone Pro", "Base", "Layer", "Contrast", "Shade"):
+                cells = ""
+                for w in whs:
+                    g = rgs[(rgs["warehouse"] == w) & (rgs["line"] == line)]
+                    cells += (f"<td class='num'>{int(g['oos'].sum())}/{int(g['skus'].sum())}"
+                              f"{' · ' + str(int(g['selling_fast'].sum())) + ' fast' if int(g['selling_fast'].sum()) else ''}</td>") if not g.empty else "<td class='num'>—</td>"
+                wrows += f"<tr><td>{line}</td>{cells}</tr>"
+            wh_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format("GW warehouses — out of stock / SKUs, " + rgs["date"].iloc[0])}'
+                       f'<table><thead><tr><th>Line</th>{"".join(f"<th class=num>{wlab[w]}</th>" for w in whs)}</tr></thead><tbody>{wrows}</tbody></table>'
+                       f'<p class="data-note">Each GW regional webstore reports availability from its own warehouse. Availability flags only — no quantities.</p></div>')
         ep_html = "<p class='data-note'>No Pro-line stock-outs recorded yet.</p>"
         if not eps.empty:
             pe = eps[eps["line"].isin(pro_lines)].copy()
@@ -2302,6 +2322,7 @@ def build_launch_page() -> str:
       <th class="num">Pre-order</th></tr></thead><tbody>{hist_rows}</tbody></table>
     </div>
   </div>
+  {wh_html}
   <div class="table-card" style="margin-bottom:18px;">{h3.format("Pro stock-out episodes — how often, how long")}
     {ep_html}
     <p class="data-note">Days OOS is a minimum: snapshots are daily, so a stock-out that starts and ends between runs is invisible
@@ -2439,23 +2460,31 @@ def build_launch_page() -> str:
                 qd_rows += (f"<tr><td>{d}</td><td class='num'>{int(r.shelf_units):,}</td><td class='num'>{int(r.on_order_units):,}</td>"
                             f"<td class='num'>{int(r.received_est):,}</td><td class='num'>{int(r.outflow_est):,}</td></tr>")
 
-        # US weekly Tone Pro unit counts (product pages, 3 stores)
+        # Weekly product-page counts (config/page_qty_stores.csv)
         us_html = ""
-        usq = _read_csv_or_empty(US_TP_QTY_CSV)
-        if not usq.empty:
-            usq["q"] = pd.to_numeric(usq["qty"], errors="coerce")
-            us_rows = ""
-            for (d, sid), g in sorted(usq.groupby(["date", "store_id"]), key=lambda x: (x[0][0], x[0][1]), reverse=True)[:12]:
-                ok = g["q"].dropna()
-                us_rows += (f"<tr><td>{d}</td><td>{escape(names.get(sid, sid))}</td><td class='num'>{len(ok)}/{len(g)}</td>"
-                            f"<td class='num'>{int(ok.clip(lower=0).sum()):,}</td><td class='num'>{int((ok > 0).sum())}</td>"
-                            f"<td class='num'>{int(-ok[ok < 0].sum()):,}</td></tr>")
-            us_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format("US Tone Pro unit counts — weekly, 3 stores")}'
-                       f'<table><thead><tr><th>Date</th><th>Store</th><th class="num">Paints read</th><th class="num">Units on hand</th>'
-                       f'<th class="num">Paints with stock</th><th class="num">Units ordered beyond stock</th></tr></thead><tbody>{us_rows}</tbody></table>'
-                       f'<p class="data-note">Read weekly from each store\'s Tone Pro product pages (the inventory figure their page embeds for that product). '
-                       f'Before 24 Oct these are pre-order products, so the figure is likely the store\'s remaining pre-order allocation, not shelf stock. '
-                       f'Negative figures = orders taken beyond stock. Three stores only — illustrative, not a US estimate.</p></div>')
+        pq = _read_csv_or_empty(PAGE_QTY_CSV)
+        if not pq.empty:
+            pq["q"] = pd.to_numeric(pq["qty"], errors="coerce")
+            latest = pq.sort_values("date").groupby("store_id").tail(10**6)
+            last_dates = pq.groupby("store_id")["date"].max()
+            cur_pq = pq[pq.apply(lambda r: r["date"] == last_dates[r["store_id"]], axis=1)]
+            pq_rows = ""
+            for cc in sorted(cur_pq["country"].unique()):
+                for sid, g in cur_pq[cur_pq["country"] == cc].groupby("store_id"):
+                    tp = g[g["line"] == "Tone Pro"]["q"].dropna(); cmp_ = g[g["line"] != "Tone Pro"]["q"].dropna()
+                    pq_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{cc}</td><td>{g['date'].iloc[0]}</td>"
+                                f"<td class='num'>{len(tp)}</td><td class='num'>{int(tp.clip(lower=0).sum()):,}</td>"
+                                f"<td class='num'>{int(-tp[tp < 0].sum()):,}</td>"
+                                f"<td class='num'>{(f'{cmp_.clip(lower=0).mean():.1f}' if len(cmp_) else '—')}</td></tr>")
+            n_pq = cur_pq["store_id"].nunique()
+            us_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format(f"Product-page unit counts — weekly, {n_pq} stores")}'
+                       f'<table><thead><tr><th>Store</th><th>Country</th><th>Read on</th><th class="num">Tone Pro paints read</th>'
+                       f'<th class="num">Tone Pro units on hand</th><th class="num">Tone Pro ordered beyond stock</th>'
+                       f'<th class="num">Avg units, 10 core paints</th></tr></thead><tbody>{pq_rows}</tbody></table>'
+                       f'<p class="data-note">Each store is read once a week on its own day: tone 3 of each of the 30 Tone Pro colours '
+                       f'(all listed Tone Pro at three US anchor stores) plus 10 fixed Base/Layer paints for comparison, from the stock figure '
+                       f'each product page publishes. Before 24 Oct Tone Pro items are pre-orders, so figures are allocations / pre-orders, '
+                       f'not shelf stock; negative = orders taken beyond stock. Week-to-week changes can\'t separate restocks from sales.</p></div>')
 
         # Store list
         st_rows = ""

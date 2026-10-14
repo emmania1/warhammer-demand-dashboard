@@ -778,7 +778,6 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-14,P-245133-56189950280,Base: Zandri Dust,Base,b-zandri-dust-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,P-245132-56189951304,Layer: Wild Rider Red,Layer,l-wild-rider-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,P-245131-56189951355,Layer: White Scar,Layer,l-white-scar-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
-2026-10-14,P-245114-56189951321,Layer: Warpstone Glow,Layer,l-warpstone-glow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,P-245113-56189951330,Layer: Ushabti Bone,Layer,l-ushabti-bone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,P-245112-56189951331,Layer: Screaming Skull,Layer,l-screaming-skull-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,P-245111-56189950296,Base: Screamer Pink,Base,b-screamer-pink-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
@@ -816,6 +815,7 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-14,P-244486-56189950289,Base: Abaddon Black,Base,b-abaddon-black-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,prod4960262-99189960037,Contrast: Ratling Grime,Contrast,contrast-ratling-grime-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,prod4960246-99189953046,Shade: Berserker Bloodshade,Shade,shade-berserker-bloodshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-14,P-245114-56189951321,Layer: Warpstone Glow,Layer,l-warpstone-glow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,prod4960286-99189960061,Contrast: Nighthaunt Gloom,Contrast,contrast-nighthaunt-gloom-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,prod4960285-99189960060,Contrast: Hexwraith Flame,Contrast,contrast-hexwraith-flame-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-14,prod4960282-99189960057,Contrast: Doomfire Magenta,Contrast,contrast-doomfire-magenta-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia

@@ -9,7 +9,8 @@ Each store is read through its own public storefront data:
   outpost     WooCommerce category pages (HTML)     in stock (N) / On The Way (M)
   elementgames category pages (HTML)                "N In Stock" (capped at 10+)
   firestorm   category page (HTML)                  "N in Stock" (exact), GW code
-  lightspeed  category ?format=json                 availability only
+  lightspeed  category / search ?format=json        availability only
+  crystalcommerce category pages (HTML)             "N In Stock" per product
 
 Etiquette: robots.txt is checked for every URL (RFC 9309 longest match), one store
 at a time, ~2s between requests, capped pages per store, identifying User-Agent.
@@ -428,8 +429,10 @@ def adapt_lightspeed(f: Fetcher, cfg) -> list[dict]:
             r = f.get(url)
             if r is None or r.status_code != 200:
                 break
-            coll = r.json().get("collection", {})
-            prods = coll.get("products", {})
+            coll = r.json().get("collection") or {}
+            if not isinstance(coll, dict):
+                break                                    # no results → Lightspeed returns a non-dict
+            prods = coll.get("products") or {}
             prods = list(prods.values()) if isinstance(prods, dict) else prods
             for p in prods:
                 items.append({"title": p.get("fulltitle") or p.get("title", ""),
@@ -442,7 +445,41 @@ def adapt_lightspeed(f: Fetcher, cfg) -> list[dict]:
     return items
 
 
-ADAPTERS = {"shopify": adapt_shopify, "outpost": adapt_outpost, "elementgames": adapt_elementgames,
+def adapt_crystalcommerce(f: Fetcher, cfg) -> list[dict]:
+    """CrystalCommerce game-store sites print a stock count per product on category
+    pages ('<span class="variant-qty">3 In Stock</span>'). Pages through each
+    category URL in targets (?page=N) until a page adds no new products."""
+    items, seen = [], set()
+    for cat in cfg["targets"].split("|"):
+        for page in range(1, MAX_PAGES * 4 + 1):
+            url = f"{cat}{'&' if '?' in cat else '?'}page={page}"
+            try:
+                r = f.get(url)
+            except requests.exceptions.SSLError:          # CrystalCommerce TLS drops mid-run — keep what we have
+                break
+            if r is None or r.status_code != 200:
+                break
+            new = 0
+            for body in re.split(r'(?=<h4 class="name)', r.text)[1:]:
+                name = re.search(r'title="([^"]+)"', body)
+                if not name or name.group(1) in seen:
+                    continue
+                seen.add(name.group(1)); new += 1
+                card = body.split('<h4 class="name', 2)[1] if body.count('<h4 class="name') > 1 else body
+                q = re.search(r'variant-qty">\s*(\d+)\s*In Stock', card[:4000], re.I)
+                oos = re.search(r'(?i)out of stock|no-stock|sold out', card[:4000])
+                link = re.search(r'href="(/catalog/[^"]+)"', body)
+                items.append({"title": html.unescape(name.group(1)),
+                              "status": "in_stock" if q and int(q.group(1)) > 0 else ("oos" if oos or q else "unknown"),
+                              "qty": q.group(1) if q else ("0" if oos else ""), "qty_floor": "false" if (q or oos) else "",
+                              "on_order": "", "price": "", "listed_at": "", "sku": "",
+                              "url": urljoin(f.base, link.group(1)) if link else url})
+            if new == 0:
+                break
+    return items
+
+
+ADAPTERS = {"crystalcommerce": adapt_crystalcommerce, "shopify": adapt_shopify, "outpost": adapt_outpost, "elementgames": adapt_elementgames,
             "firestorm": adapt_firestorm, "lightspeed": adapt_lightspeed}
 
 

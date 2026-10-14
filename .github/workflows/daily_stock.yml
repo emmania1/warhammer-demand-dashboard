@@ -1,4 +1,4 @@
-# Daily stock snapshot — GW.com (Algolia) + Element Games + all paint SKUs +
+# Daily stock snapshot — GW.com (Algolia, 3 warehouses) + Element Games + all paint SKUs +
 # independent online availability panel; weekly (Mondays) GW's public store finder.
 # Runs in the cloud so data keeps flowing when the laptop is asleep, then
 # regenerates index.html and commits everything back to main. The Pages deploy
@@ -81,15 +81,10 @@ jobs:
         continue-on-error: true
         run: python scripts/fetch_indie_paint_panel.py
 
-      - name: US Tone Pro unit counts (Mondays, off until US_QTY_ENABLED=true)
-        if: vars.US_QTY_ENABLED == 'true'
+      - name: Weekly product-page counts (each store on its own weekday; config/page_qty_stores.csv)
+        if: vars.PAGE_QTY_ENABLED == 'true'
         continue-on-error: true
-        run: |
-          if [ "$(date -u +%u)" = "1" ]; then
-            python scripts/fetch_us_tone_pro_qty.py
-          else
-            echo "Not Monday — skipping US Tone Pro counts."
-          fi
+        run: python scripts/fetch_page_qty_weekly.py
 
       - name: Element Games stock snapshot (UK indie)
         continue-on-error: true
@@ -106,7 +101,8 @@ jobs:
           git add data/gw_stock_daily.csv data/gw_stock_summary.csv data/element_games_stock_daily.csv \
                   data/gw_paint_stock_*.csv data/gw_paint_oos_episodes.csv data/gw_storefinder_*.csv \
                   data/indie_paint_panel_*.csv data/prev_run_snapshot.json index.html
-          [ -f data/us_tone_pro_qty_weekly.csv ] && git add data/us_tone_pro_qty_weekly.csv
+          for f in data/page_qty_weekly.csv data/gw_paint_stock_regions_daily.csv data/gw_paint_stock_regions_summary.csv \
+                   data/gw_paint_oos_episodes_regions.csv; do [ -f "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then
             echo "No changes."
             exit 0

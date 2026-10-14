@@ -28,7 +28,8 @@ git -C "$SCRIPT_DIR" checkout -- data/gw_stock_daily.csv data/gw_stock_summary.c
     data/gw_storefinder_changes.csv data/indie_paint_panel_daily.csv data/indie_paint_panel_summary.csv \
     data/indie_paint_panel_runs.csv data/indie_paint_panel_unmatched.csv \
     data/indie_paint_panel_qty_series.csv data/indie_paint_panel_qty_summary.csv \
-    data/prev_run_snapshot.json index.html 2>/dev/null
+    data/page_qty_weekly.csv data/gw_paint_stock_regions_daily.csv data/gw_paint_stock_regions_summary.csv \
+    data/gw_paint_oos_episodes_regions.csv data/prev_run_snapshot.json index.html 2>/dev/null
 git -C "$SCRIPT_DIR" pull -q --rebase origin main || { echo "✗ git pull failed — not publishing"; exit 1; }
 
 echo ""

@@ -41,7 +41,12 @@ panel = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(panel)
 
 TLDS = {"US": [".com"], "GB": [".co.uk", ".com"], "CA": [".ca", ".com"]}
 GW_COLL = re.compile(r"citadel|warhammer[-_ ]?(colou?r|pro|paint)|tone[-_ ]?pro|games[-_ ]?workshop[-_ ]?(paint|hobby)|gw[-_ ]paint", re.I)
-GOOD = re.compile(r"base|layer|tone|warhammer-pro|all-citadel|citadel-paints?$|citadel-colou?r|^citadel$|shop-all|paints?-and|paint-hobby", re.I)
+GW_COLL_WIDE = re.compile(r"citadel|warhammer|games[-_ ]?workshop|tone[-_ ]?pro|(^|[-_ ])gw([-_ ]|$)|paints?", re.I)
+GOOD = re.compile(r"base|layer|tone|warhammer|games-?workshop|all-citadel|citadel-paints?$|citadel-colou?r|^citadel$|shop-all|paints?-and|paint-hobby|paints?$", re.I)
+OTHER_PLATFORMS = {"CrystalCommerce": re.compile(r"crystalcommerce", re.I),
+                   "Lightspeed": re.compile(r"shoplightspeed|lightspeed", re.I)}
+OUT_OTHER = ROOT / "data" / "indie_other_platform_candidates.csv"
+WIDE = False
 BAD = re.compile(r"air|spray|contrast|shade|dry|technical|brush|tool|case|basing|bases|dice|primer|accessor|set|bundle|preorder|pre-order|sale", re.I)
 
 
@@ -61,20 +66,31 @@ def pick_targets(handles: list[str]) -> list[str]:
     return (specific or good or handles)[:4]
 
 
-def shopify_gw_collections(host: str) -> list[str] | None:
-    """≤2 requests: robots.txt + collections.json. None = not a Shopify GW stockist."""
+def shopify_gw_collections(host: str):
+    """≤3 requests: robots.txt + collections.json (+ homepage if not Shopify, --wide only).
+    Returns list of GW collection handles (Shopify), ("other", platform, mentions_gw), or None."""
     rules = panel.load_robots(f"https://{host}")
-    url = f"https://{host}/collections.json?limit=250"
-    if rules is None or not panel.robots_allows(rules, url):
+    if rules is None:
         return None
+    url = f"https://{host}/collections.json?limit=250"
     try:
-        r = requests.get(url, headers=panel.HEADERS, timeout=10)
+        r = requests.get(url, headers=panel.HEADERS, timeout=10) if panel.robots_allows(rules, url) else None
     except requests.RequestException:
         return None
-    if r.status_code != 200 or '"collections"' not in r.text[:300]:
+    if r is not None and r.status_code == 200 and '"collections"' in r.text[:300]:
+        rx = GW_COLL_WIDE if WIDE else GW_COLL
+        hs = [c["handle"] for c in r.json().get("collections", []) if rx.search(c["handle"] + " " + c.get("title", ""))]
+        return hs or None
+    if not WIDE or not panel.robots_allows(rules, f"https://{host}/"):
         return None
-    hs = [c["handle"] for c in r.json().get("collections", []) if GW_COLL.search(c["handle"] + " " + c.get("title", ""))]
-    return hs or None
+    try:
+        h = requests.get(f"https://{host}/", headers=panel.HEADERS, timeout=10)
+    except requests.RequestException:
+        return None
+    for name, rx in OTHER_PLATFORMS.items():
+        if h.status_code == 200 and rx.search(h.text):
+            return ("other", name, bool(re.search(r"warhammer|citadel|games workshop", h.text, re.I)))
+    return None
 
 
 def qualify(host: str, handles: list[str], canon) -> dict:
@@ -107,13 +123,21 @@ def main():
     ap.add_argument("--countries", default="US,GB,CA")
     ap.add_argument("--all-ranges", action="store_true", help="include stockists without the Warhammer Pro range")
     ap.add_argument("--workers", type=int, default=6, help="parallel hosts in the cheap step-3 scan")
+    ap.add_argument("--wide", action="store_true",
+                    help="broader collection names (warhammer, games-workshop, paints…), skip already-discovered "
+                         "domains, and record CrystalCommerce / Lightspeed sites")
     args = ap.parse_args()
+    global WIDE
+    WIDE = args.wide
     countries = args.countries.split(",")
 
     stores = requests.get(SF_URL, headers=panel.HEADERS, timeout=120).json()
     pool = [s for s in stores if not s.get("isWarHammerStore") and s.get("countryCode") in countries
             and (args.all_ranges or str(s.get("stockRange", "")).endswith("_T150"))]
     existing = set(pd.read_csv(panel.CONFIG, dtype=str)["domain"].str.replace("www.", "", regex=False))
+    disc = ROOT / "data" / "indie_shopify_discovered.csv"
+    if args.wide and disc.exists():
+        existing |= set(pd.read_csv(disc, dtype=str)["domain"].str.replace("www.", "", regex=False))
 
     guesses = {}
     for s in pool:
@@ -126,11 +150,18 @@ def main():
                 guesses.setdefault(host, s)
     print(f"{len(pool)} stockists → {len(guesses)} candidate domains")
 
-    keep = {}
+    keep, others = {}, []
     with cf.ThreadPoolExecutor(args.workers) as ex:
         for host, hs in zip(guesses, ex.map(shopify_gw_collections, guesses)):
-            if hs:
+            if isinstance(hs, tuple):
+                sf = guesses[host]
+                others.append({"domain": host, "platform": hs[1], "mentions_gw": hs[2], "finder_name": sf["name"],
+                               "finder_city": sf.get("city", ""), "finder_country": sf["countryCode"]})
+            elif hs:
                 keep[host] = hs
+    if others:
+        pd.DataFrame(others).to_csv(OUT_OTHER, index=False)
+        print(f"{len(others)} CrystalCommerce / Lightspeed sites → {OUT_OTHER.relative_to(ROOT)}")
     print(f"{len(keep)} Shopify sites with GW paint collections; qualifying one at a time…")
 
     panel.DELAY_S, panel.MAX_PAGES = 1.2, 3
