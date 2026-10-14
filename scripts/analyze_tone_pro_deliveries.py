@@ -50,6 +50,8 @@ POTS_PER_RACK   = 150                            # 30 colours × 5 tones
 MIN_PAINTS      = 5                              # paints needed to test a store's pack
 STANDARD_SHARE  = 0.7                            # ≥70% of paints at one number → standard pack
 MIN_STORES      = 5                              # tested stores needed before any extrapolation
+EST_COLS = ["country", "pro_label_stores", "pack_basis", "pots_per_paint_low", "pots_per_paint_mid",
+            "pots_per_paint_high", "units_low", "units_mid", "units_high"]
 
 
 def observations() -> pd.DataFrame:
@@ -119,14 +121,14 @@ def pack_test(o: pd.DataFrame, rec: pd.DataFrame) -> pd.DataFrame:
 
 def units_estimate(pack: pd.DataFrame) -> pd.DataFrame:
     if pack.empty or not SF_COUNTRY.exists():
-        return pd.DataFrame()
+        return pd.DataFrame(columns=EST_COLS)
     sf = pd.read_csv(SF_COUNTRY, dtype=str, keep_default_na=False)
     sf = sf[sf["date"] == sf["date"].max()]
     sf["indie_pro_range"] = pd.to_numeric(sf["indie_pro_range"], errors="coerce").fillna(0).astype(int)
     tested = pack[pack["paints_observed"] >= MIN_PAINTS]
     if len(tested) < MIN_STORES:
         print(f"  units estimate: only {len(tested)} store(s) tested — need {MIN_STORES} before extrapolating")
-        return pd.DataFrame()
+        return pd.DataFrame(columns=EST_COLS)
     per_store = tested["median_units"]                     # pots per paint at each tested store
     allq = per_store.quantile([0.25, 0.5, 0.75]) if len(per_store) else None
     rows = []

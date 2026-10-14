@@ -2212,7 +2212,12 @@ REGIONS_SUMMARY_CSV = os.path.join(DATA_DIR, "gw_paint_stock_regions_summary.csv
 
 
 def _read_csv_or_empty(path: str) -> pd.DataFrame:
-    return pd.read_csv(path, keep_default_na=False) if os.path.exists(path) else pd.DataFrame()
+    if not os.path.exists(path):
+        return pd.DataFrame()
+    try:
+        return pd.read_csv(path, keep_default_na=False)
+    except pd.errors.EmptyDataError:
+        return pd.DataFrame()
 
 
 def build_launch_page() -> str:
