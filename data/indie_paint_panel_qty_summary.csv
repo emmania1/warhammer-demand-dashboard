@@ -13,3 +13,18 @@ date,store_id,country,line,paints,shelf_units,shelf_is_floor,on_order_units,rece
 2026-10-13,the_outpost,GB,Base,55,166,false,0,0,0,41
 2026-10-13,the_outpost,GB,Layer,90,222,false,0,0,0,58
 2026-10-13,the_outpost,GB,Tone Pro,146,0,false,754,0,0,0
+2026-10-14,battle_city_games,GB,Base,39,167,false,0,0,0,39
+2026-10-14,battle_city_games,GB,Layer,60,236,false,0,0,0,60
+2026-10-14,beanie_games,GB,Base,51,233,false,0,0,0,51
+2026-10-14,beanie_games,GB,Layer,85,410,true,0,0,1,85
+2026-10-14,element_games,GB,Base,47,458,true,0,0,0,47
+2026-10-14,element_games,GB,Layer,78,778,true,0,0,0,78
+2026-10-14,firestorm_games,GB,Base,55,644,false,0,0,2,53
+2026-10-14,firestorm_games,GB,Layer,92,939,false,0,0,1,84
+2026-10-14,firestorm_games,GB,Tone Pro,1,0,false,0,0,0,0
+2026-10-14,loaded_dice,GB,Base,50,768,false,0,0,1,50
+2026-10-14,loaded_dice,GB,Layer,82,1005,false,0,0,0,82
+2026-10-14,the_outpost,GB,Base,55,164,false,0,0,2,41
+2026-10-14,the_outpost,GB,Layer,90,222,false,0,0,0,58
+2026-10-14,the_outpost,GB,Tech Pro,2,0,false,2,0,0,0
+2026-10-14,the_outpost,GB,Tone Pro,146,0,false,749,10,10,0
