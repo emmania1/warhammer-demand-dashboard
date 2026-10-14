@@ -296,6 +296,7 @@ for wh, g in reg_all.groupby("warehouse"):
 (pd.concat(eps, ignore_index=True) if eps else pd.DataFrame()).to_csv(OUT_REG_EPISODES, index=False)
 
 cur = rs[rs["date"].astype(str) == today]
+cur = cur.astype({"skus": int, "oos": int, "preorder": int})
 pro = cur[cur["line"].isin(PRO_LINES)].groupby("warehouse")[["skus", "oos", "preorder"]].sum()
 print("\n  Pro line by warehouse (SKUs / OOS / pre-order):")
 for wh, r in pro.iterrows():

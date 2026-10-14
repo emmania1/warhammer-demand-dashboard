@@ -302,15 +302,6 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,armada_games,US,Layer,93,75,0,0,18,0,0,0
 2026-10-14,armada_games,US,Tech Pro,2,0,0,2,0,0,0,0
 2026-10-14,armada_games,US,Tone Pro,150,0,0,149,1,0,0,0
-2026-10-14,games_a_plunder,US,Base,56,53,53,0,3,56,185,0
-2026-10-14,games_a_plunder,US,Layer,93,92,92,0,1,93,254,0
-2026-10-14,jeux_az_games,CA,Base,56,55,55,0,1,56,110,0
-2026-10-14,jeux_az_games,CA,Layer,92,92,92,0,0,92,184,0
-2026-10-14,jeux_az_games,CA,Tone Pro,5,0,0,0,5,5,0,0
-2026-10-14,nutmeg_games,US,Base,54,32,32,0,22,54,232,0
-2026-10-14,nutmeg_games,US,Layer,93,74,74,0,19,93,434,0
-2026-10-14,pastime_sports_games,CA,Base,56,56,56,0,0,56,1032,0
-2026-10-14,pastime_sports_games,CA,Layer,93,93,93,0,0,93,1625,0
 2026-10-14,athena_games_ltd,GB,Base,55,48,0,0,7,0,0,0
 2026-10-14,athena_games_ltd,GB,Layer,93,73,0,0,20,0,0,0
 2026-10-14,athena_games_ltd,GB,Tech Pro,2,0,0,2,0,0,0,0
@@ -346,3 +337,12 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,undiscovered_realm,US,Layer,86,48,0,0,38,0,0,0
 2026-10-14,yard_s_games_ltd,GB,Base,56,56,0,0,0,0,0,0
 2026-10-14,yard_s_games_ltd,GB,Layer,87,87,0,0,0,0,0,0
+2026-10-14,games_a_plunder,US,Base,56,53,53,0,3,56,185,0
+2026-10-14,games_a_plunder,US,Layer,93,92,92,0,1,93,254,0
+2026-10-14,jeux_az_games,CA,Base,56,55,55,0,1,56,110,0
+2026-10-14,jeux_az_games,CA,Layer,92,92,92,0,0,92,184,0
+2026-10-14,jeux_az_games,CA,Tone Pro,5,0,0,0,5,5,0,0
+2026-10-14,nutmeg_games,US,Base,54,32,32,0,22,54,232,0
+2026-10-14,nutmeg_games,US,Layer,93,74,74,0,19,93,434,0
+2026-10-14,pastime_sports_games,CA,Base,56,56,56,0,0,56,1032,0
+2026-10-14,pastime_sports_games,CA,Layer,93,93,93,0,0,93,1625,0

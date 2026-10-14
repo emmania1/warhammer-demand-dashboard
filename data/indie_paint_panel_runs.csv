@@ -115,10 +115,6 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,boutique_awesome,ok,4,254,118,44,74,0,0
 2026-10-14,toy_snowman,ok,3,367,105,34,71,0,0
 2026-10-14,armada_games,ok,4,306,300,55,93,150,2
-2026-10-14,games_a_plunder,ok,5,390,149,56,93,0,0
-2026-10-14,nutmeg_games,ok,4,341,147,54,93,0,0
-2026-10-14,jeux_az_games,ok,5,404,153,56,92,5,0
-2026-10-14,pastime_sports_games,ok,4,461,149,56,93,0,0
 2026-10-14,brimstone_games,ok,4,959,148,55,93,0,0
 2026-10-14,event_horizon_hobbies_ca,ok,8,2990,148,55,93,0,0
 2026-10-14,athena_games_ltd,ok,16,3251,300,55,93,150,2
@@ -140,3 +136,7 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,greg_s_games,ok,3,37,0,0,0,0,0
 2026-10-14,phoenix_fire_games,ok,7,500,0,0,0,0,0
 2026-10-14,full_moon_games,ok,5,14,0,0,0,0,0
+2026-10-14,games_a_plunder,ok,5,390,149,56,93,0,0
+2026-10-14,nutmeg_games,ok,4,341,147,54,93,0,0
+2026-10-14,jeux_az_games,ok,5,404,153,56,92,5,0
+2026-10-14,pastime_sports_games,ok,4,461,149,56,93,0,0

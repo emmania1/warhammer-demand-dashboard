@@ -2,19 +2,19 @@ store_id,store_name,country,domain,platform,targets,mode,weekday,active,verified
 armada_games,Armada Games,US,armadagames.com,shopify,gw-cp-citadel-paints-base|gw-cp-citadel-paints-layer|gw-cp-citadel-paints-warhammer-tone-pro,all,0,true,2026-10-14,embedded count or single-paint visible text
 the_haunted_game_cafe,The Haunted Game Cafe,US,hauntedgamecafe.com,shopify,citadel,all,1,true,2026-10-14,embedded count or single-paint visible text
 gamers_grove,Gamers Grove,US,gamersgrove.com,shopify,citadel-paints,all,2,true,2026-10-14,embedded count or single-paint visible text
-mox_boarding_house,Mox Boarding House,US,www.moxboardinghouse.com,shopify,paint-and-supplies,sample,3,true,2026-10-14,embedded count or single-paint visible text
+mox_boarding_house,Mox Boarding House,US,www.moxboardinghouse.com,shopify,paint-and-supplies,sample,3,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
 grognard_games,Grognard Games,US,grognardgames.com,shopify,games-workshop-paint,sample,4,true,2026-10-14,embedded count or single-paint visible text
 deals_n_dragons,Deals N Dragons,US,dealsndragons.com,shopify,paint|warhammer,sample,5,true,2026-10-14,embedded count or single-paint visible text
-gear_gaming_bham,Gear Gaming Bham,US,geargaming.com,shopify,paints-and-miniature-accessories,sample,6,true,2026-10-14,embedded count or single-paint visible text
-undiscovered_realm,Undiscovered Realm,US,undiscoveredrealm.com,shopify,warhammer|warhammer-40k|warhammer-age-of-sigmar|warhammer-all,sample,0,true,2026-10-14,embedded count or single-paint visible text
+gear_gaming_bham,Gear Gaming Bham,US,geargaming.com,shopify,paints-and-miniature-accessories,sample,6,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
+undiscovered_realm,Undiscovered Realm,US,undiscoveredrealm.com,shopify,warhammer|warhammer-40k|warhammer-age-of-sigmar|warhammer-all,sample,0,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
 collector_store_llc,Collector Store LLC,US,collectorstore.com,shopify,games-warhammer|paints-and-crafts,sample,1,true,2026-10-14,embedded count or single-paint visible text
 titan_games,Titan Games,US,titangames.com,lightspeed,https://titangames.com/search/citadel/|https://titangames.com/search/tone-pro/,sample,2,true,2026-10-14,product JSON stock.level
 kingslayer_games,Kingslayer Games,US,kingslayergames.com,lightspeed,https://kingslayergames.com/search/citadel/|https://kingslayergames.com/search/tone-pro/,sample,3,true,2026-10-14,product JSON stock.level
 discount_games_inc,Discount Games Inc,US,www.discountgamesinc.com,lightspeed,https://www.discountgamesinc.com/paints-hobby-supplies/paint-pigment-ink/citadel/,sample,4,true,2026-10-14,product JSON stock.level
 travelling_man_uk,Travelling Man UK,GB,travellingman.com,shopify,citadel-tools|hobby-supply-paint-range-warhammer-colour,sample,5,true,2026-10-14,embedded count or single-paint visible text
 draco_gaming,Draco Gaming,GB,dracogaming.co.uk,shopify,citadel,sample,6,true,2026-10-14,embedded count or single-paint visible text
-bulwark_games_hobby_gaming_s,Bulwark Games | Hobby & Gaming Store | Wirral,GB,bulwarkgames.co.uk,shopify,citadel-paint,sample,0,true,2026-10-14,embedded count or single-paint visible text
-leodis_games,Leodis Games,GB,leodisgames.com,shopify,citadel-base-paints|citadel-layer-paints,sample,1,true,2026-10-14,embedded count or single-paint visible text
+bulwark_games_hobby_gaming_s,Bulwark Games | Hobby & Gaming Store | Wirral,GB,bulwarkgames.co.uk,shopify,citadel-paint,sample,0,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
+leodis_games,Leodis Games,GB,leodisgames.com,shopify,citadel-base-paints|citadel-layer-paints,sample,1,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
 athena_games_ltd,Athena Games Ltd,GB,athenagames.com,shopify,army-painter-speed-paints|games-workshop|games-workshop-new-releases|paint,sample,2,true,2026-10-14,embedded count or single-paint visible text
 401_games,401 Games,CA,store.401games.ca,shopify,citadel-paints-base|citadel-paints-layer|games-workshop-citadel-colour-paints-tone-pro,sample,3,true,2026-10-14,embedded count or single-paint visible text
 taps_games,Taps Games,CA,tapsgames.com,shopify,citadel|games-workshop-citadel-paint,sample,4,true,2026-10-14,embedded count or single-paint visible text
@@ -23,8 +23,16 @@ boutique_fdb,Boutique FDB,CA,boutiquefdb.com,shopify,citadel,sample,6,true,2026-
 tistaminis,Tistaminis,CA,tistaminis.com,shopify,games-workshop-citadel-base-paints|games-workshop-citadel-layer-paints,sample,0,true,2026-10-14,embedded count or single-paint visible text
 black_knight_games,Black Knight Games,CA,blackknightgames.ca,shopify,citadel-paint,sample,1,true,2026-10-14,embedded count or single-paint visible text
 obsidian_games,Obsidian Games,CA,obsidiangames.ca,shopify,gw-citadel-citadel-base|gw-citadel-citadel-base-1|gw-citadel-citadel-layer,sample,2,true,2026-10-14,embedded count or single-paint visible text
-tabletop_renaissance_games_h,Tabletop Renaissance Games & Hobbies,CA,tabletoprenaissance.ca,shopify,citadel-colour,sample,3,true,2026-10-14,embedded count or single-paint visible text
+tabletop_renaissance_games_h,Tabletop Renaissance Games & Hobbies,CA,tabletoprenaissance.ca,shopify,citadel-colour,sample,3,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
 bd_cosmos,BD Cosmos,CA,bdcosmos.com,shopify,citadel-paint,sample,4,true,2026-10-14,embedded count or single-paint visible text
 wandering_adventures,Wandering Adventures,CA,wanderingadventures.ca,shopify,citadel,sample,5,true,2026-10-14,embedded count or single-paint visible text
-brimstone_games,Brimstone Games ,CA,brimstonegames.ca,shopify,games-workshop,sample,6,true,2026-10-14,embedded count or single-paint visible text
+brimstone_games,Brimstone Games ,CA,brimstonegames.ca,shopify,games-workshop,sample,6,false,2026-10-14,embedded count or single-paint visible text; inactive 2026-10-14: count only matched a generic 'quantity' label (not verifiable as stock)
 event_horizon_hobbies_ca,Event Horizon Hobbies CA,CA,eventhorizonhobbies.ca,shopify,hobby-paint|texture-paint|warhammer-40k|warhammer-age-of-sigmar,sample,0,true,2026-10-14,embedded count or single-paint visible text
+level_one_game_shop,Level One Game Shop,US,levelonegameshop.com,shopify,games-workshop-citadel-10th-edition-celebration-sale-2023|holiday-25-citadel-paints-sale,sample,3,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+lionheart_hobby,LionHeart Hobby ,US,lionhearthobby.com,shopify,paint-brand-citadel|warhammer-paints,sample,6,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+the_arcanum_sanctorum,The Arcanum Sanctorum,US,arcanumsanctorum.com,shopify,citadel|citadel-colour,sample,0,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+gaming_giant,Gaming Giant,US,gaminggiant.com,shopify,citadel-and-foundation-paints|citadel-contrast-paints,sample,1,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+accidentally_cool_games,Accidentally Cool Games,US,accidentallycoolgames.com,shopify,citadel-layer-paints,sample,3,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+hw_wargames,HW Wargames,US,hwwargames.com,shopify,layer-paints-copy|base-paints-copy,sample,6,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+highlander_games,Highlander Games,GB,highlandergames.co.uk,shopify,citadel-paint,sample,0,true,2026-10-14,embedded count or single-paint visible text (panel reserve)
+cosmic_collectables_uk,Cosmic Collectables UK,GB,cosmiccollectables.co.uk,shopify,citadel-accessories-equipment,sample,1,true,2026-10-14,embedded count or single-paint visible text (panel reserve)

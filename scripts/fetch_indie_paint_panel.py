@@ -258,7 +258,10 @@ def adapt_shopify(f: Fetcher, cfg) -> list[dict]:
     return items
 
 
-QTY_NEAR_ID = re.compile(r'(?i)(?:inventory_?quantity|inventoryQuantity|qty|quantity|stock|inventory)["\']?\s*[:=]\s*["\']?(-?\d+)')
+# Explicit stock labels only. A bare "quantity" is NOT stock (Shopify's "quantity_rule":{"min":1}
+# and order-box defaults look like quantities) — caught 2026-10-14 when Athena read 1 for everything.
+QTY_NEAR_ID = re.compile(r'(?i)(?:inventory_?quantity|inventoryQuantity|inventory_?level|stock_?level|stock_?count|'
+                         r'data-stock|data-inventory|data-qty|"stock"|"inventory")["\']?\s*[:=]\s*["\']?(-?\d+)')
 
 
 def qty_per_variant(page: str, ids: set[str]) -> dict[str, int]:
