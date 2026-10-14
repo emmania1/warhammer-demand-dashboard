@@ -64,7 +64,6 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,the_outpost,ok,14,302,300,55,93,150,2
 2026-10-14,discount_games_inc,ok,5,377,148,55,93,0,0
 2026-10-14,tabletop_heaven,ok,4,544,298,54,92,150,2
-2026-10-14,armada_games,ok,4,306,300,55,93,150,2
 2026-10-14,mox_boarding_house,ok,3,278,148,55,93,0,0
 2026-10-14,games_a_plunder,ok,3,390,149,56,93,0,0
 2026-10-14,gamers_grove,ok,3,380,149,56,93,0,0
@@ -119,3 +118,4 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,tabletop_renaissance_games_h,ok,2,243,122,43,79,0,0
 2026-10-14,boutique_awesome,ok,4,254,118,44,74,0,0
 2026-10-14,toy_snowman,ok,3,367,105,34,71,0,0
+2026-10-14,armada_games,ok,4,306,300,55,93,150,2

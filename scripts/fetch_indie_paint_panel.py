@@ -248,6 +248,7 @@ def adapt_shopify(f: Fetcher, cfg) -> list[dict]:
                         "sku": v.get("sku") or "",
                         "url": f"{f.base}/products/{p['handle']}",
                         "handle": p["handle"],
+                        "variant_id": str(v["id"]),
                     })
             if len(prods) < 250:
                 break
@@ -503,7 +504,8 @@ def main():
                          "available_online": str(it["status"] in ("in_stock", "available")).lower(),
                          "qty": it["qty"], "qty_is_floor": it["qty_floor"], "on_order": it["on_order"],
                          "price": it["price"], "currency": s["currency"], "listed_at": it["listed_at"],
-                         "store_sku": it.get("sku", ""), "store_title": it["title"], "url": it["url"]})
+                         "store_sku": it.get("sku", ""), "store_title": it["title"], "url": it["url"],
+                         "variant_id": it.get("variant_id", "")})
         n_by_line = {l: sum(1 for v in matched.values() if v["line"] == l) for l in LINES}
         runs.append({"date": today, "store_id": s["store_id"], "status": status, "requests": f.n,
                      "items_seen": len(items), "matched": len(matched),

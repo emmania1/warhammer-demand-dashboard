@@ -2203,6 +2203,7 @@ PANEL_SUMMARY_CSV   = os.path.join(DATA_DIR, "indie_paint_panel_summary.csv")
 PANEL_RUNS_CSV      = os.path.join(DATA_DIR, "indie_paint_panel_runs.csv")
 PANEL_CONFIG_CSV    = os.path.join(CONFIG_DIR, "indie_paint_panel.csv")
 PANEL_QTY_SUMMARY_CSV = os.path.join(DATA_DIR, "indie_paint_panel_qty_summary.csv")
+US_TP_QTY_CSV       = os.path.join(DATA_DIR, "us_tone_pro_qty_weekly.csv")
 
 
 def _read_csv_or_empty(path: str) -> pd.DataFrame:
@@ -2438,6 +2439,24 @@ def build_launch_page() -> str:
                 qd_rows += (f"<tr><td>{d}</td><td class='num'>{int(r.shelf_units):,}</td><td class='num'>{int(r.on_order_units):,}</td>"
                             f"<td class='num'>{int(r.received_est):,}</td><td class='num'>{int(r.outflow_est):,}</td></tr>")
 
+        # US weekly Tone Pro unit counts (product pages, 3 stores)
+        us_html = ""
+        usq = _read_csv_or_empty(US_TP_QTY_CSV)
+        if not usq.empty:
+            usq["q"] = pd.to_numeric(usq["qty"], errors="coerce")
+            us_rows = ""
+            for (d, sid), g in sorted(usq.groupby(["date", "store_id"]), key=lambda x: (x[0][0], x[0][1]), reverse=True)[:12]:
+                ok = g["q"].dropna()
+                us_rows += (f"<tr><td>{d}</td><td>{escape(names.get(sid, sid))}</td><td class='num'>{len(ok)}/{len(g)}</td>"
+                            f"<td class='num'>{int(ok.clip(lower=0).sum()):,}</td><td class='num'>{int((ok > 0).sum())}</td>"
+                            f"<td class='num'>{int(-ok[ok < 0].sum()):,}</td></tr>")
+            us_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format("US Tone Pro unit counts — weekly, 3 stores")}'
+                       f'<table><thead><tr><th>Date</th><th>Store</th><th class="num">Paints read</th><th class="num">Units on hand</th>'
+                       f'<th class="num">Paints with stock</th><th class="num">Units ordered beyond stock</th></tr></thead><tbody>{us_rows}</tbody></table>'
+                       f'<p class="data-note">Read weekly from each store\'s Tone Pro product pages (the inventory figure their page embeds for that product). '
+                       f'Before 24 Oct these are pre-order products, so the figure is likely the store\'s remaining pre-order allocation, not shelf stock. '
+                       f'Negative figures = orders taken beyond stock. Three stores only — illustrative, not a US estimate.</p></div>')
+
         # Store list
         st_rows = ""
         for sid, g in sorted(cur.groupby("store_id"), key=lambda x: (x[1]["country"].iloc[0], names.get(x[0], x[0]))):
@@ -2500,6 +2519,7 @@ def build_launch_page() -> str:
     <strong>Out</strong> = received minus the change in shelf stock (or, where on-order isn't published, the fall in shelf stock — a floor,
     since a restock on the same day hides outflow). "Out" includes sales, pre-order fulfilment and stock corrections; it is an estimate of
     units leaving the shelf, not a sales figure.</p></div>''' if q_rows else ""}
+  {us_html}
   <div class="table-card" style="margin-bottom:18px;">{h3.format("Panel stores")}
     <table><thead><tr><th>Store</th><th>Country</th><th class="num">Base/Layer listed</th><th class="num">Available</th>
     <th class="num">Tone Pro listed</th><th class="num">Available</th></tr></thead><tbody>{st_rows}</tbody></table>

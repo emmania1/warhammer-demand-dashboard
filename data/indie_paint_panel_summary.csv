@@ -169,10 +169,6 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,abyss,CA,Tone Pro,150,0,0,150,0,0,0,0
 2026-10-14,always_games,CA,Base,55,52,0,0,3,0,0,0
 2026-10-14,always_games,CA,Layer,91,91,0,0,0,0,0,0
-2026-10-14,armada_games,US,Base,55,45,0,0,10,0,0,0
-2026-10-14,armada_games,US,Layer,93,75,0,0,18,0,0,0
-2026-10-14,armada_games,US,Tech Pro,2,0,0,2,0,0,0,0
-2026-10-14,armada_games,US,Tone Pro,150,0,0,149,1,0,0,0
 2026-10-14,ashdown_gaming,GB,Base,51,51,0,0,0,0,0,0
 2026-10-14,ashdown_gaming,GB,Layer,86,81,0,0,5,0,0,0
 2026-10-14,ashdown_gaming,GB,Tech Pro,2,2,0,0,0,0,0,0
@@ -311,3 +307,7 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,wandering_adventures,CA,Layer,87,87,0,0,0,0,0,0
 2026-10-14,war_games_usa,US,Base,55,50,0,0,5,0,0,0
 2026-10-14,war_games_usa,US,Layer,92,78,0,0,14,0,0,0
+2026-10-14,armada_games,US,Base,55,45,0,0,10,0,0,0
+2026-10-14,armada_games,US,Layer,93,75,0,0,18,0,0,0
+2026-10-14,armada_games,US,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-14,armada_games,US,Tone Pro,150,0,0,149,1,0,0,0
