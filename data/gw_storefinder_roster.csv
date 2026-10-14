@@ -1322,6 +1322,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:kitsumodelshobbyshop@4.902,114.925",indie,240419328421327981044C,,Kitsu Models Hobby Shop,Bandar Seri Begawan,BM,BN,4.901873,114.92541,P360_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:mysticminis@4.608,114.33",indie,240419327721327981044C,,Mystic Minis,BRUNEI DARUSSALAM,BE,BN,4.608154,114.329769,P360_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:ayaxwargames@-16.54,-68.077",indie,250428332241327981044C,,Ayax Wargames,La Paz,L,BO,-16.540358,-68.077447,,false,2025-07-07,2026-04-05,,false
+"in:ayaxwargames@-16.541,-68.078",indie,ZLAA04/1,,Ayax Wargames,La Paz,L,BO,-16.540548,-68.077514,,false,2026-10-14,2026-10-14,,true
 "in:laguaridadelgoblin@-16.494,-68.121",indie,250428332261327981044C,,LA GUARIDA DEL GOBLIN,LA PAZ,Bolivia,BO,-16.494359,-68.121209,P210,false,2025-11-02,2026-10-14,,true
 "in:lasttrick@-17.394,-66.159",indie,250428332221327981044C,,Last Trick,Cochabamba,C,BO,-17.393985,-66.158575,,false,2025-07-07,2025-08-07,,false
 "in:lasttrick@-17.364,-66.174",indie,250428332221327981044C,,Last Trick,Cochabamba,C,BO,-17.363613,-66.174361,BSF,false,2026-04-05,2026-10-14,,true
@@ -3375,6 +3376,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:fantasiapelitturku@60.45,22.261",indie,C0001759,,FANTASIAPELIT TURKU,Turku,19,FI,60.450109,22.260869,P360_T150,false,2025-08-07,2026-10-14,2026-10-13,true
 "in:ikamaanpelikrypta@61.769,23.07",indie,C0007013,,Ikamaan Pelikrypta,Ikaalinen,11,FI,61.769495,23.070259,,false,2025-06-14,2026-01-10,,false
 "in:infinityprintstcg@62.24,25.736",indie,C0010458,,Infinity Prints TCG,JYVASKYLA,08,FI,62.239659,25.735966,BSF,false,2026-10-13,2026-10-14,,true
+"in:midaxab@60.099,19.941",indie,C0010543,,MIDAX AB,MARIEHAMN,,FI,60.098765,19.941276,BSF,false,2026-10-14,2026-10-14,,true
 "in:ohmygame@60.267,24.852",indie,C0001895,,OH MY GAME,Vantaa,18,FI,60.266695,24.852416,P210_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:oneeyetattoo@60.185,24.941",indie,C0010525,,One Eye Tattoo,HELSINKI,18,FI,60.184724,24.94118,BSF,false,2026-10-13,2026-10-14,,true
 "in:pelikeidas@62.796,22.806",indie,C0001915,,PELIKEIDAS,Seinajoki,03,FI,62.79597,22.80614,,false,2025-06-14,2025-07-07,,false
@@ -3564,7 +3566,8 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:ddaledesjeux@48.938,2.158",indie,C0007404,,D�dale des Jeux,Sartrouville,78,FR,48.938163,2.158373,P210,false,2025-08-07,2026-10-14,,true
 "in:ereelmontargis@47.972,2.722",indie,C0006340,,E reel Montargis,Villemandeur,45,FR,47.972161,2.722388,,false,2025-06-14,2026-04-05,,false
 "in:eleclercconceptjouetscaudry@50.126,3.424",indie,C0009124,,E-Leclerc Concept Jouets Caudry,Caudry,,FR,50.126267,3.423703,,false,2025-11-02,2026-04-05,,false
-"in:eleclercconceptjouetscaudry@50.126,3.423",indie,C0009124,,E-Leclerc Concept Jouets Caudry,CAUDRY,,FR,50.126377,3.423051,BSF,false,2026-10-14,2026-10-14,,true
+"in:eleclercconceptjouetscaudry@50.126,3.423",indie,C0009124,,E-Leclerc Concept Jouets Caudry,CAUDRY,,FR,50.126377,3.423051,BSF,false,2026-10-14,2026-10-14,,false
+"in:eleclercconceptjouetscaudry@50.129,3.429",indie,C0009124,,E-Leclerc Concept Jouets Caudry,CAUDRY,,FR,50.128688,3.429231,BSF,false,2026-10-14,2026-10-14,,true
 "in:eretroshop@48.867,7.682",indie,C0008323,,E-Retroshop,Mertzwiller,67,FR,48.866602,7.681955,,false,2025-06-14,2026-04-05,,false
 "in:ecardstorexenjoy@49.615,3.219",indie,C0008926,,E-cardstore X Enjoy,Chauny,02,FR,49.614609,3.218924,,false,2025-08-07,2025-09-13,,false
 "in:ereelthonon@46.349,6.44",indie,C0008163,,E-reel Thonon,Anthy sur L�man,74,FR,46.348774,6.439907,BSF,false,2025-06-14,2026-10-14,,true
@@ -3626,7 +3629,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:espaceculturelleclercaurillac@44.915,2.441",indie,C0000487,,ESPACE CULTUREL LECLERC AURILLAC,Aurillac,15,FR,44.915167,2.441321,P210,false,2025-06-14,2026-10-14,,true
 "in:espaceculturelleclercchateaugay@46.366,2.564",indie,C0005290,,ESPACE CULTUREL LECLERC CHATEAUGAY,DOMERAT,03,FR,46.366264,2.564069,P210,false,2025-06-14,2026-10-14,,true
 "in:espaceculturelleclercchecy@47.91,2.048",indie,C0005408,,ESPACE CULTUREL LECLERC CHECY,CHECY,,FR,47.909962,2.047944,,false,2025-09-13,2026-01-10,,false
-"in:espaceculturelleclercclisson@47.098,-1.28",indie,C0010603,,ESPACE CULTUREL LECLERC CLISSON,CLISSON,44,FR,47.097557,-1.280473,BSF,false,2026-10-14,2026-10-14,,true
+"in:espaceculturelleclercclisson@47.098,-1.28",indie,C0010603,,ESPACE CULTUREL LECLERC CLISSON,CLISSON,44,FR,47.097662,-1.280316,BSF,false,2026-10-14,2026-10-14,,true
 "in:espaceculturelleclercguerande@47.327,-2.412",indie,C0005122,,ESPACE CULTUREL LECLERC GUERANDE,GUERANDE,44,FR,47.327387,-2.411986,P150,false,2025-06-14,2026-10-14,,true
 "in:espaceculturelleclerclibourne@44.931,-0.241",indie,C0004623,,ESPACE CULTUREL LECLERC LIBOURNE,LIBOURNE,33,FR,44.93052,-0.241078,BSF,false,2025-06-14,2026-10-14,,true
 "in:espaceculturelleclerclibourne@44.93,-0.241",indie,C0004623,,ESPACE CULTUREL LECLERC LIBOURNE,LIBOURNE,33,FR,44.930396,-0.241159,,false,2025-08-07,2026-04-05,,false
@@ -4250,7 +4253,8 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:almartring@51.794,-0.662",indie,C0005355,,Almar Tring,Tring,HRT,GB,51.79351,-0.661969,BSF,false,2026-10-13,2026-10-14,,true
 "in:alphagames@52.319,0.91",indie,C0002051,,Alpha Games,BURY ST EDMONDS,SFK,GB,52.319207,0.909848,P360_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:angleentertainment@52.601,-0.264",indie,C0009329,,Angle Entertainment,Peterborough,PTE,GB,52.60072,-0.264218,P360_T150,false,2025-12-01,2026-10-14,2026-10-13,true
-"in:animelegends@53.158,-1.19",indie,C0010680,,Anime Legends,MANSFIELD WOODHOUSE,NTT,GB,53.158081,-1.189574,BSF,false,2026-10-14,2026-10-14,,true
+"in:animelegends@53.158,-1.19",indie,C0010680,,Anime Legends,MANSFIELD WOODHOUSE,NTT,GB,53.158081,-1.189574,BSF,false,2026-10-14,2026-10-14,,false
+"in:animelegends@53.158,-1.189",indie,C0010680,,Anime Legends,MANSFIELD WOODHOUSE,NTT,GB,53.157897,-1.189445,BSF,false,2026-10-14,2026-10-14,,true
 "in:anotherchapter@50.397,-3.513",indie,C0005586,,Another Chapter,Brixham,TOB,GB,50.396941,-3.513251,,false,2025-06-14,2026-01-10,,false
 "in:antiquesallsortspaisleytoymodelstore@55.845,-4.426",indie,C0010357,,Antiques & Allsorts Paisley Toy Model Store,PAISLEY,RFW,GB,55.845122,-4.42551,BSF,false,2026-10-13,2026-10-14,,true
 "in:applebees@52.928,-1.217",indie,C0009220,,Applebee's,Beeston,NTT,GB,52.928287,-1.217249,,false,2025-11-02,2026-04-05,,false
@@ -4495,7 +4499,8 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:evestoyshop@51.883,-3.993",indie,C0007087,,Eve's Toy Shop,Llandeilo,CMN,GB,51.882549,-3.993301,,false,2025-06-14,2026-04-05,,false
 "in:everythingpopculture@50.387,-4.163",indie,C0010322,,Everything Pop Culture,PLYMOUTH,PLY,GB,50.387083,-4.163349,BSF,false,2026-10-13,2026-10-14,,true
 "in:evolutiongames@53.721,-1.858",indie,C0009183,,Evolution Games,Halifax,CLD,GB,53.721283,-1.858136,P360_T150,false,2025-11-02,2026-10-14,2026-10-13,true
-"in:evolutiontradingcards@53.541,-2.623",indie,C0010714,,Evolution Trading Cards,WIGAN,WGN,GB,53.541302,-2.623348,BSF,false,2026-10-14,2026-10-14,,true
+"in:evolutiontradingcards@53.541,-2.623",indie,C0010714,,Evolution Trading Cards,WIGAN,WGN,GB,53.541302,-2.623348,BSF,false,2026-10-14,2026-10-14,,false
+"in:evolutiontradingcards@53.541,-2.624",indie,C0010714,,Evolution Trading Cards,WIGAN,WGN,GB,53.540708,-2.623871,BSF,false,2026-10-14,2026-10-14,,true
 "in:excaliburgaming@51.018,-3.105",indie,C0003639,,Excalibur Gaming,Taunton,SOM,GB,51.018468,-3.105458,,false,2025-06-14,2025-11-02,,false
 "in:excaliburgaming@51.018,-3.106",indie,C0003639,,Excalibur Gaming,Taunton,SOM,GB,51.018484,-3.105536,,false,2025-12-01,2026-04-05,,false
 "in:fanboythreeltd@53.482,-2.233",indie,C0002187,,FANBOY THREE LTD,MANCHESTER,MAN,GB,53.482297,-2.232851,P210_T150,false,2025-06-14,2026-10-14,2026-10-13,true
@@ -4963,7 +4968,8 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:moonstoyland@52.243,0.406",indie,C0002521,,MOONS TOYLAND,NEWMARKET,SFK,GB,52.243247,0.405731,,false,2025-06-14,2026-01-10,,false
 "in:mountainashcrafts@52.528,-2.249",indie,C0010652,,MOUNTAIN ASH CRAFTS,Stourbridge,Staffordshire,GB,52.528206,-2.248963,,false,2026-10-13,2026-10-14,,true
 "in:myrepairuk@53.295,-3.726",indie,C0008125,,MY REPAIR UK,COLWYN BAY,CWY,GB,53.295127,-3.725763,BSF,false,2025-06-14,2026-10-14,,true
-"in:mysticgames@51.785,-1.484",indie,C0002381,,MYSTIC GAMES,WHITNTEY,,GB,51.784973,-1.484439,P150_T150,false,2026-10-14,2026-10-14,2026-10-14,true
+"in:mysticgames@51.785,-1.484",indie,C0002381,,MYSTIC GAMES,WHITNTEY,,GB,51.784973,-1.484439,P150_T150,false,2026-10-14,2026-10-14,2026-10-14,false
+"in:mysticgames@51.785,-1.485",indie,C0002381,,MYSTIC GAMES,WHITNTEY,,GB,51.784951,-1.484862,P150_T150,false,2026-10-14,2026-10-14,2026-10-14,true
 "in:madebyjudith@53.097,-1.388",indie,C0005424,,Made By Judith,Alfreton,DBY,GB,53.096708,-1.388083,BSF,false,2025-06-14,2026-10-14,,true
 "in:madebybaylissandco@51.069,0.688",indie,C0008381,,Made by Bayliss and Co,Tenterden,KEN,GB,51.068511,0.688497,,false,2025-06-14,2025-12-01,,false
 "in:magazineheaven@52.3,-0.626",indie,C0002986,,Magazine Heaven,Rushden,NTH,GB,52.300096,-0.625723,P210_T150,false,2025-06-14,2026-10-14,2026-10-13,true
@@ -5660,6 +5666,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:animeproyuenlong@22.442,114.032",indie,HK.C0000068,,Anime Pro - Yuen Long,Hong Kong,HK,HK,22.441644,114.031913,,false,2025-07-07,2025-12-01,,false
 "in:animeprokwuntong@22.316,114.233",indie,HK.C0000119,,Anime-Pro - Kwun Tong,Hong Kong,HK,HK,22.315698,114.233106,,false,2025-07-07,2025-12-01,,false
 "in:bookcastle@22.454,114.192",indie,260614336631327981044C,,BOOK CASTLE,"TAI PO IND EST, NEW TERRITORIES",HK,HK,22.454424,114.192123,BSF,false,2026-10-13,2026-10-14,,true
+"in:ballkeimacau@22.319,114.169",indie,HK.C0000400,,Ball Kei Macau,Areia Preta,Macau,HK,22.319304,114.169361,,false,2026-10-14,2026-10-14,,true
 "in:battledicez@22.316,114.171",indie,210206315751327981044C,,Battledicez,Sai Yeung Choi Street South,HK,HK,22.315899,114.170534,P210_T150,false,2025-07-07,2026-10-14,2026-10-13,true
 "in:bigesons@22.314,114.217",indie,HK.C0000095,,Big E & Sons,Hong Kong,HK,HK,22.314388,114.217293,P210,false,2026-10-13,2026-10-14,,true
 "in:cardertoysnplace@22.337,114.198",indie,260523336521327981044C,,CARDER TOYSNPLACE,"SAN PO KONG, KOWLOON",HK,HK,22.337019,114.197785,BSF,false,2026-10-13,2026-10-14,,true
@@ -5668,10 +5675,12 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:cardsvillage@22.338,114.147",indie,260421336251327981044C,,Card's Village,Hong Kong,HK,HK,22.338233,114.146548,P150_T150,false,2026-10-13,2026-10-14,2026-10-13,true
 "in:dmz@22.314,114.217",indie,HK.C0000095,,DMZ,Hong Kong,HK,HK,22.314409,114.21727,,false,2025-07-07,2026-04-05,,false
 "in:dmz@22.316,114.217",indie,HK.C0000229,,DMZ,Ngau Tau Kok,HK,HK,22.315548,114.216921,P210_T150,false,2025-07-07,2026-10-14,2026-10-13,true
+"in:dudusaemon@22.319,114.169",indie,HK.C0000419,,Du Du Saemon,Macau Peninsula,Macau,HK,22.319304,114.169361,,false,2026-10-14,2026-10-14,,true
 "in:figuremakerstudio@22.365,114.116",indie,HK.C0000144,,Figure Maker Studio,Hong Kong,HK,HK,22.36501,114.116279,P210,false,2025-07-07,2026-10-14,,true
 "in:francisartisticstudio@22.309,114.189",indie,180127262261327981044C,,Francis Artistic Studio,Hung Hom,HK,HK,22.308521,114.188848,BSF,false,2025-07-07,2026-10-14,,true
 "in:funatelier@22.31,114.222",indie,HK.C0000009,,Fun Atelier,Hong Kong,HK,HK,22.309993,114.222364,P360_T150,false,2025-07-07,2026-10-14,2026-10-13,true
 "in:goodgamersclublimited@22.338,114.147",indie,251003334771327981044C,,Good Gamers Club Limited,Hong Kong,HK,HK,22.337697,114.147323,BSF,false,2026-04-05,2026-10-14,,true
+"in:gundamutcgcardshop@22.315,114.227",indie,HK.C0000414,,Gundamu TCG Card Shop,Macau Peninsula,HK,HK,22.314862,114.227409,,false,2026-10-14,2026-10-14,,true
 "in:headquarter@22.308,114.224",indie,HK.C0000164,,Head Quarter,Hong Kong,HK,HK,22.308402,114.223702,P210,false,2025-07-07,2026-10-14,,true
 "in:hobbysquaremodelcompany@22.305,114.172",indie,250228331781327981044C,,Hobby Square Model Company,Mong Kok,HK,HK,22.304822,114.171942,P360_T150,false,2025-11-02,2026-10-14,2026-10-13,true
 "in:islandboardgame@22.363,114.134",indie,220518320521327981044C,,Island Board Game,Kwai Chung,HK,HK,22.362679,114.133744,BSF,false,2025-11-02,2026-10-14,,true
@@ -5873,7 +5882,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:baijistoredisorrentinog@40.837,14.347",indie,C0000422,,Bai-Ji Store di Sorrentino G.,San Giorgio a Cremano,NA,IT,40.836511,14.347439,P210,false,2025-06-14,2026-10-14,,true
 "in:bertasilauro@44.926,11.581",indie,C0000427,,Bertasi Lauro,Occhiobello (Ro),RO,IT,44.926443,11.581366,P210,false,2025-06-14,2026-10-14,,true
 "in:bertoncellisas@44.53,11.025",indie,C0010562,,Bertoncelli S.A.S.,SPILAMBERTO,MO,IT,44.53041,11.02496,BSF,false,2026-10-13,2026-10-14,,true
-"in:betpointcomputermaint@45.635,11.751",indie,C0010735,,Bet Point Computer Maint,FONTANIVA,PD,IT,45.635378,11.750722,BSF,false,2026-10-14,2026-10-14,,true
+"in:betpointcomputermaint@45.635,11.751",indie,C0010735,,Bet Point Computer Maint,FONTANIVA,PD,IT,45.635382,11.75071,BSF,false,2026-10-14,2026-10-14,,true
 "in:bigmanoocomicsgames@45.051,7.646",indie,C0007422,,BigManoo Comics & Games,Torino,TO,IT,45.050858,7.645651,BSF,false,2025-06-14,2026-10-14,,true
 "in:blacksails@41.691,12.78",indie,C0008758,,Black Sails,Velletri,RM,IT,41.690825,12.779805,BSF,false,2025-06-14,2026-10-14,,true
 "in:boardgameuniverse@41.864,12.468",indie,C0009342,,Boardgame Universe,Roma,RM,IT,41.864119,12.467696,BSF,false,2025-12-01,2026-10-14,,true
@@ -7000,7 +7009,8 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:dobbelsteendenbosch@51.687,5.301",indie,C0001736,,DOBBELSTEEN DEN BOSCH,Den Bosch,NB,NL,51.686974,5.301158,P210_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:daansshopberkel@51.994,4.477",indie,C0003805,,Daans Shop Berkel,Berken en Rodenrijs,ZH,NL,51.994019,4.477447,,false,2025-06-14,2025-09-13,,false
 "in:delete@53.146,7.034",indie,C0006733,,Delete,WINSCHOTEN,GR,NL,53.1458,7.03439,,false,2026-10-13,2026-10-13,,false
-"in:dungeonfreakminis@52.663,6.738",indie,C0010671,,Dungeon Freak Minis,COEVORDEN,DR,NL,52.662556,6.738336,BSF,false,2026-10-14,2026-10-14,,true
+"in:dungeonfreakminis@52.663,6.738",indie,C0010671,,Dungeon Freak Minis,COEVORDEN,DR,NL,52.662556,6.738336,BSF,false,2026-10-14,2026-10-14,,false
+"in:dungeonfreakminis@52.661,6.741",indie,C0010671,,Dungeon Freak Minis,COEVORDEN,DR,NL,52.660705,6.740596,BSF,false,2026-10-14,2026-10-14,,true
 "in:eenkleinewereld@51.826,4.683",indie,C0003679,,Een Kleine Wereld,Papendrecht,ZH,NL,51.825558,4.682659,,false,2025-06-14,2025-07-07,,false
 "in:eenkleinewereld@51.825,4.684",indie,C0003679,,Een Kleine Wereld,Papendrecht,ZH,NL,51.825264,4.683654,P210_T150,false,2025-08-07,2026-10-14,2026-10-13,true
 "in:fixxarwinterswijk@51.97,6.721",indie,C0006429,,Fixxar Winterswijk,Winterswijk,GE,NL,51.969675,6.720632,BSF,false,2025-06-14,2026-10-14,,true
@@ -7557,7 +7567,7 @@ gw:3731198701873547379,gw,3731198701873547379,1488,"Warhammer: Mansfield, TX",Ma
 "in:toys4sale@49.863,19.678",indie,C0008888,,Toys4sale,Kalwaria Zebrzydowska,12,PL,49.863006,19.67836,BSF,false,2025-08-07,2026-10-14,,true
 "in:trzytrolle@50.893,15.717",indie,C0000116,,Trzy Trolle,Jelenia Góra,02,PL,50.893201,15.71729,P210_T150,false,2025-06-14,2026-10-14,2026-10-13,true
 "in:twierdzagier@52.731,15.24",indie,C0008779,,Twierdza Gier,Gorz�w Wielkopolski,08,PL,52.73066,15.240039,BSF,false,2025-06-14,2026-10-14,,true
-"in:twierdzapasji@52.229,18.25",indie,C0010698,,Twierdza Pasji,KONIN,30,PL,52.229164,18.249762,BSF,false,2026-10-14,2026-10-14,,true
+"in:twierdzapasji@52.229,18.25",indie,C0010698,,Twierdza Pasji,KONIN,30,PL,52.229209,18.249769,BSF,false,2026-10-14,2026-10-14,,true
 "in:twojehobby@53.12,18.053",indie,C0000117,,Twoje Hobby,Bydgoszcz,04,PL,53.120226,18.052577,,false,2025-08-07,2026-04-05,,false
 "in:twojehobby@53.12,18.05",indie,C0000117,,Twoje Hobby,BYDGOSZCZ,04,PL,53.119943,18.050101,P360,false,2026-10-13,2026-10-14,,true
 "in:ultima@52.215,21.017",indie,C0005692,,Ultima,Warszawa,14,PL,52.215486,21.016649,,false,2025-06-14,2026-01-10,,false

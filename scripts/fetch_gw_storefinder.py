@@ -1,7 +1,7 @@
 """
 fetch_gw_storefinder.py
 ───────────────────────
-Snapshots GW's public store finder (https://www.warhammer.com/api/storefinder),
+Snapshots GW's public store finder (daily) (https://www.warhammer.com/api/storefinder),
 the same JSON the store-finder page loads: every GW-operated store plus the
 independent stockists GW chooses to list (~9K locations, ~12.7MB). One request.
 
@@ -55,6 +55,18 @@ OUT_CHANGES = ROOT / "data" / "gw_storefinder_changes.csv"
 OUT_SUMMARY.parent.mkdir(exist_ok=True)
 
 STOCK_RANGES = ["BSF", "P150", "P150_T150", "P210", "P210_T150", "P360", "P360_T150"]
+TIER_RANK    = {"BSF": 0, "P150": 1, "P210": 2, "P360": 3}       # 20 / 150 / 210 / 360 Warhammer Colour pots
+
+# Independent-stockist label tracking (daily). State files hold each stockist's
+# label as of the previous and current snapshot DATE, so several runs on one day
+# always compare against yesterday, never against an earlier run of the same day.
+OUT_INDIE_CHANGES = ROOT / "data" / "gw_storefinder_indie_changes.csv"
+OUT_INDIE_DAILY   = ROOT / "data" / "gw_storefinder_indie_changes_summary.csv"
+STATE_CUR  = ROOT / "data" / "gw_storefinder_indie_state.csv"
+STATE_PREV = ROOT / "data" / "gw_storefinder_indie_state_prev.csv"
+STATE_COLS = ["key", "name", "city", "country", "lat", "lng", "stock_range", "as_of"]
+CHANGE_TYPES = ["gained_pro", "lost_pro", "tier_up", "tier_down", "label_added", "label_removed",
+                "new_stockist", "dropped_stockist", "relisted"]
 COMING_SOON  = re.compile(
     r"coming soon|grand opening|opening soon|kommt bald|prochainement|bient[oô]t|"
     r"pr[oó]ximamente|presto|近日|오픈 예정", re.I)
@@ -226,8 +238,86 @@ def record(df: pd.DataFrame, snap_date: str, source: str) -> None:
     else:
         n_add = n_rem = 0
 
+    record_indie_changes(df, snap_date)
     print(f"  {snap_date} [{source:7}] GW {summ['gw_stores']:4} ({summ['gw_coming_soon']} coming soon, "
           f"+{n_add}/-{n_rem})  indie {summ['indie_listed']:5}  Pro-range indies {summ['indie_pro_range']:5}")
+
+
+# ── Independent stockist label changes ────────────────────────────────────────
+
+def indie_changes(prev: pd.DataFrame, cur: pd.DataFrame, snap_date: str) -> pd.DataFrame:
+    """Compare two snapshots of independent stockists (key, stock_range, …).
+      gained_pro / lost_pro      _T150 (150 Warhammer Pro pots) added / removed
+      tier_up / tier_down        Warhammer Colour range tier BSF(20) < P150 < P210 < P360
+      label_added / _removed     stockRange field appears / disappears
+      new / dropped_stockist     listing appears / disappears
+      relisted                   a drop and a new listing in the same country within ~300m
+                                 (renamed / re-keyed — not a real add or drop)"""
+    P, C = prev.set_index("key"), cur.set_index("key")
+    rows = []
+    def add(change, r, a, b):
+        rows.append({"date": snap_date, "change": change, "country": r["country"], "name": r["name"],
+                     "city": r["city"], "from_range": a, "to_range": b})
+    for k in P.index.intersection(C.index):
+        a, b = P.at[k, "stock_range"], C.at[k, "stock_range"]
+        if a == b:
+            continue
+        r = C.loc[k]
+        if b.endswith("_T150") and not a.endswith("_T150"): add("gained_pro", r, a, b)
+        if a.endswith("_T150") and not b.endswith("_T150"): add("lost_pro", r, a, b)
+        ta, tb = TIER_RANK.get(a.split("_")[0]), TIER_RANK.get(b.split("_")[0])
+        if ta is not None and tb is not None and ta != tb: add("tier_up" if tb > ta else "tier_down", r, a, b)
+        if not a and b: add("label_added", r, a, b)
+        if a and not b: add("label_removed", r, a, b)
+    new_k, gone_k = list(C.index.difference(P.index)), list(P.index.difference(C.index))
+    def ll(df, k): return float(df.at[k, "lat"] or 0), float(df.at[k, "lng"] or 0)
+    relist_new, relist_gone = set(), set()
+    for g in gone_k:
+        for n in new_k:
+            if n in relist_new or C.at[n, "country"] != P.at[g, "country"]:
+                continue
+            (y1, x1), (y2, x2) = ll(P, g), ll(C, n)
+            if abs(y1 - y2) < 0.003 and abs(x1 - x2) < 0.003:
+                relist_new.add(n); relist_gone.add(g)
+                add("relisted", C.loc[n], P.at[g, "stock_range"], C.at[n, "stock_range"]); break
+    for n in new_k:
+        if n not in relist_new: add("new_stockist", C.loc[n], "", C.at[n, "stock_range"])
+    for g in gone_k:
+        if g not in relist_gone: add("dropped_stockist", P.loc[g], P.at[g, "stock_range"], "")
+    return pd.DataFrame(rows, columns=["date", "change", "country", "name", "city", "from_range", "to_range"])
+
+
+def record_indie_changes(df: pd.DataFrame, snap_date: str) -> None:
+    ind = df[df["kind"] == "indie"].copy()
+    ind["as_of"] = snap_date
+    cur = ind[STATE_COLS].astype(str)
+    if STATE_CUR.exists():
+        last = pd.read_csv(STATE_CUR, dtype=str, keep_default_na=False)
+        if last["as_of"].iloc[0] < snap_date:
+            last.to_csv(STATE_PREV, index=False)                 # yesterday becomes the comparison base
+    prev = pd.read_csv(STATE_PREV, dtype=str, keep_default_na=False) if STATE_PREV.exists() else None
+    cur.to_csv(STATE_CUR, index=False)
+    if prev is None or prev["as_of"].iloc[0] >= snap_date:
+        print("  indie label changes: no earlier snapshot to compare yet"); return
+    ch = indie_changes(prev, cur, snap_date)
+    if OUT_INDIE_CHANGES.exists():
+        old = pd.read_csv(OUT_INDIE_CHANGES, dtype=str, keep_default_na=False)
+        ch = pd.concat([old[old["date"] != snap_date], ch.astype(str)], ignore_index=True)
+    ch.to_csv(OUT_INDIE_CHANGES, index=False)
+    today_ch = ch[ch["date"] == snap_date]
+    cnt = (today_ch.groupby(["country", "change"]).size().unstack(fill_value=0)
+           .reindex(columns=CHANGE_TYPES, fill_value=0))
+    totals = cur.assign(pro=cur["stock_range"].str.endswith("_T150")).groupby("country").agg(
+        indie_listed=("key", "size"), indie_pro_range=("pro", "sum"))
+    daily = totals.join(cnt, how="left").fillna(0).astype(int).reset_index()
+    daily.insert(0, "date", snap_date); daily.insert(2, "since", prev["as_of"].iloc[0])
+    if OUT_INDIE_DAILY.exists():
+        old = pd.read_csv(OUT_INDIE_DAILY, dtype=str, keep_default_na=False)
+        daily = pd.concat([old[old["date"] != snap_date], daily.astype(str)], ignore_index=True)
+    daily.to_csv(OUT_INDIE_DAILY, index=False)
+    tot = today_ch["change"].value_counts()
+    print(f"  indie label changes since {prev['as_of'].iloc[0]}: " +
+          ", ".join(f"{c} {int(tot.get(c, 0))}" for c in CHANGE_TYPES if tot.get(c, 0)))
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────

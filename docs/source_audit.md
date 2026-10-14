@@ -78,3 +78,18 @@ add ~20–25 Shopify stores.
 
 Likely outcome: ~40–50 stores with counts (≈15 daily, ≈30 weekly sampled), ~20 of them US, plus GW
 warehouse availability in three regions and listing/availability at ~80 stores.
+
+## Addendum (2026-10-14): store-finder `stockRange` as the "store label"
+
+Daily diffs of the public store finder show labels change day to day, in regional batches:
+13→14 Oct, 40 independents gained `_T150` (Pro) — 29 AU, 8 NZ, 3 KR — 3 AU lost it, 3 moved up a tier;
+157 dropped / 47 new listings, mostly small 20-pot stockists in Europe (directory churn), 6 re-listings.
+The field is absent from every archived store list (Jun 2025 – Apr 2026; no later copy). A June 2026
+archived store-finder page already had untranslated placeholder labels for tiers P150/P300/P450/P510 and
+no Pro label, so the current scheme (BSF/P150/P210/P360 + `_T150`) arrived between June and October —
+around the Tone Pro announcement. No labelled history exists for past launches.
+
+Interpretation: `_T150` most plausibly marks accounts GW's trade system records as taking the 150-pot
+Pro range (rack). Daily `+Pro` counts ≈ accounts newly ranged; tier moves ≈ Colour rack size changes.
+It does not show units received, reorders or sell-through, and covers only listed accounts
+(~8,400 of ~9,100). Tracked daily by scripts/fetch_gw_storefinder.py → gw_storefinder_indie_changes*.csv.

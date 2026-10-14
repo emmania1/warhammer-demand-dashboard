@@ -1,5 +1,5 @@
 # Daily stock snapshot — GW.com (Algolia, 3 warehouses) + Element Games + all paint SKUs +
-# independent online availability panel; weekly (Mondays) GW's public store finder.
+# independent online availability panel + GW's public store finder (stockist labels).
 # Runs in the cloud so data keeps flowing when the laptop is asleep, then
 # regenerates index.html and commits everything back to main. The Pages deploy
 # (static.yml) is triggered by this workflow finishing.
@@ -67,14 +67,9 @@ jobs:
         continue-on-error: true
         run: python scripts/fetch_gw_paint_stock.py
 
-      - name: Store finder snapshot (Mondays + manual runs)
+      - name: Store finder snapshot (daily — stockist labels change day to day)
         continue-on-error: true
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%u)" = "1" ]; then
-            python scripts/fetch_gw_storefinder.py
-          else
-            echo "Not Monday — skipping store finder."
-          fi
+        run: python scripts/fetch_gw_storefinder.py
 
       - name: Independent online availability panel (scheduled once PANEL_ENABLED=true; or manual with panel=true)
         if: vars.PANEL_ENABLED == 'true' || github.event.inputs.panel == 'true'

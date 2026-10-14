@@ -2196,6 +2196,7 @@ PAINT_EPISODES_CSV  = os.path.join(DATA_DIR, "gw_paint_oos_episodes.csv")
 SF_SUMMARY_CSV      = os.path.join(DATA_DIR, "gw_storefinder_summary.csv")
 SF_COUNTRY_CSV      = os.path.join(DATA_DIR, "gw_storefinder_country.csv")
 SF_CHANGES_CSV      = os.path.join(DATA_DIR, "gw_storefinder_changes.csv")
+SF_INDIE_DAILY_CSV  = os.path.join(DATA_DIR, "gw_storefinder_indie_changes_summary.csv")
 YT_TOPIC_VIDEOS_CSV = os.path.join(DATA_DIR, "youtube_topic_videos.csv")
 YT_TOPIC_SUMMARY_CSV = os.path.join(DATA_DIR, "youtube_topic_summary.csv")
 TONE_PRO_LAUNCH     = "2026-10-24"
@@ -2363,6 +2364,42 @@ def build_launch_page() -> str:
             ctry_html = (f"<table><thead><tr><th>Country</th><th class='num'>GW stores</th><th class='num'>Indies listed</th>"
                          f"<th class='num'>Pro-range indies</th><th class='num'>Share</th></tr></thead><tbody>{ctry_rows}</tbody></table>")
 
+        lab_html = ""
+        idc = _read_csv_or_empty(SF_INDIE_DAILY_CSV)
+        if not idc.empty:
+            ct = ["gained_pro", "lost_pro", "tier_up", "tier_down", "new_stockist", "dropped_stockist", "relisted"]
+            for c in ct + ["indie_pro_range"]:
+                idc[c] = pd.to_numeric(idc[c], errors="coerce").fillna(0).astype(int)
+            byd = idc.groupby(["date", "since"])[ct + ["indie_pro_range"]].sum().reset_index().sort_values("date", ascending=False).head(14)
+            d_rows = "".join(f"<tr><td>{r['since']} → {r['date']}</td><td class='num'>{int(r['indie_pro_range']):,}</td>"
+                             + "".join(f"<td class='num'>{int(r[c]) or ''}</td>" for c in ct) + "</tr>" for _, r in byd.iterrows())
+            recent = idc[idc["date"].isin(sorted(idc["date"].unique())[-7:])]
+            bc = recent.groupby("country")[["gained_pro", "lost_pro", "tier_up", "new_stockist", "dropped_stockist"]].sum()
+            bc = bc[bc.sum(axis=1) > 0].sort_values(["gained_pro", "new_stockist"], ascending=False).head(15)
+            pro_now = idc[idc["date"] == idc["date"].max()].set_index("country")["indie_pro_range"]
+            c_rows = "".join(f"<tr><td>{cc}</td><td class='num'>{int(pro_now.get(cc, 0)):,}</td>" + "".join(f"<td class='num'>{int(r[c]) or ''}</td>" for c in bc.columns) + "</tr>"
+                             for cc, r in bc.iterrows())
+            lab_html = f"""
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("Stockist label changes — by day")}
+      <table><thead><tr><th>Period</th><th class="num">Pro-range stockists</th><th class="num">+Pro</th><th class="num">−Pro</th>
+      <th class="num">Tier ↑</th><th class="num">Tier ↓</th><th class="num">New</th><th class="num">Dropped</th><th class="num">Relisted</th></tr></thead>
+      <tbody>{d_rows}</tbody></table>
+    </div>
+    <div class="table-card">{h3.format("By country — last 7 snapshots")}
+      <table><thead><tr><th>Country</th><th class="num">Pro-range now</th><th class="num">+Pro</th><th class="num">−Pro</th><th class="num">Tier ↑</th>
+      <th class="num">New</th><th class="num">Dropped</th></tr></thead><tbody>{c_rows}</tbody></table>
+    </div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
+    GW sets a paint-range label on each listed independent: 20 / 150 / 210 / 360 Warhammer Colour pots, plus "_T150" when the store
+    carries the 150-pot Warhammer Pro range. Gaining "+Pro" most likely means GW's trade system now records that account as taking
+    the Pro range (it arrives in regional batches — e.g. 29 Australian, 8 NZ and 3 Korean stockists on 14 Oct). It is a range
+    commitment, not a quantity: it can't show reorders, units received or sales. "Dropped" / "New" is directory churn — mostly
+    small 20-pot stockists in Europe — and covers only accounts GW lists (≈8,400 of ≈9,100 trade accounts).
+    The labels first appeared between Jun and Oct 2026 (a June archive copy shows placeholder tiers P150–P510 and no Pro label),
+    so there is no labelled history for past launches.</p></div>"""
+
         store_html = f"""
   <div class="section-title">B · Store Network — GW Store Finder</div>
   <div class="section-sub">
@@ -2387,6 +2424,7 @@ def build_launch_page() -> str:
     </div>
     <div class="table-card">{h3.format("Pro-range independents by country")}{ctry_html}</div>
   </div>
+  {lab_html}
   <div class="table-card" style="margin-bottom:18px;">{h3.format("GW store openings & closures (between snapshots)")}
     {ch_html or "<p class='data-note'>No changes recorded yet.</p>"}
     <p class="data-note">An add + remove pair in the same city is usually a relocation or re-listing, not a net change.</p>
