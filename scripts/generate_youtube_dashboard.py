@@ -2205,6 +2205,9 @@ PANEL_RUNS_CSV      = os.path.join(DATA_DIR, "indie_paint_panel_runs.csv")
 PANEL_CONFIG_CSV    = os.path.join(CONFIG_DIR, "indie_paint_panel.csv")
 PANEL_QTY_SUMMARY_CSV = os.path.join(DATA_DIR, "indie_paint_panel_qty_summary.csv")
 PAGE_QTY_CSV        = os.path.join(DATA_DIR, "page_qty_weekly.csv")
+TP_PACK_CSV         = os.path.join(DATA_DIR, "tone_pro_pack_test.csv")
+TP_EST_CSV          = os.path.join(DATA_DIR, "tone_pro_units_estimate.csv")
+TP_REORD_CSV        = os.path.join(DATA_DIR, "tone_pro_reorders.csv")
 REGIONS_SUMMARY_CSV = os.path.join(DATA_DIR, "gw_paint_stock_regions_summary.csv")
 
 
@@ -2524,6 +2527,48 @@ def build_launch_page() -> str:
                        f'each product page publishes. Before 24 Oct Tone Pro items are pre-orders, so figures are allocations / pre-orders, '
                        f'not shelf stock; negative = orders taken beyond stock. Week-to-week changes can\'t separate restocks from sales.</p></div>')
 
+        # Tone Pro deliveries: pack test, units estimate, reorders
+        del_html = ""
+        tpk, tpe, tpr = _read_csv_or_empty(TP_PACK_CSV), _read_csv_or_empty(TP_EST_CSV), _read_csv_or_empty(TP_REORD_CSV)
+        if not tpk.empty:
+            tpk = tpk.sort_values(["country", "store_id"])
+            k_rows = "".join(f"<tr><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
+                             f"<td class='num'>{r['paints_observed']}</td><td class='num'>{r['mode_units']}</td>"
+                             f"<td class='num'>{float(r['share_at_mode']):.0%}</td><td>{'yes' if str(r['standard_pack']).lower() == 'true' else 'no'}</td>"
+                             f"<td>{r['evidence']}</td></tr>" for _, r in tpk.iterrows())
+            e_rows = ""
+            if not tpe.empty:
+                for _, r in tpe.iterrows():
+                    lo, mid, hi = (int(float(r[c])) for c in ("units_low", "units_mid", "units_high"))
+                    e_rows += (f"<tr><td>{r['country']}</td><td class='num'>{int(float(r['pro_label_stores'])):,}</td>"
+                               f"<td>{escape(str(r['pack_basis']))}</td><td class='num'>{lo:,}</td><td class='num'>{mid:,}</td><td class='num'>{hi:,}</td></tr>")
+            r_rows = "".join(f"<tr><td>{r['iso_week']}</td><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
+                             f"<td class='num'>{r['paints_restocked']}</td><td class='num'>{int(float(r['units'])):,}</td></tr>"
+                             for _, r in tpr.sort_values("iso_week", ascending=False).head(20).iterrows()) if not tpr.empty else ""
+            del_html = f"""
+  <div class="section-title">B3 · Tone Pro deliveries — allocation per store, estimate across Pro-label stores, reorders</div>
+  <div class="section-sub">From the ~40 stores that publish unit counts (daily during the 20 Oct – 1 Nov launch window).</div>
+  <div class="chart-grid-2" style="margin-bottom:18px;">
+    <div class="table-card">{h3.format("Standard-pack test — Tone Pro pots allocated per paint")}
+      <table><thead><tr><th>Store</th><th>Country</th><th class="num">Paints seen</th><th class="num">Most common</th>
+      <th class="num">Share at it</th><th>Standard pack?</th><th>Evidence</th></tr></thead><tbody>{k_rows}</tbody></table>
+    </div>
+    <div class="table-card">{h3.format("Estimated Tone Pro units shipped to Pro-label stockists")}
+      <table><thead><tr><th>Country</th><th class="num">Pro-label stores</th><th>Pack size from</th><th class="num">Low</th>
+      <th class="num">Mid</th><th class="num">High</th></tr></thead><tbody>{e_rows or "<tr><td colspan=6>Not enough stores tested yet.</td></tr>"}</tbody></table>
+      {h3.format("Reorders (Tone Pro restocked after the launch delivery)")}
+      <table><thead><tr><th>Week</th><th>Store</th><th>Country</th><th class="num">Paints</th><th class="num">Units</th></tr></thead>
+      <tbody>{r_rows or "<tr><td colspan=5>None yet.</td></tr>"}</tbody></table>
+    </div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
+    Allocation per paint = the larger of a store's pre-launch peak count (stores that load expected stock to take pre-orders)
+    and its biggest rise in the launch window (stores that sell beyond stock and jump on delivery). "Standard pack" = at least 70%
+    of a store's Tone Pro paints at one number. The estimate multiplies each country's GW Pro-label stockists by 150 pots and by the
+    25th / 50th / 75th percentile of pots-per-paint at tested stores (that country if ≥3 stores tested, else all) — the tested stores
+    are online-active and may be larger than average, so treat it as an order-of-magnitude range, not a measurement. Reorders are
+    rises after a store's launch delivery; weekly reads net restocks against sales, so they are a floor.</p></div>"""
+
         # Store list
         st_rows = ""
         for sid, g in sorted(cur.groupby("store_id"), key=lambda x: (x[1]["country"].iloc[0], names.get(x[0], x[0]))):
@@ -2587,6 +2632,7 @@ def build_launch_page() -> str:
     since a restock on the same day hides outflow). "Out" includes sales, pre-order fulfilment and stock corrections; it is an estimate of
     units leaving the shelf, not a sales figure.</p></div>''' if q_rows else ""}
   {us_html}
+  {del_html}
   <div class="table-card" style="margin-bottom:18px;">{h3.format("Panel stores")}
     <table><thead><tr><th>Store</th><th>Country</th><th class="num">Base/Layer listed</th><th class="num">Available</th>
     <th class="num">Tone Pro listed</th><th class="num">Available</th></tr></thead><tbody>{st_rows}</tbody></table>

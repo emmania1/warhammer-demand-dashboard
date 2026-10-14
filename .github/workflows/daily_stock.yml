@@ -85,6 +85,10 @@ jobs:
         continue-on-error: true
         run: python scripts/fetch_element_games_stock.py
 
+      - name: Tone Pro deliveries, pack test, units estimate, reorders (no network)
+        continue-on-error: true
+        run: python scripts/analyze_tone_pro_deliveries.py
+
       - name: Regenerate dashboard (index.html)
         continue-on-error: true
         run: NO_BROWSER=1 python scripts/generate_youtube_dashboard.py
@@ -96,7 +100,8 @@ jobs:
           git add data/gw_stock_daily.csv data/gw_stock_summary.csv data/element_games_stock_daily.csv \
                   data/gw_paint_stock_*.csv data/gw_paint_oos_episodes.csv data/gw_storefinder_*.csv \
                   data/indie_paint_panel_*.csv data/prev_run_snapshot.json index.html
-          for f in data/page_qty_weekly.csv data/gw_paint_stock_regions_daily.csv data/gw_paint_stock_regions_summary.csv \
+          for f in data/page_qty_plan.csv data/tone_pro_receipts.csv data/tone_pro_pack_test.csv data/tone_pro_units_estimate.csv \
+                   data/tone_pro_reorders.csv data/page_qty_weekly.csv data/gw_paint_stock_regions_daily.csv data/gw_paint_stock_regions_summary.csv \
                    data/gw_paint_oos_episodes_regions.csv; do [ -f "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then
             echo "No changes."
