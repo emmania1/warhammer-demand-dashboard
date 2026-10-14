@@ -227,8 +227,6 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,galactic_trading_post,CA,Layer,93,72,0,0,21,0,0,0
 2026-10-14,gamers_grove,US,Base,56,54,0,0,2,0,0,0
 2026-10-14,gamers_grove,US,Layer,93,91,0,0,2,0,0,0
-2026-10-14,games_a_plunder,US,Base,56,53,0,0,3,0,0,0
-2026-10-14,games_a_plunder,US,Layer,93,92,0,0,1,0,0,0
 2026-10-14,goblin_gaming,GB,Base,54,54,0,0,0,0,0,0
 2026-10-14,goblin_gaming,GB,Layer,93,93,0,0,0,0,0,0
 2026-10-14,goblin_gaming,GB,Tech Pro,2,0,0,1,1,0,0,0
@@ -239,9 +237,6 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,hfx_games,CA,Layer,93,80,0,0,13,0,0,0
 2026-10-14,jadlam_toys_models,GB,Base,52,29,0,0,23,0,0,0
 2026-10-14,jadlam_toys_models,GB,Layer,93,53,0,0,40,0,0,0
-2026-10-14,jeux_az_games,CA,Base,56,55,0,0,1,0,0,0
-2026-10-14,jeux_az_games,CA,Layer,92,92,0,0,0,0,0,0
-2026-10-14,jeux_az_games,CA,Tone Pro,5,0,0,0,5,0,0,0
 2026-10-14,koros_wargames,US,Base,55,53,0,0,2,0,0,0
 2026-10-14,koros_wargames,US,Layer,93,91,0,0,2,0,0,0
 2026-10-14,leapingpandahobbies,US,Base,56,56,0,0,0,0,0,0
@@ -262,12 +257,8 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,northumbrian_tin_soldier,GB,Layer,93,93,0,0,0,0,0,0
 2026-10-14,not_just_gamin,US,Base,56,56,0,0,0,0,0,0
 2026-10-14,not_just_gamin,US,Layer,91,90,0,0,1,0,0,0
-2026-10-14,nutmeg_games,US,Base,54,32,0,0,22,0,0,0
-2026-10-14,nutmeg_games,US,Layer,93,74,0,0,19,0,0,0
 2026-10-14,obsidian_games,CA,Base,54,44,0,0,10,0,0,0
 2026-10-14,obsidian_games,CA,Layer,91,81,0,0,10,0,0,0
-2026-10-14,pastime_sports_games,CA,Base,56,56,0,0,0,0,0,0
-2026-10-14,pastime_sports_games,CA,Layer,93,93,0,0,0,0,0,0
 2026-10-14,retrofix_games,US,Base,56,51,0,0,5,0,0,0
 2026-10-14,retrofix_games,US,Layer,93,83,0,0,10,0,0,0
 2026-10-14,riftgate,US,Base,54,53,0,0,1,0,0,0
@@ -311,3 +302,12 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-14,armada_games,US,Layer,93,75,0,0,18,0,0,0
 2026-10-14,armada_games,US,Tech Pro,2,0,0,2,0,0,0,0
 2026-10-14,armada_games,US,Tone Pro,150,0,0,149,1,0,0,0
+2026-10-14,games_a_plunder,US,Base,56,53,53,0,3,56,185,0
+2026-10-14,games_a_plunder,US,Layer,93,92,92,0,1,93,254,0
+2026-10-14,jeux_az_games,CA,Base,56,55,55,0,1,56,110,0
+2026-10-14,jeux_az_games,CA,Layer,92,92,92,0,0,92,184,0
+2026-10-14,jeux_az_games,CA,Tone Pro,5,0,0,0,5,5,0,0
+2026-10-14,nutmeg_games,US,Base,54,32,32,0,22,54,232,0
+2026-10-14,nutmeg_games,US,Layer,93,74,74,0,19,93,434,0
+2026-10-14,pastime_sports_games,CA,Base,56,56,56,0,0,56,1032,0
+2026-10-14,pastime_sports_games,CA,Layer,93,93,93,0,0,93,1625,0

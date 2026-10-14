@@ -39,7 +39,6 @@ panel = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(panel)
 
 GOOD = re.compile(r"base|layer|tone|pro|citadel|colou?r|paint", re.I)
 BAD  = re.compile(r"air|spray|contrast|shade|dry|technical|brush|tool|case|basing|bases|dice|primer|accessor|bundle|sale", re.I)
-QTY_NEAR_ID = re.compile(r'(?i)(?:inventory_?quantity|inventoryQuantity|qty|quantity|stock|inventory)["\']?\s*[:=]\s*["\']?(-?\d+)')
 LINES = ("Base", "Layer", "Tone Pro")
 today = str(date.today())
 
@@ -51,20 +50,7 @@ def pick_handles(colls: str) -> list[str]:
     return (tp[:2] + rest[:4])[:6] or hs[:4]          # nothing passed the filter → use what the store has
 
 
-def qty_per_variant(page: str, ids: set[str]) -> dict[str, int]:
-    """variant id → quantity, where a quantity-labelled number follows the id
-    within 250 chars, or the id is the nearest one before an inventory_quantity."""
-    found = {}
-    for vid in ids:
-        for m in re.finditer(vid, page):
-            q = QTY_NEAR_ID.search(page[m.end():m.end() + 250])
-            if q:
-                found[vid] = int(q.group(1)); break
-    for m in re.finditer(r'"?inventory_?[qQ]uantity"?\s*[:=]\s*(-?\d+)', page):
-        near = re.findall(r"\b\d{11,16}\b", page[max(0, m.start() - 300):m.start()])
-        if near and near[-1] in ids:
-            found.setdefault(near[-1], int(m.group(1)))
-    return found
+qty_per_variant = panel.qty_per_variant
 
 
 def scan(row, canon) -> dict:

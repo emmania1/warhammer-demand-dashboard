@@ -257,6 +257,54 @@ def adapt_shopify(f: Fetcher, cfg) -> list[dict]:
     return items
 
 
+QTY_NEAR_ID = re.compile(r'(?i)(?:inventory_?quantity|inventoryQuantity|qty|quantity|stock|inventory)["\']?\s*[:=]\s*["\']?(-?\d+)')
+
+
+def qty_per_variant(page: str, ids: set[str]) -> dict[str, int]:
+    """variant id → quantity on a Shopify product page: a quantity-labelled number
+    within 250 chars after the id (e.g. data-stock="8"), or an inventory_quantity
+    whose nearest preceding variant id is ours."""
+    found = {}
+    for vid in ids:
+        for m in re.finditer(vid, page):
+            q = QTY_NEAR_ID.search(page[m.end():m.end() + 250])
+            if q:
+                found[vid] = int(q.group(1)); break
+    for m in re.finditer(r'"?inventory_?[qQ]uantity"?\s*[:=]\s*(-?\d+)', page):
+        near = re.findall(r"\b\d{11,16}\b", page[max(0, m.start() - 300):m.start()])
+        if near and near[-1] in ids:
+            found.setdefault(near[-1], int(m.group(1)))
+    return found
+
+
+def variant_page_qty(f: "Fetcher", matched: dict) -> int:
+    """For products that hold several GW paints as colour variants, read the product
+    page once and attach each colour's quantity. Returns pages read."""
+    groups: dict[str, list] = {}
+    for it in matched.values():
+        if it.get("variant_id") and it.get("handle"):
+            groups.setdefault(it["handle"], []).append(it)
+    pages = 0
+    for handle, its in groups.items():
+        if len(its) < 5:
+            continue
+        r = f.get(f"{f.base}/products/{handle}")
+        pages += 1
+        if r is None or r.status_code != 200:
+            continue
+        found = qty_per_variant(r.text, {it["variant_id"] for it in its})
+        for it in its:
+            q = found.get(it["variant_id"])
+            if q is None:
+                continue
+            it["qty"], it["qty_floor"] = str(q), "false"
+            if q > 0:
+                it["status"] = "in_stock"
+            elif it["status"] == "available":
+                it["status"] = "backorder"          # sellable with nothing on hand
+    return pages
+
+
 QTY_TEXT = re.compile(r"\b(\d{1,4})\+?\s*(?:in stock|left in stock|units? left)\b|only\s+(\d{1,3})\s+left", re.I)
 
 
@@ -463,6 +511,7 @@ def upsert(path: Path, new: pd.DataFrame, keys: list[str]) -> None:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="comma-separated store_ids to run")
+    ap.add_argument("--force-variant-qty", action="store_true", help="read colour-variant product pages even if not enabled in config (testing)")
     args = ap.parse_args()
 
     cfg = pd.read_csv(CONFIG, dtype=str, keep_default_na=False)
@@ -498,6 +547,11 @@ def main():
             # Duplicate listings of one paint (e.g. old + new packaging): keep the buyable one
             if prev is None or (prev["status"] not in ("in_stock", "available") and it["status"] in ("in_stock", "available")):
                 matched[paint] = {**it, "line": line, "paint": paint}
+        if status == "ok" and (str(s.get("qty_variant_page", "")).lower() == "true" or args.force_variant_qty):
+            try:
+                variant_page_qty(f, matched)
+            except Blocked as e:
+                status = f"blocked (variant pages): {e}"
         for paint, it in matched.items():
             rows.append({"date": today, "store_id": s["store_id"], "country": s["country"],
                          "line": it["line"], "paint": paint, "status": it["status"],

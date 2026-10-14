@@ -65,7 +65,6 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,discount_games_inc,ok,5,377,148,55,93,0,0
 2026-10-14,tabletop_heaven,ok,4,544,298,54,92,150,2
 2026-10-14,mox_boarding_house,ok,3,278,148,55,93,0,0
-2026-10-14,games_a_plunder,ok,3,390,149,56,93,0,0
 2026-10-14,gamers_grove,ok,3,380,149,56,93,0,0
 2026-10-14,grognard_games,ok,3,431,147,54,93,0,0
 2026-10-14,koros_wargames,ok,5,392,148,55,93,0,0
@@ -73,7 +72,6 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,the_haunted_game_cafe,ok,3,344,148,55,93,0,0
 2026-10-14,war_games_usa,ok,3,149,147,55,92,0,0
 2026-10-14,not_just_gamin,ok,3,337,147,56,91,0,0
-2026-10-14,nutmeg_games,ok,2,341,147,54,93,0,0
 2026-10-14,common_ground_games,ok,3,348,147,55,92,0,0
 2026-10-14,riftgate,ok,3,300,146,54,92,0,0
 2026-10-14,a_z_toy_hobby,ok,3,147,146,53,93,0,0
@@ -104,9 +102,7 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,taps_games,ok,4,484,298,53,93,150,2
 2026-10-14,fantasy_forged,ok,3,478,296,53,91,150,2
 2026-10-14,boutique_fdb,ok,4,624,291,50,89,150,2
-2026-10-14,jeux_az_games,ok,2,404,153,56,92,5,0
 2026-10-14,trinity_hobby,ok,3,331,151,56,93,0,2
-2026-10-14,pastime_sports_games,ok,2,461,149,56,93,0,0
 2026-10-14,hfx_games,ok,2,351,148,55,93,0,0
 2026-10-14,tistaminis,ok,3,150,148,55,93,0,0
 2026-10-14,black_knight_games,ok,3,396,146,55,91,0,0
@@ -119,3 +115,7 @@ date,store_id,status,requests,items_seen,matched,n_base,n_layer,n_tone_pro,n_tec
 2026-10-14,boutique_awesome,ok,4,254,118,44,74,0,0
 2026-10-14,toy_snowman,ok,3,367,105,34,71,0,0
 2026-10-14,armada_games,ok,4,306,300,55,93,150,2
+2026-10-14,games_a_plunder,ok,5,390,149,56,93,0,0
+2026-10-14,nutmeg_games,ok,4,341,147,54,93,0,0
+2026-10-14,jeux_az_games,ok,5,404,153,56,92,5,0
+2026-10-14,pastime_sports_games,ok,4,461,149,56,93,0,0
