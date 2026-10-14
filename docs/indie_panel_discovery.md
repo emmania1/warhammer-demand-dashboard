@@ -60,3 +60,19 @@ the Shopify panel stores show a count on individual product pages, but reading t
 Public pages only; no logins, carts or tokens. robots.txt checked for every URL (RFC 9309 longest
 match). One store at a time in the daily run, ~2s between requests. User-Agent carries a contact
 label. A 401/403/429 or bot challenge marks the store blocked — never worked around.
+
+## Colours-as-variants format (checked 2026-10-14)
+
+Some Shopify stockists list a whole range as ONE product with each colour as a variant
+("Citadel Base Paints", 57 variants). Where the page embeds a quantity per variant
+(`inventory_quantity` next to the variant id, or a `data-stock="N"` attribute on each colour
+option), one page request returns unit counts for every colour in the range.
+
+Scan of the 119 discovered Shopify stores with GW paint data (2026-10-14):
+10 use the variant format; 4 embed per-colour quantities — Nutmeg Games (US), Games A Plunder (US),
+Pastime Sports & Games (CA), Jeux AZ (CA). 20 list Tone Pro in any format; only Jeux AZ has Tone Pro
+in the variant format with quantities (one colour family, 5 tones). ≈3–4 requests/day per store.
+
+Re-run: `python scripts/scan_variant_qty_stores.py` (input `data/indie_shopify_discovered.csv`,
+output appended to `data/variant_qty_scan.csv`). Scheduled once after launch by
+`.github/workflows/variant_scan.yml` (26 Oct 2026, backups 27–28 Oct).

@@ -1,0 +1,11 @@
+date,domain,country,store,status,base_variant_products,base_variant_colours,layer_variant_products,layer_variant_colours,tone_pro_variant_products,tone_pro_variant_colours,tone_pro_paints_listed,qty_check_product,qty_check_variants,qty_check_with_qty,per_colour_qty,est_daily_requests,requests
+2026-10-14,hfxgames.com,CA,HFX Games,ok,1,55,1,94,0,0,0,citadel-paint-base,57.0,0.0,false,3,4
+2026-10-14,criticalhitgaminglounge.com,CA,Critical Hit Gaming Lounge,ok,1,43,1,79,0,0,0,citadel-paint-base,45.0,0.0,false,3,4
+2026-10-14,jeuxazgames.ca,CA,Jeux AZ Games,ok,1,56,1,92,1,5,5,citadel-tone-pro-paint-peinture-tone-pro,5.0,5.0,true,4,4
+2026-10-14,dicesaloon.co.uk,GB,Dice Saloon,ok,1,55,1,92,1,152,150,warhammer-tone-pro,152.0,0.0,false,4,4
+2026-10-14,battlepubgames.com,US,BattlePub Games,ok,1,53,1,92,0,0,0,citadel-paints-base,57.0,0.0,false,3,6
+2026-10-14,nutmeggames.com,US,Nutmeg Games,ok,1,54,1,94,0,0,0,citadel-base-paint,57.0,57.0,true,3,4
+2026-10-14,retrofixgames.com,US,Retrofix Games,ok,1,56,1,94,0,0,0,citadel-base-paints,58.0,0.0,false,3,4
+2026-10-14,gamesaplunder.com,US,Games A Plunder,ok,1,56,1,94,0,0,0,citadel-base-paint,57.0,57.0,true,3,5
+2026-10-14,pastimesports.ca,CA,Pastime Sports & Games,ok,1,56,1,94,0,0,0,citadel-colour-base-paint,57.0,57.0,true,3,4
+2026-10-14,bardsandcards.com,US,Bards & Cards,ok,1,30,1,55,0,0,0,citadel-base-paint-12ml,32,0,false,3,4
