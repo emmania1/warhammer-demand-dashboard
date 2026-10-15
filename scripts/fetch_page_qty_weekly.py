@@ -32,7 +32,7 @@ Usage:
   python scripts/fetch_page_qty_weekly.py --verify domain1,domain2 --targets h1|h2;h3   (one-off check)
 """
 
-import re, sys, argparse, importlib.util, concurrent.futures as cf
+import os, re, sys, argparse, importlib.util, concurrent.futures as cf
 from pathlib import Path
 from datetime import date, datetime, timezone
 
@@ -43,10 +43,11 @@ CONFIG = ROOT / "config" / "page_qty_stores.csv"
 OUT    = ROOT / "data" / "page_qty_weekly.csv"
 PLAN   = ROOT / "data" / "page_qty_plan.csv"          # where each paint's page is, cached from the last listing
 
-# Tone Pro launch window: between these dates (inclusive) every store is also read
+# Tone Pro launch window: between these dates (inclusive), and only when the env var
+# LAUNCH_DAILY=true (repo variable LAUNCH_DAILY_ENABLED), every store is also read
 # DAILY on a small fixed subset — enough to date each delivery and size it per pot —
 # using cached page locations (≈13 requests/store/day). Outside it: weekly only.
-LAUNCH_WINDOW = ("2026-10-20", "2026-11-01")
+LAUNCH_WINDOW = ("2026-10-22", "2026-10-31")
 DAILY_TP = [f"Tone Pro: {c} 3" for c in ("Blackstone Void", "Bloodtoof Red", "Carmine Blades", "Ultramar Blue",
             "Khemri Sands", "Lustria Green", "Eye of Terror", "Necrolith Bone", "Megaboss Yellow", "Shalaxi Violet")]
 DAILY_CMP = ["Base: Abaddon Black", "Layer: Evil Sunz Scarlet"]
@@ -191,7 +192,8 @@ def main():
     cfg = pd.read_csv(CONFIG, dtype=str, keep_default_na=False)
     cfg = cfg[cfg["active"].str.lower() == "true"]
     wd = datetime.now(timezone.utc).weekday()
-    in_window = LAUNCH_WINDOW[0] <= today <= LAUNCH_WINDOW[1]
+    in_window = (LAUNCH_WINDOW[0] <= today <= LAUNCH_WINDOW[1]
+                 and os.environ.get("LAUNCH_DAILY", "").lower() == "true")
     if args.only:
         cfg = cfg[cfg["store_id"].isin(args.only.split(","))]
         jobs = [(s, "weekly") for _, s in cfg.iterrows()]

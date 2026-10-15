@@ -2208,6 +2208,7 @@ PAGE_QTY_CSV        = os.path.join(DATA_DIR, "page_qty_weekly.csv")
 TP_PACK_CSV         = os.path.join(DATA_DIR, "tone_pro_pack_test.csv")
 TP_EST_CSV          = os.path.join(DATA_DIR, "tone_pro_units_estimate.csv")
 TP_REORD_CSV        = os.path.join(DATA_DIR, "tone_pro_reorders.csv")
+TP_SELL_CSV         = os.path.join(DATA_DIR, "tone_pro_sellthrough.csv")
 REGIONS_SUMMARY_CSV = os.path.join(DATA_DIR, "gw_paint_stock_regions_summary.csv")
 
 
@@ -2550,6 +2551,17 @@ def build_launch_page() -> str:
             r_rows = "".join(f"<tr><td>{r['iso_week']}</td><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
                              f"<td class='num'>{r['paints_restocked']}</td><td class='num'>{int(float(r['units'])):,}</td></tr>"
                              for _, r in tpr.sort_values("iso_week", ascending=False).head(20).iterrows()) if not tpr.empty else ""
+            tps = _read_csv_or_empty(TP_SELL_CSV)
+            s_rows = ""
+            if not tps.empty:
+                for _, r in tps.sort_values(["country", "store_id"]).iterrows():
+                    stv = r["sell_through"]
+                    s_rows += (f"<tr><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
+                               f"<td class='num'>{r['paints']}</td><td class='num'>{int(float(r['opening'])):,}</td>"
+                               f"<td class='num'>{int(float(r['received'])):,}</td><td class='num'>{int(float(r['gone'])):,}</td>"
+                               f"<td class='num'>{int(float(r['on_hand'])):,}</td>"
+                               f"<td class='num'>{(f'{float(stv):.0%}' if str(stv) not in ('', 'nan') else '—')}</td>"
+                               f"<td>{r['first_date']} → {r['last_date']}</td></tr>")
             del_html = f"""
   <div class="section-title">B3 · Tone Pro deliveries — allocation per store, estimate across Pro-label stores, reorders</div>
   <div class="section-sub">From the ~40 stores that publish unit counts (daily during the 20 Oct – 1 Nov launch window).</div>
@@ -2565,6 +2577,14 @@ def build_launch_page() -> str:
       <table><thead><tr><th>Week</th><th>Store</th><th>Country</th><th class="num">Paints</th><th class="num">Units</th></tr></thead>
       <tbody>{r_rows or "<tr><td colspan=5>None yet.</td></tr>"}</tbody></table>
     </div>
+  </div>
+  <div class="table-card" style="margin-bottom:18px;">{h3.format("Sell-down — Tone Pro paints tracked at each store since pre-orders opened")}
+    <table><thead><tr><th>Store</th><th>Country</th><th class="num">Paints</th><th class="num">Opening stock</th>
+    <th class="num">Received</th><th class="num">Gone</th><th class="num">On hand</th><th class="num">Sell-through</th><th>Period</th></tr></thead>
+    <tbody>{s_rows or "<tr><td colspan=9>No Tone Pro counts yet.</td></tr>"}</tbody></table>
+    <p class="data-note">Gone = units received minus the change in the count (a fall is units gone; a delivery that goes straight to
+    pre-orders shows as received and gone), plus pre-orders taken before tracking began (counts below zero). Sell-through = gone ÷
+    (opening stock + received). Covers only the paints read at that store; includes pre-order fulfilment, returns and corrections.</p>
   </div>
   <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
     Allocation per paint = the larger of a store's pre-launch peak count (stores that load expected stock to take pre-orders)

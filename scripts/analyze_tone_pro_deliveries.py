@@ -29,6 +29,7 @@ Outputs
   data/tone_pro_units_estimate.csv by country: Pro-label stores × 150 pots × pack size
                                   (low / mid / high from the tested stores)
   data/tone_pro_reorders.csv      per store × ISO week: reorder events and units
+  data/tone_pro_sellthrough.csv   per store: opening stock, received, units gone, on hand, sell-through
 
 WHAT THIS IS: an estimate from ~40 online-active stores, extrapolated to every
 stockist GW labels as carrying the Pro range. Rises in a count can also be
@@ -43,6 +44,8 @@ D = ROOT / "data"
 PANEL, PAGES, SF_COUNTRY = D / "indie_paint_panel_daily.csv", D / "page_qty_weekly.csv", D / "gw_storefinder_country.csv"
 OUT_REC, OUT_PACK = D / "tone_pro_receipts.csv", D / "tone_pro_pack_test.csv"
 OUT_EST, OUT_REORD = D / "tone_pro_units_estimate.csv", D / "tone_pro_reorders.csv"
+OUT_SELL = D / "tone_pro_sellthrough.csv"
+PREORDERS_OPEN = "2026-10-10"
 
 LAUNCH          = "2026-10-24"
 WINDOW          = ("2026-10-20", "2026-10-31")   # launch deliveries land in here
@@ -162,6 +165,37 @@ def reorders(rec: pd.DataFrame) -> pd.DataFrame:
             .reset_index())
 
 
+def sellthrough(o: pd.DataFrame) -> pd.DataFrame:
+    """Per store: Tone Pro units gone and sell-through since pre-orders opened.
+      each interval: received = max(rise in count, fall in on-order, 0)
+                     gone     = max(received − change in count, 0)
+      gone also includes pre-orders taken before tracking began (a count below zero
+      at the first observation = units already sold, not yet delivered).
+      sell-through = gone ÷ (opening stock + received)."""
+    t = o[(o["line"] == "Tone Pro") & (o["date"] >= PREORDERS_OPEN)].sort_values(["store_id", "paint", "date"])
+    if t.empty:
+        return pd.DataFrame(columns=["store_id", "country", "paints", "opening", "received", "gone", "on_hand",
+                                     "sell_through", "first_date", "last_date", "days"])
+    g = t.groupby(["store_id", "paint"])
+    dq = t["qty"] - g["qty"].shift()
+    oo = (g["on_order"].shift() - t["on_order"]).fillna(0)
+    rec = pd.concat([dq, oo], axis=1).max(axis=1).clip(lower=0).fillna(0)
+    gone = (rec - dq).clip(lower=0).fillna(0)
+    t = t.assign(received=rec, gone=gone)
+    per = t.groupby(["store_id", "paint"]).agg(country=("country", "first"), first_qty=("qty", "first"),
+            last_qty=("qty", "last"), received=("received", "sum"), gone=("gone", "sum"),
+            first_date=("date", "first"), last_date=("date", "last")).reset_index()
+    per["gone"] += (-per["first_qty"]).clip(lower=0)                # pre-orders already taken
+    per["opening"] = per["first_qty"].clip(lower=0)
+    st = per.groupby(["store_id", "country"]).agg(paints=("paint", "nunique"), opening=("opening", "sum"),
+            received=("received", "sum"), gone=("gone", "sum"), on_hand=("last_qty", "sum"),
+            first_date=("first_date", "min"), last_date=("last_date", "max")).reset_index()
+    supply = st["opening"] + st["received"]
+    st["sell_through"] = (st["gone"] / supply.where(supply > 0)).round(3)
+    st["days"] = (pd.to_datetime(st["last_date"]) - pd.to_datetime(st["first_date"])).dt.days
+    return st
+
+
 def main():
     o = observations()
     if o.empty:
@@ -170,6 +204,8 @@ def main():
     pack = pack_test(o, rec)
     est = units_estimate(pack)
     reo = reorders(rec)
+    sell = sellthrough(o)
+    sell.to_csv(OUT_SELL, index=False)
     rec.to_csv(OUT_REC, index=False); pack.to_csv(OUT_PACK, index=False)
     est.to_csv(OUT_EST, index=False); reo.to_csv(OUT_REORD, index=False)
     print(f"Tone Pro deliveries — {len(o)} count observations, {o['store_id'].nunique()} stores")
@@ -182,6 +218,9 @@ def main():
         a = est[est["country"] == "ALL"].iloc[0]
         print(f"  units estimate, all Pro-label stores: {a['units_low']:,} – {a['units_mid']:,} – {a['units_high']:,}")
     print(f"  reorders: {len(reo)} store-weeks")
+    if not sell.empty:
+        print(f"  sell-through: {len(sell)} stores; median {sell['sell_through'].median():.0%} "
+              f"(units gone {int(sell['gone'].sum()):,} of {int((sell['opening'] + sell['received']).sum()):,} supplied)")
 
 
 if __name__ == "__main__":
