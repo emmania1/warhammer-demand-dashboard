@@ -259,3 +259,15 @@ date,change,country,name,city,from_range,to_range
 2026-10-14,dropped_stockist,DE,Werken Spielen Schenken GmbH & Co. KG,BERLIN,BSF,
 2026-10-14,dropped_stockist,GB,Zen Logic,POOLE,BSF,
 2026-10-14,dropped_stockist,DE,Zero Latency München,Neufahrn bei Freising,BSF,
+2026-10-15,gained_pro,KR,모델링쉼터,서울시,,P150_T150
+2026-10-15,label_added,KR,모델링쉼터,서울시,,P150_T150
+2026-10-15,new_stockist,MO,Ball Kei Macau,Macau,,BSF
+2026-10-15,new_stockist,MO,Du Du Saemon,Macau,,BSF
+2026-10-15,new_stockist,MO,Gundamu TCG Card Shop,Macau,,BSF
+2026-10-15,new_stockist,MO,K TCG STORE - PENINSULA,Macau,,BSF
+2026-10-15,new_stockist,MO,K TCG Store - Taipa,Taipa,,BSF
+2026-10-15,new_stockist,CL,LOCAL PAC MANIA,SAN FELIPE,,BSF
+2026-10-15,new_stockist,MO,Macau Xing Lung,Macau,,BSF
+2026-10-15,new_stockist,AU,Model Revival,Bathurst,,P150
+2026-10-15,new_stockist,CL,TODO FREAK,Vina Del Mar,,BSF
+2026-10-15,new_stockist,MY,Wonder Hobby,Kota Kinabalu,,BSF
