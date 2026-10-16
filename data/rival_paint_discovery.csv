@@ -1,0 +1,87 @@
+store_id,cadence,platform,line,products,multi_variant_products,where,examples,status,requests
+element_games,daily,elementgames,Vallejo Game Color,30,0,https://elementgames.co.uk/paints-hobby-and-scenery/paints-hobby-and-scenery-by-manufacturer/vallejo-paints|https://elementgames.co.uk/paints-hobby-and-scenery/paints-washes-etc/vallejo-paints,AV Game Color 18ml - Wash - Violet / AV Game Color 18ml - Wash - Yellow / AV Vallejo Game Color 18ml - Abyssal Turquoise,ok,6
+element_games,daily,elementgames,Vallejo Model Color,1,0,https://elementgames.co.uk/paints-hobby-and-scenery/paints-hobby-and-scenery-by-manufacturer/vallejo-paints|https://elementgames.co.uk/paints-hobby-and-scenery/paints-washes-etc/vallejo-paints,Model Color 846 - Mahogany Brown / Model Color 846 - Mahogany Brown,ok,6
+element_games,daily,elementgames,Vallejo Xpress Color,23,0,https://elementgames.co.uk/paints-hobby-and-scenery/paints-hobby-and-scenery-by-manufacturer/vallejo-paints|https://elementgames.co.uk/paints-hobby-and-scenery/paints-washes-etc/vallejo-paints,AV Vallejo Xpress Color 18ml - Black Lotus / AV Vallejo Xpress Color 18ml - Cardinal Purple / AV Vallejo Xpress Color 18ml - Caribbean Turquoise,ok,6
+element_games,daily,elementgames,Army Painter Fanatic,215,0,https://elementgames.co.uk/paints-hobby-and-scenery/paints-washes-etc/army-painter-warpaints,Warpaints Fanatic Effects: Dark Rust / Warpaints Fanatic Effects: Data System Glow / Warpaints Fanatic Effects: Dry Blood,ok,6
+firestorm_games,daily,firestorm,,0,0,,,ok,4
+the_outpost,daily,outpost,Vallejo Xpress Color,23,0,https://www.the-outpost.co.uk/brand/vallejo/,Xpress Color Templar White / Xpress Color Dwarf Skin / Xpress Color Imperial Yellow,ok,8
+the_outpost,daily,outpost,Vallejo Game Color,22,0,https://www.the-outpost.co.uk/brand/vallejo/,Game Color: Barbarian Skin / Game Color: Alien Purple / Game Color Ink: White,ok,8
+the_outpost,daily,outpost,Army Painter Fanatic,37,0,https://www.the-outpost.co.uk/brand/the-army-painter/,Warpaints Fanatic: Hearthborn  &#8211; John Blanche Masterclass &#8211; 18ml / Warpaints Fanatic: Iceborn  &#8211; John Blanche Masterclass &#8211; 18ml / Warpaints Fanatic: Moonpetal  &#8211; John Blanche Masterclass &#8211; 18ml,ok,8
+the_outpost,daily,outpost,Army Painter Warpaints,1,0,https://www.the-outpost.co.uk/brand/the-army-painter/,Warpaint: Quickshade Green Tone,ok,8
+games_a_plunder,daily,shopify,,0,0,,,ok,3
+nutmeg_games,daily,shopify,,0,0,,,ok,2
+loaded_dice,daily,shopify,Army Painter Fanatic,212,0,army-painter-fanatic-bundle-builder-collection|army-painter-warpaints-fanatic,Army Painter Warpaints Fanatic: Vivid Volt 18ml / Army Painter Warpaints Fanatic: Electric Lime 18ml / Army Painter Warpaints Fanatic Effects: Data System Glow 18ml,ok,9
+loaded_dice,daily,shopify,Vallejo Model Color,197,0,vallejo-model-color,Vallejo Model Color - Light Flesh / Vallejo Model Color - Blue Grey Pale / Vallejo Model Color - Green Brown,ok,9
+loaded_dice,daily,shopify,Vallejo Game Color,129,0,vallejo-game-color|vallejo-game-colour-bundle-builder-discount,Vallejo Game Color Wash - Fleshtone (18ml) / Vallejo Game Color Bile Green (18ml) / Vallejo Game Color Game Ink - White (18ml),ok,9
+loaded_dice,daily,shopify,Vallejo Xpress Color,59,0,vallejo-xpress-color,Vallejo Xpress Color Black Lotus (18ml) / Vallejo Xpress Color - Intense - Dreadnought Yellow / Vallejo Xpress Color - Intense - Heretic Turquoise,ok,9
+battle_city_games,daily,shopify,Army Painter Fanatic,204,0,the-army-painter,The Army Painter: Warpaints Fanatic Wash: Strong Tone / The Army Painter: Warpaints Fanatic: Ruby Skin / The Army Painter: Warpaints Fanatic: Blood Chalice,ok,5
+beanie_games,daily,shopify,Army Painter Fanatic,250,0,army-painter-paints-tools,Warpaints Fanatic - Matt Black / Warpaints Fanatic - Matt White / Warpaints Fanatic Effects - Plasma Coil Glow,ok,5
+beanie_games,daily,shopify,Army Painter Warpaints,44,0,army-painter-paints-tools,Warpaints: Orc Blood (End of Line) / Warpaints: Jungle Green (End of Line) / Warpaints: Werewolf Fur (End of Line),ok,5
+jeux_az_games,daily,shopify,Army Painter Fanatic,4,4,the-army-painter,WARPAINTS: FANATIC ACRYLIC 18ml / WARPAINTS: FANATIC ACRYLIC 18ml / WARPAINTS: FANATIC EFFECTS 18ml,ok,3
+pastime_sports_games,daily,shopify,,0,0,,,ok,10
+armada_games,weekly,shopify,Army Painter Fanatic,212,0,ap-army-painter|pnt-army-painter-warpaints-fanatic,AP Warpaints Fanatic Effects: Dark Rust 18ml / AP Warpaints Fanatic Effects: Data System Glow 18ml / AP Warpaints Fanatic Effects: Disgusting Slime 18ml,ok,10
+the_haunted_game_cafe,weekly,shopify,Vallejo Game Color,129,0,vallejo-game-color,Vallejo Game Color Paints: Dead White / Vallejo Game Color Paints: Scorpy Green / Vallejo Game Color Paints: Metallic Silver,ok,5
+the_haunted_game_cafe,weekly,shopify,Army Painter Fanatic,212,0,army-painter,Army Painter Warpaints Fanatic: Matt Black 18ml / Army Painter Warpaints Fanatic: Matt White 18ml / Army Painter Warpaints Fanatic: Effects - Plasma Coil Glow 18ml,ok,5
+gamers_grove,weekly,shopify,,0,0,,,ok,7
+grognard_games,weekly,shopify,Vallejo Model Color,207,0,vallejo-paint-1,Vallejo Model Color 70.950 Black (191) / Vallejo Model Color 70.951 White (1) / Vallejo Model Color 70.919 Cold White (2),ok,10
+grognard_games,weekly,shopify,Vallejo Game Color,140,0,vallejo-paint-1,Vallejo Game Color 72.001 Dead White (1) / Vallejo Game Color 72.051 Black (80) / Vallejo Game Color 72.010 Bloody Red (21),ok,10
+grognard_games,weekly,shopify,Vallejo Xpress Color,23,0,vallejo-paint-1,Vallejo Xpress Color 72.423 Black Lotus (159) / Vallejo Xpress Color 72.420 Wasteland Brown (156) / Vallejo Xpress Color 72.403 Imperial Yellow (139),ok,10
+grognard_games,weekly,shopify,Army Painter Fanatic,212,0,army-painter|army-painter-paint,Army Painter - Warpaints Fanatic Effects: Dark Rust / Army Painter - Warpaints Fanatic Effects: Data System Glow / Army Painter - Warpaints Fanatic Effects: Disgusting Slime,ok,10
+grognard_games,weekly,shopify,Army Painter Warpaints,1,0,army-painter|army-painter-paint,Army Painter Warpaints WP1141P HYDRA TURQUOISE / Army Painter Warpaints WP1141P HYDRA TURQUOISE,ok,10
+deals_n_dragons,weekly,shopify,Army Painter Fanatic,162,0,paint,Warpaints Fanatic: Pure Red / Warpaints Fanatic: Ruddy Umber / Warpaints Fanatic: Dragon Red,ok,5
+collector_store_llc,weekly,shopify,Army Painter Fanatic,212,0,army-painter,Army Painter: Warpaints Fanatics Effects - Plasma Coil Glow / Army Painter: Warpaints Fanatics - Matt White / Army Painter: Warpaints Fanatics - Aqua Alchemy,ok,4
+titan_games,weekly,lightspeed,Vallejo Game Color,65,0,/search/vallejo/,Vallejo Vallejo Game Color 72.155 Charcoal / Vallejo Vallejo Game Color 73.207 Blue Wash / Vallejo Vallejo Game Color 73.206 Red Wash,ok,3
+kingslayer_games,weekly,lightspeed,,0,0,,,ok,3
+discount_games_inc,weekly,lightspeed,,0,0,,,ok,3
+travelling_man_uk,weekly,shopify,Army Painter Fanatic,212,0,army-painter|hobby-supply-paint-range-army-painter|warpaints-fanatic,The Army Painter Warpaints Fanatic Matt White / The Army Painter Warpaints Fanatic Matt Black / The Army Painter Warpaints Fanatic Effects Plasma Coil Glow,ok,16
+travelling_man_uk,weekly,shopify,Vallejo Model Color,223,0,hobby-supply-paint-range-vallejo|vallejo,Vallejo Model Color - 70.950 Black / Vallejo Model Color - 70.951 White / Vallejo Model Color - 70.858 Ice Yellow,ok,16
+travelling_man_uk,weekly,shopify,Vallejo Xpress Color,59,0,hobby-supply-paint-range-vallejo|vallejo,Vallejo Xpress Color Black Lotus 72.423 18ml / Vallejo Xpress Color Velvet Red 72.407 18ml / Vallejo Xpress Color Templar White 72.401 18ml,ok,16
+travelling_man_uk,weekly,shopify,Vallejo Game Color,129,0,hobby-supply-paint-range-vallejo|vallejo,Vallejo Game Color Fluorescent Blue 72.160 18ml / Vallejo Game Color Dead White 72.001 18ml / Vallejo Game Color Fluorescent Orange 72.156 18ml,ok,16
+draco_gaming,weekly,shopify,Army Painter Fanatic,212,0,the-army-painter,The Army Painter Warpaints Fanatic: Matt White / The Army Painter Warpaints Fanatic: Matt Black / The Army Painter Warpaints Fanatic: Skeleton Bone,ok,5
+draco_gaming,weekly,shopify,Army Painter Warpaints,8,0,the-army-painter,The Army Painter: Warpaints Metallics: Royal Purple / The Army Painter: Warpaints Metallics: Azure Magic / The Army Painter: Warpaints Metallics: Elven Armor,ok,5
+athena_games_ltd,weekly,shopify,Army Painter Fanatic,252,0,army-painter-speed-paint-2-0|army-painter-speed-paints|the-army-painter-fanatic-range,Warpaints Fanatics: John Blanche Masterclass: Midnight Olive / Warpaints Fanatics: John Blanche Masterclass: Tainted Garden / Warpaints Fanatics: John Blanche Masterclass: Blighted Green,ok,9
+401_games,weekly,shopify,Army Painter Fanatic,212,0,miniatures-paint,The Army Painter - Warpaints Fanatic - Abyssal Blue [WP3032] (18ml) / The Army Painter - Warpaints Fanatic - Aegis Aqua [WP3036] (18ml) / The Army Painter - Warpaints Fanatic - Afterglow [WP3060] (18ml),ok,19
+401_games,weekly,shopify,Vallejo Model Color,227,0,miniatures-paint,Vallejo - Auxiliary - Liquid Mask [70.523] (18ml) / Vallejo - Auxiliary - Plastic Putty [70.400] (18ml) / Vallejo - Liquid Metal - Copper [70.797] (35ml),ok,19
+401_games,weekly,shopify,Vallejo Game Color,129,0,miniatures-paint,Vallejo - Game Color - Abyssal Turquoise [72.120] (18ml) / Vallejo - Game Color - Alien Purple [72.076] (18ml) / Vallejo - Game Color - Angel Green [72.123] (18ml),ok,19
+401_games,weekly,shopify,Vallejo Xpress Color,59,0,miniatures-paint,Vallejo - Xpress Color - Armor Green [72.466] (18ml) / Vallejo - Xpress Color - Bag of Bones [72.450] (18ml) / Vallejo - Xpress Color - Battledress Brown [72.473] (18ml),ok,19
+taps_games,weekly,shopify,Vallejo Game Color,80,0,vallejo-paint,Vallejo: Game Color 72051 Black / Vallejo: Game Color 72034 Bone white / Vallejo: Game Color 72010 Bloody Red,ok,10
+taps_games,weekly,shopify,Vallejo Model Color,25,0,vallejo-paint,Vallejo: 70523 Liquid Mask / Vallejo: 70400 Plastic Putty / Vallejo: Model Color 70951 White,ok,10
+fantasy_forged,weekly,shopify,Army Painter Fanatic,213,0,army-painter|army-painter-paints,Warpaints Fanatic Effects: Power Node Glow / Warpaints Fanatic Effects: Radiation Glow / Warpaints Fanatic Effects: Lens Flare Glow,ok,11
+fantasy_forged,weekly,shopify,Vallejo Model Color,23,19,vallejo-paints|vallejo-paints-and-tools,Vallejo - Model Color: Mahogany Ink / Vallejo - Model Color: Dark Rose / Vallejo - Model Color: Brown Rose,ok,11
+boutique_fdb,weekly,shopify,Army Painter Fanatic,214,0,army-painter|army-painter-paints,ARMY PAINTER: WARPAINTS FANATIC ACRYLIC - MATT WHITE / ARMY PAINTER: WARPAINTS FANATIC ACRYLIC - MATT BLACK / ARMY PAINTER: WARPAINTS FANATIC METALLIC - DEATH METAL,ok,7
+tistaminis,weekly,shopify,Vallejo Game Color,155,0,vallejo-1|vallejo-game-colour,Vallejo Game Colour Paint - Yellow Wash (73.208) / Vallejo Game Colour Paint - Violet Wash (73.209) / Vallejo Game Colour Paint Game Color Blue Wash (73.207),ok,12
+tistaminis,weekly,shopify,Army Painter Fanatic,212,0,army-painter-warpaints-acrylic-paints,ARMY PAINTER FANATIC ACRYLIC MATT BLACK New / ARMY PAINTER FANATIC ACRYLIC DEEP GREY New / ARMY PAINTER FANATIC ACRYLIC UNIFORM GREY New,ok,12
+tistaminis,weekly,shopify,Vallejo Model Color,217,0,model-color|vallejo-1|vallejo-model-colour,Vallejo Model Colour Paint Yellow Olive (70.892) / Vallejo Model Colour Paint Yellow Green (70.954) / Vallejo Model Colour Paint Yellow Green (70.881),ok,12
+tistaminis,weekly,shopify,Vallejo Xpress Color,59,0,vallejo-1|vallejo-xpress-color,Vallejo Black Lotus Xpress Color New / Vallejo Templar White Xpress Color New / Vallejo Orc Skin Xpress Color New,ok,12
+black_knight_games,weekly,shopify,Army Painter Fanatic,196,0,hobby-supplies-the-army-painter|the-army-painter,Army Painter: Fanatic - Matt White (18ml) / Army Painter: Fanatic - Matt Black (18ml) / Army Painter: Fanatic Effect - Plasma Coil Glow (18ml),ok,13
+black_knight_games,weekly,shopify,Army Painter Warpaints,1,0,hobby-supplies-the-army-painter|the-army-painter,Army Painter: Warpaints - Ash Grey / Army Painter: Warpaints - Ash Grey,ok,13
+black_knight_games,weekly,shopify,Vallejo Game Color,117,0,hobby-supplies-vallejo|vallejo,Vallejo: Game Color - Black (17mL) (72.051) / Vallejo: Game Color - Dead White (17mL) (72.001) / Vallejo: Game Color - Bloody Red (18ml) (72.010),ok,13
+black_knight_games,weekly,shopify,Vallejo Xpress Color,24,0,hobby-supplies-vallejo|vallejo,Vallejo: Xpress Color - Black Lotus (18ml) (72.423) / Vallejo: Xpress Color - Orc Skin (18ml) (72.415) / Vallejo: Xpress Color - Velvet Red (18ml) (72.407),ok,13
+black_knight_games,weekly,shopify,Vallejo Model Color,3,0,hobby-supplies-vallejo|vallejo,Vallejo: Plastic Putty (17mL) (70.400) / Vallejo: Model Color - Basic Skin Tone (18ml) (70.815) / Vallejo: Liquid Mask (17mL) (70.523),ok,13
+obsidian_games,weekly,shopify,Army Painter Fanatic,209,0,paints-and-hobby-supplies-army-painter|paints-and-hobby-supplies-army-painter-army-painter-fanatic,Army Painter: Warpaints: Fanatic Wash Dark Tone / Army Painter: Warpaints: Fanatic Metallic Gun Metal / Army Painter: Warpaints: Fanatic Effects Plasma Coil Glow,ok,11
+obsidian_games,weekly,shopify,Army Painter Warpaints,4,0,paints-and-hobby-supplies-army-painter|paints-and-hobby-supplies-army-painter-army-painter-fanatic,Army Painter: Warpaints: Eternal Hunt / Army Painter: Warpaints: Ferocious Green / Army Painter: Warpaints: Autumn Sage,ok,11
+obsidian_games,weekly,shopify,Vallejo Game Color,121,0,paints-and-hobby-supplies-vallejo|vallejo-vallejo-game-color,Vallejo Black VAL72051 / Vallejo Dead White VAL72001 / Vallejo Scorpy Green VAL72032,ok,11
+obsidian_games,weekly,shopify,Vallejo Xpress Color,59,0,paints-and-hobby-supplies-vallejo|vallejo-vallejo-xpress,Vallejo Orx Skin Xpress Color VAL72415 / Vallejo: Xpress Color Dreadnought Yellow VAL72477 / Vallejo Black Lotus Xpress Color VAL72423,ok,11
+bd_cosmos,weekly,shopify,Vallejo Game Color,161,0,vallejo-game-colors|vallejo-model-colors|vallejo-paint-all,GAME COLOR: COLD GREEN FLUORESCENT / GAME COLOR: MAGENTA FLUORESCENT / GAME COLOR: ORANGE FLUORESCENT,ok,11
+bd_cosmos,weekly,shopify,Vallejo Model Color,250,0,vallejo-model-colors|vallejo-paint-all,MODEL COLOR : BLACK GREEN / MODEL COLOR : BLACK VIOLET / MODEL COLOR : BRIGHT GREEN,ok,11
+bd_cosmos,weekly,shopify,Vallejo Xpress Color,59,0,vallejo-paint-all|xpress-color,XPRESS COLOR: HOSPITALLIER BLACK / XPRESS COLOR: ORC SKIN / XPRESS COLOR: BLACK LOTUS,ok,11
+bd_cosmos,weekly,shopify,Army Painter Warpaints,11,0,all-army-painter,WARPAINTS: LIGHT TONE (WP1470) / WARPAINTS: PURPLE TONE (WP1140) / WARPAINTS: MILITARY SHADER (WP1471),ok,11
+wandering_adventures,weekly,shopify,Vallejo Game Color,113,0,vallejo|vallejo-game-color-range-new,Vallejo Game Color- Black / Vallejo Game Color Metallic- Glorious Gold / Vallejo Game Color- Gory Red,ok,9
+wandering_adventures,weekly,shopify,Vallejo Xpress Color,59,0,vallejo|vallejo-xpress-color,Vallejo Xpress Color- Black Lotus / Vallejo Xpress Color- Templar White / Vallejo Xpress Color- Copper Brown,ok,9
+event_horizon_hobbies_ca,weekly,shopify,Army Painter Warpaints,5,4,hobby-paint,The Army Painter - Warpaints Acrylics / The Army Painter - Warpaints Metallics / The Army Painter Acrylics Warpaints Quickshade Washes,ok,4
+event_horizon_hobbies_ca,weekly,shopify,Vallejo Game Color,9,6,hobby-paint|paint-by-numbers,Vallejo - Game Colour / Vallejo - Game Colour - Metallic / Vallejo - Game Colour - Fluo,ok,4
+event_horizon_hobbies_ca,weekly,shopify,Army Painter Fanatic,1,1,hobby-paint,The Army Painter - Fanatic Paints,ok,4
+event_horizon_hobbies_ca,weekly,shopify,Vallejo Xpress Color,2,2,hobby-paint,Vallejo - Game Colour Xpress / Vallejo - Game Colour Xpress - Intense,ok,4
+level_one_game_shop,weekly,shopify,,0,0,,,ok,7
+lionheart_hobby,weekly,shopify,Vallejo Game Color,144,0,paint-brand-vallejo,"Game Color: Dead White, 17 ml. 72001 / Game Color: Black, 17 ml. 72051 / Game Color: Dark Gunmetal, 17 ml. 72054",ok,7
+lionheart_hobby,weekly,shopify,Vallejo Model Color,147,0,paint-brand-vallejo,Black (70950) 169 / Dark Sea Blue (70898) 048 / White (70951) 001,ok,7
+lionheart_hobby,weekly,shopify,Vallejo Xpress Color,25,0,paint-brand-vallejo,"Game Color: Xpress Color- Velvet Red, 18 ml. 72407 / Game Color: Xpress Color- Cardinal Purple, 18 ml. 72408 / Game Color: Xpress Color- Plasma Red, 18 ml. 72406",ok,7
+lionheart_hobby,weekly,shopify,Army Painter Fanatic,212,0,paint-brand-army-painter,Warpaints Fanatic Metallic: Gun Metal WP3193 / Warpaints Fanatic Effects: Plasma Coil Glow WP3176 / Warpaints Fanatic: Matt Black WP3001,ok,7
+the_arcanum_sanctorum,weekly,shopify,Vallejo Game Color,129,0,vallejo,Vallejo: Game Color Special FX - Frost / Vallejo: Game Color Metallic - Chainmail / Vallejo: Game Color Fluorescent - Orange,ok,4
+the_arcanum_sanctorum,weekly,shopify,Vallejo Xpress Color,59,0,vallejo,Vallejo: Xpress Color - Black Lotus / Vallejo: Xpress Color - Imperial Yellow / Vallejo: Xpress Color - Orc Skin,ok,4
+the_arcanum_sanctorum,weekly,shopify,Vallejo Model Color,77,0,vallejo,Vallejo: Surface Primers - Black / Vallejo: Model Color - White / Vallejo: Surface Primers - White,ok,4
+gaming_giant,weekly,shopify,,0,0,,,ok,2
+accidentally_cool_games,weekly,shopify,,0,0,,,ok,2
+hw_wargames,weekly,shopify,,0,0,,,ok,5
+highlander_games,weekly,shopify,Army Painter Fanatic,46,0,the-army-painter-paint,Warpaints Fanatic: Gargoyle Grey / Warpaints Fanatic: Brainmatter Beige / Warpaints Fanatic: Matt Black,ok,4
+cosmic_collectables_uk,weekly,shopify,,0,0,,,ok,3

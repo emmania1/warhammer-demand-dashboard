@@ -2576,6 +2576,76 @@ def build_launch_page() -> str:
         changed.append(f"The Outpost on order {n(oo['on_order_units'].iloc[-2]):,} → {n(oo['on_order_units'].iloc[-1]):,}")
 
     # ════════════════════════════════════════════════════════════════════
+    # Paint scoreboard — Tone Pro vs Citadel Base/Layer vs Army Painter vs Vallejo
+    # ════════════════════════════════════════════════════════════════════
+    sec_sb = ""
+    sb = _read_csv_or_empty(os.path.join(DATA_DIR, "paint_scoreboard.csv"))
+    sbs = _read_csv_or_empty(os.path.join(DATA_DIR, "paint_scoreboard_store_week.csv"))
+    rv = _read_csv_or_empty(os.path.join(DATA_DIR, "rival_paint_qty.csv"))
+    if not sb.empty or not rv.empty:
+        brands = ["Tone Pro", "Citadel Base/Layer", "Army Painter", "Vallejo"]
+        wk = sb["iso_week"].max() if not sb.empty else ""
+        cur_sb = sb[sb["iso_week"] == wk] if wk else sb
+        wk_start = pd.to_datetime(cur_sb["week_start"].iloc[0]) if not cur_sb.empty else None
+        last_read = max([x for x in (pnl["date"].max() if not pnl.empty else "", pq["date"].max() if not pq.empty else "",
+                                     rv["date"].max() if not rv.empty else "") if x] or [""])
+        partial = wk_start is not None and last_read and pd.to_datetime(last_read) < wk_start + pd.Timedelta(days=6)
+        wk_lbl = (f"week of {wk_start.strftime('%-d %b')}" + (f" (to {d(last_read)}, week not finished)" if partial else "")) if wk_start is not None else "—"
+        def fnum(v, fmt="{:,.1f}"):
+            return fmt.format(float(v)) if str(v) not in ("", "nan", "None") else "—"
+        sb_rows, per_pot = [], {}
+        for b in brands:
+            r = cur_sb[cur_sb["brand"] == b]
+            if r.empty:
+                rv_n = rv[rv["brand"] == b]["store_id"].nunique() if not rv.empty and "brand" in rv else 0
+                sb_rows.append([f"<strong>{b}</strong>", "0", "—", "—", "—", "—",
+                                f"{rv_n} store{'s' if rv_n != 1 else ''} read once; needs a second read" if rv_n else "no counts yet"])
+                continue
+            r = r.iloc[0]
+            per_pot[b] = float(r["units_gone_per_paint"]) if str(r["units_gone_per_paint"]) not in ("", "nan") else None
+            sb_rows.append([f"<strong>{b}</strong>", n(r["stores"]), fnum(r["paints_per_store"], "{:,.0f}"),
+                            fnum(r["units_gone_per_store_median"]), fnum(r["units_gone_per_paint"], "{:,.2f}"),
+                            f"{float(r['sell_through']):.1%}" if str(r["sell_through"]) not in ("", "nan") else "—", ""])
+        prelaunch = pd.Timestamp.now().normalize() < pd.to_datetime(TONE_PRO_LAUNCH) and (not last_read or last_read < TONE_PRO_LAUNCH)
+        pool = {k: v for k, v in per_pot.items() if v is not None and not (prelaunch and k == "Tone Pro")}
+        lead = max(pool, key=pool.get) if pool else None
+        if lead and len(pool) > 1:
+            head_sb = f"{'Baseline week: ' if prelaunch else ''}{lead} leads with {pool[lead]:.2f} pots gone per paint"
+        elif lead:
+            head_sb = f"{'Baseline week: ' if prelaunch else ''}only {lead} has two reads so far ({pool[lead]:.2f} pots gone per paint)"
+        else:
+            head_sb = "Scoreboard starts filling once each store has two reads"
+        hist_rows = []
+        if not sb.empty:
+            for (w, b), r in sb.set_index(["iso_week", "brand"]).sort_index(ascending=False).iterrows():
+                hist_rows.append([f"{pd.to_datetime(r['week_start']).strftime('%-d %b')}", b, n(r["stores"]),
+                                  fnum(r["units_gone_per_store_median"]), fnum(r["units_gone_per_paint"], "{:,.2f}"),
+                                  f"{float(r['sell_through']):.1%}" if str(r["sell_through"]) not in ("", "nan") else "—"])
+        app_sb = table(["Week of", "Brand", "Stores", "Units gone per store (median)", "Per paint", "Sell-through"], hist_rows,
+                       empty="No complete weeks yet.", right=[2, 3, 4, 5])
+        sec_sb = section(
+            4, "Paint scoreboard: Tone Pro vs rivals", head_sb,
+            f"{wk_lbl} · stores that publish unit counts · each figure shows how many stores it's based on",
+            f"""<div class="p9-card"><h4>Weekly paint scoreboard · {wk_lbl}</h4>
+      {table(["Brand", "Stores", "Paints tracked per store", "Units gone per store (median)", "Units gone per paint", "Sell-through", "Note"],
+             sb_rows, right=[1, 2, 3, 4, 5])}
+      <p class="p9-note">Army Painter = Warpaints Fanatic + classic Warpaints; Vallejo = Game Color, Xpress Color, Model Color.
+      Stores differ by brand (each brand counts only stores that stock it). Weekly product-page stores read 10 pots per rival brand;
+      daily-count stores read every pot they list.</p></div>""",
+            ("Compare the <strong>per paint</strong> column across brands — it adjusts for how many pots of each brand we track. "
+             "Before 24 Oct, Tone Pro's figure is pre-orders taken, not shelf sales, so the fair comparison starts in the launch week; "
+             "this week and next are the rivals' baseline."),
+            "<strong>Units gone</strong> = falls in each store's count between reads, credited to the week of the later read: "
+            "sales, pre-orders, cancellations and corrections alike, net of any restock in between (so weekly-read stores understate). "
+            "It is not a sales figure. <strong>Units gone per store</strong> is the median across stores with at least two reads of "
+            "that brand. <strong>Per paint</strong> = all units gone ÷ all paints tracked. <strong>Sell-through</strong> = units gone ÷ "
+            "(stock at the start of the week + units received). Capped counts (e.g. Element Games' “10+”) are excluded. "
+            "A week with few stores behind it is noisy; the Stores column shows the base.")
+        app_sb_title = "Paint scoreboard by week"
+    else:
+        app_sb, app_sb_title = "", ""
+
+    # ════════════════════════════════════════════════════════════════════
     # 4 · GW store network
     # ════════════════════════════════════════════════════════════════════
     sec4 = ""
@@ -2586,7 +2656,7 @@ def build_launch_page() -> str:
         recent = [chrow(r) for _, r in ch.head(8).iterrows()]
         d_open = n(S["gw_open"]) - n(S0["gw_open"])
         sec4 = section(
-            4, "GW store network", f"{n(S['gw_open'])} GW stores open, {n(S['gw_coming_soon'])} coming soon",
+            5, "GW store network", f"{n(S['gw_open'])} GW stores open, {n(S['gw_coming_soon'])} coming soon",
             f"{d(S['date'])} · {signed(d_open)} open since {d(S0['date'])} ({n(S0['gw_open'])} then) · "
             f"total listed {n(S['gw_stores'])} = {n(S['gw_open'])} open + {n(S['gw_coming_soon'])} coming soon",
             f"""<div class="p9-card"><h4>Latest openings and closings</h4>
@@ -2729,6 +2799,8 @@ def build_launch_page() -> str:
       paint at stores that pass the pack-size test (that country if 3+ pass, else all). Shown only once 5 stores pass.</p>
       <p><strong>Durations.</strong> Snapshots are daily, so a stock-out that starts and ends between runs is missed and durations are
       whole days at least.</p></div>"""))
+    if app_sb_title:
+        app.insert(0, (app_sb_title, app_sb))
     appendix = "".join(f"<details class='p9-app'><summary>{t}</summary><div>{b}</div></details>" for t, b in app)
 
     glossary = """<div class="p9-gloss">
@@ -2744,6 +2816,7 @@ def build_launch_page() -> str:
         <dt>Gone</dt><dd>Fall in a store's count: pre-orders, sales, cancellations or corrections. Not the same as sales.</dd>
         <dt>Pack-size test</dt><dd>A store passes if at least 70% of its Tone Pro paints are at the same number of pots, which suggests a fixed GW pack.</dd>
         <dt>Reorder</dt><dd>A second rise in a store's count after its launch delivery.</dd>
+        <dt>Army Painter / Vallejo</dt><dd>The two biggest rival hobby paint brands. Army Painter's current range is Warpaints Fanatic; Vallejo's wargaming ranges are Game Color and Xpress Color (Model Color is its general range).</dd>
         <dt>Base / Layer</dt><dd>GW's long-running core paint ranges, used as the comparison.</dd>
       </dl></div>"""
 
@@ -2811,6 +2884,7 @@ def build_launch_page() -> str:
 {sec1}
 {sec2}
 {sec3}
+{sec_sb}
 {sec4}
   <div class="p9-q" style="margin-top:10px">Appendix</div>
   {appendix}

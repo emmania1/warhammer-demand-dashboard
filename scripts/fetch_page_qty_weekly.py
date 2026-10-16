@@ -122,6 +122,10 @@ def read_qty(f, platform: str, item: dict) -> tuple[int | None, str]:
     # Taken from the main product area (before the first recommendations block).
     if not item.get("multi"):
         main = re.split(r"(?i)you may also like|related products|recommended|recently viewed|frequently bought", page)[0]
+        # Theme inventory block in the main product area (e.g. data-inventory-quantity="4") — one product, one count
+        m = re.search(r'(?i)data-inventory-quantity="(-?\d+)"|"inventory_quantity"\s*:\s*(-?\d+)', main)
+        if m:
+            return int(m.group(1) or m.group(2)), "product inventory block"
         m = VISIBLE_QTY.search(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"(?s)<script.*?</script>|<style.*?</style>", " ", main))))
         if m:
             return int(m.group(1) or m.group(2)), "visible text"

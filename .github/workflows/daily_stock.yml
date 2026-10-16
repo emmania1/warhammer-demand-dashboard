@@ -83,6 +83,11 @@ jobs:
           LAUNCH_DAILY: ${{ vars.LAUNCH_DAILY_ENABLED }}     # 22–31 Oct daily subset at every page-count store
         run: python scripts/fetch_page_qty_weekly.py
 
+      - name: Rival paint counts — Army Painter + Vallejo (daily-count stores daily, product-page stores weekly)
+        if: vars.RIVAL_ENABLED == 'true'
+        continue-on-error: true
+        run: python scripts/fetch_rival_paint_qty.py
+
       - name: Element Games stock snapshot (UK indie)
         continue-on-error: true
         run: python scripts/fetch_element_games_stock.py
@@ -90,6 +95,10 @@ jobs:
       - name: Tone Pro deliveries, pack test, units estimate, reorders (no network)
         continue-on-error: true
         run: python scripts/analyze_tone_pro_deliveries.py
+
+      - name: Paint scoreboard — units gone and sell-through by brand (no network)
+        continue-on-error: true
+        run: python scripts/analyze_paint_scoreboard.py
 
       - name: Regenerate dashboard (index.html)
         continue-on-error: true
@@ -104,7 +113,8 @@ jobs:
                   data/indie_paint_panel_*.csv data/prev_run_snapshot.json index.html
           for f in data/page_qty_plan.csv data/tone_pro_receipts.csv data/tone_pro_pack_test.csv data/tone_pro_units_estimate.csv \
                    data/tone_pro_reorders.csv data/tone_pro_sellthrough.csv data/page_qty_weekly.csv data/gw_paint_stock_regions_daily.csv data/gw_paint_stock_regions_summary.csv \
-                   data/gw_paint_oos_episodes_regions.csv; do [ -f "$f" ] && git add "$f"; done
+                   data/gw_paint_oos_episodes_regions.csv data/rival_paint_qty.csv data/rival_paint_plan.csv \
+                   data/paint_scoreboard.csv data/paint_scoreboard_store_week.csv; do [ -f "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then
             echo "No changes."
             exit 0
