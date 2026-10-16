@@ -26,3 +26,5 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-15,2026-10-14,1,firestorm_games,GB,Layer: Sycorax Bronze,Layer,5.0,11,6.0,prelaunch_update,panel
 2026-10-15,2026-10-14,1,firestorm_games,GB,Layer: White Scar,Layer,14.0,19,5.0,prelaunch_update,panel
 2026-10-15,2026-10-14,1,loaded_dice,GB,Base: Corax White,Base,2.0,45,43.0,prelaunch_update,panel
+2026-10-16,2026-10-15,1,loaded_dice,GB,Layer: Fulgurite Copper,Layer,3.0,11,8.0,prelaunch_update,panel
+2026-10-16,2026-10-15,1,loaded_dice,GB,Layer: Ulthuan Grey,Layer,2.0,12,10.0,prelaunch_update,panel

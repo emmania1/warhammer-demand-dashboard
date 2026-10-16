@@ -271,3 +271,5 @@ date,change,country,name,city,from_range,to_range
 2026-10-15,new_stockist,AU,Model Revival,Bathurst,,P150
 2026-10-15,new_stockist,CL,TODO FREAK,Vina Del Mar,,BSF
 2026-10-15,new_stockist,MY,Wonder Hobby,Kota Kinabalu,,BSF
+2026-10-16,relisted,MY,Wonder Hobby,Kota Kinabalu,BSF,BSF
+2026-10-16,new_stockist,HK,Tcg Fusion,Hong Kong,,BSF

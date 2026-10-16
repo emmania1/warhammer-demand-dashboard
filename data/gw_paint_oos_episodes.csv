@@ -1,167 +1,171 @@
 sku,name,line,oos_first_seen,oos_last_seen,back_in_stock,snapshots_oos,days_oos_min,ongoing,started_before_tracking
-P-244947-56189951371,Layer: Stormhost Silver,Layer,2026-10-14,2026-10-15,,2,2,true,false
-P-245558-56189951391,Layer: Canoptek Alloy,Layer,2026-10-13,2026-10-15,,3,3,true,true
-P-246544-56189951337,Layer: Ungor Flesh,Layer,2026-10-13,2026-10-15,,3,3,true,true
-P-246695-56189960240,Contrast: Aeldari Emerald,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-246846-56189956129,Technical: Agrellan Earth,Technical,2026-10-13,2026-10-15,,3,3,true,true
-P-246900-56189956123,Technical: Nurgle's Rot,Technical,2026-10-13,2026-10-15,,3,3,true,true
-P-247143-56189950303,Base: Gal Vorbak Red,Base,2026-10-13,2026-10-15,,3,3,true,true
-P-247147-56189950283,Base: Ratskin Flesh,Base,2026-10-13,2026-10-15,,3,3,true,true
-P-247153-56189950305,Base: Nocturne Green,Base,2026-10-13,2026-10-15,,3,3,true,true
-P-247154-56189950320,Base: Hobgrot Hide,Base,2026-10-13,2026-10-15,,3,3,true,true
-P-247208-56189960248,Contrast: Briar Queen Chill,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247219-56189960227,Contrast: Gryph-Charger Grey,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247242-56189960241,Contrast: Gutrippa Flesh,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247245-56189960244,Contrast: Ironjawz Yellow,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247254-56189960239,Contrast: Mantis Warriors Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247257-56189960215,Contrast: Nazdreg Yellow,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-P-247614-56189953066,Shade: Tyran Blue,Shade,2026-10-13,2026-10-15,,3,3,true,true
-P-248285-56189956130,Technical: Martian Ironearth,Technical,2026-10-13,2026-10-15,,3,3,true,true
-P-248331-56189956133,Technical: Stormshield,Technical,2026-10-13,2026-10-15,,3,3,true,true
-P-248343-56189956093,Technical: Agrellan Badland,Technical,2026-10-13,2026-10-15,,3,3,true,true
-P-248643-56189953064,Shade: Targor Rageshade,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4190157-99189950306,Base: Corvus Black,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190158-99189950127,Base: Lupercal Green,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190159-99189950308,Base: Iron Hands Steel,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190164-99189950257,Base: Morghast Bone,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190165-99189950315,Base: Corax White,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190166-99189950316,Base: Wraithbone,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4190179-99189951292,Layer: Castellax Bronze,Layer,2026-10-15,2026-10-15,,1,1,true,false
-prod4190180-99189951293,Layer: Vulkan Green,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4190184-99189956067,Technical: Mordant Earth,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190188-99189956071,Technical: Martian Ironcrust,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190189-99189956072,Technical: Stirland Mud,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190193-99189956076,Technical: Astrogranite,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190196-99189956079,Technical: Lahmian Medium,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190198-99189956081,Technical: Contrast Medium,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4190200-99189958131,Air: Averland Sunset,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190201-99189958132,Air: Mephiston Red,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190202-99189958133,Air: Khorne Red,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190203-99189958134,Air: Kantor Blue,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190205-99189958137,Air: Caliban Green,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190206-99189958138,Air: Castellan Green,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190207-99189958139,Air: Deathworld Forest,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190208-99189958140,Air: Zandri Dust,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190209-99189958141,Air: Mournfang Brown,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190212-99189958144,Air: Mechanicus Standard Grey,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190213-99189958145,Air: Abaddon Black,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190214-99189958146,Air: Leadbelcher,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190215-99189958147,Air: Balthasar Gold,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190217-99189958149,Air: The Fang,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190218-99189958150,Air: Flash Gitz Yellow,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190219-99189958151,Air: Troll Slayer Orange,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190220-99189958152,Air: Evil Sunz Scarlet,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190223-99189958155,Air: Lothern Blue,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190224-99189958156,Air: Temple Guard Blue,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190226-99189958158,Air: Moot Green,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190230-99189958162,Air: Ogryn Camo,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190231-99189958163,Air: Ushabti Bone,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190232-99189958164,Air: Air Caste Thinner,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190235-99189958167,Air: Kislev Flesh,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190240-99189958172,Air: Baneblade Brown,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190241-99189958173,Air: Dawnstone,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190242-99189958174,Air: Administratum Grey,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190243-99189958175,Air: Ulthuan Grey,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190244-99189958176,Air: White Scar,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190246-99189958178,Air: Runefang Steel,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190248-99189958180,Air: Russ Grey,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190249-99189958181,Air: Fenrisian Grey,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190251-99189958183,Air: Angron Red Clear,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190252-99189958184,Air: Calth Blue Clear,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190254-99189958186,Air: Eidolon Purple Clear,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190255-99189958187,Air: Mortarion Green Clear,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190256-99189958188,Air: Phoenician Purple,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190259-99189958191,Air: Night Lords Blue,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190262-99189958194,Air: Corvus Black,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190264-99189958196,Air: Typhon Ash,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190266-99189958198,Air: Phalanx Yellow,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190275-99189958207,Air: Grey Knights Steel,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190276-99189958208,Air: Thallax Gold,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4190277-99189960096,Contrast: Iyanden Yellow,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190278-99189960002,Contrast: Gryph-Hound Orange,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190279-99189960098,Contrast: Blood Angels Red,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190281-99189960100,Contrast: Volupus Pink,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190283-99189960102,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-15,,2,2,true,false
-prod4190285-99189960104,Contrast: Ultramarines Blue,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190286-99189960105,Contrast: Akhelian Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190287-99189960106,Contrast: Dark Angels Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190289-99189960108,Contrast: Ork Flesh,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190291-99189960110,Contrast: Militarum Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190292-99189960111,Contrast: Aggaros Dunes,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190294-99189960018,Contrast: Snakebite Leather,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190295-99189960114,Contrast: Gore-Grunta Fur,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190296-99189960115,Contrast: Cygor Brown,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190298-99189960151,Contrast: Fyreslayer Flesh,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190299-99189960023,Contrast: Guilliman Flesh,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190301-99189960025,Contrast: Apothecary White,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190305-99189960124,Contrast: Black Templar,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190306-99189960125,Contrast: Talassar Blue,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190307-99189960126,Contrast: Warp Lightning,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190308-99189960127,Contrast: Aethermatic Blue,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190309-99189960128,Contrast: Plaguebearer Flesh,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4190310-99189960129,Contrast: Terradon Turquoise,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4210259-99189958135,Air: Macragge Blue,Air,2026-10-13,2026-10-15,,3,3,true,true
-prod4210272-99189950276,Base: Caliban Green,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210274-99189950290,Base: Celestra Grey,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210284-99189950272,Base: Macragge Blue,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210285-99189950288,Base: Mechanicus Standard Grey,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210287-99189950284,Base: Mournfang Brown,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210292-99189950286,Base: Rhinox Hide,Base,2026-10-13,2026-10-15,,3,3,true,true
-prod4210312-99189951243,Layer: Bestigor Flesh,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4210342-99189951322,Layer: Moot Green,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4210350-99189951331,Layer: Screaming Skull,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4210363-99189951332,Layer: Tallarn Sand,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4210374-99189951309,Layer: Warpfiend Grey,Layer,2026-10-13,2026-10-15,,3,3,true,true
-prod4210385-99189956016,Technical: Soulstone Blue,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4210386-99189956015,Technical: Spiritstone Red,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4210393-99189956066,Technical: Waystone Green,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4210414-99189956080,Technical: Ardcoat,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4210415-99189956060,Technical: Blood For The Blood God,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4220121-99189952053,Astorath Red,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220125-99189952044,Eldar Flesh,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220127-99189952049,Golden Griffon,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220128-99189952060,Golgfag Brown,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220131-99189952056,Imrik Blue,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220133-99189952047,Longbeard Grey,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220134-99189952038,Lucius Lilac,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220136-99189952058,Niblet Green,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220137-99189952059,Nurgling Green,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220138-99189952039,Praxeti White,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220139-99189952051,Ryza Rust,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220141-99189952041,Skink Blue,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220144-99189952062,Sylvaneth Bark,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220145-99189952046,Terminatus Stone,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220147-99189952045,Tyrant Skull,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220148-99189952043,Underhive Ash,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220150-99189952052,Wrack White,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4220151-99189952054,Hoeth Blue,Dry,2026-10-13,2026-10-15,,3,3,true,true
-prod4480165-99189956083,Technical: Tesseract Glow,Technical,2026-10-13,2026-10-15,,3,3,true,true
-prod4540245-13209999107,Munitorum Varnish,Spray,2026-10-13,2026-10-15,,3,3,true,true
-prod4960241-99189953041,Shade:  Kroak Green,Shade,2026-10-13,2026-10-15,,3,3,true,true
+P-244947-56189951371,Layer: Stormhost Silver,Layer,2026-10-14,2026-10-16,,3,3,true,false
+P-245558-56189951391,Layer: Canoptek Alloy,Layer,2026-10-13,2026-10-16,,4,4,true,true
+P-246544-56189951337,Layer: Ungor Flesh,Layer,2026-10-13,2026-10-16,,4,4,true,true
+P-246695-56189960240,Contrast: Aeldari Emerald,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-246846-56189956129,Technical: Agrellan Earth,Technical,2026-10-13,2026-10-16,,4,4,true,true
+P-246900-56189956123,Technical: Nurgle's Rot,Technical,2026-10-13,2026-10-16,,4,4,true,true
+P-247143-56189950303,Base: Gal Vorbak Red,Base,2026-10-13,2026-10-16,,4,4,true,true
+P-247147-56189950283,Base: Ratskin Flesh,Base,2026-10-13,2026-10-16,,4,4,true,true
+P-247153-56189950305,Base: Nocturne Green,Base,2026-10-13,2026-10-16,,4,4,true,true
+P-247154-56189950320,Base: Hobgrot Hide,Base,2026-10-13,2026-10-16,,4,4,true,true
+P-247208-56189960248,Contrast: Briar Queen Chill,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247219-56189960227,Contrast: Gryph-Charger Grey,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247242-56189960241,Contrast: Gutrippa Flesh,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247245-56189960244,Contrast: Ironjawz Yellow,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247254-56189960239,Contrast: Mantis Warriors Green,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247257-56189960215,Contrast: Nazdreg Yellow,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+P-247614-56189953066,Shade: Tyran Blue,Shade,2026-10-13,2026-10-16,,4,4,true,true
+P-248285-56189956130,Technical: Martian Ironearth,Technical,2026-10-13,2026-10-16,,4,4,true,true
+P-248331-56189956133,Technical: Stormshield,Technical,2026-10-13,2026-10-16,,4,4,true,true
+P-248343-56189956093,Technical: Agrellan Badland,Technical,2026-10-13,2026-10-16,,4,4,true,true
+P-248643-56189953064,Shade: Targor Rageshade,Shade,2026-10-13,2026-10-16,,4,4,true,true
+prod4190157-99189950306,Base: Corvus Black,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4190158-99189950127,Base: Lupercal Green,Base,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190159-99189950308,Base: Iron Hands Steel,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4190164-99189950257,Base: Morghast Bone,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4190165-99189950315,Base: Corax White,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4190166-99189950316,Base: Wraithbone,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4190179-99189951292,Layer: Castellax Bronze,Layer,2026-10-15,2026-10-16,,2,2,true,false
+prod4190180-99189951293,Layer: Vulkan Green,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4190184-99189956067,Technical: Mordant Earth,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4190188-99189956071,Technical: Martian Ironcrust,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4190189-99189956072,Technical: Stirland Mud,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4190193-99189956046,Technical: Astrogranite,Technical,2026-10-16,2026-10-16,,1,1,true,false
+prod4190193-99189956076,Technical: Astrogranite,Technical,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190196-99189956079,Technical: Lahmian Medium,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4190198-99189956081,Technical: Contrast Medium,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4190200-99189958131,Air: Averland Sunset,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190201-99189958132,Air: Mephiston Red,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190202-99189958133,Air: Khorne Red,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190203-99189958134,Air: Kantor Blue,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190205-99189958137,Air: Caliban Green,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190206-99189958138,Air: Castellan Green,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190207-99189958139,Air: Deathworld Forest,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190208-99189958140,Air: Zandri Dust,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190209-99189958141,Air: Mournfang Brown,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190212-99189958144,Air: Mechanicus Standard Grey,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190213-99189958145,Air: Abaddon Black,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190214-99189958146,Air: Leadbelcher,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190215-99189958147,Air: Balthasar Gold,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190217-99189958149,Air: The Fang,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190218-99189958150,Air: Flash Gitz Yellow,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190219-99189958151,Air: Troll Slayer Orange,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190220-99189958152,Air: Evil Sunz Scarlet,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190223-99189958155,Air: Lothern Blue,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190224-99189958156,Air: Temple Guard Blue,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190226-99189958158,Air: Moot Green,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190230-99189958162,Air: Ogryn Camo,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190231-99189958163,Air: Ushabti Bone,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190232-99189958164,Air: Air Caste Thinner,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190235-99189958167,Air: Kislev Flesh,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190240-99189958172,Air: Baneblade Brown,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190241-99189958173,Air: Dawnstone,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190242-99189958174,Air: Administratum Grey,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190243-99189958175,Air: Ulthuan Grey,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190244-99189958176,Air: White Scar,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190246-99189958178,Air: Runefang Steel,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190248-99189958180,Air: Russ Grey,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190249-99189958181,Air: Fenrisian Grey,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190251-99189958183,Air: Angron Red Clear,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190252-99189958184,Air: Calth Blue Clear,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190254-99189958186,Air: Eidolon Purple Clear,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190255-99189958187,Air: Mortarion Green Clear,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190256-99189958188,Air: Phoenician Purple,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190259-99189958191,Air: Night Lords Blue,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190262-99189958194,Air: Corvus Black,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190264-99189958196,Air: Typhon Ash,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190266-99189958198,Air: Phalanx Yellow,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190275-99189958207,Air: Grey Knights Steel,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190276-99189958208,Air: Thallax Gold,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4190277-99189960096,Contrast: Iyanden Yellow,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190278-99189960002,Contrast: Gryph-Hound Orange,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190279-99189960098,Contrast: Blood Angels Red,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190281-99189960100,Contrast: Volupus Pink,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190283-99189960102,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-16,,3,3,true,false
+prod4190285-99189960009,Contrast: Ultramarines Blue,Contrast,2026-10-16,2026-10-16,,1,1,true,false
+prod4190285-99189960104,Contrast: Ultramarines Blue,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190286-99189960105,Contrast: Akhelian Green,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190287-99189960106,Contrast: Dark Angels Green,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190289-99189960108,Contrast: Ork Flesh,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190290-99189960109,Contrast: Creed Camo,Contrast,2026-10-16,2026-10-16,,1,1,true,false
+prod4190291-99189960110,Contrast: Militarum Green,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190292-99189960111,Contrast: Aggaros Dunes,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190294-99189960018,Contrast: Snakebite Leather,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190295-99189960114,Contrast: Gore-Grunta Fur,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190296-99189960115,Contrast: Cygor Brown,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190298-99189960151,Contrast: Fyreslayer Flesh,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190299-99189960023,Contrast: Guilliman Flesh,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190301-99189960025,Contrast: Apothecary White,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4190305-99189960124,Contrast: Black Templar,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190306-99189960125,Contrast: Talassar Blue,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190307-99189960126,Contrast: Warp Lightning,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190308-99189960127,Contrast: Aethermatic Blue,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190309-99189960128,Contrast: Plaguebearer Flesh,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4190310-99189960129,Contrast: Terradon Turquoise,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4210259-99189958135,Air: Macragge Blue,Air,2026-10-13,2026-10-16,,4,4,true,true
+prod4210272-99189950276,Base: Caliban Green,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210274-99189950290,Base: Celestra Grey,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210284-99189950272,Base: Macragge Blue,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210285-99189950288,Base: Mechanicus Standard Grey,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210287-99189950284,Base: Mournfang Brown,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210292-99189950286,Base: Rhinox Hide,Base,2026-10-13,2026-10-16,,4,4,true,true
+prod4210312-99189951243,Layer: Bestigor Flesh,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4210342-99189951322,Layer: Moot Green,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4210350-99189951331,Layer: Screaming Skull,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4210363-99189951332,Layer: Tallarn Sand,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4210374-99189951309,Layer: Warpfiend Grey,Layer,2026-10-13,2026-10-16,,4,4,true,true
+prod4210385-99189956016,Technical: Soulstone Blue,Technical,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4210386-99189956015,Technical: Spiritstone Red,Technical,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4210393-99189956066,Technical: Waystone Green,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4210414-99189956080,Technical: Ardcoat,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4210415-99189956060,Technical: Blood For The Blood God,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4220121-99189952053,Astorath Red,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220125-99189952044,Eldar Flesh,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220127-99189952049,Golden Griffon,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220128-99189952060,Golgfag Brown,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220131-99189952056,Imrik Blue,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220133-99189952047,Longbeard Grey,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220134-99189952038,Lucius Lilac,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220136-99189952058,Niblet Green,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220137-99189952059,Nurgling Green,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220138-99189952039,Praxeti White,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220139-99189952051,Ryza Rust,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220141-99189952041,Skink Blue,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220144-99189952062,Sylvaneth Bark,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220145-99189952046,Terminatus Stone,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220147-99189952045,Tyrant Skull,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220148-99189952043,Underhive Ash,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220150-99189952052,Wrack White,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4220151-99189952054,Hoeth Blue,Dry,2026-10-13,2026-10-16,,4,4,true,true
+prod4480165-99189956083,Technical: Tesseract Glow,Technical,2026-10-13,2026-10-16,,4,4,true,true
+prod4540245-13209999107,Munitorum Varnish,Spray,2026-10-13,2026-10-16,,4,4,true,true
+prod4960241-99189953041,Shade:  Kroak Green,Shade,2026-10-13,2026-10-16,,4,4,true,true
+prod4960244-99189953044,Shade: Mortarion Grime,Shade,2026-10-16,2026-10-16,,1,1,true,false
 prod4960246-99189953046,Shade: Berserker Bloodshade,Shade,2026-10-13,2026-10-13,2026-10-14,1,1,false,true
-prod4960247-99189953047,Shade: Soulblight Grey,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4960248-99189953048,Shade: Nuln Oil,Shade,2026-10-15,2026-10-15,,1,1,true,false
-prod4960251-99189953051,Shade: Biel-Tan Green,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4960252-99189953052,Shade: Athonian Camoshade,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4960254-99189953054,Shade: Seraphim Sepia,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4960256-99189953056,Shade: Casandora Yellow,Shade,2026-10-13,2026-10-15,,3,3,true,true
-prod4960260-99189960035,Contrast: Garaghak's Sewer,Contrast,2026-10-15,2026-10-15,,1,1,true,false
-prod4960261-99189960036,Contrast: Black Legion,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960262-99189960037,Contrast: Ratling Grime,Contrast,2026-10-15,2026-10-15,,1,1,true,false
-prod4960266-99189960041,Contrast: Karandras Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960267-99189960042,Contrast: Striking Scorpion Green,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960269-99189960044,Contrast: Bad Moon Yellow,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960270-99189960045,Contrast: Imperial Fist,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960271-99189960046,Contrast: Kroxigor Scales,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960274-99189960049,Contrast: Pylar Glacier,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960275-99189960050,Contrast: Asurmen Blue,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960277-99189960052,Contrast: Stormfiend,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960278-99189960053,Contrast: Leviathan Purple,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960279-99189960054,Contrast: Luxion Purple,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960280-99189960055,Contrast: Sigvald Burgundy,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960281-99189960056,Contrast: Dreadful Visage,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960282-99189960057,Contrast: Doomfire Magenta,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960283-99189960058,Contrast: Baal Red,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960284-99189960059,Contrast: Magmadroth Flame,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960285-99189960060,Contrast: Hexwraith Flame,Contrast,2026-10-13,2026-10-15,,3,3,true,true
-prod4960286-99189960061,Contrast: Nighthaunt Gloom,Contrast,2026-10-13,2026-10-15,,3,3,true,true
+prod4960247-99189953047,Shade: Soulblight Grey,Shade,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960248-99189953048,Shade: Nuln Oil,Shade,2026-10-15,2026-10-16,,2,2,true,false
+prod4960251-99189953051,Shade: Biel-Tan Green,Shade,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960252-99189953052,Shade: Athonian Camoshade,Shade,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960254-99189953054,Shade: Seraphim Sepia,Shade,2026-10-13,2026-10-16,,4,4,true,true
+prod4960256-99189953056,Shade: Casandora Yellow,Shade,2026-10-13,2026-10-16,,4,4,true,true
+prod4960260-99189960035,Contrast: Garaghak's Sewer,Contrast,2026-10-15,2026-10-16,,2,2,true,false
+prod4960261-99189960036,Contrast: Black Legion,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960262-99189960037,Contrast: Ratling Grime,Contrast,2026-10-15,2026-10-16,,2,2,true,false
+prod4960266-99189960041,Contrast: Karandras Green,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960267-99189960042,Contrast: Striking Scorpion Green,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960269-99189960044,Contrast: Bad Moon Yellow,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960270-99189960045,Contrast: Imperial Fist,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960271-99189960046,Contrast: Kroxigor Scales,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960274-99189960049,Contrast: Pylar Glacier,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960275-99189960050,Contrast: Asurmen Blue,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960277-99189960052,Contrast: Stormfiend,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960278-99189960053,Contrast: Leviathan Purple,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960279-99189960054,Contrast: Luxion Purple,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960280-99189960055,Contrast: Sigvald Burgundy,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960281-99189960056,Contrast: Dreadful Visage,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960282-99189960057,Contrast: Doomfire Magenta,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960283-99189960058,Contrast: Baal Red,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960284-99189960059,Contrast: Magmadroth Flame,Contrast,2026-10-13,2026-10-15,2026-10-16,3,3,false,true
+prod4960285-99189960060,Contrast: Hexwraith Flame,Contrast,2026-10-13,2026-10-16,,4,4,true,true
+prod4960286-99189960061,Contrast: Nighthaunt Gloom,Contrast,2026-10-13,2026-10-16,,4,4,true,true

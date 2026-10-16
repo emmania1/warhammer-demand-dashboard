@@ -1,14 +1,14 @@
 iso_week,store_id,country,brand,paints,reads,opening,received,gone,sell_through
-2026-W42,battle_city_games,GB,Citadel Base/Layer,99,2,403.0,0.0,2.0,0.005
-2026-W42,beanie_games,GB,Citadel Base/Layer,134,2,624.0,54.0,5.0,0.007
-2026-W42,element_games,GB,Citadel Base/Layer,4,2,26.0,0.0,3.0,0.115
-2026-W42,firestorm_games,GB,Citadel Base/Layer,147,2,1586.0,99.0,45.0,0.027
-2026-W42,games_a_plunder,US,Citadel Base/Layer,149,1,439.0,0.0,0.0,0.0
-2026-W42,jeux_az_games,CA,Citadel Base/Layer,148,1,294.0,0.0,0.0,0.0
-2026-W42,loaded_dice,GB,Citadel Base/Layer,132,2,1774.0,43.0,32.0,0.018
-2026-W42,nutmeg_games,US,Citadel Base/Layer,147,1,667.0,0.0,19.0,0.028
-2026-W42,pastime_sports_games,CA,Citadel Base/Layer,149,1,2657.0,0.0,5.0,0.002
-2026-W42,the_outpost,GB,Citadel Base/Layer,145,2,388.0,0.0,14.0,0.036
-2026-W42,firestorm_games,GB,Tone Pro,1,2,0.0,0.0,0.0,
-2026-W42,jeux_az_games,CA,Tone Pro,5,1,0.0,0.0,0.0,
-2026-W42,the_outpost,GB,Tone Pro,146,2,754.0,5.0,151.0,0.199
+2026-W42,battle_city_games,GB,Citadel Base/Layer,99,3,403.0,0.0,2.0,0.005
+2026-W42,beanie_games,GB,Citadel Base/Layer,134,3,624.0,54.0,5.0,0.007
+2026-W42,element_games,GB,Citadel Base/Layer,6,3,41.0,0.0,6.0,0.146
+2026-W42,firestorm_games,GB,Citadel Base/Layer,147,3,1586.0,99.0,77.0,0.046
+2026-W42,games_a_plunder,US,Citadel Base/Layer,149,2,439.0,0.0,0.0,0.0
+2026-W42,jeux_az_games,CA,Citadel Base/Layer,148,2,294.0,0.0,0.0,0.0
+2026-W42,loaded_dice,GB,Citadel Base/Layer,132,3,1774.0,61.0,42.0,0.023
+2026-W42,nutmeg_games,US,Citadel Base/Layer,147,2,667.0,0.0,20.0,0.03
+2026-W42,pastime_sports_games,CA,Citadel Base/Layer,149,2,2657.0,0.0,8.0,0.003
+2026-W42,the_outpost,GB,Citadel Base/Layer,146,3,398.0,126.0,25.0,0.048
+2026-W42,firestorm_games,GB,Tone Pro,1,3,0.0,0.0,0.0,
+2026-W42,jeux_az_games,CA,Tone Pro,5,2,0.0,0.0,0.0,
+2026-W42,the_outpost,GB,Tone Pro,146,3,754.0,5.0,427.0,0.563
