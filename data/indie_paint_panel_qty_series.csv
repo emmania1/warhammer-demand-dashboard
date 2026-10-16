@@ -3558,13 +3558,13 @@ date,prev_date,store_id,country,line,paint,status,qty,qty_is_floor,on_order,d_qt
 2026-10-15,2026-10-14,the_outpost,GB,Tech Pro,Tech Pro: Shading Medium,preorder,0,false,1,0,0,0,0
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 2,preorder,0,false,2,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 2,preorder,0,false,2,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 2,preorder,0,false,1,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 2,preorder,0,false,1,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 3,preorder,0,false,2,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 3,preorder,0,false,2,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 3,preorder,0,false,1,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 3,preorder,0,false,1,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 4,preorder,0,false,2,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 4,preorder,0,false,2,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 4,preorder,0,false,1,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blackstone Void 4,preorder,0,false,1,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Bloodtoof Red 1,preorder,0,false,1,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Bloodtoof Red 1,preorder,0,false,1,0,0,0,0
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Bloodtoof Red 4,preorder,0,false,1,,,,
@@ -3573,127 +3573,127 @@ date,prev_date,store_id,country,line,paint,status,qty,qty_is_floor,on_order,d_qt
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Bloodtoof Red 5,preorder,0,false,1,0,0,0,0
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Blue Gorkshroom 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carmine Blades 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 1,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 1,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 1,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 1,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 3,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 3,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 3,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 3,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 5,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 5,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 5,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Carthalos Skin 5,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 1,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 1,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 1,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 1,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 3,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 3,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 3,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 3,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 5,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 5,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 5,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Celestine Skin 5,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Chotec Orange 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 1,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 1,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 1,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 1,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 1,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 2,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 2,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 2,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 2,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 2,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 3,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 3,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 3,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 3,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 3,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 4,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 4,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 4,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 4,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 4,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 5,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 5,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 5,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 5,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Craventhrone Cloak 5,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 1,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 1,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 1,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 1,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Dataslate Grey 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Enrapturess Dusk 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 2,preorder,0,false,5,0,0,0,0
 2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 2,preorder,0,false,5,0,0,0,0
@@ -3702,292 +3702,292 @@ date,prev_date,store_id,country,line,paint,status,qty,qty_is_floor,on_order,d_qt
 2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 3,preorder,0,false,5,0,0,0,0
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Eye of Terror 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Gnarlwood 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Green Morkshroom 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 1,preorder,0,false,3,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 1,preorder,0,false,3,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 1,preorder,0,false,2,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 1,preorder,0,false,2,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 2,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 2,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 2,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 2,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 3,preorder,0,false,3,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 3,preorder,0,false,3,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 3,preorder,0,false,2,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 3,preorder,0,false,2,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 4,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 4,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 4,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 4,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 5,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 5,preorder,0,false,4,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 5,preorder,0,false,3,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hawkshroud Yellow 5,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hierotek Green 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Hive Fleet Purple 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kasrkin Green 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Khemri Sands 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Kruleboyz Green 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 1,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 1,preorder,0,false,5,0,1,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 2,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 2,preorder,0,false,5,0,1,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 3,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 3,preorder,0,false,5,0,1,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 4,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 4,preorder,0,false,5,0,1,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 5,preorder,0,false,4,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 5,preorder,0,false,5,0,1,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Lustria Green 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Magnus the Red 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Megaboss Yellow 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Necrolith Bone 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Plague Toad Venom 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Scinari Blue 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 1,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 1,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 1,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 1,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 1,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 2,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 2,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 2,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 2,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 2,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 3,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 3,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 3,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 3,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 3,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 4,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 4,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 4,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 4,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 4,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 5,preorder,0,false,5,,,,
-2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 5,preorder,0,false,4,0,-1,1,1
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 5,preorder,0,false,3,0,-1,1,1
+2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 5,preorder,0,false,4,0,-1,0,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Seraphon Blue 5,preorder,0,false,3,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Shalaxi Violet 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 1,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 1,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 1,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 1,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 2,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 2,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 2,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 2,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 3,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 3,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 3,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 3,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 4,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 4,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 4,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 4,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 5,preorder,0,false,5,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 5,preorder,0,false,5,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 5,preorder,0,false,4,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Stormwolf Blue 5,preorder,0,false,4,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ta'unar Ochre 5,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 1,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 1,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 1,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 1,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 2,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 2,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 2,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 2,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 3,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 3,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 3,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 3,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 4,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 4,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 4,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 4,preorder,0,false,5,0,-1,0,1
 2026-10-13,,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 5,preorder,0,false,6,,,,
 2026-10-14,2026-10-13,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 5,preorder,0,false,6,0,0,0,0
-2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 5,preorder,0,false,5,0,-1,1,1
+2026-10-15,2026-10-14,the_outpost,GB,Tone Pro,Tone Pro: Ultramar Blue 5,preorder,0,false,5,0,-1,0,1

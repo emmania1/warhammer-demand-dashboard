@@ -2222,499 +2222,619 @@ def _read_csv_or_empty(path: str) -> pd.DataFrame:
 
 
 def build_launch_page() -> str:
-    """Page 9: Warhammer Pro (Tone Pro) paint availability, store-finder network
-    and Tone Pro YouTube attention. Reads the CSVs written by
-    fetch_gw_paint_stock.py, fetch_gw_storefinder.py, fetch_youtube_topic_videos.py."""
+    """Page 9: Tone Pro launch, laid out for a 30-second read — takeaways first, then one
+    section per question (who carries it, what stores received, is it selling, GW store
+    network), each with a headline, a small table and one "what this means" line; caveats
+    sit in collapsible boxes and the detail tables in an appendix. Reads only the CSVs
+    written by the fetchers and analyze_tone_pro_deliveries.py."""
     from html import escape
+    import json as _json
 
     paint = _read_csv_or_empty(PAINT_SUMMARY_CSV)
     eps   = _read_csv_or_empty(PAINT_EPISODES_CSV)
+    rgs   = _read_csv_or_empty(REGIONS_SUMMARY_CSV)
     sf    = _read_csv_or_empty(SF_SUMMARY_CSV)
     sfc   = _read_csv_or_empty(SF_COUNTRY_CSV)
     sfch  = _read_csv_or_empty(SF_CHANGES_CSV)
-    ytv   = _read_csv_or_empty(YT_TOPIC_VIDEOS_CSV)
-    yts   = _read_csv_or_empty(YT_TOPIC_SUMMARY_CSV)
-    if paint.empty and sf.empty and ytv.empty:
+    idc   = _read_csv_or_empty(SF_INDIE_DAILY_CSV)
+    pnl   = _read_csv_or_empty(PANEL_SUMMARY_CSV)
+    pruns = _read_csv_or_empty(PANEL_RUNS_CSV)
+    pcfg  = _read_csv_or_empty(PANEL_CONFIG_CSV)
+    qcfg  = _read_csv_or_empty(os.path.join(CONFIG_DIR, "page_qty_stores.csv"))
+    qs    = _read_csv_or_empty(PANEL_QTY_SUMMARY_CSV)
+    pq    = _read_csv_or_empty(PAGE_QTY_CSV)
+    tpk, tpe = _read_csv_or_empty(TP_PACK_CSV), _read_csv_or_empty(TP_EST_CSV)
+    tpr, tps = _read_csv_or_empty(TP_REORD_CSV), _read_csv_or_empty(TP_SELL_CSV)
+    ytv, yts = _read_csv_or_empty(YT_TOPIC_VIDEOS_CSV), _read_csv_or_empty(YT_TOPIC_SUMMARY_CSV)
+    if paint.empty and sf.empty and pnl.empty:
         return ""
 
-    h3 = ("<h3 style='font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;"
-          "color:var(--muted);margin-bottom:12px;'>{}</h3>")
-    pro_lines = ["Tone Pro", "Tech Pro"]
-    _rev = GW_STORE_DATA["revenue_h1_gbp_m"]
-    _rev_key = sorted(_rev)[-1]
-    online_share = _rev[_rev_key]["online"] / sum(_rev[_rev_key].values()) * 100
-    online_lbl = f"~{online_share:.0f}% of {_rev_key.replace('_', ' ')} revenue"
-    days_to_launch = (pd.to_datetime(TONE_PRO_LAUNCH) - pd.Timestamp.now().normalize()).days
+    def n(v):                                     # int from a CSV cell ("" / "nan" → 0)
+        try:
+            return int(float(v))
+        except (TypeError, ValueError):
+            return 0
 
-    # ── A: Pro paint availability ─────────────────────────────────────────
-    paint_html = ""
-    if not paint.empty:
-        p_latest_date = paint["date"].max()
-        p_latest = paint[paint["date"] == p_latest_date]
-        pro = p_latest[p_latest["line"].isin(pro_lines)]
-        pro_skus = int(pro["skus"].sum()); pro_oos = int(pro["oos"].sum())
-        pro_fast = int(pro["selling_fast"].sum()); pro_pre = int(pro["preorder"].sum())
-        n_days = paint["date"].nunique()
-        launch_lbl = (f"{days_to_launch} days to launch" if days_to_launch > 0
-                      else "launch day" if days_to_launch == 0 else f"day {-days_to_launch} post-launch")
+    def d(s):                                     # "2026-10-15" → "15 Oct"
+        return pd.to_datetime(s).strftime("%-d %b") if str(s) else "—"
 
-        line_rows = ""
-        for _, r in p_latest.iterrows():
-            hl = " style='background:rgba(241,196,15,0.07)'" if r["line"] in pro_lines else ""
-            line_rows += (f"<tr{hl}><td>{escape(str(r['line']))}</td><td class='num'>{r['skus']}</td>"
-                          f"<td class='num'>{r['oos']}</td><td class='num'>{r['oos_pct']}%</td>"
-                          f"<td class='num'>{r['selling_fast']}</td><td class='num'>{r['last_chance']}</td>"
-                          f"<td class='num'>{r['status_a']}/{r['status_p']}/{r['status_o']}</td></tr>")
+    def pct(a, b):
+        return f"{a / b * 100:.0f}%" if b else "—"
 
-        hist = (paint[paint["line"].isin(pro_lines)].groupby("date")
-                .agg(skus=("skus", "sum"), oos=("oos", "sum"), fast=("selling_fast", "sum"),
-                     pre=("preorder", "sum")).reset_index().sort_values("date", ascending=False).head(21))
-        hist_rows = "".join(
-            f"<tr><td>{r['date']}</td><td class='num'>{r['oos']}/{r['skus']}</td>"
-            f"<td class='num'>{r['fast']}</td><td class='num'>{r['pre']}</td></tr>" for _, r in hist.iterrows())
+    def signed(v):
+        return f"+{v:,}" if v > 0 else (f"{v:,}" if v < 0 else "no change")
 
-        wh_html = ""
-        rgs = _read_csv_or_empty(REGIONS_SUMMARY_CSV)
-        if not rgs.empty:
-            rgs = rgs[rgs["date"] == rgs["date"].max()]
-            for c in ("skus", "oos", "preorder", "selling_fast"):
-                rgs[c] = pd.to_numeric(rgs[c], errors="coerce").fillna(0).astype(int)
-            whs = [w for w in ("memphis", "lenton", "ingleburn") if w in set(rgs["warehouse"])]
-            wlab = {"memphis": "Memphis (US/CA)", "lenton": "Lenton (UK/EU)", "ingleburn": "Ingleburn (AU/NZ)"}
-            wrows = ""
-            for line in ("Tone Pro", "Base", "Layer", "Contrast", "Shade"):
-                cells = ""
-                for w in whs:
-                    g = rgs[(rgs["warehouse"] == w) & (rgs["line"] == line)]
-                    cells += (f"<td class='num'>{int(g['oos'].sum())}/{int(g['skus'].sum())}"
-                              f"{' · ' + str(int(g['selling_fast'].sum())) + ' fast' if int(g['selling_fast'].sum()) else ''}</td>") if not g.empty else "<td class='num'>—</td>"
-                wrows += f"<tr><td>{line}</td>{cells}</tr>"
-            wh_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format("GW warehouses — out of stock / SKUs, " + rgs["date"].iloc[0])}'
-                       f'<table><thead><tr><th>Line</th>{"".join(f"<th class=num>{wlab[w]}</th>" for w in whs)}</tr></thead><tbody>{wrows}</tbody></table>'
-                       f'<p class="data-note">Each GW regional webstore reports availability from its own warehouse. Availability flags only — no quantities.</p></div>')
-        ep_html = "<p class='data-note'>No Pro-line stock-outs recorded yet.</p>"
-        if not eps.empty:
-            pe = eps[eps["line"].isin(pro_lines)].copy()
-            if not pe.empty:
-                pe = pe.sort_values(["ongoing", "days_oos_min"], ascending=[False, False]).head(20)
-                ep_rows = "".join(
-                    f"<tr><td>{escape(str(r['name']))}</td><td>{r['oos_first_seen']}</td>"
-                    f"<td>{r['back_in_stock'] or '<span style=\"color:#c0392b\">still OOS</span>'}</td>"
-                    f"<td class='num'>{r['days_oos_min']}</td></tr>" for _, r in pe.iterrows())
-                ep_html = (f"<table><thead><tr><th>SKU</th><th>First seen OOS</th><th>Back in stock</th>"
-                           f"<th class='num'>Days OOS (min)</th></tr></thead><tbody>{ep_rows}</tbody></table>")
-            n_pro_eps = int(eps["line"].isin(pro_lines).sum())
+    names = {}
+    for cfg in (qcfg, pcfg):
+        if not cfg.empty:
+            names.update(dict(zip(cfg["store_id"], cfg["store_name"])))
+    nm = lambda sid: escape(names.get(sid, sid.replace("_", " ").title()))
+    ctry_name = {"GB": "UK", "US": "US", "CA": "Canada", "AU": "Australia", "NZ": "New Zealand", "DE": "Germany",
+                 "FR": "France", "ES": "Spain", "IT": "Italy", "NL": "Netherlands", "SE": "Sweden", "PL": "Poland",
+                 "KR": "South Korea", "JP": "Japan", "CN": "China", "BE": "Belgium", "DK": "Denmark", "NO": "Norway",
+                 "FI": "Finland", "IE": "Ireland", "AT": "Austria", "CH": "Switzerland", "PT": "Portugal",
+                 "CZ": "Czechia", "HK": "Hong Kong", "MX": "Mexico", "BR": "Brazil", "SG": "Singapore", "TW": "Taiwan"}
+    cn = lambda c: ctry_name.get(c, c)
+
+    def table(head, rows, empty="No data yet.", right=None):
+        """Full-width table; `right` = indexes of numeric (right-aligned) columns."""
+        right = set(right or [])
+        th = "".join(f"<th{' class=num' if i in right else ''}>{h}</th>" for i, h in enumerate(head))
+        if not rows:
+            body = f"<tr><td colspan={len(head)} class='p9-empty'>{empty}</td></tr>"
         else:
-            n_pro_eps = 0
+            body = "".join("<tr>" + "".join(f"<td{' class=num' if i in right else ''}>{c}</td>" for i, c in enumerate(r)) + "</tr>"
+                           for r in rows)
+        return f"<div class='p9-tw'><table><thead><tr>{th}</tr></thead><tbody>{body}</tbody></table></div>"
 
-        paint_html = f"""
-  <div class="section-title">A · Warhammer Pro Paint Availability on GW.com</div>
-  <div class="section-sub">
-    Daily snapshot of every paint SKU on warhammer.com (US) via GW's public product index. Tone Pro launches
-    <strong>{TONE_PRO_LAUNCH}</strong> ({launch_lbl}). Last updated <strong>{p_latest_date}</strong> · {n_days} day{'' if n_days == 1 else 's'} of history.
-  </div>
-  <div class="stats-row" style="margin-bottom:18px;">
-    <div class="stat-card"><div class="stat-val">{pro_skus}</div><div class="stat-lbl">Pro SKUs tracked</div></div>
-    <div class="stat-card"><div class="stat-val" style="color:{'#c0392b' if pro_oos else '#27ae60'}">{pro_oos}</div><div class="stat-lbl">Pro SKUs out of stock</div></div>
-    <div class="stat-card"><div class="stat-val">{pro_fast}</div><div class="stat-lbl">Flagged "selling fast"</div></div>
-    <div class="stat-card"><div class="stat-val">{n_pro_eps}</div><div class="stat-lbl">Pro stock-out episodes</div></div>
-  </div>
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("By paint line — " + p_latest_date)}
-      <table><thead><tr><th>Line</th><th class="num">SKUs</th><th class="num">OOS</th><th class="num">OOS %</th>
-      <th class="num">Fast</th><th class="num">Last chance</th><th class="num">Status A/P/O</th></tr></thead>
-      <tbody>{line_rows}</tbody></table>
-      <p class="data-note">Status P = being phased out, O = discontinued. Contrast, Shade and Technical are mostly P/O, so their
-      stock-outs reflect run-down, not demand — Base/Layer are the cleaner comparison for Pro.</p>
-    </div>
-    <div class="table-card">{h3.format("Pro line history (Tone Pro + Tech Pro)")}
-      <table><thead><tr><th>Date</th><th class="num">OOS / SKUs</th><th class="num">Selling fast</th>
-      <th class="num">Pre-order</th></tr></thead><tbody>{hist_rows}</tbody></table>
-    </div>
-  </div>
-  {wh_html}
-  <div class="table-card" style="margin-bottom:18px;">{h3.format("Pro stock-out episodes — how often, how long")}
-    {ep_html}
-    <p class="data-note">Days OOS is a minimum: snapshots are daily, so a stock-out that starts and ends between runs is invisible
-    and durations are rounded to whole run days.</p>
+    def howto(text):
+        return f"<details class='p9-how'><summary>How to read this</summary><div>{text}</div></details>"
+
+    def section(num, q, headline, sub, body, meaning, how):
+        return f"""
+  <div class="p9-sec">
+    <div class="p9-q"><span>{num}</span>{q}</div>
+    <div class="p9-head">{headline}</div>
+    <div class="p9-headsub">{sub}</div>
+    {body}
+    <p class="p9-mean"><strong>What this means:</strong> {meaning}</p>
+    {howto(how)}
   </div>"""
 
-    # ── B: Store network ──────────────────────────────────────────────────
-    store_html = ""
-    if not sf.empty:
-        sf = sf.sort_values("date")
-        s_last = sf.iloc[-1]
-        sf_rows = "".join(
-            f"<tr><td>{r['date']}{' <span style=\"font-size:9px;color:var(--muted)\">archive</span>' if r['source'] == 'wayback' else ''}</td>"
-            f"<td class='num'>{r['gw_open']}</td><td class='num'>{r['gw_coming_soon']}</td>"
-            f"<td class='num'>{int(r['indie_listed']):,}</td>"
-            f"<td class='num'>{(f"{int(r['indie_pro_range']):,}" if int(r['indie_with_stock_range']) else '—')}</td></tr>"
-            for _, r in sf.sort_values("date", ascending=False).iterrows())
+    takeaways, changed = [], []
+    charts_js = []
 
-        ch_html = ""
-        if not sfch.empty:
-            ch = sfch.sort_values("date", ascending=False).head(30)
-            ch_rows = "".join(
-                f"<tr><td>{r['date']}</td><td style='color:{'#27ae60' if r['change'] == 'added' else '#c0392b'}'>{r['change']}</td>"
-                f"<td>{escape(str(r['name']))}</td><td>{escape(str(r['city']))}, {r['country']}</td></tr>"
-                for _, r in ch.iterrows())
-            ch_html = (f"<table><thead><tr><th>Snapshot</th><th>Change</th><th>Store</th><th>Location</th></tr></thead>"
-                       f"<tbody>{ch_rows}</tbody></table>")
+    def chrow(r):
+        soon = str(r.get("coming_soon", "")).lower() == "true"
+        kind = ("Coming soon" if soon else "Opened") if r["change"] == "added" else ("Coming-soon entry removed" if soon else "Closed / delisted")
+        col = "#27ae60" if r["change"] == "added" else "#c0392b"
+        return [d(r["date"]), f"<span style='color:{col}'>{kind}</span>", escape(str(r["name"])), f"{escape(str(r['city']))}, {cn(r['country'])}"]
 
-        ctry_html = ""
-        if not sfc.empty:
-            c = sfc[sfc["date"] == sfc["date"].max()].copy()
-            c = c.sort_values("indie_pro_range", ascending=False).head(12)
-            ctry_rows = "".join(
-                f"<tr><td>{r['country']}</td><td class='num'>{r['gw_stores']}</td><td class='num'>{int(r['indie_listed']):,}</td>"
-                f"<td class='num'>{int(r['indie_pro_range']):,}</td>"
-                f"<td class='num'>{(int(r['indie_pro_range']) / int(r['indie_listed']) * 100 if int(r['indie_listed']) else 0):.0f}%</td></tr>"
-                for _, r in c.iterrows())
-            ctry_html = (f"<table><thead><tr><th>Country</th><th class='num'>GW stores</th><th class='num'>Indies listed</th>"
-                         f"<th class='num'>Pro-range indies</th><th class='num'>Share</th></tr></thead><tbody>{ctry_rows}</tbody></table>")
+    # ════════════════════════════════════════════════════════════════════
+    # 1 · Who's carrying Tone Pro?
+    # ════════════════════════════════════════════════════════════════════
+    sec1 = ""
+    live = sf[sf["source"] == "live"].sort_values("date") if not sf.empty else pd.DataFrame()
+    if not live.empty:
+        L = live.iloc[-1]; P = live.iloc[-2] if len(live) > 1 else None; F = live.iloc[0]
+        pro, listed = n(L["indie_pro_range"]), n(L["indie_listed"])
+        c_last = sfc[sfc["date"] == L["date"]].copy()
+        c_prev = sfc[sfc["date"] == P["date"]].copy() if P is not None else pd.DataFrame(columns=sfc.columns)
+        for c in (c_last, c_prev):
+            for col in ("gw_stores", "indie_listed", "indie_pro_range"):
+                c[col] = pd.to_numeric(c[col], errors="coerce").fillna(0).astype(int)
+        prev_by = c_prev.set_index("country")["indie_pro_range"] if not c_prev.empty else pd.Series(dtype=int)
+        c_last["chg"] = c_last.apply(lambda r: r["indie_pro_range"] - int(prev_by.get(r["country"], 0)), axis=1)
+        c_last = c_last.sort_values("indie_pro_range", ascending=False)
+        top, rest = c_last.head(10), c_last.iloc[10:]
+        rows = [[cn(r["country"]), f"{r['indie_pro_range']:,}", pct(r["indie_pro_range"], r["indie_listed"]),
+                 signed(int(r["chg"])) if P is not None else "—"] for _, r in top.iterrows()]
+        if not rest.empty:
+            rows.append([f"Other {len(rest[rest['indie_pro_range'] > 0])} countries", f"{rest['indie_pro_range'].sum():,}",
+                         pct(rest["indie_pro_range"].sum(), rest["indie_listed"].sum()), signed(int(rest["chg"].sum()))])
+        tot_c = int(c_last["indie_pro_range"].sum())
+        rows.append([f"<strong>Total</strong>", f"<strong>{tot_c:,}</strong>", f"<strong>{pct(tot_c, c_last['indie_listed'].sum())}</strong>",
+                     f"<strong>{signed(int(c_last['chg'].sum()))}</strong>" if P is not None else "—"])
+        sum_note = ("Country rows add up to the total." if tot_c == pro
+                    else f"<span style='color:#e67e22'>Country rows sum to {tot_c:,}, not {pro:,} — check the store-finder data.</span>")
 
-        lab_html = ""
-        idc = _read_csv_or_empty(SF_INDIE_DAILY_CSV)
+        # Gains on the latest day by country (from GW's labels, store by store)
+        gl = ""
         if not idc.empty:
-            ct = ["gained_pro", "lost_pro", "tier_up", "tier_down", "new_stockist", "dropped_stockist", "relisted"]
-            for c in ct + ["indie_pro_range"]:
-                idc[c] = pd.to_numeric(idc[c], errors="coerce").fillna(0).astype(int)
-            byd = idc.groupby(["date", "since"])[ct + ["indie_pro_range"]].sum().reset_index().sort_values("date", ascending=False).head(14)
-            d_rows = "".join(f"<tr><td>{r['since']} → {r['date']}</td><td class='num'>{int(r['indie_pro_range']):,}</td>"
-                             + "".join(f"<td class='num'>{int(r[c]) or ''}</td>" for c in ct) + "</tr>" for _, r in byd.iterrows())
-            recent = idc[idc["date"].isin(sorted(idc["date"].unique())[-7:])]
-            bc = recent.groupby("country")[["gained_pro", "lost_pro", "tier_up", "new_stockist", "dropped_stockist"]].sum()
-            bc = bc[bc.sum(axis=1) > 0].sort_values(["gained_pro", "new_stockist"], ascending=False).head(15)
-            pro_now = idc[idc["date"] == idc["date"].max()].set_index("country")["indie_pro_range"]
-            c_rows = "".join(f"<tr><td>{cc}</td><td class='num'>{int(pro_now.get(cc, 0)):,}</td>" + "".join(f"<td class='num'>{int(r[c]) or ''}</td>" for c in bc.columns) + "</tr>"
-                             for cc, r in bc.iterrows())
-            lab_html = f"""
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("Stockist label changes — by day")}
-      <table><thead><tr><th>Period</th><th class="num">Pro-range stockists</th><th class="num">+Pro</th><th class="num">−Pro</th>
-      <th class="num">Tier ↑</th><th class="num">Tier ↓</th><th class="num">New</th><th class="num">Dropped</th><th class="num">Relisted</th></tr></thead>
-      <tbody>{d_rows}</tbody></table>
-    </div>
-    <div class="table-card">{h3.format("By country — last 7 snapshots")}
-      <table><thead><tr><th>Country</th><th class="num">Pro-range now</th><th class="num">+Pro</th><th class="num">−Pro</th><th class="num">Tier ↑</th>
-      <th class="num">New</th><th class="num">Dropped</th></tr></thead><tbody>{c_rows}</tbody></table>
-    </div>
-  </div>
-  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
-    GW sets a paint-range label on each listed independent: 20 / 150 / 210 / 360 Warhammer Colour pots, plus "_T150" when the store
-    carries the 150-pot Warhammer Pro range. Gaining "+Pro" most likely means GW's trade system now records that account as taking
-    the Pro range (it arrives in regional batches — e.g. 29 Australian, 8 NZ and 3 Korean stockists on 14 Oct). It is a range
-    commitment, not a quantity: it can't show reorders, units received or sales. "Dropped" / "New" is directory churn — mostly
-    small 20-pot stockists in Europe — and covers only accounts GW lists (≈8,400 of ≈9,100 trade accounts).
-    The labels first appeared between Jun and Oct 2026 (a June archive copy shows placeholder tiers P150–P510 and no Pro label),
-    so there is no labelled history for past launches.</p></div>"""
+            for col in ("gained_pro", "lost_pro"):
+                idc[col] = pd.to_numeric(idc[col], errors="coerce").fillna(0).astype(int)
+            win = idc[idc["date"].isin(live["date"])]
+            g_all = win.groupby("country")["gained_pro"].sum().sort_values(ascending=False)
+            g_all = g_all[g_all > 0]
+            if not g_all.empty:
+                gl = ", ".join(f"{cn(c)} {v}" for c, v in g_all.head(4).items())
+        d_pro = pro - n(P["indie_pro_range"]) if P is not None else 0
+        since_first = pro - n(F["indie_pro_range"])
 
-        store_html = f"""
-  <div class="section-title">B · Store Network — GW Store Finder</div>
-  <div class="section-sub">
-    Weekly snapshot of warhammer.com's public store finder (every GW store + the independents GW lists), backfilled
-    from monthly Wayback Machine captures since Jun 2025. Latest: <strong>{s_last['date']}</strong>.
-  </div>
-  <div class="stats-row" style="margin-bottom:18px;">
-    <div class="stat-card"><div class="stat-val">{s_last['gw_open']}</div><div class="stat-lbl">GW stores open</div></div>
-    <div class="stat-card"><div class="stat-val">{s_last['gw_coming_soon']}</div><div class="stat-lbl">GW stores "coming soon"</div></div>
-    <div class="stat-card"><div class="stat-val">{int(s_last['indie_listed']):,}</div><div class="stat-lbl">Independents listed</div></div>
-    <div class="stat-card"><div class="stat-val" style="color:#f1c40f">{int(s_last['indie_pro_range']):,}</div><div class="stat-lbl">Indies ranging Warhammer Pro</div></div>
-  </div>
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("Network over time")}
-      <table><thead><tr><th>Snapshot</th><th class="num">GW open</th><th class="num">Coming soon</th>
-      <th class="num">Indies listed</th><th class="num">Pro-range indies</th></tr></thead><tbody>{sf_rows}</tbody></table>
-      <p class="data-note">— = the store finder did not yet publish paint-range data on that date.</p>
-      <p class="data-note">GW store count validates against reported figures (Jun 2025: 571 listed vs 570 in FY25 annual report).
-      Independents = GW's marketing directory, not its trade-account base (Jun 2025: 6.2K listed vs ~8.1K reported), so
-      changes can reflect listing policy as well as new accounts. "Pro-range" = store committed to the 150-pot Warhammer Pro
-      range (finder field added between Apr and Oct 2026) — distribution, not stock on hand or sales.</p>
-    </div>
-    <div class="table-card">{h3.format("Pro-range independents by country")}{ctry_html}</div>
-  </div>
-  {lab_html}
-  <div class="table-card" style="margin-bottom:18px;">{h3.format("GW store openings & closures (between snapshots)")}
-    {ch_html or "<p class='data-note'>No changes recorded yet.</p>"}
-    <p class="data-note">An add + remove pair in the same city is usually a relocation or re-listing, not a net change.</p>
-  </div>"""
+        # Online panel: stores listing Tone Pro (only stores that returned paints that day)
+        pan_line = ""
+        if not pnl.empty and not pruns.empty:
+            for c in ("listed", "available", "oos", "preorder"):
+                pnl[c] = pd.to_numeric(pnl[c], errors="coerce").fillna(0).astype(int)
+            pd_last = pnl["date"].max()
+            ok = set(pruns[(pruns["date"] == pd_last) & (pruns["status"] == "ok")]["store_id"])
+            cur = pnl[(pnl["date"] == pd_last) & pnl["store_id"].isin(ok)]
+            rep = cur["store_id"].nunique()
+            tp_l = cur[(cur["line"] == "Tone Pro") & (cur["listed"] > 0)]["store_id"].nunique()
+            pan_line = (f"Online check: <strong>{tp_l} of {rep}</strong> independent web stores in our panel list Tone Pro "
+                        f"({d(pd_last)}).")
 
-    # ── B2: Independent online availability panel ─────────────────────────
-    panel_html = ""
-    pnl  = _read_csv_or_empty(PANEL_SUMMARY_CSV)
-    pruns = _read_csv_or_empty(PANEL_RUNS_CSV)
-    pcfg = _read_csv_or_empty(PANEL_CONFIG_CSV)
+        labels = [d(x) for x in live["date"]]
+        charts_js.append(f"""mk('chartP9Pro', {_json.dumps(labels)}, {_json.dumps([n(x) for x in live['indie_pro_range']])}, 'Stores with the Pro tag', '#f1c40f');""")
+        sec1 = section(
+            1, "Who's carrying Tone Pro?",
+            f"{pro:,} independent stores have GW's Pro tag",
+            f"{pct(pro, listed)} of the {listed:,} independents on GW's store finder · {d(L['date'])} · "
+            f"{signed(d_pro)} on the previous day ({d(P['date']) if P is not None else '—'})",
+            f"""<div class="p9-grid">
+      <div class="p9-card"><h4>Stores with the Pro tag, by day</h4><div style="height:190px"><canvas id="chartP9Pro"></canvas></div>
+        <p class="p9-note">Daily since {d(F['date'])} ({len(live)} snapshots). GW added the tag between Apr and Oct 2026, so there is no earlier history.</p></div>
+      <div class="p9-card"><h4>By country · {d(L['date'])}</h4>
+        {table(["Country", "Pro-tag stores", "Share of listed indies", f"Change vs {d(P['date']) if P is not None else 'prev.'}"], rows, right=[1, 2, 3])}
+        <p class="p9-note">{sum_note}</p></div>
+    </div>
+    <p class="p9-line">{pan_line}</p>""",
+            f"About a third of GW-listed independents are set up to stock Tone Pro. The tag is arriving in regional batches "
+            f"(net {signed(since_first)} since {d(F['date'])}{'; new tags mainly ' + gl if gl else ''}), so day-to-day jumps reflect GW's "
+            f"trade system catching up, not stores buying more.",
+            "The <strong>Pro tag</strong> is a label GW shows on its public store finder when an independent store carries the "
+            "150-pot Warhammer Pro (Tone Pro) range. It shows which stores committed to the range, not how many pots they "
+            "received or sold. A store can only be counted if GW lists it on the finder (about 8,400 of roughly 9,100 trade accounts). "
+            "“Change” is that country's Pro-tag count minus the previous day's; it nets stores that gained the tag against stores "
+            "that lost it or left the directory. The online line counts only panel stores that returned paint listings that day.")
+        changed.append(f"Pro-tag stores {signed(d_pro)} ({pro:,})")
+        g_tot = int(g_all.sum()) if gl else 0
+        takeaways.append(f"<strong>{pro:,} independents</strong> ({pct(pro, listed)} of GW-listed stores) are tagged to stock Tone Pro "
+                         f"as of {d(L['date'])}, net {signed(since_first)} since {d(F['date'])}"
+                         + (f" ({g_tot} newly tagged, mainly {gl}; the rest lost the tag or left the store finder)." if gl else "."))
+
+    # ════════════════════════════════════════════════════════════════════
+    # 2 · What did stores receive?
+    # ════════════════════════════════════════════════════════════════════
+    sec2 = ""
+    rec_all = _read_csv_or_empty(os.path.join(DATA_DIR, "tone_pro_receipts.csv"))
+    launch_rec = rec_all[rec_all["type"] == "launch_delivery"] if not rec_all.empty else pd.DataFrame()
+    pack_rows, n_pass = [], 0
+    if not tpk.empty:
+        for _, r in tpk.sort_values(["country", "store_id"]).iterrows():
+            std = str(r["standard_pack"]).lower() == "true"; n_pass += std
+            pack_rows.append([nm(r["store_id"]), cn(r["country"]), n(r["paints_observed"]), n(r["mode_units"]),
+                              f"{'Yes' if std else 'No'} ({float(r['share_at_mode']):.0%} of paints)",
+                              "stock loaded before launch" if r["evidence"] == "pre-launch stock only" else "launch delivery"])
+    if not tpe.empty:
+        est_rows = [[cn(r["country"]) if r["country"] != "ALL" else "<strong>All</strong>", f"{n(r['pro_label_stores']):,}",
+                     f"{n(r['units_low']):,}", f"{n(r['units_mid']):,}", f"{n(r['units_high']):,}"] for _, r in tpe.iterrows()]
+        est_html = (f"<div class='p9-card'><h4>Estimated Tone Pro pots shipped to Pro-tag stores</h4>"
+                    f"{table(['Country', 'Pro-tag stores', 'Low', 'Middle', 'High'], est_rows, right=[1, 2, 3, 4])}"
+                    f"<p class='p9-note'>Pro-tag stores × 150 pots × typical pots per paint at the {n_pass} stores that pass the pack-size test. "
+                    f"An order-of-magnitude range, not a measurement.</p></div>")
+    else:
+        est_html = (f"<p class='p9-line'>Estimated pots shipped across all Pro-tag stores: <strong>not shown yet</strong> — needs at least "
+                    f"5 stores passing the pack-size test (currently {n_pass}).</p>")
+
+    oo = qs[(qs["store_id"] == "the_outpost") & (qs["line"] == "Tone Pro")].sort_values("date") if not qs.empty else pd.DataFrame()
+    oo_html = ""
+    if not oo.empty:
+        oo_vals = [n(x) for x in oo["on_order_units"]]
+        charts_js.append(f"""mk('chartP9Outpost', {_json.dumps([d(x) for x in oo['date']])}, {_json.dumps(oo_vals)}, 'Tone Pro units on order', '#58a6ff');""")
+        oo_html = (f"<div class='p9-card'><h4>The Outpost (UK) · Tone Pro units still on order</h4>"
+                   f"<div style='height:190px'><canvas id='chartP9Outpost'></canvas></div>"
+                   f"<p class='p9-note'>{oo_vals[0]:,} on {d(oo['date'].iloc[0])} → {oo_vals[-1]:,} on {d(oo['date'].iloc[-1])}, "
+                   f"{n(oo['paints'].iloc[-1])} paints, 1 store. The only store that publishes units on order. Still 0 on the shelf; "
+                   f"every paint is still a pre-order, so nothing has been delivered yet.</p></div>")
+    if not launch_rec.empty:
+        lr = launch_rec[launch_rec["line"] == "Tone Pro"]
+        n_del = lr["store_id"].nunique()
+        head2 = f"{n_del} store{'s' if n_del != 1 else ''} have received launch stock"
+        sub2 = f"First delivery seen {d(lr['date'].min())}, latest {d(lr['date'].max())} · out of the stores we read unit counts at"
+    else:
+        head2 = "No launch deliveries yet"
+        sub2 = (f"Daily reads at all 40 stores with unit counts run 22–31 Oct · before then, stock shows only where a store "
+                f"pre-loads it ({len(pack_rows)} store{'s' if len(pack_rows) != 1 else ''} so far)")
+    sec2 = section(
+        2, "What did stores receive?", head2, sub2,
+        f"""<div class="p9-grid">
+      <div class="p9-card"><h4>Pots per paint, per store</h4>
+        {table(["Store", "Country", "Paints read", "Typical pots per paint", "Same on most paints?", "Seen as"], pack_rows,
+               empty="No store shows Tone Pro unit counts yet.", right=[2, 3])}</div>
+      {oo_html}
+    </div>
+    {est_html}""",
+        ((f"{len(pack_rows)} store{'s' if len(pack_rows) != 1 else ''} so far show how much Tone Pro {'they expect' if len(pack_rows) != 1 else 'it expects'}: "
+          f"about {min(r[3] for r in pack_rows)}–{max(r[3] for r in pack_rows)} pots of each paint. If more stores show one number "
+          f"after 22 Oct, it points to a standard GW pack, which lets us size total shipments.")
+         if pack_rows else "Nothing to read yet — deliveries should show up from 22 Oct."),
+        "<strong>Pots per paint</strong> = the most common number of pots a store holds or expects for each Tone Pro paint "
+        "before launch, or the size of its delivery jump. <strong>Same on most paints?</strong> = at least 70% of that store's "
+        "paints sit at that number, which suggests a fixed pack from GW (the pack-size test). The shipment estimate stays hidden "
+        "until 5 stores pass it. The Outpost's “on order” is that store's own figure for units on the way; it falls when "
+        "customers pre-order against incoming stock (or the store cuts its order), so a fall is not a delivery.")
+    if pack_rows:
+        takeaways.append("<strong>No launch deliveries yet.</strong> Where stores show it, they expect about "
+                         f"{min(r[3] for r in pack_rows)}–{max(r[3] for r in pack_rows)} pots per paint "
+                         f"({len(pack_rows)} store{'s' if len(pack_rows) != 1 else ''}); daily delivery reads start 22 Oct."
+                         if launch_rec.empty else f"<strong>{head2}</strong> ({sub2.split(' · ')[0]}).")
+
+    # ════════════════════════════════════════════════════════════════════
+    # 3 · Is it selling?
+    # ════════════════════════════════════════════════════════════════════
+    sec3 = ""
+    wh_lab = {"memphis": "US webstore", "lenton": "UK webstore", "ingleburn": "Australia webstore"}
+    wh_rows, oos_names, oos_head, wh_date, whs, tpo = [], [], "", "", [], {}
+    if not rgs.empty:
+        for c in ("skus", "oos", "selling_fast"):
+            rgs[c] = pd.to_numeric(rgs[c], errors="coerce").fillna(0).astype(int)
+        wh_date = rgs["date"].max()
+        rl = rgs[rgs["date"] == wh_date]
+        rp = rgs[rgs["date"] == sorted(rgs["date"].unique())[-2]] if rgs["date"].nunique() > 1 else pd.DataFrame()
+        whs = [w for w in ("memphis", "lenton", "ingleburn") if w in set(rl["warehouse"])]
+        for line in ("Tone Pro", "Base", "Layer"):
+            cells = []
+            for w in whs:
+                g = rl[(rl["warehouse"] == w) & (rl["line"] == line)]
+                cells.append(f"{int(g['oos'].sum())} of {int(g['skus'].sum())}" if not g.empty else "—")
+            wh_rows.append([line] + cells)
+        tpo = {w: int(rl[(rl["warehouse"] == w) & (rl["line"] == "Tone Pro")]["oos"].sum()) for w in whs}
+        tpo_prev = {w: int(rp[(rp["warehouse"] == w) & (rp["line"] == "Tone Pro")]["oos"].sum()) for w in whs} if not rp.empty else {}
+        rd = _read_csv_or_empty(os.path.join(DATA_DIR, "gw_paint_stock_regions_daily.csv"))
+        if not rd.empty:
+            x = rd[(rd["date"] == wh_date) & (rd["line"] == "Tone Pro") & (rd["in_stock"].astype(str).str.lower() != "true")]
+            for w in whs:
+                nmz = sorted(x[x["warehouse"] == w]["name"].str.replace("Tone Pro: ", "", regex=False))
+                if nmz:
+                    oos_names.append(f"{wh_lab[w]}: {', '.join(escape(v) for v in nmz)}")
+        worst = max(tpo, key=tpo.get) if tpo else None
+        if worst and tpo[worst]:
+            others = [wh_lab[w].replace(' webstore', '') for w in whs if w != worst and tpo[w] == 0]
+            oos_head = f"{tpo[worst]} of 150 Tone Pro paints out of stock on GW's {wh_lab[worst]}"
+            def _oo(line):
+                g = rl[(rl["warehouse"] == worst) & (rl["line"] == line)]
+                return f"{int(g['oos'].sum())} of {int(g['skus'].sum())} {line}"
+            takeaways.append(f"<strong>GW's {wh_lab[worst]} has run out of {tpo[worst]} of 150 Tone Pro paints</strong> ({d(wh_date)}) "
+                             f"before launch{'; ' + ' and '.join(others) + ' still have all 150' if others else ''}. "
+                             f"They are still listed, so the pre-order allocation sold out; they weren't delisted. For scale, the same "
+                             f"webstore is out of {_oo('Base')} and {_oo('Layer')} paints.")
+        else:
+            oos_head = "All 150 Tone Pro paints can still be ordered on GW's webstores"
+        for w in whs:
+            if w in tpo_prev and tpo[w] != tpo_prev[w]:
+                changed.append(f"{wh_lab[w]} Tone Pro out of stock {tpo_prev[w]} → {tpo[w]}")
+
+    core_share_worst = 0.0
+    if tpo and any(tpo.values()):
+        g = rl[(rl["warehouse"] == max(tpo, key=tpo.get)) & rl["line"].isin(["Base", "Layer"])]
+        core_share_worst = g["oos"].sum() / g["skus"].sum() if g["skus"].sum() else 0.0
+
+    # Sell-down at stores with counts
+    sell_rows, sell_supply, sell_gone = [], 0, 0
+    if not tps.empty:
+        for _, r in tps.sort_values(["country", "store_id"]).iterrows():
+            sup = n(r["opening"]) + n(r["received"]); sell_supply += sup; sell_gone += n(r["gone"])
+            st = r["sell_through"]
+            sell_rows.append([nm(r["store_id"]), cn(r["country"]), n(r["paints"]), f"{sup:,}", f"{n(r['gone']):,}",
+                              f"{n(r['on_hand']):,}", f"{float(st):.0%}" if str(st) not in ("", "nan") else "—",
+                              f"{d(r['first_date'])} → {d(r['last_date'])}"])
+    # Online panel: share of listings that can't be ordered
+    pan_rows, pan_date = [], ""
     if not pnl.empty and not pruns.empty:
-        for c in ("listed", "available", "in_stock_shelf", "preorder", "oos", "qty_reported", "qty_sum", "on_order_sum"):
-            pnl[c] = pd.to_numeric(pnl[c], errors="coerce").fillna(0).astype(int)
-        p_date = pnl["date"].max()
-        ok_ids = set(pruns[(pruns["date"] == p_date) & (pruns["status"] == "ok")]["store_id"])
-        cur = pnl[(pnl["date"] == p_date) & pnl["store_id"].isin(ok_ids)]
-        n_panel = len(ok_ids)
-        n_active = int((pcfg["active"].astype(str).str.lower() == "true").sum()) if not pcfg.empty else n_panel
-        names = dict(zip(pcfg["store_id"], pcfg["store_name"])) if not pcfg.empty else {}
-        qty_kind = dict(zip(pcfg["store_id"], pcfg["qty_shown"])) if not pcfg.empty else {}
-
-        core = cur[cur["line"].isin(["Base", "Layer"])]
-        tp   = cur[cur["line"] == "Tone Pro"]
-        tp_stores = set(tp[tp["listed"] > 0]["store_id"])
-        def pct(a, b): return f"{a / b * 100:.0f}%" if b else "—"
-        core_pct = pct(core["available"].sum(), core["listed"].sum())
-        tp_pct   = pct(tp["available"].sum(), tp["listed"].sum())
-
-        # By country
-        ctry_rows = ""
+        pan_date = pnl["date"].max()
+        ok = set(pruns[(pruns["date"] == pan_date) & (pruns["status"] == "ok")]["store_id"])
+        cur = pnl[(pnl["date"] == pan_date) & pnl["store_id"].isin(ok)]
+        def prow(lbl, c):
+            core = c[c["line"].isin(["Base", "Layer"])]; tp = c[c["line"] == "Tone Pro"]
+            return [lbl, c["store_id"].nunique(), pct(core["listed"].sum() - core["available"].sum(), core["listed"].sum()),
+                    tp[tp["listed"] > 0]["store_id"].nunique(),
+                    pct(tp["listed"].sum() - tp["available"].sum(), tp["listed"].sum())]
         for cc in sorted(cur["country"].unique()):
-            c = cur[cur["country"] == cc]; cc_core = c[c["line"].isin(["Base", "Layer"])]; cc_tp = c[c["line"] == "Tone Pro"]
-            n_st = c["store_id"].nunique(); n_tp = cc_tp[cc_tp["listed"] > 0]["store_id"].nunique()
-            ctry_rows += (f"<tr><td>{cc}</td><td class='num'>{n_st}</td>"
-                          f"<td class='num'>{pct(cc_core['available'].sum(), cc_core['listed'].sum())}</td>"
-                          f"<td class='num'>{n_tp}/{n_st}</td>"
-                          f"<td class='num'>{pct(cc_tp['available'].sum(), cc_tp['listed'].sum())}</td>"
-                          f"<td class='num'>{pct(cc_tp['preorder'].sum(), cc_tp['listed'].sum())}</td></tr>")
-
-        # History
-        hist_rows = ""
-        for d, g in pnl.groupby("date"):
-            ok_d = set(pruns[(pruns["date"] == d) & (pruns["status"] == "ok")]["store_id"])
-            g = g[g["store_id"].isin(ok_d)]
-            gc = g[g["line"].isin(["Base", "Layer"])]; gt = g[g["line"] == "Tone Pro"]
-            hist_rows = (f"<tr><td>{d}</td><td class='num'>{len(ok_d)}</td>"
-                         f"<td class='num'>{pct(gc['available'].sum(), gc['listed'].sum())}</td>"
-                         f"<td class='num'>{gt[gt['listed'] > 0]['store_id'].nunique()}</td>"
-                         f"<td class='num'>{pct(gt['available'].sum(), gt['listed'].sum())}</td></tr>") + hist_rows
-
-        # Quantity series (stores that publish numbers)
-        qs = _read_csv_or_empty(PANEL_QTY_SUMMARY_CSV)
-        q_rows, qd_rows = "", ""
-        if not qs.empty:
-            for c in ("shelf_units", "on_order_units", "received_est", "outflow_est", "paints"):
-                qs[c] = pd.to_numeric(qs[c], errors="coerce").fillna(0).astype(int)
-            last7 = sorted(qs["date"].unique())[-7:]
-            for sid, g in qs.groupby("store_id"):
-                gl = g[g["date"] == g["date"].max()]
-                gc = gl[gl["line"].isin(["Base", "Layer"])]; gt = gl[gl["line"] == "Tone Pro"]
-                w = g[(g["line"] == "Tone Pro") & g["date"].isin(last7)]
-                floor = "+" if (gc["shelf_is_floor"].astype(str).str.lower() == "true").any() else ""
-                q_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{escape(qty_kind.get(sid, ''))}</td>"
-                           f"<td class='num'>{int(gc['shelf_units'].sum()):,}{floor}</td>"
-                           f"<td class='num'>{int(gt['shelf_units'].sum()):,}</td>"
-                           f"<td class='num'>{(f'{int(gt.on_order_units.sum()):,}' if gt.on_order_units.sum() else '—')}</td>"
-                           f"<td class='num'>{int(w['received_est'].sum()):,}</td><td class='num'>{int(w['outflow_est'].sum()):,}</td>"
-                           f"<td class='num'>{g['date'].nunique()}</td></tr>")
-            tpd = qs[qs["line"] == "Tone Pro"].groupby("date")[["shelf_units", "on_order_units", "received_est", "outflow_est"]].sum()
-            for d, r in tpd.sort_index(ascending=False).head(21).iterrows():
-                qd_rows += (f"<tr><td>{d}</td><td class='num'>{int(r.shelf_units):,}</td><td class='num'>{int(r.on_order_units):,}</td>"
-                            f"<td class='num'>{int(r.received_est):,}</td><td class='num'>{int(r.outflow_est):,}</td></tr>")
-
-        # Weekly product-page counts (config/page_qty_stores.csv)
-        us_html = ""
-        pq = _read_csv_or_empty(PAGE_QTY_CSV)
-        if not pq.empty:
-            pq["q"] = pd.to_numeric(pq["qty"], errors="coerce")
-            latest = pq.sort_values("date").groupby("store_id").tail(10**6)
-            last_dates = pq.groupby("store_id")["date"].max()
-            cur_pq = pq[pq.apply(lambda r: r["date"] == last_dates[r["store_id"]], axis=1)]
-            pq_rows = ""
-            for cc in sorted(cur_pq["country"].unique()):
-                for sid, g in cur_pq[cur_pq["country"] == cc].groupby("store_id"):
-                    tp = g[g["line"] == "Tone Pro"]["q"].dropna(); cmp_ = g[g["line"] != "Tone Pro"]["q"].dropna()
-                    pq_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{cc}</td><td>{g['date'].iloc[0]}</td>"
-                                f"<td class='num'>{len(tp)}</td><td class='num'>{int(tp.clip(lower=0).sum()):,}</td>"
-                                f"<td class='num'>{int(-tp[tp < 0].sum()):,}</td>"
-                                f"<td class='num'>{(f'{cmp_.clip(lower=0).mean():.1f}' if len(cmp_) else '—')}</td></tr>")
-            n_pq = cur_pq["store_id"].nunique()
-            us_html = (f'<div class="table-card" style="margin-bottom:18px;">{h3.format(f"Product-page unit counts — weekly, {n_pq} stores")}'
-                       f'<table><thead><tr><th>Store</th><th>Country</th><th>Read on</th><th class="num">Tone Pro paints read</th>'
-                       f'<th class="num">Tone Pro units on hand</th><th class="num">Tone Pro ordered beyond stock</th>'
-                       f'<th class="num">Avg units, 10 core paints</th></tr></thead><tbody>{pq_rows}</tbody></table>'
-                       f'<p class="data-note">Each store is read once a week on its own day: tone 3 of each of the 30 Tone Pro colours '
-                       f'(all listed Tone Pro at three US anchor stores) plus 10 fixed Base/Layer paints for comparison, from the stock figure '
-                       f'each product page publishes. Before 24 Oct Tone Pro items are pre-orders, so figures are allocations / pre-orders, '
-                       f'not shelf stock; negative = orders taken beyond stock. Week-to-week changes can\'t separate restocks from sales.</p></div>')
-
-        # Tone Pro deliveries: pack test, units estimate, reorders
-        del_html = ""
-        tpk, tpe, tpr = _read_csv_or_empty(TP_PACK_CSV), _read_csv_or_empty(TP_EST_CSV), _read_csv_or_empty(TP_REORD_CSV)
-        if not tpk.empty:
-            tpk = tpk.sort_values(["country", "store_id"])
-            k_rows = "".join(f"<tr><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
-                             f"<td class='num'>{r['paints_observed']}</td><td class='num'>{r['mode_units']}</td>"
-                             f"<td class='num'>{float(r['share_at_mode']):.0%}</td><td>{'yes' if str(r['standard_pack']).lower() == 'true' else 'no'}</td>"
-                             f"<td>{r['evidence']}</td></tr>" for _, r in tpk.iterrows())
-            e_rows = ""
-            if not tpe.empty:
-                for _, r in tpe.iterrows():
-                    lo, mid, hi = (int(float(r[c])) for c in ("units_low", "units_mid", "units_high"))
-                    e_rows += (f"<tr><td>{r['country']}</td><td class='num'>{int(float(r['pro_label_stores'])):,}</td>"
-                               f"<td>{escape(str(r['pack_basis']))}</td><td class='num'>{lo:,}</td><td class='num'>{mid:,}</td><td class='num'>{hi:,}</td></tr>")
-            r_rows = "".join(f"<tr><td>{r['iso_week']}</td><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
-                             f"<td class='num'>{r['paints_restocked']}</td><td class='num'>{int(float(r['units'])):,}</td></tr>"
-                             for _, r in tpr.sort_values("iso_week", ascending=False).head(20).iterrows()) if not tpr.empty else ""
-            tps = _read_csv_or_empty(TP_SELL_CSV)
-            s_rows = ""
-            if not tps.empty:
-                for _, r in tps.sort_values(["country", "store_id"]).iterrows():
-                    stv = r["sell_through"]
-                    s_rows += (f"<tr><td>{escape(names.get(r['store_id'], r['store_id']))}</td><td>{r['country']}</td>"
-                               f"<td class='num'>{r['paints']}</td><td class='num'>{int(float(r['opening'])):,}</td>"
-                               f"<td class='num'>{int(float(r['received'])):,}</td><td class='num'>{int(float(r['gone'])):,}</td>"
-                               f"<td class='num'>{int(float(r['on_hand'])):,}</td>"
-                               f"<td class='num'>{(f'{float(stv):.0%}' if str(stv) not in ('', 'nan') else '—')}</td>"
-                               f"<td>{r['first_date']} → {r['last_date']}</td></tr>")
-            del_html = f"""
-  <div class="section-title">B3 · Tone Pro deliveries — allocation per store, estimate across Pro-label stores, reorders</div>
-  <div class="section-sub">From the ~40 stores that publish unit counts (daily during the 20 Oct – 1 Nov launch window).</div>
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("Standard-pack test — Tone Pro pots allocated per paint")}
-      <table><thead><tr><th>Store</th><th>Country</th><th class="num">Paints seen</th><th class="num">Most common</th>
-      <th class="num">Share at it</th><th>Standard pack?</th><th>Evidence</th></tr></thead><tbody>{k_rows}</tbody></table>
+            pan_rows.append(prow(cn(cc), cur[cur["country"] == cc]))
+        pan_rows.append(["<strong>All</strong>"] + [f"<strong>{v}</strong>" for v in prow("", cur)[1:]])
+    reo_line = ("Reorders: <strong>none yet</strong>. A reorder is a second rise in a store's count after its launch delivery; "
+                "we look for it from 24 Oct.")
+    if not tpr.empty:
+        reo_line = (f"Reorders: <strong>{tpr['store_id'].nunique()} store(s)</strong> restocked Tone Pro after launch "
+                    f"({n(tpr['units'].astype(float).sum()):,} pots, {', '.join(sorted(tpr['iso_week'].unique()))}).")
+    sell_sub = (f"{d(wh_date)} · GW's own webstores, 3 regions" if wh_date else "")
+    sec3 = section(
+        3, "Is it selling?", oos_head or "No webstore data yet", sell_sub,
+        f"""<div class="p9-grid">
+      <div class="p9-card"><h4>Out of stock on GW's webstores · {d(wh_date) if wh_date else '—'}</h4>
+        {table(["Paint range"] + [wh_lab[w] for w in whs], wh_rows, right=[1, 2, 3])}
+        <p class="p9-note">{'<br>'.join(oos_names) or 'No Tone Pro paint out of stock on any GW webstore.'}</p></div>
+      <div class="p9-card"><h4>Independent web stores · share of listings that can't be ordered · {d(pan_date) if pan_date else '—'}</h4>
+        {table(["Country", "Stores reporting", "Base/Layer", "Stores listing Tone Pro", "Tone Pro"], pan_rows, right=[1, 2, 3, 4])}</div>
     </div>
-    <div class="table-card">{h3.format("Estimated Tone Pro units shipped to Pro-label stockists")}
-      <table><thead><tr><th>Country</th><th class="num">Pro-label stores</th><th>Pack size from</th><th class="num">Low</th>
-      <th class="num">Mid</th><th class="num">High</th></tr></thead><tbody>{e_rows or "<tr><td colspan=6>Not enough stores tested yet.</td></tr>"}</tbody></table>
-      {h3.format("Reorders (Tone Pro restocked after the launch delivery)")}
-      <table><thead><tr><th>Week</th><th>Store</th><th>Country</th><th class="num">Paints</th><th class="num">Units</th></tr></thead>
-      <tbody>{r_rows or "<tr><td colspan=5>None yet.</td></tr>"}</tbody></table>
-    </div>
-  </div>
-  <div class="table-card" style="margin-bottom:18px;">{h3.format("Sell-down — Tone Pro paints tracked at each store since pre-orders opened")}
-    <table><thead><tr><th>Store</th><th>Country</th><th class="num">Paints</th><th class="num">Opening stock</th>
-    <th class="num">Received</th><th class="num">Gone</th><th class="num">On hand</th><th class="num">Sell-through</th><th>Period</th></tr></thead>
-    <tbody>{s_rows or "<tr><td colspan=9>No Tone Pro counts yet.</td></tr>"}</tbody></table>
-    <p class="data-note">Gone = units received minus the change in the count (a fall is units gone; a delivery that goes straight to
-    pre-orders shows as received and gone), plus pre-orders taken before tracking began (counts below zero). Sell-through = gone ÷
-    (opening stock + received). Covers only the paints read at that store; includes pre-order fulfilment, returns and corrections.</p>
-  </div>
-  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
-    Allocation per paint = the larger of a store's pre-launch peak count (stores that load expected stock to take pre-orders)
-    and its biggest rise in the launch window (stores that sell beyond stock and jump on delivery). "Standard pack" = at least 70%
-    of a store's Tone Pro paints at one number. The estimate multiplies each country's GW Pro-label stockists by 150 pots and by the
-    25th / 50th / 75th percentile of pots-per-paint at tested stores (that country if ≥3 stores tested, else all) — the tested stores
-    are online-active and may be larger than average, so treat it as an order-of-magnitude range, not a measurement. Reorders are
-    rises after a store's launch delivery; weekly reads net restocks against sales, so they are a floor.</p></div>"""
+    <div class="p9-card" style="margin-top:14px"><h4>Tone Pro units gone at stores with counts (since pre-orders opened 10 Oct)</h4>
+      {table(["Store", "Country", "Paints", "Start (shelf + on order + received)", "Gone", "Left now", "Share gone", "Period"],
+             sell_rows, empty="No Tone Pro counts yet.", right=[2, 3, 4, 5, 6])}
+      <p class="p9-note">{len(sell_rows)} stores · {sell_gone:,} of {sell_supply:,} pots gone ({pct(sell_gone, sell_supply)}).</p></div>
+    <p class="p9-line">{reo_line}</p>""",
+        (("Early, thin signs of pre-launch demand: " if (any(tpo.values()) or sell_gone) else "No clear pre-launch demand signal yet. ")
+         + (f"GW's {wh_lab[max(tpo, key=tpo.get)]} has started to sell out of individual Tone Pro paints"
+            + (", though it is out of a bigger share of Base and Layer paints, so its stock is tight across the board. "
+               if core_share_worst > max(tpo.values()) / 150 else ". ") if any(tpo.values()) else "")
+         + (f"{pct(sell_gone, sell_supply)} of tracked pots have gone at the {len(sell_rows)} stores that publish counts. " if sell_gone else "")
+         + "Neither is a sales figure, and both are small samples until launch day."),
+        "<strong>Out of stock</strong> on a GW webstore = the product is still listed but can't be ordered there. Before launch "
+        "that means the webstore's pre-order allocation has run out. It can mean strong demand or a small allocation, and each "
+        "webstore is one channel. Base and Layer are the long-running comparison ranges. <strong>Share of listings that can't be ordered</strong> "
+        "is calculated only over panel stores that returned listings that day, so a store going offline doesn't move the percentage. "
+        "<strong>Gone</strong> = falls in a store's count (shelf plus units on order); a delivery that moves units from “on order” "
+        "to the shelf is neither received nor gone. Gone includes pre-orders, sales, cancellations and stock corrections. "
+        "<strong>Share gone</strong> = gone ÷ start.")
+    if sell_rows:
+        top = tps.assign(g=pd.to_numeric(tps["gone"], errors="coerce")).sort_values("g", ascending=False).iloc[0]
+        takeaways.append(f"At the {len(sell_rows)} stores with Tone Pro counts, <strong>{sell_gone:,} of {sell_supply:,} pots</strong> "
+                         f"({pct(sell_gone, sell_supply)}) have gone since pre-orders opened, "
+                         + (f"all of them at {nm(top['store_id'])}" if n(top['gone']) == sell_gone else f"most at {nm(top['store_id'])} ({n(top['gone']):,})")
+                         + ". Gone means pre-ordered, sold or cancelled, not confirmed sales.")
+    if not oo.empty and len(oo) > 1:
+        changed.append(f"The Outpost on order {n(oo['on_order_units'].iloc[-2]):,} → {n(oo['on_order_units'].iloc[-1]):,}")
 
-        # Store list
-        st_rows = ""
+    # ════════════════════════════════════════════════════════════════════
+    # 4 · GW store network
+    # ════════════════════════════════════════════════════════════════════
+    sec4 = ""
+    if not sf.empty:
+        s = sf.sort_values("date"); S = s.iloc[-1]; S0 = s.iloc[0]
+        Sp = s.iloc[-2] if len(s) > 1 else None
+        ch = sfch.sort_values("date", ascending=False) if not sfch.empty else pd.DataFrame()
+        recent = [chrow(r) for _, r in ch.head(8).iterrows()]
+        d_open = n(S["gw_open"]) - n(S0["gw_open"])
+        sec4 = section(
+            4, "GW store network", f"{n(S['gw_open'])} GW stores open, {n(S['gw_coming_soon'])} coming soon",
+            f"{d(S['date'])} · {signed(d_open)} open since {d(S0['date'])} ({n(S0['gw_open'])} then) · "
+            f"total listed {n(S['gw_stores'])} = {n(S['gw_open'])} open + {n(S['gw_coming_soon'])} coming soon",
+            f"""<div class="p9-card"><h4>Latest openings and closings</h4>
+      {table(["Seen", "Change", "Store", "Location"], recent, empty="No changes recorded yet.")}
+      <p class="p9-note">Full log in the appendix.</p></div>""",
+            (f"GW's own store estate is {'growing' if d_open > 0 else 'shrinking' if d_open < 0 else 'flat'} ({signed(d_open)} open stores in about "
+             f"{(pd.to_datetime(S['date']) - pd.to_datetime(S0['date'])).days // 30} months). Every GW store sells Tone Pro, so this "
+             f"is the base of shelves beyond the independents."),
+            "Counts come from GW's public store finder; GW stores are the entries GW marks as its own. “Coming soon” = the store name "
+            "says so (e.g. “Coming Soon”, “Kommt bald”). The earlier figure of 606 stores (13 Oct) was the total listed: 599 open + 7 "
+            "coming soon; the total is now "
+            f"{n(S['gw_stores'])} ({n(S['gw_open'])} + {n(S['gw_coming_soon'])}). Snapshots before 13 Oct are monthly archive copies, "
+            "so changes are dated to the snapshot that first showed them. An opening and closing in the same city is usually a "
+            "move or re-listing.")
+        if Sp is not None and n(S["gw_open"]) != n(Sp["gw_open"]):
+            changed.append(f"GW stores open {n(Sp['gw_open'])} → {n(S['gw_open'])}")
+
+    # Online panel takeaway (same stores both days for the change)
+    if not pnl.empty and not pruns.empty and pnl["date"].nunique() > 0:
+        dates = sorted(pnl["date"].unique())
+        def tp_list(dt, ids=None):
+            okd = set(pruns[(pruns["date"] == dt) & (pruns["status"] == "ok")]["store_id"])
+            c = pnl[(pnl["date"] == dt) & pnl["store_id"].isin(okd if ids is None else okd & ids)]
+            return c, set(c["store_id"])
+        cur, ids_now = tp_list(dates[-1])
+        core = cur[cur["line"].isin(["Base", "Layer"])]; tp = cur[cur["line"] == "Tone Pro"]
+        n_tp = tp[tp["listed"] > 0]["store_id"].nunique()
+        takeaways.append(f"Online, <strong>{n_tp} of {len(ids_now)}</strong> independent web stores in our panel list Tone Pro "
+                         f"({d(dates[-1])}); only {pct(tp['available'].sum(), tp['listed'].sum())} of those Tone Pro listings can be ordered yet, "
+                         f"vs {pct(core['available'].sum(), core['listed'].sum())} of Base/Layer listings in stock or orderable.")
+        if len(dates) > 1:
+            _, ids_prev = tp_list(dates[-2])
+            both = ids_now & ids_prev
+            a, _ = tp_list(dates[-2], both); b, _ = tp_list(dates[-1], both)
+            na = a[(a["line"] == "Tone Pro") & (a["listed"] > 0)]["store_id"].nunique()
+            nb = b[(b["line"] == "Tone Pro") & (b["listed"] > 0)]["store_id"].nunique()
+            changed.append(f"panel stores listing Tone Pro {na} → {nb} (same {len(both)} stores)")
+
+    # ════════════════════════════════════════════════════════════════════
+    # Appendix
+    # ════════════════════════════════════════════════════════════════════
+    app = []
+    if not pnl.empty and not pruns.empty:
+        cur = pnl[(pnl["date"] == pan_date) & pnl["store_id"].isin(set(pruns[(pruns["date"] == pan_date) & (pruns["status"] == "ok")]["store_id"]))]
+        st_rows = []
         for sid, g in sorted(cur.groupby("store_id"), key=lambda x: (x[1]["country"].iloc[0], names.get(x[0], x[0]))):
             gc = g[g["line"].isin(["Base", "Layer"])]; gt = g[g["line"] == "Tone Pro"]
-            st_rows += (f"<tr><td>{escape(names.get(sid, sid))}</td><td>{g['country'].iloc[0]}</td>"
-                        f"<td class='num'>{int(gc['listed'].sum())}</td><td class='num'>{pct(gc['available'].sum(), gc['listed'].sum())}</td>"
-                        f"<td class='num'>{int(gt['listed'].sum()) or '—'}</td>"
-                        f"<td class='num'>{pct(gt['available'].sum(), gt['listed'].sum()) if gt['listed'].sum() else '—'}</td></tr>")
-        failed = n_active - n_panel
+            st_rows.append([nm(sid), cn(g["country"].iloc[0]), int(gc["listed"].sum()), pct(gc["available"].sum(), gc["listed"].sum()),
+                            int(gt["listed"].sum()) or "—", pct(gt["available"].sum(), gt["listed"].sum()) if gt["listed"].sum() else "—"])
+        app.append((f"Panel store list ({len(st_rows)} stores reporting, {d(pan_date)})",
+                    table(["Store", "Country", "Base/Layer listed", "Orderable", "Tone Pro listed", "Orderable"], st_rows, right=[2, 3, 4, 5])))
+        h_rows = []
+        for dt in sorted(pnl["date"].unique(), reverse=True):
+            runs_d = pruns[pruns["date"] == dt]; okd = set(runs_d[runs_d["status"] == "ok"]["store_id"])
+            g = pnl[(pnl["date"] == dt) & pnl["store_id"].isin(okd)]
+            gc = g[g["line"].isin(["Base", "Layer"])]; gt = g[g["line"] == "Tone Pro"]
+            h_rows.append([d(dt), len(runs_d), g["store_id"].nunique(), pct(gc["available"].sum(), gc["listed"].sum()),
+                           gt[gt["listed"] > 0]["store_id"].nunique(), pct(gt["available"].sum(), gt["listed"].sum())])
+        app.append(("Panel history",
+                    table(["Date", "Stores read", "Stores returning paints", "Base/Layer orderable", "Listing Tone Pro", "Tone Pro orderable"],
+                          h_rows, right=[1, 2, 3, 4, 5])
+                    + "<p class='p9-note'>The panel was 60 stores on 13 Oct; 21 candidates were trialled on 14 Oct (81 read, 77 returned paints) "
+                      "and 5 that didn't work were dropped, leaving 76 from 15 Oct. Percentages use only the stores that returned paints that day.</p>"))
+    if not paint.empty:
+        pl = paint[paint["date"] == paint["date"].max()]
+        l_rows = [[escape(str(r["line"])), n(r["skus"]), n(r["oos"]), n(r["selling_fast"]), n(r["status_p"]) + n(r["status_o"])]
+                  for _, r in pl.iterrows()]
+        app.append((f"GW US webstore by paint range ({d(paint['date'].max())})",
+                    table(["Paint range", "Products", "Out of stock", "“Selling fast”", "Being phased out or discontinued"], l_rows, right=[1, 2, 3, 4])
+                    + "<p class='p9-note'>Contrast, Shade and Technical are mostly being phased out, so their stock-outs reflect run-down, not demand.</p>"))
+    if not eps.empty:
+        pe = eps[eps["line"].isin(["Tone Pro", "Tech Pro"])]
+        e_rows = [[escape(str(r["name"])), d(r["oos_first_seen"]), d(r["back_in_stock"]) if r["back_in_stock"] else "still out", n(r["days_oos_min"])]
+                  for _, r in pe.sort_values("oos_first_seen", ascending=False).iterrows()]
+        app.append(("Pro paint stock-outs on GW's US webstore",
+                    table(["Product", "First seen out of stock", "Back in stock", "Days out (at least)"], e_rows,
+                          empty="None recorded.", right=[3])))
+    if not idc.empty:
+        ct = ["indie_pro_range", "gained_pro", "lost_pro", "tier_up", "tier_down", "new_stockist", "dropped_stockist", "relisted"]
+        for c in ct:
+            idc[c] = pd.to_numeric(idc[c], errors="coerce").fillna(0).astype(int)
+        byd = idc.groupby(["date", "since"])[ct].sum().reset_index().sort_values("date", ascending=False)
+        app.append(("Pro-tag and tier changes by day",
+                    table(["Period", "Pro-tag stores", "Gained tag", "Lost tag", "Tier up", "Tier down", "New in finder", "Left finder", "Back in finder"],
+                          [[f"{d(r['since'])} → {d(r['date'])}"] + [f"{int(r[c]):,}" for c in ct] for _, r in byd.iterrows()],
+                          right=list(range(1, 9)))
+                    + "<p class='p9-note'>New / left finder is directory churn, mostly small 20-pot stockists in Europe. "
+                      "Pro-tag total bridges day to day as: previous + gained − lost + new or returning stores with the tag − departing stores with it "
+                      "(13→14 Oct bridges to within 2 stores).</p>"))
+    if not qs.empty:
+        for c in ("shelf_units", "on_order_units", "outflow_est", "paints"):
+            qs[c] = pd.to_numeric(qs[c], errors="coerce").fillna(0).astype(int)
+        kind = dict(zip(pcfg["store_id"], pcfg["qty_shown"])) if not pcfg.empty else {}
+        q_rows = []
+        for sid, g in qs.groupby("store_id"):
+            gl = g[g["date"] == g["date"].max()]
+            gc = gl[gl["line"].isin(["Base", "Layer"])]; gt = gl[gl["line"] == "Tone Pro"]
+            flo = "+" if (gc["shelf_is_floor"].astype(str).str.lower() == "true").any() else ""
+            q_rows.append([nm(sid), escape(kind.get(sid, "")), d(g["date"].max()), f"{int(gc['shelf_units'].sum()):,}{flo}",
+                           f"{int(gt['shelf_units'].sum()):,}", f"{int(gt['on_order_units'].sum()):,}" if gt["on_order_units"].sum() else "—"])
+        app.append(("Daily-count stores: units on the shelf",
+                    table(["Store", "What it shows", "Read", "Base/Layer on shelf", "Tone Pro on shelf", "Tone Pro on order"], q_rows, right=[3, 4, 5])
+                    + "<p class='p9-note'>“+” = some counts are capped (e.g. Element Games shows “10+”), so the total is a floor.</p>"))
+    if not pq.empty:
+        pq["q"] = pd.to_numeric(pq["qty"], errors="coerce")
+        last = pq.groupby("store_id")["date"].max()
+        cp = pq[pq["date"] == pq["store_id"].map(last)]
+        r_ = []
+        for sid, g in sorted(cp.groupby("store_id"), key=lambda x: (x[1]["country"].iloc[0], names.get(x[0], x[0]))):
+            tq = g[g["line"] == "Tone Pro"]["q"].dropna(); cq = g[g["line"] != "Tone Pro"]["q"].dropna()
+            r_.append([nm(sid), cn(g["country"].iloc[0]), d(g["date"].iloc[0]), len(tq), f"{int(tq.clip(lower=0).sum()):,}",
+                       f"{int(-tq[tq < 0].sum()):,}", f"{cq.clip(lower=0).mean():.1f}" if len(cq) else "—"])
+        app.append((f"Weekly product-page counts ({len(r_)} stores read so far)",
+                    table(["Store", "Country", "Read", "Tone Pro paints read", "Tone Pro pots on hand", "Pre-ordered beyond stock", "Avg pots, 10 core paints"],
+                          r_, right=[3, 4, 5, 6])
+                    + "<p class='p9-note'>Each store is read once a week on its own day (daily on a subset 22–31 Oct). Before launch, "
+                      "Tone Pro counts are allocations or pre-orders, not shelf stock.</p>"))
+    if not sfch.empty:
+        app.append((f"Full GW store openings and closings log ({len(sfch)} changes since {d(sf['date'].min())})",
+                    table(["Seen", "Change", "Store", "Location"], [chrow(r) for _, r in sfch.sort_values("date", ascending=False).iterrows()])))
+    if not ytv.empty and not ytv[ytv["topic"] == "Tone Pro"].empty:
+        tpv = ytv[ytv["topic"] == "Tone Pro"]; lv = tpv[tpv["date"] == tpv["date"].max()].copy()
+        lv["views"] = pd.to_numeric(lv["views"], errors="coerce").fillna(0).astype(int)
+        v_rows = [[f"<a href='https://www.youtube.com/watch?v={r['video_id']}' target='_blank' style='color:var(--text)'>{escape(str(r['title']))[:80]}</a>",
+                   escape(str(r["channel_title"])), d(str(r["published_at"])[:10]), fmt_views(int(r["views"]))]
+                  for _, r in lv.sort_values("views", ascending=False).head(12).iterrows()]
+        app.append((f"Tone Pro on YouTube ({len(lv)} videos, {fmt_views(int(lv['views'].sum()))} views, {d(lv['date'].iloc[0])})",
+                    table(["Video", "Channel", "Published", "Views"], v_rows, right=[3])
+                    + "<p class='p9-note'>Creator attention, not purchases. YouTube search returns a sample, so totals are a floor.</p>"))
+    app.append(("Method notes", """<div class="p9-note" style="font-style:normal;line-height:1.7">
+      <p><strong>Sources.</strong> GW's public product index (one per regional webstore: US, UK, Australia); GW's public store finder
+      (daily); a panel of 76 independent web stores' public product listings (daily); product-page stock figures at 30 more stores
+      (weekly; daily 22–31 Oct). Public pages only, light request volume, robots.txt respected.</p>
+      <p><strong>Nothing here is GW sales.</strong> GW doesn't publish sales. Webstore flags are yes/no availability; store counts
+      cover only stores that publish them and skew towards larger, online-active retailers.</p>
+      <p><strong>Deliveries.</strong> A store's allocation per paint = the larger of its pre-launch peak (stock plus units on order) and its
+      biggest rise in the 20–31 Oct window. Rises after the launch delivery are reorders; weekly reads net restocks against sales, so
+      they are a floor. At The Outpost a fall in units on order counts as a delivery only once the paint stops being a pre-order.</p>
+      <p><strong>Shipment estimate.</strong> Pro-tag stores in each country × 150 pots × the 25th / 50th / 75th percentile of pots per
+      paint at stores that pass the pack-size test (that country if 3+ pass, else all). Shown only once 5 stores pass.</p>
+      <p><strong>Durations.</strong> Snapshots are daily, so a stock-out that starts and ends between runs is missed and durations are
+      whole days at least.</p></div>"""))
+    appendix = "".join(f"<details class='p9-app'><summary>{t}</summary><div>{b}</div></details>" for t, b in app)
 
-        panel_html = f"""
-  <div class="section-title">B2 · Independent online availability (panel of {n_panel} stores)</div>
-  <div class="section-sub">
-    Daily snapshot of Base, Layer and Tone Pro paints at a fixed panel of independent hobby retailers' own online stores
-    (US / UK / Canada), read from each store's public product listings. Latest: <strong>{p_date}</strong>{f" · {failed} panel store(s) unreachable this run" if failed > 0 else ""}.
-  </div>
-  <div class="table-card" style="margin-bottom:18px;border-left:3px solid #8e44ad;">
-    <div style="font-size:12.5px;line-height:1.6">
-      <strong>What this represents:</strong> whether these {n_panel} stores list each paint and let you buy it on their websites,
-      the date Tone Pro first appears in their catalogues, and — at the few stores that publish it — a shelf quantity.
-      <strong>What it doesn't:</strong> sales or sell-through; deliveries or allocations to individual stores; stock in physical
-      shops; or the ~3,000 independents ranging Warhammer Pro as a whole. Panel stores are ones that sell online and expose
-      product data publicly, so they skew towards larger, online-active retailers. An out-of-stock flag can mean strong demand
-      or a small order; quantities are shelf stock, not units sold.
-    </div>
-  </div>
-  <div class="stats-row" style="margin-bottom:18px;">
-    <div class="stat-card"><div class="stat-val">{n_panel}</div><div class="stat-lbl">Panel stores reporting</div></div>
-    <div class="stat-card"><div class="stat-val">{core_pct}</div><div class="stat-lbl">Base/Layer available online (baseline)</div></div>
-    <div class="stat-card"><div class="stat-val" style="color:#f1c40f">{len(tp_stores)}/{n_panel}</div><div class="stat-lbl">Stores listing Tone Pro</div></div>
-    <div class="stat-card"><div class="stat-val">{tp_pct}</div><div class="stat-lbl">Tone Pro listings available to order</div></div>
-  </div>
-  <div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("By country — " + p_date)}
-      <table><thead><tr><th>Country</th><th class="num">Stores</th><th class="num">Base/Layer available</th>
-      <th class="num">Listing Tone Pro</th><th class="num">Tone Pro available</th><th class="num">Tagged pre-order</th></tr></thead>
-      <tbody>{ctry_rows}</tbody></table>
-      <p class="data-note">"Available" = the store lets you buy it online. Most panel stores' data doesn't say whether that's from shelf stock or a pre-order, so before the 24 Oct launch every "available" Tone Pro listing is in practice a pre-order. Only the stores in the quantity table below show true shelf stock.</p>
-    </div>
-    <div class="table-card">{h3.format("Panel history")}
-      <table><thead><tr><th>Date</th><th class="num">Stores</th><th class="num">Base/Layer available</th>
-      <th class="num">Listing Tone Pro</th><th class="num">Tone Pro available</th></tr></thead><tbody>{hist_rows}</tbody></table>
-    </div>
-  </div>
-  {f'''<div class="chart-grid-2" style="margin-bottom:18px;">
-    <div class="table-card">{h3.format("Stores that publish quantities")}
-      <table><thead><tr><th>Store</th><th>What it shows</th><th class="num">Base/Layer on shelf</th><th class="num">Tone Pro on shelf</th>
-      <th class="num">Tone Pro on order</th><th class="num">Tone Pro in (7d)</th><th class="num">Tone Pro out (7d)</th><th class="num">Days</th></tr></thead>
-      <tbody>{q_rows}</tbody></table>
-    </div>
-    <div class="table-card">{h3.format("Tone Pro units at these stores, by day")}
-      <table><thead><tr><th>Date</th><th class="num">On shelf</th><th class="num">On order</th><th class="num">Received (est.)</th>
-      <th class="num">Out (est.)</th></tr></thead><tbody>{qd_rows or "<tr><td colspan=5>No Tone Pro counts yet — stores show pre-order until stock lands.</td></tr>"}</tbody></table>
-    </div>
-  </div>
-  <div class="table-card" style="margin-bottom:18px;"><p class="data-note" style="margin:0">
-    Shelf units = sum of each store's displayed stock (a "+" means some counts are capped, e.g. Element Games' "10+", so the total is a floor;
-    Battle City only shows a count when stock is low). "On order" is The Outpost's own "On The Way" figure — units that one store expects,
-    not GW shipments to the trade overall. <strong>Received</strong> = fall in on-order or rise in shelf stock, whichever is larger.
-    <strong>Out</strong> = received minus the change in shelf stock (or, where on-order isn't published, the fall in shelf stock — a floor,
-    since a restock on the same day hides outflow). "Out" includes sales, pre-order fulfilment and stock corrections; it is an estimate of
-    units leaving the shelf, not a sales figure.</p></div>''' if q_rows else ""}
-  {us_html}
-  {del_html}
-  <div class="table-card" style="margin-bottom:18px;">{h3.format("Panel stores")}
-    <table><thead><tr><th>Store</th><th>Country</th><th class="num">Base/Layer listed</th><th class="num">Available</th>
-    <th class="num">Tone Pro listed</th><th class="num">Available</th></tr></thead><tbody>{st_rows}</tbody></table>
-  </div>"""
+    glossary = """<div class="p9-gloss">
+      <h4>Glossary</h4>
+      <dl>
+        <dt>Tone Pro</dt><dd>GW's new 150-pot premium paint range (30 colours × 5 tones), part of “Warhammer Pro”. Pre-orders opened 10 Oct; launch 24 Oct 2026.</dd>
+        <dt>Pro tag</dt><dd>A label on GW's store finder saying an independent store carries the full Tone Pro range.</dd>
+        <dt>Tier</dt><dd>The size of the standard Citadel paint range GW records for a store: 20, 150, 210 or 360 paints. “Tier up” = moved to a bigger range.</dd>
+        <dt>Independent / indie</dt><dd>A hobby store not owned by GW that stocks GW products.</dd>
+        <dt>Panel</dt><dd>The fixed list of 76 independent web stores (US, UK, Canada) we read every day.</dd>
+        <dt>Out of stock</dt><dd>Listed but can't be ordered. Before launch, on a pre-order item, it means the pre-order allocation has run out.</dd>
+        <dt>On order</dt><dd>Units a store says are on the way to it (only The Outpost shows this).</dd>
+        <dt>Gone</dt><dd>Fall in a store's count: pre-orders, sales, cancellations or corrections. Not the same as sales.</dd>
+        <dt>Pack-size test</dt><dd>A store passes if at least 70% of its Tone Pro paints are at the same number of pots, which suggests a fixed GW pack.</dd>
+        <dt>Reorder</dt><dd>A second rise in a store's count after its launch delivery.</dd>
+        <dt>Base / Layer</dt><dd>GW's long-running core paint ranges, used as the comparison.</dd>
+      </dl></div>"""
 
-    # ── C: YouTube attention ──────────────────────────────────────────────
-    yt_html = ""
-    if not ytv.empty:
-        tp = ytv[(ytv["topic"] == "Tone Pro")]
-        if not tp.empty:
-            last = tp[tp["date"] == tp["date"].max()].copy()
-            last["views"] = last["views"].astype(int)
-            top = last.sort_values("views", ascending=False).head(12)
-            vid_rows = "".join(
-                f"<tr><td><a href='https://www.youtube.com/watch?v={r['video_id']}' target='_blank' style='color:var(--text)'>"
-                f"{escape(str(r['title']))[:80]}</a></td><td>{escape(str(r['channel_title']))}</td>"
-                f"<td>{r['published_at']}</td><td class='num'>{fmt_views(int(r['views']))}</td></tr>"
-                for _, r in top.iterrows())
-            ys = yts[yts["topic"] == "Tone Pro"].sort_values("date") if not yts.empty else pd.DataFrame()
-            gained = ys.iloc[-1]["views_gained_since_prev"] if not ys.empty else ""
-            gained_lbl = fmt_views(int(gained)) if str(gained).strip() not in ("", "nan") else "—"
-            yt_html = f"""
-  <div class="section-title">C · Tone Pro on YouTube</div>
-  <div class="section-sub">Videos found by keyword search (weekly) and kept only if the title/description mentions Tone Pro;
-    view counts refreshed every run. Latest: <strong>{last['date'].iloc[0]}</strong>.</div>
-  <div class="stats-row" style="margin-bottom:18px;">
-    <div class="stat-card"><div class="stat-val">{len(last)}</div><div class="stat-lbl">Videos tracked</div></div>
-    <div class="stat-card"><div class="stat-val">{last['channel_id'].nunique()}</div><div class="stat-lbl">Channels</div></div>
-    <div class="stat-card"><div class="stat-val">{fmt_views(int(last['views'].sum()))}</div><div class="stat-lbl">Total views</div></div>
-    <div class="stat-card"><div class="stat-val">{gained_lbl}</div><div class="stat-lbl">Views gained since last run</div></div>
-  </div>
-  <div class="table-card" style="margin-bottom:18px;">{h3.format("Most-viewed Tone Pro videos")}
-    <table><thead><tr><th>Video</th><th>Channel</th><th>Published</th><th class="num">Views</th></tr></thead>
-    <tbody>{vid_rows}</tbody></table>
-    <p class="data-note">Measures creator attention and viewer interest, not purchases. Search recall is partial —
-    YouTube returns a sample, so totals are a floor.</p>
-  </div>"""
+    # Header dates
+    src_dates = {"Store finder": live["date"].max() if not live.empty else "",
+                 "GW webstores": wh_date or (paint["date"].max() if not paint.empty else ""),
+                 "Store panel": pan_date}
+    data_asof = max(v for v in src_dates.values() if v) if any(src_dates.values()) else ""
+    src_line = " · ".join(f"{k} {d(v)}" for k, v in src_dates.items() if v)
+    days_static = (pd.to_datetime(TONE_PRO_LAUNCH) - pd.to_datetime(data_asof)).days if data_asof else ""
+
+    take_html = "".join(f"<li>{t}</li>" for t in takeaways[:5])
+    chg_html = "; ".join(changed) if changed else "nothing moved"
+    prev_lbl = d(sorted(live["date"])[-2]) if len(live) > 1 else "the previous run"
 
     return f"""
 <!-- ════════════════════════════════════════════════════════════════════════ -->
-<div class="page-divider" id="pg-9">Page 9 — Warhammer Pro Launch &amp; Store Network</div>
-
-<section>
-  <div class="table-card" style="margin-bottom:18px;border-left:3px solid #f1c40f;">
-    <div style="font-size:13px;line-height:1.6">
-      <strong>What this page measures.</strong> GW does not publish sales, and nothing here is sales or sell-through.
-      Paint signals are GW.com web-store availability flags (in stock yes/no, "selling fast") — a stock-out can mean strong
-      demand <em>or</em> a small allocation, and GW.com is one channel ({online_lbl}).
-      Store-finder signals show GW's store footprint and which independents committed to stock the Pro range — distribution,
-      not volume. No public source shows per-store inventory or deliveries.
-    </div>
+<div class="page-divider" id="pg-9">Page 9 — Tone Pro Launch</div>
+<style>
+  .p9 h4 {{ font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); margin-bottom: 10px; }}
+  .p9-top {{ background: var(--surface); border: 1px solid var(--border); border-left: 3px solid #f1c40f; border-radius: 8px; padding: 18px 22px; margin-bottom: 26px; }}
+  .p9-meta {{ font-size: 12px; color: var(--muted); margin-bottom: 10px; }}
+  .p9-meta strong {{ color: var(--text); }}
+  .p9-top ul {{ margin: 0 0 12px 18px; }}
+  .p9-top li {{ font-size: 14px; line-height: 1.6; margin-bottom: 6px; color: #dbe4ee; }}
+  .p9-chg {{ font-size: 12.5px; color: #b8c8d8; border-top: 1px solid var(--border); padding-top: 10px; }}
+  .p9-sec {{ margin-bottom: 34px; }}
+  .p9-q {{ font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 8px;
+           border-bottom: 1px solid var(--border); margin-bottom: 12px; }}
+  .p9-q span {{ display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%;
+                background: #f1c40f; color: #0d1117; margin-right: 10px; font-size: 12px; }}
+  .p9-head {{ font-size: 24px; font-weight: 700; letter-spacing: -.4px; line-height: 1.25; }}
+  .p9-headsub {{ font-size: 12px; color: var(--muted); margin: 4px 0 14px; }}
+  .p9-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 14px; }}
+  .p9-card {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; min-width: 0; }}
+  .p9-tw {{ overflow-x: auto; }}
+  .p9 table th, .p9 table td {{ padding: 7px 10px; }}
+  .p9 table td {{ font-size: 12.5px; }}
+  .p9-empty {{ color: var(--muted); font-style: italic; }}
+  .p9-note {{ color: var(--muted); font-size: 11.5px; margin-top: 8px; line-height: 1.5; }}
+  .p9-line {{ font-size: 13px; margin-top: 12px; color: #cdd9e5; }}
+  .p9-mean {{ font-size: 13.5px; margin-top: 14px; padding: 10px 14px; border-left: 3px solid #58a6ff; background: #0d1520; border-radius: 0 5px 5px 0; }}
+  .p9 details {{ margin-top: 10px; }}
+  .p9 summary {{ cursor: pointer; font-size: 12px; color: #58a6ff; }}
+  .p9-how > div {{ font-size: 12px; color: #b8c8d8; line-height: 1.65; padding: 10px 14px; margin-top: 6px;
+                   background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }}
+  .p9-app {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }}
+  .p9-app summary {{ font-size: 13px; color: var(--text); font-weight: 600; }}
+  .p9-app > div {{ margin-top: 10px; }}
+  .p9-gloss {{ margin-top: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; }}
+  .p9-gloss dl {{ display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; font-size: 12.5px; }}
+  .p9-gloss dt {{ font-weight: 700; }}
+  .p9-gloss dd {{ color: #b8c8d8; }}
+  @media (max-width: 600px) {{ .p9-grid {{ grid-template-columns: 1fr; }} .p9-head {{ font-size: 20px; }}
+                               .p9-gloss dl {{ grid-template-columns: 1fr; }} }}
+</style>
+<section class="p9">
+  <div class="p9-top">
+    <div class="p9-meta">Data as of <strong>{d(data_asof)}</strong> ({src_line}) · Tone Pro launches <strong>{d(TONE_PRO_LAUNCH)}</strong> ·
+      <strong><span id="p9Days" data-launch="{TONE_PRO_LAUNCH}">{days_static} days to launch</span></strong></div>
+    <h4>Today's takeaways</h4>
+    <ul>{take_html}</ul>
+    <div class="p9-chg"><strong>Since {prev_lbl}:</strong> {chg_html}.</div>
   </div>
-{paint_html}
-{store_html}
-{panel_html}
-{yt_html}
+{sec1}
+{sec2}
+{sec3}
+{sec4}
+  <div class="p9-q" style="margin-top:10px">Appendix</div>
+  {appendix}
+  {glossary}
 </section>
+<script>
+(function(){{
+  var el = document.getElementById('p9Days');
+  if (el) {{
+    var t = new Date(); t.setHours(0,0,0,0);
+    var L = new Date(el.dataset.launch + 'T00:00:00');
+    var k = Math.round((L - t) / 86400000);
+    el.textContent = k > 1 ? k + ' days to launch' : k === 1 ? '1 day to launch' : k === 0 ? 'launch day' : (-k) + (k === -1 ? ' day' : ' days') + ' since launch';
+  }}
+  function mk(id, labels, data, label, color) {{
+    var c = document.getElementById(id); if (!c || typeof Chart === 'undefined') return;
+    new Chart(c, {{type: 'line', data: {{labels: labels, datasets: [{{label: label, data: data, borderColor: color,
+      backgroundColor: color + '22', borderWidth: 2, pointRadius: 4, fill: true, tension: 0.2}}]}},
+      options: {{responsive: true, maintainAspectRatio: false, plugins: {{legend: {{display: false}}}},
+        scales: {{y: {{beginAtZero: true, ticks: {{color: '#8b949e'}}, grid: {{color: '#21262d'}}}}, x: {{ticks: {{color: '#8b949e'}}, grid: {{display: false}}}}}}}}}});
+  }}
+  {''.join(charts_js)}
+}})();
+</script>
 """
 
 

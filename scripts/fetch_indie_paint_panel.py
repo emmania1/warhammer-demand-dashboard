@@ -493,13 +493,16 @@ def build_qty_series(daily: pd.DataFrame) -> None:
     day-over-day estimates. Only exact counts are used for changes ('10+' floors
     are kept in the series but never differenced).
 
-      received_est = larger of: fall in on-order units (The Outpost's 'On The Way'),
-                     rise in shelf qty                (stores with on-order data)
-      outflow_est  = received_est - change in shelf qty   (stores with on-order data)
-                   = fall in shelf qty                     (stores without; a floor —
-                                                            any restock hides outflow)
-    Outflow covers sales, pre-order fulfilment and stock corrections alike; it is
-    an estimate of units leaving the shelf, not a sales figure."""
+      received_est = larger of: rise in shelf qty, and fall in on-order units (The
+                     Outpost's 'On The Way') — the latter only once the paint is no
+                     longer a pre-order. While it is still a pre-order and the shelf
+                     doesn't rise, a fall in on-order is customers pre-ordering against
+                     incoming stock (or the store cutting its order), not a delivery.
+      outflow_est  = fall in shelf + on-order together  (stores with on-order data)
+                   = fall in shelf qty                   (stores without; a floor —
+                                                          any restock hides outflow)
+    Outflow covers sales, pre-orders, pre-order fulfilment and stock corrections alike;
+    it is an estimate of units leaving stock or incoming stock, not a sales figure."""
     q = daily[(daily["qty"] != "") | (daily["on_order"] != "")].copy()
     if q.empty:
         return
@@ -513,9 +516,10 @@ def build_qty_series(daily: pd.DataFrame) -> None:
     q.loc[~exact | (g["qty_is_floor"].shift() == "true"), "d_qty"] = float("nan")
     q["d_on_order"] = q["oo_n"] - g["oo_n"].shift()
     has_oo = q["oo_n"].notna() & q["d_on_order"].notna()
-    # Arrivals show up as on-order falling and/or shelf rising (whichever is larger)
-    q["received_est"] = pd.concat([-q["d_on_order"], q["d_qty"].fillna(0)], axis=1).max(axis=1).clip(lower=0).where(has_oo)
-    q["outflow_est"] = (q["received_est"] - q["d_qty"]).where(has_oo & q["d_qty"].notna())
+    # Arrivals show up as shelf rising, or on-order falling once the paint is no longer a pre-order
+    oo_fall = (-q["d_on_order"]).where(q["status"] != "preorder", 0)
+    q["received_est"] = pd.concat([oo_fall, q["d_qty"].fillna(0)], axis=1).max(axis=1).clip(lower=0).where(has_oo)
+    q["outflow_est"] = (-(q["d_qty"] + q["d_on_order"])).where(has_oo & q["d_qty"].notna())
     q.loc[~has_oo, "outflow_est"] = (-q["d_qty"]).clip(lower=0)
     q["outflow_est"] = q["outflow_est"].clip(lower=0)
     cols = ["date", "prev_date", "store_id", "country", "line", "paint", "status", "qty", "qty_is_floor",

@@ -36,7 +36,7 @@ date,store_id,country,line,paints,shelf_units,shelf_is_floor,on_order_units,rece
 2026-10-14,the_outpost,GB,Base,55,164,false,0,0,2,41
 2026-10-14,the_outpost,GB,Layer,90,222,false,0,0,0,58
 2026-10-14,the_outpost,GB,Tech Pro,2,0,false,2,0,0,0
-2026-10-14,the_outpost,GB,Tone Pro,146,0,false,749,10,10,0
+2026-10-14,the_outpost,GB,Tone Pro,146,0,false,749,0,10,0
 2026-10-15,battle_city_games,GB,Base,39,165,false,0,0,2,39
 2026-10-15,battle_city_games,GB,Layer,60,236,false,0,0,0,60
 2026-10-15,beanie_games,GB,Base,51,255,false,0,0,2,51
@@ -60,4 +60,4 @@ date,store_id,country,line,paints,shelf_units,shelf_is_floor,on_order_units,rece
 2026-10-15,the_outpost,GB,Base,55,155,false,0,0,9,39
 2026-10-15,the_outpost,GB,Layer,91,229,false,0,0,3,59
 2026-10-15,the_outpost,GB,Tech Pro,2,0,false,2,0,0,0
-2026-10-15,the_outpost,GB,Tone Pro,143,0,false,605,141,141,0
+2026-10-15,the_outpost,GB,Tone Pro,143,0,false,605,0,141,0

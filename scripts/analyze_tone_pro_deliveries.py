@@ -52,7 +52,7 @@ WINDOW          = ("2026-10-20", "2026-10-31")   # launch deliveries land in her
 POTS_PER_RACK   = 150                            # 30 colours × 5 tones
 MIN_PAINTS      = 5                              # paints needed to test a store's pack
 STANDARD_SHARE  = 0.7                            # ≥70% of paints at one number → standard pack
-MIN_STORES      = 5                              # tested stores needed before any extrapolation
+MIN_STORES      = 5                              # stores passing the pack test needed before any extrapolation
 EST_COLS = ["country", "pro_label_stores", "pack_basis", "pots_per_paint_low", "pots_per_paint_mid",
             "pots_per_paint_high", "units_low", "units_mid", "units_high"]
 
@@ -62,18 +62,19 @@ def observations() -> pd.DataFrame:
     if PANEL.exists():
         p = pd.read_csv(PANEL, dtype=str, keep_default_na=False)
         p = p[(p["qty"] != "") & (p.get("qty_is_floor", "") != "true")]
-        frames.append(p[["date", "store_id", "country", "paint", "line", "qty"]].assign(source="panel",
+        frames.append(p[["date", "store_id", "country", "paint", "line", "qty", "status"]].assign(source="panel",
                       on_order=p.get("on_order", "")))
     if PAGES.exists():
         q = pd.read_csv(PAGES, dtype=str, keep_default_na=False)
         q = q[q["qty"] != ""]
-        frames.append(q[["date", "store_id", "country", "paint", "line", "qty"]].assign(source="page", on_order=""))
+        frames.append(q[["date", "store_id", "country", "paint", "line", "qty"]].assign(source="page", on_order="", status=""))
     if not frames:
         return pd.DataFrame()
     o = pd.concat(frames, ignore_index=True)
     o["qty"] = pd.to_numeric(o["qty"], errors="coerce")
     o["on_order"] = pd.to_numeric(o["on_order"], errors="coerce")
     o = o.dropna(subset=["qty"]).sort_values(["store_id", "paint", "date", "source"])
+    o["position"] = o["qty"] + o["on_order"].fillna(0)        # on shelf + on order (The Outpost)
     return o.drop_duplicates(["store_id", "paint", "date"], keep="first")      # panel first if both
 
 
@@ -81,8 +82,10 @@ def receipts(o: pd.DataFrame) -> pd.DataFrame:
     g = o.groupby(["store_id", "paint"])
     o = o.assign(prev_date=g["date"].shift(), prev_qty=g["qty"].shift(), prev_oo=g["on_order"].shift())
     o = o.dropna(subset=["prev_qty"])
-    # A rise in stock, or (The Outpost) a fall in units on order, whichever is larger
-    o["received"] = pd.concat([o["qty"] - o["prev_qty"], (o["prev_oo"] - o["on_order"]).fillna(0)], axis=1).max(axis=1)
+    # A rise in stock, or (The Outpost) a fall in units on order, whichever is larger. A fall in on-order
+    # while the paint is still a pre-order (shelf flat) is customers pre-ordering, not a delivery.
+    oo_fall = (o["prev_oo"] - o["on_order"]).fillna(0).where(o["status"] != "preorder", 0)
+    o["received"] = pd.concat([o["qty"] - o["prev_qty"], oo_fall], axis=1).max(axis=1)
     r = o[o["received"] > 0].copy()
     first_launch = (r[(r["date"] >= WINDOW[0]) & (r["date"] <= WINDOW[1])]
                     .groupby("store_id")["date"].min())
@@ -104,7 +107,7 @@ def receipts(o: pd.DataFrame) -> pd.DataFrame:
 
 def pack_test(o: pd.DataFrame, rec: pd.DataFrame) -> pd.DataFrame:
     tp = o[o["line"] == "Tone Pro"]
-    pre = tp[tp["date"] < LAUNCH].groupby(["store_id", "paint"])["qty"].max()
+    pre = tp[tp["date"] < LAUNCH].groupby(["store_id", "paint"])["position"].max()   # incl. units on order
     lr = rec[(rec["line"] == "Tone Pro") & (rec["type"] == "launch_delivery")].groupby(["store_id", "paint"])["received"].max()
     alloc = pd.concat([pre.rename("pre_peak"), lr.rename("launch_rise")], axis=1).fillna(0)
     alloc["allocation_obs"] = alloc[["pre_peak", "launch_rise"]].max(axis=1)
@@ -128,9 +131,9 @@ def units_estimate(pack: pd.DataFrame) -> pd.DataFrame:
     sf = pd.read_csv(SF_COUNTRY, dtype=str, keep_default_na=False)
     sf = sf[sf["date"] == sf["date"].max()]
     sf["indie_pro_range"] = pd.to_numeric(sf["indie_pro_range"], errors="coerce").fillna(0).astype(int)
-    tested = pack[pack["paints_observed"] >= MIN_PAINTS]
+    tested = pack[pack["standard_pack"] == "true"]           # stores that pass the pack-size test
     if len(tested) < MIN_STORES:
-        print(f"  units estimate: only {len(tested)} store(s) tested — need {MIN_STORES} before extrapolating")
+        print(f"  units estimate: only {len(tested)} store(s) pass the pack-size test — need {MIN_STORES} before extrapolating")
         return pd.DataFrame(columns=EST_COLS)
     per_store = tested["median_units"]                     # pots per paint at each tested store
     allq = per_store.quantile([0.25, 0.5, 0.75]) if len(per_store) else None
@@ -167,8 +170,11 @@ def reorders(rec: pd.DataFrame) -> pd.DataFrame:
 
 def sellthrough(o: pd.DataFrame) -> pd.DataFrame:
     """Per store: Tone Pro units gone and sell-through since pre-orders opened.
-      each interval: received = max(rise in count, fall in on-order, 0)
-                     gone     = max(received − change in count, 0)
+      each interval, on "position" = count + units on order (on-order only at The Outpost):
+                     received = max(rise in position, 0)
+                     gone     = max(fall in position, 0)
+      so a delivery that moves units from on-order to the shelf is neither; pre-orders
+      taken against incoming stock count as gone.
       gone also includes pre-orders taken before tracking began (a count below zero
       at the first observation = units already sold, not yet delivered).
       sell-through = gone ÷ (opening stock + received)."""
@@ -177,13 +183,12 @@ def sellthrough(o: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame(columns=["store_id", "country", "paints", "opening", "received", "gone", "on_hand",
                                      "sell_through", "first_date", "last_date", "days"])
     g = t.groupby(["store_id", "paint"])
-    dq = t["qty"] - g["qty"].shift()
-    oo = (g["on_order"].shift() - t["on_order"]).fillna(0)
-    rec = pd.concat([dq, oo], axis=1).max(axis=1).clip(lower=0).fillna(0)
-    gone = (rec - dq).clip(lower=0).fillna(0)
+    dp = t["position"] - g["position"].shift()
+    rec = dp.clip(lower=0).fillna(0)
+    gone = (-dp).clip(lower=0).fillna(0)
     t = t.assign(received=rec, gone=gone)
-    per = t.groupby(["store_id", "paint"]).agg(country=("country", "first"), first_qty=("qty", "first"),
-            last_qty=("qty", "last"), received=("received", "sum"), gone=("gone", "sum"),
+    per = t.groupby(["store_id", "paint"]).agg(country=("country", "first"), first_qty=("position", "first"),
+            last_qty=("position", "last"), received=("received", "sum"), gone=("gone", "sum"),
             first_date=("date", "first"), last_date=("date", "last")).reset_index()
     per["gone"] += (-per["first_qty"]).clip(lower=0)                # pre-orders already taken
     per["opening"] = per["first_qty"].clip(lower=0)
