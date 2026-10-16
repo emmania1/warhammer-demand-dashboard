@@ -18,6 +18,10 @@ on:
         description: "Also take an independent online availability panel snapshot (manual run)"
         type: boolean
         default: false
+      rival_all:
+        description: "Read rival paints (Army Painter, Vallejo) at every store now — baseline (manual run)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -86,7 +90,7 @@ jobs:
       - name: Rival paint counts — Army Painter + Vallejo (daily-count stores daily, product-page stores weekly)
         if: vars.RIVAL_ENABLED == 'true'
         continue-on-error: true
-        run: python scripts/fetch_rival_paint_qty.py
+        run: python scripts/fetch_rival_paint_qty.py ${{ github.event.inputs.rival_all == 'true' && '--all' || '' }}
 
       - name: Element Games stock snapshot (UK indie)
         continue-on-error: true
