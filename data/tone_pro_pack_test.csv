@@ -1,5 +1,7 @@
 store_id,country,paints_observed,mode_units,share_at_mode,median_units,min_units,max_units,standard_pack,evidence
 athena_games_ltd,GB,30,6,0.93,6.0,5,6,true,pre-launch stock only
 bd_cosmos,CA,30,4,1.0,4.0,4,4,true,pre-launch stock only
+deals_n_dragons,US,9,6,1.0,6.0,6,6,true,pre-launch stock only
 taps_games,CA,18,1,0.72,1.0,1,2,true,pre-launch stock only
 the_outpost,GB,146,5,0.44,5.0,1,6,false,pre-launch stock only
+travelling_man_uk,GB,30,20,0.27,20.0,8,24,false,pre-launch stock only

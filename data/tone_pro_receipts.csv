@@ -28,3 +28,9 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-15,2026-10-14,1,loaded_dice,GB,Base: Corax White,Base,2.0,45,43.0,prelaunch_update,panel
 2026-10-16,2026-10-15,1,loaded_dice,GB,Layer: Fulgurite Copper,Layer,3.0,11,8.0,prelaunch_update,panel
 2026-10-16,2026-10-15,1,loaded_dice,GB,Layer: Ulthuan Grey,Layer,2.0,12,10.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,firestorm_games,GB,Base: Mephiston Red,Base,16.0,17,1.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,firestorm_games,GB,Base: Rhinox Hide,Base,18.0,19,1.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,firestorm_games,GB,Base: Steel Legion Drab,Base,14.0,15,1.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,firestorm_games,GB,Layer: Phalanx Yellow,Layer,3.0,21,18.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,loaded_dice,GB,Layer: Tuskgor Fur,Layer,2.0,17,15.0,prelaunch_update,panel
+2026-10-17,2026-10-16,1,the_outpost,GB,Layer: Warpstone Glow,Layer,0.0,0,1.0,prelaunch_update,panel

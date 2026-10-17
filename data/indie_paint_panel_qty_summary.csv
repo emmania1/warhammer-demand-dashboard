@@ -85,3 +85,27 @@ date,store_id,country,line,paints,shelf_units,shelf_is_floor,on_order_units,rece
 2026-10-16,the_outpost,GB,Layer,91,225,false,48,0,4,57
 2026-10-16,the_outpost,GB,Tech Pro,2,0,false,2,0,0,0
 2026-10-16,the_outpost,GB,Tone Pro,138,0,false,322,0,276,0
+2026-10-17,battle_city_games,GB,Base,39,165,false,0,0,0,39
+2026-10-17,battle_city_games,GB,Layer,60,236,false,0,0,0,60
+2026-10-17,beanie_games,GB,Base,50,248,false,0,0,2,50
+2026-10-17,beanie_games,GB,Layer,85,434,true,0,0,4,85
+2026-10-17,element_games,GB,Base,46,447,true,0,0,2,46
+2026-10-17,element_games,GB,Layer,78,772,true,0,0,0,78
+2026-10-17,firestorm_games,GB,Base,54,649,false,0,0,8,52
+2026-10-17,firestorm_games,GB,Layer,92,955,false,0,0,5,84
+2026-10-17,firestorm_games,GB,Tone Pro,1,0,false,0,0,0,0
+2026-10-17,games_a_plunder,US,Base,55,185,false,0,0,0,53
+2026-10-17,games_a_plunder,US,Layer,93,252,false,0,0,2,92
+2026-10-17,jeux_az_games,CA,Base,55,108,false,0,0,0,54
+2026-10-17,jeux_az_games,CA,Layer,92,184,false,0,0,0,92
+2026-10-17,jeux_az_games,CA,Tone Pro,5,0,false,0,0,0,0
+2026-10-17,loaded_dice,GB,Base,50,789,false,0,0,9,50
+2026-10-17,loaded_dice,GB,Layer,82,999,false,0,0,10,82
+2026-10-17,nutmeg_games,US,Base,53,225,false,0,0,0,32
+2026-10-17,nutmeg_games,US,Layer,93,421,false,0,0,0,73
+2026-10-17,pastime_sports_games,CA,Base,55,1012,false,0,0,2,55
+2026-10-17,pastime_sports_games,CA,Layer,93,1614,false,0,0,5,93
+2026-10-17,the_outpost,GB,Base,54,142,false,78,0,1,38
+2026-10-17,the_outpost,GB,Layer,91,223,false,47,1,3,57
+2026-10-17,the_outpost,GB,Tech Pro,2,0,false,2,0,0,0
+2026-10-17,the_outpost,GB,Tone Pro,138,0,false,319,0,3,0
