@@ -34,3 +34,6 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-17,2026-10-16,1,firestorm_games,GB,Layer: Phalanx Yellow,Layer,3.0,21,18.0,prelaunch_update,panel
 2026-10-17,2026-10-16,1,loaded_dice,GB,Layer: Tuskgor Fur,Layer,2.0,17,15.0,prelaunch_update,panel
 2026-10-17,2026-10-16,1,the_outpost,GB,Layer: Warpstone Glow,Layer,0.0,0,1.0,prelaunch_update,panel
+2026-10-18,2026-10-17,1,loaded_dice,GB,Layer: Skullcrusher Brass,Layer,4.0,12,8.0,prelaunch_update,panel
+2026-10-18,2026-10-17,1,loaded_dice,GB,Layer: Troll Slayer Orange,Layer,3.0,10,7.0,prelaunch_update,panel
+2026-10-18,2026-10-17,1,loaded_dice,GB,Layer: Wild Rider Red,Layer,5.0,14,9.0,prelaunch_update,panel

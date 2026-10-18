@@ -1,5 +1,5 @@
 iso_week,week_start,brand,stores,paints_per_store,units_gone,units_gone_per_store_median,units_gone_per_store_mean,units_gone_per_paint,sell_through,store_ids
 2026-W42,2026-10-12,Tone Pro,3,5.0,430,0.0,143.3,2.83,0.567,firestorm_games|jeux_az_games|the_outpost
-2026-W42,2026-10-12,Citadel Base/Layer,10,146.5,238,13.0,23.8,0.19,0.026,battle_city_games|beanie_games|element_games|firestorm_games|games_a_plunder|jeux_az_games|loaded_dice|nutmeg_games|pastime_sports_games|the_outpost
-2026-W42,2026-10-12,Army Painter,9,159.0,67,1.0,7.4,0.06,0.011,battle_city_games|beanie_games|deals_n_dragons|element_games|fantasy_forged|firestorm_games|loaded_dice|the_outpost|travelling_man_uk
-2026-W42,2026-10-12,Vallejo,7,15.0,10,1.0,1.4,0.01,0.003,element_games|fantasy_forged|firestorm_games|loaded_dice|the_outpost|travelling_man_uk|wandering_adventures
+2026-W42,2026-10-12,Citadel Base/Layer,10,146.5,345,20.0,34.5,0.27,0.037,battle_city_games|beanie_games|element_games|firestorm_games|games_a_plunder|jeux_az_games|loaded_dice|nutmeg_games|pastime_sports_games|the_outpost
+2026-W42,2026-10-12,Army Painter,12,39.5,94,1.0,7.8,0.08,0.015,battle_city_games|beanie_games|boutique_fdb|deals_n_dragons|draco_gaming|element_games|fantasy_forged|firestorm_games|lionheart_hobby|loaded_dice|the_outpost|travelling_man_uk
+2026-W42,2026-10-12,Vallejo,8,12.5,18,1.0,2.2,0.02,0.005,element_games|fantasy_forged|firestorm_games|lionheart_hobby|loaded_dice|the_outpost|travelling_man_uk|wandering_adventures
