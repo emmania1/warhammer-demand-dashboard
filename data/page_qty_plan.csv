@@ -2389,7 +2389,7 @@ lionheart_hobby,Layer: Tallarn Sand,https://lionhearthobby.com/products/layer-ta
 lionheart_hobby,Layer: Elysian Green,https://lionhearthobby.com/products/layer-elysian-green-12-ml,51230154129639,layer-elysian-green-12-ml,False,2026-10-18
 lionheart_hobby,Layer: Castellax Bronze,https://lionhearthobby.com/products/layer-castellax-bronze,51230109204711,layer-castellax-bronze,False,2026-10-18
 lionheart_hobby,Layer: Balor Brown,https://lionhearthobby.com/products/layer-balor-brown-12-ml,51230037147879,layer-balor-brown-12-ml,False,2026-10-18
-own-layer,False,2026-10-18
+own-layer,False,2026-10-18,,,,
 draco_gaming,Layer: Skarsnik Green,https://dracogaming.co.uk/products/skarsnik-green-layer,40981765095603,skarsnik-green-layer,False,2026-10-18
 draco_gaming,Layer: Altdorf Guard Blue,https://dracogaming.co.uk/products/altdorf-guard-blue-layer,40981603844275,altdorf-guard-blue-layer,False,2026-10-18
 draco_gaming,Layer: Lothern Blue,https://dracogaming.co.uk/products/lothern-blue-layer,40981585330355,lothern-blue-layer,False,2026-10-18
@@ -2560,7 +2560,7 @@ draco_gaming,Tone Pro: Carmine Blades 2,https://dracogaming.co.uk/products/tone-
 draco_gaming,Tone Pro: Carmine Blades 1,https://dracogaming.co.uk/products/tone-pro-carmine-blades-1-preorder-24-10-26,58724012654975,tone-pro-carmine-blades-1-preorder-24-10-26,False,2026-10-18
 draco_gaming,Base: Ionrach Skin,https://dracogaming.co.uk/products/ionrach-skin-base,40982188556467,ionrach-skin-base,False,2026-10-18
 draco_gaming,Layer: Bestigor Flesh,https://dracogaming.co.uk/products/bestigor-flesh-layer,40981877227699,bestigor-flesh-layer,False,2026-10-18
-tone-pro-lustria-green-3,False,2026-10-18
+tone-pro-lustria-green-3,False,2026-10-18,,,,
 boutique_fdb,Tone Pro: Lustria Green 2,https://boutiquefdb.com/products/citadel-tone-pro-lustria-green-2,67699565461613,citadel-tone-pro-lustria-green-2,False,2026-10-18
 boutique_fdb,Tone Pro: Lustria Green 1,https://boutiquefdb.com/products/citadel-tone-pro-lustria-green-1,67699564445805,citadel-tone-pro-lustria-green-1,False,2026-10-18
 boutique_fdb,Tone Pro: Kruleboyz Green 5,https://boutiquefdb.com/products/citadel-tone-pro-kruleboyz-green-5,67699563692141,citadel-tone-pro-kruleboyz-green-5,False,2026-10-18
@@ -2617,3 +2617,847 @@ boutique_fdb,Tone Pro: Blackstone Void 4,https://boutiquefdb.com/products/citade
 boutique_fdb,Tone Pro: Blackstone Void 3,https://boutiquefdb.com/products/citadel-tone-pro-blackstone-void-3,67699277234285,citadel-tone-pro-blackstone-void-3,False,2026-10-18
 boutique_fdb,Tone Pro: Blackstone Void 2,https://boutiquefdb.com/products/citadel-tone-pro-blackstone-void-2,67699274743917,citadel-tone-pro-blackstone-void-2,False,2026-10-18
 boutique_fdb,Tone Pro: Blackstone Void 1,https://boutiquefdb.com/products/citadel-tone-pro-blackstone-void-1,67699264192621,citadel-tone-pro-blackstone-void-1,False,2026-10-18
+tistaminis,Base: Leadbelcher,https://tistaminis.com/products/games-workshop-warhammer-paints-leadbelcher-21-28-base-base,39887482323046,games-workshop-warhammer-paints-leadbelcher-21-28-base-base,False,2026-10-19
+tistaminis,Base: Abaddon Black,https://tistaminis.com/products/games-workshop-warhammer-paints-abaddon-black-21-25-base-base,39887482159206,games-workshop-warhammer-paints-abaddon-black-21-25-base-base,False,2026-10-19
+tistaminis,Base: Retributor Armour,https://tistaminis.com/products/games-workshop-warhammer-paints-retributor-armour-21-35-base-base,39887482486886,games-workshop-warhammer-paints-retributor-armour-21-35-base-base,False,2026-10-19
+tistaminis,Base: Mephiston Red,https://tistaminis.com/products/games-workshop-warhammer-paints-mephiston-red-21-03-base-base,39887477571686,games-workshop-warhammer-paints-mephiston-red-21-03-base-base,False,2026-10-19
+tistaminis,Base: Khorne Red,https://tistaminis.com/products/games-workshop-warhammer-paints-khorne-red-21-04-base-base,39887478161510,games-workshop-warhammer-paints-khorne-red-21-04-base-base,False,2026-10-19
+tistaminis,Base: Rhinox Hide,https://tistaminis.com/products/games-workshop-warhammer-paints-rhino-hide-21-22-base-base,39887481208934,games-workshop-warhammer-paints-rhino-hide-21-22-base-base,False,2026-10-19
+tistaminis,Base: Wraithbone,https://tistaminis.com/products/wraithbone-base-paint-new,39907564617830,wraithbone-base-paint-new,False,2026-10-19
+tistaminis,Base: Mournfang Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-mournfang-brown-21-20-base-base,39887481045094,games-workshop-warhammer-paints-mournfang-brown-21-20-base-base,False,2026-10-19
+tistaminis,Base: Mechanicus Standard Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-mechanicus-standard-grey-21-24-base-base,39887481929830,games-workshop-warhammer-paints-mechanicus-standard-grey-21-24-base-base,False,2026-10-19
+tistaminis,Base: Rakarth Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-rakarth-flesh-21-27-base-base,39887480782950,games-workshop-warhammer-paints-rakarth-flesh-21-27-base-base,False,2026-10-19
+tistaminis,Base: Corax White,https://tistaminis.com/products/corax-white-base-paint-new,39907305422950,corax-white-base-paint-new,False,2026-10-19
+tistaminis,Base: Balthasar Gold,https://tistaminis.com/products/games-workshop-warhammer-paints-balthasar-gold-21-29-base-base,39887482585190,games-workshop-warhammer-paints-balthasar-gold-21-29-base-base,False,2026-10-19
+tistaminis,Base: Zandri Dust,https://tistaminis.com/products/games-workshop-warhammer-paints-zandri-dust-21-16-base-base,39887480488038,games-workshop-warhammer-paints-zandri-dust-21-16-base-base,False,2026-10-19
+tistaminis,Base: Averland Sunset,https://tistaminis.com/products/games-workshop-warhammer-paints-averland-sunset-21-01-base-base,39886997946470,games-workshop-warhammer-paints-averland-sunset-21-01-base-base,False,2026-10-19
+tistaminis,Base: Iron Warriors,https://tistaminis.com/products/iron-warriors-base-paint-new,39907305324646,iron-warriors-base-paint-new,False,2026-10-19
+tistaminis,Base: Runelord Brass,https://tistaminis.com/products/games-workshop-warhammer-paints-runelord-brass-22-66-layer-layer,39887496118374,games-workshop-warhammer-paints-runelord-brass-22-66-layer-layer,False,2026-10-19
+tistaminis,Base: Caliban Green,https://tistaminis.com/products/games-workshop-warhammer-paints-caliban-green-21-12-base-base,39887479832678,games-workshop-warhammer-paints-caliban-green-21-12-base-base,False,2026-10-19
+tistaminis,Base: Screamer Pink,https://tistaminis.com/products/games-workshop-warhammer-paints-screamer-pink-21-33-base-base,39887478390886,games-workshop-warhammer-paints-screamer-pink-21-33-base-base,False,2026-10-19
+tistaminis,Base: Steel Legion Drab,https://tistaminis.com/products/games-workshop-warhammer-paints-steel-legion-drab-21-17-base-base,39887480619110,games-workshop-warhammer-paints-steel-legion-drab-21-17-base-base,False,2026-10-19
+tistaminis,Base: Corvus Black,https://tistaminis.com/products/corvus-black-base-paint-new,39907563995238,corvus-black-base-paint-new,False,2026-10-19
+tistaminis,Base: Iron Hands Steel,https://tistaminis.com/products/iron-hands-steel-base-paint-new,39907615211622,iron-hands-steel-base-paint-new,False,2026-10-19
+tistaminis,Base: Celestra Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-celestra-grey-21-26-base-base,39887482060902,games-workshop-warhammer-paints-celestra-grey-21-26-base-base,False,2026-10-19
+tistaminis,Base: Dryad Bark,https://tistaminis.com/products/games-workshop-warhammer-paints-dryad-bark-21-23-base-base,39887481634918,games-workshop-warhammer-paints-dryad-bark-21-23-base-base,False,2026-10-19
+tistaminis,Base: Kantor Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-kantor-blue-21-07-base-base,39887479144550,games-workshop-warhammer-paints-kantor-blue-21-07-base-base,False,2026-10-19
+tistaminis,Base: Macragge Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-macragge-blue-21-08-base-base,39887479275622,games-workshop-warhammer-paints-macragge-blue-21-08-base-base,False,2026-10-19
+tistaminis,Base: Thousand Sons Blue,https://tistaminis.com/products/thousand-sons-blue-base-paint-new,39907305586790,thousand-sons-blue-base-paint-new,False,2026-10-19
+tistaminis,Base: XV-88,https://tistaminis.com/products/games-workshop-warhammer-paints-xv-88-21-21-base-base,39887509913702,games-workshop-warhammer-paints-xv-88-21-21-base-base,False,2026-10-19
+tistaminis,Base: Waaagh! Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-waagh-flesh-21-13-base-base,39887480029286,games-workshop-warhammer-paints-waagh-flesh-21-13-base-base,False,2026-10-19
+tistaminis,Base: Incubi Darkness,https://tistaminis.com/products/games-workshop-warhammer-paints-incubi-darkness-21-11-base-base,39887479701606,games-workshop-warhammer-paints-incubi-darkness-21-11-base-base,False,2026-10-19
+tistaminis,Base: Bugman's Glow,https://tistaminis.com/products/games-workshop-warhammer-paints-bugmans-glow-21-18-base-base,39887480914022,games-workshop-warhammer-paints-bugmans-glow-21-18-base-base,False,2026-10-19
+tistaminis,Base: Death Guard Green,https://tistaminis.com/products/games-workshop-warhammer-paints-death-guard-green-base-base,39887509258342,games-workshop-warhammer-paints-death-guard-green-base-base,False,2026-10-19
+tistaminis,Base: Morghast Bone,https://tistaminis.com/products/morghast-bone-base-paint-new,39907305390182,morghast-bone-base-paint-new,False,2026-10-19
+tistaminis,Base: Naggaroth Night,https://tistaminis.com/products/games-workshop-warhammer-paints-naggaroth-night-21-05-base-base,39887478587494,games-workshop-warhammer-paints-naggaroth-night-21-05-base-base,False,2026-10-19
+tistaminis,Base: Castellan Green,https://tistaminis.com/products/games-workshop-warhammer-paints-castellan-green-21-14-base-base,39887480193126,games-workshop-warhammer-paints-castellan-green-21-14-base-base,False,2026-10-19
+tistaminis,Base: Warplock Bronze,https://tistaminis.com/products/games-workshop-warhammer-paints-warplock-bronze-21-31-base-base,39887509782630,games-workshop-warhammer-paints-warplock-bronze-21-31-base-base,False,2026-10-19
+tistaminis,Base: The Fang,https://tistaminis.com/products/games-workshop-warhammer-paints-the-fang-21-32-base-base,39887481765990,games-workshop-warhammer-paints-the-fang-21-32-base-base,False,2026-10-19
+tistaminis,Base: Caledor Sky,https://tistaminis.com/products/games-workshop-warhammer-paints-caledor-sky-21-09-base-base,39887479406694,games-workshop-warhammer-paints-caledor-sky-21-09-base-base,False,2026-10-19
+tistaminis,Base: Stegadon Scale Green,https://tistaminis.com/products/games-workshop-warhammer-paints-stegadon-scale-green-21-10-base-base,39887479570534,games-workshop-warhammer-paints-stegadon-scale-green-21-10-base-base,False,2026-10-19
+tistaminis,Base: Grey Knights Steel,https://tistaminis.com/products/grey-knights-steel-base-paint-new,39907305357414,grey-knights-steel-base-paint-new,False,2026-10-19
+tistaminis,Base: Gal Vorbak Red,https://tistaminis.com/products/gal-vorbak-red-base-paint-new,39907565764710,gal-vorbak-red-base-paint-new,False,2026-10-19
+tistaminis,Base: Jokaero Orange,https://tistaminis.com/products/games-workshop-warhammer-paints-jokaero-orange-21-02-base-base,39886998175846,games-workshop-warhammer-paints-jokaero-orange-21-02-base-base,False,2026-10-19
+tistaminis,Base: Barak-Nar Burgundy,https://tistaminis.com/products/barak-nar-burgundy-base-paint-new,39907298574438,barak-nar-burgundy-base-paint-new,False,2026-10-19
+tistaminis,Base: Phoenician Purple,https://tistaminis.com/products/phoenician-purple-base-paint-new,39907614883942,phoenician-purple-base-paint-new,False,2026-10-19
+tistaminis,Base: Orruk Flesh,https://tistaminis.com/products/base-orruk-flesh-12ml-new,39364131061862,base-orruk-flesh-12ml-new,False,2026-10-19
+tistaminis,Base: Daemonette Hide,https://tistaminis.com/products/games-workshop-warhammer-paints-daemonette-hide-21-06-base-base,39887478980710,games-workshop-warhammer-paints-daemonette-hide-21-06-base-base,False,2026-10-19
+tistaminis,Base: Night Lords Blue,https://tistaminis.com/products/night-lords-blue-base-paint-new,39907305750630,night-lords-blue-base-paint-new,False,2026-10-19
+tistaminis,Base: Death Korps Drab,https://tistaminis.com/products/death-korps-drab-base-paint-new,39907305291878,death-korps-drab-base-paint-new,False,2026-10-19
+tistaminis,Base: Ionrach Skin,https://tistaminis.com/products/games-workshop-warhammer-paints-iondarch-skin-base-base,39887508996198,games-workshop-warhammer-paints-iondarch-skin-base-base,False,2026-10-19
+tistaminis,Base: Screaming Bell,https://tistaminis.com/products/games-workshop-warhammer-paints-screaming-bell-21-30-base-base,39887510110310,games-workshop-warhammer-paints-screaming-bell-21-30-base-base,False,2026-10-19
+tistaminis,Base: Thondia Brown,https://tistaminis.com/products/base-thondia-brown-12ml-new,39364131094630,base-thondia-brown-12ml-new,False,2026-10-19
+tistaminis,Base: Catachan Flesh,https://tistaminis.com/products/catachan-flesh-base-paint-new,39907305455718,catachan-flesh-base-paint-new,False,2026-10-19
+tistaminis,Base: Nocturne Green,https://tistaminis.com/products/nocturne-green-base-paint-new,39907311124582,nocturne-green-base-paint-new,False,2026-10-19
+tistaminis,Base: Ratskin Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-ratskin-flesh-21-19-base-base,39887510536294,games-workshop-warhammer-paints-ratskin-flesh-21-19-base-base,False,2026-10-19
+tistaminis,Base: Hobgrot Hide,https://tistaminis.com/products/base-hobgrot-hide-12ml-new,39364131029094,base-hobgrot-hide-12ml-new,False,2026-10-19
+tistaminis,Layer: Stormhost Silver,https://tistaminis.com/products/games-workshop-warhammer-paints-stormhost-silver-22-75-layer-layer,39887494316134,games-workshop-warhammer-paints-stormhost-silver-22-75-layer-layer,False,2026-10-19
+tistaminis,Layer: White Scar,https://tistaminis.com/products/games-workshop-warhammer-paints-white-scar-22-57-layer-layer,39887493988454,games-workshop-warhammer-paints-white-scar-22-57-layer-layer,False,2026-10-19
+tistaminis,Layer: Evil Sunz Scarlet,https://tistaminis.com/products/games-workshop-warhammer-paints-evil-sunz-scarlet-22-05-layer-layer,39887483404390,games-workshop-warhammer-paints-evil-sunz-scarlet-22-05-layer-layer,False,2026-10-19
+tistaminis,Layer: Ushabti Bone,https://tistaminis.com/products/games-workshop-warhammer-paints-ushabti-bone-22-32-layer-layer,39887489040486,games-workshop-warhammer-paints-ushabti-bone-22-32-layer-layer,False,2026-10-19
+tistaminis,Layer: Moot Green,https://tistaminis.com/products/games-workshop-warhammer-paints-moot-green-22-24-layer-layer,39887487500390,games-workshop-warhammer-paints-moot-green-22-24-layer-layer,False,2026-10-19
+tistaminis,Layer: Fenrisian Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-fenrisian-grey-22-68-layer-layer,39887492939878,games-workshop-warhammer-paints-fenrisian-grey-22-68-layer-layer,False,2026-10-19
+tistaminis,Layer: Warpstone Glow,https://tistaminis.com/products/games-workshop-warhammer-paints-warpstone-glow-22-23-layer-layer,39887487336550,games-workshop-warhammer-paints-warpstone-glow-22-23-layer-layer,False,2026-10-19
+tistaminis,Layer: Screaming Skull,https://tistaminis.com/products/games-workshop-warhammer-paints-screaming-skull-22-33-layer-layer,39887489204326,games-workshop-warhammer-paints-screaming-skull-22-33-layer-layer,False,2026-10-19
+tistaminis,Layer: Kislev Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-kislev-flesh-22-37-layer-layer,39887489925222,games-workshop-warhammer-paints-kislev-flesh-22-37-layer-layer,False,2026-10-19
+tistaminis,Layer: Dawnstone,https://tistaminis.com/products/games-workshop-warhammer-paints-dawnstone-22-49-layer-layer,39887492153446,games-workshop-warhammer-paints-dawnstone-22-49-layer-layer,False,2026-10-19
+tistaminis,Layer: Eshin Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-eshin-grey-22-51-layer-layer,39887492513894,games-workshop-warhammer-paints-eshin-grey-22-51-layer-layer,False,2026-10-19
+tistaminis,Layer: Liberator Gold,https://tistaminis.com/products/games-workshop-warhammer-paints-liberator-gold-22-71-layer-layer,39887494709350,games-workshop-warhammer-paints-liberator-gold-22-71-layer-layer,False,2026-10-19
+tistaminis,Layer: Cadian Fleshtone,https://tistaminis.com/products/games-workshop-warhammer-paints-cadian-fleshtone-22-36-layer-layer,39887489761382,games-workshop-warhammer-paints-cadian-fleshtone-22-36-layer-layer,False,2026-10-19
+tistaminis,Layer: Administratum Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-administratum-grey-22-50-layer-layer,39887492350054,games-workshop-warhammer-paints-administratum-grey-22-50-layer-layer,False,2026-10-19
+tistaminis,Layer: Ironbreaker,https://tistaminis.com/products/games-workshop-warhammer-paints-ironbreaker-22-59-layer-layer,39887494414438,games-workshop-warhammer-paints-ironbreaker-22-59-layer-layer,False,2026-10-19
+tistaminis,Layer: Pallid Wych Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-pallid-wych-flesh-22-58-layer-layer,39887494119526,games-workshop-warhammer-paints-pallid-wych-flesh-22-58-layer-layer,False,2026-10-19
+tistaminis,Layer: Yriel Yellow,https://tistaminis.com/products/games-workshop-warhammer-paints-yriel-yellow-22-01-layer-layer,39887509553254,games-workshop-warhammer-paints-yriel-yellow-22-01-layer-layer,False,2026-10-19
+tistaminis,Layer: Runefang Steel,https://tistaminis.com/products/games-workshop-warhammer-paints-runefang-steel-22-60-layer-layer,39887494512742,games-workshop-warhammer-paints-runefang-steel-22-60-layer-layer,False,2026-10-19
+tistaminis,Layer: Wild Rider Red,https://tistaminis.com/products/games-workshop-warhammer-paints-wild-rider-red-22-06-layer-layer,39887483568230,games-workshop-warhammer-paints-wild-rider-red-22-06-layer-layer,False,2026-10-19
+tistaminis,Layer: Ulthuan Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-ulthuan-grey-22-56-layer-layer,39887493857382,games-workshop-warhammer-paints-ulthuan-grey-22-56-layer-layer,False,2026-10-19
+tistaminis,Layer: Flash Gitz Yellow,https://tistaminis.com/products/games-workshop-warhammer-paints-flash-gitz-yellow-22-02-layer-layer,39887482749030,games-workshop-warhammer-paints-flash-gitz-yellow-22-02-layer-layer,False,2026-10-19
+tistaminis,Layer: Troll Slayer Orange,https://tistaminis.com/products/games-workshop-warhammer-paints-troll-slayer-orange-22-03-layer-layer,39887482912870,games-workshop-warhammer-paints-troll-slayer-orange-22-03-layer-layer,False,2026-10-19
+tistaminis,Layer: Dark Reaper,https://tistaminis.com/products/games-workshop-warhammer-paints-dark-reaper-22-52-layer-layer,39887493333094,games-workshop-warhammer-paints-dark-reaper-22-52-layer-layer,False,2026-10-19
+tistaminis,Layer: Fire Dragon Bright,https://tistaminis.com/products/games-workshop-warhammer-paints-fire-dragon-bright-22-04-layer-layer,39887483011174,games-workshop-warhammer-paints-fire-dragon-bright-22-04-layer-layer,False,2026-10-19
+tistaminis,Layer: Auric Armour Gold,https://tistaminis.com/products/games-workshop-warhammer-paints-auric-armour-gold-22-62-layer-layer,39887494971494,games-workshop-warhammer-paints-auric-armour-gold-22-62-layer-layer,False,2026-10-19
+tistaminis,Layer: Genestealer Purple,https://tistaminis.com/products/games-workshop-warhammer-paints-genestealer-purple-22-10-layer-layer,39887484420198,games-workshop-warhammer-paints-genestealer-purple-22-10-layer-layer,False,2026-10-19
+tistaminis,Layer: Temple Guard Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-temple-guard-blue-22-20-layer-layer,39887486287974,games-workshop-warhammer-paints-temple-guard-blue-22-20-layer-layer,False,2026-10-19
+tistaminis,Layer: Thunderhawk Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-thunderhawk-blue-22-53-layer-layer,39887493464166,games-workshop-warhammer-paints-thunderhawk-blue-22-53-layer-layer,False,2026-10-19
+tistaminis,Layer: Doombull Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-doombull-brown-22-45-layer-layer,39887491563622,games-workshop-warhammer-paints-doombull-brown-22-45-layer-layer,False,2026-10-19
+tistaminis,Layer: Emperor's Children,https://tistaminis.com/products/games-workshop-warhammer-paints-emperors-children-22-70-layer-layer,39887484125286,games-workshop-warhammer-paints-emperors-children-22-70-layer-layer,False,2026-10-19
+tistaminis,Layer: Karak Stone,https://tistaminis.com/products/games-workshop-warhammer-paints-karak-stone-22-35-layer-layer,39887489499238,games-workshop-warhammer-paints-karak-stone-22-35-layer-layer,False,2026-10-19
+tistaminis,Layer: Gorthor Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-gorthor-brown-22-47-layer-layer,39887491825766,games-workshop-warhammer-paints-gorthor-brown-22-47-layer-layer,False,2026-10-19
+tistaminis,Layer: Brass Scorpion,https://tistaminis.com/products/games-workshop-warhammer-paints-brass-scorpion-22-65-layer-layer,39887495921766,games-workshop-warhammer-paints-brass-scorpion-22-65-layer-layer,False,2026-10-19
+tistaminis,Layer: Xereus Purple,https://tistaminis.com/products/games-workshop-warhammer-paints-xereus-purple-22-09-layer-layer,39887484256358,games-workshop-warhammer-paints-xereus-purple-22-09-layer-layer,False,2026-10-19
+tistaminis,Layer: Baharroth Blue,https://tistaminis.com/products/baharroth-blue-layer-paint-new,39907770564710,baharroth-blue-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Russ Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-russ-grey-22-67-layer-layer,39887492612198,games-workshop-warhammer-paints-russ-grey-22-67-layer-layer,False,2026-10-19
+tistaminis,Layer: Pink Horror,https://tistaminis.com/products/games-workshop-warhammer-paints-pink-horror-22-69-layer-layer,39887483961446,games-workshop-warhammer-paints-pink-horror-22-69-layer-layer,False,2026-10-19
+tistaminis,Layer: Flayed One Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-flayed-one-flesh-22-72-layer-layer,39887490023526,games-workshop-warhammer-paints-flayed-one-flesh-22-72-layer-layer,False,2026-10-19
+tistaminis,Layer: Wazdakka Red,https://tistaminis.com/products/games-workshop-warhammer-paints-wazdakka-red-22-07-layer-layer,39887483699302,games-workshop-warhammer-paints-wazdakka-red-22-07-layer-layer,False,2026-10-19
+tistaminis,Layer: Canoptek Alloy,https://tistaminis.com/products/games-workshop-warhammer-paints-canoptek-alloy-22-94-layer-layer,39887510995046,games-workshop-warhammer-paints-canoptek-alloy-22-94-layer-layer,False,2026-10-19
+tistaminis,Layer: Sotek Green,https://tistaminis.com/products/games-workshop-warhammer-paints-sotek-green-22-19-layer-layer,39887486124134,games-workshop-warhammer-paints-sotek-green-22-19-layer-layer,False,2026-10-19
+tistaminis,Layer: Skrag Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-skrag-brown-22-40-layer-layer,39887490580582,games-workshop-warhammer-paints-skrag-brown-22-40-layer-layer,False,2026-10-19
+tistaminis,Layer: Calgar Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-calgar-blue-22-16-layer-layer,39887485698150,games-workshop-warhammer-paints-calgar-blue-22-16-layer-layer,False,2026-10-19
+tistaminis,Layer: Baneblade Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-baneblade-brown-22-48-layer-layer,39887491989606,games-workshop-warhammer-paints-baneblade-brown-22-48-layer-layer,False,2026-10-19
+tistaminis,Layer: Sybarite Green,https://tistaminis.com/products/games-workshop-warhammer-paints-sybarite-green-22-22-layer-layer,39887486845030,games-workshop-warhammer-paints-sybarite-green-22-22-layer-layer,False,2026-10-19
+tistaminis,Layer: Warboss Green,https://tistaminis.com/products/games-workshop-warhammer-paints-warboss-green-22-25-layer-layer,39887487631462,games-workshop-warhammer-paints-warboss-green-22-25-layer-layer,False,2026-10-19
+tistaminis,Layer: Stormvermin Fur,https://tistaminis.com/products/games-workshop-warhammer-paints-stormvermin-fur-22-55-layer-layer,39887493726310,games-workshop-warhammer-paints-stormvermin-fur-22-55-layer-layer,False,2026-10-19
+tistaminis,Layer: Teclis Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-teclis-blue-22-17-layer-layer,39887485894758,games-workshop-warhammer-paints-teclis-blue-22-17-layer-layer,False,2026-10-19
+tistaminis,Layer: Ogryn Camo,https://tistaminis.com/products/games-workshop-warhammer-paints-ogryn-camo-22-31-layer-layer,39887488680038,games-workshop-warhammer-paints-ogryn-camo-22-31-layer-layer,False,2026-10-19
+tistaminis,Layer: Sycorax Bronze,https://tistaminis.com/products/games-workshop-warhammer-paints-sycorax-bronze-22-64-layer-layer,39887495692390,games-workshop-warhammer-paints-sycorax-bronze-22-64-layer-layer,False,2026-10-19
+tistaminis,Layer: Blue Horror,https://tistaminis.com/products/blue-horror-layer-paint-new,39623094632550,blue-horror-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Kabalite Green,https://tistaminis.com/products/games-workshop-warhammer-paints-kabalite-green-22-21-layer-layer,39887486746726,games-workshop-warhammer-paints-kabalite-green-22-21-layer-layer,False,2026-10-19
+tistaminis,Layer: Lothern Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-lothern-blue-22-18-layer-layer,39887486025830,games-workshop-warhammer-paints-lothern-blue-22-18-layer-layer,False,2026-10-19
+tistaminis,Layer: Skavenblight Dinge,https://tistaminis.com/products/games-workshop-warhammer-paints-skavenblight-dinge-22-54-layer-layer,39887493529702,games-workshop-warhammer-paints-skavenblight-dinge-22-54-layer-layer,False,2026-10-19
+tistaminis,Layer: Ahriman Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-ahriman-blue-layer-layer,39887496282214,games-workshop-warhammer-paints-ahriman-blue-layer-layer,False,2026-10-19
+tistaminis,Layer: Loren Forest,https://tistaminis.com/products/games-workshop-warhammer-paints-loren-forst-22-27-layer-layer,39887487959142,games-workshop-warhammer-paints-loren-forst-22-27-layer-layer,False,2026-10-19
+tistaminis,Layer: Fulgrim Pink,https://tistaminis.com/products/fulgrim-pink-layer-paint-new,39907753459814,fulgrim-pink-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Nurgling Green,https://tistaminis.com/products/games-workshop-warhammer-paints-nurgling-green-22-29-layer-layer,39887488286822,games-workshop-warhammer-paints-nurgling-green-22-29-layer-layer,False,2026-10-19
+tistaminis,Layer: Slaanesh Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-slaanesh-grey-22-12-layer-layer,39887485075558,games-workshop-warhammer-paints-slaanesh-grey-22-12-layer-layer,False,2026-10-19
+tistaminis,Layer: Skullcrusher Brass,https://tistaminis.com/products/games-workshop-warhammer-paints-skullcrusher-brass-22-75-layer-layer,39887495823462,games-workshop-warhammer-paints-skullcrusher-brass-22-75-layer-layer,False,2026-10-19
+tistaminis,Layer: Gehenna's Gold,https://tistaminis.com/products/games-workshop-warhammer-paints-gehannas-gold-22-61-layer-layer,39887494807654,games-workshop-warhammer-paints-gehannas-gold-22-61-layer-layer,False,2026-10-19
+tistaminis,Layer: Skarsnik Green,https://tistaminis.com/products/games-workshop-warhammer-paints-skarsnik-green-22-26-layer-layer,39887487828070,games-workshop-warhammer-paints-skarsnik-green-22-26-layer-layer,False,2026-10-19
+tistaminis,Layer: Squig Orange,https://tistaminis.com/products/games-workshop-warhammer-paints-squig-orange-22-08-layer-layer,39887483797606,games-workshop-warhammer-paints-squig-orange-22-08-layer-layer,False,2026-10-19
+tistaminis,Layer: Elysian Green,https://tistaminis.com/products/games-workshop-warhammer-paints-elysian-green-22-30-layer-layer,39887488450662,games-workshop-warhammer-paints-elysian-green-22-30-layer-layer,False,2026-10-19
+tistaminis,Layer: Tau Light Ochre,https://tistaminis.com/products/games-workshop-warhammer-paints-tau-light-ochre-22-42-layer-layer,39887491104870,games-workshop-warhammer-paints-tau-light-ochre-22-42-layer-layer,False,2026-10-19
+tistaminis,Layer: Word Bearers Red,https://tistaminis.com/products/word-bearers-red-layer-paint-new,39907747496038,word-bearers-red-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Hoeth Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-hoeth-blue-22-14-layer-layer,39887485370470,games-workshop-warhammer-paints-hoeth-blue-22-14-layer-layer,False,2026-10-19
+tistaminis,Layer: Hashut Copper,https://tistaminis.com/products/games-workshop-warhammer-paints-hashut-copper-22-63-layer-layer,39887495233638,games-workshop-warhammer-paints-hashut-copper-22-63-layer-layer,False,2026-10-19
+tistaminis,Layer: Deepkin Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-deepkin-flesh-layer-layer,39887509127270,games-workshop-warhammer-paints-deepkin-flesh-layer-layer,False,2026-10-19
+tistaminis,Layer: Sons of Horus Green,https://tistaminis.com/products/sons-of-horus-green-layer-paint-new,39907753558118,sons-of-horus-green-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Phalanx Yellow,https://tistaminis.com/products/phalanx-yellow-layer-paint-new,39907745955942,phalanx-yellow-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Gauss Blaster Green,https://tistaminis.com/products/gauss-blaster-green-layer-paint-new,39907744415846,gauss-blaster-green-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Alaitoc Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-alaitoc-blue-22-13-layer-layer,39887485239398,games-workshop-warhammer-paints-alaitoc-blue-22-13-layer-layer,False,2026-10-19
+tistaminis,Layer: Tallarn Sand,https://tistaminis.com/products/games-workshop-warhammer-paints-tallarn-sand-22-34-layer-layer,39887489400934,games-workshop-warhammer-paints-tallarn-sand-22-34-layer-layer,False,2026-10-19
+tistaminis,Layer: Straken Green,https://tistaminis.com/products/games-workshop-warhammer-paints-straken-green-22-28-layer-layer,39887488122982,games-workshop-warhammer-paints-straken-green-22-28-layer-layer,False,2026-10-19
+tistaminis,Layer: Tuskgor Fur,https://tistaminis.com/products/games-workshop-warhammer-paints-tuskgor-fur-22-46-layer-layer,39887491694694,games-workshop-warhammer-paints-tuskgor-fur-22-46-layer-layer,False,2026-10-19
+tistaminis,Layer: Krieg Khaki,https://tistaminis.com/products/games-workshop-warhammer-paints-krieg-khaki-edge-base,39887509422182,games-workshop-warhammer-paints-krieg-khaki-edge-base,False,2026-10-19
+tistaminis,Layer: Kakophoni Purple,https://tistaminis.com/products/kakophoni-purple-layer-paint-new,39907756507238,kakophoni-purple-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Balor Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-balor-brown-22-43-layer-layer,39887491235942,games-workshop-warhammer-paints-balor-brown-22-43-layer-layer,False,2026-10-19
+tistaminis,Layer: Altdorf Guard Blue,https://tistaminis.com/products/games-workshop-warhammer-paints-altdorf-guard-blue-22-15-layer-layer,39887485501542,games-workshop-warhammer-paints-altdorf-guard-blue-22-15-layer-layer,False,2026-10-19
+tistaminis,Layer: Warpfiend Grey,https://tistaminis.com/products/games-workshop-warhammer-paints-warpfiend-grey-22-11-layer-layer,39887484584038,games-workshop-warhammer-paints-warpfiend-grey-22-11-layer-layer,False,2026-10-19
+tistaminis,Layer: Deathclaw Brown,https://tistaminis.com/products/games-workshop-warhammer-paints-deathclaw-brown-22-41-layer-layer,39887491006566,games-workshop-warhammer-paints-deathclaw-brown-22-41-layer-layer,False,2026-10-19
+tistaminis,Layer: Dorn Yellow,https://tistaminis.com/products/dorn-yellow-layer-paint-new,39907745235046,dorn-yellow-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Dechala Lilac,https://tistaminis.com/products/dechala-lilac-layer-paint-new,39907756703846,dechala-lilac-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Castellax Bronze,https://tistaminis.com/products/castellax-bronze-layer-paint-new,39918492581990,castellax-bronze-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Zamesi Desert,https://tistaminis.com/products/games-workshop-warhammer-paints-zamesi-desert-22-44-layer-layer,39887491367014,games-workshop-warhammer-paints-zamesi-desert-22-44-layer-layer,False,2026-10-19
+tistaminis,Layer: Knight-Questor Flesh,https://tistaminis.com/products/dechala-lilac-layer-paint-new-1,39907756834918,dechala-lilac-layer-paint-new-1,False,2026-10-19
+tistaminis,Layer: Ungor Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-ungor-flesh-22-39-layer-layer,39887490482278,games-workshop-warhammer-paints-ungor-flesh-22-39-layer-layer,False,2026-10-19
+tistaminis,Layer: Vulkan Green,https://tistaminis.com/products/vulkan-green-layer-paint-new,39907753656422,vulkan-green-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Fulgurite Copper,https://tistaminis.com/products/games-workshop-warhammer-paints-fulgurite-copper-22-74-layer-layer,39887495135334,games-workshop-warhammer-paints-fulgurite-copper-22-74-layer-layer,False,2026-10-19
+tistaminis,Layer: Bestigor Flesh,https://tistaminis.com/products/games-workshop-warhammer-paints-bestigor-flesh-22-38-layer-layer,39887490285670,games-workshop-warhammer-paints-bestigor-flesh-22-38-layer-layer,False,2026-10-19
+tistaminis,Layer: Lugganath Orange,https://tistaminis.com/products/lugganath-orange-layer-paint-new,39907746709606,lugganath-orange-layer-paint-new,False,2026-10-19
+tistaminis,Layer: Bloodreaver Flesh,https://tistaminis.com/products/bloodreaver-flesh-layer-paint-new,39907753492582,bloodreaver-flesh-layer-paint-new,False,2026-10-19
+the_arcanum_sanctorum,Base: Abaddon Black,https://arcanumsanctorum.com/products/citadel-base-paint-abaddon-black-12ml,44226380955921,citadel-base-paint-abaddon-black-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Leadbelcher,https://arcanumsanctorum.com/products/citadel-base-paint-leadbelcher12ml,45836901744913,citadel-base-paint-leadbelcher12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Wraithbone,https://arcanumsanctorum.com/products/citadel-base-paint-wraithbone-12ml,44226374762769,citadel-base-paint-wraithbone-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Retributor Armour,https://arcanumsanctorum.com/products/citadel-base-paint-retributer-armor12ml,45836906922257,citadel-base-paint-retributer-armor12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Khorne Red,https://arcanumsanctorum.com/products/citadel-base-paint-khorn-red12ml,47156039549201,citadel-base-paint-khorn-red12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Mephiston Red,https://arcanumsanctorum.com/products/citadel-base-paint-mephiston-red-12ml,44226380529937,citadel-base-paint-mephiston-red-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Rhinox Hide,https://arcanumsanctorum.com/products/citadel-base-paint-rhinox-hide-12ml,47158549774609,citadel-base-paint-rhinox-hide-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Corax White,https://arcanumsanctorum.com/products/citadel-base-paint-waaagh-flesh-12ml,44226377351441,citadel-base-paint-waaagh-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Runelord Brass,https://arcanumsanctorum.com/products/citadel-base-paint-runelord-brass-12ml,47937953300753,citadel-base-paint-runelord-brass-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Mechanicus Standard Grey,https://arcanumsanctorum.com/products/citadel-base-paint-mechanicus-standard-grey-12ml,47158725378321,citadel-base-paint-mechanicus-standard-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Mournfang Brown,https://arcanumsanctorum.com/products/citadel-base-paint-mournfang-brown-12ml,46189331644689,citadel-base-paint-mournfang-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: White Scar,https://arcanumsanctorum.com/products/citadel-layer-paint-white-scar-12ml,47158641623313,citadel-layer-paint-white-scar-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Warpstone Glow,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-warpstone-glow-12ml,48225049772305,citadel-colour-layer-paint-warpstone-glow-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Stormhost Silver,https://arcanumsanctorum.com/products/citadel-layer-paint-stormhost-silver-12ml,44554887266577,citadel-layer-paint-stormhost-silver-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Moot Green,https://arcanumsanctorum.com/products/citadel-layer-paint-moot-green-12ml,47158261874961,citadel-layer-paint-moot-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Averland Sunset,https://arcanumsanctorum.com/products/citadel-base-paint-averland-sunset-12ml,46189284819217,citadel-base-paint-averland-sunset-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Caliban Green,https://arcanumsanctorum.com/products/citadel-base-paint-calaban-green-12ml,47160432558353,citadel-base-paint-calaban-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Steel Legion Drab,https://arcanumsanctorum.com/products/citadel-colour-base-paint-steel-legion-drab-12ml,48214155264273,citadel-colour-base-paint-steel-legion-drab-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Rakarth Flesh,https://arcanumsanctorum.com/products/citadel-base-paint-rakarth-flesh-12ml,47160068538641,citadel-base-paint-rakarth-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Screamer Pink,https://arcanumsanctorum.com/products/citadel-colour-base-paint-screamer-pink-12ml,48213557936401,citadel-colour-base-paint-screamer-pink-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Wazdakka Red,https://arcanumsanctorum.com/products/copy-of-citadel-layer-paint-wazdakka-red-12ml,47226547470609,copy-of-citadel-layer-paint-wazdakka-red-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Flash Gitz Yellow,https://arcanumsanctorum.com/products/citadel-layer-paint-administratum-grey-12ml-1,47225145426193,citadel-layer-paint-administratum-grey-12ml-1,False,2026-10-19
+the_arcanum_sanctorum,Base: Celestra Grey,https://arcanumsanctorum.com/products/citadel-base-paint-celestra-grey-12ml,47160562712849,citadel-base-paint-celestra-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Balthasar Gold,https://arcanumsanctorum.com/products/citadel-base-paint-balthasar-gold-12ml,47228725264657,citadel-base-paint-balthasar-gold-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Kislev Flesh,https://arcanumsanctorum.com/products/citadel-layer-paint-kislev-flesh-12ml,44226389803281,citadel-layer-paint-kislev-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Warplock Bronze,https://arcanumsanctorum.com/products/copy-of-citadel-base-paint-warlock-bronze-12ml,47937975386385,copy-of-citadel-base-paint-warlock-bronze-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Iron Warriors,https://arcanumsanctorum.com/products/citadel-base-paint-iron-warriors-12ml,47937970733329,citadel-base-paint-iron-warriors-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: XV-88,https://arcanumsanctorum.com/products/xv-88,47637822701841,xv-88,False,2026-10-19
+the_arcanum_sanctorum,Base: Zandri Dust,https://arcanumsanctorum.com/products/citadel-base-paint-zandri-dust-12ml,47160106352913,citadel-base-paint-zandri-dust-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Castellan Green,https://arcanumsanctorum.com/products/citadel-base-paint-castellan-green-12ml,47159681286417,citadel-base-paint-castellan-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Wild Rider Red,https://arcanumsanctorum.com/products/citadel-layer-paint-wild-rider-red-12ml,47158943318289,citadel-layer-paint-wild-rider-red-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Xereus Purple,https://arcanumsanctorum.com/products/citadel-layer-paint-xreus-purple-12ml,47156643627281,citadel-layer-paint-xreus-purple-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Runefang Steel,https://arcanumsanctorum.com/products/citadel-layer-paint-runfang-steel-12ml,47155577749777,citadel-layer-paint-runfang-steel-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Evil Sunz Scarlet,https://arcanumsanctorum.com/products/citadel-layer-paint-flash-gitz-yellow-12ml,47226111328529,citadel-layer-paint-flash-gitz-yellow-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Ironbreaker,https://arcanumsanctorum.com/products/citadel-layer-paint-iornbreaker-12ml,47160358109457,citadel-layer-paint-iornbreaker-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Screaming Skull,https://arcanumsanctorum.com/products/citadel-layer-paint-screaming-skull-12ml,47159818289425,citadel-layer-paint-screaming-skull-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Screaming Bell,https://arcanumsanctorum.com/products/citadel-base-paint-screaming-bell-12ml,45836879954193,citadel-base-paint-screaming-bell-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Kabalite Green,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-kabalite-green-12ml,48225018315025,citadel-colour-layer-paint-kabalite-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Temple Guard Blue,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-temple-guard-blue-12ml,48214700032273,citadel-colour-layer-paint-temple-guard-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Pink Horror,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-pink-horror-12ml,48214679912721,citadel-colour-layer-paint-pink-horror-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Emperor's Children,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-emperors-children-12ml,48214615359761,citadel-colour-layer-paint-emperors-children-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Fire Dragon Bright,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-fire-dragon-bright-12ml,48214575546641,citadel-colour-layer-paint-fire-dragon-bright-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Dryad Bark,https://arcanumsanctorum.com/products/citadel-colour-base-paint-dryad-bark-12ml,48214168273169,citadel-colour-base-paint-dryad-bark-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Morghast Bone,https://arcanumsanctorum.com/products/citadel-colour-base-paint-morghast-bone-12ml,48213726036241,citadel-colour-base-paint-morghast-bone-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Incubi Darkness,https://arcanumsanctorum.com/products/citadel-colour-base-paint-incubi-darkness-12ml,48213594997009,citadel-colour-base-paint-incubi-darkness-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Administratum Grey,https://arcanumsanctorum.com/products/citadel-layer-paint-administratum-grey-12ml,47160694931729,citadel-layer-paint-administratum-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Liberator Gold,https://arcanumsanctorum.com/products/citadel-layer-paint-liberator-gold-12ml,47159627481361,citadel-layer-paint-liberator-gold-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Eshin Grey,https://arcanumsanctorum.com/products/citadel-layer-paint-eshin-grey-12ml,47155184304401,citadel-layer-paint-eshin-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Sybarite Green,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-sybarite-green-12ml,48214737420561,citadel-colour-layer-paint-sybarite-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Troll Slayer Orange,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-troll-slayer-orange-12ml,48214577840401,citadel-colour-layer-paint-troll-slayer-orange-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Death Guard Green,https://arcanumsanctorum.com/products/citadel-base-paint-death-guard-green-12ml,47228487762193,citadel-base-paint-death-guard-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Kantor Blue,https://arcanumsanctorum.com/products/citadel-base-paint-kantor-blue-12ml,47159934189841,citadel-base-paint-kantor-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Ulthuan Grey,https://arcanumsanctorum.com/products/citadel-layer-paint-ulthuan-grey-12ml,47159908630801,citadel-layer-paint-ulthuan-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Teclis Blue,https://arcanumsanctorum.com/products/citadel-layer-paint-teclis-blue-12ml,47159361110289,citadel-layer-paint-teclis-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Pallid Wych Flesh,https://arcanumsanctorum.com/products/citadel-layer-paint-pallid-wych-flesh-12ml,47155455033617,citadel-layer-paint-pallid-wych-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Gehenna's Gold,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-gehennas-gold-12ml,48225948434705,citadel-colour-layer-paint-gehennas-gold-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Thousand Sons Blue,https://arcanumsanctorum.com/products/citadel-base-paint-thousand-sons-blue-12ml,47937976598801,citadel-base-paint-thousand-sons-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Brass Scorpion,https://arcanumsanctorum.com/products/citadel-layer-paint-brass-scirpion-12ml,47228109127953,citadel-layer-paint-brass-scirpion-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Stegadon Scale Green,https://arcanumsanctorum.com/products/citadel-base-paint-stegadon-scale-green-12ml-1,47160622907665,citadel-base-paint-stegadon-scale-green-12ml-1,False,2026-10-19
+the_arcanum_sanctorum,Layer: Bloodreaver Flesh,https://arcanumsanctorum.com/products/citadel-layer-paint-bloodreaver-flesh-12ml,47158782722321,citadel-layer-paint-bloodreaver-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Auric Armour Gold,https://arcanumsanctorum.com/products/citadel-layer-paint-auric-armour-gold-12ml,47158499672337,citadel-layer-paint-auric-armour-gold-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Canoptek Alloy,https://arcanumsanctorum.com/products/citadel-base-paint-canoptek-alloy-12ml,45836897419537,citadel-base-paint-canoptek-alloy-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Ushabti Bone,https://arcanumsanctorum.com/products/citadel-layer-paint-ushabti-bone-12ml,44556449448209,citadel-layer-paint-ushabti-bone-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Macragge Blue,https://arcanumsanctorum.com/products/citadel-base-paint-macragge-blue-12ml,44226380071185,citadel-base-paint-macragge-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Sycorax Bronze,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-sycorax-bronze-12ml,48226017902865,citadel-colour-layer-paint-sycorax-bronze-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Ogryn Camo,https://arcanumsanctorum.com/products/citadel-layer-paint-ogryn-camo-12ml,47228453126417,citadel-layer-paint-ogryn-camo-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Yriel Yellow,https://arcanumsanctorum.com/products/citadel-layer-paint-yriel-yellow-12ml,47159052632337,citadel-layer-paint-yriel-yellow-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Lothern Blue,https://arcanumsanctorum.com/products/citadel-layer-paint-lothren-blue-12ml,47158898065681,citadel-layer-paint-lothren-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Doombull Brown,https://arcanumsanctorum.com/products/citadel-layer-paint-layer-doom-bull-brown-12ml,47158186574097,citadel-layer-paint-layer-doom-bull-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Genestealer Purple,https://arcanumsanctorum.com/products/citadel-layer-paint-genestealer-purple-12ml,47156117995793,citadel-layer-paint-genestealer-purple-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: The Fang,https://arcanumsanctorum.com/products/citadel-base-paint-the-fang-12ml,47155783336209,citadel-base-paint-the-fang-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Sotek Green,https://arcanumsanctorum.com/products/citadel-layer-paint-sotek-green-12ml,47154863309073,citadel-layer-paint-sotek-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Calgar Blue,https://arcanumsanctorum.com/products/citadel-layer-paint-calgar-blue-12ml,47226197344529,citadel-layer-paint-calgar-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Ionrach Skin,https://arcanumsanctorum.com/products/citadel-base-paint-ionrach-skin-12ml,47159218864401,citadel-base-paint-ionrach-skin-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Dawnstone,https://arcanumsanctorum.com/products/citadel-layer-paint-dawnstone12ml,47159011639569,citadel-layer-paint-dawnstone12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Bugman's Glow,https://arcanumsanctorum.com/products/citadel-base-paint-bugmans-glow-12ml,47155386646801,citadel-base-paint-bugmans-glow-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Waaagh! Flesh,https://arcanumsanctorum.com/products/citadel-base-paint-waaagh-flesh-12ml-1,44226378826001,citadel-base-paint-waaagh-flesh-12ml-1,False,2026-10-19
+the_arcanum_sanctorum,Layer: Skullcrusher Brass,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-skullcrusher-brass-12ml,48225988346129,citadel-colour-layer-paint-skullcrusher-brass-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Hashut Copper,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-hashut-copper-12ml,48225958625553,citadel-colour-layer-paint-hashut-copper-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Hoeth Blue,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-hoeth-blue-12ml,48214687285521,citadel-colour-layer-paint-hoeth-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Naggaroth Night,https://arcanumsanctorum.com/products/citadel-colour-base-paint-naggaroth-night-12ml,48213562327313,citadel-colour-base-paint-naggaroth-night-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Karak Stone,https://arcanumsanctorum.com/products/citadel-layer-paint-karak-stone-12ml,47228625322257,citadel-layer-paint-karak-stone-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Russ Grey,https://arcanumsanctorum.com/products/citadel-layer-paint-russ-grey-12ml,47159780016401,citadel-layer-paint-russ-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Skrag Brown,https://arcanumsanctorum.com/products/citadel-layer-paint-skrag-brown-12ml,47156448657681,citadel-layer-paint-skrag-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Fenrisian Grey,https://arcanumsanctorum.com/products/citadel-layer-paint-fenrisien-grey-12ml,47155865846033,citadel-layer-paint-fenrisien-grey-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Castellax Bronze,https://arcanumsanctorum.com/products/citadel-layer-paint-castellax-bronze-12ml,45836871368977,citadel-layer-paint-castellax-bronze-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Deepkin Flesh,https://arcanumsanctorum.com/products/citadel-layer-paint-deepkin-flesh-12ml,44649149071633,citadel-layer-paint-deepkin-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Stormvermin Fur,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-stormvermin-fur-12ml,48225632878865,citadel-colour-layer-paint-stormvermin-fur-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Balor Brown,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-balor-brown-12ml,48225400029457,citadel-colour-layer-paint-balor-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Jokaero Orange,https://arcanumsanctorum.com/products/citadel-colour-base-paint-jokaero-orange-12ml,48213543682321,citadel-colour-base-paint-jokaero-orange-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Tuskgor Fur,https://arcanumsanctorum.com/products/citadel-layer-paint-tuskgor-fur-12ml,47226323566865,citadel-layer-paint-tuskgor-fur-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Fulgurite Copper,https://arcanumsanctorum.com/products/citadel-layer-paint-fulguritecopper-12ml,47160171168017,citadel-layer-paint-fulguritecopper-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Zamesi Desert,https://arcanumsanctorum.com/products/citadel-layer-paint-zamesi-desert-12ml,47160014078225,citadel-layer-paint-zamesi-desert-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Warboss Green,https://arcanumsanctorum.com/products/citadel-layer-paint-warboss-green-12ml,47159961878801,citadel-layer-paint-warboss-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Catachan Flesh,https://arcanumsanctorum.com/products/citadel-base-paint-catachan-flesh-12ml,47158586343697,citadel-base-paint-catachan-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Flayed One Flesh,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-flayed-one-12ml,48225507672337,citadel-colour-layer-paint-flayed-one-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Tau Light Ochre,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-tau-light-ochre-12ml,48225402421521,citadel-colour-layer-paint-tau-light-ochre-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Elysian Green,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-elysian-green-12ml,48225024016657,citadel-colour-layer-paint-elysian-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Ahriman Blue,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-ahriman-blue-12ml,48214734209297,citadel-colour-layer-paint-ahriman-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Baneblade Brown,https://arcanumsanctorum.com/products/citadel-layer-paint-baneblade-brown12ml,47228250685713,citadel-layer-paint-baneblade-brown12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Alaitoc Blue,https://arcanumsanctorum.com/products/citadel-layer-paint-alaitoc-blue-12ml,47228004794641,citadel-layer-paint-alaitoc-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Caledor Sky,https://arcanumsanctorum.com/products/citadel-base-paint-caledor-sky-12ml,47158334587153,citadel-base-paint-caledor-sky-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Gorthor Brown,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-gorthor-brown-12ml,48225569374481,citadel-colour-layer-paint-gorthor-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Skarsnik Green,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-skarsnik-green-12ml,48225037648145,citadel-colour-layer-paint-skarsnik-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Base: Ratskin Flesh,https://arcanumsanctorum.com/products/citadel-colour-base-paint-ratskin-flesh-12ml,48214228631825,citadel-colour-base-paint-ratskin-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Knight-Questor Flesh,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-knight-questor-flesh-12ml,48225086341393,citadel-colour-layer-paint-knight-questor-flesh-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Straken Green,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-straken-green-12ml,48225030701329,citadel-colour-layer-paint-straken-green-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Skavenblight Dinge,https://arcanumsanctorum.com/products/citadel-layer-paint-skavenblight-dinge12ml,47227237237009,citadel-layer-paint-skavenblight-dinge12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Nurgling Green,https://arcanumsanctorum.com/products/citadel-layer-paint-nurgleing-green12ml,47160465948945,citadel-layer-paint-nurgleing-green12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Loren Forest,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-loren-forest-12ml,48225031979281,citadel-colour-layer-paint-loren-forest-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Altdorf Guard Blue,https://arcanumsanctorum.com/products/citadel-colour-layer-paint-altdorf-guard-blue-12ml,48214698557713,citadel-colour-layer-paint-altdorf-guard-blue-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Deathclaw Brown,https://arcanumsanctorum.com/products/citadel-layer-paint-deathclaw-brown-12ml,47155668156689,citadel-layer-paint-deathclaw-brown-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Lugganath Orange,https://arcanumsanctorum.com/products/citadel-layer-paint-lugganath-orange-12ml,47159444013329,citadel-layer-paint-lugganath-orange-12ml,False,2026-10-19
+the_arcanum_sanctorum,Layer: Dark Reaper,https://arcanumsanctorum.com/products/citadel-colour-spray-paint-white-scar,50937161679121,citadel-colour-spray-paint-white-scar,False,2026-10-19
+armada_games,Base: Abaddon Black,https://armadagames.com/products/base-abaddon-black-12ml,12380395470897,base-abaddon-black-12ml,False,2026-10-19
+armada_games,Base: Averland Sunset,https://armadagames.com/products/base-averland-sunset-12ml,12380394684465,base-averland-sunset-12ml,False,2026-10-19
+armada_games,Base: Balthasar Gold,https://armadagames.com/products/base-balthasar-gold-12ml,12380395601969,base-balthasar-gold-12ml,False,2026-10-19
+armada_games,Base: Barak-Nar Burgundy,https://armadagames.com/products/base-barak-nar-burgundy-12ml,15656831713329,base-barak-nar-burgundy-12ml,False,2026-10-19
+armada_games,Base: Bugman's Glow,https://armadagames.com/products/base-bugmans-glow-12ml,12380395241521,base-bugmans-glow-12ml,False,2026-10-19
+armada_games,Base: Caledor Sky,https://armadagames.com/products/base-caledor-sky-12ml,12380394946609,base-caledor-sky-12ml,False,2026-10-19
+armada_games,Base: Caliban Green,https://armadagames.com/products/base-caliban-green-12ml,12380395044913,base-caliban-green-12ml,False,2026-10-19
+armada_games,Base: Castellan Green,https://armadagames.com/products/base-castellan-green-12ml,12380395110449,base-castellan-green-12ml,False,2026-10-19
+armada_games,Base: Celestra Grey,https://armadagames.com/products/base-celestra-grey-12ml,12380395503665,base-celestra-grey-12ml,False,2026-10-19
+armada_games,Base: Corax White,https://armadagames.com/products/base-corax-white-12ml,15656837349425,base-corax-white-12ml,False,2026-10-19
+armada_games,Base: Corvus Black,https://armadagames.com/products/base-corvus-black-12ml,15656845115441,base-corvus-black-12ml,False,2026-10-19
+armada_games,Base: Daemonette Hide,https://armadagames.com/products/base-daemonette-hide-12ml,12380394848305,base-daemonette-hide-12ml,False,2026-10-19
+armada_games,Base: Death Guard Green,https://armadagames.com/products/base-death-guard-green-12ml,12380395864113,base-death-guard-green-12ml,False,2026-10-19
+armada_games,Base: Death Korps Drab,https://armadagames.com/products/base-death-korps-drab-12ml,15656847278129,base-death-korps-drab-12ml,False,2026-10-19
+armada_games,Base: Deathworld Forest,https://armadagames.com/products/base-deathworld-forest-12ml,12380395143217,base-deathworld-forest-12ml,False,2026-10-19
+armada_games,Base: Dryad Bark,https://armadagames.com/products/base-dryad-bark-12ml,12380395405361,base-dryad-bark-12ml,False,2026-10-19
+armada_games,Base: Gal Vorbak Red,https://armadagames.com/products/base-gal-vorbak-red-12ml,15656820211761,base-gal-vorbak-red-12ml,False,2026-10-19
+armada_games,Base: Grey Knights Steel,https://armadagames.com/products/base-grey-knights-steel-12ml,15656850030641,base-grey-knights-steel-12ml,False,2026-10-19
+armada_games,Base: Hobgrot Hide,https://armadagames.com/products/base-hobgrot-hide-12ml,39843215376518,base-hobgrot-hide-12ml,False,2026-10-19
+armada_games,Base: Incubi Darkness,https://armadagames.com/products/base-incubi-darkness-12ml,12380395012145,base-incubi-darkness-12ml,False,2026-10-19
+armada_games,Base: Ionrach Skin,https://armadagames.com/products/base-ionrach-skin-12ml,12380395896881,base-ionrach-skin-12ml,False,2026-10-19
+armada_games,Base: Iron Hands Steel,https://armadagames.com/products/base-iron-hands-steel-12ml,15656855699505,base-iron-hands-steel-12ml,False,2026-10-19
+armada_games,Base: Iron Warriors,https://armadagames.com/products/base-iron-warriors-12ml,15656857567281,base-iron-warriors-12ml,False,2026-10-19
+armada_games,Base: Jokaero Orange,https://armadagames.com/products/base-jokaero-orange-12ml,12380394717233,base-jokaero-orange-12ml,False,2026-10-19
+armada_games,Base: Kantor Blue,https://armadagames.com/products/base-kantor-blue-12ml,12380394881073,base-kantor-blue-12ml,False,2026-10-19
+armada_games,Base: Khorne Red,https://armadagames.com/products/base-khorne-red-12ml,12380394782769,base-khorne-red-12ml,False,2026-10-19
+armada_games,Base: Leadbelcher,https://armadagames.com/products/base-leadbelcher-12ml,12380395569201,base-leadbelcher-12ml,False,2026-10-19
+armada_games,Base: Macragge Blue,https://armadagames.com/products/base-macragge-blue-12ml,12380394913841,base-macragge-blue-12ml,False,2026-10-19
+armada_games,Base: Mechanicus Standard Grey,https://armadagames.com/products/base-mechanicus-standard-grey-12ml,12380395438129,base-mechanicus-standard-grey-12ml,False,2026-10-19
+armada_games,Base: Mephiston Red,https://armadagames.com/products/base-mephiston-red-12ml,12380394750001,base-mephiston-red-12ml,False,2026-10-19
+armada_games,Base: Morghast Bone,https://armadagames.com/products/base-morghast-bone-12ml,15656865366065,base-morghast-bone-12ml,False,2026-10-19
+armada_games,Base: Mournfang Brown,https://armadagames.com/products/base-mournfang-brown-12ml,12380395307057,base-mournfang-brown-12ml,False,2026-10-19
+armada_games,Base: Naggaroth Night,https://armadagames.com/products/base-naggaroth-night-12ml,12380394815537,base-naggaroth-night-12ml,False,2026-10-19
+armada_games,Base: Night Lords Blue,https://armadagames.com/products/base-night-lords-blue-12ml,15656867430449,base-night-lords-blue-12ml,False,2026-10-19
+armada_games,Base: Nocturne Green,https://armadagames.com/products/base-nocturne-green-12ml,15656870412337,base-nocturne-green-12ml,False,2026-10-19
+armada_games,Base: Orruk Flesh,https://armadagames.com/products/base-orruk-flesh-12ml,39843216883846,base-orruk-flesh-12ml,False,2026-10-19
+armada_games,Base: Phoenician Purple,https://armadagames.com/products/base-phoenician-purple-12ml,15656874311729,base-phoenician-purple-12ml,False,2026-10-19
+armada_games,Base: Rakarth Flesh,https://armadagames.com/products/base-rakarth-flesh-12ml,12380395536433,base-rakarth-flesh-12ml,False,2026-10-19
+armada_games,Base: Ratskin Flesh,https://armadagames.com/products/base-ratskin-flesh-12ml,12380395274289,base-ratskin-flesh-12ml,False,2026-10-19
+armada_games,Base: Retributor Armour,https://armadagames.com/products/base-retributor-armour-12ml,12380395798577,base-retributor-armour-12ml,False,2026-10-19
+armada_games,Base: Rhinox Hide,https://armadagames.com/products/base-rhinox-hide-12ml,12380395372593,base-rhinox-hide-12ml,False,2026-10-19
+armada_games,Base: Runelord Brass,https://armadagames.com/products/base-runelord-brass-12ml,31822441513094,base-runelord-brass-12ml,False,2026-10-19
+armada_games,Base: Screamer Pink,https://armadagames.com/products/base-screamer-pink-12ml,12380395733041,base-screamer-pink-12ml,False,2026-10-19
+armada_games,Base: Screaming Bell,https://armadagames.com/products/base-screaming-bell-12ml,12380395634737,base-screaming-bell-12ml,False,2026-10-19
+armada_games,Base: Steel Legion Drab,https://armadagames.com/products/base-steel-legion-drab-12ml,12380395208753,base-steel-legion-drab-12ml,False,2026-10-19
+armada_games,Base: Stegadon Scale Green,https://armadagames.com/products/base-stegadon-scale-green-12ml,12380394979377,base-stegadon-scale-green-12ml,False,2026-10-19
+armada_games,Base: The Fang,https://armadagames.com/products/base-the-fang-12ml,12380395700273,base-the-fang-12ml,False,2026-10-19
+armada_games,Base: Thondia Brown,https://armadagames.com/products/base-thondia-brown-12ml,39843217309830,base-thondia-brown-12ml,False,2026-10-19
+armada_games,Base: Thousand Sons Blue,https://armadagames.com/products/base-thousand-sons-blue-12ml,12380395831345,base-thousand-sons-blue-12ml,False,2026-10-19
+armada_games,Base: Waaagh! Flesh,https://armadagames.com/products/base-waaagh-flesh-12ml,12380395077681,base-waaagh-flesh-12ml,False,2026-10-19
+armada_games,Base: Warplock Bronze,https://armadagames.com/products/base-warplock-bronze-12ml,12380395667505,base-warplock-bronze-12ml,False,2026-10-19
+armada_games,Base: Wraithbone,https://armadagames.com/products/base-wraithbone-12ml,15656876146737,base-wraithbone-12ml,False,2026-10-19
+armada_games,Base: XV-88,https://armadagames.com/products/base-xv-88-12ml,12380395339825,base-xv-88-12ml,False,2026-10-19
+armada_games,Base: Zandri Dust,https://armadagames.com/products/base-zandri-dust-12ml,12380395175985,base-zandri-dust-12ml,False,2026-10-19
+armada_games,Layer: Administratum Grey,https://armadagames.com/products/layer-administratum-grey-12ml,12380397535281,layer-administratum-grey-12ml,False,2026-10-19
+armada_games,Layer: Ahriman Blue,https://armadagames.com/products/layer-ahriman-blue-12ml,12380398387249,layer-ahriman-blue-12ml,False,2026-10-19
+armada_games,Layer: Alaitoc Blue,https://armadagames.com/products/layer-alaitoc-blue-12ml,12380396322865,layer-alaitoc-blue-12ml,False,2026-10-19
+armada_games,Layer: Altdorf Guard Blue,https://armadagames.com/products/layer-altdorf-guard-blue-12ml,12380396388401,layer-altdorf-guard-blue-12ml,False,2026-10-19
+armada_games,Layer: Auric Armour Gold,https://armadagames.com/products/layer-auric-armour-gold-12ml,12380397928497,layer-auric-armour-gold-12ml,False,2026-10-19
+armada_games,Layer: Baharroth Blue,https://armadagames.com/products/layer-baharoth-blue-12ml,31299137405062,layer-baharoth-blue-12ml,False,2026-10-19
+armada_games,Layer: Balor Brown,https://armadagames.com/products/layer-balor-brown-12ml,12380397305905,layer-balor-brown-12ml,False,2026-10-19
+armada_games,Layer: Baneblade Brown,https://armadagames.com/products/layer-baneblade-brown-12ml,12380397469745,layer-baneblade-brown-12ml,False,2026-10-19
+armada_games,Layer: Bestigor Flesh,https://armadagames.com/products/layer-bestigor-flesh-12ml,12380397142065,layer-bestigor-flesh-12ml,False,2026-10-19
+armada_games,Layer: Bloodreaver Flesh,https://armadagames.com/products/layer-bloodreaver-flesh-12ml,31299138289798,layer-bloodreaver-flesh-12ml,False,2026-10-19
+armada_games,Layer: Blue Horror,https://armadagames.com/products/layer-blue-horror-12ml,31299138715782,layer-blue-horror-12ml,False,2026-10-19
+armada_games,Layer: Brass Scorpion,https://armadagames.com/products/layer-brass-scorpion-12ml,12380398026801,layer-brass-scorpion-12ml,False,2026-10-19
+armada_games,Layer: Cadian Fleshtone,https://armadagames.com/products/layer-cadian-fleshtone-12ml,12380397076529,layer-cadian-fleshtone-12ml,False,2026-10-19
+armada_games,Layer: Calgar Blue,https://armadagames.com/products/layer-calgar-blue-12ml,12380396421169,layer-calgar-blue-12ml,False,2026-10-19
+armada_games,Layer: Canoptek Alloy,https://armadagames.com/products/layer-canoptek-alloy-12ml,31822441971846,layer-canoptek-alloy-12ml,False,2026-10-19
+armada_games,Layer: Castellax Bronze,https://armadagames.com/products/layer-castellax-bronze-12ml,31299138814086,layer-castellax-bronze-12ml,False,2026-10-19
+armada_games,Layer: Dark Reaper,https://armadagames.com/products/layer-dark-reaper-12ml,12380397600817,layer-dark-reaper-12ml,False,2026-10-19
+armada_games,Layer: Dawnstone,https://armadagames.com/products/layer-dawnstone-12ml,12380397502513,layer-dawnstone-12ml,False,2026-10-19
+armada_games,Layer: Deathclaw Brown,https://armadagames.com/products/layer-deathclaw-brown-12ml,12380397240369,layer-deathclaw-brown-12ml,False,2026-10-19
+armada_games,Layer: Dechala Lilac,https://armadagames.com/products/layer-dechala-lilac-12ml,31299138846854,layer-dechala-lilac-12ml,False,2026-10-19
+armada_games,Layer: Deepkin Flesh,https://armadagames.com/products/layer-deepkin-flesh-12ml,12380398420017,layer-deepkin-flesh-12ml,False,2026-10-19
+armada_games,Layer: Doombull Brown,https://armadagames.com/products/layer-doombull-brown-12ml,12380397371441,layer-doombull-brown-12ml,False,2026-10-19
+armada_games,Layer: Dorn Yellow,https://armadagames.com/products/layer-dorn-yellow-12ml,31299138945158,layer-dorn-yellow-12ml,False,2026-10-19
+armada_games,Layer: Elysian Green,https://armadagames.com/products/layer-elysian-green-12ml,12380396879921,layer-elysian-green-12ml,False,2026-10-19
+armada_games,Layer: Emperor's Children,https://armadagames.com/products/layer-emperors-children-12ml,12380398190641,layer-emperors-children-12ml,False,2026-10-19
+armada_games,Layer: Eshin Grey,https://armadagames.com/products/layer-eshin-grey-12ml,12380397568049,layer-eshin-grey-12ml,False,2026-10-19
+armada_games,Layer: Evil Sunz Scarlet,https://armadagames.com/products/layer-evil-sunz-scarlet-12ml,12380396060721,layer-evil-sunz-scarlet-12ml,False,2026-10-19
+armada_games,Layer: Fenrisian Grey,https://armadagames.com/products/layer-fenrisian-grey-12ml,12380398125105,layer-fenrisian-grey-12ml,False,2026-10-19
+armada_games,Layer: Fire Dragon Bright,https://armadagames.com/products/layer-fire-dragon-bright-12ml,12380396027953,layer-fire-dragon-bright-12ml,False,2026-10-19
+armada_games,Layer: Flash Gitz Yellow,https://armadagames.com/products/layer-flash-gitz-yellow-12ml,12380395962417,layer-flash-gitz-yellow-12ml,False,2026-10-19
+armada_games,Layer: Flayed One Flesh,https://armadagames.com/products/layer-flayed-one-flesh-12ml,12380398256177,layer-flayed-one-flesh-12ml,False,2026-10-19
+armada_games,Layer: Fulgrim Pink,https://armadagames.com/products/layer-fulgrim-pink-12ml,31299139043462,layer-fulgrim-pink-12ml,False,2026-10-19
+armada_games,Layer: Fulgurite Copper,https://armadagames.com/products/layer-fulgurite-copper-12ml,12380398321713,layer-fulgurite-copper-12ml,False,2026-10-19
+armada_games,Layer: Gauss Blaster Green,https://armadagames.com/products/layer-gauss-blaster-green-12ml,31299140944006,layer-gauss-blaster-green-12ml,False,2026-10-19
+armada_games,Layer: Gehenna's Gold,https://armadagames.com/products/layer-gehennas-gold-12ml,12380397895729,layer-gehennas-gold-12ml,False,2026-10-19
+armada_games,Layer: Genestealer Purple,https://armadagames.com/products/layer-genestealer-purple-12ml,12380396224561,layer-genestealer-purple-12ml,False,2026-10-19
+armada_games,Layer: Gorthor Brown,https://armadagames.com/products/layer-gorthor-brown-12ml,12380397436977,layer-gorthor-brown-12ml,False,2026-10-19
+armada_games,Layer: Hashut Copper,https://armadagames.com/products/layer-hashut-copper-12ml,12380397961265,layer-hashut-copper-12ml,False,2026-10-19
+armada_games,Layer: Hoeth Blue,https://armadagames.com/products/layer-hoeth-blue-12ml,12380396355633,layer-hoeth-blue-12ml,False,2026-10-19
+armada_games,Layer: Ironbreaker,https://armadagames.com/products/layer-ironbreaker-12ml,12380397830193,layer-ironbreaker-12ml,False,2026-10-19
+armada_games,Layer: Kabalite Green,https://armadagames.com/products/layer-kabalite-green-12ml,12380396585009,layer-kabalite-green-12ml,False,2026-10-19
+armada_games,Layer: Kakophoni Purple,https://armadagames.com/products/layer-kakophoni-purple-12ml,31299141697670,layer-kakophoni-purple-12ml,False,2026-10-19
+armada_games,Layer: Karak Stone,https://armadagames.com/products/layer-karak-stone-12ml,12380397043761,layer-karak-stone-12ml,False,2026-10-19
+armada_games,Layer: Kislev Flesh,https://armadagames.com/products/layer-kislev-flesh-12ml,12380397109297,layer-kislev-flesh-12ml,False,2026-10-19
+armada_games,Layer: Knight-Questor Flesh,https://armadagames.com/products/layer-knight-questor-flesh-12ml,31299142418566,layer-knight-questor-flesh-12ml,False,2026-10-19
+armada_games,Layer: Krieg Khaki,https://armadagames.com/products/layer-krieg-khaki-12ml,31299142811782,layer-krieg-khaki-12ml,False,2026-10-19
+armada_games,Layer: Liberator Gold,https://armadagames.com/products/layer-liberator-gold-12ml,12380398223409,layer-liberator-gold-12ml,False,2026-10-19
+armada_games,Layer: Loren Forest,https://armadagames.com/products/layer-loren-forest-12ml,12380396781617,layer-loren-forest-12ml,False,2026-10-19
+armada_games,Layer: Lothern Blue,https://armadagames.com/products/layer-lothern-blue-12ml,12380396486705,layer-lothern-blue-12ml,False,2026-10-19
+armada_games,Layer: Lugganath Orange,https://armadagames.com/products/layer-lugganath-orange-12ml,31299142975622,layer-lugganath-orange-12ml,False,2026-10-19
+armada_games,Layer: Moot Green,https://armadagames.com/products/layer-moot-green-12ml,12380396683313,layer-moot-green-12ml,False,2026-10-19
+armada_games,Layer: Nurgling Green,https://armadagames.com/products/layer-nurgling-green-12ml,12380396847153,layer-nurgling-green-12ml,False,2026-10-19
+armada_games,Layer: Ogryn Camo,https://armadagames.com/products/layer-ogryn-camo-12ml,12380396912689,layer-ogryn-camo-12ml,False,2026-10-19
+armada_games,Layer: Pallid Wych Flesh,https://armadagames.com/products/layer-pallid-wych-flesh-12ml,12380397797425,layer-pallid-wych-flesh-12ml,False,2026-10-19
+armada_games,Layer: Phalanx Yellow,https://armadagames.com/products/layer-phalanx-yellow-12ml,31299143139462,layer-phalanx-yellow-12ml,False,2026-10-19
+armada_games,Layer: Pink Horror,https://armadagames.com/products/layer-pink-horror-12ml,12380398157873,layer-pink-horror-12ml,False,2026-10-19
+armada_games,Layer: Runefang Steel,https://armadagames.com/products/layer-runefang-steel-12ml,12380397862961,layer-runefang-steel-12ml,False,2026-10-19
+armada_games,Layer: Russ Grey,https://armadagames.com/products/layer-russ-grey-12ml,12380398092337,layer-russ-grey-12ml,False,2026-10-19
+armada_games,Layer: Screaming Skull,https://armadagames.com/products/layer-screaming-skull-12ml,12380396978225,layer-screaming-skull-12ml,False,2026-10-19
+armada_games,Layer: Skarsnik Green,https://armadagames.com/products/layer-skarsnik-green-12ml,12380396748849,layer-skarsnik-green-12ml,False,2026-10-19
+armada_games,Layer: Skavenblight Dinge,https://armadagames.com/products/layer-skavenblight-dinge-12ml,12380397666353,layer-skavenblight-dinge-12ml,False,2026-10-19
+armada_games,Layer: Skrag Brown,https://armadagames.com/products/layer-skrag-brown-12ml,12380397207601,layer-skrag-brown-12ml,False,2026-10-19
+armada_games,Layer: Skullcrusher Brass,https://armadagames.com/products/layer-skullcrusher-brass-12ml,12380398288945,layer-skullcrusher-brass-12ml,False,2026-10-19
+armada_games,Layer: Slaanesh Grey,https://armadagames.com/products/layer-slaanesh-grey-12ml,12380396290097,layer-slaanesh-grey-12ml,False,2026-10-19
+armada_games,Layer: Sons of Horus Green,https://armadagames.com/products/layer-sons-of-horus-green-12ml,31299143270534,layer-sons-of-horus-green-12ml,False,2026-10-19
+armada_games,Layer: Sotek Green,https://armadagames.com/products/layer-sotek-green-12ml,12380396519473,layer-sotek-green-12ml,False,2026-10-19
+armada_games,Layer: Squig Orange,https://armadagames.com/products/layer-squig-orange-12ml,12380396159025,layer-squig-orange-12ml,False,2026-10-19
+armada_games,Layer: Stormhost Silver,https://armadagames.com/products/layer-stormhost-silver-12ml,12380398354481,layer-stormhost-silver-12ml,False,2026-10-19
+armada_games,Layer: Stormvermin Fur,https://armadagames.com/products/layer-stormvermin-fur-12ml,12380397699121,layer-stormvermin-fur-12ml,False,2026-10-19
+armada_games,Layer: Straken Green,https://armadagames.com/products/layer-straken-green-12ml,12380396814385,layer-straken-green-12ml,False,2026-10-19
+armada_games,Layer: Sybarite Green,https://armadagames.com/products/layer-sybarite-green-12ml,12380396617777,layer-sybarite-green-12ml,False,2026-10-19
+armada_games,Layer: Sycorax Bronze,https://armadagames.com/products/layer-sycorax-bronze-12ml,12380397994033,layer-sycorax-bronze-12ml,False,2026-10-19
+armada_games,Layer: Tallarn Sand,https://armadagames.com/products/layer-tallarn-sand-12ml,12380397010993,layer-tallarn-sand-12ml,False,2026-10-19
+armada_games,Layer: Tau Light Ochre,https://armadagames.com/products/layer-tau-light-ochre-12ml,12380397273137,layer-tau-light-ochre-12ml,False,2026-10-19
+armada_games,Layer: Teclis Blue,https://armadagames.com/products/layer-teclis-blue-12ml,12380396453937,layer-teclis-blue-12ml,False,2026-10-19
+armada_games,Layer: Temple Guard Blue,https://armadagames.com/products/layer-temple-guard-blue-12ml,12380396552241,layer-temple-guard-blue-12ml,False,2026-10-19
+armada_games,Layer: Thunderhawk Blue,https://armadagames.com/products/layer-thunderhawk-blue-12ml,12380397633585,layer-thunderhawk-blue-12ml,False,2026-10-19
+armada_games,Layer: Troll Slayer Orange,https://armadagames.com/products/layer-troll-slayer-orange-12ml,12380395995185,layer-troll-slayer-orange-12ml,False,2026-10-19
+armada_games,Layer: Tuskgor Fur,https://armadagames.com/products/layer-tuskgor-fur-12ml,12380397404209,layer-tuskgor-fur-12ml,False,2026-10-19
+armada_games,Layer: Ulthuan Grey,https://armadagames.com/products/layer-ulthuan-grey-12ml,12380397731889,layer-ulthuan-grey-12ml,False,2026-10-19
+armada_games,Layer: Ungor Flesh,https://armadagames.com/products/layer-ungor-flesh-12ml,12380397174833,layer-ungor-flesh-12ml,False,2026-10-19
+armada_games,Layer: Ushabti Bone,https://armadagames.com/products/layer-ushabti-bone-12ml,12380396945457,layer-ushabti-bone-12ml,False,2026-10-19
+armada_games,Layer: Vulkan Green,https://armadagames.com/products/layer-vulkan-green-12ml,31299143467142,layer-vulkan-green-12ml,False,2026-10-19
+armada_games,Layer: Warboss Green,https://armadagames.com/products/layer-warboss-green-12ml,12380396716081,layer-warboss-green-12ml,False,2026-10-19
+armada_games,Layer: Warpfiend Grey,https://armadagames.com/products/layer-warpfiend-grey-12ml,12380396257329,layer-warpfiend-grey-12ml,False,2026-10-19
+armada_games,Layer: Warpstone Glow,https://armadagames.com/products/layer-warpstone-glow-12ml,12380396650545,layer-warpstone-glow-12ml,False,2026-10-19
+armada_games,Layer: Wazdakka Red,https://armadagames.com/products/layer-wazdakka-red-12ml,12380396126257,layer-wazdakka-red-12ml,False,2026-10-19
+armada_games,Layer: White Scar,https://armadagames.com/products/layer-white-scar-12ml,12380397764657,layer-white-scar-12ml,False,2026-10-19
+armada_games,Layer: Wild Rider Red,https://armadagames.com/products/layer-wild-rider-red-12ml,12380396093489,layer-wild-rider-red-12ml,False,2026-10-19
+armada_games,Layer: Word Bearers Red,https://armadagames.com/products/layer-word-bearers-red-12ml,31299143630982,layer-word-bearers-red-12ml,False,2026-10-19
+armada_games,Layer: Xereus Purple,https://armadagames.com/products/layer-xereus-purple-12ml,12380396191793,layer-xereus-purple-12ml,False,2026-10-19
+armada_games,Layer: Yriel Yellow,https://armadagames.com/products/layer-yriel-yellow-12ml,12380395929649,layer-yriel-yellow-12ml,False,2026-10-19
+armada_games,Layer: Zamesi Desert,https://armadagames.com/products/layer-zamesi-desert-12ml,12380397338673,layer-zamesi-desert-12ml,False,2026-10-19
+armada_games,Tech Pro: Blending Medium,https://armadagames.com/products/warhammer-tone-pro-blending-medium,44402372542598,warhammer-tone-pro-blending-medium,False,2026-10-19
+armada_games,Tech Pro: Shading Medium,https://armadagames.com/products/warhammer-tone-pro-shading-medium,44402371887238,warhammer-tone-pro-shading-medium,False,2026-10-19
+armada_games,Tone Pro: Blackstone Void 1,https://armadagames.com/products/warhammer-tone-pro-blackstone-void-1,44402323259526,warhammer-tone-pro-blackstone-void-1,False,2026-10-19
+armada_games,Tone Pro: Blackstone Void 2,https://armadagames.com/products/warhammer-tone-pro-blackstone-void-2,67642190594182,warhammer-tone-pro-blackstone-void-2,False,2026-10-19
+armada_games,Tone Pro: Blackstone Void 3,https://armadagames.com/products/warhammer-tone-pro-blackstone-void-3,67642191741062,warhammer-tone-pro-blackstone-void-3,False,2026-10-19
+armada_games,Tone Pro: Blackstone Void 4,https://armadagames.com/products/warhammer-tone-pro-blackstone-void-4,67642191806598,warhammer-tone-pro-blackstone-void-4,False,2026-10-19
+armada_games,Tone Pro: Blackstone Void 5,https://armadagames.com/products/warhammer-tone-pro-blackstone-void-5,67642192068742,warhammer-tone-pro-blackstone-void-5,False,2026-10-19
+armada_games,Tone Pro: Bloodtoof Red 1,https://armadagames.com/products/warhammer-tone-pro-bloodtoof-red-1,44401319641222,warhammer-tone-pro-bloodtoof-red-1,False,2026-10-19
+armada_games,Tone Pro: Bloodtoof Red 2,https://armadagames.com/products/warhammer-tone-pro-bloodtoof-red-2,67642193674374,warhammer-tone-pro-bloodtoof-red-2,False,2026-10-19
+armada_games,Tone Pro: Bloodtoof Red 3,https://armadagames.com/products/warhammer-tone-pro-bloodtoof-red-3,67642193707142,warhammer-tone-pro-bloodtoof-red-3,False,2026-10-19
+armada_games,Tone Pro: Bloodtoof Red 4,https://armadagames.com/products/warhammer-tone-pro-bloodtoof-red-4,67642193805446,warhammer-tone-pro-bloodtoof-red-4,False,2026-10-19
+armada_games,Tone Pro: Bloodtoof Red 5,https://armadagames.com/products/warhammer-tone-pro-bloodtoof-red-5,67642193838214,warhammer-tone-pro-bloodtoof-red-5,False,2026-10-19
+armada_games,Tone Pro: Blue Gorkshroom 1,https://armadagames.com/products/warhammer-tone-pro-blue-gorkshroom-1,44402303959174,warhammer-tone-pro-blue-gorkshroom-1,False,2026-10-19
+armada_games,Tone Pro: Blue Gorkshroom 2,https://armadagames.com/products/warhammer-tone-pro-blue-gorkshroom-2,67642209403014,warhammer-tone-pro-blue-gorkshroom-2,False,2026-10-19
+armada_games,Tone Pro: Blue Gorkshroom 3,https://armadagames.com/products/warhammer-tone-pro-blue-gorkshroom-3,67642209468550,warhammer-tone-pro-blue-gorkshroom-3,False,2026-10-19
+armada_games,Tone Pro: Blue Gorkshroom 4,https://armadagames.com/products/warhammer-tone-pro-blue-gorkshroom-4,67642209534086,warhammer-tone-pro-blue-gorkshroom-4,False,2026-10-19
+armada_games,Tone Pro: Blue Gorkshroom 5,https://armadagames.com/products/warhammer-tone-pro-blue-gorkshroom-5,67642209566854,warhammer-tone-pro-blue-gorkshroom-5,False,2026-10-19
+armada_games,Tone Pro: Carmine Blades 1,https://armadagames.com/products/carmine-blades-1,44401318723718,carmine-blades-1,False,2026-10-19
+armada_games,Tone Pro: Carmine Blades 2,https://armadagames.com/products/warhammer-tone-pro-carmine-blades-2,67642210746502,warhammer-tone-pro-carmine-blades-2,False,2026-10-19
+armada_games,Tone Pro: Carmine Blades 3,https://armadagames.com/products/warhammer-tone-pro-carmine-blades-3,67642210812038,warhammer-tone-pro-carmine-blades-3,False,2026-10-19
+armada_games,Tone Pro: Carmine Blades 4,https://armadagames.com/products/warhammer-tone-pro-carmine-blades-4,67642210877574,warhammer-tone-pro-carmine-blades-4,False,2026-10-19
+armada_games,Tone Pro: Carmine Blades 5,https://armadagames.com/products/warhammer-tone-pro-carmine-blades-5,67642213105798,warhammer-tone-pro-carmine-blades-5,False,2026-10-19
+armada_games,Tone Pro: Carthalos Skin 1,https://armadagames.com/products/warhammer-tone-pro-carthalos-skin-1,44402317295750,warhammer-tone-pro-carthalos-skin-1,False,2026-10-19
+armada_games,Tone Pro: Carthalos Skin 2,https://armadagames.com/products/warhammer-tone-pro-carthalos-skin-2,67642213433478,warhammer-tone-pro-carthalos-skin-2,False,2026-10-19
+armada_games,Tone Pro: Carthalos Skin 3,https://armadagames.com/products/warhammer-tone-pro-carthalos-skin-3,67642213597318,warhammer-tone-pro-carthalos-skin-3,False,2026-10-19
+armada_games,Tone Pro: Carthalos Skin 4,https://armadagames.com/products/warhammer-tone-pro-carthalos-skin-4,67642214121606,warhammer-tone-pro-carthalos-skin-4,False,2026-10-19
+armada_games,Tone Pro: Carthalos Skin 5,https://armadagames.com/products/warhammer-tone-pro-carthalos-skin-5,67642214187142,warhammer-tone-pro-carthalos-skin-5,False,2026-10-19
+armada_games,Tone Pro: Celestine Skin 1,https://armadagames.com/products/warhammer-tone-pro-celestine-skin-1,44402319425670,warhammer-tone-pro-celestine-skin-1,False,2026-10-19
+armada_games,Tone Pro: Celestine Skin 2,https://armadagames.com/products/warhammer-tone-pro-celestine-skin-2,67642214416518,warhammer-tone-pro-celestine-skin-2,False,2026-10-19
+armada_games,Tone Pro: Celestine Skin 3,https://armadagames.com/products/warhammer-tone-pro-celestine-skin-3,67642214449286,warhammer-tone-pro-celestine-skin-3,False,2026-10-19
+armada_games,Tone Pro: Celestine Skin 4,https://armadagames.com/products/warhammer-tone-pro-celestine-skin-4,67642214580358,warhammer-tone-pro-celestine-skin-4,False,2026-10-19
+armada_games,Tone Pro: Celestine Skin 5,https://armadagames.com/products/warhammer-tone-pro-celestine-skin-5,67642214875270,warhammer-tone-pro-celestine-skin-5,False,2026-10-19
+armada_games,Tone Pro: Chotec Orange 1,https://armadagames.com/products/warhammer-tone-pro-chotec-orange-1,44401319772294,warhammer-tone-pro-chotec-orange-1,False,2026-10-19
+armada_games,Tone Pro: Chotec Orange 2,https://armadagames.com/products/warhammer-tone-pro-chotec-orange-2,67642215235718,warhammer-tone-pro-chotec-orange-2,False,2026-10-19
+armada_games,Tone Pro: Chotec Orange 3,https://armadagames.com/products/warhammer-tone-pro-chotec-orange-3,67642215268486,warhammer-tone-pro-chotec-orange-3,False,2026-10-19
+armada_games,Tone Pro: Chotec Orange 4,https://armadagames.com/products/warhammer-tone-pro-chotec-orange-4,67642215301254,warhammer-tone-pro-chotec-orange-4,False,2026-10-19
+armada_games,Tone Pro: Chotec Orange 5,https://armadagames.com/products/warhammer-tone-pro-chotec-orange-5,67642215727238,warhammer-tone-pro-chotec-orange-5,False,2026-10-19
+armada_games,Tone Pro: Craventhrone Cloak 1,https://armadagames.com/products/warhammer-tone-pro-craventhrone-cloak-1,44402302779526,warhammer-tone-pro-craventhrone-cloak-1,False,2026-10-19
+armada_games,Tone Pro: Craventhrone Cloak 2,https://armadagames.com/products/warhammer-tone-pro-craventhrone-cloak-2,67642250526854,warhammer-tone-pro-craventhrone-cloak-2,False,2026-10-19
+armada_games,Tone Pro: Craventhrone Cloak 3,https://armadagames.com/products/warhammer-tone-pro-craventhrone-cloak-3,67642250690694,warhammer-tone-pro-craventhrone-cloak-3,False,2026-10-19
+armada_games,Tone Pro: Craventhrone Cloak 4,https://armadagames.com/products/warhammer-tone-pro-craventhrone-cloak-4,67642250723462,warhammer-tone-pro-craventhrone-cloak-4,False,2026-10-19
+armada_games,Tone Pro: Craventhrone Cloak 5,https://armadagames.com/products/warhammer-tone-pro-craventhrone-cloak-5,67642250756230,warhammer-tone-pro-craventhrone-cloak-5,False,2026-10-19
+armada_games,Tone Pro: Dataslate Grey 1,https://armadagames.com/products/warhammer-tone-pro-dataslate-grey-1,44402322243718,warhammer-tone-pro-dataslate-grey-1,False,2026-10-19
+armada_games,Tone Pro: Dataslate Grey 2,https://armadagames.com/products/warhammer-tone-pro-dataslate-grey-2,67642250821766,warhammer-tone-pro-dataslate-grey-2,False,2026-10-19
+armada_games,Tone Pro: Dataslate Grey 3,https://armadagames.com/products/warhammer-tone-pro-dataslate-grey-3,67642250985606,warhammer-tone-pro-dataslate-grey-3,False,2026-10-19
+armada_games,Tone Pro: Dataslate Grey 4,https://armadagames.com/products/warhammer-tone-pro-dataslate-grey-4,67642251739270,warhammer-tone-pro-dataslate-grey-4,False,2026-10-19
+armada_games,Tone Pro: Dataslate Grey 5,https://armadagames.com/products/warhammer-tone-pro-dataslate-grey-5,67642251870342,warhammer-tone-pro-dataslate-grey-5,False,2026-10-19
+armada_games,Tone Pro: Enrapturess Dusk 1,https://armadagames.com/products/warhammer-tone-pro-enrapturess-dusk-1,44402310152326,warhammer-tone-pro-enrapturess-dusk-1,False,2026-10-19
+armada_games,Tone Pro: Enrapturess Dusk 2,https://armadagames.com/products/warhammer-tone-pro-enrapturess-dusk-2,67642268156038,warhammer-tone-pro-enrapturess-dusk-2,False,2026-10-19
+armada_games,Tone Pro: Enrapturess Dusk 3,https://armadagames.com/products/warhammer-tone-pro-enrapturess-dusk-3,67642268582022,warhammer-tone-pro-enrapturess-dusk-3,False,2026-10-19
+armada_games,Tone Pro: Enrapturess Dusk 4,https://armadagames.com/products/warhammer-tone-pro-enrapturess-dusk-4,67642269466758,warhammer-tone-pro-enrapturess-dusk-4,False,2026-10-19
+armada_games,Tone Pro: Enrapturess Dusk 5,https://armadagames.com/products/warhammer-tone-pro-enrapturess-dusk-5,67642269991046,warhammer-tone-pro-enrapturess-dusk-5,False,2026-10-19
+armada_games,Tone Pro: Eye of Terror 1,https://armadagames.com/products/warhammer-tone-pro-eye-of-terror-1,44402314936454,warhammer-tone-pro-eye-of-terror-1,False,2026-10-19
+armada_games,Tone Pro: Eye of Terror 2,https://armadagames.com/products/warhammer-tone-pro-eye-of-terror-2,67642270285958,warhammer-tone-pro-eye-of-terror-2,False,2026-10-19
+armada_games,Tone Pro: Eye of Terror 3,https://armadagames.com/products/warhammer-tone-pro-eye-of-terror-3,67642270482566,warhammer-tone-pro-eye-of-terror-3,False,2026-10-19
+armada_games,Tone Pro: Eye of Terror 4,https://armadagames.com/products/warhammer-tone-pro-eye-of-terror-4,67642270548102,warhammer-tone-pro-eye-of-terror-4,False,2026-10-19
+armada_games,Tone Pro: Eye of Terror 5,https://armadagames.com/products/warhammer-tone-pro-eye-of-terror-5,67642271105158,warhammer-tone-pro-eye-of-terror-5,False,2026-10-19
+armada_games,Tone Pro: Gnarlwood 1,https://armadagames.com/products/warhammer-tone-pro-gnarlwood-1,44402320113798,warhammer-tone-pro-gnarlwood-1,False,2026-10-19
+armada_games,Tone Pro: Gnarlwood 2,https://armadagames.com/products/warhammer-tone-pro-gnarlwood-2,67642271432838,warhammer-tone-pro-gnarlwood-2,False,2026-10-19
+armada_games,Tone Pro: Gnarlwood 3,https://armadagames.com/products/warhammer-tone-pro-gnarlwood-3,67642271465606,warhammer-tone-pro-gnarlwood-3,False,2026-10-19
+armada_games,Tone Pro: Gnarlwood 4,https://armadagames.com/products/warhammer-tone-pro-gnarlwood-4,67642271498374,warhammer-tone-pro-gnarlwood-4,False,2026-10-19
+armada_games,Tone Pro: Gnarlwood 5,https://armadagames.com/products/warhammer-tone-pro-gnarlwood-5,67642271531142,warhammer-tone-pro-gnarlwood-5,False,2026-10-19
+armada_games,Tone Pro: Green Morkshroom 1,https://armadagames.com/products/warhammer-tone-pro-green-morkshroom-1,44402301698182,warhammer-tone-pro-green-morkshroom-1,False,2026-10-19
+armada_games,Tone Pro: Green Morkshroom 2,https://armadagames.com/products/warhammer-tone-pro-green-morkshroom-2,67642287030406,warhammer-tone-pro-green-morkshroom-2,False,2026-10-19
+armada_games,Tone Pro: Green Morkshroom 3,https://armadagames.com/products/warhammer-tone-pro-green-morkshroom-3,67642287227014,warhammer-tone-pro-green-morkshroom-3,False,2026-10-19
+armada_games,Tone Pro: Green Morkshroom 4,https://armadagames.com/products/warhammer-tone-pro-green-morkshroom-4,67642287259782,warhammer-tone-pro-green-morkshroom-4,False,2026-10-19
+armada_games,Tone Pro: Green Morkshroom 5,https://armadagames.com/products/warhammer-tone-pro-green-morkshroom-5,67642288013446,warhammer-tone-pro-green-morkshroom-5,False,2026-10-19
+armada_games,Tone Pro: Hawkshroud Yellow 1,https://armadagames.com/products/warhammer-tone-pro-hawkshroud-yellow-1,44401319903366,warhammer-tone-pro-hawkshroud-yellow-1,False,2026-10-19
+armada_games,Tone Pro: Hawkshroud Yellow 2,https://armadagames.com/products/warhammer-tone-pro-hawkshroud-yellow-2,67642716881030,warhammer-tone-pro-hawkshroud-yellow-2,False,2026-10-19
+armada_games,Tone Pro: Hawkshroud Yellow 3,https://armadagames.com/products/warhammer-tone-pro-hawkshroud-yellow-3,67642717044870,warhammer-tone-pro-hawkshroud-yellow-3,False,2026-10-19
+armada_games,Tone Pro: Hawkshroud Yellow 4,https://armadagames.com/products/warhammer-tone-pro-hawkshroud-yellow-4,67642717339782,warhammer-tone-pro-hawkshroud-yellow-4,False,2026-10-19
+armada_games,Tone Pro: Hawkshroud Yellow 5,https://armadagames.com/products/warhammer-tone-pro-hawkshroud-yellow-5,67642717601926,warhammer-tone-pro-hawkshroud-yellow-5,False,2026-10-19
+armada_games,Tone Pro: Hierotek Green 1,https://armadagames.com/products/warhammer-tone-pro-hierotek-green-1,44402301665414,warhammer-tone-pro-hierotek-green-1,False,2026-10-19
+armada_games,Tone Pro: Hierotek Green 2,https://armadagames.com/products/warhammer-tone-pro-hierotek-green-2,67642717896838,warhammer-tone-pro-hierotek-green-2,False,2026-10-19
+armada_games,Tone Pro: Hierotek Green 3,https://armadagames.com/products/warhammer-tone-pro-hierotek-green-3,67642718158982,warhammer-tone-pro-hierotek-green-3,False,2026-10-19
+armada_games,Tone Pro: Hierotek Green 4,https://armadagames.com/products/warhammer-tone-pro-hierotek-green-4,67642718421126,warhammer-tone-pro-hierotek-green-4,False,2026-10-19
+armada_games,Tone Pro: Hierotek Green 5,https://armadagames.com/products/warhammer-tone-pro-hierotek-green-5,67642718781574,warhammer-tone-pro-hierotek-green-5,False,2026-10-19
+armada_games,Tone Pro: Hive Fleet Purple 1,https://armadagames.com/products/warhammer-tone-pro-hive-fleet-purple-1,44402313363590,warhammer-tone-pro-hive-fleet-purple-1,False,2026-10-19
+armada_games,Tone Pro: Hive Fleet Purple 2,https://armadagames.com/products/warhammer-tone-pro-hive-fleet-purple-2,67642718945414,warhammer-tone-pro-hive-fleet-purple-2,False,2026-10-19
+armada_games,Tone Pro: Hive Fleet Purple 3,https://armadagames.com/products/warhammer-tone-pro-hive-fleet-purple-3,67642719043718,warhammer-tone-pro-hive-fleet-purple-3,False,2026-10-19
+armada_games,Tone Pro: Hive Fleet Purple 4,https://armadagames.com/products/warhammer-tone-pro-hive-fleet-purple-4,67642719142022,warhammer-tone-pro-hive-fleet-purple-4,False,2026-10-19
+armada_games,Tone Pro: Hive Fleet Purple 5,https://armadagames.com/products/warhammer-tone-pro-hive-fleet-purple-5,67642719240326,warhammer-tone-pro-hive-fleet-purple-5,False,2026-10-19
+armada_games,Tone Pro: Kasrkin Green 1,https://armadagames.com/products/warhammer-tone-pro-karskin-green-1,44402301632646,warhammer-tone-pro-karskin-green-1,False,2026-10-19
+armada_games,Tone Pro: Kasrkin Green 2,https://armadagames.com/products/warhammer-tone-pro-karskin-green-2,67642719404166,warhammer-tone-pro-karskin-green-2,False,2026-10-19
+armada_games,Tone Pro: Kasrkin Green 3,https://armadagames.com/products/warhammer-tone-pro-karskin-green-3,67642719535238,warhammer-tone-pro-karskin-green-3,False,2026-10-19
+armada_games,Tone Pro: Kasrkin Green 4,https://armadagames.com/products/warhammer-tone-pro-karskin-green-4,67642719600774,warhammer-tone-pro-karskin-green-4,False,2026-10-19
+armada_games,Tone Pro: Kasrkin Green 5,https://armadagames.com/products/warhammer-tone-pro-karskin-green-5,67642719764614,warhammer-tone-pro-karskin-green-5,False,2026-10-19
+armada_games,Tone Pro: Khemri Sands 1,https://armadagames.com/products/warhammer-tone-pro-khemri-sands-1,44401319870598,warhammer-tone-pro-khemri-sands-1,False,2026-10-19
+armada_games,Tone Pro: Khemri Sands 2,https://armadagames.com/products/warhammer-tone-pro-khemri-sands-2,67642719862918,warhammer-tone-pro-khemri-sands-2,False,2026-10-19
+armada_games,Tone Pro: Khemri Sands 3,https://armadagames.com/products/warhammer-tone-pro-khemri-sands-3,67642720190598,warhammer-tone-pro-khemri-sands-3,False,2026-10-19
+armada_games,Tone Pro: Khemri Sands 4,https://armadagames.com/products/warhammer-tone-pro-khemri-sands-4,67642720288902,warhammer-tone-pro-khemri-sands-4,False,2026-10-19
+armada_games,Tone Pro: Khemri Sands 5,https://armadagames.com/products/warhammer-tone-pro-khemri-sands-5,67642720649350,warhammer-tone-pro-khemri-sands-5,False,2026-10-19
+armada_games,Tone Pro: Kruleboyz Green 1,https://armadagames.com/products/warhammer-tone-pro-kruleboyz-green-1,44402301370502,warhammer-tone-pro-kruleboyz-green-1,False,2026-10-19
+armada_games,Tone Pro: Kruleboyz Green 2,https://armadagames.com/products/warhammer-tone-pro-kruleboyz-green-2,67642720813190,warhammer-tone-pro-kruleboyz-green-2,False,2026-10-19
+armada_games,Tone Pro: Kruleboyz Green 3,https://armadagames.com/products/warhammer-tone-pro-kruleboyz-green-3,67642721239174,warhammer-tone-pro-kruleboyz-green-3,False,2026-10-19
+armada_games,Tone Pro: Kruleboyz Green 4,https://armadagames.com/products/warhammer-tone-pro-kruleboyz-green-4,67642724188294,warhammer-tone-pro-kruleboyz-green-4,False,2026-10-19
+armada_games,Tone Pro: Kruleboyz Green 5,https://armadagames.com/products/warhammer-tone-pro-kruleboyz-green-5,67642724417670,warhammer-tone-pro-kruleboyz-green-5,False,2026-10-19
+armada_games,Tone Pro: Lustria Green 1,https://armadagames.com/products/warhammer-tone-pro-lustria-green-1,44402301567110,warhammer-tone-pro-lustria-green-1,False,2026-10-19
+armada_games,Tone Pro: Lustria Green 2,https://armadagames.com/products/warhammer-tone-pro-lustria-green-2,67642724810886,warhammer-tone-pro-lustria-green-2,False,2026-10-19
+armada_games,Tone Pro: Lustria Green 3,https://armadagames.com/products/warhammer-tone-pro-lustria-green-3,67642725007494,warhammer-tone-pro-lustria-green-3,False,2026-10-19
+armada_games,Tone Pro: Lustria Green 4,https://armadagames.com/products/warhammer-tone-pro-lustria-green-4,67642725302406,warhammer-tone-pro-lustria-green-4,False,2026-10-19
+armada_games,Tone Pro: Lustria Green 5,https://armadagames.com/products/warhammer-tone-pro-lustria-green-5,67642725531782,warhammer-tone-pro-lustria-green-5,False,2026-10-19
+armada_games,Tone Pro: Magnus the Red 1,https://armadagames.com/products/warhammer-tone-pro-magnus-the-red-1,44402313756806,warhammer-tone-pro-magnus-the-red-1,False,2026-10-19
+armada_games,Tone Pro: Magnus the Red 2,https://armadagames.com/products/warhammer-tone-pro-magnus-the-red-2,67642733461638,warhammer-tone-pro-magnus-the-red-2,False,2026-10-19
+armada_games,Tone Pro: Magnus the Red 3,https://armadagames.com/products/warhammer-tone-pro-magnus-the-red-3,67642733658246,warhammer-tone-pro-magnus-the-red-3,False,2026-10-19
+armada_games,Tone Pro: Magnus the Red 4,https://armadagames.com/products/warhammer-tone-pro-magnus-the-red-4,67642733822086,warhammer-tone-pro-magnus-the-red-4,False,2026-10-19
+armada_games,Tone Pro: Magnus the Red 5,https://armadagames.com/products/warhammer-tone-pro-magnus-the-red-5,67642733854854,warhammer-tone-pro-magnus-the-red-5,False,2026-10-19
+armada_games,Tone Pro: Megaboss Yellow 1,https://armadagames.com/products/warhammer-tone-pro-megaboss-yellow-1,44402300616838,warhammer-tone-pro-megaboss-yellow-1,False,2026-10-19
+armada_games,Tone Pro: Megaboss Yellow 2,https://armadagames.com/products/warhammer-tone-pro-megaboss-yellow-2,67642733920390,warhammer-tone-pro-megaboss-yellow-2,False,2026-10-19
+armada_games,Tone Pro: Megaboss Yellow 3,https://armadagames.com/products/warhammer-tone-pro-megaboss-yellow-3,67642733953158,warhammer-tone-pro-megaboss-yellow-3,False,2026-10-19
+armada_games,Tone Pro: Megaboss Yellow 4,https://armadagames.com/products/warhammer-tone-pro-megaboss-yellow-4,67642733985926,warhammer-tone-pro-megaboss-yellow-4,False,2026-10-19
+armada_games,Tone Pro: Megaboss Yellow 5,https://armadagames.com/products/warhammer-tone-pro-megaboss-yellow-5,67642734018694,warhammer-tone-pro-megaboss-yellow-5,False,2026-10-19
+armada_games,Tone Pro: Necrolith Bone 1,https://armadagames.com/products/warhammer-tone-pro-necrolith-bone-1,44402321129606,warhammer-tone-pro-necrolith-bone-1,False,2026-10-19
+armada_games,Tone Pro: Necrolith Bone 2,https://armadagames.com/products/warhammer-tone-pro-necrolith-bone-2,67642734084230,warhammer-tone-pro-necrolith-bone-2,False,2026-10-19
+armada_games,Tone Pro: Necrolith Bone 3,https://armadagames.com/products/warhammer-tone-pro-necrolith-bone-3,67642734248070,warhammer-tone-pro-necrolith-bone-3,False,2026-10-19
+armada_games,Tone Pro: Necrolith Bone 4,https://armadagames.com/products/warhammer-tone-pro-necrolith-bone-4,67642734280838,warhammer-tone-pro-necrolith-bone-4,False,2026-10-19
+armada_games,Tone Pro: Necrolith Bone 5,https://armadagames.com/products/warhammer-tone-pro-necrolith-bone-5,67642734313606,warhammer-tone-pro-necrolith-bone-5,False,2026-10-19
+armada_games,Tone Pro: Plague Toad Venom 1,https://armadagames.com/products/warhammer-tone-pro-plague-toad-venom-1,44402300944518,warhammer-tone-pro-plague-toad-venom-1,False,2026-10-19
+armada_games,Tone Pro: Plague Toad Venom 2,https://armadagames.com/products/warhammer-tone-pro-plague-toad-venom-2,67642734346374,warhammer-tone-pro-plague-toad-venom-2,False,2026-10-19
+armada_games,Tone Pro: Plague Toad Venom 3,https://armadagames.com/products/warhammer-tone-pro-plague-toad-venom-3,67642734444678,warhammer-tone-pro-plague-toad-venom-3,False,2026-10-19
+armada_games,Tone Pro: Plague Toad Venom 4,https://armadagames.com/products/warhammer-tone-pro-plague-toad-venom-4,67642734510214,warhammer-tone-pro-plague-toad-venom-4,False,2026-10-19
+armada_games,Tone Pro: Plague Toad Venom 5,https://armadagames.com/products/warhammer-tone-pro-plague-toad-venom-5,67642734739590,warhammer-tone-pro-plague-toad-venom-5,False,2026-10-19
+armada_games,Tone Pro: Scinari Blue 1,https://armadagames.com/products/warhammer-tone-pro-scinari-blue-1,44402302976134,warhammer-tone-pro-scinari-blue-1,False,2026-10-19
+armada_games,Tone Pro: Scinari Blue 2,https://armadagames.com/products/warhammer-tone-pro-scinari-blue-2,67642734772358,warhammer-tone-pro-scinari-blue-2,False,2026-10-19
+armada_games,Tone Pro: Scinari Blue 3,https://armadagames.com/products/warhammer-tone-pro-scinari-blue-3,67642734936198,warhammer-tone-pro-scinari-blue-3,False,2026-10-19
+armada_games,Tone Pro: Scinari Blue 4,https://armadagames.com/products/warhammer-tone-pro-scinari-blue-4,67642735231110,warhammer-tone-pro-scinari-blue-4,False,2026-10-19
+armada_games,Tone Pro: Scinari Blue 5,https://armadagames.com/products/warhammer-tone-pro-scinari-blue-5,67642735427718,warhammer-tone-pro-scinari-blue-5,False,2026-10-19
+armada_games,Tone Pro: Seraphon Blue 1,https://armadagames.com/products/warhammer-tone-pro-seraphon-blue-1,44402302255238,warhammer-tone-pro-seraphon-blue-1,False,2026-10-19
+armada_games,Tone Pro: Seraphon Blue 2,https://armadagames.com/products/warhammer-tone-pro-seraphon-blue-2,67642735886470,warhammer-tone-pro-seraphon-blue-2,False,2026-10-19
+armada_games,Tone Pro: Seraphon Blue 3,https://armadagames.com/products/warhammer-tone-pro-seraphon-blue-3,67642735919238,warhammer-tone-pro-seraphon-blue-3,False,2026-10-19
+armada_games,Tone Pro: Seraphon Blue 4,https://armadagames.com/products/warhammer-tone-pro-seraphon-blue-4,67642735952006,warhammer-tone-pro-seraphon-blue-4,False,2026-10-19
+armada_games,Tone Pro: Seraphon Blue 5,https://armadagames.com/products/warhammer-tone-pro-seraphon-blue-5,67642735984774,warhammer-tone-pro-seraphon-blue-5,False,2026-10-19
+armada_games,Tone Pro: Shalaxi Violet 1,https://armadagames.com/products/warhammer-tone-pro-shalaxi-violet-1,44402306613382,warhammer-tone-pro-shalaxi-violet-1,False,2026-10-19
+armada_games,Tone Pro: Shalaxi Violet 2,https://armadagames.com/products/warhammer-tone-pro-shalaxi-violet-2,67642736017542,warhammer-tone-pro-shalaxi-violet-2,False,2026-10-19
+armada_games,Tone Pro: Shalaxi Violet 3,https://armadagames.com/products/warhammer-tone-pro-shalaxi-violet-3,67642736115846,warhammer-tone-pro-shalaxi-violet-3,False,2026-10-19
+armada_games,Tone Pro: Shalaxi Violet 4,https://armadagames.com/products/warhammer-tone-pro-shalaxi-violet-4,67642736148614,warhammer-tone-pro-shalaxi-violet-4,False,2026-10-19
+armada_games,Tone Pro: Shalaxi Violet 5,https://armadagames.com/products/warhammer-tone-pro-shalaxi-violet-5,67642736246918,warhammer-tone-pro-shalaxi-violet-5,False,2026-10-19
+armada_games,Tone Pro: Stormwolf Blue 1,https://armadagames.com/products/warhammer-tone-pro-stormwolf-blue-1,44402302910598,warhammer-tone-pro-stormwolf-blue-1,False,2026-10-19
+armada_games,Tone Pro: Stormwolf Blue 2,https://armadagames.com/products/warhammer-tone-pro-stormwolf-blue-2,67642736443526,warhammer-tone-pro-stormwolf-blue-2,False,2026-10-19
+armada_games,Tone Pro: Stormwolf Blue 3,https://armadagames.com/products/warhammer-tone-pro-stormwolf-blue-3,67642736672902,warhammer-tone-pro-stormwolf-blue-3,False,2026-10-19
+armada_games,Tone Pro: Stormwolf Blue 4,https://armadagames.com/products/warhammer-tone-pro-stormwolf-blue-4,67642736738438,warhammer-tone-pro-stormwolf-blue-4,False,2026-10-19
+armada_games,Tone Pro: Stormwolf Blue 5,https://armadagames.com/products/warhammer-tone-pro-stormwolf-blue-5,67642736935046,warhammer-tone-pro-stormwolf-blue-5,False,2026-10-19
+armada_games,Tone Pro: Ta'unar Ochre 1,https://armadagames.com/products/warhammer-tone-pro-taunar-ochre-1,44401319837830,warhammer-tone-pro-taunar-ochre-1,False,2026-10-19
+armada_games,Tone Pro: Ta'unar Ochre 2,https://armadagames.com/products/warhammer-tone-pro-taunar-ochre-2,67642737000582,warhammer-tone-pro-taunar-ochre-2,False,2026-10-19
+armada_games,Tone Pro: Ta'unar Ochre 3,https://armadagames.com/products/warhammer-tone-pro-taunar-ochre-3,67642737066118,warhammer-tone-pro-taunar-ochre-3,False,2026-10-19
+armada_games,Tone Pro: Ta'unar Ochre 4,https://armadagames.com/products/warhammer-tone-pro-taunar-ochre-4,67642737098886,warhammer-tone-pro-taunar-ochre-4,False,2026-10-19
+armada_games,Tone Pro: Ta'unar Ochre 5,https://armadagames.com/products/warhammer-tone-pro-taunar-ochre-5,67642737131654,warhammer-tone-pro-taunar-ochre-5,False,2026-10-19
+armada_games,Tone Pro: Ultramar Blue 1,https://armadagames.com/products/warhammer-tone-pro-utramar-blue-1,44402304024710,warhammer-tone-pro-utramar-blue-1,False,2026-10-19
+armada_games,Tone Pro: Ultramar Blue 2,https://armadagames.com/products/warhammer-tone-pro-utramar-blue-2,67642737197190,warhammer-tone-pro-utramar-blue-2,False,2026-10-19
+armada_games,Tone Pro: Ultramar Blue 3,https://armadagames.com/products/warhammer-tone-pro-utramar-blue-3,67642737229958,warhammer-tone-pro-utramar-blue-3,False,2026-10-19
+armada_games,Tone Pro: Ultramar Blue 4,https://armadagames.com/products/warhammer-tone-pro-utramar-blue-4,67642737262726,warhammer-tone-pro-utramar-blue-4,False,2026-10-19
+armada_games,Tone Pro: Ultramar Blue 5,https://armadagames.com/products/warhammer-tone-pro-utramar-blue-5,67642737295494,warhammer-tone-pro-utramar-blue-5,False,2026-10-19
+event_horizon_hobbies_ca,Base: Corax White,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619176119,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Celestra Grey,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619241655,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Averland Sunset,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619274423,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Jokaero Orange,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619307191,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Khorne Red,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619339959,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Mephiston Red,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619372727,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Gal Vorbak Red,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619405495,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Barak-Nar Burgundy,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619438263,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Screamer Pink,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619471031,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Daemonette Hide,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619503799,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Phoenician Purple,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619536567,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Naggaroth Night,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619569335,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Caledor Sky,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619602103,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Macragge Blue,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619634871,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Kantor Blue,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619667639,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Night Lords Blue,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619700407,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Thousand Sons Blue,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619733175,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Stegadon Scale Green,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619765943,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Incubi Darkness,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619831479,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Death Guard Green,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619864247,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Deathworld Forest,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619897015,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Castellan Green,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619929783,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Death Korps Drab,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619962551,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Waaagh! Flesh,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160619995319,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Caliban Green,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620028087,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Nocturne Green,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620060855,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Wraithbone,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620093623,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Morghast Bone,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620126391,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Zandri Dust,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620159159,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: XV-88,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620191927,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Steel Legion Drab,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620224695,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Mournfang Brown,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620257463,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Rhinox Hide,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620290231,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Dryad Bark,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620322999,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Ionrach Skin,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620355767,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Rakarth Flesh,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620388535,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Bugman's Glow,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620421303,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: The Fang,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620486839,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Mechanicus Standard Grey,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620519607,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Corvus Black,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620552375,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Abaddon Black,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620585143,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Grey Knights Steel,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620617911,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Iron Hands Steel,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620650679,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Leadbelcher,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620683447,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Iron Warriors,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620716215,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Retributor Armour,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620748983,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Balthasar Gold,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620781751,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Screaming Bell,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620814519,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Warplock Bronze,https://eventhorizonhobbies.ca/products/citadel-paint-base,38160620847287,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Ratskin Flesh,https://eventhorizonhobbies.ca/products/citadel-paint-base,41070882128055,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Runelord Brass,https://eventhorizonhobbies.ca/products/citadel-paint-base,41070891532471,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Thondia Brown,https://eventhorizonhobbies.ca/products/citadel-paint-base,41279414730935,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Hobgrot Hide,https://eventhorizonhobbies.ca/products/citadel-paint-base,41279414763703,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Base: Orruk Flesh,https://eventhorizonhobbies.ca/products/citadel-paint-base,41279440978103,citadel-paint-base,True,2026-10-19
+event_horizon_hobbies_ca,Layer: White Scar,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607281335,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ulthuan Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607314103,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Dorn Yellow,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607346871,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Phalanx Yellow,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607379639,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Flash Gitz Yellow,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607412407,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Yriel Yellow,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607445175,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Lugganath Orange,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607477943,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Fire Dragon Bright,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607510711,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Troll Slayer Orange,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607543479,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Squig Orange,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607576247,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Wild Rider Red,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607609015,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Evil Sunz Scarlet,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607641783,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Wazdakka Red,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607674551,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Word Bearers Red,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607707319,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Fulgrim Pink,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607740087,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Emperor's Children,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607772855,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Pink Horror,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607805623,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Slaanesh Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607838391,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Warpfiend Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607871159,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Dechala Lilac,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607903927,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Kakophoni Purple,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607936695,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Genestealer Purple,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160607969463,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Xereus Purple,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608002231,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Blue Horror,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608034999,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Hoeth Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608067767,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Lothern Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608100535,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Calgar Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608133303,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Teclis Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608166071,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Alaitoc Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608198839,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Altdorf Guard Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608231607,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Baharroth Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608264375,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Temple Guard Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608297143,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ahriman Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608329911,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Sotek Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608362679,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Gauss Blaster Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608395447,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Sybarite Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608428215,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Kabalite Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608460983,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Nurgling Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608493751,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Elysian Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608526519,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ogryn Camo,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608559287,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Straken Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608592055,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Loren Forest,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608624823,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Sons of Horus Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608657591,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Vulkan Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608690359,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Skarsnik Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608723127,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Moot Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608755895,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Warboss Green,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608788663,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Warpstone Glow,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608821431,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Screaming Skull,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608854199,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ushabti Bone,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608886967,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Krieg Khaki,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608919735,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Karak Stone,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608952503,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Baneblade Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160608985271,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Gorthor Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609018039,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Zamesi Desert,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609050807,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Tallarn Sand,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609083575,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Deathclaw Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609116343,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Balor Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609149111,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Tau Light Ochre,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609181879,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Skrag Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609247415,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Tuskgor Fur,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609312951,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Doombull Brown,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609378487,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Pallid Wych Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609444023,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Deepkin Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609542327,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Flayed One Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609575095,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ungor Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609607863,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Kislev Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609640631,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Bestigor Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609673399,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Cadian Fleshtone,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609706167,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Knight-Questor Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609738935,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Bloodreaver Flesh,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609771703,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Fenrisian Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609804471,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Russ Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609837239,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Thunderhawk Blue,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609870007,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Dark Reaper,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609902775,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Administratum Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609935543,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Dawnstone,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160609968311,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Stormvermin Fur,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610001079,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Eshin Grey,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610033847,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Skavenblight Dinge,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610066615,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Stormhost Silver,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610099383,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Runefang Steel,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610132151,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Ironbreaker,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610164919,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Liberator Gold,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610197687,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Auric Armour Gold,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610230455,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Gehenna's Gold,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610263223,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Fulgurite Copper,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610295991,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Hashut Copper,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610328759,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Skullcrusher Brass,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610361527,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Brass Scorpion,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610427063,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Sycorax Bronze,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610459831,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Castellax Bronze,https://eventhorizonhobbies.ca/products/citadel-paints-layer,38160610492599,citadel-paints-layer,True,2026-10-19
+event_horizon_hobbies_ca,Layer: Canoptek Alloy,https://eventhorizonhobbies.ca/products/citadel-paints-layer,41142683304119,citadel-paints-layer,True,2026-10-19
+highlander_games,Base: Averland Sunset,https://highlandergames.co.uk/products/citadel-base-averlandsunset,35196170371237,citadel-base-averlandsunset,False,2026-10-19
+highlander_games,Base: Barak-Nar Burgundy,https://highlandergames.co.uk/products/citadel-base-barak-narburgundy,35196114403493,citadel-base-barak-narburgundy,False,2026-10-19
+highlander_games,Base: Caledor Sky,https://highlandergames.co.uk/products/citadel-base-caledorsky,35196176007333,citadel-base-caledorsky,False,2026-10-19
+highlander_games,Base: Death Korps Drab,https://highlandergames.co.uk/products/citadel-base-death-korps-drab,43014006538455,citadel-base-death-korps-drab,False,2026-10-19
+highlander_games,Base: Hobgrot Hide,https://highlandergames.co.uk/products/citadel-base-hobgrothide,40255871680677,citadel-base-hobgrothide,False,2026-10-19
+highlander_games,Base: Incubi Darkness,https://highlandergames.co.uk/products/citadel-base-incubidarkness,35196165357733,citadel-base-incubidarkness,False,2026-10-19
+highlander_games,Base: Jokaero Orange,https://highlandergames.co.uk/products/citadel-base-jokaeroorange,35196118302885,citadel-base-jokaeroorange,False,2026-10-19
+highlander_games,Base: Khorne Red,https://highlandergames.co.uk/products/citadel-base-khornered,35196177940645,citadel-base-khornered,False,2026-10-19
+highlander_games,Base: Nocturne Green,https://highlandergames.co.uk/products/citadel-base-nocturne-green,43014007161047,citadel-base-nocturne-green,False,2026-10-19
+highlander_games,Base: Orruk Flesh,https://highlandergames.co.uk/products/citadel-base-orrukflesh,40255872073893,citadel-base-orrukflesh,False,2026-10-19
+highlander_games,Base: Rhinox Hide,https://highlandergames.co.uk/products/citadel-base-rhinoxhide,35196149825701,citadel-base-rhinoxhide,False,2026-10-19
+highlander_games,Base: Stegadon Scale Green,https://highlandergames.co.uk/products/citadel-base-stegadonscalegreen,35196139733157,citadel-base-stegadonscalegreen,False,2026-10-19
+highlander_games,Base: The Fang,https://highlandergames.co.uk/products/citadel-base-thefang,35196112666789,citadel-base-thefang,False,2026-10-19
+highlander_games,Base: Thousand Sons Blue,https://highlandergames.co.uk/products/citadel-base-thousandsonsblue,35196153888933,citadel-base-thousandsonsblue,False,2026-10-19
+highlander_games,Layer: Alaitoc Blue,https://highlandergames.co.uk/products/citadel-layer-alaitocblue,35196181872805,citadel-layer-alaitocblue,False,2026-10-19
+highlander_games,Layer: Altdorf Guard Blue,https://highlandergames.co.uk/products/citadel-layer-altdorfguardblue,35196183085221,citadel-layer-altdorfguardblue,False,2026-10-19
+highlander_games,Layer: Baneblade Brown,https://highlandergames.co.uk/products/citadel-layer-banebladebrown,35196179447973,citadel-layer-banebladebrown,False,2026-10-19
+highlander_games,Layer: Bloodreaver Flesh,https://highlandergames.co.uk/products/citadel-layer-bloodreaverflesh,35196183249061,citadel-layer-bloodreaverflesh,False,2026-10-19
+highlander_games,Layer: Blue Horror,https://highlandergames.co.uk/products/citadel-layer-blue-horror,43044051452119,citadel-layer-blue-horror,False,2026-10-19
+highlander_games,Layer: Calgar Blue,https://highlandergames.co.uk/products/citadel-layer-calgarblue,35196109291685,citadel-layer-calgarblue,False,2026-10-19
+highlander_games,Layer: Castellax Bronze,https://highlandergames.co.uk/products/citadel-layer-castellax-bronze,43014007652567,citadel-layer-castellax-bronze,False,2026-10-19
+highlander_games,Layer: Deathclaw Brown,https://highlandergames.co.uk/products/citadel-layer-deathclawbrown,35196175941797,citadel-layer-deathclawbrown,False,2026-10-19
+highlander_games,Layer: Deepkin Flesh,https://highlandergames.co.uk/products/citadel-layer-deepkinflesh,35196134850725,citadel-layer-deepkinflesh,False,2026-10-19
+highlander_games,Layer: Fenrisian Grey,https://highlandergames.co.uk/products/citadel-layer-fenrisiangrey,35196174991525,citadel-layer-fenrisiangrey,False,2026-10-19
+highlander_games,Layer: Fulgrim Pink,https://highlandergames.co.uk/products/citadel-layer-fulgrim-pink,43014008897751,citadel-layer-fulgrim-pink,False,2026-10-19
+highlander_games,Layer: Fulgurite Copper,https://highlandergames.co.uk/products/citadel-layer-fulguritecopper,35196164800677,citadel-layer-fulguritecopper,False,2026-10-19
+highlander_games,Layer: Gauss Blaster Green,https://highlandergames.co.uk/products/citadel-layer-gauss-blaster-green,43014008766679,citadel-layer-gauss-blaster-green,False,2026-10-19
+highlander_games,Layer: Hashut Copper,https://highlandergames.co.uk/products/citadel-layer-hashutcopper,35196147826853,citadel-layer-hashutcopper,False,2026-10-19
+highlander_games,Layer: Kakophoni Purple,https://highlandergames.co.uk/products/citadel-layer-kakophoni-purple,43014009028823,citadel-layer-kakophoni-purple,False,2026-10-19
+highlander_games,Layer: Karak Stone,https://highlandergames.co.uk/products/citadel-layer-karakstone,35196154249381,citadel-layer-karakstone,False,2026-10-19
+highlander_games,Layer: Kislev Flesh,https://highlandergames.co.uk/products/citadel-layer-kislevflesh,35196105687205,citadel-layer-kislevflesh,False,2026-10-19
+highlander_games,Layer: Knight-Questor Flesh,https://highlandergames.co.uk/products/citadel-layer-knight-questor,35196185182373,citadel-layer-knight-questor,False,2026-10-19
+highlander_games,Layer: Lothern Blue,https://highlandergames.co.uk/products/citadel-layer-lothernblue,35196139864229,citadel-layer-lothernblue,False,2026-10-19
+highlander_games,Layer: Lugganath Orange,https://highlandergames.co.uk/products/citadel-layer-lugganath-orange,43014009585879,citadel-layer-lugganath-orange,False,2026-10-19
+highlander_games,Layer: Ogryn Camo,https://highlandergames.co.uk/products/citadel-layer-ogryncamo,35196185444517,citadel-layer-ogryncamo,False,2026-10-19
+highlander_games,Layer: Pallid Wych Flesh,https://highlandergames.co.uk/products/citadel-layer-pallidwychflesh,35196175351973,citadel-layer-pallidwychflesh,False,2026-10-19
+highlander_games,Layer: Russ Grey,https://highlandergames.co.uk/products/citadel-layer-russgrey,35196185641125,citadel-layer-russgrey,False,2026-10-19
+highlander_games,Layer: Screaming Skull,https://highlandergames.co.uk/products/citadel-layer-screamingskull,35196131246245,citadel-layer-screamingskull,False,2026-10-19
+highlander_games,Layer: Skavenblight Dinge,https://highlandergames.co.uk/products/citadel-layer-skavenblightdinge,35196164931749,citadel-layer-skavenblightdinge,False,2026-10-19
+highlander_games,Layer: Skullcrusher Brass,https://highlandergames.co.uk/products/citadel-layer-skullcrusherbrass,35196181315749,citadel-layer-skullcrusherbrass,False,2026-10-19
+highlander_games,Layer: Slaanesh Grey,https://highlandergames.co.uk/products/citadel-layer-slaanesh-grey,43014009225431,citadel-layer-slaanesh-grey,False,2026-10-19
+highlander_games,Layer: Straken Green,https://highlandergames.co.uk/products/citadel-layer-strakengreen,35196163031205,citadel-layer-strakengreen,False,2026-10-19
+highlander_games,Layer: Sybarite Green,https://highlandergames.co.uk/products/citadel-layer-sybaritegreen,35196125806757,citadel-layer-sybaritegreen,False,2026-10-19
+highlander_games,Layer: Sycorax Bronze,https://highlandergames.co.uk/products/citadel-layer-sycoraxbronze,35196185804965,citadel-layer-sycoraxbronze,False,2026-10-19
+highlander_games,Layer: Tallarn Sand,https://highlandergames.co.uk/products/citadel-layer-tallarnsand,35196186034341,citadel-layer-tallarnsand,False,2026-10-19
+highlander_games,Layer: Tau Light Ochre,https://highlandergames.co.uk/products/citadel-layer-taulightochre,35196184625317,citadel-layer-taulightochre,False,2026-10-19
+highlander_games,Layer: Temple Guard Blue,https://highlandergames.co.uk/products/citadel-layer-templeguardblue,35196118368421,citadel-layer-templeguardblue,False,2026-10-19
+highlander_games,Layer: Ulthuan Grey,https://highlandergames.co.uk/products/citadel-layer-ulthuangrey,35196119482533,citadel-layer-ulthuangrey,False,2026-10-19
+highlander_games,Layer: Ushabti Bone,https://highlandergames.co.uk/products/citadel-layer-ushabtibone,35196140355749,citadel-layer-ushabtibone,False,2026-10-19
+highlander_games,Layer: Vulkan Green,https://highlandergames.co.uk/products/citadel-layer-vulkan-green,43014009880791,citadel-layer-vulkan-green,False,2026-10-19
+highlander_games,Layer: Warboss Green,https://highlandergames.co.uk/products/citadel-layer-warbossgreen,35196175712421,citadel-layer-warbossgreen,False,2026-10-19
+highlander_games,Layer: Warpfiend Grey,https://highlandergames.co.uk/products/citadel-layer-warpfiend-grey,43044051419351,citadel-layer-warpfiend-grey,False,2026-10-19
+highlander_games,Layer: Wazdakka Red,https://highlandergames.co.uk/products/citadel-layer-wazdakkared,35196184330405,citadel-layer-wazdakkared,False,2026-10-19
+highlander_games,Layer: Wild Rider Red,https://highlandergames.co.uk/products/citadel-layer-wildriderred,35196170502309,citadel-layer-wildriderred,False,2026-10-19
+highlander_games,Layer: Word Bearers Red,https://highlandergames.co.uk/products/citadel-layer-word-bearers-red,43014009815255,citadel-layer-word-bearers-red,False,2026-10-19
+highlander_games,Layer: Flayed One Flesh,https://highlandergames.co.uk/products/citadel-layer-flayedoneflesh,35196160278693,citadel-layer-flayedoneflesh,False,2026-10-19
+highlander_games,Base: Daemonette Hide,https://highlandergames.co.uk/products/citadel-base-daemonette-hide,40857841860773,citadel-base-daemonette-hide,False,2026-10-19
+highlander_games,Base: Gal Vorbak Red,https://highlandergames.co.uk/products/citadel-base-gal-vorbak-red,43044051058903,citadel-base-gal-vorbak-red,False,2026-10-19
+highlander_games,Layer: Administratum Grey,https://highlandergames.co.uk/products/citadel-layer-administratumgrey,35196116238501,citadel-layer-administratumgrey,False,2026-10-19
+highlander_games,Layer: Stormvermin Fur,https://highlandergames.co.uk/products/citadel-layer-stormverminfur,35196185739429,citadel-layer-stormverminfur,False,2026-10-19
+highlander_games,Base: Rakarth Flesh,https://highlandergames.co.uk/products/citadel-base-rakarthflesh,35196098478245,citadel-base-rakarthflesh,False,2026-10-19
+highlander_games,Layer: Stormhost Silver,https://highlandergames.co.uk/products/citadel-layer-stormhostsilver,35196184199333,citadel-layer-stormhostsilver,False,2026-10-19
+highlander_games,Layer: Genestealer Purple,https://highlandergames.co.uk/products/citadel-layer-genestealerpurple,35196154314917,citadel-layer-genestealerpurple,False,2026-10-19
+highlander_games,Layer: Squig Orange,https://highlandergames.co.uk/products/citadel-layer-squig-orange,43014010568919,citadel-layer-squig-orange,False,2026-10-19
+highlander_games,Base: Bugman's Glow,https://highlandergames.co.uk/products/citadel-base-bugmansglow,35196104638629,citadel-base-bugmansglow,False,2026-10-19
+highlander_games,Base: Celestra Grey,https://highlandergames.co.uk/products/citadel-base-celestragrey,35196105064613,citadel-base-celestragrey,False,2026-10-19
+highlander_games,Layer: Dawnstone,https://highlandergames.co.uk/products/citadel-layer-dawnstone,35196183380133,citadel-layer-dawnstone,False,2026-10-19
+highlander_games,Layer: Dorn Yellow,https://highlandergames.co.uk/products/citadel-layer-dorn-yellow,43014008471767,citadel-layer-dorn-yellow,False,2026-10-19
+highlander_games,Base: Kantor Blue,https://highlandergames.co.uk/products/citadel-base-kantorblue,35196177875109,citadel-base-kantorblue,False,2026-10-19
+highlander_games,Layer: Canoptek Alloy,https://highlandergames.co.uk/products/citadel-base-layercanoptekalloy,35704332910757,citadel-base-layercanoptekalloy,False,2026-10-19
+highlander_games,Layer: Runefang Steel,https://highlandergames.co.uk/products/citadel-layer-runefangsteel,35196170535077,citadel-layer-runefangsteel,False,2026-10-19
+highlander_games,Layer: Teclis Blue,https://highlandergames.co.uk/products/citadel-layer-telcisblue,35196186230949,citadel-layer-telcisblue,False,2026-10-19
+highlander_games,Layer: Baharroth Blue,https://highlandergames.co.uk/products/citadel-layer-baharroth-blue,40424476180645,citadel-layer-baharroth-blue,False,2026-10-19
+highlander_games,Base: Balthasar Gold,https://highlandergames.co.uk/products/citadel-base-balthasargold,35196175909029,citadel-base-balthasargold,False,2026-10-19
+highlander_games,Layer: Sotek Green,https://highlandergames.co.uk/products/citadel-layer-sotekgreen,35196161818789,citadel-layer-sotekgreen,False,2026-10-19
+highlander_games,Layer: Kabalite Green,https://highlandergames.co.uk/products/citadel-layer-kabalitegreen,35196110012581,citadel-layer-kabalitegreen,False,2026-10-19
+highlander_games,Base: Death Guard Green,https://highlandergames.co.uk/products/citadel-base-deathguardgreen,35196177449125,citadel-base-deathguardgreen,False,2026-10-19
+highlander_games,Layer: Eshin Grey,https://highlandergames.co.uk/products/citadel-layer-eshingrey,35196183478437,citadel-layer-eshingrey,False,2026-10-19
+highlander_games,Base: Ionrach Skin,https://highlandergames.co.uk/products/citadel-base-ionrachskin,35196149760165,citadel-base-ionrachskin,False,2026-10-19
+highlander_games,Base: Screaming Bell,https://highlandergames.co.uk/products/citadel-base-screamingbell,35196160311461,citadel-base-screamingbell,False,2026-10-19
+highlander_games,Base: Thondia Brown,https://highlandergames.co.uk/products/citadel-base-thondiabrown,40255871549605,citadel-base-thondiabrown,False,2026-10-19
+highlander_games,Base: XV-88,https://highlandergames.co.uk/products/citadel-base-xv-88,35196180529317,citadel-base-xv-88,False,2026-10-19
+highlander_games,Layer: Xereus Purple,https://highlandergames.co.uk/products/citadel-layer-xereuspurple,35196179677349,citadel-layer-xereuspurple,False,2026-10-19
+highlander_games,Base: Leadbelcher,https://highlandergames.co.uk/products/citadel-base-leadbelcher,35196178006181,citadel-base-leadbelcher,False,2026-10-19
+highlander_games,Layer: Zamesi Desert,https://highlandergames.co.uk/products/citadel-layer-zamesidesert,35196110045349,citadel-layer-zamesidesert,False,2026-10-19
+highlander_games,Layer: Thunderhawk Blue,https://highlandergames.co.uk/products/citadel-layer-thunderhawk-blue,40902362726565,citadel-layer-thunderhawk-blue,False,2026-10-19
+highlander_games,Layer: Ironbreaker,https://highlandergames.co.uk/products/citadel-layer-ironbreaker,35196128985253,citadel-layer-ironbreaker,False,2026-10-19
+highlander_games,Base: Grey Knights Steel,https://highlandergames.co.uk/products/citadel-base-grey-knights-steel,40857841926309,citadel-base-grey-knights-steel,False,2026-10-19
+highlander_games,Layer: Cadian Fleshtone,https://highlandergames.co.uk/products/citadel-layer-cadianfleshtone,35196161425573,citadel-layer-cadianfleshtone,False,2026-10-19
+highlander_games,Layer: Phalanx Yellow,https://highlandergames.co.uk/products/citadel-layer-phalanx-yellow,43014009684183,citadel-layer-phalanx-yellow,False,2026-10-19
+highlander_games,Layer: Loren Forest,https://highlandergames.co.uk/products/citadel-layer-lorenforest,35196148711589,citadel-layer-lorenforest,False,2026-10-19
+highlander_games,Layer: Hoeth Blue,https://highlandergames.co.uk/products/citadel-layer-hoethblue,35196098609317,citadel-layer-hoethblue,False,2026-10-19
+highlander_games,Base: Warplock Bronze,https://highlandergames.co.uk/products/citadel-base-warplockbronze,35196113748133,citadel-base-warplockbronze,False,2026-10-19
+highlander_games,Layer: Gehenna's Gold,https://highlandergames.co.uk/products/citadel-layer-gehennasgold,35196128690341,citadel-layer-gehennasgold,False,2026-10-19
+highlander_games,Layer: Skrag Brown,https://highlandergames.co.uk/products/citadel-layer-skragbrown,35196164997285,citadel-layer-skragbrown,False,2026-10-19
+highlander_games,Layer: Bestigor Flesh,https://highlandergames.co.uk/products/citadel-layer-bestigorflesh,35196162834597,citadel-layer-bestigorflesh,False,2026-10-19
+highlander_games,Base: Night Lords Blue,https://highlandergames.co.uk/products/citadel-base-night-lords-blue,43014007029975,citadel-base-night-lords-blue,False,2026-10-19
+highlander_games,Base: Iron Hands Steel,https://highlandergames.co.uk/products/citadel-base-iron-hands-steel,40857841664165,citadel-base-iron-hands-steel,False,2026-10-19
+highlander_games,Base: Zandri Dust,https://highlandergames.co.uk/products/citadel-base-zandridust,35196098904229,citadel-base-zandridust,False,2026-10-19
+highlander_games,Layer: Troll Slayer Orange,https://highlandergames.co.uk/products/citadel-layer-trollslayerorange,35196186296485,citadel-layer-trollslayerorange,False,2026-10-19
+highlander_games,Layer: Nurgling Green,https://highlandergames.co.uk/products/citadel-layer-nurglinggreen,35196185378981,citadel-layer-nurglinggreen,False,2026-10-19
+highlander_games,Base: Castellan Green,https://highlandergames.co.uk/products/citadel-base-castellangreen,35196130525349,citadel-base-castellangreen,False,2026-10-19
+highlander_games,Base: Iron Warriors,https://highlandergames.co.uk/products/citadel-base-ironwarriors,35196165128357,citadel-base-ironwarriors,False,2026-10-19
+highlander_games,Layer: Fire Dragon Bright,https://highlandergames.co.uk/products/citadel-layer-firedeagonbright,35196154085541,citadel-layer-firedeagonbright,False,2026-10-19
+highlander_games,Base: Corax White,https://highlandergames.co.uk/products/citadel-base-coraxwhite,35196131049637,citadel-base-coraxwhite,False,2026-10-19
+highlander_games,Base: Runelord Brass,https://highlandergames.co.uk/products/citadel-layer-runelordbrass,35196163195045,citadel-layer-runelordbrass,False,2026-10-19
+highlander_games,Base: Retributor Armour,https://highlandergames.co.uk/products/citadel-base-retributorarmour,35196147761317,citadel-base-retributorarmour,False,2026-10-19
+highlander_games,Layer: Skarsnik Green,https://highlandergames.co.uk/products/citadel-layer-skarsnikgreen,35196097855653,citadel-layer-skarsnikgreen,False,2026-10-19
+highlander_games,Layer: Warpstone Glow,https://highlandergames.co.uk/products/citadel-layer-warpstoneglow,35196179644581,citadel-layer-warpstoneglow,False,2026-10-19
+highlander_games,Layer: Emperor's Children,https://highlandergames.co.uk/products/citadel-layer-emperorschildren,35196148187301,citadel-layer-emperorschildren,False,2026-10-19
+highlander_games,Layer: Ahriman Blue,https://highlandergames.co.uk/products/citadel-layer-ahrimanblue,35196181807269,citadel-layer-ahrimanblue,False,2026-10-19
+highlander_games,Base: Waaagh! Flesh,https://highlandergames.co.uk/products/citadel-base-waaaghflesh,35196179742885,citadel-base-waaaghflesh,False,2026-10-19
+highlander_games,Base: Corvus Black,https://highlandergames.co.uk/products/citadel-base-corvus-black,43028739752151,citadel-base-corvus-black,False,2026-10-19
+highlander_games,Layer: Flash Gitz Yellow,https://highlandergames.co.uk/products/citadel-layer-flashgitzyellow,35196177154213,citadel-layer-flashgitzyellow,False,2026-10-19
+highlander_games,Layer: Krieg Khaki,https://highlandergames.co.uk/products/citadel-layer-krieg-khaki,56070543933822,citadel-layer-krieg-khaki,False,2026-10-19
+highlander_games,Base: Screamer Pink,https://highlandergames.co.uk/products/citadel-base-screamerpink,35196178170021,citadel-base-screamerpink,False,2026-10-19
+highlander_games,Base: Mechanicus Standard Grey,https://highlandergames.co.uk/products/citadel-base-mechanicusstandardgrey,35196160704677,citadel-base-mechanicusstandardgrey,False,2026-10-19
+highlander_games,Layer: Auric Armour Gold,https://highlandergames.co.uk/products/citadel-layer-auricarmourgold,35196163293349,citadel-layer-auricarmourgold,False,2026-10-19
+highlander_games,Base: Phoenician Purple,https://highlandergames.co.uk/products/citadel-base-phoenician-purple,40857842253989,citadel-base-phoenician-purple,False,2026-10-19
+highlander_games,Base: Steel Legion Drab,https://highlandergames.co.uk/products/citadel-base-steellegiondrab,35196178268325,citadel-base-steellegiondrab,False,2026-10-19
+highlander_games,Layer: Liberator Gold,https://highlandergames.co.uk/products/citadel-layer-liberatorgold,35196169257125,citadel-layer-liberatorgold,False,2026-10-19
+highlander_games,Base: Naggaroth Night,https://highlandergames.co.uk/products/citadel-base-naggarothnight,35196125577381,citadel-base-naggarothnight,False,2026-10-19
+highlander_games,Base: Dryad Bark,https://highlandergames.co.uk/products/citadel-base-dryadbark,35196177612965,citadel-base-dryadbark,False,2026-10-19
+highlander_games,Base: Abaddon Black,https://highlandergames.co.uk/products/citadel-base-abaddonblack,35196148875429,citadel-base-abaddonblack,False,2026-10-19
+highlander_games,Base: Morghast Bone,https://highlandergames.co.uk/products/citadel-base-morghastbone,35196178104485,citadel-base-morghastbone,False,2026-10-19
+highlander_games,Layer: Sons of Horus Green,https://highlandergames.co.uk/products/citadel-layer-sons-of-horus-green,42934508421335,citadel-layer-sons-of-horus-green,False,2026-10-19
+highlander_games,Layer: Evil Sunz Scarlet,https://highlandergames.co.uk/products/citadel-layer-evilsunzscarlet,35196119908517,citadel-layer-evilsunzscarlet,False,2026-10-19
+highlander_games,Layer: Moot Green,https://highlandergames.co.uk/products/citadel-layer-mootgreen,35196162146469,citadel-layer-mootgreen,False,2026-10-19
+highlander_games,Layer: Gorthor Brown,https://highlandergames.co.uk/products/citadel-layer-gorthorbrown,35196183806117,citadel-layer-gorthorbrown,False,2026-10-19
+highlander_games,Base: Mephiston Red,https://highlandergames.co.uk/products/citadel-base-mephistonred,35196189081765,citadel-base-mephistonred,False,2026-10-19
+highlander_games,Base: Caliban Green,https://highlandergames.co.uk/products/citadel-base-calibangreen,35196158509221,citadel-base-calibangreen,False,2026-10-19
+highlander_games,Layer: White Scar,https://highlandergames.co.uk/products/citadel-layer-whitescar,35196143927461,citadel-layer-whitescar,False,2026-10-19
+highlander_games,Base: Wraithbone,https://highlandergames.co.uk/products/citadel-base-wraithbone,35196175220901,citadel-base-wraithbone,False,2026-10-19
+highlander_games,Layer: Tuskgor Fur,https://highlandergames.co.uk/products/citadel-layer-tuskgorfur,35196106047653,citadel-layer-tuskgorfur,False,2026-10-19
+highlander_games,Layer: Doombull Brown,https://highlandergames.co.uk/products/citadel-layer-doombullbrown,35196160082085,citadel-layer-doombullbrown,False,2026-10-19
+highlander_games,Base: Mournfang Brown,https://highlandergames.co.uk/products/citadel-base-mournfangbrown,35196104245413,citadel-base-mournfangbrown,False,2026-10-19
+highlander_games,Layer: Dark Reaper,https://highlandergames.co.uk/products/citadel-layer-dark-reaper,43014007849175,citadel-layer-dark-reaper,False,2026-10-19
