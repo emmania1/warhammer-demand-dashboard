@@ -286,3 +286,16 @@ date,change,country,name,city,from_range,to_range
 2026-10-17,dropped_stockist,US,NEW WORLD TOYS - TECH,GARNER,BSF,
 2026-10-17,dropped_stockist,US,PAUL'S TOY ROOM,PARLIN,P360_T150,
 2026-10-19,new_stockist,KR,모델링쉼터,서울시,,P150_T150
+2026-10-20,gained_pro,KR,벨투스,서울시,,P150_T150
+2026-10-20,label_added,KR,벨투스,서울시,,P150_T150
+2026-10-20,new_stockist,AU,Hobby Lords Frankton,Frankston,,P210_T150
+2026-10-20,new_stockist,AU,Ranges Games & Hobbies,Romsey,,P150
+2026-10-20,new_stockist,AU,Ryft Newsagency Toormina,Toormina,,BSF
+2026-10-20,new_stockist,AU,Toy Club,Birdwood,,BSF
+2026-10-20,dropped_stockist,AU,Eaglevale Newsagency,Eaglevale,BSF,
+2026-10-20,dropped_stockist,AU,Good Games Miranda,Miranda,P150,
+2026-10-20,dropped_stockist,AU,More Than Meeples Pty Ltd,FORTITUDE VALLEY,,
+2026-10-20,dropped_stockist,AU,Scenic Isle Gaming,LAUNCESTON,,
+2026-10-20,dropped_stockist,AU,The Book Nest Mudgee,Mudgee,BSF,
+2026-10-20,dropped_stockist,AU,The Hammertime Bros,Tamborine Mountain,BSF,
+2026-10-20,dropped_stockist,AU,Zepnix Wargames,Epsom,P150,
