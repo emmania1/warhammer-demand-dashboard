@@ -3826,3 +3826,475 @@ date,sku,name,line,slug,price_usd,status_code,in_stock,is_available,is_preorder,
 2026-10-20,prod4960285-99189960060,Contrast: Hexwraith Flame,Contrast,contrast-hexwraith-flame-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-20,prod4960286-99189960061,Contrast: Nighthaunt Gloom,Contrast,contrast-nighthaunt-gloom-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
 2026-10-20,prod4190296-99189960115,Contrast: Cygor Brown,Contrast,Cygor-Brown-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,Paint-100180-56189961266,Tone Pro: Blackstone Void 1,Tone Pro,Tone-Pro-Blackstone-Void-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100181-56189961267,Tone Pro: Blackstone Void 2,Tone Pro,Tone-Pro-Blackstone-Void-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100182-56189961268,Tone Pro: Blackstone Void 3,Tone Pro,Tone-Pro-Blackstone-Void-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100183-56189961269,Tone Pro: Blackstone Void 4,Tone Pro,Tone-Pro-Blackstone-Void-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100184-56189961270,Tone Pro: Blackstone Void 5,Tone Pro,Tone-Pro-Blackstone-Void-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100175-56189961256,Tone Pro: Dataslate Grey 1,Tone Pro,Tone-Pro-Dataslate-Grey-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100176-56189961257,Tone Pro: Dataslate Grey 2,Tone Pro,Tone-Pro-Dataslate-Grey-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100177-56189961258,Tone Pro: Dataslate Grey 3,Tone Pro,Tone-Pro-Dataslate-Grey-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100178-56189961259,Tone Pro: Dataslate Grey 4,Tone Pro,Tone-Pro-Dataslate-Grey-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100179-56189961260,Tone Pro: Dataslate Grey 5,Tone Pro,Tone-Pro-Dataslate-Grey-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100185-56189961276,Tone Pro: Carmine Blades 1,Tone Pro,Tone-Pro-Carmine-Blades-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100186-56189961277,Tone Pro: Carmine Blades 2,Tone Pro,Tone-Pro-Carmine-Blades-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100187-56189961278,Tone Pro: Carmine Blades 3,Tone Pro,Tone-Pro-Carmine-Blades-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100188-56189961279,Tone Pro: Carmine Blades 4,Tone Pro,Tone-Pro-Carmine-Blades-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100189-56189961280,Tone Pro: Carmine Blades 5,Tone Pro,Tone-Pro-Carmine-Blades-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100190-56189961281,Tone Pro: Bloodtoof Red 1,Tone Pro,Tone-Pro-Bloodtoof-Red-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100191-56189961282,Tone Pro: Bloodtoof Red 2,Tone Pro,Tone-Pro-Bloodtoof-Red-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100192-56189961283,Tone Pro: Bloodtoof Red 3,Tone Pro,Tone-Pro-Bloodtoof-Red-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100193-56189961284,Tone Pro: Bloodtoof Red 4,Tone Pro,Tone-Pro-Bloodtoof-Red-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100194-56189961285,Tone Pro: Bloodtoof Red 5,Tone Pro,Tone-Pro-Bloodtoof-Red-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100195-56189961291,Tone Pro: Chotec Orange 1,Tone Pro,Tone-Pro-Chotec-Orange-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100196-56189961292,Tone Pro: Chotec Orange 2,Tone Pro,Tone-Pro-Chotec-Orange-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100197-56189961293,Tone Pro: Chotec Orange 3,Tone Pro,Tone-Pro-Chotec-Orange-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100198-56189961294,Tone Pro: Chotec Orange 4,Tone Pro,Tone-Pro-Chotec-Orange-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100199-56189961295,Tone Pro: Chotec Orange 5,Tone Pro,Tone-Pro-Chotec-Orange-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100200-56189961296,Tone Pro: Ta'unar Ochre 1,Tone Pro,Tone-Pro-Taunar-Ochre-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100201-56189961297,Tone Pro: Ta'unar Ochre 2,Tone Pro,Tone-Pro-Taunar-Ochre-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100202-56189961298,Tone Pro: Ta'unar Ochre 3,Tone Pro,Tone-Pro-Taunar-Ochre-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100203-56189961299,Tone Pro: Ta'unar Ochre 4,Tone Pro,Tone-Pro-Taunar-Ochre-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100204-56189961300,Tone Pro: Ta'unar Ochre 5,Tone Pro,Tone-Pro-Taunar-Ochre-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100155-56189961221,Tone Pro: Khemri Sands 1,Tone Pro,Tone-Pro-Khemri-Sands-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100156-56189961222,Tone Pro: Khemri Sands 2,Tone Pro,Tone-Pro-Khemri-Sands-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100157-56189961223,Tone Pro: Khemri Sands 3,Tone Pro,Tone-Pro-Khemri-Sands-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100158-56189961224,Tone Pro: Khemri Sands 4,Tone Pro,Tone-Pro-Khemri-Sands-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100159-56189961225,Tone Pro: Khemri Sands 5,Tone Pro,Tone-Pro-Khemri-Sands-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100205-56189961301,Tone Pro: Hawkshroud Yellow 1,Tone Pro,Tone-Pro-Hawkshroud-Yellow-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100206-56189961302,Tone Pro: Hawkshroud Yellow 2,Tone Pro,Tone-Pro-Hawkshroud-Yellow-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100207-56189961303,Tone Pro: Hawkshroud Yellow 3,Tone Pro,Tone-Pro-Hawkshroud-Yellow-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100208-56189961304,Tone Pro: Hawkshroud Yellow 4,Tone Pro,Tone-Pro-Hawkshroud-Yellow-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100209-56189961305,Tone Pro: Hawkshroud Yellow 5,Tone Pro,Tone-Pro-Hawkshroud-Yellow-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100210-56189961306,Tone Pro: Megaboss Yellow 1,Tone Pro,Tone-Pro-Megaboss-Yellow-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100211-56189961307,Tone Pro: Megaboss Yellow 2,Tone Pro,Tone-Pro-Megaboss-Yellow-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100212-56189961308,Tone Pro: Megaboss Yellow 3,Tone Pro,Tone-Pro-Megaboss-Yellow-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100213-56189961309,Tone Pro: Megaboss Yellow 4,Tone Pro,Tone-Pro-Megaboss-Yellow-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100214-56189961310,Tone Pro: Megaboss Yellow 5,Tone Pro,Tone-Pro-Megaboss-Yellow-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100215-56189961311,Tone Pro: Plague Toad Venom 1,Tone Pro,Tone-Pro-Plague-Toad-Venom-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100216-56189961312,Tone Pro: Plague Toad Venom 2,Tone Pro,Tone-Pro-Plague-Toad-Venom-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100217-56189961313,Tone Pro: Plague Toad Venom 3,Tone Pro,Tone-Pro-Plague-Toad-Venom-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100218-56189961314,Tone Pro: Plague Toad Venom 4,Tone Pro,Tone-Pro-Plague-Toad-Venom-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100219-56189961315,Tone Pro: Plague Toad Venom 5,Tone Pro,Tone-Pro-Plague-Toad-Venom-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100220-56189961316,Tone Pro: Kruleboyz Green 1,Tone Pro,Tone-Pro-Kruleboyz-Green-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100221-56189961317,Tone Pro: Kruleboyz Green 2,Tone Pro,Tone-Pro-Kruleboyz-Green-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100222-56189961318,Tone Pro: Kruleboyz Green 3,Tone Pro,Tone-Pro-Kruleboyz-Green-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100223-56189961319,Tone Pro: Kruleboyz Green 4,Tone Pro,Tone-Pro-Kruleboyz-Green-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100224-56189961320,Tone Pro: Kruleboyz Green 5,Tone Pro,Tone-Pro-Kruleboyz-Green-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100225-56189961331,Tone Pro: Lustria Green 1,Tone Pro,Tone-Pro-Lustria-Green-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100226-56189961332,Tone Pro: Lustria Green 2,Tone Pro,Tone-Pro-Lustria-Green-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100227-56189961333,Tone Pro: Lustria Green 3,Tone Pro,Tone-Pro-Lustria-Green-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100228-56189961334,Tone Pro: Lustria Green 4,Tone Pro,Tone-Pro-Lustria-Green-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100229-56189961335,Tone Pro: Lustria Green 5,Tone Pro,Tone-Pro-Lustria-Green-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100230-56189961336,Tone Pro: Kasrkin Green 1,Tone Pro,Tone-Pro-Kasrkin-Green-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100231-56189961337,Tone Pro: Kasrkin Green 2,Tone Pro,Tone-Pro-Kasrkin-Green-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100232-56189961338,Tone Pro: Kasrkin Green 3,Tone Pro,Tone-Pro-Kasrkin-Green-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100233-56189961339,Tone Pro: Kasrkin Green 4,Tone Pro,Tone-Pro-Kasrkin-Green-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100234-56189961340,Tone Pro: Kasrkin Green 5,Tone Pro,Tone-Pro-Kasrkin-Green-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100235-56189961341,Tone Pro: Hierotek Green 1,Tone Pro,Tone-Pro-Hierotek-Green-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100236-56189961342,Tone Pro: Hierotek Green 2,Tone Pro,Tone-Pro-Hierotek-Green-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100237-56189961343,Tone Pro: Hierotek Green 3,Tone Pro,Tone-Pro-Hierotek-Green-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100238-56189961344,Tone Pro: Hierotek Green 4,Tone Pro,Tone-Pro-Hierotek-Green-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100239-56189961345,Tone Pro: Hierotek Green 5,Tone Pro,Tone-Pro-Hierotek-Green-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100240-56189961346,Tone Pro: Green Morkshroom 1,Tone Pro,Tone-Pro-Green-Morkshroom-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100241-56189961347,Tone Pro: Green Morkshroom 2,Tone Pro,Tone-Pro-Green-Morkshroom-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100242-56189961348,Tone Pro: Green Morkshroom 3,Tone Pro,Tone-Pro-Green-Morkshroom-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100243-56189961349,Tone Pro: Green Morkshroom 4,Tone Pro,Tone-Pro-Green-Morkshroom-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100244-56189961350,Tone Pro: Green Morkshroom 5,Tone Pro,Tone-Pro-Green-Morkshroom-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100245-56189961356,Tone Pro: Seraphon Blue 1,Tone Pro,Tone-Pro-Seraphon-Blue-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100246-56189961357,Tone Pro: Seraphon Blue 2,Tone Pro,Tone-Pro-Seraphon-Blue-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100247-56189961358,Tone Pro: Seraphon Blue 3,Tone Pro,Tone-Pro-Seraphon-Blue-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100248-56189961359,Tone Pro: Seraphon Blue 4,Tone Pro,Tone-Pro-Seraphon-Blue-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100249-56189961360,Tone Pro: Seraphon Blue 5,Tone Pro,Tone-Pro-Seraphon-Blue-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100250-56189961361,Tone Pro: Craventhrone Cloak 1,Tone Pro,Tone-Pro-Craventhrone-Cloak-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100251-56189961362,Tone Pro: Craventhrone Cloak 2,Tone Pro,Tone-Pro-Craventhrone-Cloak-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100252-56189961363,Tone Pro: Craventhrone Cloak 3,Tone Pro,Tone-Pro-Craventhrone-Cloak-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100253-56189961364,Tone Pro: Craventhrone Cloak 4,Tone Pro,Tone-Pro-Craventhrone-Cloak-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100254-56189961365,Tone Pro: Craventhrone Cloak 5,Tone Pro,Tone-Pro-Craventhrone-Cloak-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100255-56189961371,Tone Pro: Stormwolf Blue 1,Tone Pro,Tone-Pro-Stormwolf-Blue-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100256-56189961372,Tone Pro: Stormwolf Blue 2,Tone Pro,Tone-Pro-Stormwolf-Blue-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100257-56189961373,Tone Pro: Stormwolf Blue 3,Tone Pro,Tone-Pro-Stormwolf-Blue-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100258-56189961374,Tone Pro: Stormwolf Blue 4,Tone Pro,Tone-Pro-Stormwolf-Blue-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100259-56189961375,Tone Pro: Stormwolf Blue 5,Tone Pro,Tone-Pro-Stormwolf-Blue-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100260-56189961376,Tone Pro: Scinari Blue 1,Tone Pro,Tone-Pro-Scinari-Blue-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100261-56189961377,Tone Pro: Scinari Blue 2,Tone Pro,Tone-Pro-Scinari-Blue-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100262-56189961378,Tone Pro: Scinari Blue 3,Tone Pro,Tone-Pro-Scinari-Blue-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100263-56189961379,Tone Pro: Scinari Blue 4,Tone Pro,Tone-Pro-Scinari-Blue-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100264-56189961380,Tone Pro: Scinari Blue 5,Tone Pro,Tone-Pro-Scinari-Blue-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100265-56189961381,Tone Pro: Blue Gorkshroom 1,Tone Pro,Tone-Pro-Blue-Gorkshroom-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100266-56189961382,Tone Pro: Blue Gorkshroom 2,Tone Pro,Tone-Pro-Blue-Gorkshroom-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100267-56189961383,Tone Pro: Blue Gorkshroom 3,Tone Pro,Tone-Pro-Blue-Gorkshroom-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100268-56189961384,Tone Pro: Blue Gorkshroom 4,Tone Pro,Tone-Pro-Blue-Gorkshroom-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100269-56189961385,Tone Pro: Blue Gorkshroom 5,Tone Pro,Tone-Pro-Blue-Gorkshroom-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100270-56189961386,Tone Pro: Ultramar Blue 1,Tone Pro,Tone-Pro-Ultramar-Blue-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100271-56189961387,Tone Pro: Ultramar Blue 2,Tone Pro,Tone-Pro-Ultramar-Blue-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100272-56189961388,Tone Pro: Ultramar Blue 3,Tone Pro,Tone-Pro-Ultramar-Blue-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100273-56189961389,Tone Pro: Ultramar Blue 4,Tone Pro,Tone-Pro-Ultramar-Blue-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100274-56189961390,Tone Pro: Ultramar Blue 5,Tone Pro,Tone-Pro-Ultramar-Blue-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100275-56189961391,Tone Pro: Shalaxi Violet 1,Tone Pro,Tone-Pro-Shalaxi-Violet-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100276-56189961392,Tone Pro: Shalaxi Violet 2,Tone Pro,Tone-Pro-Shalaxi-Violet-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100277-56189961393,Tone Pro: Shalaxi Violet 3,Tone Pro,Tone-Pro-Shalaxi-Violet-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100278-56189961394,Tone Pro: Shalaxi Violet 4,Tone Pro,Tone-Pro-Shalaxi-Violet-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100279-56189961395,Tone Pro: Shalaxi Violet 5,Tone Pro,Tone-Pro-Shalaxi-Violet-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100280-56189961396,Tone Pro: Enrapturess Dusk 1,Tone Pro,Tone-Pro-Enrapturess-Dusk-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100281-56189961397,Tone Pro: Enrapturess Dusk 2,Tone Pro,Tone-Pro-Enrapturess-Dusk-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100282-56189961398,Tone Pro: Enrapturess Dusk 3,Tone Pro,Tone-Pro-Enrapturess-Dusk-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100283-56189961399,Tone Pro: Enrapturess Dusk 4,Tone Pro,Tone-Pro-Enrapturess-Dusk-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100284-56189961400,Tone Pro: Enrapturess Dusk 5,Tone Pro,Tone-Pro-Enrapturess-Dusk-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100285-56189961401,Tone Pro: Hive Fleet Purple 1,Tone Pro,Tone-Pro-Hive-Fleet-Purple-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100286-56189961402,Tone Pro: Hive Fleet Purple 2,Tone Pro,Tone-Pro-Hive-Fleet-Purple-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100287-56189961403,Tone Pro: Hive Fleet Purple 3,Tone Pro,Tone-Pro-Hive-Fleet-Purple-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100288-56189961404,Tone Pro: Hive Fleet Purple 4,Tone Pro,Tone-Pro-Hive-Fleet-Purple-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100289-56189961405,Tone Pro: Hive Fleet Purple 5,Tone Pro,Tone-Pro-Hive-Fleet-Purple-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100290-56189961406,Tone Pro: Magnus the Red 1,Tone Pro,Tone-Pro-Magnus-the-Red-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100291-56189961407,Tone Pro: Magnus the Red 2,Tone Pro,Tone-Pro-Magnus-the-Red-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100292-56189961408,Tone Pro: Magnus the Red 3,Tone Pro,Tone-Pro-Magnus-the-Red-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100293-56189961409,Tone Pro: Magnus the Red 4,Tone Pro,Tone-Pro-Magnus-the-Red-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100294-56189961410,Tone Pro: Magnus the Red 5,Tone Pro,Tone-Pro-Magnus-the-Red-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100295-56189961411,Tone Pro: Eye of Terror 1,Tone Pro,Tone-Pro-Eye-of-Terror-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100296-56189961412,Tone Pro: Eye of Terror 2,Tone Pro,Tone-Pro-Eye-of-Terror-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100297-56189961413,Tone Pro: Eye of Terror 3,Tone Pro,Tone-Pro-Eye-of-Terror-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100298-56189961414,Tone Pro: Eye of Terror 4,Tone Pro,Tone-Pro-Eye-of-Terror-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100299-56189961415,Tone Pro: Eye of Terror 5,Tone Pro,Tone-Pro-Eye-of-Terror-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100165-56189961241,Tone Pro: Carthalos Skin 1,Tone Pro,Tone-Pro-Carthalos-Skin-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100166-56189961242,Tone Pro: Carthalos Skin 2,Tone Pro,Tone-Pro-Carthalos-Skin-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100167-56189961243,Tone Pro: Carthalos Skin 3,Tone Pro,Tone-Pro-Carthalos-Skin-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100168-56189961244,Tone Pro: Carthalos Skin 4,Tone Pro,Tone-Pro-Carthalos-Skin-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100169-56189961245,Tone Pro: Carthalos Skin 5,Tone Pro,Tone-Pro-Carthalos-Skin-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100170-56189961251,Tone Pro: Celestine Skin 1,Tone Pro,Tone-Pro-Celestine-Skin-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100171-56189961252,Tone Pro: Celestine Skin 2,Tone Pro,Tone-Pro-Celestine-Skin-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100172-56189961253,Tone Pro: Celestine Skin 3,Tone Pro,Tone-Pro-Celestine-Skin-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100173-56189961254,Tone Pro: Celestine Skin 4,Tone Pro,Tone-Pro-Celestine-Skin-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100174-56189961255,Tone Pro: Celestine Skin 5,Tone Pro,Tone-Pro-Celestine-Skin-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100150-56189961216,Tone Pro: Gnarlwood 1,Tone Pro,Tone-Pro-Gnarlwood-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100151-56189961217,Tone Pro: Gnarlwood 2,Tone Pro,Tone-Pro-Gnarlwood-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100152-56189961218,Tone Pro: Gnarlwood 3,Tone Pro,Tone-Pro-Gnarlwood-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100153-56189961219,Tone Pro: Gnarlwood 4,Tone Pro,Tone-Pro-Gnarlwood-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100154-56189961220,Tone Pro: Gnarlwood 5,Tone Pro,Tone-Pro-Gnarlwood-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100160-56189961231,Tone Pro: Necrolith Bone 1,Tone Pro,Tone-Pro-Necrolith-Bone-1-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100161-56189961232,Tone Pro: Necrolith Bone 2,Tone Pro,Tone-Pro-Necrolith-Bone-2-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100162-56189961233,Tone Pro: Necrolith Bone 3,Tone Pro,Tone-Pro-Necrolith-Bone-3-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100163-56189961234,Tone Pro: Necrolith Bone 4,Tone Pro,Tone-Pro-Necrolith-Bone-4-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100164-56189961235,Tone Pro: Necrolith Bone 5,Tone Pro,Tone-Pro-Necrolith-Bone-5-US,6.75,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100300-56189956135,Tech Pro: Blending Medium,Tech Pro,Tech-Pro-Blending-Medium-US,8.1,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,Paint-100301-56189956136,Tech Pro: Shading Medium,Tech Pro,Tech-Pro-Shading-Medium-US,8.1,A,true,true,true,false,false,false,1,memphis,algolia
+2026-10-21,P-244486-56189950289,Base: Abaddon Black,Base,b-abaddon-black-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244490-56189950265,Base: Averland Sunset,Base,b-averland-sunset-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244495-56189950273,Base: Caledor Sky,Base,b-caledor-sky-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244496-56189950315,Base: Corax White,Base,b-corax-white-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244497-56189951303,Layer: Evil Sunz Scarlet,Layer,l-evil-sunz-scarlet-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244498-56189951335,Layer: Kislev Flesh,Layer,l-kislev-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244499-56189950292,Base: Leadbelcher,Base,b-leadbelcher-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244500-56189950272,Base: Macragge Blue,Base,b-macragge-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244541-56189950267,Base: Mephiston Red,Base,b-mephiston-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244542-56189951322,Layer: Moot Green,Layer,l-moot-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244719-56189950284,Base: Mournfang Brown,Base,b-mournfang-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244946-56189950297,Base: Retributor Armour,Base,b-retributor-armour-12ml-us-can,6.3,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244966-56189950316,Base: Wraithbone,Base,b-wraithbone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244969-56189950310,Base: Balthasar Gold,Base,b-balthasar-gold-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244970-56189951334,Layer: Cadian Fleshtone,Layer,l-cadian-fleshtone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244971-56189950276,Base: Caliban Green,Base,b-caliban-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244972-56189950290,Base: Celestra Grey,Base,b-celestra-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244973-56189950306,Base: Corvus Black,Base,b-corvus-black-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244974-56189951347,Layer: Dawnstone,Layer,l-dawnstone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244975-56189950299,Base: Death Guard Green,Base,b-death-guard-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245063-56189951349,Layer: Eshin Grey,Layer,l-eshin-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245064-56189951364,Layer: Fenrisian Grey,Layer,l-fenrisian-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245065-56189950308,Base: Iron Hands Steel,Base,b-iron-hands-steel-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245066-56189950311,Base: Iron Warriors,Base,b-iron-warriors-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245067-56189951357,Layer: Ironbreaker,Layer,l-ironbreaker-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245068-56189950271,Base: Kantor Blue,Base,b-kantor-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245069-56189950268,Base: Khorne Red,Base,b-khorne-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245106-56189951367,Layer: Liberator Gold,Layer,l-liberator-gold-12ml-us-can,6.3,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245107-56189950288,Base: Mechanicus Standard Grey,Base,b-mechanicus-standard-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245108-56189950291,Base: Rakarth Flesh,Base,b-rakarth-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245109-56189950286,Base: Rhinox Hide,Base,b-rhinox-hide-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245110-56189950318,Base: Runelord Brass,Base,b-runelord-brass-12ml-us-can,6.3,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245111-56189950296,Base: Screamer Pink,Base,b-screamer-pink-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245112-56189951331,Layer: Screaming Skull,Layer,l-screaming-skull-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245113-56189951330,Layer: Ushabti Bone,Layer,l-ushabti-bone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245114-56189951321,Layer: Warpstone Glow,Layer,l-warpstone-glow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245131-56189951355,Layer: White Scar,Layer,l-white-scar-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245132-56189951304,Layer: Wild Rider Red,Layer,l-wild-rider-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245133-56189950280,Base: Zandri Dust,Base,b-zandri-dust-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245470-56189950277,Base: Waaagh! Flesh,Base,b-waaagh-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245472-56189951299,Layer: Yriel Yellow,Layer,l-yriel-yellow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245475-56189951348,Layer: Administratum Grey,Layer,l-administratum-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245480-56189951372,Layer: Ahriman Blue,Layer,l-ahriman-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245503-56189951360,Layer: Auric Armour Gold,Layer,l-auric-armour-gold-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245541-56189951375,Layer: Baharroth Blue,Layer,l-baharroth-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245542-56189951346,Layer: Baneblade Brown,Layer,l-baneblade-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245543-56189950312,Base: Barak-Nar Burgundy,Base,b-barak-nar-burgundy-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245546-56189951380,Layer: Blue Horror,Layer,l-blue-horror-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245554-56189951362,Layer: Brass Scorpion,Layer,l-brass-scorpion-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245556-56189950282,Base: Bugman's Glow,Base,b-bugmans-glow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245557-56189951314,Layer: Calgar Blue,Layer,l-calgar-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245560-56189950278,Base: Castellan Green,Base,b-castellan-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245621-56189950313,Base: Catachan Flesh,Base,b-catachan-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245622-56189951350,Layer: Dark Reaper,Layer,l-dark-reaper-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245623-56189951343,Layer: Doombull Brown,Layer,l-doombull-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245624-56189951376,Layer: Dorn Yellow,Layer,l-dorn-yellow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245625-56189950287,Base: Dryad Bark,Base,b-dryad-bark-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245626-56189951366,Layer: Emperor's Children,Layer,l-emperors-children-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245627-56189951302,Layer: Fire Dragon Bright,Layer,l-fire-dragon-bright-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245628-56189951368,Layer: Flayed One Flesh,Layer,l-flayed-one-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245629-56189951377,Layer: Fulgrim Pink,Layer,l-fulgrim-pink-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245630-56189951374,Layer: Gauss Blaster Green,Layer,l-gauss-blaster-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245633-56189951359,Layer: Gehenna's Gold,Layer,l-gehennas-gold-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245634-56189951308,Layer: Genestealer Purple,Layer,l-genestealer-purple-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245638-56189951345,Layer: Gorthor Brown,Layer,l-gorthor-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245661-56189950309,Base: Grey Knights Steel,Base,b-grey-knights-steel-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245664-56189950275,Base: Incubi Darkness,Base,b-incubi-darkness-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245731-56189950266,Base: Jokaero Orange,Base,b-jokaero-orange-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245732-56189951319,Layer: Kabalite Green,Layer,l-kabalite-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245735-56189951333,Layer: Karak Stone,Layer,l-karak-stone-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245736-56189951316,Layer: Lothern Blue,Layer,l-lothern-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245737-56189950269,Base: Naggaroth Night,Base,b-naggaroth-night-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245738-56189951356,Layer: Pallid Wych Flesh,Layer,l-pallid-wych-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245739-56189950301,Base: Phoenician Purple,Base,b-phoenician-purple-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245740-56189951365,Layer: Pink Horror,Layer,l-pink-horror-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245741-56189951358,Layer: Runefang Steel,Layer,l-runefang-steel-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245742-56189951363,Layer: Russ Grey,Layer,l-russ-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245804-56189950293,Base: Screaming Bell,Base,b-screaming-bell-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245805-56189951352,Layer: Skavenblight Dinge,Layer,l-skavenblight-dinge-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245806-56189951338,Layer: Skrag Brown,Layer,l-skrag-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245807-56189951369,Layer: Skullcrusher Brass,Layer,l-skullcrusher-brass-12ml-us-can,6.3,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245808-56189951310,Layer: Slaanesh Grey,Layer,l-slaanesh-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245809-56189951317,Layer: Sotek Green,Layer,l-sotek-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245810-56189950281,Base: Steel Legion Drab,Base,b-steel-legion-drab-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245811-56189950274,Base: Stegadon Scale Green,Base,b-stegadon-scale-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245812-56189951320,Layer: Sybarite Green,Layer,l-sybarite-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245813-56189951361,Layer: Sycorax Bronze,Layer,l-sycorax-bronze-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245814-56189951318,Layer: Temple Guard Blue,Layer,l-temple-guard-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245818-56189950295,Base: The Fang,Base,b-the-fang-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245819-56189950298,Base: Thousand Sons Blue,Base,b-thousand-sons-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245882-56189951351,Layer: Thunderhawk Blue,Layer,l-thunderhawk-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245883-56189951301,Layer: Troll Slayer Orange,Layer,l-trollslayer-orange-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245884-56189951354,Layer: Ulthuan Grey,Layer,l-ulthuan-grey-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245885-56189950294,Base: Warplock Bronze,Base,b-warplock-bronze-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245886-56189951305,Layer: Wazdakka Red,Layer,l-wazdakka-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245887-56189951307,Layer: Xereus Purple,Layer,l-xereus-purple-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245888-56189950285,Base: XV-88,Base,b-xv-88-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246332-56189951311,Layer: Alaitoc Blue,Layer,l-alaitoc-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246333-56189951313,Layer: Altdorf Guard Blue,Layer,l-altdorf-guard-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246335-56189951341,Layer: Balor Brown,Layer,l-balor-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246336-56189951389,Layer: Bloodreaver Flesh,Layer,l-bloodreaver-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246339-56189950270,Base: Daemonette Hide,Base,b-daemonette-hide-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246362-56189951339,Layer: Deathclaw Brown,Layer,l-deathclaw-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246365-56189950279,Base: Deathworld Forest,Base,b-death-world-forest-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246366-56189951378,Layer: Dechala Lilac,Layer,l-dechala-lilac-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246367-56189951373,Layer: Deepkin Flesh,Layer,l-deepkin-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246368-56189951328,Layer: Elysian Green,Layer,l-elysian-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246444-56189951300,Layer: Flash Gitz Yellow,Layer,l-flash-gitz-yellow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246447-56189951312,Layer: Hoeth Blue,Layer,l-hoeth-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246448-56189950300,Base: Ionrach Skin,Base,b-ionrach-skin-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246449-56189951382,Layer: Kakophoni Purple,Layer,l-kakophoni-purple-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246450-56189951390,Layer: Knight-Questor Flesh,Layer,l-knight-questor-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246451-56189951379,Layer: Krieg Khaki,Layer,l-krieg-khaki-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246452-56189951325,Layer: Loren Forest,Layer,l-loren-forest-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246455-56189951381,Layer: Lugganath Orange,Layer,l-lugganath-orange-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246458-56189950304,Base: Night Lords Blue,Base,b-night-lords-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246483-56189951327,Layer: Nurgling Green,Layer,l-nurgling-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246484-56189951329,Layer: Ogryn Camo,Layer,l-ogryn-camo-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246485-56189950319,Base: Orruk Flesh,Base,b-orruk-flesh-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246486-56189951384,Layer: Phalanx Yellow,Layer,l-phalanx-yellow-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246487-56189951324,Layer: Skarsnik Green,Layer,l-skarsnik-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246488-56189951383,Layer: Sons of Horus Green,Layer,l-sons-of-horus-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246489-56189951306,Layer: Squig Orange,Layer,l-squig-orange-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246490-56189951353,Layer: Stormvermin Fur,Layer,l-stormvermin-fur-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246491-56189951326,Layer: Straken Green,Layer,l-straken-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246492-56189951340,Layer: Tau Light Ochre,Layer,l-tau-light-ochre-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246495-56189951315,Layer: Teclis Blue,Layer,l-teclis-blue-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246543-56189951344,Layer: Tuskgor Fur,Layer,l-tuskgor-fur-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246545-56189951323,Layer: Warboss Green,Layer,l-warboss-green-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246548-56189951387,Layer: Word Bearers Red,Layer,l-word-bearers-red-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246549-56189951342,Layer: Zamesi Desert,Layer,l-zamesi-desert-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247144-56189950321,Base: Thondia Brown,Base,b-thondia-brown-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247145-56189951370,Layer: Fulgurite Copper,Layer,l-fulgurite-copper-12ml-us-can,6.3,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247152-56189950302,Base: Death Korps Drab,Base,b-death-korps-drab-12ml-us-can,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247215-56189960207,Contrast: Flesh Tearers Red,Contrast,c-flesh-tearers-red-18ml-us-can,8.1,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247216-56189960249,Contrast: Frostheart,Contrast,c-frostheart-18ml-us-can,8.1,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-248591-56189953063,Shade: Poxwalker,Shade,s-poxwalker-18ml-us-can,8.1,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190191-99189956074,Technical: Armageddon Dust,Technical,Technical-Armageddon-Dust-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190195-99189956078,Technical: Valhallan Blizzard,Technical,Technical-Valhallan-Blizzard-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190229-99189958161,Air: Elysian Green,Air,Air-Elysian-Green-2019,8.1,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190282-99189960101,Contrast: Shyish Purple,Contrast,Shyish-Purple-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190297-99189960116,Contrast: Wyldwood,Contrast,Wyldwood-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190300-99189960119,Contrast: Darkoath Flesh,Contrast,Darkoath-Flesh-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190303-99189960122,Contrast: Space Wolves Grey,Contrast,Space-Wolves-Grey-2019,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210388-99189956061,Technical: Nihilakh Oxide,Technical,Technical-Nihilakh-Oxide-2019,4.75,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210392-99189956063,Technical: Typhus Corrosion,Technical,Technical-Typhus-Corrosion-2019,4.75,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220126-99189952040,Etherium Blue,Dry,Dry-Etherium-Blue-2019,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220130-99189952036,Hexos Palesun,Dry,Dry-Hexos-Palesun-2019,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220135-99189952048,Necron Compound,Dry,Dry-Necron-Compound-2019,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220143-99189952057,Stormfang,Dry,Dry-Stormfang-2019,4.75,A,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4540237-13209999113,Death Guard Green,Spray,Death-Guard-Green-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540239-13209999105,Wraithbone,Spray,Wraithbone-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540241-13209999111,Leadbelcher,Spray,Leadbelcher-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540242-13209999109,Macragge Blue,Spray,Macragge-Blue-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540243-13209999112,Mechanicus Standard Grey,Spray,Mechanicus-Standard-Grey-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540244-13209999108,Mephiston Red,Spray,Mephiston-Red-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540246-13209999114,Retributor Armour,Spray,Retributor-Armour-Spray-US-2020,35.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540247-13209999110,Zandri Dust,Spray,Zandri-Dust-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4960246-99189953046,Shade: Berserker Bloodshade,Shade,shade-berserker-bloodshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960249-99189953049,Shade: Reikland Fleshshade,Shade,shade-reikland-fleshshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960253-99189953053,Shade: Drakenhof Nightshade,Shade,shade-drakenhof-nightshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960276-99189960051,Contrast: Celestium Blue,Contrast,contrast-celestium-blue-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4540236-13209999104,Chaos Black,Spray,Chaos-Black-Spray-US-2020,21.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4540238-13209999106,Grey Seer,Spray,Grey-Seer-Spray-US-2020,25.0,A,true,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4960250-99189953050,Shade: Agrax Earthshade,Shade,shade-agrax-earthshade-18ml-2022,8.1,P,true,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-244947-56189951371,Layer: Stormhost Silver,Layer,l-stormhost-silver-12ml-us-can,6.3,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-245558-56189951391,Layer: Canoptek Alloy,Layer,l-canoptek-alloy-12ml-us-can,6.3,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246446-56189951388,Layer: Hashut Copper,Layer,l-hashut-copper-12ml-us-can,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246544-56189951337,Layer: Ungor Flesh,Layer,l-ungor-flesh-12ml-us-can,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246695-56189960240,Contrast: Aeldari Emerald,Contrast,c-aeldari-emerald-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-246846-56189956129,Technical: Agrellan Earth,Technical,te-agrellan-earth-24ml-us-can,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-246900-56189956123,Technical: Nurgle's Rot,Technical,te-nurgles-rot-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247143-56189950303,Base: Gal Vorbak Red,Base,b-gal-vorbak-red-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247147-56189950283,Base: Ratskin Flesh,Base,b-ratskin-flesh-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247153-56189950305,Base: Nocturne Green,Base,b-nocturne-green-12ml-us-can,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247154-56189950320,Base: Hobgrot Hide,Base,b-hobgrot-hide-12ml-us-can,4.75,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247208-56189960248,Contrast: Briar Queen Chill,Contrast,c-briar-queen-chill-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247219-56189960227,Contrast: Gryph-Charger Grey,Contrast,c-gryph-charger-grey-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247242-56189960241,Contrast: Gutrippa Flesh,Contrast,c-gutrippa-flesh-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247245-56189960244,Contrast: Ironjawz Yellow,Contrast,c-ironjawz-yellow-18ml-us-can,8.1,O,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-247254-56189960239,Contrast: Mantis Warriors Green,Contrast,c-mantis-warriors-green-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247257-56189960215,Contrast: Nazdreg Yellow,Contrast,c-nazdreg-yellow-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-247614-56189953066,Shade: Tyran Blue,Shade,s-tyran-blue-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-248285-56189956130,Technical: Martian Ironearth,Technical,te-martian-ironearth-24ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-248331-56189956133,Technical: Stormshield,Technical,te-stormshield-satin-varnish-24ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-248343-56189956093,Technical: Agrellan Badland,Technical,te-agrellan-badland-24ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,P-248643-56189953064,Shade: Targor Rageshade,Shade,s-targor-rageshade-18ml-us-can,8.1,,false,true,false,false,false,false,9999,undefined,algolia
+2026-10-21,prod4190157-99189950306,Base: Corvus Black,Base,Base-Corvus-Black-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190159-99189950308,Base: Iron Hands Steel,Base,Base-Iron-Hands-Steel-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190164-99189950257,Base: Morghast Bone,Base,Base-Morghast-Bone-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190165-99189950315,Base: Corax White,Base,Base-Corax-White-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190166-99189950316,Base: Wraithbone,Base,Base-Wraithbone-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190179-99189951292,Layer: Castellax Bronze,Layer,Castellax-Bronze-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190180-99189951293,Layer: Vulkan Green,Layer,Vulkan-Green-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190184-99189956067,Technical: Mordant Earth,Technical,Mordant-Earth-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190188-99189956071,Technical: Martian Ironcrust,Technical,Technical-Martian-Ironcrust-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190189-99189956072,Technical: Stirland Mud,Technical,Technical-Stirland-Mud-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190193-99189956046,Technical: Astrogranite,Technical,Technical-Astrogranite-2019,7.8,O,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190196-99189956079,Technical: Lahmian Medium,Technical,Technical-Lahmian-Medium-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190198-99189956081,Technical: Contrast Medium,Technical,Contrast-Medium-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190200-99189958131,Air: Averland Sunset,Air,Air-Averland-Sunset-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190201-99189958132,Air: Mephiston Red,Air,Air-Mephiston-Red-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190202-99189958133,Air: Khorne Red,Air,Air-Khorne-Red-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190203-99189958134,Air: Kantor Blue,Air,Air-Kantor-Blue-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190205-99189958137,Air: Caliban Green,Air,Air-Caliban-Green-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190206-99189958138,Air: Castellan Green,Air,Air-Castellan-Green-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190207-99189958139,Air: Deathworld Forest,Air,Air-Deathworld-Forest-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190208-99189958140,Air: Zandri Dust,Air,Air-Zandri-Dust-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190209-99189958141,Air: Mournfang Brown,Air,Air-Mournfang-Brown-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190212-99189958144,Air: Mechanicus Standard Grey,Air,Air-Mechanicus-Standard-Grey-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190213-99189958145,Air: Abaddon Black,Air,Air-Abaddon-Black-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190214-99189958146,Air: Leadbelcher,Air,Air-Leadbelcher-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190215-99189958147,Air: Balthasar Gold,Air,Air-Balthasar-Gold-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190217-99189958149,Air: The Fang,Air,Air-The-Fang-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190218-99189958150,Air: Flash Gitz Yellow,Air,Air-Flash-Gitz-Yellow-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190219-99189958151,Air: Troll Slayer Orange,Air,Air-Troll-Slayer-Orange-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190220-99189958152,Air: Evil Sunz Scarlet,Air,Air-Evil-Sunz-Scarlet-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190223-99189958155,Air: Lothern Blue,Air,Air-Lothern-Blue-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190224-99189958156,Air: Temple Guard Blue,Air,Air-Temple-Guard-Blue-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190226-99189958158,Air: Moot Green,Air,Air-Moot-Green-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190230-99189958162,Air: Ogryn Camo,Air,Air-Ogryn-Camo-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190231-99189958163,Air: Ushabti Bone,Air,Air-Ushabti-Bone-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190232-99189958164,Air: Air Caste Thinner,Air,Air-Caste-Thinner-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190235-99189958167,Air: Kislev Flesh,Air,Air-Kislev-Flesh-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190240-99189958172,Air: Baneblade Brown,Air,Air-Baneblade-Brown-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190241-99189958173,Air: Dawnstone,Air,Air-Dawnstone-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190242-99189958174,Air: Administratum Grey,Air,Air-Administratum-Grey-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190243-99189958175,Air: Ulthuan Grey,Air,Air-Ulthuan-Grey-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190244-99189958176,Air: White Scar,Air,Air-White-Scar-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190246-99189958178,Air: Runefang Steel,Air,Air-Runefang-Steel-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190248-99189958180,Air: Russ Grey,Air,Air-Russ-Grey-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190249-99189958181,Air: Fenrisian Grey,Air,Air-Fenrisian-Grey-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190251-99189958183,Air: Angron Red Clear,Air,Air-Angron-Red-Clear-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190252-99189958184,Air: Calth Blue Clear,Air,Air-Calth-Blue-Clear-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190254-99189958186,Air: Eidolon Purple Clear,Air,Air-Eidolon-Purple-Clear-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190255-99189958187,Air: Mortarion Green Clear,Air,Air-Mortarion-Green-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190256-99189958188,Air: Phoenician Purple,Air,Air-Phoenician-Purple-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190259-99189958191,Air: Night Lords Blue,Air,Air-Night-Lords-Blue-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190262-99189958194,Air: Corvus Black,Air,Air-Corvus-Black-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190264-99189958196,Air: Typhon Ash,Air,Air-Typhon-Ash-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190266-99189958198,Air: Phalanx Yellow,Air,Air-Phalanx-Yellow-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190275-99189958207,Air: Grey Knights Steel,Air,Air-Grey-Knights-Steel-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190276-99189958208,Air: Thallax Gold,Air,Air-Thallax-Gold-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190277-99189960096,Contrast: Iyanden Yellow,Contrast,Iyanden-Yellow-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190279-99189960098,Contrast: Blood Angels Red,Contrast,Blood-Angels-Red-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190281-99189960100,Contrast: Volupus Pink,Contrast,Volupus-Pink-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190283-99189960102,Contrast: Magos Purple,Contrast,Magos-Purple-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190285-99189960009,Contrast: Ultramarines Blue,Contrast,Ultramarines-Blue-2019,7.8,O,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190286-99189960105,Contrast: Akhelian Green,Contrast,Akhelian-Green-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190287-99189960106,Contrast: Dark Angels Green,Contrast,Dark-Angels-Green-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190289-99189960108,Contrast: Ork Flesh,Contrast,Ork-Flesh-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190290-99189960109,Contrast: Creed Camo,Contrast,Creed-Camo-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190291-99189960110,Contrast: Militarum Green,Contrast,Militarum-Green-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190292-99189960111,Contrast: Aggaros Dunes,Contrast,Aggaros-Dunes-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190295-99189960114,Contrast: Gore-Grunta Fur,Contrast,Gore-grunta-Fur-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190298-99189960151,Contrast: Fyreslayer Flesh,Contrast,Fyreslayer-Flesh-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190305-99189960124,Contrast: Black Templar,Contrast,Black-Templar-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190306-99189960125,Contrast: Talassar Blue,Contrast,Talassar-Blue-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190307-99189960126,Contrast: Warp Lightning,Contrast,Warp-Lightning-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190308-99189960127,Contrast: Aethermatic Blue,Contrast,Aethermatic-Blue-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190309-99189960128,Contrast: Plaguebearer Flesh,Contrast,Plaguebearer-Flesh-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190310-99189960129,Contrast: Terradon Turquoise,Contrast,Terradon-Turquoise-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210259-99189958135,Air: Macragge Blue,Air,Air-Macragge-Blue-2019,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210272-99189950276,Base: Caliban Green,Base,Base-Caliban-Green-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210274-99189950290,Base: Celestra Grey,Base,Base-Celestra-Grey-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210284-99189950272,Base: Macragge Blue,Base,Base-Macragge-Blue-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210285-99189950288,Base: Mechanicus Standard Grey,Base,Base-Mechanicus-Standard-Grey-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210287-99189950284,Base: Mournfang Brown,Base,Base-Mournfang-Brown-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210292-99189950286,Base: Rhinox Hide,Base,Base-Rhinox-Hide-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210312-99189951243,Layer: Bestigor Flesh,Layer,Layer-Bestigor-Flesh-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210342-99189951322,Layer: Moot Green,Layer,Layer-Moot-Green-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210350-99189951331,Layer: Screaming Skull,Layer,Layer-Screaming-Skull-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210363-99189951332,Layer: Tallarn Sand,Layer,Layer-Tallarn-Sand-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210374-99189951309,Layer: Warpfiend Grey,Layer,Layer-Warpfiend-Grey-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210393-99189956066,Technical: Waystone Green,Technical,Technical-Waystone-Green-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210414-99189956080,Technical: Ardcoat,Technical,Technical-Ardcoat-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4210415-99189956060,Technical: Blood For The Blood God,Technical,Technical-Blood-for-the-Blood-God-2019,4.75,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220121-99189952053,Astorath Red,Dry,Dry-Astorath-Red-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220124-99189952063,Dawnstone,Dry,Dry-Dawnstone-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220125-99189952044,Eldar Flesh,Dry,Dry-Eldar-Flesh-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220127-99189952049,Golden Griffon,Dry,Dry-Golden-Griffon-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220128-99189952060,Golgfag Brown,Dry,Dry-Golgfag-Brown-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220131-99189952056,Imrik Blue,Dry,Dry-Imrik-Blue-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220133-99189952047,Longbeard Grey,Dry,Dry-Longbeard-Grey-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220134-99189952038,Lucius Lilac,Dry,Dry-Lucius-Lilac-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220136-99189952058,Niblet Green,Dry,Dry-Niblet-Green-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220137-99189952059,Nurgling Green,Dry,Dry-Nurgling-Green-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220138-99189952039,Praxeti White,Dry,Dry-Praxeti-White-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220139-99189952051,Ryza Rust,Dry,Dry-Ryza-Rust-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220141-99189952041,Skink Blue,Dry,Dry-Skink-Blue-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220144-99189952062,Sylvaneth Bark,Dry,Dry-Sylvaneth-Bark-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220145-99189952046,Terminatus Stone,Dry,Dry-Terminatus-Stone-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220147-99189952045,Tyrant Skull,Dry,Dry-Tyrant-Skull-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220148-99189952043,Underhive Ash,Dry,Dry-Underhive-Ash-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220150-99189952052,Wrack White,Dry,Dry-Wrack-White-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4220151-99189952054,Hoeth Blue,Dry,Dry-Hoeth-Blue-2019,4.75,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4480165-99189956083,Technical: Tesseract Glow,Technical,Technical-Tesseract-Glow-2020,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4540245-13209999107,Munitorum Varnish,Spray,Munitorum-Varnish-US-2020,24.0,O,false,true,false,false,false,false,2,memphis,algolia
+2026-10-21,prod4960241-99189953041,Shade:  Kroak Green,Shade,shade-kroak-green-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960244-99189953044,Shade: Mortarion Grime,Shade,shade-mortarion-grime-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960248-99189953048,Shade: Nuln Oil,Shade,shade-nuln-oil-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960254-99189953054,Shade: Seraphim Sepia,Shade,shade-seraphim-sepia-18ml-2022,8.1,O,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960256-99189953056,Shade: Casandora Yellow,Shade,shade-casandora-yellow-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960258-99189953058,Shade: Coelia Greenshade,Shade,shade-coelia-greenshade-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960260-99189960035,Contrast: Garaghak's Sewer,Contrast,contrast-garaghaks-sewer-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960261-99189960036,Contrast: Black Legion,Contrast,contrast-black-legion-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960262-99189960037,Contrast: Ratling Grime,Contrast,contrast-ratling-grime-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960267-99189960042,Contrast: Striking Scorpion Green,Contrast,contrast-striking-scorpion-green-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960270-99189960045,Contrast: Imperial Fist,Contrast,contrast-imperial-fist-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960275-99189960050,Contrast: Asurmen Blue,Contrast,contrast-asurmen-blue-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960277-99189960052,Contrast: Stormfiend,Contrast,contrast-stormfiend-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960278-99189960053,Contrast: Leviathan Purple,Contrast,contrast-leviathan-purple-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960280-99189960055,Contrast: Sigvald Burgundy,Contrast,contrast-sigvald-burgundy-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960281-99189960056,Contrast: Dreadful Visage,Contrast,contrast-dreadful-visage-18ml-2022,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960282-99189960057,Contrast: Doomfire Magenta,Contrast,contrast-doomfire-magenta-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960285-99189960060,Contrast: Hexwraith Flame,Contrast,contrast-hexwraith-flame-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960286-99189960061,Contrast: Nighthaunt Gloom,Contrast,contrast-nighthaunt-gloom-18ml-2022,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,P-248596-56189960219,Contrast: Skeleton Horde,Contrast,c-skeleton-horde-18ml-us-can,8.1,A,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4190296-99189960115,Contrast: Cygor Brown,Contrast,Cygor-Brown-2019,8.1,P,false,true,false,false,false,false,9999,memphis,algolia
+2026-10-21,prod4960236-13209999103,White Scar,Spray,white-scar-spray-paint-2022-nas,25.0,A,false,true,false,false,false,false,2,memphis,algolia

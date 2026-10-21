@@ -47,3 +47,7 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-20,2026-10-19,1,loaded_dice,GB,Layer: Sotek Green,Layer,7.0,8,1.0,launch_delivery,panel
 2026-10-20,2026-10-19,1,loaded_dice,GB,Layer: Warpstone Glow,Layer,13.0,14,1.0,launch_delivery,panel
 2026-10-20,2026-10-19,1,pastime_sports_games,CA,Base: Gal Vorbak Red,Base,7.0,8,1.0,launch_delivery,panel
+2026-10-21,2026-10-20,1,firestorm_games,GB,Base: Orruk Flesh,Base,5.0,11,6.0,launch_delivery,panel
+2026-10-21,2026-10-14,7,obsidian_games,CA,Base: Abaddon Black,Base,0.0,12,12.0,launch_delivery,page
+2026-10-21,2026-10-14,7,obsidian_games,CA,Base: Leadbelcher,Base,3.0,6,3.0,launch_delivery,page
+2026-10-21,2026-10-14,7,obsidian_games,CA,Base: Retributor Armour,Base,0.0,8,8.0,launch_delivery,page
