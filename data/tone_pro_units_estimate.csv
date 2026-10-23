@@ -7,7 +7,7 @@ DE,125,all 7 tested stores,3.0,6.0,6.0,56250,112500,112500
 FR,114,all 7 tested stores,3.0,6.0,6.0,51300,102600,102600
 ES,102,all 7 tested stores,3.0,6.0,6.0,45900,91800,91800
 PL,73,all 7 tested stores,3.0,6.0,6.0,32850,65700,65700
-JP,71,all 7 tested stores,3.0,6.0,6.0,31950,63900,63900
+JP,72,all 7 tested stores,3.0,6.0,6.0,32400,64800,64800
 IT,46,all 7 tested stores,3.0,6.0,6.0,20700,41400,41400
 SE,38,all 7 tested stores,3.0,6.0,6.0,17100,34200,34200
 BE,36,all 7 tested stores,3.0,6.0,6.0,16200,32400,32400
@@ -55,4 +55,4 @@ LT,1,all 7 tested stores,3.0,6.0,6.0,450,900,900
 PH,1,all 7 tested stores,3.0,6.0,6.0,450,900,900
 RE,1,all 7 tested stores,3.0,6.0,6.0,450,900,900
 SI,1,all 7 tested stores,3.0,6.0,6.0,450,900,900
-ALL,3056,sum of countries,,,,1336950,2658600,2704500
+ALL,3057,sum of countries,,,,1337400,2659500,2705400

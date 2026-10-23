@@ -303,3 +303,6 @@ date,change,country,name,city,from_range,to_range
 2026-10-22,lost_pro,JP,ビックカメラ札幌店,札幌市,P360_T150,P360
 2026-10-22,gained_pro,GB,PADS,Catterick Garrison,,P150_T150
 2026-10-22,label_added,GB,PADS,Catterick Garrison,,P150_T150
+2026-10-23,gained_pro,JP,駿河屋大宮マルイ店,さいたま市,P150,P150_T150
+2026-10-23,dropped_stockist,NZ,BEA DND,Lower-Hutt,,
+2026-10-23,dropped_stockist,AU,Star Tagz,Newcastle,,

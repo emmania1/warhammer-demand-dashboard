@@ -428,3 +428,12 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-22,2026-10-21,1,the_outpost,GB,Tone Pro: Ultramar Blue 5,Tone Pro,0.0,3,3.0,launch_delivery,panel
 2026-10-22,2026-10-17,5,travelling_man_uk,GB,Base: Abaddon Black,Base,0.0,15,15.0,launch_delivery,page
 2026-10-22,2026-10-17,5,travelling_man_uk,GB,Layer: Evil Sunz Scarlet,Layer,3.0,4,1.0,launch_delivery,page
+2026-10-23,2026-10-16,7,bd_cosmos,CA,Base: Retributor Armour,Base,2.0,4,2.0,launch_delivery,page
+2026-10-23,2026-10-22,1,beanie_games,GB,Base: Mournfang Brown,Base,2.0,8,6.0,launch_delivery,panel
+2026-10-23,2026-10-17,6,beanie_games,GB,Layer: Eshin Grey,Layer,1.0,6,5.0,launch_delivery,panel
+2026-10-23,2026-10-22,1,beanie_games,GB,Layer: Moot Green,Layer,3.0,9,6.0,launch_delivery,panel
+2026-10-23,2026-10-21,2,beanie_games,GB,Layer: White Scar,Layer,4.0,9,5.0,launch_delivery,panel
+2026-10-23,2026-10-22,1,loaded_dice,GB,Layer: Screaming Skull,Layer,9.0,15,6.0,launch_delivery,panel
+2026-10-23,2026-10-22,1,loaded_dice,GB,Layer: Squig Orange,Layer,4.0,13,9.0,launch_delivery,panel
+2026-10-23,2026-10-22,1,loaded_dice,GB,Layer: Wild Rider Red,Layer,5.0,14,9.0,launch_delivery,panel
+2026-10-23,2026-10-22,1,travelling_man_uk,GB,Base: Abaddon Black,Base,15.0,36,21.0,launch_delivery,page
