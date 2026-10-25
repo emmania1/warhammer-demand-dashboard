@@ -463,3 +463,9 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-24,2026-10-17,7,travelling_man_uk,GB,Base: Macragge Blue,Base,12.0,17,5.0,launch_delivery,page
 2026-10-24,2026-10-23,1,travelling_man_uk,GB,Layer: Evil Sunz Scarlet,Layer,3.0,7,4.0,launch_delivery,page
 2026-10-24,2026-10-17,7,travelling_man_uk,GB,Layer: Stormhost Silver,Layer,5.0,9,4.0,launch_delivery,page
+2026-10-25,2026-10-24,1,firestorm_games,GB,Base: Mechanicus Standard Grey,Base,11.0,12,1.0,reorder,panel
+2026-10-25,2026-10-24,1,firestorm_games,GB,Layer: Evil Sunz Scarlet,Layer,17.0,18,1.0,reorder,panel
+2026-10-25,2026-10-24,1,firestorm_games,GB,Layer: Kislev Flesh,Layer,17.0,18,1.0,reorder,panel
+2026-10-25,2026-10-24,1,firestorm_games,GB,Layer: Troll Slayer Orange,Layer,16.0,17,1.0,launch_delivery,panel
+2026-10-25,2026-10-24,1,firestorm_games,GB,Tone Pro: Blackstone Void 1,Tone Pro,2.0,18,16.0,launch_delivery,panel
+2026-10-25,2026-10-18,7,lionheart_hobby,US,Base: Mephiston Red,Base,0.0,6,6.0,launch_delivery,page
