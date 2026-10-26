@@ -1,5 +1,5 @@
 store_id,country,paints_observed,mode_units,share_at_mode,median_units,min_units,max_units,standard_pack,evidence
-armada_games,US,149,11,0.47,10.0,3,11,false,pre-launch stock only
+armada_games,US,150,11,0.47,10.0,1,11,false,launch rise
 athena_games_ltd,GB,30,6,0.93,6.0,5,6,true,pre-launch stock only
 bd_cosmos,CA,30,4,1.0,4.0,4,4,true,pre-launch stock only
 boutique_fdb,CA,30,6,1.0,6.0,6,6,true,pre-launch stock only

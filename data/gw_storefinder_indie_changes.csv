@@ -306,3 +306,9 @@ date,change,country,name,city,from_range,to_range
 2026-10-23,gained_pro,JP,駿河屋大宮マルイ店,さいたま市,P150,P150_T150
 2026-10-23,dropped_stockist,NZ,BEA DND,Lower-Hutt,,
 2026-10-23,dropped_stockist,AU,Star Tagz,Newcastle,,
+2026-10-26,relisted,FR,Le De Tour,PAU,BSF,BSF
+2026-10-26,new_stockist,KR,히든토이 원주점,원주시,,
+2026-10-26,new_stockist,KR,야탑배틀시티,성남시,,
+2026-10-26,new_stockist,KR,컴파운,서울시,,
+2026-10-26,new_stockist,CZ,Hry do ruky,TRUTNOV,,P150
+2026-10-26,dropped_stockist,CZ,Hry do ruky,TRUTNOV,P150,

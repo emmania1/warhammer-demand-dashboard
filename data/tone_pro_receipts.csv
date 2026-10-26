@@ -469,3 +469,17 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-25,2026-10-24,1,firestorm_games,GB,Layer: Troll Slayer Orange,Layer,16.0,17,1.0,launch_delivery,panel
 2026-10-25,2026-10-24,1,firestorm_games,GB,Tone Pro: Blackstone Void 1,Tone Pro,2.0,18,16.0,launch_delivery,panel
 2026-10-25,2026-10-18,7,lionheart_hobby,US,Base: Mephiston Red,Base,0.0,6,6.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Blackstone Void 5,Tone Pro,-1.0,0,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Bloodtoof Red 1,Tone Pro,10.0,11,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Hawkshroud Yellow 2,Tone Pro,9.0,10,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Hawkshroud Yellow 4,Tone Pro,8.0,9,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Hawkshroud Yellow 5,Tone Pro,7.0,8,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Necrolith Bone 5,Tone Pro,8.0,9,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Plague Toad Venom 1,Tone Pro,10.0,11,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Plague Toad Venom 2,Tone Pro,10.0,11,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Plague Toad Venom 3,Tone Pro,9.0,10,1.0,launch_delivery,page
+2026-10-26,2026-10-19,7,armada_games,US,Tone Pro: Plague Toad Venom 4,Tone Pro,10.0,11,1.0,launch_delivery,page
+2026-10-26,2026-10-21,5,beanie_games,GB,Base: Rhinox Hide,Base,4.0,9,5.0,launch_delivery,panel
+2026-10-26,2026-10-25,1,firestorm_games,GB,Base: Morghast Bone,Base,3.0,23,20.0,launch_delivery,panel
+2026-10-26,2026-10-25,1,highlander_games,GB,Layer: Evil Sunz Scarlet,Layer,3.0,9,6.0,launch_delivery,page
+2026-10-26,2026-10-25,1,loaded_dice,GB,Base: Corax White,Base,2.0,42,40.0,reorder,panel
