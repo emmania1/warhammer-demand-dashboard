@@ -2731,3 +2731,221 @@ date,store_id,country,line,listed,available,in_stock_shelf,preorder,oos,qty_repo
 2026-10-26,yard_s_games_ltd,GB,Layer,86,86,0,0,0,0,0,0
 2026-10-26,yard_s_games_ltd,GB,Tech Pro,2,2,0,0,0,0,0,0
 2026-10-26,yard_s_games_ltd,GB,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,401_games,CA,Base,55,46,0,0,9,0,0,0
+2026-10-27,401_games,CA,Layer,93,79,0,0,14,0,0,0
+2026-10-27,401_games,CA,Tech Pro,2,0,0,0,2,0,0,0
+2026-10-27,401_games,CA,Tone Pro,150,0,0,0,150,0,0,0
+2026-10-27,a_list_games,GB,Base,56,56,0,0,0,0,0,0
+2026-10-27,a_list_games,GB,Layer,93,92,0,0,1,0,0,0
+2026-10-27,a_z_toy_hobby,US,Base,53,52,0,0,1,0,0,0
+2026-10-27,a_z_toy_hobby,US,Layer,93,93,0,0,0,0,0,0
+2026-10-27,abyss,CA,Base,56,53,0,0,3,0,0,0
+2026-10-27,abyss,CA,Layer,93,85,0,0,8,0,0,0
+2026-10-27,abyss,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,abyss,CA,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,always_games,CA,Base,55,54,0,0,1,0,0,0
+2026-10-27,always_games,CA,Layer,91,91,0,0,0,0,0,0
+2026-10-27,armada_games,US,Base,55,43,0,0,12,0,0,0
+2026-10-27,armada_games,US,Layer,93,70,0,0,23,0,0,0
+2026-10-27,armada_games,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,armada_games,US,Tone Pro,150,148,0,0,2,0,0,0
+2026-10-27,ashdown_gaming,GB,Base,51,51,0,0,0,0,0,0
+2026-10-27,ashdown_gaming,GB,Layer,86,81,0,0,5,0,0,0
+2026-10-27,ashdown_gaming,GB,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,ashdown_gaming,GB,Tone Pro,150,148,0,0,2,0,0,0
+2026-10-27,athena_games_ltd,GB,Base,55,49,0,0,6,0,0,0
+2026-10-27,athena_games_ltd,GB,Layer,93,69,0,0,24,0,0,0
+2026-10-27,athena_games_ltd,GB,Tech Pro,2,1,0,0,1,0,0,0
+2026-10-27,athena_games_ltd,GB,Tone Pro,150,149,0,0,1,0,0,0
+2026-10-27,battle_city_games,GB,Base,56,39,39,0,17,39,165,0
+2026-10-27,battle_city_games,GB,Layer,93,60,60,0,33,60,242,0
+2026-10-27,bd_cosmos,CA,Base,56,56,0,0,0,0,0,0
+2026-10-27,bd_cosmos,CA,Layer,92,89,0,0,3,0,0,0
+2026-10-27,bd_cosmos,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,bd_cosmos,CA,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,beanie_games,GB,Base,54,52,52,0,2,52,263,0
+2026-10-27,beanie_games,GB,Layer,93,84,84,0,9,84,431,0
+2026-10-27,black_knight_games,CA,Base,55,36,0,0,19,0,0,0
+2026-10-27,black_knight_games,CA,Layer,91,65,0,0,26,0,0,0
+2026-10-27,boutique_awesome,CA,Base,44,44,0,0,0,0,0,0
+2026-10-27,boutique_awesome,CA,Layer,74,74,0,0,0,0,0,0
+2026-10-27,boutique_fdb,CA,Base,50,50,0,0,0,0,0,0
+2026-10-27,boutique_fdb,CA,Layer,89,81,0,0,8,0,0,0
+2026-10-27,boutique_fdb,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,boutique_fdb,CA,Tone Pro,150,148,0,0,2,0,0,0
+2026-10-27,brimstone_games,CA,Base,55,54,0,0,1,0,0,0
+2026-10-27,brimstone_games,CA,Layer,93,93,0,0,0,0,0,0
+2026-10-27,brimstone_games,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,brimstone_games,CA,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,bulwark_games_hobby_gaming_s,GB,Base,55,54,0,0,1,0,0,0
+2026-10-27,bulwark_games_hobby_gaming_s,GB,Layer,93,90,0,0,3,0,0,0
+2026-10-27,cold_foil_heroes,US,Base,53,51,0,0,2,0,0,0
+2026-10-27,cold_foil_heroes,US,Layer,91,90,0,0,1,0,0,0
+2026-10-27,collector_store_llc,US,Base,43,35,0,0,8,0,0,0
+2026-10-27,collector_store_llc,US,Layer,76,73,0,0,3,0,0,0
+2026-10-27,collector_store_llc,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,collector_store_llc,US,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,common_ground_games,US,Base,55,55,0,0,0,0,0,0
+2026-10-27,common_ground_games,US,Layer,92,92,0,0,0,0,0,0
+2026-10-27,cosmic_games,US,Base,51,51,0,0,0,0,0,0
+2026-10-27,cosmic_games,US,Layer,86,86,0,0,0,0,0,0
+2026-10-27,cosmic_games,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,cosmic_games,US,Tone Pro,142,142,0,0,0,0,0,0
+2026-10-27,da_boss_bunka,GB,Base,55,55,0,0,0,0,0,0
+2026-10-27,da_boss_bunka,GB,Layer,92,92,0,0,0,0,0,0
+2026-10-27,darkwater_games,US,Base,55,55,0,0,0,0,0,0
+2026-10-27,darkwater_games,US,Layer,90,90,0,0,0,0,0,0
+2026-10-27,deals_n_dragons,US,Base,53,50,0,0,3,0,0,0
+2026-10-27,deals_n_dragons,US,Layer,93,93,0,0,0,0,0,0
+2026-10-27,deals_n_dragons,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,deals_n_dragons,US,Tone Pro,148,148,0,0,0,0,0,0
+2026-10-27,dice_saloon,GB,Base,55,55,0,0,0,0,0,0
+2026-10-27,dice_saloon,GB,Layer,92,92,0,0,0,0,0,0
+2026-10-27,dice_saloon,GB,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,dice_saloon,GB,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,digital_heroes,US,Base,43,43,0,0,0,0,0,0
+2026-10-27,digital_heroes,US,Layer,72,72,0,0,0,0,0,0
+2026-10-27,digital_heroes,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,digital_heroes,US,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,draco_gaming,GB,Base,56,56,0,0,0,0,0,0
+2026-10-27,draco_gaming,GB,Layer,93,93,0,0,0,0,0,0
+2026-10-27,draco_gaming,GB,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-27,draco_gaming,GB,Tone Pro,150,0,0,150,0,0,0,0
+2026-10-27,element_games,GB,Base,56,47,47,9,0,47,466,0
+2026-10-27,element_games,GB,Layer,93,76,76,17,0,76,739,0
+2026-10-27,element_games,GB,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-27,element_games,GB,Tone Pro,150,136,136,14,0,136,1337,0
+2026-10-27,event_horizon_hobbies_ca,CA,Base,55,49,0,0,6,0,0,0
+2026-10-27,event_horizon_hobbies_ca,CA,Layer,93,87,0,0,6,0,0,0
+2026-10-27,fantasy_forged,CA,Base,53,47,0,0,6,0,0,0
+2026-10-27,fantasy_forged,CA,Layer,91,79,0,0,12,0,0,0
+2026-10-27,fantasy_forged,CA,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-27,fantasy_forged,CA,Tone Pro,150,0,0,149,1,0,0,0
+2026-10-27,firestorm_games,GB,Base,55,53,53,0,2,55,612,0
+2026-10-27,firestorm_games,GB,Layer,92,83,83,0,9,92,867,0
+2026-10-27,firestorm_games,GB,Tech Pro,2,2,2,0,0,2,24,0
+2026-10-27,firestorm_games,GB,Tone Pro,150,150,150,0,0,150,1812,0
+2026-10-27,galactic_trading_post,CA,Base,44,40,0,0,4,0,0,0
+2026-10-27,galactic_trading_post,CA,Layer,93,72,0,0,21,0,0,0
+2026-10-27,galleon_games,GB,Base,54,49,0,0,5,0,0,0
+2026-10-27,galleon_games,GB,Layer,93,78,0,0,15,0,0,0
+2026-10-27,galleon_games,GB,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,galleon_games,GB,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,gamers_grove,US,Base,56,54,0,0,2,0,0,0
+2026-10-27,gamers_grove,US,Layer,93,91,0,0,2,0,0,0
+2026-10-27,games_a_plunder,US,Base,56,53,53,0,3,56,180,0
+2026-10-27,games_a_plunder,US,Layer,93,92,92,0,1,93,252,0
+2026-10-27,gear_gaming_bham,US,Base,52,52,0,0,0,0,0,0
+2026-10-27,gear_gaming_bham,US,Layer,89,89,0,0,0,0,0,0
+2026-10-27,gnome_games,US,Base,35,0,0,0,35,0,0,0
+2026-10-27,gnome_games,US,Layer,89,0,0,0,89,0,0,0
+2026-10-27,gnome_games,US,Tech Pro,2,0,0,0,2,0,0,0
+2026-10-27,gnome_games,US,Tone Pro,150,0,0,0,150,0,0,0
+2026-10-27,goblin_gaming,GB,Base,54,54,0,0,0,0,0,0
+2026-10-27,goblin_gaming,GB,Layer,93,93,0,0,0,0,0,0
+2026-10-27,goblin_gaming,GB,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,goblin_gaming,GB,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,grognard_games,US,Base,55,55,0,0,0,0,0,0
+2026-10-27,grognard_games,US,Layer,93,93,0,0,0,0,0,0
+2026-10-27,hfx_games,CA,Base,55,47,0,0,8,0,0,0
+2026-10-27,hfx_games,CA,Layer,93,78,0,0,15,0,0,0
+2026-10-27,hfx_games,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,hfx_games,CA,Tone Pro,150,147,0,0,3,0,0,0
+2026-10-27,jadlam_toys_models,GB,Base,52,44,0,0,8,0,0,0
+2026-10-27,jadlam_toys_models,GB,Layer,93,55,0,0,38,0,0,0
+2026-10-27,jeux_az_games,CA,Base,56,55,55,0,1,56,110,0
+2026-10-27,jeux_az_games,CA,Layer,92,92,92,0,0,92,184,0
+2026-10-27,jeux_az_games,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,jeux_az_games,CA,Tone Pro,150,149,149,0,1,150,298,0
+2026-10-27,kingslayer_games,US,Base,31,31,0,0,0,0,0,0
+2026-10-27,kingslayer_games,US,Layer,57,57,0,0,0,0,0,0
+2026-10-27,koros_wargames,US,Base,55,53,0,0,2,0,0,0
+2026-10-27,koros_wargames,US,Layer,93,91,0,0,2,0,0,0
+2026-10-27,koros_wargames,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,koros_wargames,US,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,leapingpandahobbies,US,Base,53,53,0,0,0,0,0,0
+2026-10-27,leapingpandahobbies,US,Layer,91,91,0,0,0,0,0,0
+2026-10-27,leodis_games,GB,Base,54,51,0,0,3,0,0,0
+2026-10-27,leodis_games,GB,Layer,93,78,0,0,15,0,0,0
+2026-10-27,loaded_dice,GB,Base,56,52,52,0,4,52,880,0
+2026-10-27,loaded_dice,GB,Layer,93,84,81,0,9,81,952,0
+2026-10-27,loaded_dice,GB,Tech Pro,2,0,0,0,2,0,0,0
+2026-10-27,loaded_dice,GB,Tone Pro,150,114,94,0,36,94,309,0
+2026-10-27,manaforge_games,GB,Base,40,39,0,0,1,0,0,0
+2026-10-27,manaforge_games,GB,Layer,70,70,0,0,0,0,0,0
+2026-10-27,manaforge_games,GB,Tone Pro,150,149,0,0,1,0,0,0
+2026-10-27,maple_airbrush_supplies,CA,Base,56,54,0,0,2,0,0,0
+2026-10-27,maple_airbrush_supplies,CA,Layer,89,87,0,0,2,0,0,0
+2026-10-27,merlins_miniatures,GB,Base,56,48,0,0,8,0,0,0
+2026-10-27,merlins_miniatures,GB,Layer,92,72,0,0,20,0,0,0
+2026-10-27,merlins_miniatures,GB,Tech Pro,2,1,0,0,1,0,0,0
+2026-10-27,merlins_miniatures,GB,Tone Pro,150,145,0,0,5,0,0,0
+2026-10-27,mox_boarding_house,US,Base,55,55,0,0,0,0,0,0
+2026-10-27,mox_boarding_house,US,Layer,93,93,0,0,0,0,0,0
+2026-10-27,northumbrian_tin_soldier,GB,Base,55,55,0,0,0,0,0,0
+2026-10-27,northumbrian_tin_soldier,GB,Layer,93,93,0,0,0,0,0,0
+2026-10-27,not_just_gamin,US,Base,56,56,0,0,0,0,0,0
+2026-10-27,not_just_gamin,US,Layer,91,91,0,0,0,0,0,0
+2026-10-27,nutmeg_games,US,Base,54,42,42,0,12,54,270,0
+2026-10-27,nutmeg_games,US,Layer,93,80,80,0,13,93,466,0
+2026-10-27,obsidian_games,CA,Base,54,49,0,0,5,0,0,0
+2026-10-27,obsidian_games,CA,Layer,91,84,0,0,7,0,0,0
+2026-10-27,pastime_sports_games,CA,Base,56,56,56,0,0,56,996,0
+2026-10-27,pastime_sports_games,CA,Layer,93,93,93,0,0,93,1584,0
+2026-10-27,retrofix_games,US,Base,56,49,0,0,7,0,0,0
+2026-10-27,retrofix_games,US,Layer,93,83,0,0,10,0,0,0
+2026-10-27,riftgate,US,Base,54,52,0,0,2,0,0,0
+2026-10-27,riftgate,US,Layer,92,92,0,0,0,0,0,0
+2026-10-27,riftgate,US,Tech Pro,1,1,0,0,0,0,0,0
+2026-10-27,riftgate,US,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,sundon_model_shop,GB,Base,52,52,0,0,0,0,0,0
+2026-10-27,sundon_model_shop,GB,Layer,93,92,0,0,1,0,0,0
+2026-10-27,tabletop_heaven,US,Base,54,54,0,0,0,0,0,0
+2026-10-27,tabletop_heaven,US,Layer,92,92,0,0,0,0,0,0
+2026-10-27,tabletop_heaven,US,Tech Pro,2,0,0,1,1,0,0,0
+2026-10-27,tabletop_heaven,US,Tone Pro,150,0,0,144,6,0,0,0
+2026-10-27,tabletop_renaissance_games_h,CA,Base,43,43,0,0,0,0,0,0
+2026-10-27,tabletop_renaissance_games_h,CA,Layer,77,77,0,0,0,0,0,0
+2026-10-27,tabletop_renaissance_games_h,CA,Tone Pro,150,149,0,0,1,0,0,0
+2026-10-27,taps_games,CA,Base,53,52,0,0,1,0,0,0
+2026-10-27,taps_games,CA,Layer,93,93,0,0,0,0,0,0
+2026-10-27,the_haunted_game_cafe,US,Base,55,50,0,0,5,0,0,0
+2026-10-27,the_haunted_game_cafe,US,Layer,93,83,0,0,10,0,0,0
+2026-10-27,the_outpost,GB,Base,55,44,44,11,0,55,182,0
+2026-10-27,the_outpost,GB,Layer,93,58,58,35,0,91,221,0
+2026-10-27,the_outpost,GB,Tech Pro,2,0,0,2,0,0,0,0
+2026-10-27,the_outpost,GB,Tone Pro,150,116,116,31,3,119,215,588
+2026-10-27,tistaminis,CA,Base,55,46,0,0,9,0,0,0
+2026-10-27,tistaminis,CA,Layer,93,84,0,0,9,0,0,0
+2026-10-27,titan_games,US,Base,52,52,0,0,0,0,0,0
+2026-10-27,titan_games,US,Layer,87,87,0,0,0,0,0,0
+2026-10-27,total_cards,GB,Base,55,16,0,0,39,0,0,0
+2026-10-27,total_cards,GB,Layer,93,35,0,0,58,0,0,0
+2026-10-27,total_escape_games,US,Base,45,45,0,0,0,0,0,0
+2026-10-27,total_escape_games,US,Layer,92,91,0,0,1,0,0,0
+2026-10-27,toy_snowman,CA,Base,33,32,0,0,1,0,0,0
+2026-10-27,toy_snowman,CA,Layer,70,68,0,0,2,0,0,0
+2026-10-27,toy_snowman,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,toy_snowman,CA,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,travelling_man_uk,GB,Base,56,51,0,0,5,0,0,0
+2026-10-27,travelling_man_uk,GB,Layer,93,72,0,0,21,0,0,0
+2026-10-27,travelling_man_uk,GB,Tech Pro,2,1,0,0,1,0,0,0
+2026-10-27,travelling_man_uk,GB,Tone Pro,150,146,0,0,4,0,0,0
+2026-10-27,trinity_hobby,CA,Base,56,56,0,0,0,0,0,0
+2026-10-27,trinity_hobby,CA,Layer,93,86,0,0,7,0,0,0
+2026-10-27,trinity_hobby,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,tyton_games,US,Base,55,46,0,0,9,0,0,0
+2026-10-27,tyton_games,US,Layer,93,79,0,0,14,0,0,0
+2026-10-27,tyton_games,US,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,tyton_games,US,Tone Pro,150,150,0,0,0,0,0,0
+2026-10-27,undiscovered_realm,US,Base,52,28,0,0,24,0,0,0
+2026-10-27,undiscovered_realm,US,Layer,86,47,0,0,39,0,0,0
+2026-10-27,wandering_adventures,CA,Base,48,48,0,0,0,0,0,0
+2026-10-27,wandering_adventures,CA,Layer,87,87,0,0,0,0,0,0
+2026-10-27,wandering_adventures,CA,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,war_games_usa,US,Base,55,52,0,0,3,0,0,0
+2026-10-27,war_games_usa,US,Layer,92,87,0,0,5,0,0,0
+2026-10-27,yard_s_games_ltd,GB,Base,54,54,0,0,0,0,0,0
+2026-10-27,yard_s_games_ltd,GB,Layer,86,86,0,0,0,0,0,0
+2026-10-27,yard_s_games_ltd,GB,Tech Pro,2,2,0,0,0,0,0,0
+2026-10-27,yard_s_games_ltd,GB,Tone Pro,150,150,0,0,0,0,0,0

@@ -1,391 +1,410 @@
 warehouse,sku,name,line,oos_first_seen,oos_last_seen,back_in_stock,snapshots_oos,days_oos_min,ongoing,started_before_tracking
-ingleburn,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-15,2026-10-26,,12,12,true,false
-ingleburn,Air: Flash Gitz Yellow,Air: Flash Gitz Yellow,Air,2026-10-15,2026-10-26,,12,12,true,false
-ingleburn,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-15,2026-10-26,,12,12,true,false
+ingleburn,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-15,2026-10-27,,13,13,true,false
+ingleburn,Air: Flash Gitz Yellow,Air: Flash Gitz Yellow,Air,2026-10-15,2026-10-27,,13,13,true,false
+ingleburn,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-15,2026-10-27,,13,13,true,false
 ingleburn,Contrast: Aethermatic Blue,Contrast: Aethermatic Blue,Contrast,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
 ingleburn,Contrast: Aggaros Dunes,Contrast: Aggaros Dunes,Contrast,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
 ingleburn,Contrast: Baal Red,Contrast: Baal Red,Contrast,2026-10-14,2026-10-20,2026-10-21,7,7,false,true
-ingleburn,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Contrast: Creed Camo,Contrast: Creed Camo,Contrast,2026-10-19,2026-10-26,,8,8,true,false
+ingleburn,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Contrast: Creed Camo,Contrast: Creed Camo,Contrast,2026-10-19,2026-10-27,,9,9,true,false
 ingleburn,Contrast: Cygor Brown,Contrast: Cygor Brown,Contrast,2026-10-14,2026-10-20,2026-10-21,7,7,false,true
-ingleburn,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 ingleburn,Contrast: Dreadful Visage,Contrast: Dreadful Visage,Contrast,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
-ingleburn,Contrast: Gore-Grunta Fur,Contrast: Gore-Grunta Fur,Contrast,2026-10-15,2026-10-26,,12,12,true,false
-ingleburn,Contrast: Hexwraith Flame,Contrast: Hexwraith Flame,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Contrast: Gore-Grunta Fur,Contrast: Gore-Grunta Fur,Contrast,2026-10-15,2026-10-27,,13,13,true,false
+ingleburn,Contrast: Hexwraith Flame,Contrast: Hexwraith Flame,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 ingleburn,Contrast: Kroxigor Scales,Contrast: Kroxigor Scales,Contrast,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
-ingleburn,Contrast: Leviadon Blue,Contrast: Leviadon Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-25,2026-10-26,,2,2,true,false
-ingleburn,Contrast: Plaguebearer Flesh,Contrast: Plaguebearer Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Contrast: Leviadon Blue,Contrast: Leviadon Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-25,2026-10-27,,3,3,true,false
+ingleburn,Contrast: Plaguebearer Flesh,Contrast: Plaguebearer Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 ingleburn,Contrast: Ratling Grime,Contrast: Ratling Grime,Contrast,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
 ingleburn,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-ingleburn,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-17,2026-10-26,,10,10,true,false
-ingleburn,Contrast: Snakebite Leather,Contrast: Snakebite Leather,Contrast,2026-10-26,2026-10-26,,1,1,true,false
+ingleburn,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-17,2026-10-27,,11,11,true,false
+ingleburn,Contrast: Snakebite Leather,Contrast: Snakebite Leather,Contrast,2026-10-26,2026-10-27,,2,2,true,false
 ingleburn,Layer: Bestigor Flesh,Layer: Bestigor Flesh,Layer,2026-10-14,2026-10-21,2026-10-22,8,8,false,true
-ingleburn,Layer: Bestigor Flesh,Layer: Bestigor Flesh,Layer,2026-10-23,2026-10-26,,4,4,true,false
-ingleburn,Layer: Doombull Brown,Layer: Doombull Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Layer: Skarsnik Green,Layer: Skarsnik Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Layer: Bestigor Flesh,Layer: Bestigor Flesh,Layer,2026-10-23,2026-10-27,,5,5,true,false
+ingleburn,Layer: Doombull Brown,Layer: Doombull Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Layer: Skarsnik Green,Layer: Skarsnik Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
 ingleburn,Munitorum Varnish,Munitorum Varnish,Spray,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-ingleburn,Shade: Athonian Camoshade,Shade: Athonian Camoshade,Shade,2026-10-16,2026-10-26,,11,11,true,false
-ingleburn,Shade: Berserker Bloodshade,Shade: Berserker Bloodshade,Shade,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Shade: Athonian Camoshade,Shade: Athonian Camoshade,Shade,2026-10-16,2026-10-27,,12,12,true,false
+ingleburn,Shade: Berserker Bloodshade,Shade: Berserker Bloodshade,Shade,2026-10-14,2026-10-27,,14,14,true,true
 ingleburn,Shade: Biel-Tan Green,Shade: Biel-Tan Green,Shade,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
-ingleburn,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-21,2026-10-26,,6,6,true,false
-ingleburn,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-14,2026-10-26,,13,13,true,true
-ingleburn,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Abaddon Black,Air: Abaddon Black,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Administratum Grey,Air: Administratum Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Angron Red Clear,Air: Angron Red Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Averland Sunset,Air: Averland Sunset,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Balthasar Gold,Air: Balthasar Gold,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Baneblade Brown,Air: Baneblade Brown,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Caliban Green,Air: Caliban Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Calth Blue Clear,Air: Calth Blue Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Castellan Green,Air: Castellan Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Deathworld Forest,Air: Deathworld Forest,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Elysian Green,Air: Elysian Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Khorne Red,Air: Khorne Red,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Leadbelcher,Air: Leadbelcher,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Lothern Blue,Air: Lothern Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Macragge Blue,Air: Macragge Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Mechanicus Standard Grey,Air: Mechanicus Standard Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Mortarion Green Clear,Air: Mortarion Green Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Mournfang Brown,Air: Mournfang Brown,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Night Lords Blue,Air: Night Lords Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Phalanx Yellow,Air: Phalanx Yellow,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Phoenician Purple,Air: Phoenician Purple,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Runefang Steel,Air: Runefang Steel,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Russ Grey,Air: Russ Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Thallax Gold,Air: Thallax Gold,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: The Fang,Air: The Fang,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Troll Slayer Orange,Air: Troll Slayer Orange,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Typhon Ash,Air: Typhon Ash,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Ushabti Bone,Air: Ushabti Bone,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: White Scar,Air: White Scar,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Air: Zandri Dust,Air: Zandri Dust,Air,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Astorath Red,Astorath Red,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Barak-Nar Burgundy,Base: Barak-Nar Burgundy,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Catachan Flesh,Base: Catachan Flesh,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Death Korps Drab,Base: Death Korps Drab,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Gal Vorbak Red,Base: Gal Vorbak Red,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Hobgrot Hide,Base: Hobgrot Hide,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Lupercal Green,Base: Lupercal Green,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Morghast Bone,Base: Morghast Bone,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Nocturne Green,Base: Nocturne Green,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Phoenician Purple,Base: Phoenician Purple,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Ratskin Flesh,Base: Ratskin Flesh,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Screamer Pink,Base: Screamer Pink,Base,2026-10-24,2026-10-26,,3,3,true,false
-lenton,Base: Screaming Bell,Base: Screaming Bell,Base,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Base: Stegadon Scale Green,Base: Stegadon Scale Green,Base,2026-10-14,2026-10-26,,13,13,true,true
+ingleburn,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-21,2026-10-27,,7,7,true,false
+ingleburn,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-14,2026-10-27,,14,14,true,true
+ingleburn,Technical: Agrellan Earth,Technical: Agrellan Earth,Technical,2026-10-27,2026-10-27,,1,1,true,false
+ingleburn,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Abaddon Black,Air: Abaddon Black,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Administratum Grey,Air: Administratum Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Angron Red Clear,Air: Angron Red Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Averland Sunset,Air: Averland Sunset,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Balthasar Gold,Air: Balthasar Gold,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Baneblade Brown,Air: Baneblade Brown,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Caliban Green,Air: Caliban Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Calth Blue Clear,Air: Calth Blue Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Castellan Green,Air: Castellan Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Deathworld Forest,Air: Deathworld Forest,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Elysian Green,Air: Elysian Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Khorne Red,Air: Khorne Red,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Leadbelcher,Air: Leadbelcher,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Lothern Blue,Air: Lothern Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Macragge Blue,Air: Macragge Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Mechanicus Standard Grey,Air: Mechanicus Standard Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Mortarion Green Clear,Air: Mortarion Green Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Mournfang Brown,Air: Mournfang Brown,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Night Lords Blue,Air: Night Lords Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Phalanx Yellow,Air: Phalanx Yellow,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Phoenician Purple,Air: Phoenician Purple,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Runefang Steel,Air: Runefang Steel,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Russ Grey,Air: Russ Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Thallax Gold,Air: Thallax Gold,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: The Fang,Air: The Fang,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Troll Slayer Orange,Air: Troll Slayer Orange,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Typhon Ash,Air: Typhon Ash,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Ushabti Bone,Air: Ushabti Bone,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: White Scar,Air: White Scar,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Air: Zandri Dust,Air: Zandri Dust,Air,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Astorath Red,Astorath Red,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Barak-Nar Burgundy,Base: Barak-Nar Burgundy,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Catachan Flesh,Base: Catachan Flesh,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Death Guard Green,Base: Death Guard Green,Base,2026-10-27,2026-10-27,,1,1,true,false
+lenton,Base: Death Korps Drab,Base: Death Korps Drab,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Gal Vorbak Red,Base: Gal Vorbak Red,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Hobgrot Hide,Base: Hobgrot Hide,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Lupercal Green,Base: Lupercal Green,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Morghast Bone,Base: Morghast Bone,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Nocturne Green,Base: Nocturne Green,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Phoenician Purple,Base: Phoenician Purple,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Ratskin Flesh,Base: Ratskin Flesh,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Screamer Pink,Base: Screamer Pink,Base,2026-10-24,2026-10-27,,4,4,true,false
+lenton,Base: Screaming Bell,Base: Screaming Bell,Base,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Base: Stegadon Scale Green,Base: Stegadon Scale Green,Base,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Base: Thondia Brown,Base: Thondia Brown,Base,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
 lenton,Base: Warplock Bronze,Base: Warplock Bronze,Base,2026-10-14,2026-10-25,2026-10-26,12,12,false,true
-lenton,Contrast: Aeldari Emerald,Contrast: Aeldari Emerald,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Aggaros Dunes,Contrast: Aggaros Dunes,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Akhelian Green,Contrast: Akhelian Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Aeldari Emerald,Contrast: Aeldari Emerald,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Aggaros Dunes,Contrast: Aggaros Dunes,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Akhelian Green,Contrast: Akhelian Green,Contrast,2026-10-14,2026-10-26,2026-10-27,13,13,false,true
 lenton,Contrast: Apothecary White,Contrast: Apothecary White,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-lenton,Contrast: Asurmen Blue,Contrast: Asurmen Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Baal Red,Contrast: Baal Red,Contrast,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Black Templar,Contrast: Black Templar,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Blood Angels Red,Contrast: Blood Angels Red,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Briar Queen Chill,Contrast: Briar Queen Chill,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Darkoath Flesh,Contrast: Darkoath Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Dreadful Visage,Contrast: Dreadful Visage,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Garaghak's Sewer,Contrast: Garaghak's Sewer,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Asurmen Blue,Contrast: Asurmen Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Baal Red,Contrast: Baal Red,Contrast,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Black Templar,Contrast: Black Templar,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Blood Angels Red,Contrast: Blood Angels Red,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Briar Queen Chill,Contrast: Briar Queen Chill,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Celestium Blue,Contrast: Celestium Blue,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+lenton,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Darkoath Flesh,Contrast: Darkoath Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Dreadful Visage,Contrast: Dreadful Visage,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Garaghak's Sewer,Contrast: Garaghak's Sewer,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Contrast: Gore-Grunta Fur,Contrast: Gore-Grunta Fur,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-lenton,Contrast: Gryph-Hound Orange,Contrast: Gryph-Hound Orange,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Gryph-Hound Orange,Contrast: Gryph-Hound Orange,Contrast,2026-10-14,2026-10-26,2026-10-27,13,13,false,true
 lenton,Contrast: Guilliman Flesh,Contrast: Guilliman Flesh,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-lenton,Contrast: Gutrippa Flesh,Contrast: Gutrippa Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Imperial Fist,Contrast: Imperial Fist,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Ironjawz Yellow,Contrast: Ironjawz Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Iyanden Yellow,Contrast: Iyanden Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Kroxigor Scales,Contrast: Kroxigor Scales,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Leviadon Blue,Contrast: Leviadon Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Leviathan Purple,Contrast: Leviathan Purple,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Mantis Warriors Green,Contrast: Mantis Warriors Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Militarum Green,Contrast: Militarum Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Nighthaunt Gloom,Contrast: Nighthaunt Gloom,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Gutrippa Flesh,Contrast: Gutrippa Flesh,Contrast,2026-10-14,2026-10-26,2026-10-27,13,13,false,true
+lenton,Contrast: Imperial Fist,Contrast: Imperial Fist,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Ironjawz Yellow,Contrast: Ironjawz Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Iyanden Yellow,Contrast: Iyanden Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Kroxigor Scales,Contrast: Kroxigor Scales,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Leviadon Blue,Contrast: Leviadon Blue,Contrast,2026-10-14,2026-10-26,2026-10-27,13,13,false,true
+lenton,Contrast: Leviathan Purple,Contrast: Leviathan Purple,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Mantis Warriors Green,Contrast: Mantis Warriors Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Militarum Green,Contrast: Militarum Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Nighthaunt Gloom,Contrast: Nighthaunt Gloom,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Plaguebearer Flesh,Contrast: Plaguebearer Flesh,Contrast,2026-10-27,2026-10-27,,1,1,true,false
 lenton,Contrast: Pylar Glacier,Contrast: Pylar Glacier,Contrast,2026-10-22,2026-10-24,2026-10-25,3,3,false,false
-lenton,Contrast: Ratling Grime,Contrast: Ratling Grime,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Shyish Purple,Contrast: Shyish Purple,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Ratling Grime,Contrast: Ratling Grime,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Shyish Purple,Contrast: Shyish Purple,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-20,2026-10-22,2026-10-23,3,3,false,false
-lenton,Contrast: Snakebite Leather,Contrast: Snakebite Leather,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Space Wolves Grey,Contrast: Space Wolves Grey,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Stormfiend,Contrast: Stormfiend,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Striking Scorpion Green,Contrast: Striking Scorpion Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Contrast: Ultramarines Blue,Contrast: Ultramarines Blue,Contrast,2026-10-16,2026-10-26,,11,11,true,false
-lenton,Contrast: Wyldwood,Contrast: Wyldwood,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Dawnstone,Dawnstone,Dry,2026-10-21,2026-10-26,,6,6,true,false
-lenton,Eldar Flesh,Eldar Flesh,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Golden Griffon,Golden Griffon,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Golgfag Brown,Golgfag Brown,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Imrik Blue,Imrik Blue,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Ahriman Blue,Layer: Ahriman Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Alaitoc Blue,Layer: Alaitoc Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Altdorf Guard Blue,Layer: Altdorf Guard Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Contrast: Snakebite Leather,Contrast: Snakebite Leather,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Space Wolves Grey,Contrast: Space Wolves Grey,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Stormfiend,Contrast: Stormfiend,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Striking Scorpion Green,Contrast: Striking Scorpion Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Contrast: Ultramarines Blue,Contrast: Ultramarines Blue,Contrast,2026-10-16,2026-10-27,,12,12,true,false
+lenton,Contrast: Wyldwood,Contrast: Wyldwood,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Dawnstone,Dawnstone,Dry,2026-10-21,2026-10-27,,7,7,true,false
+lenton,Eldar Flesh,Eldar Flesh,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Golden Griffon,Golden Griffon,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Golgfag Brown,Golgfag Brown,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Imrik Blue,Imrik Blue,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Ahriman Blue,Layer: Ahriman Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Alaitoc Blue,Layer: Alaitoc Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Altdorf Guard Blue,Layer: Altdorf Guard Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Layer: Baharroth Blue,Layer: Baharroth Blue,Layer,2026-10-14,2026-10-25,2026-10-26,12,12,false,true
-lenton,Layer: Balor Brown,Layer: Balor Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Baneblade Brown,Layer: Baneblade Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Bloodreaver Flesh,Layer: Bloodreaver Flesh,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Blue Horror,Layer: Blue Horror,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Brass Scorpion,Layer: Brass Scorpion,Layer,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Layer: Baharroth Blue,Layer: Baharroth Blue,Layer,2026-10-27,2026-10-27,,1,1,true,false
+lenton,Layer: Balor Brown,Layer: Balor Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Baneblade Brown,Layer: Baneblade Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Bloodreaver Flesh,Layer: Bloodreaver Flesh,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Blue Horror,Layer: Blue Horror,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Brass Scorpion,Layer: Brass Scorpion,Layer,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Layer: Cadian Fleshtone,Layer: Cadian Fleshtone,Layer,2026-10-14,2026-10-21,2026-10-22,8,8,false,true
-lenton,Layer: Calgar Blue,Layer: Calgar Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Castellax Bronze,Layer: Castellax Bronze,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Dawnstone,Layer: Dawnstone,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Deathclaw Brown,Layer: Deathclaw Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Dechala Lilac,Layer: Dechala Lilac,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Deepkin Flesh,Layer: Deepkin Flesh,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Doombull Brown,Layer: Doombull Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Dorn Yellow,Layer: Dorn Yellow,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Elysian Green,Layer: Elysian Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Emperor's Children,Layer: Emperor's Children,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Fenrisian Grey,Layer: Fenrisian Grey,Layer,2026-10-24,2026-10-26,,3,3,true,false
-lenton,Layer: Fire Dragon Bright,Layer: Fire Dragon Bright,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Fulgrim Pink,Layer: Fulgrim Pink,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Gauss Blaster Green,Layer: Gauss Blaster Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Gehenna's Gold,Layer: Gehenna's Gold,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Gorthor Brown,Layer: Gorthor Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Hashut Copper,Layer: Hashut Copper,Layer,2026-10-20,2026-10-26,,7,7,true,false
-lenton,Layer: Hoeth Blue,Layer: Hoeth Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Karak Stone,Layer: Karak Stone,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Lothern Blue,Layer: Lothern Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Nurgling Green,Layer: Nurgling Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Ogryn Camo,Layer: Ogryn Camo,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Phalanx Yellow,Layer: Phalanx Yellow,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Pink Horror,Layer: Pink Horror,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Russ Grey,Layer: Russ Grey,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Skarsnik Green,Layer: Skarsnik Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Skavenblight Dinge,Layer: Skavenblight Dinge,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Skrag Brown,Layer: Skrag Brown,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Skullcrusher Brass,Layer: Skullcrusher Brass,Layer,2026-10-23,2026-10-26,,4,4,true,false
-lenton,Layer: Sotek Green,Layer: Sotek Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Layer: Calgar Blue,Layer: Calgar Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Castellax Bronze,Layer: Castellax Bronze,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Dawnstone,Layer: Dawnstone,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Deathclaw Brown,Layer: Deathclaw Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Dechala Lilac,Layer: Dechala Lilac,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Deepkin Flesh,Layer: Deepkin Flesh,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Doombull Brown,Layer: Doombull Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Dorn Yellow,Layer: Dorn Yellow,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Elysian Green,Layer: Elysian Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Emperor's Children,Layer: Emperor's Children,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Fenrisian Grey,Layer: Fenrisian Grey,Layer,2026-10-24,2026-10-27,,4,4,true,false
+lenton,Layer: Fire Dragon Bright,Layer: Fire Dragon Bright,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Fulgrim Pink,Layer: Fulgrim Pink,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Gauss Blaster Green,Layer: Gauss Blaster Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Gehenna's Gold,Layer: Gehenna's Gold,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Gorthor Brown,Layer: Gorthor Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Hashut Copper,Layer: Hashut Copper,Layer,2026-10-20,2026-10-27,,8,8,true,false
+lenton,Layer: Hoeth Blue,Layer: Hoeth Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Karak Stone,Layer: Karak Stone,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Liberator Gold,Layer: Liberator Gold,Layer,2026-10-27,2026-10-27,,1,1,true,false
+lenton,Layer: Lothern Blue,Layer: Lothern Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Nurgling Green,Layer: Nurgling Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Ogryn Camo,Layer: Ogryn Camo,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Pallid Wych Flesh,Layer: Pallid Wych Flesh,Layer,2026-10-27,2026-10-27,,1,1,true,false
+lenton,Layer: Phalanx Yellow,Layer: Phalanx Yellow,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Pink Horror,Layer: Pink Horror,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Russ Grey,Layer: Russ Grey,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Skarsnik Green,Layer: Skarsnik Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Skavenblight Dinge,Layer: Skavenblight Dinge,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Skrag Brown,Layer: Skrag Brown,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Skullcrusher Brass,Layer: Skullcrusher Brass,Layer,2026-10-23,2026-10-27,,5,5,true,false
+lenton,Layer: Sotek Green,Layer: Sotek Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Layer: Squig Orange,Layer: Squig Orange,Layer,2026-10-14,2026-10-14,2026-10-15,1,1,false,true
-lenton,Layer: Squig Orange,Layer: Squig Orange,Layer,2026-10-16,2026-10-26,,11,11,true,false
-lenton,Layer: Stormvermin Fur,Layer: Stormvermin Fur,Layer,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Layer: Squig Orange,Layer: Squig Orange,Layer,2026-10-16,2026-10-27,,12,12,true,false
+lenton,Layer: Stormvermin Fur,Layer: Stormvermin Fur,Layer,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Layer: Sybarite Green,Layer: Sybarite Green,Layer,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-lenton,Layer: Sybarite Green,Layer: Sybarite Green,Layer,2026-10-25,2026-10-26,,2,2,true,false
-lenton,Layer: Sycorax Bronze,Layer: Sycorax Bronze,Layer,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Layer: Tau Light Ochre,Layer: Tau Light Ochre,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Teclis Blue,Layer: Teclis Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Temple Guard Blue,Layer: Temple Guard Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Thunderhawk Blue,Layer: Thunderhawk Blue,Layer,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Layer: Sybarite Green,Layer: Sybarite Green,Layer,2026-10-25,2026-10-27,,3,3,true,false
+lenton,Layer: Sycorax Bronze,Layer: Sycorax Bronze,Layer,2026-10-15,2026-10-27,,13,13,true,false
+lenton,Layer: Tau Light Ochre,Layer: Tau Light Ochre,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Teclis Blue,Layer: Teclis Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Temple Guard Blue,Layer: Temple Guard Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Thunderhawk Blue,Layer: Thunderhawk Blue,Layer,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Layer: Ushabti Bone,Layer: Ushabti Bone,Layer,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
 lenton,Layer: Vulkan Green,Layer: Vulkan Green,Layer,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-lenton,Layer: Warboss Green,Layer: Warboss Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Warpfiend Grey,Layer: Warpfiend Grey,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Wazdakka Red,Layer: Wazdakka Red,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Layer: Xereus Purple,Layer: Xereus Purple,Layer,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Lucius Lilac,Lucius Lilac,Dry,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Layer: Warboss Green,Layer: Warboss Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Warpfiend Grey,Layer: Warpfiend Grey,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Wazdakka Red,Layer: Wazdakka Red,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Layer: Xereus Purple,Layer: Xereus Purple,Layer,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Lucius Lilac,Lucius Lilac,Dry,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Munitorum Varnish,Munitorum Varnish,Spray,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-lenton,Niblet Green,Niblet Green,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Nurgling Green,Nurgling Green,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Praxeti White,Praxeti White,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Ryza Rust,Ryza Rust,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Athonian Camoshade,Shade: Athonian Camoshade,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Biel-Tan Green,Shade: Biel-Tan Green,Shade,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Niblet Green,Niblet Green,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Nurgling Green,Nurgling Green,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Praxeti White,Praxeti White,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Ryza Rust,Ryza Rust,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Athonian Camoshade,Shade: Athonian Camoshade,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Biel-Tan Green,Shade: Biel-Tan Green,Shade,2026-10-14,2026-10-26,2026-10-27,13,13,false,true
 lenton,Shade: Casandora Yellow,Shade: Casandora Yellow,Shade,2026-10-14,2026-10-23,2026-10-24,10,10,false,true
-lenton,Shade: Coelia Greenshade,Shade: Coelia Greenshade,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Drakenhof Nightshade,Shade: Drakenhof Nightshade,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Mortarion Grime,Shade: Mortarion Grime,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Poxwalker,Shade: Poxwalker,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Soulblight Grey,Shade: Soulblight Grey,Shade,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Shade: Tyran Blue,Shade: Tyran Blue,Shade,2026-10-22,2026-10-26,,5,5,true,false
-lenton,Skink Blue,Skink Blue,Dry,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Shade: Coelia Greenshade,Shade: Coelia Greenshade,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Drakenhof Nightshade,Shade: Drakenhof Nightshade,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Mortarion Grime,Shade: Mortarion Grime,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Poxwalker,Shade: Poxwalker,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Soulblight Grey,Shade: Soulblight Grey,Shade,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Shade: Tyran Blue,Shade: Tyran Blue,Shade,2026-10-22,2026-10-27,,6,6,true,false
+lenton,Skink Blue,Skink Blue,Dry,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Tech Pro: Blending Medium,Tech Pro: Blending Medium,Tech Pro,2026-10-15,2026-10-18,2026-10-19,4,4,false,false
 lenton,Tech Pro: Shading Medium,Tech Pro: Shading Medium,Tech Pro,2026-10-15,2026-10-18,2026-10-19,4,4,false,false
-lenton,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-24,2026-10-26,,3,3,true,false
-lenton,Technical: Agrellan Earth,Technical: Agrellan Earth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Ardcoat,Technical: Ardcoat,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Armageddon Dust,Technical: Armageddon Dust,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Contrast Medium,Technical: Contrast Medium,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Martian Ironcrust,Technical: Martian Ironcrust,Technical,2026-10-26,2026-10-26,,1,1,true,false
-lenton,Technical: Martian Ironearth,Technical: Martian Ironearth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Mordant Earth,Technical: Mordant Earth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Technical: Tesseract Glow,Technical: Tesseract Glow,Technical,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-24,2026-10-27,,4,4,true,false
+lenton,Technical: Agrellan Earth,Technical: Agrellan Earth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Ardcoat,Technical: Ardcoat,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Armageddon Dust,Technical: Armageddon Dust,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Contrast Medium,Technical: Contrast Medium,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Martian Ironcrust,Technical: Martian Ironcrust,Technical,2026-10-26,2026-10-27,,2,2,true,false
+lenton,Technical: Martian Ironearth,Technical: Martian Ironearth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Mordant Earth,Technical: Mordant Earth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Technical: Tesseract Glow,Technical: Tesseract Glow,Technical,2026-10-14,2026-10-27,,14,14,true,true
 lenton,Technical: Typhus Corrosion,Technical: Typhus Corrosion,Technical,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-lenton,Technical: Valhallan Blizzard,Technical: Valhallan Blizzard,Technical,2026-10-20,2026-10-26,,7,7,true,false
-lenton,Terminatus Stone,Terminatus Stone,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Tone Pro: Celestine Skin 3,Tone Pro: Celestine Skin 3,Tone Pro,2026-10-21,2026-10-26,,6,6,true,false
+lenton,Technical: Valhallan Blizzard,Technical: Valhallan Blizzard,Technical,2026-10-20,2026-10-27,,8,8,true,false
+lenton,Terminatus Stone,Terminatus Stone,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Tone Pro: Celestine Skin 3,Tone Pro: Celestine Skin 3,Tone Pro,2026-10-21,2026-10-26,2026-10-27,6,6,false,false
 lenton,Tone Pro: Dataslate Grey 2,Tone Pro: Dataslate Grey 2,Tone Pro,2026-10-15,2026-10-18,2026-10-19,4,4,false,false
-lenton,Tone Pro: Lustria Green 1,Tone Pro: Lustria Green 1,Tone Pro,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Tone Pro: Megaboss Yellow 1,Tone Pro: Megaboss Yellow 1,Tone Pro,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Tone Pro: Megaboss Yellow 2,Tone Pro: Megaboss Yellow 2,Tone Pro,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Tone Pro: Plague Toad Venom 2,Tone Pro: Plague Toad Venom 2,Tone Pro,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Tone Pro: Ultramar Blue 4,Tone Pro: Ultramar Blue 4,Tone Pro,2026-10-15,2026-10-26,,12,12,true,false
-lenton,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Underhive Ash,Underhive Ash,Dry,2026-10-14,2026-10-26,,13,13,true,true
-lenton,Wrack White,Wrack White,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Abaddon Black,Air: Abaddon Black,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Administratum Grey,Air: Administratum Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Air Caste Thinner,Air: Air Caste Thinner,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Angron Red Clear,Air: Angron Red Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Averland Sunset,Air: Averland Sunset,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Balthasar Gold,Air: Balthasar Gold,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Baneblade Brown,Air: Baneblade Brown,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Caliban Green,Air: Caliban Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Calth Blue Clear,Air: Calth Blue Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Castellan Green,Air: Castellan Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Corvus Black,Air: Corvus Black,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Dawnstone,Air: Dawnstone,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Deathworld Forest,Air: Deathworld Forest,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Eidolon Purple Clear,Air: Eidolon Purple Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Fenrisian Grey,Air: Fenrisian Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Flash Gitz Yellow,Air: Flash Gitz Yellow,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Grey Knights Steel,Air: Grey Knights Steel,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Kantor Blue,Air: Kantor Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Khorne Red,Air: Khorne Red,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Kislev Flesh,Air: Kislev Flesh,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Leadbelcher,Air: Leadbelcher,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Lothern Blue,Air: Lothern Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Macragge Blue,Air: Macragge Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Mechanicus Standard Grey,Air: Mechanicus Standard Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Moot Green,Air: Moot Green,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Mortarion Green Clear,Air: Mortarion Green Clear,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Mournfang Brown,Air: Mournfang Brown,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Night Lords Blue,Air: Night Lords Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Ogryn Camo,Air: Ogryn Camo,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Phalanx Yellow,Air: Phalanx Yellow,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Phoenician Purple,Air: Phoenician Purple,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Runefang Steel,Air: Runefang Steel,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Russ Grey,Air: Russ Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Thallax Gold,Air: Thallax Gold,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: The Fang,Air: The Fang,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Troll Slayer Orange,Air: Troll Slayer Orange,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Typhon Ash,Air: Typhon Ash,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Ulthuan Grey,Air: Ulthuan Grey,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Ushabti Bone,Air: Ushabti Bone,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: White Scar,Air: White Scar,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Air: Zandri Dust,Air: Zandri Dust,Air,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Astorath Red,Astorath Red,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Base: Gal Vorbak Red,Base: Gal Vorbak Red,Base,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Base: Hobgrot Hide,Base: Hobgrot Hide,Base,2026-10-14,2026-10-26,,13,13,true,true
+lenton,Tone Pro: Lustria Green 1,Tone Pro: Lustria Green 1,Tone Pro,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Tone Pro: Megaboss Yellow 1,Tone Pro: Megaboss Yellow 1,Tone Pro,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Tone Pro: Megaboss Yellow 2,Tone Pro: Megaboss Yellow 2,Tone Pro,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Tone Pro: Plague Toad Venom 2,Tone Pro: Plague Toad Venom 2,Tone Pro,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Tone Pro: Ultramar Blue 4,Tone Pro: Ultramar Blue 4,Tone Pro,2026-10-15,2026-10-26,2026-10-27,12,12,false,false
+lenton,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Underhive Ash,Underhive Ash,Dry,2026-10-14,2026-10-27,,14,14,true,true
+lenton,Wrack White,Wrack White,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Abaddon Black,Air: Abaddon Black,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Administratum Grey,Air: Administratum Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Air Caste Thinner,Air: Air Caste Thinner,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Angron Red Clear,Air: Angron Red Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Averland Sunset,Air: Averland Sunset,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Balthasar Gold,Air: Balthasar Gold,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Baneblade Brown,Air: Baneblade Brown,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Caliban Green,Air: Caliban Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Calth Blue Clear,Air: Calth Blue Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Castellan Green,Air: Castellan Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Corvus Black,Air: Corvus Black,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Dawnstone,Air: Dawnstone,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Deathworld Forest,Air: Deathworld Forest,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Eidolon Purple Clear,Air: Eidolon Purple Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Evil Sunz Scarlet,Air: Evil Sunz Scarlet,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Fenrisian Grey,Air: Fenrisian Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Flash Gitz Yellow,Air: Flash Gitz Yellow,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Grey Knights Steel,Air: Grey Knights Steel,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Kantor Blue,Air: Kantor Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Khorne Red,Air: Khorne Red,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Kislev Flesh,Air: Kislev Flesh,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Leadbelcher,Air: Leadbelcher,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Lothern Blue,Air: Lothern Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Macragge Blue,Air: Macragge Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Mechanicus Standard Grey,Air: Mechanicus Standard Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Mephiston Red,Air: Mephiston Red,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Moot Green,Air: Moot Green,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Mortarion Green Clear,Air: Mortarion Green Clear,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Mournfang Brown,Air: Mournfang Brown,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Night Lords Blue,Air: Night Lords Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Ogryn Camo,Air: Ogryn Camo,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Phalanx Yellow,Air: Phalanx Yellow,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Phoenician Purple,Air: Phoenician Purple,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Runefang Steel,Air: Runefang Steel,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Russ Grey,Air: Russ Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Temple Guard Blue,Air: Temple Guard Blue,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Thallax Gold,Air: Thallax Gold,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: The Fang,Air: The Fang,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Troll Slayer Orange,Air: Troll Slayer Orange,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Typhon Ash,Air: Typhon Ash,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Ulthuan Grey,Air: Ulthuan Grey,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Ushabti Bone,Air: Ushabti Bone,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: White Scar,Air: White Scar,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Air: Zandri Dust,Air: Zandri Dust,Air,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Astorath Red,Astorath Red,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Base: Gal Vorbak Red,Base: Gal Vorbak Red,Base,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Base: Hobgrot Hide,Base: Hobgrot Hide,Base,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Base: Lupercal Green,Base: Lupercal Green,Base,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Base: Morghast Bone,Base: Morghast Bone,Base,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Base: Nocturne Green,Base: Nocturne Green,Base,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Base: Ratskin Flesh,Base: Ratskin Flesh,Base,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Chaos Black,Chaos Black,Spray,2026-10-22,2026-10-26,,5,5,true,false
-memphis,Contrast: Aeldari Emerald,Contrast: Aeldari Emerald,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Aethermatic Blue,Contrast: Aethermatic Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Aggaros Dunes,Contrast: Aggaros Dunes,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Akhelian Green,Contrast: Akhelian Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Base: Lupercal Green,Base: Lupercal Green,Base,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Base: Morghast Bone,Base: Morghast Bone,Base,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Base: Nocturne Green,Base: Nocturne Green,Base,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Base: Ratskin Flesh,Base: Ratskin Flesh,Base,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Chaos Black,Chaos Black,Spray,2026-10-22,2026-10-27,,6,6,true,false
+memphis,Contrast: Aeldari Emerald,Contrast: Aeldari Emerald,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Aethermatic Blue,Contrast: Aethermatic Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Aggaros Dunes,Contrast: Aggaros Dunes,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Akhelian Green,Contrast: Akhelian Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Apothecary White,Contrast: Apothecary White,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Asurmen Blue,Contrast: Asurmen Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Apothecary White,Contrast: Apothecary White,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Asurmen Blue,Contrast: Asurmen Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Baal Red,Contrast: Baal Red,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
+memphis,Contrast: Baal Red,Contrast: Baal Red,Contrast,2026-10-27,2026-10-27,,1,1,true,false
 memphis,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Black Legion,Contrast: Black Legion,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Black Templar,Contrast: Black Templar,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Blood Angels Red,Contrast: Blood Angels Red,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Briar Queen Chill,Contrast: Briar Queen Chill,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Creed Camo,Contrast: Creed Camo,Contrast,2026-10-16,2026-10-26,,11,11,true,false
-memphis,Contrast: Cygor Brown,Contrast: Cygor Brown,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Doomfire Magenta,Contrast: Doomfire Magenta,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Dreadful Visage,Contrast: Dreadful Visage,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Fyreslayer Flesh,Contrast: Fyreslayer Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Garaghak's Sewer,Contrast: Garaghak's Sewer,Contrast,2026-10-15,2026-10-26,,12,12,true,false
-memphis,Contrast: Gore-Grunta Fur,Contrast: Gore-Grunta Fur,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Gryph-Charger Grey,Contrast: Gryph-Charger Grey,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Bad Moon Yellow,Contrast: Bad Moon Yellow,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Black Legion,Contrast: Black Legion,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Black Templar,Contrast: Black Templar,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Blood Angels Red,Contrast: Blood Angels Red,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Briar Queen Chill,Contrast: Briar Queen Chill,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Creed Camo,Contrast: Creed Camo,Contrast,2026-10-16,2026-10-27,,12,12,true,false
+memphis,Contrast: Cygor Brown,Contrast: Cygor Brown,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Dark Angels Green,Contrast: Dark Angels Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Doomfire Magenta,Contrast: Doomfire Magenta,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Dreadful Visage,Contrast: Dreadful Visage,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Fyreslayer Flesh,Contrast: Fyreslayer Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Garaghak's Sewer,Contrast: Garaghak's Sewer,Contrast,2026-10-15,2026-10-27,,13,13,true,false
+memphis,Contrast: Gore-Grunta Fur,Contrast: Gore-Grunta Fur,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Gryph-Charger Grey,Contrast: Gryph-Charger Grey,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Gryph-Hound Orange,Contrast: Gryph-Hound Orange,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
 memphis,Contrast: Guilliman Flesh,Contrast: Guilliman Flesh,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Gutrippa Flesh,Contrast: Gutrippa Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Hexwraith Flame,Contrast: Hexwraith Flame,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Imperial Fist,Contrast: Imperial Fist,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Ironjawz Yellow,Contrast: Ironjawz Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Iyanden Yellow,Contrast: Iyanden Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Guilliman Flesh,Contrast: Guilliman Flesh,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Gutrippa Flesh,Contrast: Gutrippa Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Hexwraith Flame,Contrast: Hexwraith Flame,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Imperial Fist,Contrast: Imperial Fist,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Ironjawz Yellow,Contrast: Ironjawz Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Iyanden Yellow,Contrast: Iyanden Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
+memphis,Contrast: Karandras Green,Contrast: Karandras Green,Contrast,2026-10-27,2026-10-27,,1,1,true,false
 memphis,Contrast: Kroxigor Scales,Contrast: Kroxigor Scales,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Leviathan Purple,Contrast: Leviathan Purple,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Kroxigor Scales,Contrast: Kroxigor Scales,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Leviathan Purple,Contrast: Leviathan Purple,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Luxion Purple,Contrast: Luxion Purple,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
+memphis,Contrast: Luxion Purple,Contrast: Luxion Purple,Contrast,2026-10-27,2026-10-27,,1,1,true,false
 memphis,Contrast: Magmadroth Flame,Contrast: Magmadroth Flame,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Mantis Warriors Green,Contrast: Mantis Warriors Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Militarum Green,Contrast: Militarum Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Nazdreg Yellow,Contrast: Nazdreg Yellow,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Nighthaunt Gloom,Contrast: Nighthaunt Gloom,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Ork Flesh,Contrast: Ork Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Plaguebearer Flesh,Contrast: Plaguebearer Flesh,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Magmadroth Flame,Contrast: Magmadroth Flame,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Magos Purple,Contrast: Magos Purple,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Mantis Warriors Green,Contrast: Mantis Warriors Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Militarum Green,Contrast: Militarum Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Nazdreg Yellow,Contrast: Nazdreg Yellow,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Nighthaunt Gloom,Contrast: Nighthaunt Gloom,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Ork Flesh,Contrast: Ork Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Plaguebearer Flesh,Contrast: Plaguebearer Flesh,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Pylar Glacier,Contrast: Pylar Glacier,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Ratling Grime,Contrast: Ratling Grime,Contrast,2026-10-15,2026-10-26,,12,12,true,false
-memphis,Contrast: Sigvald Burgundy,Contrast: Sigvald Burgundy,Contrast,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Contrast: Pylar Glacier,Contrast: Pylar Glacier,Contrast,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Contrast: Ratling Grime,Contrast: Ratling Grime,Contrast,2026-10-15,2026-10-27,,13,13,true,false
+memphis,Contrast: Sigvald Burgundy,Contrast: Sigvald Burgundy,Contrast,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-21,2026-10-21,2026-10-22,1,1,false,false
-memphis,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-23,2026-10-26,,4,4,true,false
+memphis,Contrast: Skeleton Horde,Contrast: Skeleton Horde,Contrast,2026-10-23,2026-10-27,,5,5,true,false
 memphis,Contrast: Snakebite Leather,Contrast: Snakebite Leather,Contrast,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Contrast: Stormfiend,Contrast: Stormfiend,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Striking Scorpion Green,Contrast: Striking Scorpion Green,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Talassar Blue,Contrast: Talassar Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Terradon Turquoise,Contrast: Terradon Turquoise,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Ultramarines Blue,Contrast: Ultramarines Blue,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Volupus Pink,Contrast: Volupus Pink,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Contrast: Warp Lightning,Contrast: Warp Lightning,Contrast,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Dawnstone,Dawnstone,Dry,2026-10-20,2026-10-26,,7,7,true,false
-memphis,Eldar Flesh,Eldar Flesh,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Golden Griffon,Golden Griffon,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Golgfag Brown,Golgfag Brown,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Grey Seer,Grey Seer,Spray,2026-10-22,2026-10-26,,5,5,true,false
-memphis,Hoeth Blue,Hoeth Blue,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Imrik Blue,Imrik Blue,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Layer: Bestigor Flesh,Layer: Bestigor Flesh,Layer,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Layer: Canoptek Alloy,Layer: Canoptek Alloy,Layer,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Layer: Castellax Bronze,Layer: Castellax Bronze,Layer,2026-10-15,2026-10-26,,12,12,true,false
-memphis,Layer: Hashut Copper,Layer: Hashut Copper,Layer,2026-10-21,2026-10-26,,6,6,true,false
+memphis,Contrast: Stormfiend,Contrast: Stormfiend,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Striking Scorpion Green,Contrast: Striking Scorpion Green,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Talassar Blue,Contrast: Talassar Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Terradon Turquoise,Contrast: Terradon Turquoise,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Ultramarines Blue,Contrast: Ultramarines Blue,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Volupus Pink,Contrast: Volupus Pink,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Contrast: Warp Lightning,Contrast: Warp Lightning,Contrast,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Dawnstone,Dawnstone,Dry,2026-10-20,2026-10-27,,8,8,true,false
+memphis,Eldar Flesh,Eldar Flesh,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Golden Griffon,Golden Griffon,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Golgfag Brown,Golgfag Brown,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Grey Seer,Grey Seer,Spray,2026-10-22,2026-10-27,,6,6,true,false
+memphis,Hoeth Blue,Hoeth Blue,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Imrik Blue,Imrik Blue,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Layer: Bestigor Flesh,Layer: Bestigor Flesh,Layer,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Layer: Canoptek Alloy,Layer: Canoptek Alloy,Layer,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Layer: Castellax Bronze,Layer: Castellax Bronze,Layer,2026-10-15,2026-10-27,,13,13,true,false
+memphis,Layer: Hashut Copper,Layer: Hashut Copper,Layer,2026-10-21,2026-10-27,,7,7,true,false
 memphis,Layer: Stormhost Silver,Layer: Stormhost Silver,Layer,2026-10-14,2026-10-23,2026-10-24,10,10,false,true
-memphis,Layer: Tallarn Sand,Layer: Tallarn Sand,Layer,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Layer: Tallarn Sand,Layer: Tallarn Sand,Layer,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Layer: Ungor Flesh,Layer: Ungor Flesh,Layer,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-memphis,Layer: Vulkan Green,Layer: Vulkan Green,Layer,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Layer: Warpfiend Grey,Layer: Warpfiend Grey,Layer,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Layer: Vulkan Green,Layer: Vulkan Green,Layer,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Layer: Warpfiend Grey,Layer: Warpfiend Grey,Layer,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Longbeard Grey,Longbeard Grey,Dry,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-memphis,Lucius Lilac,Lucius Lilac,Dry,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Lucius Lilac,Lucius Lilac,Dry,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Munitorum Varnish,Munitorum Varnish,Spray,2026-10-14,2026-10-22,2026-10-23,9,9,false,true
-memphis,Niblet Green,Niblet Green,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Nurgling Green,Nurgling Green,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Praxeti White,Praxeti White,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Ryza Rust,Ryza Rust,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Shade:  Kroak Green,Shade:  Kroak Green,Shade,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Niblet Green,Niblet Green,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Nurgling Green,Nurgling Green,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Praxeti White,Praxeti White,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Ryza Rust,Ryza Rust,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Shade:  Kroak Green,Shade:  Kroak Green,Shade,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Shade: Athonian Camoshade,Shade: Athonian Camoshade,Shade,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Shade: Berserker Bloodshade,Shade: Berserker Bloodshade,Shade,2026-10-22,2026-10-26,,5,5,true,false
+memphis,Shade: Berserker Bloodshade,Shade: Berserker Bloodshade,Shade,2026-10-22,2026-10-27,,6,6,true,false
 memphis,Shade: Biel-Tan Green,Shade: Biel-Tan Green,Shade,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Shade: Casandora Yellow,Shade: Casandora Yellow,Shade,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Shade: Coelia Greenshade,Shade: Coelia Greenshade,Shade,2026-10-17,2026-10-26,,10,10,true,false
-memphis,Shade: Drakenhof Nightshade,Shade: Drakenhof Nightshade,Shade,2026-10-23,2026-10-26,,4,4,true,false
-memphis,Shade: Mortarion Grime,Shade: Mortarion Grime,Shade,2026-10-16,2026-10-26,,11,11,true,false
-memphis,Shade: Nuln Oil,Shade: Nuln Oil,Shade,2026-10-15,2026-10-26,,12,12,true,false
-memphis,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Shade: Casandora Yellow,Shade: Casandora Yellow,Shade,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Shade: Coelia Greenshade,Shade: Coelia Greenshade,Shade,2026-10-17,2026-10-27,,11,11,true,false
+memphis,Shade: Drakenhof Nightshade,Shade: Drakenhof Nightshade,Shade,2026-10-23,2026-10-27,,5,5,true,false
+memphis,Shade: Mortarion Grime,Shade: Mortarion Grime,Shade,2026-10-16,2026-10-27,,12,12,true,false
+memphis,Shade: Nuln Oil,Shade: Nuln Oil,Shade,2026-10-15,2026-10-27,,13,13,true,false
+memphis,Shade: Seraphim Sepia,Shade: Seraphim Sepia,Shade,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Shade: Soulblight Grey,Shade: Soulblight Grey,Shade,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Shade: Targor Rageshade,Shade: Targor Rageshade,Shade,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Shade: Tyran Blue,Shade: Tyran Blue,Shade,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Skink Blue,Skink Blue,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Sylvaneth Bark,Sylvaneth Bark,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Agrellan Earth,Technical: Agrellan Earth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Ardcoat,Technical: Ardcoat,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Astrogranite,Technical: Astrogranite,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Blood For The Blood God,Technical: Blood For The Blood God,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Contrast Medium,Technical: Contrast Medium,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Lahmian Medium,Technical: Lahmian Medium,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Martian Ironcrust,Technical: Martian Ironcrust,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Martian Ironearth,Technical: Martian Ironearth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Mordant Earth,Technical: Mordant Earth,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Nihilakh Oxide,Technical: Nihilakh Oxide,Technical,2026-10-22,2026-10-26,,5,5,true,false
-memphis,Technical: Nurgle's Rot,Technical: Nurgle's Rot,Technical,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Shade: Targor Rageshade,Shade: Targor Rageshade,Shade,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Shade: Tyran Blue,Shade: Tyran Blue,Shade,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Skink Blue,Skink Blue,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Sylvaneth Bark,Sylvaneth Bark,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Agrellan Badland,Technical: Agrellan Badland,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Agrellan Earth,Technical: Agrellan Earth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Ardcoat,Technical: Ardcoat,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Astrogranite,Technical: Astrogranite,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Blood For The Blood God,Technical: Blood For The Blood God,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Contrast Medium,Technical: Contrast Medium,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Lahmian Medium,Technical: Lahmian Medium,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Martian Ironcrust,Technical: Martian Ironcrust,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Martian Ironearth,Technical: Martian Ironearth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Mordant Earth,Technical: Mordant Earth,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Nihilakh Oxide,Technical: Nihilakh Oxide,Technical,2026-10-22,2026-10-27,,6,6,true,false
+memphis,Technical: Nurgle's Rot,Technical: Nurgle's Rot,Technical,2026-10-14,2026-10-27,,14,14,true,true
 memphis,Technical: Soulstone Blue,Technical: Soulstone Blue,Technical,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
+memphis,Technical: Soulstone Blue,Technical: Soulstone Blue,Technical,2026-10-27,2026-10-27,,1,1,true,false
 memphis,Technical: Spiritstone Red,Technical: Spiritstone Red,Technical,2026-10-14,2026-10-15,2026-10-16,2,2,false,true
-memphis,Technical: Stirland Mud,Technical: Stirland Mud,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Stormshield,Technical: Stormshield,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Tesseract Glow,Technical: Tesseract Glow,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Technical: Waystone Green,Technical: Waystone Green,Technical,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Terminatus Stone,Terminatus Stone,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-26,,13,13,true,true
-memphis,Underhive Ash,Underhive Ash,Dry,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Technical: Spiritstone Red,Technical: Spiritstone Red,Technical,2026-10-27,2026-10-27,,1,1,true,false
+memphis,Technical: Stirland Mud,Technical: Stirland Mud,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Stormshield,Technical: Stormshield,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Tesseract Glow,Technical: Tesseract Glow,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Technical: Waystone Green,Technical: Waystone Green,Technical,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Terminatus Stone,Terminatus Stone,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Tyrant Skull,Tyrant Skull,Dry,2026-10-14,2026-10-27,,14,14,true,true
+memphis,Underhive Ash,Underhive Ash,Dry,2026-10-14,2026-10-27,,14,14,true,true
 memphis,White Scar,White Scar,Spray,2026-10-21,2026-10-23,2026-10-24,3,3,false,false
-memphis,Wrack White,Wrack White,Dry,2026-10-14,2026-10-26,,13,13,true,true
+memphis,Wrack White,Wrack White,Dry,2026-10-14,2026-10-27,,14,14,true,true

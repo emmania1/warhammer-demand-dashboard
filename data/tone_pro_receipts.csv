@@ -483,3 +483,7 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-26,2026-10-25,1,firestorm_games,GB,Base: Morghast Bone,Base,3.0,23,20.0,launch_delivery,panel
 2026-10-26,2026-10-25,1,highlander_games,GB,Layer: Evil Sunz Scarlet,Layer,3.0,9,6.0,launch_delivery,page
 2026-10-26,2026-10-25,1,loaded_dice,GB,Base: Corax White,Base,2.0,42,40.0,reorder,panel
+2026-10-27,2026-10-20,7,cosmic_collectables_uk,GB,Layer: Administratum Grey,Layer,2.0,8,6.0,launch_delivery,page
+2026-10-27,2026-10-26,1,element_games,GB,Base: Grey Knights Steel,Base,1.0,6,5.0,launch_delivery,panel
+2026-10-27,2026-10-26,1,firestorm_games,GB,Tech Pro: Shading Medium,Tech Pro,2.0,16,14.0,launch_delivery,panel
+2026-10-27,2026-10-26,1,taps_games,CA,Base: Abaddon Black,Base,-1.0,6,7.0,launch_delivery,page
