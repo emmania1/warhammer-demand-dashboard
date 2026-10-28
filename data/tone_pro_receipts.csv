@@ -487,3 +487,23 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-27,2026-10-26,1,element_games,GB,Base: Grey Knights Steel,Base,1.0,6,5.0,launch_delivery,panel
 2026-10-27,2026-10-26,1,firestorm_games,GB,Tech Pro: Shading Medium,Tech Pro,2.0,16,14.0,launch_delivery,panel
 2026-10-27,2026-10-26,1,taps_games,CA,Base: Abaddon Black,Base,-1.0,6,7.0,launch_delivery,page
+2026-10-28,2026-10-27,1,armada_games,US,Tone Pro: Khemri Sands 3,Tone Pro,7.0,13,6.0,launch_delivery,page
+2026-10-28,2026-10-27,1,collector_store_llc,US,Layer: Evil Sunz Scarlet,Layer,0.0,5,5.0,launch_delivery,page
+2026-10-28,2026-10-27,1,firestorm_games,GB,Base: Death Korps Drab,Base,2.0,15,13.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Base: Thondia Brown,Base,0.0,12,12.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Ahriman Blue,Layer,15.0,17,2.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Gehenna's Gold,Layer,12.0,17,5.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Hoeth Blue,Layer,3.0,10,7.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Phalanx Yellow,Layer,19.0,25,6.0,reorder,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Skrag Brown,Layer,2.0,14,12.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Temple Guard Blue,Layer,0.0,6,6.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Layer: Wazdakka Red,Layer,2.0,24,22.0,launch_delivery,panel
+2026-10-28,2026-10-27,1,firestorm_games,GB,Tone Pro: Blackstone Void 5,Tone Pro,0.0,7,7.0,reorder,panel
+2026-10-28,2026-10-27,1,loaded_dice,GB,Base: Death Korps Drab,Base,2.0,11,9.0,launch_delivery,panel
+2026-10-28,2026-10-21,7,obsidian_games,CA,Base: Retributor Armour,Base,8.0,15,7.0,reorder,page
+2026-10-28,2026-10-27,1,pastime_sports_games,CA,Base: Leadbelcher,Base,6.0,17,11.0,launch_delivery,panel
+2026-10-28,2026-10-21,7,titan_games,US,Base: Mephiston Red,Base,8.0,13,5.0,launch_delivery,page
+2026-10-28,2026-10-21,7,titan_games,US,Base: Retributor Armour,Base,4.0,18,14.0,launch_delivery,page
+2026-10-28,2026-10-21,7,titan_games,US,Layer: Stormhost Silver,Layer,4.0,10,6.0,launch_delivery,page
+2026-10-28,2026-10-27,1,travelling_man_uk,GB,Tone Pro: Blackstone Void 3,Tone Pro,10.0,12,2.0,launch_delivery,page
+2026-10-28,2026-10-27,1,travelling_man_uk,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,0.0,2,2.0,launch_delivery,page
