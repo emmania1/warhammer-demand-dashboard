@@ -119,72 +119,74 @@ iso_week,store_id,country,brand,paints,reads,opening,received,gone,sell_through
 2026-W43,titan_games,US,Vallejo,10,1,53.0,0.0,0.0,0.0
 2026-W43,travelling_man_uk,GB,Vallejo,10,1,92.0,6.0,6.0,0.061
 2026-W43,wandering_adventures,CA,Vallejo,8,1,25.0,4.0,0.0,0.0
+2026-W44,401_games,CA,Army Painter,10,1,0.0,0.0,0.0,
 2026-W44,armada_games,US,Army Painter,10,1,42.0,18.0,0.0,0.0
-2026-W44,battle_city_games,GB,Army Painter,202,3,559.0,0.0,12.0,0.021
-2026-W44,beanie_games,GB,Army Painter,202,3,728.0,0.0,0.0,0.0
+2026-W44,battle_city_games,GB,Army Painter,202,4,559.0,0.0,12.0,0.021
+2026-W44,beanie_games,GB,Army Painter,202,4,728.0,0.0,1.0,0.001
 2026-W44,black_knight_games,CA,Army Painter,10,1,42.0,0.0,4.0,0.095
 2026-W44,collector_store_llc,US,Army Painter,10,1,49.0,0.0,0.0,0.0
-2026-W44,element_games,GB,Army Painter,77,3,536.0,4.0,16.0,0.03
-2026-W44,firestorm_games,GB,Army Painter,303,3,2788.0,0.0,59.0,0.021
+2026-W44,element_games,GB,Army Painter,78,4,545.0,15.0,18.0,0.032
+2026-W44,firestorm_games,GB,Army Painter,303,4,2788.0,96.0,84.0,0.029
 2026-W44,highlander_games,GB,Army Painter,10,1,22.0,0.0,0.0,0.0
-2026-W44,loaded_dice,GB,Army Painter,166,3,740.0,0.0,4.0,0.005
+2026-W44,loaded_dice,GB,Army Painter,166,4,740.0,11.0,7.0,0.009
 2026-W44,obsidian_games,CA,Army Painter,10,1,38.0,0.0,1.0,0.026
-2026-W44,the_outpost,GB,Army Painter,206,3,667.0,0.0,1.0,0.001
-2026-W44,401_games,CA,Citadel Base/Layer,2,3,17.0,0.0,2.0,0.118
-2026-W44,accidentally_cool_games,US,Citadel Base/Layer,1,3,4.0,0.0,0.0,0.0
-2026-W44,armada_games,US,Citadel Base/Layer,10,3,45.0,0.0,6.0,0.133
-2026-W44,battle_city_games,GB,Citadel Base/Layer,99,3,407.0,0.0,0.0,0.0
-2026-W44,bd_cosmos,CA,Citadel Base/Layer,2,3,8.0,0.0,0.0,0.0
-2026-W44,beanie_games,GB,Citadel Base/Layer,134,3,673.0,5.0,10.0,0.015
-2026-W44,black_knight_games,CA,Citadel Base/Layer,10,3,13.0,0.0,0.0,0.0
-2026-W44,boutique_fdb,CA,Citadel Base/Layer,2,3,13.0,0.0,0.0,0.0
-2026-W44,collector_store_llc,US,Citadel Base/Layer,10,3,49.0,5.0,2.0,0.037
-2026-W44,cosmic_collectables_uk,GB,Citadel Base/Layer,10,3,54.0,6.0,0.0,0.0
-2026-W44,deals_n_dragons,US,Citadel Base/Layer,2,3,14.0,0.0,0.0,0.0
-2026-W44,draco_gaming,GB,Citadel Base/Layer,2,3,7.0,0.0,1.0,0.143
-2026-W44,element_games,GB,Citadel Base/Layer,6,3,34.0,5.0,10.0,0.256
-2026-W44,event_horizon_hobbies_ca,CA,Citadel Base/Layer,10,3,69.0,0.0,0.0,0.0
-2026-W44,fantasy_forged,CA,Citadel Base/Layer,1,2,3.0,0.0,0.0,0.0
-2026-W44,firestorm_games,GB,Citadel Base/Layer,147,3,1510.0,105.0,84.0,0.052
-2026-W44,gamers_grove,US,Citadel Base/Layer,10,3,40.0,0.0,1.0,0.025
-2026-W44,games_a_plunder,US,Citadel Base/Layer,149,3,432.0,0.0,0.0,0.0
-2026-W44,gaming_giant,US,Citadel Base/Layer,8,3,45.0,0.0,0.0,0.0
-2026-W44,grognard_games,US,Citadel Base/Layer,2,3,8.0,0.0,0.0,0.0
-2026-W44,highlander_games,GB,Citadel Base/Layer,9,3,64.0,6.0,3.0,0.043
-2026-W44,hw_wargames,US,Citadel Base/Layer,1,3,6.0,0.0,0.0,0.0
-2026-W44,jeux_az_games,CA,Citadel Base/Layer,148,3,294.0,0.0,0.0,0.0
-2026-W44,kingslayer_games,US,Citadel Base/Layer,2,3,6.0,0.0,0.0,0.0
-2026-W44,level_one_game_shop,US,Citadel Base/Layer,2,3,14.0,0.0,0.0,0.0
-2026-W44,lionheart_hobby,US,Citadel Base/Layer,2,3,9.0,0.0,0.0,0.0
-2026-W44,loaded_dice,GB,Citadel Base/Layer,134,3,1814.0,49.0,53.0,0.028
-2026-W44,nutmeg_games,US,Citadel Base/Layer,147,3,750.0,0.0,16.0,0.021
-2026-W44,obsidian_games,CA,Citadel Base/Layer,10,3,48.0,7.0,6.0,0.109
-2026-W44,pastime_sports_games,CA,Citadel Base/Layer,149,3,2600.0,11.0,22.0,0.008
-2026-W44,taps_games,CA,Citadel Base/Layer,2,3,5.0,7.0,1.0,0.083
-2026-W44,the_arcanum_sanctorum,US,Citadel Base/Layer,10,3,40.0,0.0,0.0,0.0
-2026-W44,the_outpost,GB,Citadel Base/Layer,146,2,419.0,0.0,25.0,0.06
-2026-W44,titan_games,US,Citadel Base/Layer,10,3,91.0,25.0,2.0,0.017
-2026-W44,travelling_man_uk,GB,Citadel Base/Layer,2,3,42.0,0.0,3.0,0.071
-2026-W44,wandering_adventures,CA,Citadel Base/Layer,2,3,7.0,0.0,0.0,0.0
-2026-W44,401_games,CA,Tone Pro,10,3,0.0,0.0,0.0,
-2026-W44,armada_games,US,Tone Pro,150,3,1498.0,16.0,45.0,0.03
-2026-W44,bd_cosmos,CA,Tone Pro,10,3,40.0,0.0,0.0,0.0
-2026-W44,boutique_fdb,CA,Tone Pro,10,3,60.0,0.0,1.0,0.017
-2026-W44,collector_store_llc,US,Tone Pro,10,3,60.0,0.0,0.0,0.0
-2026-W44,deals_n_dragons,US,Tone Pro,10,3,60.0,0.0,1.0,0.017
-2026-W44,draco_gaming,GB,Tone Pro,10,3,55.0,0.0,6.0,0.109
-2026-W44,element_games,GB,Tone Pro,6,3,34.0,0.0,21.0,0.618
-2026-W44,firestorm_games,GB,Tone Pro,150,3,1867.0,7.0,82.0,0.044
-2026-W44,jeux_az_games,CA,Tone Pro,150,3,298.0,0.0,0.0,0.0
-2026-W44,lionheart_hobby,US,Tone Pro,10,3,57.0,0.0,0.0,0.0
-2026-W44,loaded_dice,GB,Tone Pro,94,3,309.0,0.0,0.0,0.0
-2026-W44,the_outpost,GB,Tone Pro,119,2,267.0,543.0,18.0,0.022
-2026-W44,travelling_man_uk,GB,Tone Pro,10,3,141.0,4.0,5.0,0.034
+2026-W44,the_outpost,GB,Army Painter,207,4,667.0,0.0,1.0,0.001
+2026-W44,401_games,CA,Citadel Base/Layer,10,4,101.0,0.0,21.0,0.208
+2026-W44,accidentally_cool_games,US,Citadel Base/Layer,5,4,30.0,6.0,0.0,0.0
+2026-W44,armada_games,US,Citadel Base/Layer,10,4,45.0,0.0,6.0,0.133
+2026-W44,battle_city_games,GB,Citadel Base/Layer,99,4,407.0,0.0,0.0,0.0
+2026-W44,bd_cosmos,CA,Citadel Base/Layer,2,4,8.0,0.0,0.0,0.0
+2026-W44,beanie_games,GB,Citadel Base/Layer,134,4,673.0,47.0,15.0,0.021
+2026-W44,black_knight_games,CA,Citadel Base/Layer,10,4,13.0,0.0,0.0,0.0
+2026-W44,boutique_fdb,CA,Citadel Base/Layer,2,4,13.0,0.0,0.0,0.0
+2026-W44,collector_store_llc,US,Citadel Base/Layer,10,4,49.0,5.0,3.0,0.056
+2026-W44,cosmic_collectables_uk,GB,Citadel Base/Layer,10,4,54.0,6.0,0.0,0.0
+2026-W44,deals_n_dragons,US,Citadel Base/Layer,2,4,14.0,0.0,0.0,0.0
+2026-W44,draco_gaming,GB,Citadel Base/Layer,2,4,7.0,12.0,1.0,0.053
+2026-W44,element_games,GB,Citadel Base/Layer,6,4,34.0,5.0,14.0,0.359
+2026-W44,event_horizon_hobbies_ca,CA,Citadel Base/Layer,10,4,69.0,0.0,0.0,0.0
+2026-W44,fantasy_forged,CA,Citadel Base/Layer,1,3,3.0,0.0,0.0,0.0
+2026-W44,firestorm_games,GB,Citadel Base/Layer,147,4,1510.0,179.0,126.0,0.075
+2026-W44,gamers_grove,US,Citadel Base/Layer,10,4,40.0,0.0,1.0,0.025
+2026-W44,games_a_plunder,US,Citadel Base/Layer,149,4,432.0,0.0,0.0,0.0
+2026-W44,gaming_giant,US,Citadel Base/Layer,8,4,45.0,0.0,0.0,0.0
+2026-W44,grognard_games,US,Citadel Base/Layer,2,4,8.0,0.0,1.0,0.125
+2026-W44,highlander_games,GB,Citadel Base/Layer,9,4,64.0,6.0,3.0,0.043
+2026-W44,hw_wargames,US,Citadel Base/Layer,1,4,6.0,0.0,0.0,0.0
+2026-W44,jeux_az_games,CA,Citadel Base/Layer,148,4,294.0,0.0,0.0,0.0
+2026-W44,kingslayer_games,US,Citadel Base/Layer,9,4,42.0,0.0,1.0,0.024
+2026-W44,level_one_game_shop,US,Citadel Base/Layer,8,4,39.0,0.0,0.0,0.0
+2026-W44,lionheart_hobby,US,Citadel Base/Layer,2,4,9.0,0.0,0.0,0.0
+2026-W44,loaded_dice,GB,Citadel Base/Layer,134,4,1814.0,62.0,107.0,0.057
+2026-W44,nutmeg_games,US,Citadel Base/Layer,147,4,750.0,0.0,20.0,0.027
+2026-W44,obsidian_games,CA,Citadel Base/Layer,10,4,48.0,7.0,6.0,0.109
+2026-W44,pastime_sports_games,CA,Citadel Base/Layer,149,4,2600.0,11.0,28.0,0.011
+2026-W44,taps_games,CA,Citadel Base/Layer,2,4,5.0,7.0,1.0,0.083
+2026-W44,the_arcanum_sanctorum,US,Citadel Base/Layer,10,4,40.0,0.0,0.0,0.0
+2026-W44,the_outpost,GB,Citadel Base/Layer,146,3,419.0,0.0,29.0,0.069
+2026-W44,titan_games,US,Citadel Base/Layer,10,4,91.0,25.0,2.0,0.017
+2026-W44,travelling_man_uk,GB,Citadel Base/Layer,2,4,42.0,0.0,5.0,0.119
+2026-W44,wandering_adventures,CA,Citadel Base/Layer,2,4,7.0,0.0,0.0,0.0
+2026-W44,401_games,CA,Tone Pro,30,4,0.0,0.0,0.0,
+2026-W44,armada_games,US,Tone Pro,150,4,1498.0,16.0,45.0,0.03
+2026-W44,bd_cosmos,CA,Tone Pro,10,4,40.0,0.0,0.0,0.0
+2026-W44,boutique_fdb,CA,Tone Pro,10,4,60.0,0.0,3.0,0.05
+2026-W44,collector_store_llc,US,Tone Pro,10,4,60.0,0.0,0.0,0.0
+2026-W44,deals_n_dragons,US,Tone Pro,10,4,60.0,0.0,1.0,0.017
+2026-W44,draco_gaming,GB,Tone Pro,10,4,55.0,6.0,7.0,0.115
+2026-W44,element_games,GB,Tone Pro,6,4,34.0,0.0,24.0,0.706
+2026-W44,firestorm_games,GB,Tone Pro,150,4,1867.0,39.0,111.0,0.058
+2026-W44,jeux_az_games,CA,Tone Pro,150,4,298.0,0.0,0.0,0.0
+2026-W44,lionheart_hobby,US,Tone Pro,10,4,57.0,0.0,0.0,0.0
+2026-W44,loaded_dice,GB,Tone Pro,94,4,309.0,0.0,37.0,0.12
+2026-W44,the_outpost,GB,Tone Pro,119,3,267.0,543.0,23.0,0.028
+2026-W44,travelling_man_uk,GB,Tone Pro,10,4,141.0,4.0,13.0,0.09
+2026-W44,401_games,CA,Vallejo,10,1,30.0,0.0,3.0,0.1
 2026-W44,black_knight_games,CA,Vallejo,10,1,98.0,0.0,0.0,0.0
-2026-W44,element_games,GB,Vallejo,20,3,114.0,0.0,16.0,0.14
-2026-W44,firestorm_games,GB,Vallejo,265,3,898.0,0.0,10.0,0.011
-2026-W44,loaded_dice,GB,Vallejo,313,3,1392.0,0.0,5.0,0.004
+2026-W44,element_games,GB,Vallejo,21,4,123.0,0.0,26.0,0.211
+2026-W44,firestorm_games,GB,Vallejo,265,4,898.0,24.0,15.0,0.016
+2026-W44,loaded_dice,GB,Vallejo,313,4,1392.0,0.0,5.0,0.004
 2026-W44,obsidian_games,CA,Vallejo,10,1,42.0,0.0,0.0,0.0
 2026-W44,the_arcanum_sanctorum,US,Vallejo,10,1,15.0,11.0,0.0,0.0
-2026-W44,the_outpost,GB,Vallejo,283,3,1102.0,0.0,11.0,0.01
+2026-W44,the_outpost,GB,Vallejo,283,4,1102.0,0.0,11.0,0.01
 2026-W44,titan_games,US,Vallejo,10,1,53.0,0.0,1.0,0.019

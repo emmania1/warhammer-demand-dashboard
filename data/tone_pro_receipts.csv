@@ -507,3 +507,32 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-28,2026-10-21,7,titan_games,US,Layer: Stormhost Silver,Layer,4.0,10,6.0,launch_delivery,page
 2026-10-28,2026-10-27,1,travelling_man_uk,GB,Tone Pro: Blackstone Void 3,Tone Pro,10.0,12,2.0,launch_delivery,page
 2026-10-28,2026-10-27,1,travelling_man_uk,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,0.0,2,2.0,launch_delivery,page
+2026-10-29,2026-10-22,7,accidentally_cool_games,US,Layer: Administratum Grey,Layer,2.0,8,6.0,launch_delivery,page
+2026-10-29,2026-10-28,1,beanie_games,GB,Base: Balthasar Gold,Base,3.0,9,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Base: Corvus Black,Base,2.0,8,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Base: Daemonette Hide,Base,2.0,8,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Base: Incubi Darkness,Base,2.0,8,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Base: Mephiston Red,Base,3.0,9,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Layer: Cadian Fleshtone,Layer,2.0,8,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,beanie_games,GB,Layer: Ushabti Bone,Layer,2.0,8,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,draco_gaming,GB,Base: Abaddon Black,Base,5.0,11,6.0,launch_delivery,page
+2026-10-29,2026-10-28,1,draco_gaming,GB,Layer: Evil Sunz Scarlet,Layer,1.0,7,6.0,launch_delivery,page
+2026-10-29,2026-10-28,1,draco_gaming,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,2.0,8,6.0,launch_delivery,page
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Abaddon Black,Base,17.0,28,11.0,reorder,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Averland Sunset,Base,12.0,17,5.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Caledor Sky,Base,6.0,12,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Corax White,Base,10.0,15,5.0,reorder,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Ionrach Skin,Base,1.0,7,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Base: Mechanicus Standard Grey,Base,11.0,23,12.0,reorder,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Layer: Cadian Fleshtone,Layer,8.0,19,11.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Layer: Moot Green,Layer,13.0,19,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Layer: Ushabti Bone,Layer,11.0,23,12.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tech Pro: Blending Medium,Tech Pro,7.0,31,24.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tech Pro: Shading Medium,Tech Pro,13.0,30,17.0,reorder,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tone Pro: Blackstone Void 2,Tone Pro,9.0,10,1.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tone Pro: Blackstone Void 5,Tone Pro,7.0,19,12.0,reorder,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tone Pro: Bloodtoof Red 4,Tone Pro,3.0,13,10.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,firestorm_games,GB,Tone Pro: Hawkshroud Yellow 3,Tone Pro,4.0,13,9.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,loaded_dice,GB,Base: Bugman's Glow,Base,11.0,17,6.0,launch_delivery,panel
+2026-10-29,2026-10-28,1,loaded_dice,GB,Base: Screamer Pink,Base,3.0,10,7.0,launch_delivery,panel
+2026-10-29,2026-10-17,12,loaded_dice,GB,Layer: Ulthuan Grey,Layer,2.0,11,9.0,reorder,panel
