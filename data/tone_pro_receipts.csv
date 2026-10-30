@@ -536,3 +536,114 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-29,2026-10-28,1,loaded_dice,GB,Base: Bugman's Glow,Base,11.0,17,6.0,launch_delivery,panel
 2026-10-29,2026-10-28,1,loaded_dice,GB,Base: Screamer Pink,Base,3.0,10,7.0,launch_delivery,panel
 2026-10-29,2026-10-17,12,loaded_dice,GB,Layer: Ulthuan Grey,Layer,2.0,11,9.0,reorder,panel
+2026-10-30,2026-10-29,1,armada_games,US,Base: Abaddon Black,Base,1.0,2,1.0,reorder,page
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Leadbelcher,Base,10.0,21,11.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Macragge Blue,Base,13.0,19,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Mephiston Red,Base,9.0,21,12.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Retributor Armour,Base,6.0,16,10.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Runelord Brass,Base,12.0,13,1.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Base: Thousand Sons Blue,Base,5.0,10,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Layer: Stormhost Silver,Layer,12.0,18,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Layer: Ulthuan Grey,Layer,10.0,16,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Layer: White Scar,Layer,10.0,16,6.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Blackstone Void 1,Tone Pro,5.0,17,12.0,reorder,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,2.0,13,11.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Carthalos Skin 3,Tone Pro,11.0,12,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Celestine Skin 4,Tone Pro,11.0,12,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Chotec Orange 3,Tone Pro,13.0,14,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Kruleboyz Green 3,Tone Pro,13.0,14,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Plague Toad Venom 5,Tone Pro,7.0,8,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,firestorm_games,GB,Tone Pro: Scinari Blue 2,Tone Pro,11.0,12,1.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,games_a_plunder,US,Base: Thousand Sons Blue,Base,1.0,7,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Base: Abaddon Black,Base,19.0,89,70.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Base: Balthasar Gold,Base,13.0,14,1.0,reorder,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Base: Leadbelcher,Base,27.0,31,4.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Base: Orruk Flesh,Base,10.0,16,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Base: Wraithbone,Base,17.0,22,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Layer: Canoptek Alloy,Layer,20.0,25,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Layer: Moot Green,Layer,22.0,33,11.0,reorder,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Layer: Runefang Steel,Layer,27.0,38,11.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Layer: Stormhost Silver,Layer,15.0,21,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Layer: Ushabti Bone,Layer,7.0,13,6.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Bloodtoof Red 1,Tone Pro,2.0,6,4.0,launch_delivery,panel
+2026-10-30,2026-10-24,6,loaded_dice,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,2.0,5,3.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Blue Gorkshroom 2,Tone Pro,2.0,7,5.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Blue Gorkshroom 4,Tone Pro,2.0,7,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carmine Blades 1,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carmine Blades 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carmine Blades 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carmine Blades 4,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carmine Blades 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carthalos Skin 1,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carthalos Skin 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carthalos Skin 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carthalos Skin 4,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Carthalos Skin 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Dataslate Grey 1,Tone Pro,2.0,7,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Dataslate Grey 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Dataslate Grey 4,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Dataslate Grey 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Enrapturess Dusk 1,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Enrapturess Dusk 2,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Enrapturess Dusk 3,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Enrapturess Dusk 4,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Enrapturess Dusk 5,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Eye of Terror 1,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Eye of Terror 2,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Eye of Terror 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Eye of Terror 4,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Eye of Terror 5,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Gnarlwood 1,Tone Pro,3.0,6,3.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Gnarlwood 2,Tone Pro,3.0,6,3.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Gnarlwood 3,Tone Pro,4.0,7,3.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Gnarlwood 4,Tone Pro,4.0,7,3.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Gnarlwood 5,Tone Pro,4.0,7,3.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Green Morkshroom 1,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Green Morkshroom 2,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Green Morkshroom 3,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Green Morkshroom 4,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Green Morkshroom 5,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hierotek Green 1,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hierotek Green 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hierotek Green 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hierotek Green 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hive Fleet Purple 1,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hive Fleet Purple 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hive Fleet Purple 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hive Fleet Purple 4,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Hive Fleet Purple 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Khemri Sands 1,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Khemri Sands 2,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Khemri Sands 3,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Khemri Sands 4,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Khemri Sands 5,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Magnus the Red 1,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Magnus the Red 2,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Magnus the Red 3,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Magnus the Red 4,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Magnus the Red 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Necrolith Bone 1,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Necrolith Bone 2,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Necrolith Bone 3,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Necrolith Bone 4,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-28,2,loaded_dice,GB,Tone Pro: Necrolith Bone 5,Tone Pro,2.0,7,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Plague Toad Venom 1,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Plague Toad Venom 2,Tone Pro,4.0,10,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Plague Toad Venom 3,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Plague Toad Venom 4,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Plague Toad Venom 5,Tone Pro,2.0,8,6.0,launch_delivery,panel
+2026-10-30,2026-10-24,6,loaded_dice,GB,Tone Pro: Scinari Blue 1,Tone Pro,2.0,6,4.0,launch_delivery,panel
+2026-10-30,2026-10-24,6,loaded_dice,GB,Tone Pro: Scinari Blue 2,Tone Pro,2.0,6,4.0,launch_delivery,panel
+2026-10-30,2026-10-24,6,loaded_dice,GB,Tone Pro: Scinari Blue 3,Tone Pro,2.0,6,4.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Scinari Blue 5,Tone Pro,2.0,7,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Seraphon Blue 1,Tone Pro,4.0,9,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Seraphon Blue 2,Tone Pro,4.0,9,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Seraphon Blue 3,Tone Pro,4.0,9,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Seraphon Blue 4,Tone Pro,4.0,9,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 1,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 2,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 3,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 4,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 5,Tone Pro,3.0,9,6.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Ta'unar Ochre 1,Tone Pro,3.0,8,5.0,launch_delivery,panel
+2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Ta'unar Ochre 2,Tone Pro,3.0,8,5.0,launch_delivery,panel

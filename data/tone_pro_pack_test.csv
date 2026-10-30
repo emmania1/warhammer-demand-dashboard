@@ -7,9 +7,10 @@ collector_store_llc,US,10,6,1.0,6.0,6,6,true,launch rise
 deals_n_dragons,US,9,6,1.0,6.0,6,6,true,pre-launch stock only
 draco_gaming,GB,30,6,0.87,6.0,5,6,true,launch rise
 element_games,GB,5,1,0.6,1.0,1,9,false,pre-launch stock only
-firestorm_games,GB,5,1,0.2,10.0,1,16,false,launch rise
+firestorm_games,GB,12,1,0.58,1.0,1,16,false,launch rise
 jeux_az_games,CA,149,2,1.0,2.0,2,2,true,launch rise
 lionheart_hobby,US,10,6,0.9,6.0,5,6,true,launch rise
+loaded_dice,GB,82,6,0.74,6.0,3,6,true,launch rise
 taps_games,CA,18,1,0.72,1.0,1,2,true,pre-launch stock only
 the_outpost,GB,146,5,0.44,5.0,1,6,false,launch rise
 travelling_man_uk,GB,30,20,0.27,20.0,8,24,false,launch rise
