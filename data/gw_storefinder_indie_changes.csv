@@ -619,3 +619,23 @@ date,change,country,name,city,from_range,to_range
 2026-10-30,dropped_stockist,US,WINTERS VEIL CARDS AND GAMES,SKAGWAY,P210,
 2026-10-30,dropped_stockist,US,WIT'S END BOOKSTORE - MARYSVILLE,MARYSVILLE,BSF,
 2026-10-30,dropped_stockist,US,WIT'S END BOOKSTORE - STANWOOD,STANWOOD,BSF,
+2026-10-31,label_removed,HR,Morobo,Osijek,P360,
+2026-10-31,relisted,IT,Mana Nero Fumetteria,TRADATE (VA),BSF,BSF
+2026-10-31,new_stockist,GB,The Warp,HAVANT,,P360_T150
+2026-10-31,new_stockist,PT,TT Modelismo,ARCOS DE VALDEVEZ,,BSF
+2026-10-31,dropped_stockist,CN,Carddo Workshop,Nantou County,BSF,
+2026-10-31,dropped_stockist,MX,Durin Store,Ciudad de Mexico,BSF,
+2026-10-31,dropped_stockist,CN,Gaia Board Game,Changhua County,BSF,
+2026-10-31,dropped_stockist,ZA,GALACTIC TRADERS,CAPE TOWN,BSF,
+2026-10-31,dropped_stockist,TR,Grimdark / Hobi Dükkani,Kadikoy,BSF,
+2026-10-31,dropped_stockist,CN,Gundam King,New Taipei City,BSF,
+2026-10-31,dropped_stockist,CN,HamMa Toys,Miaoli County,P210,
+2026-10-31,dropped_stockist,SI,Joker city,Velenje,BSF,
+2026-10-31,dropped_stockist,SI,Karakondžula,Maribor,BSF,
+2026-10-31,dropped_stockist,RS,Kraken,Subotica,BSF,
+2026-10-31,dropped_stockist,SI,Pro Enigma,Kranj,P150,
+2026-10-31,dropped_stockist,CN,Sheep Mopdel,Yilan County,BSF,
+2026-10-31,dropped_stockist,GB,The Warp,HAVANT,P360_T150,
+2026-10-31,dropped_stockist,CL,TODO FREAK,Vina Del Mar,BSF,
+2026-10-31,dropped_stockist,PT,TT Modelismo,ARCOS DE VALDEVEZ,BSF,
+2026-10-31,dropped_stockist,CN,VM Toy,Taichung City,BSF,

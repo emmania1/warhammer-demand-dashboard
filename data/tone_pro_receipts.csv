@@ -647,3 +647,351 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Shalaxi Violet 5,Tone Pro,3.0,9,6.0,launch_delivery,panel
 2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Ta'unar Ochre 1,Tone Pro,3.0,8,5.0,launch_delivery,panel
 2026-10-30,2026-10-29,1,loaded_dice,GB,Tone Pro: Ta'unar Ochre 2,Tone Pro,3.0,8,5.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,grognard_games,US,Base: Abaddon Black,Base,1.0,22,21.0,launch_delivery,page
+2026-10-31,2026-10-30,1,grognard_games,US,Layer: Evil Sunz Scarlet,Layer,6.0,31,25.0,launch_delivery,page
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Abaddon Black,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Averland Sunset,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Balthasar Gold,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Barak-Nar Burgundy,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Bugman's Glow,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Caledor Sky,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Caliban Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Castellan Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Catachan Flesh,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Celestra Grey,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Corax White,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Corvus Black,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Daemonette Hide,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Death Guard Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Death Korps Drab,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Deathworld Forest,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Dryad Bark,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Grey Knights Steel,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Hobgrot Hide,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Incubi Darkness,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Ionrach Skin,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Iron Hands Steel,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Iron Warriors,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Jokaero Orange,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Kantor Blue,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Khorne Red,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Leadbelcher,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Lupercal Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Macragge Blue,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Mechanicus Standard Grey,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Mephiston Red,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Morghast Bone,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Mournfang Brown,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Naggaroth Night,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Night Lords Blue,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Nocturne Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Orruk Flesh,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Phoenician Purple,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Rakarth Flesh,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Ratskin Flesh,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Retributor Armour,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Rhinox Hide,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Runelord Brass,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Screamer Pink,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Screaming Bell,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Steel Legion Drab,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Stegadon Scale Green,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: The Fang,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Thondia Brown,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Thousand Sons Blue,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Waaagh! Flesh,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Warplock Bronze,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Wraithbone,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: XV-88,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Base: Zandri Dust,Base,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Administratum Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Ahriman Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Alaitoc Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Auric Armour Gold,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Baharroth Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Balor Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Baneblade Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Bestigor Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Bloodreaver Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Blue Horror,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Brass Scorpion,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Cadian Fleshtone,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Calgar Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Canoptek Alloy,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Castellax Bronze,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Dark Reaper,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Dawnstone,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Deathclaw Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Dechala Lilac,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Deepkin Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Doombull Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Dorn Yellow,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Elysian Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Emperor's Children,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Eshin Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Evil Sunz Scarlet,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Fenrisian Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Fire Dragon Bright,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Flash Gitz Yellow,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Flayed One Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Fulgrim Pink,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Fulgurite Copper,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Gauss Blaster Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Gehenna's Gold,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Genestealer Purple,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Gorthor Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Hashut Copper,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Hoeth Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Ironbreaker,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Kabalite Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Kakophoni Purple,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Karak Stone,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Kislev Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Knight-Questor Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Krieg Khaki,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Liberator Gold,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Loren Forest,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Lothern Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Lugganath Orange,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Moot Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Nurgling Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Ogryn Camo,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Pallid Wych Flesh,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Phalanx Yellow,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Pink Horror,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Runefang Steel,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Russ Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Screaming Skull,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Skarsnik Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Skavenblight Dinge,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Skrag Brown,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Skullcrusher Brass,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Slaanesh Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Sons of Horus Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Sotek Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Squig Orange,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Stormhost Silver,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Stormvermin Fur,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Straken Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Sybarite Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Sycorax Bronze,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Tallarn Sand,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Tau Light Ochre,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Teclis Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Temple Guard Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Thunderhawk Blue,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Troll Slayer Orange,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Tuskgor Fur,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Ulthuan Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Ushabti Bone,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Vulkan Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Warboss Green,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Warpfiend Grey,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Warpstone Glow,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Wazdakka Red,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Wild Rider Red,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Word Bearers Red,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Xereus Purple,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Yriel Yellow,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Layer: Zamesi Desert,Layer,2.0,3,1.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blackstone Void 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blackstone Void 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blackstone Void 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blackstone Void 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blackstone Void 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Bloodtoof Red 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Bloodtoof Red 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Bloodtoof Red 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Bloodtoof Red 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Bloodtoof Red 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blue Gorkshroom 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blue Gorkshroom 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blue Gorkshroom 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blue Gorkshroom 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Blue Gorkshroom 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carmine Blades 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carmine Blades 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carmine Blades 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carmine Blades 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carmine Blades 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carthalos Skin 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carthalos Skin 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carthalos Skin 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carthalos Skin 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Carthalos Skin 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Celestine Skin 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Celestine Skin 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Celestine Skin 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Celestine Skin 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Celestine Skin 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Chotec Orange 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Chotec Orange 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Chotec Orange 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Chotec Orange 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Chotec Orange 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Craventhrone Cloak 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Craventhrone Cloak 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Craventhrone Cloak 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Craventhrone Cloak 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Craventhrone Cloak 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Dataslate Grey 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Dataslate Grey 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Dataslate Grey 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Dataslate Grey 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Dataslate Grey 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Enrapturess Dusk 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Enrapturess Dusk 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Enrapturess Dusk 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Enrapturess Dusk 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Enrapturess Dusk 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Eye of Terror 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Eye of Terror 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Eye of Terror 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Eye of Terror 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Eye of Terror 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Gnarlwood 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Gnarlwood 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Gnarlwood 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Gnarlwood 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Gnarlwood 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Green Morkshroom 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Green Morkshroom 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Green Morkshroom 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Green Morkshroom 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Green Morkshroom 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hawkshroud Yellow 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hawkshroud Yellow 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hawkshroud Yellow 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hawkshroud Yellow 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hawkshroud Yellow 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hierotek Green 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hierotek Green 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hierotek Green 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hierotek Green 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hierotek Green 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hive Fleet Purple 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hive Fleet Purple 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hive Fleet Purple 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Hive Fleet Purple 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kasrkin Green 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kasrkin Green 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kasrkin Green 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kasrkin Green 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kasrkin Green 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Khemri Sands 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Khemri Sands 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Khemri Sands 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Khemri Sands 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Khemri Sands 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kruleboyz Green 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kruleboyz Green 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kruleboyz Green 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kruleboyz Green 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Kruleboyz Green 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Lustria Green 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Lustria Green 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Lustria Green 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Lustria Green 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Lustria Green 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Magnus the Red 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Magnus the Red 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Magnus the Red 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Magnus the Red 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Magnus the Red 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Megaboss Yellow 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Megaboss Yellow 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Megaboss Yellow 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Megaboss Yellow 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Megaboss Yellow 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Necrolith Bone 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Necrolith Bone 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Necrolith Bone 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Necrolith Bone 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Necrolith Bone 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Plague Toad Venom 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Plague Toad Venom 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Plague Toad Venom 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Plague Toad Venom 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Plague Toad Venom 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Scinari Blue 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Scinari Blue 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Scinari Blue 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Scinari Blue 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Scinari Blue 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Seraphon Blue 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Seraphon Blue 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Seraphon Blue 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Seraphon Blue 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Seraphon Blue 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Shalaxi Violet 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Shalaxi Violet 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Shalaxi Violet 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Shalaxi Violet 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Shalaxi Violet 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Stormwolf Blue 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Stormwolf Blue 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Stormwolf Blue 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Stormwolf Blue 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Stormwolf Blue 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ta'unar Ochre 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ta'unar Ochre 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ta'unar Ochre 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ta'unar Ochre 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ta'unar Ochre 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ultramar Blue 1,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ultramar Blue 2,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ultramar Blue 3,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ultramar Blue 4,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,jeux_az_games,CA,Tone Pro: Ultramar Blue 5,Tone Pro,2.0,3,1.0,reorder,panel
+2026-10-31,2026-10-30,1,loaded_dice,GB,Base: Caledor Sky,Base,3.0,15,12.0,reorder,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Abaddon Black,Base,9.0,21,12.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Balthasar Gold,Base,15.0,21,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Caledor Sky,Base,16.0,22,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Celestra Grey,Base,10.0,18,8.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Incubi Darkness,Base,12.0,18,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Iron Hands Steel,Base,9.0,21,12.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Iron Warriors,Base,20.0,26,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Khorne Red,Base,25.0,30,5.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Leadbelcher,Base,17.0,29,12.0,reorder,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Mechanicus Standard Grey,Base,25.0,31,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Mephiston Red,Base,15.0,27,12.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Naggaroth Night,Base,22.0,28,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Orruk Flesh,Base,13.0,19,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Phoenician Purple,Base,19.0,25,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Rakarth Flesh,Base,32.0,38,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Retributor Armour,Base,12.0,24,12.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Thondia Brown,Base,7.0,13,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Thousand Sons Blue,Base,18.0,24,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Wraithbone,Base,21.0,27,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Base: Zandri Dust,Base,24.0,30,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Administratum Grey,Layer,16.0,22,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Auric Armour Gold,Layer,12.0,18,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Baharroth Blue,Layer,14.0,20,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Calgar Blue,Layer,6.0,12,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Dawnstone,Layer,18.0,24,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Dechala Lilac,Layer,13.0,19,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Eshin Grey,Layer,10.0,16,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Evil Sunz Scarlet,Layer,17.0,23,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Flash Gitz Yellow,Layer,21.0,27,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Fulgurite Copper,Layer,15.0,21,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Hoeth Blue,Layer,18.0,24,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Kislev Flesh,Layer,19.0,25,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Krieg Khaki,Layer,19.0,25,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Moot Green,Layer,22.0,28,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Pallid Wych Flesh,Layer,13.0,19,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Phalanx Yellow,Layer,11.0,17,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Pink Horror,Layer,16.0,22,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Skrag Brown,Layer,11.0,17,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Stormhost Silver,Layer,14.0,26,12.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Stormvermin Fur,Layer,10.0,16,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Temple Guard Blue,Layer,17.0,23,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Thunderhawk Blue,Layer,24.0,30,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Tuskgor Fur,Layer,20.0,26,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Ushabti Bone,Layer,31.0,37,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Warpstone Glow,Layer,18.0,24,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: White Scar,Layer,21.0,27,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Word Bearers Red,Layer,8.0,14,6.0,launch_delivery,panel
+2026-10-31,2026-10-30,1,pastime_sports_games,CA,Layer: Xereus Purple,Layer,5.0,11,6.0,launch_delivery,panel
+2026-10-31,2026-10-24,7,travelling_man_uk,GB,Base: Leadbelcher,Base,0.0,25,25.0,launch_delivery,page
+2026-10-31,2026-10-24,7,travelling_man_uk,GB,Tone Pro: Hierotek Green 3,Tone Pro,24.0,25,1.0,launch_delivery,page
+2026-10-31,2026-10-24,7,wandering_adventures,CA,Base: Leadbelcher,Base,1.0,7,6.0,launch_delivery,page

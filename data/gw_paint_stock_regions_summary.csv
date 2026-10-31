@@ -527,3 +527,39 @@ date,warehouse,line,skus,in_stock,oos,preorder,selling_fast,last_chance,oos_pct
 2026-10-30,memphis,Technical Crackle,5,0,5,0,0,0,100.0
 2026-10-30,memphis,Technical Texture,4,2,2,0,0,0,50.0
 2026-10-30,memphis,Tone Pro,150,150,0,0,0,0,0.0
+2026-10-31,ingleburn,Air,44,38,6,0,0,0,13.6
+2026-10-31,ingleburn,Base,57,57,0,0,0,0,0.0
+2026-10-31,ingleburn,Contrast,61,48,13,0,0,0,21.3
+2026-10-31,ingleburn,Dry,24,23,1,0,0,0,4.2
+2026-10-31,ingleburn,Layer,93,88,5,0,0,0,5.4
+2026-10-31,ingleburn,Shade,19,16,3,0,0,0,15.8
+2026-10-31,ingleburn,Spray,11,11,0,0,0,0,0.0
+2026-10-31,ingleburn,Tech Pro,2,2,0,0,0,0,0.0
+2026-10-31,ingleburn,Technical,12,11,1,0,0,0,8.3
+2026-10-31,ingleburn,Technical Crackle,5,3,2,0,0,0,40.0
+2026-10-31,ingleburn,Technical Texture,4,4,0,0,0,0,0.0
+2026-10-31,ingleburn,Tone Pro,150,150,0,0,0,0,0.0
+2026-10-31,lenton,Air,44,11,33,0,0,0,75.0
+2026-10-31,lenton,Base,57,44,13,0,0,0,22.8
+2026-10-31,lenton,Contrast,59,34,25,0,0,0,42.4
+2026-10-31,lenton,Dry,25,9,16,0,0,0,64.0
+2026-10-31,lenton,Layer,93,39,54,0,0,0,58.1
+2026-10-31,lenton,Shade,19,14,5,0,0,0,26.3
+2026-10-31,lenton,Spray,10,10,0,0,0,0,0.0
+2026-10-31,lenton,Tech Pro,2,2,0,0,0,0,0.0
+2026-10-31,lenton,Technical,12,8,4,0,0,0,33.3
+2026-10-31,lenton,Technical Crackle,5,0,5,0,0,0,100.0
+2026-10-31,lenton,Technical Texture,4,2,2,0,0,0,50.0
+2026-10-31,lenton,Tone Pro,150,148,2,0,0,0,1.3
+2026-10-31,memphis,Air,44,2,42,0,0,0,95.5
+2026-10-31,memphis,Base,56,50,6,0,0,0,10.7
+2026-10-31,memphis,Contrast,59,13,46,0,0,0,78.0
+2026-10-31,memphis,Dry,24,5,19,0,0,0,79.2
+2026-10-31,memphis,Layer,93,85,8,0,0,0,8.6
+2026-10-31,memphis,Shade,16,9,7,0,0,0,43.8
+2026-10-31,memphis,Spray,11,11,0,0,0,0,0.0
+2026-10-31,memphis,Tech Pro,2,2,0,0,0,0,0.0
+2026-10-31,memphis,Technical,12,2,10,0,0,0,83.3
+2026-10-31,memphis,Technical Crackle,5,0,5,0,0,0,100.0
+2026-10-31,memphis,Technical Texture,4,2,2,0,0,0,50.0
+2026-10-31,memphis,Tone Pro,150,150,0,0,0,0,0.0
