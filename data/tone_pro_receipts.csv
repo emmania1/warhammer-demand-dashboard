@@ -995,3 +995,8 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-10-31,2026-10-24,7,travelling_man_uk,GB,Base: Leadbelcher,Base,0.0,25,25.0,launch_delivery,page
 2026-10-31,2026-10-24,7,travelling_man_uk,GB,Tone Pro: Hierotek Green 3,Tone Pro,24.0,25,1.0,launch_delivery,page
 2026-10-31,2026-10-24,7,wandering_adventures,CA,Base: Leadbelcher,Base,1.0,7,6.0,launch_delivery,page
+2026-11-01,2026-10-31,1,firestorm_games,GB,Tone Pro: Blackstone Void 3,Tone Pro,2.0,22,20.0,reorder,panel
+2026-11-01,2026-10-31,1,loaded_dice,GB,Layer: Skullcrusher Brass,Layer,4.0,12,8.0,reorder,panel
+2026-11-01,2026-10-31,1,the_outpost,GB,Tone Pro: Hierotek Green 2,Tone Pro,0.0,0,1.0,reorder,panel
+2026-11-01,2026-10-31,1,the_outpost,GB,Tone Pro: Hierotek Green 3,Tone Pro,0.0,0,2.0,reorder,panel
+2026-11-01,2026-10-31,1,the_outpost,GB,Tone Pro: Necrolith Bone 3,Tone Pro,1.0,0,1.0,reorder,panel
