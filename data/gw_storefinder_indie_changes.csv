@@ -656,3 +656,6 @@ date,change,country,name,city,from_range,to_range
 2026-11-02,dropped_stockist,AU,Gifts for the Geek,Geelong,,
 2026-11-02,dropped_stockist,AU,Go Figure Collectables,RAVENHALL,,
 2026-11-02,dropped_stockist,AU,Tableflip Games,PASCOE VALE SOUTH,,
+2026-11-03,relisted,TH,Black and Brown,Mueang Roi Et District,P150_T150,P150_T150
+2026-11-03,new_stockist,MY,The Last Comic Shop,PETALING JAYA,,BSF
+2026-11-03,dropped_stockist,MY,The Last Comic Shop,PETALING JAYA,BSF,
