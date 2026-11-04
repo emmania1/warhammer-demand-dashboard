@@ -659,3 +659,15 @@ date,change,country,name,city,from_range,to_range
 2026-11-03,relisted,TH,Black and Brown,Mueang Roi Et District,P150_T150,P150_T150
 2026-11-03,new_stockist,MY,The Last Comic Shop,PETALING JAYA,,BSF
 2026-11-03,dropped_stockist,MY,The Last Comic Shop,PETALING JAYA,BSF,
+2026-11-04,new_stockist,KR,모닥불,수원시,,P210
+2026-11-04,new_stockist,KR,롱롱리베 게임즈,인천광역시,,
+2026-11-04,new_stockist,AU,Brick Lane Bazaar,Daylesford,,BSF
+2026-11-04,new_stockist,AU,Dice It Up Gaming,Wodonga,,BSF
+2026-11-04,new_stockist,GB,GALLEON GAMES,BEXHILL ON SEA,,P210_T150
+2026-11-04,new_stockist,AU,Goblin Games,Upper Ferntree Gully,,P150
+2026-11-04,new_stockist,AU,Jindabyne Local Grocer,Jindabyne,,BSF
+2026-11-04,new_stockist,AU,PerkTCG,Gladstone,,P150
+2026-11-04,new_stockist,AU,Wiseman's Local Grocer,Wisemans Ferry,,BSF
+2026-11-04,dropped_stockist,AU,CX Collectables,Adelaide,BSF,
+2026-11-04,dropped_stockist,AU,Everson Emporium,Booval,BSF,
+2026-11-04,dropped_stockist,GB,GALLEON GAMES,Bexhill On Sea,P210_T150,
