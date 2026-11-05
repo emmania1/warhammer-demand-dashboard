@@ -671,3 +671,113 @@ date,change,country,name,city,from_range,to_range
 2026-11-04,dropped_stockist,AU,CX Collectables,Adelaide,BSF,
 2026-11-04,dropped_stockist,AU,Everson Emporium,Booval,BSF,
 2026-11-04,dropped_stockist,GB,GALLEON GAMES,Bexhill On Sea,P210_T150,
+2026-11-05,label_added,GB,The G Zone,WORTHING,,P150
+2026-11-05,relisted,FR,Delete,Marles-les-Mines,BSF,BSF
+2026-11-05,relisted,DE,RM COMPUTER,NURERNBERG,BSF,BSF
+2026-11-05,relisted,DK,Delete,HIRTSHALS,BSF,BSF
+2026-11-05,relisted,IT,Delete,ABANO TERME,BSF,BSF
+2026-11-05,relisted,NL,Delete,Prinsenbeek,BSF,BSF
+2026-11-05,relisted,GB,Delete,IVYBRIDGE,P150,P150
+2026-11-05,new_stockist,CA,17922736 CANADA INC,KEMPTVILLE,,
+2026-11-05,new_stockist,FI,Alpha Games,TAMPERE,,BSF
+2026-11-05,new_stockist,US,ARGOSSIAN INC,HOUSTON,,BSF
+2026-11-05,new_stockist,NL,Bedrukjeblokje.nl,BARENDRECHT,,BSF
+2026-11-05,new_stockist,SE,BEGINNERS BOR�S,BORAS,,P150
+2026-11-05,new_stockist,GB,Cardholics,BEACONSFIELD,,BSF
+2026-11-05,new_stockist,US,CATS IN A TRENCHCOAT,CULPEPER,,
+2026-11-05,new_stockist,ES,CRC Delorean,INCA,,P150
+2026-11-05,new_stockist,ES,Delete,POZOBLANCO,,BSF
+2026-11-05,new_stockist,GB,Delete,LONDON,,BSF
+2026-11-05,new_stockist,FR,Espace Culturel E.Leclerc SAINT GILLES CROIX DE VIE,SAINT GILLES CROIX DE VIE,,BSF
+2026-11-05,new_stockist,US,FIVE DICE GAMES LLC,DALLAS,,
+2026-11-05,new_stockist,CY,GO Compuagora Ltd,STROVOLOS,,BSF
+2026-11-05,new_stockist,NO,Hobbyhjornet AS,ASKIM,,BSF
+2026-11-05,new_stockist,FR,JOUECLUB LA FLECHE,LA FLECHE,,BSF
+2026-11-05,new_stockist,GB,Kendostar Ltd,BLACKPOOL,,P150
+2026-11-05,new_stockist,US,KEYSTONE CARDS & GAMES,SAYRE,,BSF
+2026-11-05,new_stockist,PL,Ksiegarnia Odeon,OSTROWIEC SWIETOKRZYSKI,,BSF
+2026-11-05,new_stockist,FR,L'Arene Ludique,LE NEUBOURG,,P150
+2026-11-05,new_stockist,ES,Libreria Papeleria Ibrahim,VALDEPENAS,,BSF
+2026-11-05,new_stockist,GB,LJ's Jewellery & Gifts,WHITSTABLE,,BSF
+2026-11-05,new_stockist,MT,MaltaComics,MSIDA,,P150_T150
+2026-11-05,new_stockist,GB,MANA GAMING,EASTBOURNE,,P150_T150
+2026-11-05,new_stockist,GB,MMS RETRO TOYS & COLLECTIBLES,BOLTON,,
+2026-11-05,new_stockist,DE,NerdNook,LANGENZENN,,BSF
+2026-11-05,new_stockist,GB,Ohh Bespoke,CHEDDAR,,BSF
+2026-11-05,new_stockist,PL,PC Service,PABIANICE,,BSF
+2026-11-05,new_stockist,DK,PhoneWorld,ODDER,,BSF
+2026-11-05,new_stockist,PL,Planeta Gier,MIELEC,,BSF
+2026-11-05,new_stockist,IT,POWER-GAMES,VERONA (VR),,BSF
+2026-11-05,new_stockist,GB,PREMIER CUBBINGTON SUPERSTORE,LEAMINGTON SPA,,BSF
+2026-11-05,new_stockist,FI,RS Tech,KOUVOLA,,BSF
+2026-11-05,new_stockist,PL,SLUPEKS,TORUN,,BSF
+2026-11-05,new_stockist,GB,Starrider,GRIMSBY,,BSF
+2026-11-05,new_stockist,SE,S�tt and Surt,HEDEMORA,,BSF
+2026-11-05,new_stockist,FR,TACTIQUE 2 JEUX,BAILLY ROMAINVILLIERS,,
+2026-11-05,new_stockist,NL,TANTE HANNIE,NIJMEGEN,,P150_T150
+2026-11-05,new_stockist,GB,THE DICE JAIL,SOUTHWELL,,P150
+2026-11-05,new_stockist,US,THE GATHERING POINT,EL DORADO,,
+2026-11-05,new_stockist,CH,Wellplayed,Zürich,,BSF
+2026-11-05,dropped_stockist,IT,AB Comics,CIRIE (TO),BSF,
+2026-11-05,dropped_stockist,FR,A.F.R. TELEPHONIE,AMIENS,BSF,
+2026-11-05,dropped_stockist,PL,All on Board,CHELM,BSF,
+2026-11-05,dropped_stockist,FI,Askarteluliike Taitava Seinajoki,HELSINKI,BSF,
+2026-11-05,dropped_stockist,ES,Azor Modelismo,Madrid,,
+2026-11-05,dropped_stockist,GB,Blessed Be Alternative Emporium,MONMOUTH,BSF,
+2026-11-05,dropped_stockist,LV,Brain games,RIGA,BSF,
+2026-11-05,dropped_stockist,ES,Camisetas Albahaca,ZARAGOZA,BSF,
+2026-11-05,dropped_stockist,ES,Carlin Priego,Priego de Cordoba,BSF,
+2026-11-05,dropped_stockist,ES,Casa Paco,UBEDA,BSF,
+2026-11-05,dropped_stockist,PT,Conflux Games,LINDA-A-VELHA,P150,
+2026-11-05,dropped_stockist,ES,COPELEN,LEON,BSF,
+2026-11-05,dropped_stockist,GB,Dabs Tattoos and Body Piercing,Southport,BSF,
+2026-11-05,dropped_stockist,ES,Dismatac Terrassa Airsoft,TERRASSA,BSF,
+2026-11-05,dropped_stockist,IT,DreamWorld,AGROPOLI (SA),BSF,
+2026-11-05,dropped_stockist,FR,ESPACE CULTUREL LECLERC PLEUVEN,PLEUVEN,BSF,
+2026-11-05,dropped_stockist,GB,EXPRESS PRINTING AND STATIONERY,NORTH WALSHAM,BSF,
+2026-11-05,dropped_stockist,SE,Finspang Butik,FINSPANG,BSF,
+2026-11-05,dropped_stockist,AT,GAME AND DINE,TRAUN,BSF,
+2026-11-05,dropped_stockist,GB,GAME DISTRICT,Aberdeen,,
+2026-11-05,dropped_stockist,GB,Game District,ELGIN,BSF,
+2026-11-05,dropped_stockist,GB,GEEK RETREAT CHELMSFORD,CHELMSFORD,BSF,
+2026-11-05,dropped_stockist,GB,Harmless Tattoo,BRAINTREE,BSF,
+2026-11-05,dropped_stockist,GB,Hobbycraft Bath,Bath,BSF,
+2026-11-05,dropped_stockist,GB,IMPERIAL GAMES,EXETER,P360_T150,
+2026-11-05,dropped_stockist,FI,Infinity Prints TCG,JYVASKYLA,BSF,
+2026-11-05,dropped_stockist,US,KEYSTONE CARDS & GAMES,SAYRE,BSF,
+2026-11-05,dropped_stockist,DK,Kreativ Design Vojens,VOJENS,BSF,
+2026-11-05,dropped_stockist,IT,L3LAB,Varese,BSF,
+2026-11-05,dropped_stockist,FR,La Ludosaure,JANZE,BSF,
+2026-11-05,dropped_stockist,FR,La Tartine Ludique,SAINTE GENEVIEVE DES BOIS,BSF,
+2026-11-05,dropped_stockist,FR,Manga Story Belle Epine,Thiais,BSF,
+2026-11-05,dropped_stockist,GR,Maze,LIVADEIA,BSF,
+2026-11-05,dropped_stockist,GB,MIDCO TOY PLANET,Derby,P150,
+2026-11-05,dropped_stockist,DE,Miyoboo,Hildesheim,P150,
+2026-11-05,dropped_stockist,IT,Mondadori Bookstore,BELLUNO,BSF,
+2026-11-05,dropped_stockist,IT,Otakura,VILLANOVA D'ASTI,BSF,
+2026-11-05,dropped_stockist,ES,Papeleria Goya,PALMA DEL RIO,BSF,
+2026-11-05,dropped_stockist,DE,Pareibo,Bad Oldesloe,BSF,
+2026-11-05,dropped_stockist,ES,PASSARELLA POP,PICANYA,BSF,
+2026-11-05,dropped_stockist,ES,Pinturas Rafa,UBRIQUE,BSF,
+2026-11-05,dropped_stockist,PT,Play To Win,Evora,P210,
+2026-11-05,dropped_stockist,GR,POWERUSER,ILION,BSF,
+2026-11-05,dropped_stockist,NL,Press-StartGames,Appingedam,BSF,
+2026-11-05,dropped_stockist,NL,Primera Walburg,Zwijndrecht,,
+2026-11-05,dropped_stockist,GB,RETROFORMERS,HALSTEAD,P150,
+2026-11-05,dropped_stockist,GB,Rothko and Frost,MITCHELDEAN,BSF,
+2026-11-05,dropped_stockist,GB,Smart Phone Repair,BROADSTAIRS,BSF,
+2026-11-05,dropped_stockist,FR,Sortil�ges Brest,BREST,P210,
+2026-11-05,dropped_stockist,DE,Spielspirale-der-Laden,EMMENDINGEN,BSF,
+2026-11-05,dropped_stockist,NL,TCG GROUND,ROTTERDAM,BSF,
+2026-11-05,dropped_stockist,ES,Terracota Manualidades,VILLAFRANCAS DEL PENEDES,BSF,
+2026-11-05,dropped_stockist,GB,That Green Shop,HASTINGS,BSF,
+2026-11-05,dropped_stockist,GB,THE GIFT BOX,MALTBY,BSF,
+2026-11-05,dropped_stockist,AT,TOY-MART HANDELSGMBH,LANGENROHR,BSF,
+2026-11-05,dropped_stockist,FR,UN FLO DE JEUX,AUCHY-LES-MINES,BSF,
+2026-11-05,dropped_stockist,GB,Union County Games,"MATFORD, EXETER",P150_T150,
+2026-11-05,dropped_stockist,AT,Vault1B,KREMS AN DER DONAU,BSF,
+2026-11-05,dropped_stockist,ES,Velkarion,Alcorcon,BSF,
+2026-11-05,dropped_stockist,NL,Vrijetijdwinkel,ROTTERDAM,P150_T150,
+2026-11-05,dropped_stockist,GB,Wantage Convenience Store,WANTAGE,BSF,
+2026-11-05,dropped_stockist,CH,Wellplayed,ZUERICH,BSF,
+2026-11-05,dropped_stockist,DE,XGames Chemnitz,Chemnitz,BSF,

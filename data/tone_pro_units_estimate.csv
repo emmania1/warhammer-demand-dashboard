@@ -1,6 +1,6 @@
 country,pro_label_stores,pack_basis,pots_per_paint_low,pots_per_paint_mid,pots_per_paint_high,units_low,units_mid,units_high
 US,1353,3 US stores,6.0,6.0,6.0,1217700,1217700,1217700
-GB,400,3 GB stores,6.0,6.0,6.0,360000,360000,360000
+GB,399,3 GB stores,6.0,6.0,6.0,359100,359100,359100
 CA,208,4 CA stores,1.75,3.0,4.5,54600,93600,140400
 AU,127,all 10 tested stores,4.5,6.0,6.0,85725,114300,114300
 DE,124,all 10 tested stores,4.5,6.0,6.0,83700,111600,111600
@@ -29,10 +29,10 @@ HK,9,all 10 tested stores,4.5,6.0,6.0,6075,8100,8100
 UA,8,all 10 tested stores,4.5,6.0,6.0,5400,7200,7200
 HU,8,all 10 tested stores,4.5,6.0,6.0,5400,7200,7200
 SG,8,all 10 tested stores,4.5,6.0,6.0,5400,7200,7200
+MT,7,all 10 tested stores,4.5,6.0,6.0,4725,6300,6300
 ID,7,all 10 tested stores,4.5,6.0,6.0,4725,6300,6300
 SK,6,all 10 tested stores,4.5,6.0,6.0,4050,5400,5400
 RO,6,all 10 tested stores,4.5,6.0,6.0,4050,5400,5400
-MT,6,all 10 tested stores,4.5,6.0,6.0,4050,5400,5400
 CL,6,all 10 tested stores,4.5,6.0,6.0,4050,5400,5400
 PT,5,all 10 tested stores,4.5,6.0,6.0,3375,4500,4500
 EE,4,all 10 tested stores,4.5,6.0,6.0,2700,3600,3600
@@ -57,4 +57,4 @@ RE,1,all 10 tested stores,4.5,6.0,6.0,675,900,900
 PH,1,all 10 tested stores,4.5,6.0,6.0,675,900,900
 TW,1,all 10 tested stores,4.5,6.0,6.0,675,900,900
 SI,1,all 10 tested stores,4.5,6.0,6.0,675,900,900
-ALL,3087,sum of countries,,,,2392350,2684700,2731500
+ALL,3087,sum of countries,,,,2392125,2684700,2731500

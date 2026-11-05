@@ -1222,3 +1222,53 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-11-04,2026-11-03,1,the_outpost,GB,Tone Pro: Ta'unar Ochre 4,Tone Pro,4.0,10,6.0,reorder,panel
 2026-11-04,2026-11-03,1,the_outpost,GB,Tone Pro: Ultramar Blue 3,Tone Pro,2.0,8,6.0,reorder,panel
 2026-11-04,2026-11-03,1,the_outpost,GB,Tone Pro: Ultramar Blue 5,Tone Pro,1.0,7,6.0,reorder,panel
+2026-11-05,2026-11-04,1,beanie_games,GB,Base: Morghast Bone,Base,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,beanie_games,GB,Layer: Phalanx Yellow,Layer,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,beanie_games,GB,Layer: Stormhost Silver,Layer,1.0,7,6.0,reorder,panel
+2026-11-05,2026-11-04,1,firestorm_games,GB,Base: Gal Vorbak Red,Base,18.0,23,5.0,reorder,panel
+2026-11-05,2026-11-04,1,firestorm_games,GB,Base: Morghast Bone,Base,25.0,36,11.0,reorder,panel
+2026-11-05,2026-11-04,1,firestorm_games,GB,Base: Ratskin Flesh,Base,23.0,29,6.0,reorder,panel
+2026-11-05,2026-11-04,1,firestorm_games,GB,Layer: Emperor's Children,Layer,12.0,24,12.0,reorder,panel
+2026-11-05,2026-11-04,1,jeux_az_games,CA,Tone Pro: Hive Fleet Purple 4,Tone Pro,0.0,3,3.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Base: Leadbelcher,Base,29.0,47,18.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Base: Retributor Armour,Base,13.0,29,16.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Auric Armour Gold,Layer,11.0,17,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Dark Reaper,Layer,11.0,17,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Genestealer Purple,Layer,10.0,16,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Slaanesh Grey,Layer,8.0,14,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Sons of Horus Green,Layer,9.0,15,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Tallarn Sand,Layer,6.0,7,1.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: Tuskgor Fur,Layer,2.0,17,15.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Layer: White Scar,Layer,11.0,17,6.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Blackstone Void 1,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Blackstone Void 2,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Blackstone Void 3,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Blackstone Void 4,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Blackstone Void 5,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-11-02,3,loaded_dice,GB,Tone Pro: Bloodtoof Red 1,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Bloodtoof Red 2,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Bloodtoof Red 3,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Bloodtoof Red 4,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-10-31,5,loaded_dice,GB,Tone Pro: Bloodtoof Red 5,Tone Pro,2.0,6,4.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Craventhrone Cloak 1,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Craventhrone Cloak 2,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Craventhrone Cloak 3,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Craventhrone Cloak 4,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Craventhrone Cloak 5,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Hawkshroud Yellow 1,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Hawkshroud Yellow 2,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Hawkshroud Yellow 3,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Kasrkin Green 1,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Kasrkin Green 2,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Kasrkin Green 3,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Kasrkin Green 4,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Kasrkin Green 5,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Megaboss Yellow 1,Tone Pro,3.0,9,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Megaboss Yellow 2,Tone Pro,3.0,9,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Megaboss Yellow 5,Tone Pro,3.0,9,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Necrolith Bone 5,Tone Pro,3.0,9,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Scinari Blue 4,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-03,2,loaded_dice,GB,Tone Pro: Ta'unar Ochre 4,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Ultramar Blue 2,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Ultramar Blue 4,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-05,2026-10-14,22,the_outpost,GB,Tone Pro: Bloodtoof Red 4,Tone Pro,0.0,10,10.0,reorder,panel
