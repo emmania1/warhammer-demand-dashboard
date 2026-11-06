@@ -1272,3 +1272,47 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Ultramar Blue 2,Tone Pro,2.0,8,6.0,reorder,panel
 2026-11-05,2026-11-04,1,loaded_dice,GB,Tone Pro: Ultramar Blue 4,Tone Pro,2.0,8,6.0,reorder,panel
 2026-11-05,2026-10-14,22,the_outpost,GB,Tone Pro: Bloodtoof Red 4,Tone Pro,0.0,10,10.0,reorder,panel
+2026-11-06,2026-11-01,5,element_games,GB,Tone Pro: Megaboss Yellow 3,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Daemonette Hide,Base,5.0,11,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Incubi Darkness,Base,2.0,7,5.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Iron Hands Steel,Base,14.0,20,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Khorne Red,Base,12.0,23,11.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Mournfang Brown,Base,11.0,17,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Naggaroth Night,Base,6.0,12,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Orruk Flesh,Base,5.0,11,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Rakarth Flesh,Base,14.0,20,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Retributor Armour,Base,7.0,19,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Rhinox Hide,Base,9.0,21,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Runelord Brass,Base,12.0,18,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Screaming Bell,Base,6.0,12,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Base: Wraithbone,Base,14.0,20,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Layer: Administratum Grey,Layer,12.0,18,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Layer: Evil Sunz Scarlet,Layer,14.0,19,5.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Layer: Screaming Skull,Layer,15.0,20,5.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Layer: White Scar,Layer,13.0,19,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Layer: Word Bearers Red,Layer,7.0,13,6.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tech Pro: Shading Medium,Tech Pro,9.0,19,10.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Blackstone Void 1,Tone Pro,3.0,14,11.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Blackstone Void 2,Tone Pro,1.0,13,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Blackstone Void 3,Tone Pro,1.0,13,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Blackstone Void 5,Tone Pro,2.0,11,9.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Bloodtoof Red 2,Tone Pro,4.0,16,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Bloodtoof Red 5,Tone Pro,2.0,14,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Celestine Skin 2,Tone Pro,6.0,18,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Celestine Skin 3,Tone Pro,5.0,17,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Celestine Skin 5,Tone Pro,4.0,16,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Eye of Terror 3,Tone Pro,3.0,15,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Eye of Terror 5,Tone Pro,3.0,15,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Gnarlwood 3,Tone Pro,3.0,15,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Hawkshroud Yellow 2,Tone Pro,4.0,16,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Hierotek Green 1,Tone Pro,5.0,17,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Lustria Green 3,Tone Pro,4.0,16,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Necrolith Bone 2,Tone Pro,6.0,18,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Necrolith Bone 3,Tone Pro,4.0,16,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Necrolith Bone 5,Tone Pro,6.0,18,12.0,reorder,panel
+2026-11-06,2026-11-05,1,firestorm_games,GB,Tone Pro: Plague Toad Venom 5,Tone Pro,5.0,17,12.0,reorder,panel
+2026-11-06,2026-11-05,1,loaded_dice,GB,Layer: Vulkan Green,Layer,6.0,12,6.0,reorder,panel
+2026-11-06,2026-11-03,3,loaded_dice,GB,Tone Pro: Ta'unar Ochre 5,Tone Pro,2.0,7,5.0,reorder,panel
+2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 1,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 3,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 5,Tone Pro,2.0,8,6.0,reorder,panel

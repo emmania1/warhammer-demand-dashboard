@@ -781,3 +781,11 @@ date,change,country,name,city,from_range,to_range
 2026-11-05,dropped_stockist,GB,Wantage Convenience Store,WANTAGE,BSF,
 2026-11-05,dropped_stockist,CH,Wellplayed,ZUERICH,BSF,
 2026-11-05,dropped_stockist,DE,XGames Chemnitz,Chemnitz,BSF,
+2026-11-06,new_stockist,KR,그랜드오더,성남시,,
+2026-11-06,new_stockist,KR,배틀테이블하비,서울시,,
+2026-11-06,new_stockist,FR,Amour des jeux,Gonfaron,,P210
+2026-11-06,new_stockist,FR,Espace Culturel E.Leclerc SAINT GILLES CROIX DE VIE,SAINT GILLES CROIX DE VIE,,BSF
+2026-11-06,new_stockist,CZ,Nerd Alert,PRAGUE,,
+2026-11-06,new_stockist,DE,Pinselschwert,Wuelfrath,,P360_T150
+2026-11-06,dropped_stockist,FR,Amour des jeux,Berre les Alpes,,
+2026-11-06,dropped_stockist,FR,Espace Culturel E.Leclerc SAINT GILLES CROIX DE VIE,SAINT GILLES CROIX DE VIE,BSF,
