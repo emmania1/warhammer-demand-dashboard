@@ -1316,3 +1316,7 @@ date,prev_date,gap_days,store_id,country,paint,line,prev_qty,qty,received,type,s
 2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 1,Tone Pro,2.0,8,6.0,reorder,panel
 2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 3,Tone Pro,2.0,8,6.0,reorder,panel
 2026-11-06,2026-11-05,1,loaded_dice,GB,Tone Pro: Ultramar Blue 5,Tone Pro,2.0,8,6.0,reorder,panel
+2026-11-07,2026-11-06,1,firestorm_games,GB,Base: Deathworld Forest,Base,9.0,10,1.0,reorder,panel
+2026-11-07,2026-11-06,1,firestorm_games,GB,Base: Screamer Pink,Base,13.0,14,1.0,reorder,panel
+2026-11-07,2026-11-06,1,loaded_dice,GB,Layer: Zamesi Desert,Layer,6.0,13,7.0,reorder,panel
+2026-11-07,2026-10-24,14,the_outpost,GB,Tone Pro: Megaboss Yellow 2,Tone Pro,2.0,9,7.0,reorder,panel
